@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "title": "Mise-en-scène — Lighting, Color, Staging, Design",
+    "purpose": "How everything within the frame carries meaning. The system uses this to make images intentional.",
+    "version": "1.0",
+    "language": "en"
+  },
+  "lighting_styles": [
+    { "id": "high_key", "effect": "bright, even, low contrast; upbeat, safe, comedic, clean", "use": "comedy, family, commercial" },
+    { "id": "low_key", "effect": "dark, high contrast, deep shadows; tension, mystery, drama", "use": "thriller, noir, horror" },
+    { "id": "chiaroscuro", "effect": "extreme light/dark; painterly drama, moral duality", "use": "prestige drama, noir" },
+    { "id": "rembrandt", "effect": "triangle of light on cheek; classic portrait depth", "use": "intimate character shots" },
+    { "id": "three_point", "effect": "key + fill + rim; standard modeled, dimensional look", "use": "default coverage" },
+    { "id": "silhouette", "effect": "subject dark against bright bg; mystery, iconic shape, isolation", "use": "reveals, emotion, style" },
+    { "id": "backlight_rim", "effect": "halo separating subject from bg; warmth, nostalgia, ethereal", "use": "romance, memory, magic hour" },
+    { "id": "practical_motivated", "effect": "light from in-scene sources (lamps, windows, neon); realism + mood", "use": "grounded realism, atmosphere" },
+    { "id": "golden_hour", "effect": "warm, long shadows, soft; nostalgia, beauty, transience", "use": "emotional, lyrical" },
+    { "id": "top_light", "effect": "eye shadows, ominous or divine", "use": "menace or transcendence" },
+    { "id": "underlight", "effect": "unnatural, eerie, uncanny", "use": "horror, unease" }
+  ],
+  "color_schemes": [
+    { "id": "complementary", "effect": "vibrant tension, separation (esp. teal-orange)", "use": "blockbuster pop, subject-bg split" },
+    { "id": "analogous", "effect": "harmony, cohesion, mood immersion", "use": "unified emotional tone" },
+    { "id": "triadic", "effect": "balanced vibrancy, playful", "use": "animation, stylized" },
+    { "id": "monochrome", "effect": "unity, austerity, single-emotion saturation", "use": "stylized, thematic (or B&W + single accent)" },
+    { "id": "split_complementary", "effect": "contrast with less tension than pure complementary", "use": "rich but balanced" }
+  ],
+  "color_psychology": [
+    { "color": "red", "meaning": "passion, danger, love, violence, urgency, power" },
+    { "color": "blue", "meaning": "calm, sadness, cold, isolation, trust, technology" },
+    { "color": "green", "meaning": "nature, growth, envy, sickness, the uncanny" },
+    { "color": "yellow", "meaning": "happiness, warmth, caution, madness, nostalgia" },
+    { "color": "orange", "meaning": "warmth, comfort, energy, autumn, friendliness" },
+    { "color": "purple", "meaning": "royalty, mystery, fantasy, decadence, spirituality" },
+    { "color": "teal_orange", "meaning": "skin-tones pop against cool backgrounds; the modern blockbuster look" },
+    { "color": "desaturated", "meaning": "grit, realism, bleakness, war, dystopia" },
+    { "color": "warm_amber", "meaning": "nostalgia, memory, safety, hearth" }
+  ],
+  "staging_blocking": [
+    { "id": "depth_staging", "effect": "actors on multiple planes = dynamic, hierarchical, deep world" },
+    { "id": "symmetrical_blocking", "effect": "order, confrontation, duality (e.g., two chairs facing = self vs self)" },
+    { "id": "proxemics", "effect": "distance between characters encodes relationship/power" },
+    { "id": "negative_space_isolation", "effect": "empty frame around subject = loneliness" },
+    { "id": "movement_toward_away", "effect": "blocking toward camera = assertion; away = retreat/loss" }
+  ],
+  "production_design": [
+    { "id": "prop_as_symbol", "effect": "objects carry theme (a chess king = stakes; dentures = mortality/humor)" },
+    { "id": "setting_as_metaphor", "effect": "environment mirrors inner state (empty autumn park = solitude + twilight of life)" },
+    { "id": "wardrobe_signals", "effect": "costume encodes character, era, arc (color shifts track change)" },
+    { "id": "texture_materiality", "effect": "surface (matte/gloss/worn) sets tactility and world-tone" }
+  ]
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E.V.E Creator — Storyboard Sheet (Director-Grounded)</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#0d0d0d;--surface:#131313;--card:#1a1a1a;--border:#272727;
+      --gold:#c9a227;--gold-dim:#7a6118;--gold-lite:#e8bc3a;
+      --text:#e4e4e4;--muted:#5a5a5a;--dim:#8a8a8a;--twist:#d96a3a;
+    }
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:60px}
+    header{background:var(--surface);border-bottom:1px solid var(--border);padding:26px 44px 22px}
+    .logo-row{display:flex;align-items:baseline;gap:10px}
+    header h1{font-size:22px;font-weight:700;letter-spacing:-.3px;color:#fff}
+    .badge{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);padding:2px 7px;border-radius:4px}
+    .subtitle{font-size:12px;color:var(--muted);margin-top:6px}
+
+    .idea{margin:26px 44px 0;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+    .idea .lab{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+    .idea .txt{font-size:16px;color:#fff;font-weight:500;margin-bottom:12px}
+    .chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+    .chip{font-size:11px;padding:4px 11px;border-radius:100px;border:1px solid var(--border);color:var(--dim)}
+    .chip.ref{color:var(--gold);border-color:var(--gold-dim)}
+    .analysis{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .an-box{background:#101010;border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+    .an-box .h{font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+    .an-box.twist .h{color:var(--twist)}.an-box.mise .h{color:var(--gold)}
+    .an-box p{font-size:12px;color:var(--dim);line-height:1.6}
+
+    .sect-lab{margin:34px 44px 12px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+    .sect-note{margin:0 44px 14px;font-size:12px;color:var(--muted)}
+    .curve-wrap{margin:0 44px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px 8px}
+    .curve-wrap svg{width:100%;height:auto;display:block}
+    .axis-lab{font-size:10px;fill:var(--muted)}
+    .beat-dot{cursor:pointer;transition:r .15s}.beat-dot:hover{r:7}
+    .marker-lab{font-size:10px;font-weight:700;fill:var(--gold-lite)}
+
+    /* storyboard sheet */
+    .sheet{margin:0 44px;display:flex;flex-direction:column;gap:16px}
+    .panel{display:grid;grid-template-columns:320px 1fr;gap:0;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color .18s,transform .18s}
+    .panel.active{border-color:var(--gold);transform:translateY(-2px)}
+    .panel.has-twist{border-color:rgba(217,106,58,.5)}
+    .frame{position:relative;aspect-ratio:16/9;background:#000;border-right:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+    .frame img{width:100%;height:100%;object-fit:cover;display:block}
+    .frame-ph{display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;color:var(--muted);width:100%;height:100%}
+    .frame.empty .frame-ph{display:flex}
+    .frame-ph .big{font-size:12px;color:var(--dim);margin-bottom:6px;font-weight:600}
+    .frame-ph .sm{font-size:10px;line-height:1.5}
+    .frame-ph .sm code{color:var(--gold-dim)}
+    .frame .fnum{position:absolute;top:8px;left:8px;font-size:10px;font-weight:700;color:#fff;background:rgba(0,0,0,.55);padding:2px 8px;border-radius:4px;letter-spacing:.5px}
+
+    .meta{padding:16px 20px}
+    .meta-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+    .shotbadge{font-size:10px;font-weight:700;letter-spacing:1px;color:#000;background:var(--gold);padding:3px 9px;border-radius:4px}
+    .beatname{font-size:15px;font-weight:700;color:#fff}
+    .beattime{font-size:11px;color:var(--muted)}
+    .ttag{margin-left:auto;font-size:10px;color:var(--muted)}
+    .ttag b{color:var(--gold-lite)}
+    .field{margin-bottom:9px;font-size:12.5px;color:var(--dim);line-height:1.55}
+    .field .k{font-size:9px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px}
+    .field.mise .k{color:var(--gold)}
+    .field.action{color:#e4e4e4}
+    .twistbox{background:rgba(217,106,58,.10);border:1px solid rgba(217,106,58,.45);border-radius:9px;padding:10px 12px;margin:10px 0}
+    .twistbox .k{font-size:9px;letter-spacing:.8px;text-transform:uppercase;color:var(--twist);font-weight:700;display:block;margin-bottom:4px}
+    .twistbox p{font-size:12px;color:#e0c4b4;line-height:1.55}
+    .moodchips{display:flex;gap:5px;flex-wrap:wrap;margin:10px 0}
+    .moodchip{font-size:10px;padding:2px 8px;border-radius:100px;background:#202020;color:var(--dim)}
+    .sw{display:flex;gap:4px;margin:8px 0}
+    .sw div{width:15px;height:15px;border-radius:50%;border:1px solid rgba(255,255,255,.06)}
+    .t2i{font-size:10px;color:#666;font-family:'SF Mono','Fira Code',monospace;line-height:1.5;background:#101010;border:1px solid var(--border);border-radius:8px;padding:9px 11px;margin-top:8px}
+    .t2i .k{color:var(--gold-dim);display:block;margin-bottom:4px;font-size:9px;letter-spacing:.5px;font-family:inherit}
+
+    footer{margin:40px 44px 0;border-top:1px solid var(--border);padding-top:24px;font-size:12px;color:var(--muted);line-height:1.7}
+    footer b{color:var(--dim)}
+    @media(max-width:720px){.panel{grid-template-columns:1fr}.frame{border-right:none;border-bottom:1px solid var(--border)}.analysis{grid-template-columns:1fr}}
+
+    /* site nav */
+    .site-nav{display:flex;align-items:center;gap:4px;padding:12px 44px;border-bottom:1px solid var(--border);background:var(--surface);position:sticky;top:0;z-index:20}
+    .site-nav .brand{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;margin-right:auto}
+    .site-nav a{font-size:12.5px;color:var(--dim);text-decoration:none;padding:6px 13px;border-radius:100px;transition:all .14s}
+    .site-nav a:hover{color:#fff;background:#1e1e1e}
+    .site-nav a.on{color:var(--gold);background:rgba(201,162,39,.1)}
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <span class="brand">E.V.E Creator</span>
+    <a href="eve.html">Home</a>
+    <a href="index.html">ShotSeed</a>
+    <a href="storyboard.html" class="on">Story Flow</a>
+    <a href="concept_lab.html">Concept Lab</a>
+  </nav>
+  <header>
+    <div class="logo-row"><h1>E.V.E Creator</h1><span class="badge">Storyboard Sheet · Director-Grounded</span></div>
+    <p class="subtitle">아이디어 → 트위스트·미장셴 분석 → 스토리보드 시트 · 프레임은 프롬프트로 GPT 생성해 채움</p>
+  </header>
+
+  <div class="idea">
+    <div class="lab">Input Idea</div>
+    <div class="txt">혼자 노는 노인의, 따뜻하고 익살스러운 픽사풍 단편</div>
+    <div class="chips">
+      <span class="chip">장르: 코믹 드라마</span><span class="chip">무드: 따뜻 · 익살</span>
+      <span class="chip">3D · 미국 애니</span><span class="chip ref">grounded in «Geri's Game» (Pixar)</span>
+    </div>
+    <div class="analysis">
+      <div class="an-box twist"><div class="h">Core Twist</div><p>약자(소심한 자아)가 <b>힘이 아니라 속임수</b>로 이긴다. 상대가 곧 자기 자신이라, 이겨도 진 것도 결국 자기 — <b>자기와의 게임에서 스스로를 이기는 아이러니</b>. (셋업: beat 2의 "자기와 둔다" → 페이오프: beat 4의 속임수)</p></div>
+      <div class="an-box mise"><div class="h">Mise-en-scène Motif</div><p>마주 놓인 두 의자 = 자아의 분열. 빈 가을 공원 = 고독·황혼. 로우앵글 말 인서트 = 내적 위협을 크기로. 따뜻한 앰버 = 노스탤지어, 소품(틀니)의 소소함 = 유머.</p></div>
+    </div>
+  </div>
+
+  <div class="sect-lab">Pacing Curve — 긴장도 곡선</div>
+  <div class="sect-note">감독이 시간에 걸쳐 긴장을 어떻게 쌓고 푸는가. 점 클릭 시 해당 SHOT으로 이동. HOOK가 CLIMAX의 트위스트를 가능케 한다.</div>
+  <div class="curve-wrap"><div id="curve"></div></div>
+
+  <div class="sect-lab">Storyboard Sheet — 컷별 콘티</div>
+  <div class="sect-note">프레임 = 그림 자리 (해당 프롬프트로 GPT/DALL·E 생성 → <code>storyboard_frames/beatN.png</code> 저장 시 자동 표시). 우측 = ACTION · CAMERA · 미장셴 · 트위스트.</div>
+  <div class="sheet" id="sheet"></div>
+
+  <footer>
+    <p><b>Method:</b> «Geri's Game» (Pixar)를 비트 단위로 분석 → 긴장도·<b>트위스트 메커니즘</b>·<b>미장셴</b>·비트별 샷 문법을 Layer 2 스키마(SCHEMA_L2.md)로 구조화. 프레임 그림은 각 SHOT의 T2I 프롬프트로 외부 생성(예: GPT/DALL·E)해 채운다 — "시스템은 설계, 생성은 툴/사람".</p>
+    <p>Built &amp; analyzed by <b>Junsu (Michael) Kim</b> — AI Filmmaker · ShotSeed / E.V.E Creator</p>
+  </footer>
+
+  <script>
+    const beats = [
+      {n:1,name:'설정',t:'0:00–0:35',tension:0.15,mood:['고요','따뜻'],
+        action:'가을 공원, 초록 체스 테이블에 노인이 홀로 앉아 판을 세팅한다.',
+        cam:'Wide · Eye-level/Slightly High · Static',
+        mise:'빈 공원 = 고독. 마주 놓인 두 의자 = 자기 대 자기. 가을 = 인생의 황혼. 따뜻한 백라이트로 노스탤지어.',
+        palette:['#9B6226','#D5A058','#C0392B','#6B7B3A','#A9C8E0'],
+        t2i:'cozy autumn park, lone elderly man at a green chess table between two benches, warm afternoon backlight, Pixar 3D, wide establishing shot, painterly bokeh'},
+      {n:2,name:'반전 소개',t:'0:35–1:10',tension:0.30,mood:['익살','호기심'],hook:true,
+        action:'노인이 반대편 의자로 옮겨 앉아 스스로 "상대"가 되어 둔다.',
+        cam:'Close-up 3/4 · Eye-level · OTS 왕복',
+        mise:'안경·모자를 바꿔 쓰며 두 인격을 분리. OTS 왕복 편집이 "두 사람"이라는 착시를 만든다.',
+        palette:['#912C30','#A15E57','#C97A5A','#AFCED9'],
+        t2i:'expressive elderly face, sly smile, glasses, blurred red autumn foliage, Pixar 3D close-up, 3/4 angle',
+        twist:'셋업 — "상대가 있나?" 궁금할 때 같은 노인이 맞은편에 앉는 반전으로 후크. 이 인격 분리가 후반 트위스트의 씨앗.'},
+      {n:3,name:'상승',t:'1:10–2:30',tension:0.55,mood:['긴장','압박'],
+        action:'공격적 자아가 소심한 자아를 몰아붙인다.',
+        cam:'Insert(말) · Low / Table-level · 빠른 반응컷',
+        mise:'말을 로우앵글로 크게 잡아 "위협"을 물리적 크기로. 리액션 CU로 압박 리듬.',
+        palette:['#E7A252','#DC8E34','#9E5F24','#6E6327'],
+        t2i:'macro golden chess king, low angle table level, shallow focus, tense reaction inserts, warm bokeh, Pixar 3D'},
+      {n:4,name:'반전 / 저점',t:'2:30–3:15',tension:0.78,mood:['반전','코믹'],
+        action:'소심한 자아가 가짜 심장 발작으로 상대를 속이고, 그 틈에 손을 뻗어 판을 돌린다.',
+        cam:'Medium → 극적 리액션 → 연결 컷',
+        mise:'발작의 과장된 연기 → 곧 드러나는 능청 = 코믹 반전. 판을 "돌리는" 물리 행동이 곧 서사의 반전.',
+        palette:['#7A3B2E','#C75B43','#E8B98C','#2C1810'],
+        t2i:'elderly man feigning a dramatic heart attack, a hand secretly turning the chessboard, comedic reversal, medium shot, Pixar 3D',
+        twist:'★ 핵심 트위스트 — 약자가 힘이 아니라 속임수로 이긴다. 상대가 곧 자기 자신이라 이긴 것도 진 것도 결국 자기. 자기와의 게임에서 스스로를 이기는 아이러니.'},
+      {n:5,name:'클라이맥스',t:'3:15–4:15',tension:0.95,mood:['통쾌','환희'],climax:true,
+        action:'돌린 판으로 소심한 자아가 체크메이트. 통쾌한 승리.',
+        cam:'CU × Wide 교차 · 통쾌한 리듬',
+        mise:'승리의 미소 CU + 전체 판 Wide 교차로 카타르시스. 톤이 밝아진다.',
+        palette:['#F2884B','#E8C94B','#C0392B','#3E8E9A'],
+        t2i:'triumphant checkmate, victorious sly smile close-up intercut with a wide of the board, warm bright tone, Pixar 3D'},
+      {n:6,name:'해소',t:'4:15–4:40',tension:0.25,mood:['흐뭇','여운'],
+        action:'이긴 자아가 상(틀니)을 받아 끼우고 흐뭇해한다.',
+        cam:'Close-up · Static',
+        mise:'상이 "틀니"라는 소소함 = 따뜻한 유머로 무게를 덜어낸다. 정적 CU로 여운.',
+        palette:['#C2522A','#E8C9A0','#6B4F3A','#F2E6D4'],
+        t2i:'warm satisfied close-up of an old man putting in dentures, gentle stillness, soft resolution, Pixar 3D'},
+    ];
+
+    // pacing curve
+    const W=1000,H=230,x0=60,x1=940,yTop=34,yBot=180,base=196;
+    const pts=beats.map((b,i)=>({x:x0+i*((x1-x0)/(beats.length-1)),y:yTop+(1-b.tension)*(yBot-yTop),b}));
+    function smooth(p){let d=`M ${p[0].x} ${p[0].y}`;for(let i=0;i<p.length-1;i++){const p0=p[i-1]||p[i],p1=p[i],p2=p[i+1],p3=p[i+2]||p2;d+=` C ${p1.x+(p2.x-p0.x)/6} ${p1.y+(p2.y-p0.y)/6}, ${p2.x-(p3.x-p1.x)/6} ${p2.y-(p3.y-p1.y)/6}, ${p2.x} ${p2.y}`;}return d;}
+    const line=smooth(pts),area=line+` L ${x1} ${base} L ${x0} ${base} Z`;
+    const dots=pts.map(p=>{
+      const mk=p.b.hook?`<text class="marker-lab" x="${p.x}" y="${p.y-14}" text-anchor="middle">HOOK</text>`:p.b.climax?`<text class="marker-lab" x="${p.x}" y="${p.y-14}" text-anchor="middle">CLIMAX</text>`:'';
+      return `${mk}<circle class="beat-dot" cx="${p.x}" cy="${p.y}" r="5" fill="#0d0d0d" stroke="#c9a227" stroke-width="2" data-n="${p.b.n}"></circle><text class="axis-lab" x="${p.x}" y="${base+16}" text-anchor="middle">${p.b.name}</text>`;
+    }).join('');
+    document.getElementById('curve').innerHTML=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c9a227" stop-opacity="0.28"/><stop offset="100%" stop-color="#c9a227" stop-opacity="0"/></linearGradient></defs><text class="axis-lab" x="${x0-6}" y="${yTop+4}" text-anchor="end">high</text><text class="axis-lab" x="${x0-6}" y="${yBot}" text-anchor="end">low</text><path d="${area}" fill="url(#fill)"/><path d="${line}" fill="none" stroke="#c9a227" stroke-width="2.5"/>${dots}</svg>`;
+
+    // storyboard sheet
+    document.getElementById('sheet').innerHTML=beats.map(b=>`
+      <div class="panel ${b.twist?'has-twist':''}" id="beat-${b.n}">
+        <div class="frame empty">
+          <span class="fnum">SC ${b.n}</span>
+          <img src="storyboard_frames/beat${b.n}.png" alt="" onerror="this.closest('.frame').classList.add('empty');this.remove();" onload="this.closest('.frame').classList.remove('empty')">
+          <div class="frame-ph"><div class="big">프레임 그림 자리</div><div class="sm">이 SHOT의 T2I 프롬프트로 생성 →<br><code>storyboard_frames/beat${b.n}.png</code></div></div>
+        </div>
+        <div class="meta">
+          <div class="meta-top"><span class="shotbadge">SHOT ${b.n}</span><span class="beatname">${b.name}</span><span class="beattime">${b.t}</span><span class="ttag">tension <b>${b.tension.toFixed(2)}</b></span></div>
+          <div class="field action"><span class="k">Action</span>${b.action}</div>
+          <div class="field"><span class="k">Camera</span>${b.cam}</div>
+          <div class="field mise"><span class="k">Mise-en-scène</span>${b.mise}</div>
+          ${b.twist?`<div class="twistbox"><span class="k">${b.name==='반전 / 저점'?'★ Core Twist':'Twist setup'}</span><p>${b.twist}</p></div>`:''}
+          <div class="moodchips">${b.mood.map(m=>`<span class="moodchip">${m}</span>`).join('')}</div>
+          <div class="sw">${b.palette.map(c=>`<div style="background:${c}"></div>`).join('')}</div>
+          <div class="t2i"><span class="k">T2I PROMPT → GPT / DALL·E</span>${b.t2i}</div>
+        </div>
+      </div>`).join('');
+
+    // interactivity
+    function highlight(n){document.querySelectorAll('.panel').forEach(el=>el.classList.remove('active'));const el=document.getElementById('beat-'+n);if(el){el.classList.add('active');el.scrollIntoView({behavior:'smooth',block:'center'});}}
+    document.querySelectorAll('.beat-dot').forEach(d=>d.addEventListener('click',()=>highlight(+d.getAttribute('data-n'))));
+  </script>
+</body>
+</html>

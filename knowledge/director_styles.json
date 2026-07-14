@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "title": "Master Director Styles",
+    "purpose": "Abstracted signatures (narrative + visual) the system can borrow from — never copying, only transferring decision patterns.",
+    "version": "1.0",
+    "language": "en",
+    "note": "Style profiles are Level 2-3 abstractions of publicly discussed authorial signatures."
+  },
+  "directors": [
+    {
+      "id": "pixar",
+      "name": "Pixar (studio)",
+      "medium": "3D animation",
+      "narrative": "universal emotional cores, clear wants, wordless visual storytelling, bittersweet turns",
+      "visual": "warm painterly lighting, tactile surfaces, expressive character acting, staged depth",
+      "camera": "motivated moves, restrained; lets performance lead",
+      "color": "warm nostalgic palettes, emotional color scripts",
+      "themes": ["what it means to be alive", "connection", "letting go"]
+    },
+    {
+      "id": "disney_animation",
+      "name": "Walt Disney Animation",
+      "medium": "2D / 3D animation",
+      "narrative": "fairy-tale arcs, transformation, musical structure, hope",
+      "visual": "graphic clarity, iconic silhouettes, expressive color, hand-crafted texture (e.g. Paperman 2D-on-3D)",
+      "camera": "dynamic, illustrative, often theatrical",
+      "color": "bold, symbolic, high emotional saturation (or B&W + single accent)",
+      "themes": ["identity", "courage", "belonging"]
+    },
+    {
+      "id": "miyazaki",
+      "name": "Hayao Miyazaki / Studio Ghibli",
+      "medium": "2D animation",
+      "narrative": "wonder, ecology, ambiguous morality, 'ma' (breathing-space) pauses",
+      "visual": "lush natural detail, soft light, hand-drawn warmth, quiet wide shots",
+      "camera": "patient, observational; stillness as emotion",
+      "color": "naturalistic greens/skies, gentle gradients",
+      "themes": ["nature vs. progress", "growing up", "peace"]
+    },
+    {
+      "id": "wes_anderson",
+      "name": "Wes Anderson",
+      "medium": "live-action / stop-motion",
+      "narrative": "deadpan melancholy, chaptered structure, ensemble whimsy",
+      "visual": "perfect central symmetry, flat frontal staging, dollhouse worlds",
+      "camera": "whip pans, snap zooms, planimetric locked frames",
+      "color": "curated pastel palettes, per-film signature scheme",
+      "themes": ["family", "nostalgia", "grief under whimsy"]
+    },
+    {
+      "id": "bong_joon_ho",
+      "name": "Bong Joon-ho",
+      "medium": "live-action",
+      "narrative": "genre-blending, class satire, tonal whiplash, precise reversals",
+      "visual": "meticulous staging, vertical/spatial metaphor, storyboarded to the frame",
+      "camera": "controlled, geometric, motivated moves; famous rigorous boards",
+      "color": "grounded with pointed accents",
+      "themes": ["class", "systems", "human absurdity"]
+    },
+    {
+      "id": "ridley_scott",
+      "name": "Ridley Scott",
+      "medium": "live-action",
+      "narrative": "world-first immersion, mythic scope, atmosphere over exposition",
+      "visual": "painterly detailed storyboards ('Ridleygrams'), smoke/haze, layered light shafts",
+      "camera": "multi-camera coverage, epic wides, textured close detail",
+      "color": "rich chiaroscuro, industrial teal/amber, atmosphere",
+      "themes": ["humanity vs. creation", "survival", "empire"]
+    },
+    {
+      "id": "james_cameron",
+      "name": "James Cameron",
+      "medium": "live-action / VFX",
+      "narrative": "high-stakes momentum, tech-and-heart, relentless escalation",
+      "visual": "kinetic action geometry, immersive scale, spectacle with clarity",
+      "camera": "dynamic tracking, crash energy, immersive rigs",
+      "color": "cool tech blues vs. warm human tones",
+      "themes": ["technology", "love under pressure", "nature's power"]
+    },
+    {
+      "id": "tim_burton",
+      "name": "Tim Burton",
+      "medium": "live-action / stop-motion",
+      "narrative": "gothic fairy tale, outsider heroes, whimsical melancholy",
+      "visual": "expressionist spirals, exaggerated silhouettes, storybook decay",
+      "camera": "theatrical, canted, swooping",
+      "color": "desaturated gothic + candy accents; German Expressionist contrast",
+      "themes": ["the misunderstood outsider", "death as whimsy", "conformity"]
+    },
+    {
+      "id": "denis_villeneuve",
+      "name": "Denis Villeneuve",
+      "medium": "live-action",
+      "narrative": "slow-burn awe, scale-of-the-human-against-the-vast, restraint",
+      "visual": "monumental negative space, fog, silhouettes against immensity",
+      "camera": "patient, symmetrical, glacial pushes",
+      "color": "monochrome washes (amber, slate, teal), tonal blocks",
+      "themes": ["destiny", "communication", "the sublime"]
+    }
+  ]
+}

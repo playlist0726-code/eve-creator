@@ -1,0 +1,13 @@
+{
+  "_comment": "E.V.E Creator 스토리보드 데이터. generate_frames.py와 storyboard.html이 함께 참조하는 프롬프트 원본. style_suffix로 콘티 화풍을 한 곳에서 통일.",
+  "style_suffix": "cinematic animation storyboard frame, painterly concept art, warm autumn palette, soft cinematic lighting, 16:9 composition",
+  "reference": "Pixar · Geri's Game",
+  "beats": [
+    { "n": 1, "name": "설정",        "prompt": "cozy autumn park, a lone elderly man at a green chess table between two park benches, warm afternoon backlight, Pixar 3D style, wide establishing shot, painterly bokeh" },
+    { "n": 2, "name": "반전 소개",   "prompt": "expressive elderly face, sly smile, round glasses, wispy white hair, blurred red autumn foliage background, Pixar 3D close-up, three-quarter angle" },
+    { "n": 3, "name": "상승",        "prompt": "macro golden chess king piece, low angle at table level, shallow depth of field, tense reaction, warm bokeh, Pixar 3D" },
+    { "n": 4, "name": "반전/저점",   "prompt": "elderly man feigning a dramatic heart attack while a hand secretly turns the chessboard, comedic reversal, medium shot, autumn park, Pixar 3D" },
+    { "n": 5, "name": "클라이맥스",  "prompt": "triumphant checkmate, victorious sly smile close-up intercut with a wide of the chess board, warm bright tone, autumn park, Pixar 3D" },
+    { "n": 6, "name": "해소",        "prompt": "warm satisfied close-up of an old man putting in his dentures, gentle stillness, soft resolution, autumn park, Pixar 3D" }
+  ]
+}

@@ -1,0 +1,30 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# Vercel and dependencies
+.vercel/
+node_modules/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS and editor files
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Local-only copyrighted reference media
+*.mp4
+
+# Generated storyboard outputs (keep storyboard_frames/README.md tracked)
+storyboard_frames/*.png
+storyboard_frames/*.jpg
+storyboard_frames/*.jpeg
+storyboard_frames/*.webp

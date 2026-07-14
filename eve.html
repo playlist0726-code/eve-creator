@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E.V.E Creator — 1인 영화 제작 코파일럿</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#0d0d0d;--surface:#131313;--card:#1a1a1a;--border:#272727;
+      --gold:#c9a227;--gold-dim:#7a6118;--gold-lite:#e8bc3a;
+      --text:#e4e4e4;--muted:#5a5a5a;--dim:#8a8a8a;
+    }
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+    /* site nav */
+    .site-nav{display:flex;align-items:center;gap:4px;padding:14px 44px;border-bottom:1px solid var(--border);background:var(--surface);position:sticky;top:0;z-index:10}
+    .site-nav .brand{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;margin-right:auto}
+    .site-nav a{font-size:12.5px;color:var(--dim);text-decoration:none;padding:7px 14px;border-radius:100px;transition:all .14s}
+    .site-nav a:hover{color:#fff;background:#1e1e1e}
+    .site-nav a.on{color:var(--gold);background:rgba(201,162,39,.1)}
+
+    .hero{padding:64px 44px 40px;max-width:900px}
+    .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px}
+    h1{font-size:46px;font-weight:800;letter-spacing:-1px;color:#fff;line-height:1.08;margin-bottom:16px}
+    .lead{font-size:17px;color:var(--dim);line-height:1.6;max-width:680px}
+    .lead b{color:var(--text)}
+
+    .section-lab{margin:14px 44px 16px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+
+    /* pipeline */
+    .pipe{display:flex;gap:12px;padding:0 44px;overflow-x:auto;flex-wrap:wrap}
+    .stage{flex:1 1 200px;min-width:190px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 18px 16px;position:relative}
+    .stage .num{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
+    .stage h3{font-size:16px;color:#fff;font-weight:700;margin-bottom:6px}
+    .stage p{font-size:12.5px;color:var(--dim);line-height:1.55}
+    .stage .tag{display:inline-block;margin-top:10px;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);padding:2px 8px;border-radius:4px}
+
+    /* tool cards */
+    .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;padding:0 44px;margin-top:8px}
+    .kb{display:flex;flex-wrap:wrap;gap:8px;padding:0 44px}
+    .kb .kbi{font-size:11.5px;color:var(--dim);background:var(--card);border:1px solid var(--border);border-radius:100px;padding:6px 13px}
+    .kb .kbi b{color:var(--gold-lite);font-weight:600}
+    .tool{display:block;text-decoration:none;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;transition:border-color .18s,transform .18s}
+    .tool:hover{border-color:var(--gold);transform:translateY(-3px)}
+    .tool .k{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+    .tool h2{font-size:22px;color:#fff;font-weight:700;margin-bottom:8px}
+    .tool p{font-size:13px;color:var(--dim);line-height:1.6;margin-bottom:14px}
+    .tool .go{font-size:13px;color:var(--gold-lite);font-weight:600}
+
+    /* status */
+    .status{display:flex;gap:26px;flex-wrap:wrap;padding:22px 26px;margin:0 44px;background:#101010;border:1px solid var(--border);border-radius:14px}
+    .stat .n{font-size:24px;font-weight:800;color:var(--gold-lite);line-height:1}
+    .stat .l{font-size:11px;color:var(--muted);margin-top:5px}
+
+    footer{margin:44px 44px 0;border-top:1px solid var(--border);padding:24px 0 60px;font-size:12px;color:var(--muted);line-height:1.7}
+    footer b{color:var(--dim)}
+    @media(max-width:720px){.tools{grid-template-columns:1fr}h1{font-size:34px}.hero{padding:44px 24px 30px}.site-nav,.section-lab,.pipe,.tools,.status,footer{padding-left:24px;padding-right:24px;margin-left:0;margin-right:0}}
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <span class="brand">E.V.E Creator</span>
+    <a href="eve.html" class="on">Home</a>
+    <a href="index.html">ShotSeed</a>
+    <a href="storyboard.html">Story Flow</a>
+    <a href="concept_lab.html">Concept Lab</a>
+  </nav>
+
+  <div class="hero">
+    <div class="eyebrow">1-Person Film Copilot · Director-Grounded</div>
+    <h1>아이디어만 주면,<br>거장의 연출로 영화를 설계한다.</h1>
+    <p class="lead">무드·장르·장면·내용을 입력하면, <b>전문 애니메이션(픽사·디즈니)을 프레임 단위로 분석한 데이터</b>를 근거로 스토리·스크립트·스토리보드·컷별 프롬프트를 설계해준다. 결과물을 대신 만들지 않고, <b>"어떻게 만들지"를 전부 깔아준다.</b> 생성은 아이디어의 주인이 한다.</p>
+  </div>
+
+  <div class="section-lab">System Pipeline</div>
+  <div class="pipe">
+    <div class="stage"><div class="num">01</div><h3>아이디어</h3><p>무드·장르·만들고 싶은 장면·내용을 입력.</p><span class="tag">Input</span></div>
+    <div class="stage"><div class="num">02</div><h3>분석 데이터 (ShotSeed)</h3><p>샷 연출(Layer 1) + 서사·트위스트·미장셴(Layer 2). 픽사/디즈니, 2D/3D.</p><span class="tag">Grounding</span></div>
+    <div class="stage"><div class="num">03</div><h3>매칭 · 구조화</h3><p>의도에 맞는 샷 + 감독 문법(비트·페이싱)을 추천.</p><span class="tag">Reasoning</span></div>
+    <div class="stage"><div class="num">04</div><h3>스토리보드 · 프롬프트</h3><p>페이싱 곡선 + 컷별 콘티 + t2i/i2v 프롬프트.</p><span class="tag">Design</span></div>
+    <div class="stage"><div class="num">05</div><h3>생성 (외부)</h3><p>받은 프롬프트로 사용자가 이미지/영상 생성. 자동화 스크립트 지원.</p><span class="tag">Execute</span></div>
+  </div>
+
+  <div class="section-lab">Open a Tool</div>
+  <div class="tools">
+    <a class="tool" href="index.html">
+      <div class="k">Tool 01 · Data Engine</div>
+      <h2>ShotSeed</h2>
+      <p>스타일을 입력하면 분석된 샷 데이터에서 매칭해 T2I·I2V·워크플로우를 추천. 2D/3D 필터, 실제 분석 배지.</p>
+      <span class="go">열기 →</span>
+    </a>
+    <a class="tool" href="storyboard.html">
+      <div class="k">Tool 02 · Story Flow</div>
+      <h2>Storyboard Sheet</h2>
+      <p>감독 사고(트위스트·미장셴·페이싱)로 스토리보드를 설계. 프레임은 프롬프트로 자동 생성해 채움.</p>
+      <span class="go">열기 →</span>
+    </a>
+    <a class="tool" href="concept_lab.html">
+      <div class="k">Tool 03 · Validation</div>
+      <h2>Concept Lab</h2>
+      <p>아이디어를 만들기 전에 검증. 흥행 잠재력을 연구 기반 지표로 점수화하고, 구조·감독 렌즈·툴체인을 추천.</p>
+      <span class="go">열기 →</span>
+    </a>
+  </div>
+
+  <div class="section-lab">Knowledge Base (Layer 0)</div>
+  <div class="kb">
+    <span class="kbi"><b>Story structures</b> · 6 frameworks</span>
+    <span class="kbi"><b>Cinematography</b> · shots·angles·moves·comp</span>
+    <span class="kbi"><b>Mise-en-scène</b> · lighting·color·staging</span>
+    <span class="kbi"><b>Genres</b> · 6</span>
+    <span class="kbi"><b>Director styles</b> · 9 masters</span>
+    <span class="kbi"><b>Success factors</b> · researched predictors</span>
+    <span class="kbi"><b>AI toolchain</b> · 2026 models + routing</span>
+  </div>
+
+  <div class="section-lab">System Status</div>
+  <div class="status">
+    <div class="stat"><div class="n">14</div><div class="l">분석 샷 (Layer 1)</div></div>
+    <div class="stat"><div class="n">2</div><div class="l">프레임 분석 작품</div></div>
+    <div class="stat"><div class="n">6</div><div class="l">서사 비트 (Layer 2)</div></div>
+    <div class="stat"><div class="n">2D · 3D</div><div class="l">차원 구분</div></div>
+    <div class="stat"><div class="n">25 vs 10</div><div class="l">Grounded vs Naive (평가)</div></div>
+  </div>
+
+  <footer>
+    <p><b>E.V.E Creator</b> (구 SceneForge) · 데이터 엔진 <b>ShotSeed</b> 기반. 방법론: SCHEMA.md · SCHEMA_L2.md / 평가: evaluation/ / 로드맵: RESEARCH_PLAN.md</p>
+    <p>Built &amp; analyzed by <b>Junsu (Michael) Kim</b> — AI Filmmaker</p>
+  </footer>
+</body>
+</html>

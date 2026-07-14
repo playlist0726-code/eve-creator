@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Cinematography Grammar",
+    "purpose": "Shot vocabulary with emotional/narrative effect, so the system chooses shots by intent, not chance.",
+    "version": "1.0",
+    "language": "en"
+  },
+  "shot_sizes": [
+    { "id": "EWS", "name": "Extreme Wide Shot", "effect": "scale, isolation, geography; character dwarfed by world", "use": "establishing, epic, loneliness" },
+    { "id": "WS", "name": "Wide Shot", "effect": "context + full body; relationship to environment", "use": "establishing, blocking, staging" },
+    { "id": "MLS", "name": "Medium Long Shot", "effect": "body + some context; observational", "use": "dialogue in place, action setup" },
+    { "id": "MS", "name": "Medium Shot", "effect": "neutral, conversational; gesture + expression", "use": "dialogue, default coverage" },
+    { "id": "MCU", "name": "Medium Close-Up", "effect": "intimacy rising; face dominant", "use": "emotional dialogue" },
+    { "id": "CU", "name": "Close-Up", "effect": "emotion, focus, importance", "use": "reactions, key objects" },
+    { "id": "ECU", "name": "Extreme Close-Up", "effect": "intensity, detail, tension; part-of-whole", "use": "eyes, hands, critical inserts" },
+    { "id": "INSERT", "name": "Insert / Detail", "effect": "emphasis, information, punctuation", "use": "props, clues, transitions" }
+  ],
+  "angles": [
+    { "id": "eye_level", "effect": "neutral, equal, relatable" },
+    { "id": "high_angle", "effect": "subject weak, small, vulnerable, observed" },
+    { "id": "low_angle", "effect": "subject powerful, dominant, heroic or threatening" },
+    { "id": "overhead_topdown", "effect": "god's-eye, pattern, fate, detachment" },
+    { "id": "dutch_tilt", "effect": "unease, disorientation, instability" },
+    { "id": "over_the_shoulder", "effect": "relationship, POV anchoring, dialogue geometry" },
+    { "id": "pov", "effect": "subjective immersion; we are the character" }
+  ],
+  "movements": [
+    { "id": "static", "effect": "stability, observation, control, stillness" },
+    { "id": "pan", "effect": "reveal, follow, connect spaces horizontally" },
+    { "id": "tilt", "effect": "reveal scale/height; shift attention vertically" },
+    { "id": "dolly_in", "effect": "growing intensity, realization, drawn into emotion" },
+    { "id": "dolly_out", "effect": "isolation, abandonment, reveal of context" },
+    { "id": "tracking", "effect": "kinetic energy, keep pace with subject" },
+    { "id": "crane_boom", "effect": "grandeur, transition of perspective, epic sweep" },
+    { "id": "handheld", "effect": "immediacy, chaos, documentary realism, unease" },
+    { "id": "steadicam", "effect": "smooth immersion through space; long unbroken flow" },
+    { "id": "whip_pan", "effect": "energetic transition, comedic snap, disorientation" },
+    { "id": "crash_zoom", "effect": "sudden emphasis, shock, comedic punctuation" },
+    { "id": "rack_focus", "effect": "shift attention within a frame; connect two planes" }
+  ],
+  "lenses": [
+    { "id": "wide_angle", "mm": "14-35", "effect": "expansive space, exaggerated depth/distortion, grandeur or claustrophobia" },
+    { "id": "normal", "mm": "40-58", "effect": "human-eye natural perspective" },
+    { "id": "telephoto", "mm": "85-200+", "effect": "compression, flattening, voyeuristic isolation, shallow depth" },
+    { "id": "macro", "mm": "special", "effect": "extreme detail, texture, tiny worlds" }
+  ],
+  "composition_rules": [
+    { "id": "rule_of_thirds", "effect": "balanced, dynamic placement on 1/3 lines/intersections" },
+    { "id": "central_symmetry", "effect": "order, formality, unease, control (Kubrick/Wes Anderson)" },
+    { "id": "leading_lines", "effect": "guide the eye toward the subject" },
+    { "id": "framing_within_frame", "effect": "focus, entrapment, voyeurism (doors, windows)" },
+    { "id": "depth_layering", "effect": "foreground/mid/background = richness and dimensionality" },
+    { "id": "negative_space", "effect": "isolation, tension, breathing room" },
+    { "id": "headroom_leadroom", "effect": "correct space above head / in look direction feels natural; violate for unease" },
+    { "id": "180_degree_rule", "effect": "consistent screen direction; keep spatial coherence" },
+    { "id": "shot_reverse_shot", "effect": "dialogue geometry; also 'two characters' illusion (one actor)" }
+  ],
+  "editing_rhythm": [
+    { "id": "long_take", "effect": "immersion, real time, tension, virtuosity" },
+    { "id": "slow_cutting", "effect": "calm, contemplative, weight" },
+    { "id": "fast_cutting", "effect": "energy, chaos, urgency, comedy" },
+    { "id": "match_cut", "effect": "poetic linkage of two images (shape/motion/idea)" },
+    { "id": "cross_cutting", "effect": "parallel tension across spaces/times" },
+    { "id": "montage", "effect": "compress time; convey process or emotion" }
+  ]
+}

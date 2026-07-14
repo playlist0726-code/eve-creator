@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "Story Structures & Beat Frameworks",
+    "purpose": "Canonical narrative frameworks E.V.E Creator maps ideas onto. position = relative placement 0.0 (start) to 1.0 (end).",
+    "version": "1.0",
+    "language": "en"
+  },
+  "structures": [
+    {
+      "id": "three_act",
+      "name": "Three-Act Structure",
+      "origin": "Aristotle / Syd Field",
+      "best_for": "most narrative film; safe default",
+      "beats": [
+        { "name": "Setup", "position": 0.0, "function": "establish world, tone, protagonist, normalcy" },
+        { "name": "Inciting Incident", "position": 0.1, "function": "disrupt normalcy; the story truly begins" },
+        { "name": "Plot Point 1", "position": 0.25, "function": "protagonist commits; enter Act 2" },
+        { "name": "Midpoint", "position": 0.5, "function": "reversal / raise stakes / point of no return" },
+        { "name": "Plot Point 2", "position": 0.75, "function": "lowest point; forces final choice" },
+        { "name": "Climax", "position": 0.9, "function": "peak confrontation; question answered" },
+        { "name": "Resolution", "position": 1.0, "function": "new normal; emotional payoff" }
+      ]
+    },
+    {
+      "id": "hero_journey",
+      "name": "The Hero's Journey (12 stages)",
+      "origin": "Joseph Campbell / Christopher Vogler",
+      "best_for": "adventure, transformation, myth, animation features",
+      "beats": [
+        { "name": "Ordinary World", "position": 0.0, "function": "hero's normal life" },
+        { "name": "Call to Adventure", "position": 0.08, "function": "the challenge appears" },
+        { "name": "Refusal of the Call", "position": 0.13, "function": "fear / hesitation" },
+        { "name": "Meeting the Mentor", "position": 0.18, "function": "guidance / tools" },
+        { "name": "Crossing the Threshold", "position": 0.25, "function": "commit to the journey" },
+        { "name": "Tests, Allies, Enemies", "position": 0.38, "function": "learn the new world" },
+        { "name": "Approach to the Inmost Cave", "position": 0.5, "function": "prepare for the ordeal" },
+        { "name": "The Ordeal", "position": 0.6, "function": "greatest fear / death-rebirth" },
+        { "name": "Reward", "position": 0.68, "function": "seize the prize" },
+        { "name": "The Road Back", "position": 0.78, "function": "consequences / pursuit" },
+        { "name": "Resurrection", "position": 0.9, "function": "final test; true transformation" },
+        { "name": "Return with the Elixir", "position": 1.0, "function": "bring change home" }
+      ]
+    },
+    {
+      "id": "save_the_cat",
+      "name": "Save the Cat! Beat Sheet (15 beats)",
+      "origin": "Blake Snyder",
+      "best_for": "commercial features; tight, sellable structure",
+      "beats": [
+        { "name": "Opening Image", "position": 0.0, "function": "tone + 'before' snapshot" },
+        { "name": "Theme Stated", "position": 0.05, "function": "the film's argument, spoken" },
+        { "name": "Set-Up", "position": 0.1, "function": "world + flaws + stakes" },
+        { "name": "Catalyst", "position": 0.12, "function": "life-changing event" },
+        { "name": "Debate", "position": 0.18, "function": "should I go?" },
+        { "name": "Break into Two", "position": 0.25, "function": "enter the new world" },
+        { "name": "B Story", "position": 0.3, "function": "relationship / theme carrier" },
+        { "name": "Fun and Games", "position": 0.4, "function": "the 'promise of the premise'" },
+        { "name": "Midpoint", "position": 0.5, "function": "false victory or false defeat; stakes raised" },
+        { "name": "Bad Guys Close In", "position": 0.6, "function": "pressure mounts" },
+        { "name": "All Is Lost", "position": 0.75, "function": "rock bottom; 'whiff of death'" },
+        { "name": "Dark Night of the Soul", "position": 0.8, "function": "despair before insight" },
+        { "name": "Break into Three", "position": 0.85, "function": "the solution; A+B merge" },
+        { "name": "Finale", "position": 0.92, "function": "execute; prove change" },
+        { "name": "Final Image", "position": 1.0, "function": "'after' snapshot; mirror of opening" }
+      ]
+    },
+    {
+      "id": "pixar_spine",
+      "name": "The Story Spine (Pixar)",
+      "origin": "Kenn Adams / Pixar lore",
+      "best_for": "shorts; quick structural skeleton",
+      "template": "Once upon a time ___. Every day ___. Until one day ___. Because of that ___. Because of that ___. Until finally ___. And ever since then ___.",
+      "beats": [
+        { "name": "Once upon a time", "position": 0.0, "function": "status quo" },
+        { "name": "Every day", "position": 0.1, "function": "routine / rules of the world" },
+        { "name": "Until one day", "position": 0.25, "function": "disruption (inciting)" },
+        { "name": "Because of that", "position": 0.45, "function": "consequence chain 1" },
+        { "name": "Because of that", "position": 0.65, "function": "consequence chain 2 (escalation)" },
+        { "name": "Until finally", "position": 0.88, "function": "climax / resolution of the disruption" },
+        { "name": "Ever since then", "position": 1.0, "function": "new normal" }
+      ]
+    },
+    {
+      "id": "kishotenketsu",
+      "name": "Kishōtenketsu (4-act, conflict-optional)",
+      "origin": "East Asian narrative",
+      "best_for": "quiet, twist-driven, or slice-of-life shorts (no antagonist needed)",
+      "beats": [
+        { "name": "Ki (Introduction)", "position": 0.0, "function": "introduce characters/world" },
+        { "name": "Shō (Development)", "position": 0.3, "function": "deepen, no conflict required" },
+        { "name": "Ten (Twist)", "position": 0.6, "function": "an unexpected element recontextualizes everything" },
+        { "name": "Ketsu (Conclusion)", "position": 0.9, "function": "reconcile the twist; meaning lands" }
+      ]
+    },
+    {
+      "id": "freytag",
+      "name": "Freytag's Pyramid",
+      "origin": "Gustav Freytag",
+      "best_for": "tragedy, classical drama",
+      "beats": [
+        { "name": "Exposition", "position": 0.0, "function": "background + setup" },
+        { "name": "Rising Action", "position": 0.25, "function": "complications build" },
+        { "name": "Climax", "position": 0.5, "function": "turning point (centered)" },
+        { "name": "Falling Action", "position": 0.7, "function": "consequences unwind" },
+        { "name": "Denouement", "position": 1.0, "function": "resolution / catharsis" }
+      ]
+    }
+  ],
+  "pixar_22_rules_selected": [
+    "You admire a character for trying more than for their successes.",
+    "Keep in mind what's interesting to you as an audience, not what's fun to do as a writer.",
+    "Theme is important, but you won't see what the story is actually about until the end. Now rewrite.",
+    "Come up with your ending before your middle. Endings are hard; get yours working first.",
+    "Simplify. Focus. Combine characters. Hop over detours. You'll feel like you're losing material but it sets you free.",
+    "What is your character good at, comfortable with? Throw the opposite at them. Challenge them.",
+    "Why must you tell THIS story? What's the belief burning within you that your story feeds off of?",
+    "Discount the 1st thing that comes to mind. And the 2nd, 3rd, 4th, 5th — get the obvious out of the way.",
+    "Give your characters opinions. Passive/malleable might seem likable to you, but it's poison to the audience.",
+    "Coincidences to get characters INTO trouble are great; coincidences to get them OUT are cheating."
+  ]
+}

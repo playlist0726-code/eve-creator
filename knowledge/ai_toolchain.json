@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "AI Generation Toolchain (2026)",
+    "purpose": "Current image/video models and when to route to each, so the system recommends the right tool per shot.",
+    "version": "1.0",
+    "language": "en",
+    "as_of": "2026-07",
+    "note": "Fast-moving space — treat versions as current-best snapshot; re-verify before relying."
+  },
+  "video_models": [
+    { "id": "veo_3_1", "vendor": "Google", "strengths": ["cinematic realism", "prompt adherence", "native audio", "4K landscape/portrait", "natural scenes: water/foliage/fabric/hair"], "route_for": "photoreal cinematic shots, establishing, nature, hero beauty" },
+    { "id": "kling_3_0", "vendor": "Kuaishou", "strengths": ["multi-shot sequences (up to ~6 shots in one pass)", "narrative production", "strong motion"], "route_for": "sequence/montage beats, narrative continuity" },
+    { "id": "runway_gen_4_5", "vendor": "Runway", "strengths": ["camera control", "motion brush (paint motion)", "video-to-video", "reference character consistency", "keyframes"], "route_for": "precise camera moves, controlled character shots, i2v with references" },
+    { "id": "minimax_hailuo_2_3", "vendor": "MiniMax", "strengths": ["expressive motion", "value"], "route_for": "character motion, cost-sensitive drafts" },
+    { "id": "luma_ray_3", "vendor": "Luma", "strengths": ["fast iteration", "dream/stylized motion"], "route_for": "stylized or quick exploratory clips" },
+    { "id": "seedance", "vendor": "ByteDance", "strengths": ["strong i2v", "audio generation"], "route_for": "image-to-video with sound" },
+    { "id": "sora_2", "vendor": "OpenAI", "strengths": ["quality"], "status": "DEPRECATING — web/app end 2026-04-26, API end 2026-09-24", "route_for": "avoid for new pipelines; migrate off" }
+  ],
+  "image_models": [
+    { "id": "midjourney_v6", "strengths": ["aesthetic quality", "style references (--sref)", "art direction"], "route_for": "key visuals, stylized frames, mood" },
+    { "id": "gpt_image_1", "vendor": "OpenAI", "strengths": ["prompt adherence", "text in image", "diagrams", "API automation"], "route_for": "storyboard frames, precise composition, automated batch (generate_frames.py)" },
+    { "id": "nano_banana_pro", "strengths": ["4K", "text", "general"], "route_for": "high-res one-off frames" },
+    { "id": "stable_diffusion_xl", "strengths": ["local control", "LoRA/ControlNet", "free"], "route_for": "consistent characters via training, controlled composition" }
+  ],
+  "routing_rules": [
+    { "when": "establishing / photoreal beauty", "use_image": "midjourney_v6", "use_video": "veo_3_1" },
+    { "when": "multi-shot montage / sequence", "use_video": "kling_3_0" },
+    { "when": "precise camera move or character consistency", "use_video": "runway_gen_4_5" },
+    { "when": "storyboard frame (automated)", "use_image": "gpt_image_1" },
+    { "when": "trained recurring character", "use_image": "stable_diffusion_xl" }
+  ],
+  "pipeline_pattern": "t2i (still, chosen image model) -> i2v (motion, chosen video model) -> assemble/VO/music in editor. Keep character reference locked across shots for consistency."
+}

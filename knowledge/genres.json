@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "title": "Genre Conventions",
+    "purpose": "Per-genre expectations for structure, pacing, tone, look — so generated concepts fit (or knowingly subvert) their genre.",
+    "version": "1.0",
+    "language": "en"
+  },
+  "genres": [
+    {
+      "id": "animated_short",
+      "name": "Animated Short",
+      "runtime": "1-10 min",
+      "structure": "pixar_spine or kishotenketsu",
+      "pacing": "quick setup, single clear want, one turn, emotional or comedic payoff",
+      "tone": "warm, universal, often wordless",
+      "look": "expressive character animation, saturated or nostalgic palettes, strong silhouettes",
+      "conventions": ["one protagonist, one problem", "visual storytelling over dialogue", "emotional or comedic button ending"],
+      "hit_levers": ["instant relatability", "clear visual gag or heart moment", "strong last image"]
+    },
+    {
+      "id": "comedy",
+      "name": "Comedy",
+      "structure": "save_the_cat / three_act",
+      "pacing": "fast cutting, timing-driven, escalating set-pieces",
+      "tone": "light, ironic, playful",
+      "look": "high-key, bright, saturated",
+      "conventions": ["comic reversal", "rule of three", "status swaps", "running gags"],
+      "hit_levers": ["surprise + recognition", "likable underdog", "shareable moments"]
+    },
+    {
+      "id": "drama",
+      "name": "Drama",
+      "structure": "three_act / freytag",
+      "pacing": "measured, scene-driven, character interiority",
+      "tone": "grounded, emotional",
+      "look": "naturalistic or low-key; motivated light; restrained palette",
+      "conventions": ["internal conflict externalized", "quiet climaxes", "subtext"],
+      "hit_levers": ["emotional truth", "relatable stakes", "catharsis"]
+    },
+    {
+      "id": "thriller",
+      "name": "Thriller / Suspense",
+      "structure": "three_act with ticking clock",
+      "pacing": "accelerating, cross-cutting, withheld information",
+      "tone": "tense, paranoid",
+      "look": "low-key, cool desaturation, dutch tilts, shadow",
+      "conventions": ["dramatic irony", "reversals", "escalating threat"],
+      "hit_levers": ["dread + curiosity", "a great twist", "momentum"]
+    },
+    {
+      "id": "sci_fi_fantasy",
+      "name": "Sci-Fi / Fantasy",
+      "structure": "hero_journey",
+      "pacing": "world-building front-loaded, epic escalation",
+      "tone": "wonder, awe, or dread",
+      "look": "epic scale (EWS, crane), designed palettes, atmosphere",
+      "conventions": ["a new world with rules", "mentor + threshold", "spectacle with stakes"],
+      "hit_levers": ["awe", "clear emotional core beneath spectacle", "iconic imagery"]
+    },
+    {
+      "id": "romance",
+      "name": "Romance",
+      "structure": "three_act (relationship arc)",
+      "pacing": "meet, spark, obstacle, grand gesture",
+      "tone": "warm, yearning",
+      "look": "backlight/rim, golden hour, warm palettes, close-ups",
+      "conventions": ["meet-cute", "false breakup", "reunion"],
+      "hit_levers": ["chemistry", "yearning", "earned reunion"]
+    }
+  ]
+}

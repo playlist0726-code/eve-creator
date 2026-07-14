@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "title": "Commercial-Success & Engagement Factors",
+    "purpose": "Researched predictors of audience engagement, box-office, and streaming retention — the basis of the Hit-Potential scoring module.",
+    "version": "1.0",
+    "language": "en",
+    "caveat": "Predictors are correlational and context-dependent; use as guidance/scoring, not guarantee."
+  },
+  "research_findings": [
+    {
+      "finding": "Screenplay text-network size (main component) predicts opening-weekend box office with high significance (p < 0.0001).",
+      "implication": "Structural richness/connectedness of the story matters, measurable pre-production.",
+      "source": "Predicting Box Office from the Screenplay (empirical model)"
+    },
+    {
+      "finding": "AI screenplay analysis achieved ~87% financial accuracy on historical greenlight decisions, outperforming a studio's own process by ~5x.",
+      "implication": "Pre-production idea validation is viable and valuable.",
+      "source": "ScriptBook"
+    },
+    {
+      "finding": "NLP + ML at pre-production improved profitability prediction by ~11.9% (F1 ~75.1%).",
+      "implication": "Text/story features carry real signal before a frame is shot.",
+      "source": "Screenplay text-analytical approaches"
+    },
+    {
+      "finding": "Netflix judges titles by completion rate, viewing velocity, and rewatch behavior — retention, not just starts.",
+      "implication": "Optimize for finishing and re-watching, not just the hook.",
+      "source": "Netflix retention research"
+    },
+    {
+      "finding": "~65% of Netflix movies run 90-120 min; that band boosts completion by ~20%.",
+      "implication": "Runtime discipline improves completion; keep it tight.",
+      "source": "Netflix content analysis"
+    },
+    {
+      "finding": "Movies now outperform TV on Netflix on completion, lower viewership decline, and minutes streamed.",
+      "implication": "Self-contained, finishable stories retain well.",
+      "source": "Netflix trend analysis"
+    },
+    {
+      "finding": "Global, culturally-specific storytelling (e.g., Squid Game, Lupin) drives loyalty and differentiation.",
+      "implication": "Specific + universal beats generic; local texture travels.",
+      "source": "Netflix originals strategy"
+    }
+  ],
+  "hit_potential_scoring": {
+    "note": "Dimensions the validation module scores each candidate concept on (0-1). Weighted sum = hit-potential.",
+    "dimensions": [
+      { "id": "emotional_core", "weight": 0.20, "measures": "clear, relatable feeling the audience latches onto" },
+      { "id": "hook_strength", "weight": 0.15, "measures": "compelling disruption early (front-loaded interest)" },
+      { "id": "structural_completeness", "weight": 0.15, "measures": "beats present, connected, escalating (text-network proxy)" },
+      { "id": "originality_vs_familiarity", "weight": 0.12, "measures": "fresh angle on a recognizable promise (novel but legible)" },
+      { "id": "genre_fit", "weight": 0.10, "measures": "delivers or knowingly subverts genre expectations" },
+      { "id": "runtime_discipline", "weight": 0.08, "measures": "length fits format for completion" },
+      { "id": "specificity", "weight": 0.10, "measures": "concrete, culturally textured detail (not generic)" },
+      { "id": "shareability", "weight": 0.10, "measures": "a memorable image/moment that travels" }
+    ],
+    "bands": [
+      { "range": "0.80-1.00", "label": "Strong — advance", "action": "develop fully" },
+      { "range": "0.60-0.79", "label": "Promising — refine", "action": "strengthen weakest dimensions" },
+      { "range": "0.00-0.59", "label": "Weak — reframe", "action": "regenerate concept" }
+    ]
+  }
+}
