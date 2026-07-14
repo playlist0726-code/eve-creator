@@ -83,6 +83,8 @@
     .site-nav a{font-size:12.5px;color:var(--dim);text-decoration:none;padding:6px 13px;border-radius:100px;transition:all .14s}
     .site-nav a:hover{color:#fff;background:#1e1e1e}
     .site-nav a.on{color:var(--gold);background:rgba(201,162,39,.1)}
+    .source-badge{display:inline-flex;font-size:10px;letter-spacing:.7px;text-transform:uppercase;color:#4caf7d;border:1px solid rgba(76,175,125,.3);background:rgba(76,175,125,.08);padding:5px 9px;border-radius:100px;margin-bottom:12px}.source-badge.fallback{color:#d9a13a;border-color:rgba(217,161,58,.35);background:rgba(217,161,58,.08)}
+    .craft{font-size:11px;color:var(--dim);line-height:1.55;background:#101010;border:1px solid var(--border);border-radius:8px;padding:9px 11px;margin-top:8px}.craft .k{display:block;font-size:9px;letter-spacing:.7px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:4px}.citations{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}.citation{font-size:10px;padding:3px 7px;border-radius:100px;color:var(--gold-lite);background:rgba(201,162,39,.09)}
   </style>
 </head>
 <body>
@@ -98,7 +100,8 @@
     <p class="subtitle">Idea → twist and mise-en-scène analysis → director-grounded storyboard · prompts supply every frame</p>
   </header>
 
-  <div class="idea">
+  <div class="idea" id="ideaBlock">
+    <span class="source-badge fallback">Curated fallback</span>
     <div class="lab">Input Idea</div>
     <div class="txt">A warm, playful animated short about an old man who plays alone.</div>
     <div class="chips">
@@ -124,8 +127,9 @@
     <p>Built &amp; analyzed by <b>Junsu (Michael) Kim</b> — AI Filmmaker · ShotSeed / E.V.E Creator</p>
   </footer>
 
+  <script src="js/eve-state.js"></script>
   <script>
-    const beats = [
+    const fixedBeats = [
       {n:1,name:'Setup',t:'0:00–0:35',tension:0.15,mood:['Quiet','Warm'],
         action:'In an autumn park, an old man sits alone at a green chess table and sets the board.',
         cam:'Wide · Eye-level/Slightly High · Static',
@@ -166,40 +170,49 @@
         t2i:'warm satisfied close-up of an old man putting in dentures, gentle stillness, soft resolution, Pixar 3D'},
     ];
 
-    // pacing curve
+    function esc(value){return String(value??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+    function dynamicBeats(story){return story.beats.map((beat,index)=>{const shot=beat.shot||{},mise=shot.mise_en_scene||{},twist=beat.twist_role||{};return {n:index+1,name:beat.name||`Beat ${index+1}`,t:'',tension:Math.max(0,Math.min(1,Number(beat.tension)||0)),mood:[],palette:[],action:beat.story_action||'',cam:[shot.framing,shot.angle,shot.movement].filter(Boolean).join(' · '),mise:[mise.symbolic_meaning,mise.staging,mise.props,mise.color,mise.light].filter(Boolean).join(' '),t2i:shot.t2i_prompt||'',i2v:shot.i2v_prompt||'',why:shot.why_this_shot||'',pacing:beat.pacing_rationale||'',twist:twist.type&&twist.type!=='none'?`${twist.type}: ${twist.mechanism||''}`:'',citations:Array.isArray(shot.grounded_in)?shot.grounded_in:[],hook:twist.type==='setup'};});}
+    function renderIdea(saved){const story=saved.story,live=saved.meta?.source!=='fallback';document.getElementById('ideaBlock').innerHTML=`<span class="source-badge ${live?'':'fallback'}">${live?'Powered by GPT-5.6':'Curated fallback'}</span><div class="lab">${live?'Generated Blueprint':'Reliable Demo Blueprint'}</div><div class="txt">${esc(story.title)}</div><div class="chips"><span class="chip">${esc(story.structure?.name||'Story structure')}</span><span class="chip ref">${esc(story.director_lens||'Director-grounded')}</span></div><div class="analysis"><div class="an-box twist"><div class="h">Logline</div><p>${esc(story.logline)}</p></div><div class="an-box mise"><div class="h">Theme</div><p>${esc(story.theme)}</p></div></div>`;}
+    function renderCurve(beats){
     const W=1000,H=230,x0=60,x1=940,yTop=34,yBot=180,base=196;
-    const pts=beats.map((b,i)=>({x:x0+i*((x1-x0)/(beats.length-1)),y:yTop+(1-b.tension)*(yBot-yTop),b}));
+    const pts=beats.map((b,i)=>({x:x0+i*((x1-x0)/Math.max(1,beats.length-1)),y:yTop+(1-b.tension)*(yBot-yTop),b}));
     function smooth(p){let d=`M ${p[0].x} ${p[0].y}`;for(let i=0;i<p.length-1;i++){const p0=p[i-1]||p[i],p1=p[i],p2=p[i+1],p3=p[i+2]||p2;d+=` C ${p1.x+(p2.x-p0.x)/6} ${p1.y+(p2.y-p0.y)/6}, ${p2.x-(p3.x-p1.x)/6} ${p2.y-(p3.y-p1.y)/6}, ${p2.x} ${p2.y}`;}return d;}
+    const maxTension=Math.max(...beats.map(b=>b.tension));beats.forEach(b=>b.climax=b.tension===maxTension);
     const line=smooth(pts),area=line+` L ${x1} ${base} L ${x0} ${base} Z`;
     const dots=pts.map(p=>{
       const mk=p.b.hook?`<text class="marker-lab" x="${p.x}" y="${p.y-14}" text-anchor="middle">HOOK</text>`:p.b.climax?`<text class="marker-lab" x="${p.x}" y="${p.y-14}" text-anchor="middle">CLIMAX</text>`:'';
       return `${mk}<circle class="beat-dot" cx="${p.x}" cy="${p.y}" r="5" fill="#0d0d0d" stroke="#c9a227" stroke-width="2" data-n="${p.b.n}"></circle><text class="axis-lab" x="${p.x}" y="${base+16}" text-anchor="middle">${p.b.name}</text>`;
     }).join('');
     document.getElementById('curve').innerHTML=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c9a227" stop-opacity="0.28"/><stop offset="100%" stop-color="#c9a227" stop-opacity="0"/></linearGradient></defs><text class="axis-lab" x="${x0-6}" y="${yTop+4}" text-anchor="end">high</text><text class="axis-lab" x="${x0-6}" y="${yBot}" text-anchor="end">low</text><path d="${area}" fill="url(#fill)"/><path d="${line}" fill="none" stroke="#c9a227" stroke-width="2.5"/>${dots}</svg>`;
+    }
 
-    // storyboard sheet
-    document.getElementById('sheet').innerHTML=beats.map(b=>`
+    function renderSheet(beats,isDynamic){document.getElementById('sheet').innerHTML=beats.map(b=>`
       <div class="panel ${b.twist?'has-twist':''}" id="beat-${b.n}">
         <div class="frame empty">
           <span class="fnum">SC ${b.n}</span>
-          <img src="storyboard_frames/beat${b.n}.png" alt="" onerror="this.closest('.frame').classList.add('empty');this.remove();" onload="this.closest('.frame').classList.remove('empty')">
-          <div class="frame-ph"><div class="big">Storyboard frame</div><div class="sm">Generate from this shot's T2I prompt →<br><code>storyboard_frames/beat${b.n}.png</code></div></div>
+          ${isDynamic?'':`<img src="storyboard_frames/beat${b.n}.png" alt="" onerror="this.closest('.frame').classList.add('empty');this.remove();" onload="this.closest('.frame').classList.remove('empty')">`}
+          <div class="frame-ph"><div class="big">Storyboard frame</div><div class="sm">${isDynamic?'Ready for image generation':`Generate from this shot's T2I prompt →<br><code>storyboard_frames/beat${b.n}.png</code>`}</div></div>
         </div>
         <div class="meta">
           <div class="meta-top"><span class="shotbadge">SHOT ${b.n}</span><span class="beatname">${b.name}</span><span class="beattime">${b.t}</span><span class="ttag">tension <b>${b.tension.toFixed(2)}</b></span></div>
-          <div class="field action"><span class="k">Action</span>${b.action}</div>
-          <div class="field"><span class="k">Camera</span>${b.cam}</div>
-          <div class="field mise"><span class="k">Mise-en-scène</span>${b.mise}</div>
-          ${b.twist?`<div class="twistbox"><span class="k">${b.name==='Reversal / Low Point'?'★ Core Twist':'Twist setup'}</span><p>${b.twist}</p></div>`:''}
+          <div class="field action"><span class="k">Action</span>${esc(b.action)}</div>
+          <div class="field"><span class="k">Camera</span>${esc(b.cam)}</div>
+          <div class="field mise"><span class="k">Mise-en-scène meaning</span>${esc(b.mise)}</div>
+          ${b.twist?`<div class="twistbox"><span class="k">${b.name==='Reversal / Low Point'?'★ Core Twist':'Twist role'}</span><p>${esc(b.twist)}</p></div>`:''}
+          ${b.why?`<div class="craft"><span class="k">Why this shot</span>${esc(b.why)}</div>`:''}
+          ${b.pacing?`<div class="craft"><span class="k">Pacing rationale</span>${esc(b.pacing)}</div>`:''}
+          ${b.citations.length?`<div class="citations">${b.citations.map(id=>`<span class="citation">${esc(id)}</span>`).join('')}</div>`:''}
           <div class="moodchips">${b.mood.map(m=>`<span class="moodchip">${m}</span>`).join('')}</div>
           <div class="sw">${b.palette.map(c=>`<div style="background:${c}"></div>`).join('')}</div>
-          <div class="t2i"><span class="k">T2I PROMPT → GPT / DALL·E</span>${b.t2i}</div>
+          <div class="t2i"><span class="k">T2I PROMPT → GPT / DALL·E</span>${esc(b.t2i)}</div>
+          ${b.i2v?`<div class="t2i"><span class="k">I2V PROMPT</span>${esc(b.i2v)}</div>`:''}
         </div>
-      </div>`).join('');
+      </div>`).join('');}
 
     // interactivity
     function highlight(n){document.querySelectorAll('.panel').forEach(el=>el.classList.remove('active'));const el=document.getElementById('beat-'+n);if(el){el.classList.add('active');el.scrollIntoView({behavior:'smooth',block:'center'});}}
-    document.querySelectorAll('.beat-dot').forEach(d=>d.addEventListener('click',()=>highlight(+d.getAttribute('data-n'))));
+    function bindCurve(){document.querySelectorAll('.beat-dot').forEach(d=>d.addEventListener('click',()=>highlight(+d.getAttribute('data-n'))));}
+    const saved=EVE_STATE.loadBlueprint();const beats=saved?dynamicBeats(saved.story):fixedBeats;if(saved)renderIdea(saved);renderCurve(beats);renderSheet(beats,Boolean(saved));bindCurve();
   </script>
 </body>
 </html>
