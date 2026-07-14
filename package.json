@@ -1,0 +1,9 @@
+{
+  "name": "eve-creator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Director-grounded film pre-production copilot",
+  "scripts": {
+    "test": "node tests/p1.test.js"
+  }
+}

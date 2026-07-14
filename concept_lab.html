@@ -47,6 +47,10 @@
     .tips .h{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--warn);margin-bottom:6px}
     .tips li{font-size:12px;color:var(--dim);line-height:1.6;margin-left:16px}
     .note{font-size:10.5px;color:var(--muted);margin-top:14px;line-height:1.5}
+    .btn:disabled{opacity:.55;cursor:wait}.loading{padding:48px 22px;text-align:center}.loader{width:34px;height:34px;border:3px solid #292929;border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}@keyframes spin{to{transform:rotate(360deg)}}
+    .loading .stage{font-size:13px;color:var(--text)}.loading .stage-sub{font-size:11px;color:var(--muted);margin-top:7px}.source{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.7px;text-transform:uppercase;color:var(--good);border:1px solid rgba(76,175,125,.3);background:rgba(76,175,125,.08);padding:5px 9px;border-radius:100px;margin-bottom:14px}.source.fallback{color:var(--warn);border-color:rgba(217,161,58,.35);background:rgba(217,161,58,.08)}
+    .story-head{margin:18px 0 8px;border-top:1px solid var(--border);padding-top:18px}.story-title{font-size:21px;color:#fff;font-weight:800}.logline{font-size:13px;color:#b9b9b9;line-height:1.6;margin-top:7px}.theme{font-size:12px;color:var(--dim);line-height:1.55;margin-top:7px}.beat-list{display:grid;gap:13px;margin-top:18px}.beat-card{background:#101010;border:1px solid var(--border);border-radius:12px;padding:15px}.beat-top{display:flex;align-items:flex-start;gap:10px}.beat-num{display:flex;align-items:center;justify-content:center;width:26px;height:26px;flex:0 0 26px;border-radius:50%;background:var(--gold);color:#080808;font-size:11px;font-weight:800}.beat-name{font-size:14px;color:#fff;font-weight:700}.beat-fn{font-size:11.5px;color:var(--dim);line-height:1.45;margin-top:3px}.tension{margin-left:auto;min-width:48px;text-align:right;font-size:10px;color:var(--gold-lite)}
+    .action{font-size:13px;line-height:1.55;color:#d5d5d5;margin:12px 0}.reason-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}@media(max-width:600px){.reason-grid{grid-template-columns:1fr}}.reason{border:1px solid #242424;background:#151515;border-radius:9px;padding:10px}.reason .rh{font-size:9px;letter-spacing:.9px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:5px}.reason p{font-size:11.5px;line-height:1.5;color:#a9a9a9}.shot-spec{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0 9px}.shot-spec span,.citation{font-size:10px;padding:3px 7px;border-radius:100px;background:#202020;color:#a0a0a0}.meaning{border-left:2px solid var(--gold-dim);padding-left:10px;margin-top:10px}.meaning .mh{font-size:9px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted)}.meaning p{font-size:11.5px;color:#b9b9b9;line-height:1.5;margin-top:4px}.citations{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}.citation{color:var(--gold-lite);background:rgba(201,162,39,.09)}details.prompts{margin-top:11px;border-top:1px solid #242424;padding-top:9px}details.prompts summary{cursor:pointer;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}.prompt{margin-top:8px;font-size:10.5px;line-height:1.5;color:#8e8e8e}.prompt b{color:#bcbcbc}.fallback-note{font-size:11px;line-height:1.5;color:var(--warn);margin-bottom:12px}
   </style>
 </head>
 <body>
@@ -56,7 +60,7 @@
   </nav>
   <header>
     <h1>Concept Lab</h1>
-    <p class="sub">Validate an idea before you build it. Enter a concept — get a hit-potential score across research-backed dimensions, plus the recommended structure, director style, and toolchain. AI proposes many; the score helps you select.</p>
+    <p class="sub">Validate an idea, then watch GPT-5.6 turn it into a grounded director blueprint: structure, tension, shot logic, symbolic mise-en-scène, and generation-ready prompts for every beat.</p>
   </header>
 
   <div class="wrap">
@@ -75,14 +79,15 @@
           </select></div>
         <div><label class="k">Runtime (min)</label><input id="runtime" type="number" value="4" min="1" max="180"></div>
       </div>
-      <button class="btn" onclick="validate()">Validate concept →</button>
+      <button class="btn" id="validateBtn" onclick="validate()">Build director blueprint →</button>
       <div class="ex">Try: <a onclick="demo()">the Geri's Game concept</a></div>
-      <p class="note">v1 transparent heuristic (keyword + structure signals), not a trained model. Roadmap: train the scorer on real outcome/retention data (see success_factors.json).</p>
+      <p class="note">Hit-potential remains a transparent heuristic. The director blueprint is generated live by GPT-5.6 and grounded in E.V.E's curated craft IDs; a curated fallback keeps the demo reliable.</p>
     </div>
 
     <div class="panel" id="out"><div class="empty">Enter a concept and click Validate to see its hit-potential blueprint.</div></div>
   </div>
 
+  <script src="js/eve-api.js"></script>
   <script>
     const DIMS=[
       {id:'emotional_core',label:'Emotional core',w:0.20},
@@ -133,26 +138,53 @@
     function gauge(o){ const r=52,c=2*Math.PI*r,off=c*(1-o); const col=bandOf(o).c;
       return `<svg class="gauge" width="130" height="130" viewBox="0 0 130 130"><circle cx="65" cy="65" r="${r}" fill="none" stroke="#222" stroke-width="12"/><circle cx="65" cy="65" r="${r}" fill="none" stroke="${col}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${off}" transform="rotate(-90 65 65)"/><text x="65" y="60" text-anchor="middle" font-size="30" font-weight="800" fill="#fff">${Math.round(o*100)}</text><text x="65" y="80" text-anchor="middle" font-size="11" fill="#8a8a8a">/ 100</text></svg>`;
     }
-    function validate(){
+    function esc(value){return String(value??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+    function loading(out){
+      const stages=['Finding the dramatic spine…','Designing the tension curve…','Directing each hero shot…','Grounding choices in craft knowledge…'];let i=0;
+      out.innerHTML=`<div class="loading"><div class="loader"></div><div class="stage" id="loadStage">${stages[0]}</div><div class="stage-sub">GPT-5.6 · five-beat director pass</div></div>`;
+      return setInterval(()=>{i=(i+1)%stages.length;const el=document.getElementById('loadStage');if(el)el.textContent=stages[i];},950);
+    }
+    function renderBeat(beat){
+      const shot=beat.shot||{},mise=shot.mise_en_scene||{},twist=beat.twist_role||{};
+      const twistText=twist.type==='none'?'No forced twist — this beat advances the causal line.':`${twist.type}: ${twist.mechanism}`;
+      return `<article class="beat-card">
+        <div class="beat-top"><span class="beat-num">${esc(beat.number)}</span><div><div class="beat-name">${esc(beat.name)}</div><div class="beat-fn">${esc(beat.beat_function)}</div></div><span class="tension">TENSION ${Math.round((Number(beat.tension)||0)*100)}</span></div>
+        <div class="action">${esc(beat.story_action)}</div>
+        <div class="shot-spec"><span>${esc(shot.framing)}</span><span>${esc(shot.angle)}</span><span>${esc(shot.movement)}</span></div>
+        <div class="reason-grid">
+          <div class="reason"><div class="rh">Why this shot</div><p>${esc(shot.why_this_shot)}</p></div>
+          <div class="reason"><div class="rh">Pacing rationale</div><p>${esc(beat.pacing_rationale)}</p></div>
+          <div class="reason"><div class="rh">Twist role</div><p>${esc(twistText)}</p></div>
+          <div class="reason"><div class="rh">Staging + props</div><p>${esc(mise.staging)} ${esc(mise.props)}</p></div>
+          <div class="reason"><div class="rh">Color + light</div><p>${esc(mise.color)} ${esc(mise.light)}</p></div>
+          <div class="reason"><div class="rh">Directorial meaning</div><p>${esc(mise.symbolic_meaning)}</p></div>
+        </div>
+        <div class="citations">${(shot.grounded_in||[]).map(id=>`<span class="citation">${esc(id)}</span>`).join('')}</div>
+        <details class="prompts"><summary>Generation prompts</summary><div class="prompt"><b>T2I</b> — ${esc(shot.t2i_prompt)}</div><div class="prompt"><b>I2V</b> — ${esc(shot.i2v_prompt)}</div></details>
+      </article>`;
+    }
+    function renderResult(payload,s,overall){
+      const story=payload.story,meta=payload.meta||{},b=bandOf(overall);
+      const dims=DIMS.map(d=>`<div class="dim"><div class="dim-top"><span class="nm">${d.label} <span style="color:#444">·${Math.round(d.w*100)}%</span></span><span class="vl">${Math.round(s[d.id]*100)}</span></div><div class="bar"><span style="width:${Math.round(s[d.id]*100)}%;background:${barColor(s[d.id])}"></span></div></div>`).join('');
+      const fallback=meta.source==='fallback';
+      return `<span class="source ${fallback?'fallback':''}">${fallback?'Curated demo fallback':'Live GPT-5.6 director'}</span>
+        ${fallback?`<div class="fallback-note">${esc(meta.reason)} Showing the equally rich curated demo so the presentation remains complete.</div>`:''}
+        <div class="gauge-row">${gauge(overall)}<div><div class="band" style="color:${b.c}">${b.t}</div><div class="band-sub">Hit-potential ${Math.round(overall*100)} / 100 · ${b.a}</div></div></div>
+        ${dims}
+        <div class="story-head"><div class="story-title">${esc(story.title)}</div><div class="logline">${esc(story.logline)}</div><div class="theme"><b>Theme:</b> ${esc(story.theme)}</div></div>
+        <div class="blueprint"><div class="bp-row"><span class="bk">Structure</span><span class="bv"><b>${esc(story.structure?.name)}</b> — ${esc(story.structure?.why)}</span></div><div class="bp-row"><span class="bk">Director lens</span><span class="bv">${esc(story.director_lens)}</span></div></div>
+        <div class="beat-list">${(story.beats||[]).map(renderBeat).join('')}</div>`;
+    }
+    async function validate(){
       const text=document.getElementById('idea').value.trim();
       const genre=document.getElementById('genre').value;
       const runtime=+document.getElementById('runtime').value||4;
       const out=document.getElementById('out');
       if(!text){ out.innerHTML='<div class="empty">Please enter a concept first.</div>'; return; }
-      const {s,overall}=score(text,genre,runtime); const b=bandOf(overall); const g=GENRE[genre];
-      const dims=DIMS.map(d=>`<div class="dim"><div class="dim-top"><span class="nm">${d.label} <span style="color:#444">·${Math.round(d.w*100)}%</span></span><span class="vl">${Math.round(s[d.id]*100)}</span></div><div class="bar"><span style="width:${Math.round(s[d.id]*100)}%;background:${barColor(s[d.id])}"></span></div></div>`).join('');
-      const weakest=[...DIMS].sort((a,b)=>s[a.id]-s[b.id]).slice(0,2);
-      const tips={emotional_core:'Name the single feeling the audience should carry. Make the want personal.',hook_strength:'Add an early disruption/twist — an "until one day" that reframes the setup.',structural_completeness:'Spell out cause→effect beats (because of that…). Ensure a real climax.',originality:'Cross-pollinate a distant genre or image; give a familiar promise a fresh angle.',genre_fit:'Lean into (or knowingly subvert) the genre\'s core promise.',specificity:'Add concrete, culturally textured detail — a named place, prop, era.',shareability:'Engineer one memorable image or moment that travels.',runtime_discipline:`Aim for ${g.ideal[0]}-${g.ideal[1]} min for this genre's completion sweet spot.`};
-      out.innerHTML=`
-        <div class="gauge-row">${gauge(overall)}<div><div class="band" style="color:${b.c}">${b.t}</div><div class="band-sub">Hit-potential ${Math.round(overall*100)} / 100 · ${b.a}</div></div></div>
-        ${dims}
-        <div class="blueprint">
-          <div class="bp-row"><span class="bk">Structure</span><span class="bv"><b>${g.structure}</b></span></div>
-          <div class="bp-row"><span class="bk">Director lens</span><span class="bv">${g.director}</span></div>
-          <div class="bp-row"><span class="bk">Toolchain</span><span class="bv">${g.img} → ${g.vid}</span></div>
-          <div class="bp-row"><span class="bk">Beat outline</span><span class="bv"><div class="beats">${g.beats.map(x=>`<span class="beatchip">${x}</span>`).join('')}</div></span></div>
-        </div>
-        <div class="tips"><div class="h">Strengthen first</div><ul>${weakest.map(d=>`<li><b style="color:#b9bdc7">${d.label}</b> — ${tips[d.id]}</li>`).join('')}</ul></div>`;
+      const btn=document.getElementById('validateBtn');btn.disabled=true;const timer=loading(out);const {s,overall}=score(text,genre,runtime);
+      try{const payload=await EVE_API.generateStory({idea:text,genre,runtime});out.innerHTML=renderResult(payload,s,overall);}
+      catch(err){out.innerHTML=renderResult(EVE_API.fallback(err.message),s,overall);}
+      finally{clearInterval(timer);btn.disabled=false;}
     }
     function demo(){ document.getElementById('idea').value="A lonely old man plays chess against himself in an autumn park. His timid side, losing badly, fakes a heart attack to trick his aggressive side and turns the board — until finally he wins against himself, and gives himself the prize.";document.getElementById('genre').value='animated_short';document.getElementById('runtime').value=5;validate(); }
   </script>
