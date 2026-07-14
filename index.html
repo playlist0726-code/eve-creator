@@ -1,1074 +1,132 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShotSeed — AI Animation Workflow Recommender</title>
+  <title>E.V.E Creator — One-Person Film Copilot</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:        #0d0d0d;
-      --surface:   #131313;
-      --card:      #1a1a1a;
-      --border:    #272727;
-      --border2:   #1e1e1e;
-      --gold:      #c9a227;
-      --gold-dim:  #7a6118;
-      --gold-lite: #e8bc3a;
-      --text:      #e4e4e4;
-      --muted:     #5a5a5a;
-      --dim:       #8a8a8a;
-      --r:         14px;
-      --r-sm:      8px;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#0d0d0d;--surface:#131313;--card:#1a1a1a;--border:#272727;
+      --gold:#c9a227;--gold-dim:#7a6118;--gold-lite:#e8bc3a;
+      --text:#e4e4e4;--muted:#5a5a5a;--dim:#8a8a8a;
     }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-    }
-
-    /* ── HEADER ─────────────────────────────── */
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 28px 48px 0;
-    }
-
-    .logo-row {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 4px;
-    }
-
-    header h1 {
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -.3px;
-      color: #fff;
-    }
-
-    .badge {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--gold-dim);
-      padding: 2px 7px;
-      border-radius: 4px;
-    }
-
-    .subtitle {
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 22px;
-    }
-
-    /* ── TABS ───────────────────────────────── */
-    .tab-nav {
-      display: flex;
-    }
-
-    .tab-btn {
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid transparent;
-      color: var(--muted);
-      padding: 10px 20px;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: color .15s, border-color .15s;
-      font-family: inherit;
-    }
-
-    .tab-btn:hover { color: var(--dim); }
-
-    .tab-btn.active {
-      color: var(--gold);
-      border-bottom-color: var(--gold);
-    }
-
-    /* ── SHARED CARD ────────────────────────── */
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      overflow: hidden;
-      transition: border-color .18s, transform .18s;
-    }
-
-    .card:hover {
-      border-color: var(--gold-dim);
-      transform: translateY(-2px);
-    }
-
-    .card-head {
-      padding: 16px 18px 14px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .card-head-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .purpose-tag {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 4px;
-    }
-
-    .card-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: #fff;
-      line-height: 1.3;
-    }
-
-    .source-tag {
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: .7px;
-      text-transform: uppercase;
-      background: #222;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      padding: 3px 8px;
-      border-radius: 4px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .card-body { padding: 14px 18px; }
-
-    .meta-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 9px 14px;
-      margin-bottom: 13px;
-    }
-
-    .meta-item label {
-      display: block;
-      font-size: 9px;
-      letter-spacing: .8px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 2px;
-    }
-
-    .meta-item span { font-size: 11.5px; color: var(--dim); }
-
-    .palette-row {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      margin-bottom: 12px;
-    }
-
-    .palette-row label {
-      font-size: 9px;
-      letter-spacing: .8px;
-      text-transform: uppercase;
-      color: var(--muted);
-      width: 48px;
-      flex-shrink: 0;
-    }
-
-    .swatches { display: flex; gap: 5px; }
-
-    .swatch {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.06);
-    }
-
-    .divider { height: 1px; background: var(--border); margin: 11px 0; }
-
-    .desc {
-      font-size: 12px;
-      color: var(--dim);
-      line-height: 1.65;
-      margin-bottom: 12px;
-    }
-
-    .prompt-block {
-      background: #0f0f0f;
-      border: 1px solid var(--border2);
-      border-radius: var(--r-sm);
-      padding: 9px 11px;
-      margin-bottom: 7px;
-    }
-
-    .prompt-block label {
-      display: block;
-      font-size: 9px;
-      letter-spacing: .8px;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      margin-bottom: 4px;
-    }
-
-    .prompt-block p {
-      font-size: 10.5px;
-      color: #666;
-      line-height: 1.55;
-      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-    }
-
-    .workflow-row {
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-      margin-top: 11px;
-      padding-top: 11px;
-      border-top: 1px solid var(--border);
-      flex-wrap: wrap;
-    }
-
-    .workflow-row label {
-      font-size: 9px;
-      letter-spacing: .8px;
-      text-transform: uppercase;
-      color: var(--muted);
-      flex-shrink: 0;
-      padding-top: 1px;
-    }
-
-    .workflow-row span { font-size: 11.5px; color: var(--gold); }
-
-    /* ── VIEW 1: RECOMMEND ──────────────────── */
-    #view-recommend {}
-
-    .search-section {
-      padding: 36px 48px 28px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .search-label {
-      font-size: 10px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    #searchInput {
-      width: 100%;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      color: var(--text);
-      font-size: 14px;
-      line-height: 1.6;
-      padding: 14px 18px;
-      resize: none;
-      height: 80px;
-      transition: border-color .18s;
-      font-family: inherit;
-    }
-
-    #searchInput::placeholder { color: var(--muted); }
-    #searchInput:focus { outline: none; border-color: var(--gold-dim); }
-
-    .example-row {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      margin-top: 11px;
-      flex-wrap: wrap;
-    }
-
-    .example-label { font-size: 10px; color: var(--muted); }
-
-    .chip {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      padding: 4px 11px;
-      border-radius: 100px;
-      font-size: 11.5px;
-      cursor: pointer;
-      transition: all .14s;
-      font-family: inherit;
-    }
-
-    .chip:hover { border-color: var(--gold-dim); color: var(--dim); }
-
-    .search-btn {
-      display: inline-block;
-      margin-top: 14px;
-      background: var(--gold);
-      color: #000;
-      border: none;
-      border-radius: 100px;
-      padding: 10px 26px;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      letter-spacing: .2px;
-      transition: background .15s;
-      font-family: inherit;
-    }
-
-    .search-btn:hover { background: var(--gold-lite); }
-
-    /* RESULTS */
-    #results { padding: 0 0 64px; }
-
-    .results-meta {
-      padding: 26px 48px 14px;
-      font-size: 10px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .results-meta span { color: var(--gold); font-weight: 700; }
-
-    .result-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 18px;
-      padding: 0 48px;
-    }
-
-    /* rank / matched kw */
-    .rank-area { padding: 14px 18px 0; }
-
-    .rank-badge {
-      display: inline-block;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 3px 9px;
-      border-radius: 4px;
-      margin-bottom: 8px;
-    }
-
-    .rank-1 { background: var(--gold); color: #000; }
-    .rank-2 { background: #232323; color: #888; border: 1px solid #333; }
-    .rank-3 { background: #1a1a1a; color: #666; border: 1px solid #282828; }
-
-    .kw-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-      margin-bottom: 4px;
-    }
-
-    .kw-chip {
-      font-size: 9px;
-      background: rgba(201,162,39,.1);
-      color: var(--gold);
-      border: 1px solid rgba(201,162,39,.22);
-      padding: 2px 7px;
-      border-radius: 3px;
-    }
-
-    /* empty / initial state */
-    .empty-state {
-      padding: 70px 48px;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    .empty-state h3 {
-      font-size: 15px;
-      color: var(--dim);
-      margin-bottom: 7px;
-      font-weight: 500;
-    }
-
-    .empty-state p { font-size: 12px; }
-
-    /* ── VIEW 2: BROWSER ────────────────────── */
-    .browser-controls {
-      padding: 22px 48px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .filters { display: flex; gap: 7px; flex-wrap: wrap; }
-
-    .filter-btn {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      padding: 6px 15px;
-      border-radius: 100px;
-      font-size: 12px;
-      cursor: pointer;
-      transition: all .14s;
-      font-family: inherit;
-    }
-
-    .filter-btn:hover { border-color: var(--gold-dim); color: var(--dim); }
-
-    .filter-btn.active {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: #000;
-      font-weight: 700;
-    }
-
-    .stats-text { font-size: 11px; color: var(--muted); }
-    .stats-text span { color: var(--gold); font-weight: 700; }
-
-    .browser-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 18px;
-      padding: 28px 48px 64px;
-    }
-
-    /* ── added: dimension / verified / method footer ── */
-    .tag-col { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; flex-shrink: 0; }
-    .dim-tag { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: var(--dim); border: 1px solid var(--border); padding: 2px 7px; border-radius: 4px; }
-    .verified-tag { font-size: 8.5px; font-weight: 700; letter-spacing: .4px; color: #0d0d0d; background: var(--gold); padding: 2px 7px; border-radius: 4px; white-space: nowrap; }
-    .filter-group-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; align-self: center; }
-    footer.method { border-top: 1px solid var(--border); padding: 30px 48px 46px; color: var(--muted); font-size: 12px; line-height: 1.75; }
-    footer.method p { margin-bottom: 7px; }
-    footer.method b { color: var(--dim); }
-    footer.method .stat { color: var(--gold); font-weight: 700; }
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 
     /* site nav */
-    .site-nav{display:flex;align-items:center;gap:4px;padding:12px 44px;border-bottom:1px solid var(--border);background:var(--surface);position:sticky;top:0;z-index:20}
+    .site-nav{display:flex;align-items:center;gap:4px;padding:14px 44px;border-bottom:1px solid var(--border);background:var(--surface);position:sticky;top:0;z-index:10}
     .site-nav .brand{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;margin-right:auto}
-    .site-nav a{font-size:12.5px;color:var(--dim);text-decoration:none;padding:6px 13px;border-radius:100px;transition:all .14s}
+    .site-nav a{font-size:12.5px;color:var(--dim);text-decoration:none;padding:7px 14px;border-radius:100px;transition:all .14s}
     .site-nav a:hover{color:#fff;background:#1e1e1e}
     .site-nav a.on{color:var(--gold);background:rgba(201,162,39,.1)}
+
+    .hero{padding:64px 44px 40px;max-width:900px}
+    .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px}
+    h1{font-size:46px;font-weight:800;letter-spacing:-1px;color:#fff;line-height:1.08;margin-bottom:16px}
+    .lead{font-size:17px;color:var(--dim);line-height:1.6;max-width:680px}
+    .lead b{color:var(--text)}
+
+    .section-lab{margin:14px 44px 16px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+
+    /* pipeline */
+    .pipe{display:flex;gap:12px;padding:0 44px;overflow-x:auto;flex-wrap:wrap}
+    .stage{flex:1 1 200px;min-width:190px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 18px 16px;position:relative}
+    .stage .num{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
+    .stage h3{font-size:16px;color:#fff;font-weight:700;margin-bottom:6px}
+    .stage p{font-size:12.5px;color:var(--dim);line-height:1.55}
+    .stage .tag{display:inline-block;margin-top:10px;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);padding:2px 8px;border-radius:4px}
+
+    /* tool cards */
+    .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;padding:0 44px;margin-top:8px}
+    .kb{display:flex;flex-wrap:wrap;gap:8px;padding:0 44px}
+    .kb .kbi{font-size:11.5px;color:var(--dim);background:var(--card);border:1px solid var(--border);border-radius:100px;padding:6px 13px}
+    .kb .kbi b{color:var(--gold-lite);font-weight:600}
+    .tool{display:block;text-decoration:none;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;transition:border-color .18s,transform .18s}
+    .tool:hover{border-color:var(--gold);transform:translateY(-3px)}
+    .tool .k{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+    .tool h2{font-size:22px;color:#fff;font-weight:700;margin-bottom:8px}
+    .tool p{font-size:13px;color:var(--dim);line-height:1.6;margin-bottom:14px}
+    .tool .go{font-size:13px;color:var(--gold-lite);font-weight:600}
+
+    /* status */
+    .status{display:flex;gap:26px;flex-wrap:wrap;padding:22px 26px;margin:0 44px;background:#101010;border:1px solid var(--border);border-radius:14px}
+    .stat .n{font-size:24px;font-weight:800;color:var(--gold-lite);line-height:1}
+    .stat .l{font-size:11px;color:var(--muted);margin-top:5px}
+
+    footer{margin:44px 44px 0;border-top:1px solid var(--border);padding:24px 0 60px;font-size:12px;color:var(--muted);line-height:1.7}
+    footer b{color:var(--dim)}
+    @media(max-width:720px){.tools{grid-template-columns:1fr}h1{font-size:34px}.hero{padding:44px 24px 30px}.site-nav,.section-lab,.pipe,.tools,.status,footer{padding-left:24px;padding-right:24px;margin-left:0;margin-right:0}}
   </style>
 </head>
 <body>
-
-<nav class="site-nav">
-  <span class="brand">E.V.E Creator</span>
-  <a href="eve.html">Home</a>
-  <a href="index.html" class="on">ShotSeed</a>
-  <a href="storyboard.html">Story Flow</a>
-  <a href="concept_lab.html">Concept Lab</a>
-</nav>
-
-<!-- HEADER -->
-<header>
-  <div class="logo-row">
-    <h1>ShotSeed</h1>
-    <span class="badge">SceneForge Engine</span>
-  </div>
-  <p class="subtitle">스타일 텍스트 입력 → AI 애니메이션 샷 레퍼런스 + 워크플로우 추천</p>
-  <nav class="tab-nav">
-    <button class="tab-btn active" id="tab-recommend" onclick="switchTab('recommend')">추천</button>
-    <button class="tab-btn" id="tab-browser" onclick="switchTab('browser')">전체 브라우저</button>
+  <nav class="site-nav">
+    <span class="brand">E.V.E Creator</span>
+    <a href="index.html" class="on">Home</a>
+    <a href="shotseed.html">ShotSeed</a>
+    <a href="storyboard.html">Story Flow</a>
+    <a href="concept_lab.html">Concept Lab</a>
   </nav>
-</header>
 
-<!-- VIEW 1: RECOMMEND -->
-<div id="view-recommend">
-  <div class="search-section">
-    <div class="search-label">원하는 스타일 / 장면을 자유롭게 적어보세요</div>
-    <textarea id="searchInput"
-      placeholder="예: 따뜻한 감정적 클로즈업, 야간 도시 액션 추격씬, 계절이 바뀌는 전환 장면 …"></textarea>
-    <div class="example-row">
-      <span class="example-label">예시 →</span>
-      <button class="chip" onclick="setExample('따뜻한 감정적 클로즈업')">따뜻한 감정적 클로즈업</button>
-      <button class="chip" onclick="setExample('야간 도시 액션 추격씬')">야간 도시 액션 추격씬</button>
-      <button class="chip" onclick="setExample('계절이 바뀌는 전환 장면')">계절이 바뀌는 전환 장면</button>
-      <button class="chip" onclick="setExample('황혼 속 넓은 마을 원경')">황혼 속 넓은 마을 원경</button>
-      <button class="chip" onclick="setExample('슬픈 독백 창문 씬')">슬픈 독백 창문 씬</button>
-    </div>
-    <button class="search-btn" onclick="recommend()">워크플로우 추천 →</button>
+  <div class="hero">
+    <div class="eyebrow">1-Person Film Copilot · Director-Grounded</div>
+    <h1>Bring an idea.<br>Direct it with master craft.</h1>
+    <p class="lead">Enter a mood, genre, scene, or premise. E.V.E Creator uses <b>frame-level analysis of master animation</b> to design the story, structure, storyboard, and shot-level prompts. It does not replace the filmmaker; it lays out <b>exactly how to make the film</b>, while the creator keeps authorship and control.</p>
   </div>
-  <div id="results">
-    <div class="empty-state">
-      <h3>스타일을 입력하고 추천 받으세요</h3>
-      <p>감독 스타일, 분위기, 장면 유형 — 자유롭게 적어보세요</p>
-    </div>
+
+  <div class="section-lab">System Pipeline</div>
+  <div class="pipe">
+    <div class="stage"><div class="num">01</div><h3>Idea</h3><p>Enter the mood, genre, scene, and story premise.</p><span class="tag">Input</span></div>
+    <div class="stage"><div class="num">02</div><h3>Craft Data (ShotSeed)</h3><p>Shot direction (Layer 1) plus structure, twists, and mise-en-scène (Layer 2), across 2D and 3D animation.</p><span class="tag">Grounding</span></div>
+    <div class="stage"><div class="num">03</div><h3>Match + Structure</h3><p>Match the intent to shot grammar, narrative beats, and pacing principles.</p><span class="tag">Reasoning</span></div>
+    <div class="stage"><div class="num">04</div><h3>Storyboard + Prompts</h3><p>Build the tension curve, shot board, and generation-ready T2I/I2V prompts.</p><span class="tag">Design</span></div>
+    <div class="stage"><div class="num">05</div><h3>Generate Externally</h3><p>The filmmaker uses the blueprint to generate images and video, with optional automation support.</p><span class="tag">Execute</span></div>
   </div>
-</div>
 
-<!-- VIEW 2: BROWSER -->
-<div id="view-browser" style="display:none">
-  <div class="browser-controls">
-    <div class="filters" id="filters"></div>
-    <div class="stats-text" id="statsBar"></div>
+  <div class="section-lab">Open a Tool</div>
+  <div class="tools">
+    <a class="tool" href="shotseed.html">
+      <div class="k">Tool 01 · Data Engine</div>
+      <h2>ShotSeed</h2>
+      <p>Match a style or scene to analyzed shot data and receive T2I, I2V, and workflow recommendations, with 2D/3D filters and source-verification badges.</p>
+      <span class="go">Open →</span>
+    </a>
+    <a class="tool" href="storyboard.html">
+      <div class="k">Tool 02 · Story Flow</div>
+      <h2>Storyboard Sheet</h2>
+      <p>Design a storyboard through directorial thinking: twist mechanics, symbolic mise-en-scène, pacing, and shot-specific image prompts.</p>
+      <span class="go">Open →</span>
+    </a>
+    <a class="tool" href="concept_lab.html">
+      <div class="k">Tool 03 · Validation</div>
+      <h2>Concept Lab</h2>
+      <p>Validate an idea, score its potential with research-backed dimensions, and generate a GPT-5.6 director blueprint grounded in craft knowledge.</p>
+      <span class="go">Open →</span>
+    </a>
   </div>
-  <div class="browser-grid" id="grid"></div>
-</div>
 
-<footer class="method">
-  <p><b>ShotSeed</b> — AI 애니메이션 제작을 위한 샷 레퍼런스 데이터셋 · <b>SceneForge / E.V.E Creator</b>의 데이터 엔진</p>
-  <p><span class="stat" id="statShots">0</span> shots &nbsp;·&nbsp; <span class="stat" id="statFilms">0</span> films frame-analyzed &nbsp;·&nbsp; <span class="stat" id="statVerified">0</span> verified from source</p>
-  <p><b>Method:</b> 실제 단편에서 프레임 추출(ffmpeg) → 원본 프레임 팔레트 추출 → 카메라·조명·구도 판독 → 구조화 스키마로 데이터화. 저작권 안전 추상화(영상 원본 미저장).</p>
-  <p>Built &amp; analyzed by <b>Junsu (Michael) Kim</b> — AI Filmmaker</p>
-</footer>
+  <div class="section-lab">Knowledge Base (Layer 0)</div>
+  <div class="kb">
+    <span class="kbi"><b>Story structures</b> · 6 frameworks</span>
+    <span class="kbi"><b>Cinematography</b> · shots·angles·moves·comp</span>
+    <span class="kbi"><b>Mise-en-scène</b> · lighting·color·staging</span>
+    <span class="kbi"><b>Genres</b> · 6</span>
+    <span class="kbi"><b>Director styles</b> · 9 masters</span>
+    <span class="kbi"><b>Success factors</b> · researched predictors</span>
+    <span class="kbi"><b>AI toolchain</b> · 2026 models + routing</span>
+  </div>
 
-<script>
-// ─────────────────────────────────────────────
-// DATA
-// ─────────────────────────────────────────────
-const shots = [
-  {
-    id: 1,
-    dimension: '2d',
-    title: '황혼 마을 원경',
-    source: 'Ghibli',
-    purpose: 'establishing',
-    mood: ['warm','golden','amber','landscape','peaceful','ghibli','nature','village','sunset','wide','twilight','따뜻','황혼','자연','마을','넓은'],
-    framing: 'Extreme Wide Shot',
-    angle: 'Slightly High',
-    movement: 'Slow Push-in',
-    lighting: '골든 아워 — 따뜻한 앰버·딥 오렌지, 긴 그림자',
-    palette: ['#F4A52B','#C2522A','#2B3A5E','#8FAB7A','#F2DEB0'],
-    description: '석양이 물드는 언덕 위 작은 마을. 굴뚝 연기가 피어오르고 카메라가 천천히 중심부로 밀려들며 이야기의 세계를 소개한다.',
-    t2iPrompt: 'anime landscape, hilltop village at golden hour, warm amber sunset, smoke from chimneys, Studio Ghibli style, lush greenery, cinematic wide shot, painterly',
-    i2vPrompt: 'slow push-in toward village center, 6 seconds, gentle camera drift, ambient breeze, smoke curling upward',
-    workflow: 'Midjourney v6 → Kling 1.6 (slow push-in) → DaVinci color grade'
-  },
-  {
-    id: 2,
-    dimension: '2d',
-    title: '대칭 실내 도입부',
-    source: 'Wes Anderson',
-    purpose: 'establishing',
-    mood: ['establishing','symmetry','retro','pastel','calm','flat','wes anderson','indoor','centered','quirky','대칭','도입','고요','실내'],
-    framing: 'Wide Shot',
-    angle: 'Eye Level / Frontal',
-    movement: 'Static',
-    lighting: '부드러운 소프트박스 톤, 파스텔 채도, 전체 균일 노출',
-    palette: ['#E8C9A0','#B5645A','#4A7C8E','#F2E6D4','#6B4F3A'],
-    description: '완벽한 좌우 대칭으로 배치된 방. 주인공이 정중앙 문 뒤에서 등장하며 카메라는 한 치도 흔들리지 않는다. 세계의 규칙성을 선언하는 첫 샷.',
-    t2iPrompt: 'perfectly symmetrical room interior, pastel color palette, centered composition, retro aesthetic, soft even lighting, Wes Anderson style, detailed set design',
-    i2vPrompt: 'static locked-off camera, center door opens, character steps forward, 4 seconds, no camera movement',
-    workflow: 'Midjourney v6 (--ar 16:9 --style raw) → Runway Gen-3 (static hold) → Premiere'
-  },
-  {
-    id: 3,
-    dimension: '3d',
-    title: '눈물 직전 클로즈업',
-    source: 'Pixar',
-    purpose: 'emotional_cu',
-    mood: ['emotional','close-up','tears','sad','melancholic','pixar','warmth','eyes','feeling','intense','눈물','감정','슬픈','클로즈업','따뜻'],
-    framing: 'Extreme Close-up',
-    angle: 'Eye Level',
-    movement: 'Micro Dolly-in',
-    lighting: '림 라이트 + 언더라이트, 눈에 캐치라이트 강조, 따뜻한 앰버 틴트',
-    palette: ['#1A2540','#3B5998','#F0C27F','#A8C8E8','#2C1810'],
-    description: '캐릭터의 눈이 화면을 가득 채운다. 눈물이 맺히기 직전, 속눈썹에 빛이 굴절되며 감정이 극대화되는 순간.',
-    t2iPrompt: 'extreme close-up anime eyes, tears welling up, catchlight reflection, rim lighting, deep blue and amber tones, Pixar inspired, high detail, emotional',
-    i2vPrompt: 'ultra slow dolly-in on eyes, 5 seconds, single tear forming, subtle lash tremor, shallow depth of field',
-    workflow: 'Stable Diffusion XL (anime model) → Kling 1.6 (slow zoom) → After Effects glow composite'
-  },
-  {
-    id: 4,
-    dimension: '2d',
-    title: '창문 앞 독백',
-    source: 'Ghibli',
-    purpose: 'emotional_cu',
-    mood: ['emotional','close-up','backlit','melancholic','lonely','ghibli','window','silhouette','quiet','reflection','창문','슬픈','고요','독백','역광','외로운','감정'],
-    framing: 'Medium Close-up',
-    angle: 'Slightly Low',
-    movement: 'Static + Subtle Rack Focus',
-    lighting: '역광 창문, 실루엣 가장자리 헤일로, 실내는 쿨 섀도',
-    palette: ['#D4E8F0','#8BB5C8','#2A3545','#F5DEB3','#6B8FA3'],
-    description: '창문을 바라보는 캐릭터. 바깥 세상의 빛이 실루엣을 만들고, 배경의 먼 나무들이 서서히 초점에서 벗어나며 내면의 고립감을 표현한다.',
-    t2iPrompt: 'anime character standing by window, backlit silhouette, soft halo rim light, cool indoor shadows, Studio Ghibli atmosphere, melancholic mood, detailed background',
-    i2vPrompt: 'static shot, subtle rack focus from character to window background, 5 seconds, gentle curtain sway',
-    workflow: 'Midjourney v6 → Kling 1.6 (rack focus effect) → Topaz Video Enhance'
-  },
-  {
-    id: 5,
-    dimension: '2d',
-    title: '옥상 추격 시작',
-    source: 'Spider-Man ATSV',
-    purpose: 'action',
-    mood: ['action','chase','dynamic','neon','urban','night','rain','fast','rooftop','kinetic','추격','액션','도시','네온','야간','역동','옥상'],
-    framing: 'Medium Wide',
-    angle: 'Dynamic Low Angle',
-    movement: 'Handheld Follow + Quick Tilt',
-    lighting: '네온 야경, 고대비 쿨·퍼플 톤, 빗물 반사',
-    palette: ['#0D0D1A','#7B2FBE','#FF4D6D','#00F5D4','#1A1A3E'],
-    description: '빗속 도심 옥상. 캐릭터가 도약하는 순간 카메라가 급격히 틸트업되며 화면이 역동적으로 기울어진다. 추격의 시작을 알리는 폭발적인 첫 액션 샷.',
-    t2iPrompt: 'anime rooftop chase, neon city night, rain-slicked surfaces, purple and teal lighting, dynamic low angle, motion blur, comic-inspired, high contrast',
-    i2vPrompt: 'handheld follow as character leaps, quick upward tilt, 3 seconds, speed ramp on peak jump, neon reflections on wet roof',
-    workflow: 'Midjourney v6 → Runway Gen-3 (motion brush) → Premiere speed ramp'
-  },
-  {
-    id: 6,
-    dimension: '2d',
-    title: '충돌 임팩트 프레임',
-    source: 'Trigger',
-    purpose: 'action',
-    mood: ['action','impact','explosion','dynamic','kinetic','intense','flash','energy','dramatic','폭발','액션','역동','충돌','임팩트'],
-    framing: 'Close-up / Dutch Angle',
-    angle: 'Extreme Low',
-    movement: 'Crash Zoom + Freeze Frame',
-    lighting: '폭발 플래시 오버익스포저, 실루엣 아웃라인, 화염 오렌지',
-    palette: ['#FF6B00','#FFD700','#1A0A00','#FF2200','#FFFFFF'],
-    description: '두 힘이 충돌하는 극적인 순간. 카메라가 순식간에 크래시 줌하며 임팩트 프레임에서 정지, 화면 가장자리에 에너지 라인이 방사한다.',
-    t2iPrompt: 'anime impact frame, giant robot clash, extreme low angle dutch, explosion flash overexposure, energy lines radiating, Gainax/Trigger style, orange and white bloom',
-    i2vPrompt: 'crash zoom to impact point, 2 seconds, freeze frame on hit, screen flash white, energy shockwave ripple outward',
-    workflow: 'Midjourney v6 → After Effects (crash zoom + flash) → Kling 1.6 shockwave'
-  },
-  {
-    id: 7,
-    dimension: '2d',
-    title: '매치컷 — 시계→달',
-    source: 'Shinkai',
-    purpose: 'transition',
-    mood: ['transition','match cut','moon','night','poetic','shinkai','time','circular','lyrical','달','전환','매치','시적','밤','시간'],
-    framing: 'Close-up (Round Object Match)',
-    angle: 'Eye Level',
-    movement: 'Static → Slow Zoom Out',
-    lighting: '시계: 따뜻한 실내등 / 달: 차가운 블루 야광',
-    palette: ['#F5E6C8','#2C3E6B','#C8B89A','#0A0F1E','#E8D4A0'],
-    description: '회중시계 클로즈업에서 컷. 동일한 원형 구도로 달 클로즈업이 등장하며 시간과 공간을 뛰어넘는 감정적 연결을 만든다.',
-    t2iPrompt: 'close-up pocket watch face, warm amber light, round frame composition — match: full moon close-up, cold blue glow, identical circular framing, Shinkai style',
-    i2vPrompt: 'cut from watch to moon at circular match, slow zoom-out from moon revealing night sky, 4 seconds, ethereal ambient tone',
-    workflow: 'Midjourney v6 (2 matched frames) → Premiere match cut edit → Kling dissolve optional'
-  },
-  {
-    id: 8,
-    dimension: '2d',
-    title: '계절 전환 와이프',
-    source: 'Ghibli / Hosoda',
-    purpose: 'transition',
-    mood: ['transition','seasonal','spring','winter','nature','ghibli','lateral','sakura','snow','변환','전환','봄','겨울','자연','계절'],
-    framing: 'Wide Shot',
-    angle: 'Eye Level',
-    movement: 'Lateral Pan → Dissolve',
-    lighting: '봄: 소프트 핑크·그린 / 겨울: 데사추레이티드 블루·화이트',
-    palette: ['#F9C8D4','#A8D8A8','#B8D4E8','#F5F5F5','#6B9E6B'],
-    description: '같은 장소를 가로로 패닝하는 도중 화면이 계절로 변환된다. 벚꽃이 흩날리다 눈송이로 바뀌며 시간의 경과를 한 샷에 담는다.',
-    t2iPrompt: 'same location split — left half spring cherry blossoms, right half winter snow, lateral pan transition, anime style, soft pastel tones, Studio Ghibli inspired',
-    i2vPrompt: 'lateral pan across scene, seasonal dissolve mid-pan, cherry petals morphing into snowflakes, 5 seconds',
-    workflow: 'Midjourney v6 (2 season frames) → After Effects lateral wipe morph → DaVinci color split'
-  },
-  // ── 실제 분석 데이터 — Pixar «Geri's Game» (프레임 단위 분석) ──
-  {
-    id: 9,
-    dimension: '3d',
-    verified: true,
-    title: "가을 공원 체스 테이블",
-    source: "Pixar · Geri's Game",
-    purpose: 'establishing',
-    mood: ["establishing","wide","autumn","warm","golden","red foliage","park","peaceful","pixar","nature","가을","공원","설정","넓은","따뜻","고요"],
-    framing: "Wide Shot",
-    angle: "Eye Level / Slightly High",
-    movement: "Static (very slow settle)",
-    lighting: "오후 자연광 + 따뜻한 백라이트, 나뭇잎 사이로 부드럽게 확산되는 빛",
-    palette: ["#9B6226","#D5A058","#A79053","#C0392B","#6B7B3A","#A9C8E0"],
-    description: "노인이 두 벤치 사이 초록 체스 테이블에 홀로 앉아 자기 자신과 체스를 둔다. 붉고 노란 단풍이 배경을 채우며 따뜻하고 고요한 세계를 설정하는 첫 샷.",
-    t2iPrompt: "cozy autumn park, a lone elderly man at a green chess table between two park benches, red and golden foliage, warm afternoon backlight, Pixar 3D style, wide establishing shot, painterly bokeh",
-    i2vPrompt: "static wide shot, gentle falling leaves, subtle breeze through the trees, 6 seconds, no camera movement",
-    workflow: "Midjourney v6 (--ar 16:9) → Kling 1.6 (ambient falling leaves) → DaVinci warm autumn grade"
-  },
-  {
-    id: 10,
-    dimension: '3d',
-    verified: true,
-    title: "제리의 표정 클로즈업",
-    source: "Pixar · Geri's Game",
-    purpose: 'emotional_cu',
-    mood: ["emotional","close-up","expressive","comedic","sly","warm","character","face","pixar","autumn","red","감정","클로즈업","표정","익살","따뜻"],
-    framing: "Close-up (3/4)",
-    angle: "Eye Level",
-    movement: "Static + subtle handheld",
-    lighting: "부드러운 측면광, 얼굴에 따뜻한 하이라이트, 배경은 붉은 단풍 보케",
-    palette: ["#912C30","#A15E57","#C97A5A","#AFCED9","#2A211C","#8A8A8A"],
-    description: "제리의 주름진 얼굴이 화면을 채운다. 능청스러운 미소로 상대(= 자기 자신)를 떠보는 순간. 배경의 붉은 단풍이 흐릿하게 번지며 인물에 시선을 모은다.",
-    t2iPrompt: "extreme close-up of an elderly man, expressive sly smile, round glasses, wispy white hair, warm side lighting, blurred red autumn foliage background, Pixar 3D render, fine character detail",
-    i2vPrompt: "static close-up, subtle eyebrow raise into a sly smile, eyes dart sideways, 4 seconds, shallow depth of field",
-    workflow: "Midjourney v6 (character reference) → Runway Gen-3 (facial micro-motion) → After Effects subtle warmth"
-  },
-  {
-    id: 11,
-    dimension: '3d',
-    verified: true,
-    title: "체스 킹 인서트",
-    source: "Pixar · Geri's Game",
-    purpose: 'transition',
-    mood: ["transition","insert","detail","shallow focus","tension","cutaway","stakes","pixar","전환","인서트","디테일","긴장"],
-    framing: "Extreme Close-up (Insert)",
-    angle: "Low / Table Level",
-    movement: "Rack Focus → Cut",
-    lighting: "얕은 심도 — 킹에 샤프 포커스, 배경 초록 벤치와 단풍은 보케로 날림",
-    palette: ["#E7A252","#DC8E34","#9E5F24","#6E6327","#CCD9DA","#D36E2E"],
-    description: "황금빛 킹 말이 전경에 선명하게 서고 배경의 초록 벤치와 단풍이 흐려진다. 손이 프레임 하단으로 들어오며, 이 인서트가 두 '플레이어' 사이 시점을 전환하는 연결 고리가 된다.",
-    t2iPrompt: "extreme close-up of a golden wooden chess king piece, sharp focus, shallow depth of field, blurred green park bench and autumn bokeh, a hand entering the lower frame, Pixar 3D, warm light",
-    i2vPrompt: "rack focus from the king to the background, a hand reaches into frame, 3 seconds, then cut to reverse angle",
-    workflow: "Midjourney v6 (macro insert) → Kling 1.6 (rack focus) → Premiere shot-reverse-shot cut"
-  },
-  // ── 실제 분석 데이터 — Disney «Paperman» (2D 룩, 흑백 + 단일 빨강 포인트) ──
-  {
-    id: 12,
-    dimension: '2d',
-    verified: true,
-    title: "1940년대 도시 옥상 (도입)",
-    source: "Disney · Paperman",
-    purpose: 'establishing',
-    mood: ["establishing","wide","monochrome","black and white","1940s","city","romance","longing","disney","paperman","흑백","도시","도입","로맨스","넓은"],
-    framing: "Wide / Medium Wide",
-    angle: "Eye Level",
-    movement: "Static (slow drift)",
-    lighting: "부드러운 하이키 흑백, 도시 안개빛 확산광, 은은한 하이라이트",
-    palette: ["#E9EAE5","#9A9B95","#6F706A","#2F302B","#B0433A"],
-    description: "1940년대 뉴욕, 흑백 도시를 배경으로 서류를 든 남자가 홀로 선다. 흑백 세계에 단 하나의 포인트 컬러(빨강)가 로맨스의 씨앗을 예고하는 도입 샷.",
-    t2iPrompt: "1940s New York, black-and-white hand-drawn look, a young man in a suit holding papers on a rooftop railing, soft high-key monochrome, city buildings behind, Disney Paperman style, painterly 2D-on-3D",
-    i2vPrompt: "static wide shot, gentle wind ruffles the papers, distant city haze, 5 seconds, minimal camera drift",
-    workflow: "Midjourney v6 (--style raw, b&w) → Runway Gen-3 (subtle wind) → DaVinci monochrome + single red-accent isolation"
-  },
-  {
-    id: 13,
-    dimension: '2d',
-    verified: true,
-    title: "그리움의 표정 클로즈업",
-    source: "Disney · Paperman",
-    purpose: 'emotional_cu',
-    mood: ["emotional","close-up","longing","monochrome","wistful","yearning","disney","paperman","흑백","감정","클로즈업","그리움","무기력"],
-    framing: "Close-up",
-    angle: "Eye Level / Slightly Low",
-    movement: "Static + subtle",
-    lighting: "부드러운 흑백 측면광, 얼굴 절반 섀도, 창가 확산광",
-    palette: ["#EDEEE8","#979893","#5B5C57","#30302E","#B0433A"],
-    description: "남자의 얼굴 클로즈업. 무기력하게 창밖을 바라보다 그녀를 떠올리는 눈빛. 흑백의 부드러운 명암이 인물의 그리움을 조용히 드러낸다.",
-    t2iPrompt: "black-and-white close-up of a young man's face, wistful longing expression, soft monochrome side lighting, window diffusion, Disney Paperman hand-drawn look, delicate 2D shading",
-    i2vPrompt: "static close-up, eyes drift toward the window, a faint sigh, 4 seconds, shallow focus",
-    workflow: "Midjourney v6 (b&w portrait) → Kling 1.6 (facial micro-motion) → After Effects monochrome grade"
-  },
-  {
-    id: 14,
-    dimension: '2d',
-    verified: true,
-    title: "종이비행기 도심 비행",
-    source: "Disney · Paperman",
-    purpose: 'action',
-    mood: ["action","kinetic","paper airplanes","flight","dynamic","climax","swarm","disney","paperman","흑백","종이비행기","역동","비행"],
-    framing: "Wide / High Angle",
-    angle: "High Overhead",
-    movement: "Dynamic sweeping follow",
-    lighting: "흑백 도심 낮, 긴 그림자, 고대비 아스팔트",
-    palette: ["#EDEEEA","#A1A29C","#4C4D48","#2C2D28","#B0433A"],
-    description: "수많은 종이비행기가 도심 거리를 가로질러 날아오른다. 흑백 고각 부감으로 도시를 내려다보며, 정적인 로맨스가 폭발적 운동으로 전환되는 클라이맥스.",
-    t2iPrompt: "high overhead angle of a black-and-white city street, a swarm of paper airplanes sweeping through the air between buildings, long shadows, high contrast, Disney Paperman 2D style",
-    i2vPrompt: "sweeping follow of paper airplanes flying through the street, dynamic overhead motion, planes swirling toward a figure, 4 seconds",
-    workflow: "Midjourney v6 (b&w cityscape) → Runway Gen-3 (motion brush on planes) → Premiere kinetic edit"
-  }
-];
+  <div class="section-lab">System Status</div>
+  <div class="status">
+    <div class="stat"><div class="n">14</div><div class="l">Analyzed Shots (Layer 1)</div></div>
+    <div class="stat"><div class="n">2</div><div class="l">Frame-Analyzed Films</div></div>
+    <div class="stat"><div class="n">6</div><div class="l">Narrative Beats (Layer 2)</div></div>
+    <div class="stat"><div class="n">2D · 3D</div><div class="l">Animation Dimensions</div></div>
+    <div class="stat"><div class="n">25 vs 10</div><div class="l">Grounded vs Naive Evaluation</div></div>
+  </div>
 
-// ─────────────────────────────────────────────
-// SYNONYM MAP  (한국어 → 영어 확장)
-// ─────────────────────────────────────────────
-const synonymMap = {
-  따뜻: ['warm','golden','amber','emotional'],
-  차가운: ['cold','blue','cool','winter'],
-  슬픈: ['sad','melancholic','emotional','lonely'],
-  감정: ['emotional','emotional_cu','close-up'],
-  감성: ['emotional','emotional_cu','poetic'],
-  외로운: ['lonely','melancholic','emotional'],
-  고요: ['calm','peaceful','static','quiet'],
-  역동: ['dynamic','action','kinetic'],
-  시적: ['poetic','transition','lyrical'],
-  극적: ['dramatic','action','intense'],
-  클로즈업: ['emotional_cu','close-up'],
-  클로즈: ['emotional_cu','close-up'],
-  와이드: ['establishing','wide'],
-  넓은: ['establishing','wide','landscape'],
-  광활: ['establishing','wide','landscape'],
-  도입: ['establishing'],
-  인트로: ['establishing'],
-  원경: ['establishing','wide','landscape'],
-  액션: ['action','chase','dynamic'],
-  추격: ['action','chase'],
-  폭발: ['action','impact','explosion'],
-  충돌: ['action','impact'],
-  싸움: ['action','dynamic'],
-  전투: ['action','dynamic'],
-  전환: ['transition','morph','cut'],
-  매치컷: ['transition','match cut'],
-  매치: ['transition','match cut'],
-  변환: ['transition','seasonal'],
-  황혼: ['golden','amber','warm','sunset'],
-  석양: ['golden','amber','warm','sunset'],
-  야간: ['night','dark','neon'],
-  밤: ['night','dark'],
-  낮: ['daylight','bright','warm'],
-  역광: ['backlit','silhouette'],
-  네온: ['neon','urban','night'],
-  자연: ['nature','landscape','ghibli'],
-  봄: ['spring','sakura','warm','pink'],
-  겨울: ['winter','snow','cold','blue'],
-  계절: ['seasonal','transition','nature'],
-  도시: ['urban','city','neon'],
-  옥상: ['rooftop','urban','action'],
-  창문: ['window','backlit','emotional'],
-  마을: ['village','establishing','ghibli'],
-  실내: ['indoor','establishing'],
-  눈물: ['tears','emotional_cu','emotional'],
-  독백: ['monologue','emotional_cu','emotional'],
-  달: ['moon','night','poetic','transition'],
-  대칭: ['symmetry','establishing'],
-  지브리: ['ghibli','warm','nature'],
-  픽사: ['pixar','emotional_cu'],
-  신카이: ['shinkai','transition','poetic'],
-  트리거: ['action','impact'],
-};
-
-// ─────────────────────────────────────────────
-// MATCHING ENGINE
-// ─────────────────────────────────────────────
-function buildTokens(input) {
-  const lower = input.toLowerCase().trim();
-  const tokens = new Set();
-
-  lower.split(/[\s,·]+/).forEach(t => t.length > 1 && tokens.add(t));
-
-  for (const [kr, expansions] of Object.entries(synonymMap)) {
-    if (lower.includes(kr)) {
-      tokens.add(kr);
-      expansions.forEach(e => tokens.add(e));
-    }
-  }
-
-  return [...tokens];
-}
-
-function scoreShot(shot, tokens) {
-  const corpus = [
-    ...shot.mood,
-    shot.lighting.toLowerCase(),
-    shot.purpose,
-    shot.description.toLowerCase(),
-    shot.source.toLowerCase(),
-    shot.framing.toLowerCase(),
-    shot.movement.toLowerCase(),
-  ].join(' ');
-
-  let score = 0;
-  const matched = [];
-
-  for (const t of tokens) {
-    if (corpus.includes(t)) {
-      score += t.length > 3 ? 3 : 2;
-      matched.push(t);
-    }
-  }
-
-  return { score, matched: [...new Set(matched)] };
-}
-
-function getRecommendations(input) {
-  const tokens = buildTokens(input);
-  if (!tokens.length) return [];
-
-  return shots
-    .map(shot => ({ shot, ...scoreShot(shot, tokens) }))
-    .filter(s => s.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 3);
-}
-
-// ─────────────────────────────────────────────
-// RENDER HELPERS
-// ─────────────────────────────────────────────
-const PURPOSE_LABELS = {
-  establishing: 'Establishing',
-  emotional_cu: 'Emotional CU',
-  action: 'Action',
-  transition: 'Transition',
-};
-
-function swatchesHtml(palette) {
-  return palette.map(h =>
-    `<div class="swatch" style="background:${h}" title="${h}"></div>`
-  ).join('');
-}
-
-function renderCard(shot, rank = null) {
-  const rankHtml = rank ? `
-    <div class="rank-area">
-      <div class="rank-badge rank-${rank.n}">${rank.label}</div>
-      ${rank.matched.length ? `
-        <div class="kw-chips">
-          ${rank.matched.slice(0,7).map(k => `<span class="kw-chip">${k}</span>`).join('')}
-        </div>` : ''}
-    </div>` : '';
-
-  return `
-    <div class="card">
-      ${rankHtml}
-      <div class="card-head">
-        <div class="card-head-row">
-          <div>
-            <div class="purpose-tag">${PURPOSE_LABELS[shot.purpose] || shot.purpose}</div>
-            <div class="card-title">${shot.title}</div>
-          </div>
-          <div class="tag-col">
-            <span class="source-tag">${shot.source}</span>
-            ${shot.dimension ? `<span class="dim-tag">${shot.dimension.toUpperCase()}</span>` : ''}
-            ${shot.verified ? `<span class="verified-tag">✓ Frame-analyzed</span>` : ''}
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="meta-grid">
-          <div class="meta-item"><label>Framing</label><span>${shot.framing}</span></div>
-          <div class="meta-item"><label>Angle</label><span>${shot.angle}</span></div>
-          <div class="meta-item"><label>Movement</label><span>${shot.movement}</span></div>
-          <div class="meta-item"><label>Lighting</label><span>${shot.lighting}</span></div>
-        </div>
-        <div class="palette-row">
-          <label>Palette</label>
-          <div class="swatches">${swatchesHtml(shot.palette)}</div>
-        </div>
-        <div class="divider"></div>
-        <p class="desc">${shot.description}</p>
-        <div class="prompt-block">
-          <label>T2I Prompt</label>
-          <p>${shot.t2iPrompt}</p>
-        </div>
-        <div class="prompt-block">
-          <label>I2V Prompt</label>
-          <p>${shot.i2vPrompt}</p>
-        </div>
-        <div class="workflow-row">
-          <label>Workflow</label>
-          <span>${shot.workflow}</span>
-        </div>
-      </div>
-    </div>`;
-}
-
-// ─────────────────────────────────────────────
-// VIEW 1 — RECOMMEND
-// ─────────────────────────────────────────────
-const RANK_META = [
-  { n: 1, label: '1st Match' },
-  { n: 2, label: '2nd Match' },
-  { n: 3, label: '3rd Match' },
-];
-
-function recommend() {
-  const input = document.getElementById('searchInput').value.trim();
-  const el = document.getElementById('results');
-
-  if (!input) {
-    el.innerHTML = `<div class="empty-state"><h3>스타일을 입력해 주세요</h3><p>원하는 장면이나 분위기를 자유롭게 적어보세요</p></div>`;
-    return;
-  }
-
-  const res = getRecommendations(input);
-
-  if (!res.length) {
-    el.innerHTML = `<div class="empty-state"><h3>매칭 결과 없음</h3><p>다른 키워드로 시도해보세요 — 예: 따뜻한, 액션, 전환, 야간, 감정적</p></div>`;
-    return;
-  }
-
-  const cards = res.map((r, i) =>
-    renderCard(r.shot, { ...RANK_META[i], matched: r.matched })
-  ).join('');
-
-  el.innerHTML = `
-    <div class="results-meta">"${input}" — <span>${res.length}개 추천</span></div>
-    <div class="result-grid">${cards}</div>`;
-}
-
-function setExample(text) {
-  document.getElementById('searchInput').value = text;
-  recommend();
-}
-
-document.getElementById('searchInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); recommend(); }
-});
-
-// ─────────────────────────────────────────────
-// VIEW 2 — BROWSER
-// ─────────────────────────────────────────────
-const FILTER_OPTS = [
-  { label: 'All',           value: 'all' },
-  { label: 'Establishing',  value: 'establishing' },
-  { label: 'Emotional CU',  value: 'emotional_cu' },
-  { label: 'Action',        value: 'action' },
-  { label: 'Transition',    value: 'transition' },
-];
-
-const DIM_OPTS = [
-  { label: 'All', value: 'all' },
-  { label: '3D',  value: '3d' },
-  { label: '2D',  value: '2d' },
-];
-
-let activeFilter = 'all';
-let activeDim = 'all';
-
-function renderFilters() {
-  const purpose = FILTER_OPTS.map(f => `
-    <button class="filter-btn ${f.value === activeFilter ? 'active' : ''}"
-      onclick="setFilter('${f.value}')">${f.label}</button>`).join('');
-  const dim = DIM_OPTS.map(f => `
-    <button class="filter-btn ${f.value === activeDim ? 'active' : ''}"
-      onclick="setDim('${f.value}')">${f.label}</button>`).join('');
-  document.getElementById('filters').innerHTML =
-    `<span class="filter-group-label">Purpose</span>${purpose}` +
-    `<span class="filter-group-label" style="margin-left:14px">Dimension</span>${dim}`;
-}
-
-function setFilter(v) { activeFilter = v; renderFilters(); renderGrid(); }
-function setDim(v)    { activeDim = v;    renderFilters(); renderGrid(); }
-
-function renderGrid() {
-  const list = shots.filter(s =>
-    (activeFilter === 'all' || s.purpose === activeFilter) &&
-    (activeDim === 'all' || s.dimension === activeDim)
-  );
-  document.getElementById('statsBar').innerHTML = `<span>${list.length}</span>개 샷`;
-  document.getElementById('grid').innerHTML = list.length
-    ? list.map(s => renderCard(s)).join('')
-    : `<div class="empty-state"><h3>해당 조건의 샷 없음</h3><p>다른 필터를 선택해보세요</p></div>`;
-}
-
-// ─────────────────────────────────────────────
-// TAB SWITCH
-// ─────────────────────────────────────────────
-function switchTab(tab) {
-  document.getElementById('view-recommend').style.display = tab === 'recommend' ? '' : 'none';
-  document.getElementById('view-browser').style.display   = tab === 'browser'   ? '' : 'none';
-  document.getElementById('tab-recommend').classList.toggle('active', tab === 'recommend');
-  document.getElementById('tab-browser').classList.toggle('active',   tab === 'browser');
-}
-
-// ─────────────────────────────────────────────
-// INIT
-// ─────────────────────────────────────────────
-renderFilters();
-renderGrid();
-
-// ── stats footer ──
-(function fillStats() {
-  const verified = shots.filter(s => s.verified).length;
-  const films = new Set(shots.filter(s => s.verified).map(s => s.source)).size;
-  document.getElementById('statShots').textContent = shots.length;
-  document.getElementById('statVerified').textContent = verified;
-  document.getElementById('statFilms').textContent = films || 0;
-})();
-</script>
+  <footer>
+    <p><b>E.V.E Creator</b> (formerly SceneForge), powered by the <b>ShotSeed</b> data engine. Method: SCHEMA.md · SCHEMA_L2.md / Evaluation: evaluation/ / Roadmap: RESEARCH_PLAN.md</p>
+    <p>Built &amp; analyzed by <b>Junsu (Michael) Kim</b> — AI Filmmaker</p>
+  </footer>
 </body>
 </html>

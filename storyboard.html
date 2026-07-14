@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,80 +88,80 @@
 <body>
   <nav class="site-nav">
     <span class="brand">E.V.E Creator</span>
-    <a href="eve.html">Home</a>
-    <a href="index.html">ShotSeed</a>
+    <a href="index.html">Home</a>
+    <a href="shotseed.html">ShotSeed</a>
     <a href="storyboard.html" class="on">Story Flow</a>
     <a href="concept_lab.html">Concept Lab</a>
   </nav>
   <header>
     <div class="logo-row"><h1>E.V.E Creator</h1><span class="badge">Storyboard Sheet · Director-Grounded</span></div>
-    <p class="subtitle">아이디어 → 트위스트·미장셴 분석 → 스토리보드 시트 · 프레임은 프롬프트로 GPT 생성해 채움</p>
+    <p class="subtitle">Idea → twist and mise-en-scène analysis → director-grounded storyboard · prompts supply every frame</p>
   </header>
 
   <div class="idea">
     <div class="lab">Input Idea</div>
-    <div class="txt">혼자 노는 노인의, 따뜻하고 익살스러운 픽사풍 단편</div>
+    <div class="txt">A warm, playful animated short about an old man who plays alone.</div>
     <div class="chips">
-      <span class="chip">장르: 코믹 드라마</span><span class="chip">무드: 따뜻 · 익살</span>
-      <span class="chip">3D · 미국 애니</span><span class="chip ref">grounded in «Geri's Game» (Pixar)</span>
+      <span class="chip">Genre: Comedy Drama</span><span class="chip">Mood: Warm · Playful</span>
+      <span class="chip">3D · American Animation</span><span class="chip ref">grounded in «Geri's Game» (Pixar)</span>
     </div>
     <div class="analysis">
-      <div class="an-box twist"><div class="h">Core Twist</div><p>약자(소심한 자아)가 <b>힘이 아니라 속임수</b>로 이긴다. 상대가 곧 자기 자신이라, 이겨도 진 것도 결국 자기 — <b>자기와의 게임에서 스스로를 이기는 아이러니</b>. (셋업: beat 2의 "자기와 둔다" → 페이오프: beat 4의 속임수)</p></div>
-      <div class="an-box mise"><div class="h">Mise-en-scène Motif</div><p>마주 놓인 두 의자 = 자아의 분열. 빈 가을 공원 = 고독·황혼. 로우앵글 말 인서트 = 내적 위협을 크기로. 따뜻한 앰버 = 노스탤지어, 소품(틀니)의 소소함 = 유머.</p></div>
+      <div class="an-box twist"><div class="h">Core Twist</div><p>The underdog—the timid self—wins through <b>deception rather than force</b>. Because the opponent is also himself, every victory is simultaneously a defeat: <b>the irony of beating oneself at one's own game</b>. (Setup: beat 2 reveals the self-match → payoff: beat 4 weaponizes the feint.)</p></div>
+      <div class="an-box mise"><div class="h">Mise-en-scène Motif</div><p>Opposing chairs symbolize a divided self. The empty autumn park encodes solitude and life's twilight. A low-angle chess insert enlarges an internal threat; warm amber carries nostalgia, while the humble denture prize restores humor.</p></div>
     </div>
   </div>
 
-  <div class="sect-lab">Pacing Curve — 긴장도 곡선</div>
-  <div class="sect-note">감독이 시간에 걸쳐 긴장을 어떻게 쌓고 푸는가. 점 클릭 시 해당 SHOT으로 이동. HOOK가 CLIMAX의 트위스트를 가능케 한다.</div>
+  <div class="sect-lab">Pacing Curve — Tension Over Time</div>
+  <div class="sect-note">The curve shows how tension accumulates and releases. Click a point to jump to its shot. The HOOK plants the mechanism that enables the CLIMAX.</div>
   <div class="curve-wrap"><div id="curve"></div></div>
 
-  <div class="sect-lab">Storyboard Sheet — 컷별 콘티</div>
-  <div class="sect-note">프레임 = 그림 자리 (해당 프롬프트로 GPT/DALL·E 생성 → <code>storyboard_frames/beatN.png</code> 저장 시 자동 표시). 우측 = ACTION · CAMERA · 미장셴 · 트위스트.</div>
+  <div class="sect-lab">Storyboard Sheet — Shot-by-Shot Board</div>
+  <div class="sect-note">Generate each frame from its prompt and save it as <code>storyboard_frames/beatN.png</code> to display it automatically. The right column explains action, camera, mise-en-scène, and twist mechanics.</div>
   <div class="sheet" id="sheet"></div>
 
   <footer>
-    <p><b>Method:</b> «Geri's Game» (Pixar)를 비트 단위로 분석 → 긴장도·<b>트위스트 메커니즘</b>·<b>미장셴</b>·비트별 샷 문법을 Layer 2 스키마(SCHEMA_L2.md)로 구조화. 프레임 그림은 각 SHOT의 T2I 프롬프트로 외부 생성(예: GPT/DALL·E)해 채운다 — "시스템은 설계, 생성은 툴/사람".</p>
+    <p><b>Method:</b> analyze «Geri's Game» (Pixar) beat by beat → encode tension, <b>twist mechanics</b>, <b>mise-en-scène</b>, and shot grammar in the Layer 2 schema (SCHEMA_L2.md). Frames are generated externally from each shot's T2I prompt: the system designs; tools and people execute.</p>
     <p>Built &amp; analyzed by <b>Junsu (Michael) Kim</b> — AI Filmmaker · ShotSeed / E.V.E Creator</p>
   </footer>
 
   <script>
     const beats = [
-      {n:1,name:'설정',t:'0:00–0:35',tension:0.15,mood:['고요','따뜻'],
-        action:'가을 공원, 초록 체스 테이블에 노인이 홀로 앉아 판을 세팅한다.',
+      {n:1,name:'Setup',t:'0:00–0:35',tension:0.15,mood:['Quiet','Warm'],
+        action:'In an autumn park, an old man sits alone at a green chess table and sets the board.',
         cam:'Wide · Eye-level/Slightly High · Static',
-        mise:'빈 공원 = 고독. 마주 놓인 두 의자 = 자기 대 자기. 가을 = 인생의 황혼. 따뜻한 백라이트로 노스탤지어.',
+        mise:'The empty park means solitude; opposing chairs stage self versus self; autumn suggests the twilight of life; warm backlight carries nostalgia.',
         palette:['#9B6226','#D5A058','#C0392B','#6B7B3A','#A9C8E0'],
         t2i:'cozy autumn park, lone elderly man at a green chess table between two benches, warm afternoon backlight, Pixar 3D, wide establishing shot, painterly bokeh'},
-      {n:2,name:'반전 소개',t:'0:35–1:10',tension:0.30,mood:['익살','호기심'],hook:true,
-        action:'노인이 반대편 의자로 옮겨 앉아 스스로 "상대"가 되어 둔다.',
-        cam:'Close-up 3/4 · Eye-level · OTS 왕복',
-        mise:'안경·모자를 바꿔 쓰며 두 인격을 분리. OTS 왕복 편집이 "두 사람"이라는 착시를 만든다.',
+      {n:2,name:'Twist Introduction',t:'0:35–1:10',tension:0.30,mood:['Playful','Curious'],hook:true,
+        action:'The old man changes chairs and becomes his own opponent.',
+        cam:'Close-up 3/4 · Eye-level · Alternating OTS',
+        mise:'Switching glasses and hat separates the two personas. Alternating over-the-shoulder coverage creates the illusion of two players.',
         palette:['#912C30','#A15E57','#C97A5A','#AFCED9'],
         t2i:'expressive elderly face, sly smile, glasses, blurred red autumn foliage, Pixar 3D close-up, 3/4 angle',
-        twist:'셋업 — "상대가 있나?" 궁금할 때 같은 노인이 맞은편에 앉는 반전으로 후크. 이 인격 분리가 후반 트위스트의 씨앗.'},
-      {n:3,name:'상승',t:'1:10–2:30',tension:0.55,mood:['긴장','압박'],
-        action:'공격적 자아가 소심한 자아를 몰아붙인다.',
-        cam:'Insert(말) · Low / Table-level · 빠른 반응컷',
-        mise:'말을 로우앵글로 크게 잡아 "위협"을 물리적 크기로. 리액션 CU로 압박 리듬.',
+        twist:'Setup — just as the audience searches for an opponent, the same man occupies the opposite chair. This split persona plants the later reversal.'},
+      {n:3,name:'Escalation',t:'1:10–2:30',tension:0.55,mood:['Tense','Pressured'],
+        action:'The aggressive persona corners the timid persona.',
+        cam:'Chess-piece insert · Low / Table-level · Fast reaction cuts',
+        mise:'A low-angle piece becomes a physically enlarged threat. Reaction close-ups create a tightening rhythm of pressure.',
         palette:['#E7A252','#DC8E34','#9E5F24','#6E6327'],
         t2i:'macro golden chess king, low angle table level, shallow focus, tense reaction inserts, warm bokeh, Pixar 3D'},
-      {n:4,name:'반전 / 저점',t:'2:30–3:15',tension:0.78,mood:['반전','코믹'],
-        action:'소심한 자아가 가짜 심장 발작으로 상대를 속이고, 그 틈에 손을 뻗어 판을 돌린다.',
-        cam:'Medium → 극적 리액션 → 연결 컷',
-        mise:'발작의 과장된 연기 → 곧 드러나는 능청 = 코믹 반전. 판을 "돌리는" 물리 행동이 곧 서사의 반전.',
+      {n:4,name:'Reversal / Low Point',t:'2:30–3:15',tension:0.78,mood:['Reversal','Comic'],
+        action:'The timid persona fakes a heart attack, then reaches out and rotates the board while his opponent is distracted.',
+        cam:'Medium → dramatic reaction → connective insert',
+        mise:'The exaggerated collapse gives way to a sly reveal. Physically turning the board literalizes the narrative reversal.',
         palette:['#7A3B2E','#C75B43','#E8B98C','#2C1810'],
         t2i:'elderly man feigning a dramatic heart attack, a hand secretly turning the chessboard, comedic reversal, medium shot, Pixar 3D',
-        twist:'★ 핵심 트위스트 — 약자가 힘이 아니라 속임수로 이긴다. 상대가 곧 자기 자신이라 이긴 것도 진 것도 결국 자기. 자기와의 게임에서 스스로를 이기는 아이러니.'},
-      {n:5,name:'클라이맥스',t:'3:15–4:15',tension:0.95,mood:['통쾌','환희'],climax:true,
-        action:'돌린 판으로 소심한 자아가 체크메이트. 통쾌한 승리.',
-        cam:'CU × Wide 교차 · 통쾌한 리듬',
-        mise:'승리의 미소 CU + 전체 판 Wide 교차로 카타르시스. 톤이 밝아진다.',
+        twist:'★ Core twist — the underdog wins through deception rather than force. Since the opponent is himself, victory and defeat belong to the same person: the irony of beating oneself.'},
+      {n:5,name:'Climax',t:'3:15–4:15',tension:0.95,mood:['Triumphant','Joyful'],climax:true,
+        action:'Using the rotated board, the timid persona delivers checkmate and claims a cathartic victory.',
+        cam:'Cross-cut CU × Wide · punchy release rhythm',
+        mise:'A close-up of the victorious smile cross-cuts with the full board, releasing pressure as the palette brightens.',
         palette:['#F2884B','#E8C94B','#C0392B','#3E8E9A'],
         t2i:'triumphant checkmate, victorious sly smile close-up intercut with a wide of the board, warm bright tone, Pixar 3D'},
-      {n:6,name:'해소',t:'4:15–4:40',tension:0.25,mood:['흐뭇','여운'],
-        action:'이긴 자아가 상(틀니)을 받아 끼우고 흐뭇해한다.',
+      {n:6,name:'Resolution',t:'4:15–4:40',tension:0.25,mood:['Contented','Lingering warmth'],
+        action:'The winning persona accepts the prize—his dentures—puts them in, and smiles with satisfaction.',
         cam:'Close-up · Static',
-        mise:'상이 "틀니"라는 소소함 = 따뜻한 유머로 무게를 덜어낸다. 정적 CU로 여운.',
+        mise:'The humble denture prize releases the story\'s weight through warm humor. A static close-up lets the feeling linger.',
         palette:['#C2522A','#E8C9A0','#6B4F3A','#F2E6D4'],
         t2i:'warm satisfied close-up of an old man putting in dentures, gentle stillness, soft resolution, Pixar 3D'},
     ];
@@ -183,14 +183,14 @@
         <div class="frame empty">
           <span class="fnum">SC ${b.n}</span>
           <img src="storyboard_frames/beat${b.n}.png" alt="" onerror="this.closest('.frame').classList.add('empty');this.remove();" onload="this.closest('.frame').classList.remove('empty')">
-          <div class="frame-ph"><div class="big">프레임 그림 자리</div><div class="sm">이 SHOT의 T2I 프롬프트로 생성 →<br><code>storyboard_frames/beat${b.n}.png</code></div></div>
+          <div class="frame-ph"><div class="big">Storyboard frame</div><div class="sm">Generate from this shot's T2I prompt →<br><code>storyboard_frames/beat${b.n}.png</code></div></div>
         </div>
         <div class="meta">
           <div class="meta-top"><span class="shotbadge">SHOT ${b.n}</span><span class="beatname">${b.name}</span><span class="beattime">${b.t}</span><span class="ttag">tension <b>${b.tension.toFixed(2)}</b></span></div>
           <div class="field action"><span class="k">Action</span>${b.action}</div>
           <div class="field"><span class="k">Camera</span>${b.cam}</div>
           <div class="field mise"><span class="k">Mise-en-scène</span>${b.mise}</div>
-          ${b.twist?`<div class="twistbox"><span class="k">${b.name==='반전 / 저점'?'★ Core Twist':'Twist setup'}</span><p>${b.twist}</p></div>`:''}
+          ${b.twist?`<div class="twistbox"><span class="k">${b.name==='Reversal / Low Point'?'★ Core Twist':'Twist setup'}</span><p>${b.twist}</p></div>`:''}
           <div class="moodchips">${b.mood.map(m=>`<span class="moodchip">${m}</span>`).join('')}</div>
           <div class="sw">${b.palette.map(c=>`<div style="background:${c}"></div>`).join('')}</div>
           <div class="t2i"><span class="k">T2I PROMPT → GPT / DALL·E</span>${b.t2i}</div>

@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/eve.html"
+      "destination": "/index.html"
     }
   ]
 }
