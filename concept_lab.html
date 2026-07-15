@@ -51,6 +51,7 @@
     .loading .stage{font-size:13px;color:var(--text)}.loading .stage-sub{font-size:11px;color:var(--muted);margin-top:7px}.source{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.7px;text-transform:uppercase;color:var(--good);border:1px solid rgba(76,175,125,.3);background:rgba(76,175,125,.08);padding:5px 9px;border-radius:100px;margin-bottom:14px}.source.fallback{color:var(--warn);border-color:rgba(217,161,58,.35);background:rgba(217,161,58,.08)}
     .story-head{margin:18px 0 8px;border-top:1px solid var(--border);padding-top:18px}.story-title{font-size:21px;color:#fff;font-weight:800}.logline{font-size:13px;color:#b9b9b9;line-height:1.6;margin-top:7px}.theme{font-size:12px;color:var(--dim);line-height:1.55;margin-top:7px}.beat-list{display:grid;gap:13px;margin-top:18px}.beat-card{background:#101010;border:1px solid var(--border);border-radius:12px;padding:15px}.beat-top{display:flex;align-items:flex-start;gap:10px}.beat-num{display:flex;align-items:center;justify-content:center;width:26px;height:26px;flex:0 0 26px;border-radius:50%;background:var(--gold);color:#080808;font-size:11px;font-weight:800}.beat-name{font-size:14px;color:#fff;font-weight:700}.beat-fn{font-size:11.5px;color:var(--dim);line-height:1.45;margin-top:3px}.tension{margin-left:auto;min-width:48px;text-align:right;font-size:10px;color:var(--gold-lite)}
     .action{font-size:13px;line-height:1.55;color:#d5d5d5;margin:12px 0}.reason-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}@media(max-width:600px){.reason-grid{grid-template-columns:1fr}}.reason{border:1px solid #242424;background:#151515;border-radius:9px;padding:10px}.reason .rh{font-size:9px;letter-spacing:.9px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:5px}.reason p{font-size:11.5px;line-height:1.5;color:#a9a9a9}.shot-spec{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0 9px}.shot-spec span,.citation{font-size:10px;padding:3px 7px;border-radius:100px;background:#202020;color:#a0a0a0}.meaning{border-left:2px solid var(--gold-dim);padding-left:10px;margin-top:10px}.meaning .mh{font-size:9px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted)}.meaning p{font-size:11.5px;color:#b9b9b9;line-height:1.5;margin-top:4px}.citations{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}.citation{color:var(--gold-lite);background:rgba(201,162,39,.09)}details.prompts{margin-top:11px;border-top:1px solid #242424;padding-top:9px}details.prompts summary{cursor:pointer;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}.prompt{margin-top:8px;font-size:10.5px;line-height:1.5;color:#8e8e8e}.prompt b{color:#bcbcbc}.fallback-note{font-size:11px;line-height:1.5;color:var(--warn);margin-bottom:12px}.story-flow-btn{display:block;text-align:center;margin-top:18px;background:var(--gold);color:#080808;border:0;border-radius:100px;padding:12px 16px;font:700 14px inherit;cursor:pointer;width:100%}.story-flow-btn:disabled{opacity:.55;cursor:not-allowed}
+    .act-overview{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:14px 0}.act-mini{background:#101010;border:1px solid var(--border);border-radius:9px;padding:9px}.act-mini b{display:block;font-size:11px;color:#fff}.act-mini span{font-size:9px;color:var(--muted)}.act-curve{height:90px;width:100%;margin:8px 0 16px}.act-group{border:1px solid var(--border);border-radius:12px;margin:12px 0;overflow:hidden}.act-head{padding:12px 14px;background:#151515}.act-head b{color:#fff}.act-head p{font-size:11px;color:var(--dim);margin-top:4px;line-height:1.45}.shot-fold{border-top:1px solid var(--border)}.shot-fold>summary{cursor:pointer;padding:11px 14px;color:#ddd;font-size:12px}.shot-fold>summary span{color:var(--gold);margin-right:8px}.shot-fold .beat-card{border:0;border-radius:0;margin:0}@media(max-width:700px){.act-overview{grid-template-columns:1fr 1fr}}
   </style>
 </head>
 <body>
@@ -77,7 +78,7 @@
             <option value="sci_fi_fantasy">Sci-Fi / Fantasy</option>
             <option value="romance">Romance</option>
           </select></div>
-        <div><label class="k">Runtime (min)</label><input id="runtime" type="number" value="4" min="1" max="180"></div>
+        <div><label class="k">Runtime (min)</label><input id="runtime" type="number" value="3" min="1" max="10"></div>
       </div>
       <button class="btn" id="validateBtn" onclick="validate()">Build director blueprint →</button>
       <div class="ex">Try: <a onclick="demo()">the Geri's Game concept</a></div>
@@ -142,29 +143,30 @@
     }
     function esc(value){return String(value??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
     function loading(out){
-      const stages=['Finding the dramatic spine…','Designing the tension curve…','Directing each hero shot…','Grounding choices in craft knowledge…'];let i=0;
-      out.innerHTML=`<div class="loading"><div class="loader"></div><div class="stage" id="loadStage">${stages[0]}</div><div class="stage-sub">GPT-5.6 · five-beat director pass</div></div>`;
+      const stages=['Building the five-act spine…','Budgeting 12–18 shot durations…','Directing camera and symbolic staging…','Matching AI tools to each shot…','Validating citations and runtime…'];let i=0;
+      out.innerHTML=`<div class="loading"><div class="loader"></div><div class="stage" id="loadStage">${stages[0]}</div><div class="stage-sub">GPT-5.6 · dense three-minute director pass</div></div>`;
       return setInterval(()=>{i=(i+1)%stages.length;const el=document.getElementById('loadStage');if(el)el.textContent=stages[i];},950);
     }
-    function renderBeat(beat){
-      const shot=beat.shot||{},mise=shot.mise_en_scene||{},twist=beat.twist_role||{};
-      const twistText=twist.type==='none'?'No forced twist — this beat advances the causal line.':`${twist.type}: ${twist.mechanism}`;
-      return `<article class="beat-card">
-        <div class="beat-top"><span class="beat-num">${esc(beat.number)}</span><div><div class="beat-name">${esc(beat.name)}</div><div class="beat-fn">${esc(beat.beat_function)}</div></div><span class="tension">TENSION ${Math.round((Number(beat.tension)||0)*100)}</span></div>
-        <div class="action">${esc(beat.story_action)}</div>
-        <div class="shot-spec"><span>${esc(shot.framing)}</span><span>${esc(shot.angle)}</span><span>${esc(shot.movement)}</span></div>
+    function renderShot(shot){
+      const mise=shot.mise_en_scene||{},twist=shot.twist_role||{},tool=shot.recommended_tool||{};
+      const twistText=twist.type==='none'?'No forced twist.':`${twist.type}: ${twist.mechanism}`;
+      return `<details class="shot-fold"><summary><span>SHOT ${esc(shot.shot_number)}</span>${esc(shot.name)} · ${esc(shot.duration_seconds)}s · tension ${Math.round((Number(shot.tension)||0)*100)}</summary><article class="beat-card">
+        <div class="action">${esc(shot.story_action)}</div>
+        <div class="shot-spec"><span>${esc(shot.framing)}</span><span>${esc(shot.angle)}</span><span>${esc(shot.movement)}</span><span>${esc(tool.name)}</span></div>
         <div class="reason-grid">
           <div class="reason"><div class="rh">Why this shot</div><p>${esc(shot.why_this_shot)}</p></div>
-          <div class="reason"><div class="rh">Pacing rationale</div><p>${esc(beat.pacing_rationale)}</p></div>
+          <div class="reason"><div class="rh">Pacing rationale</div><p>${esc(shot.pacing_rationale)}</p></div>
           <div class="reason"><div class="rh">Twist role</div><p>${esc(twistText)}</p></div>
           <div class="reason"><div class="rh">Staging + props</div><p>${esc(mise.staging)} ${esc(mise.props)}</p></div>
           <div class="reason"><div class="rh">Color + light</div><p>${esc(mise.color)} ${esc(mise.light)}</p></div>
           <div class="reason"><div class="rh">Directorial meaning</div><p>${esc(mise.symbolic_meaning)}</p></div>
         </div>
         <div class="citations">${(shot.grounded_in||[]).map(id=>`<span class="citation">${esc(id)}</span>`).join('')}</div>
+        <div class="reason"><div class="rh">Recommended tool · ${esc(tool.id)}</div><p>${esc(tool.why)}</p></div>
         <details class="prompts"><summary>Generation prompts</summary><div class="prompt"><b>T2I</b> — ${esc(shot.t2i_prompt)}</div><div class="prompt"><b>I2V</b> — ${esc(shot.i2v_prompt)}</div></details>
-      </article>`;
+      </article></details>`;
     }
+    function actCurve(acts){const pts=acts.map((a,i)=>`${20+i*140},${80-a.tension*65}`).join(' ');return `<svg class="act-curve" viewBox="0 0 600 90"><polyline points="${pts}" fill="none" stroke="#c9a227" stroke-width="3"/>${acts.map((a,i)=>`<circle cx="${20+i*140}" cy="${80-a.tension*65}" r="5" fill="#c9a227"/><text x="${20+i*140}" y="88" text-anchor="middle" fill="#777" font-size="9">${esc(a.name)}</text>`).join('')}</svg>`;}
     function renderResult(payload,s,overall){
       const story=payload.story,meta=payload.meta||{},b=bandOf(overall),fit=story.contest_fit||{score:0,rationale:'No contest selected.'};
       const dims=DIMS.map(d=>`<div class="dim"><div class="dim-top"><span class="nm">${d.label} <span style="color:#444">·${Math.round(d.w*100)}%</span></span><span class="vl">${Math.round(s[d.id]*100)}</span></div><div class="bar"><span style="width:${Math.round(s[d.id]*100)}%;background:${barColor(s[d.id])}"></span></div></div>`).join('');
@@ -176,7 +178,9 @@
         ${dims}
         <div class="story-head"><div class="story-title">${esc(story.title)}</div><div class="logline">${esc(story.logline)}</div><div class="theme"><b>Theme:</b> ${esc(story.theme)}</div></div>
         <div class="blueprint"><div class="bp-row"><span class="bk">Structure</span><span class="bv"><b>${esc(story.structure?.name)}</b> — ${esc(story.structure?.why)}</span></div><div class="bp-row"><span class="bk">Director lens</span><span class="bv">${esc(story.director_lens)}</span></div></div>
-        <div class="beat-list">${(story.beats||[]).map(renderBeat).join('')}</div>
+        <div class="act-overview">${story.acts.map(a=>`<div class="act-mini"><b>${esc(a.name)}</b><span>${esc(a.target_duration_seconds)}s · tension ${Math.round(a.tension*100)}<br>${esc(a.shots.length)} shots</span></div>`).join('')}</div>
+        ${actCurve(story.acts)}
+        <div class="beat-list">${story.acts.map(a=>`<section class="act-group"><div class="act-head"><b>ACT ${a.act_number} · ${esc(a.name)}</b><p>${esc(a.dramatic_function)} · ${esc(a.target_duration_seconds)} seconds</p></div>${a.shots.map(renderShot).join('')}</section>`).join('')}</div>
         <button class="story-flow-btn" id="storyFlowBtn" onclick="openInStoryFlow()">Continue to Step 2 · Shot Design →</button>`;
     }
     function showBlueprint(payload,s,overall,input){currentBlueprint={payload,input};document.getElementById('out').innerHTML=renderResult(payload,s,overall);}

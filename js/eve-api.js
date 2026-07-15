@@ -65,8 +65,34 @@
     ]
   };
 
+  const ACT_SPECS=[
+    {id:'setup',name:'Setup',fn:'Establish isolation, the two-seat ritual, and the visual rules that let one man perform a rivalry.',t:.22,d:36,shots:[
+      ['An Empty Arena',12,'The autumn park sits empty around one chess table before the old man enters.','EWS','eye_level','slow dolly_in','The distant approach makes loneliness spatial before character psychology explains it.','veo_3_1'],
+      ['Two Places Set',12,'He carefully sets two clocks, two cups, and opposing chairs for a match no one else attends.','WS','slight high_angle','static','The elevated locked frame exposes the ritual as deliberate design rather than accident.','gpt_image_1'],
+      ['The Hat Crosses',12,'He moves the worn hat to the opposite chair, sits there, and changes posture.','MCU','eye_level','rack_focus','Focus traveling from hat to altered face turns one prop into the identity switch.','kling_3_0']]},
+    {id:'development',name:'Development',fn:'Let the aggressive persona dominate while planting the timid persona’s stress gesture and tactical attention.',t:.48,d:36,shots:[
+      ['Opening Attack',12,'The dark-coated persona drives a rook forward and starts the first clock.','MS','slight low_angle','static','Low, immovable coverage gives the invented bully control of body, board, and tempo.','runway_gen_4_5'],
+      ['A Smaller Self',12,'Across the axis, the timid persona folds inward behind his nearly trapped king.','MCU','slight high_angle','slow dolly_in','Compression and diminishing angle make retreat visible without dialogue.','kling_3_0'],
+      ['Pressure Pattern',12,'A short sequence of captures ends each time on his hand touching his chest.','INSERT montage','eye_level','fast cutting','Repeated inserts compress the game while planting the physical gesture that later becomes a weapon.','seedance']]},
+    {id:'crisis',name:'Crisis',fn:'Bring strategic defeat and apparent physical collapse together, while hiding the first sign that weakness is becoming agency.',t:.76,d:36,shots:[
+      ['King Cornered',12,'Black pieces surround the white king; the timid hand hovers with nowhere safe to move.','overhead WS','overhead_topdown','slow crane_down','The pattern view makes entrapment undeniable and fate-like.','veo_3_1'],
+      ['The Collapse',12,'He clutches his chest, drops the king, and falls beyond the table edge.','CU to WS','dutch_tilt','handheld pullback','The frame loses balance with him, making the crisis feel uncontrolled.','runway_gen_4_5'],
+      ['One Watching Eye',12,'Behind trembling fingers, one eye checks whether the bully has taken the bait.','ECU / INSERT','eye_level','rack_focus','Withholding the full face preserves doubt while the focus shift reveals calculation.','kling_3_0']]},
+    {id:'climax',name:'Climax',fn:'Pay off the planted gesture through a fast physical reversal that reunites deception, board geometry, and character choice.',t:.96,d:30,shots:[
+      ['Help Breaks the Axis',10,'The bully abandons his winning side and lunges across the table to help.','WS','eye_level','whip_pan','Crossing the centerline breaks the rigid rivalry at the exact instant compassion creates vulnerability.','seedance'],
+      ['The Board Turns',10,'The timid persona snaps upright and rotates the chessboard exactly 180 degrees.','overhead WS','overhead_topdown','rapid orbit to static','The literal rotation makes the narrative reversal instantly readable.','veo_3_1'],
+      ['Checkmate, One Body',10,'He lands the final piece, changes seats once more, and realizes both victory and defeat are his.','CU to two-chair WS','eye_level','dolly_out','The widening reveal converts triumph into comic self-recognition.','runway_gen_4_5']]},
+    {id:'resolution',name:'Resolution',fn:'Transform the unchanged empty park by reorganizing its props and space into self-companionship rather than conflict.',t:.26,d:30,shots:[
+      ['A Prize Between Kings',15,'Laughing, he places the humble prize between both kings and resets the board.','MCU','eye_level','static','The held frame lets a conquest object become a shared souvenir.','gpt_image_1'],
+      ['Chairs Toward Sunset',15,'He turns both chairs side by side toward the sunset and rests between them as one silhouette.','WS widening to EWS','eye_level','slow dolly_out','The opening scale returns, but new blocking changes solitude into peace.','veo_3_1']]}
+  ];
+  function buildRichStory(){
+    let number=1;
+    const acts=ACT_SPECS.map((spec,index)=>{const base=demoStory.beats[index];return {act_number:index+1,id:spec.id,name:spec.name,dramatic_function:spec.fn,target_duration_seconds:spec.d,tension:spec.t,shots:spec.shots.map((s,j)=>({shot_number:number++,name:s[0],story_action:s[2],duration_seconds:s[1],tension:Math.min(1,spec.t+(j-1)*.05),framing:s[3],angle:s[4],movement:s[5],why_this_shot:s[6],mise_en_scene:JSON.parse(JSON.stringify(base.shot.mise_en_scene)),twist_role:JSON.parse(JSON.stringify(base.twist_role)),pacing_rationale:base.pacing_rationale,grounded_in:base.shot.grounded_in.slice(0,5),t2i_prompt:base.shot.t2i_prompt+' Shot action: '+s[2],i2v_prompt:base.shot.i2v_prompt+' Time this shot to '+s[1]+' seconds.',recommended_tool:{id:s[7],name:s[7].replaceAll('_',' '),why:'Selected for this shot’s specific camera motion, continuity, and visual-control needs.'}}))};});
+    return {title:demoStory.title,logline:demoStory.logline,theme:demoStory.theme,director_lens:demoStory.director_lens,structure:{id:'five_act',name:'Five-Act Structure',why:'Five escalating acts distribute a complete visual arc across a dense three-minute short while protecting a clear crisis, payoff, and changed normal.'},contest_fit:JSON.parse(JSON.stringify(demoStory.contest_fit)),runtime:{target_seconds:180,planned_seconds:168,total_shots:14},acts};
+  }
   function fallback(reason, input) {
-    const story=JSON.parse(JSON.stringify(demoStory));
+    const story=buildRichStory();
     const contest=input&&input.intake&&input.intake.target_type==='contest'?input.intake.contest:null;
     if(contest){
       const text=((input.idea||'')+' '+(input.genre||'')).toLowerCase();

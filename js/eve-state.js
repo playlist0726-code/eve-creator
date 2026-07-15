@@ -5,9 +5,8 @@
   const SHOT_KEY = 'eve.shotDirection.v1';
   function valid(value) {
     return Boolean(value && value.version === 1 && value.story &&
-      Array.isArray(value.story.beats) && value.story.beats.length &&
-      value.story.beats.length <= 12 &&
-      value.story.beats.every(beat => beat && typeof beat === 'object' && beat.shot && typeof beat.shot === 'object'));
+      Array.isArray(value.story.acts) && value.story.acts.length===5 &&
+      value.story.acts.every(act=>Array.isArray(act.shots)&&act.shots.length>=2));
   }
   function saveBlueprint(payload, input) {
     const value = {version:1,saved_at:new Date().toISOString(),input:input||{},story:payload&&payload.story,meta:payload&&payload.meta||{source:'fallback'}};

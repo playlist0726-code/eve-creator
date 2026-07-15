@@ -1,6 +1,7 @@
-const { STORY_SCHEMA } = require('../lib/story-schema');
+const { STORY_SCHEMA, TOOL_IDS, actIds, actNames } = require('../lib/story-schema');
 const { SYSTEM_PROMPT } = require('../lib/system-prompt');
 const { CITABLE_ID_SET } = require('../lib/craft-knowledge');
+const TOOL_ID_SET=new Set(TOOL_IDS);
 
 const MAX_IDEA_LENGTH = 1200;
 const ALLOWED_GENRES = new Set(['animated_short', 'comedy', 'drama', 'thriller', 'sci_fi_fantasy', 'romance']);
@@ -23,15 +24,29 @@ function extractOutputText(response) {
 
 function filterCitations(story) {
   const dropped = [];
-  for (const beat of story.beats || []) {
-    const citations = Array.isArray(beat?.shot?.grounded_in) ? beat.shot.grounded_in : [];
-    beat.shot.grounded_in = citations.filter((id) => {
+  for (const act of story.acts || []) for (const shot of act.shots || []) {
+    const citations = Array.isArray(shot.grounded_in) ? shot.grounded_in : [];
+    shot.grounded_in = citations.filter((id) => {
       const allowed = CITABLE_ID_SET.has(id);
       if (!allowed) dropped.push(id);
       return allowed;
     });
   }
   return [...new Set(dropped)];
+}
+function validateAndRepair(story){
+  if(!story||!Array.isArray(story.acts)||story.acts.length!==5)throw new Error('Invalid act structure');
+  let number=1,total=0;
+  story.acts.forEach((act,index)=>{
+    if(act.id!==actIds[index]||act.name!==actNames[index]||act.act_number!==index+1||!Array.isArray(act.shots))throw new Error('Invalid act order');
+    let actTotal=0;
+    act.shots.forEach(shot=>{if(shot.shot_number!==number++)throw new Error('Invalid shot order');actTotal+=shot.duration_seconds;if(!TOOL_ID_SET.has(shot.recommended_tool?.id))shot.recommended_tool={id:'gpt_image_1',name:'GPT Image',why:'Reliable default for a compositionally controlled storyboard keyframe.'};});
+    if(actTotal!==act.target_duration_seconds)throw new Error('Invalid act duration');
+    total+=actTotal;
+  });
+  const count=number-1,target=story.runtime?.target_seconds;
+  if(count<12||count>18||story.runtime.total_shots!==count||story.runtime.planned_seconds!==total||!target||Math.abs(total-target)/target>.1)throw new Error('Invalid runtime plan');
+  return story;
 }
 
 module.exports = async function handler(req, res) {
@@ -44,7 +59,7 @@ module.exports = async function handler(req, res) {
   }
   const idea = typeof body.idea === 'string' ? body.idea.trim() : '';
   const genre = ALLOWED_GENRES.has(body.genre) ? body.genre : 'animated_short';
-  const runtime = Math.max(1, Math.min(180, Number(body.runtime) || 4));
+  const runtime = Math.max(1, Math.min(10, Number(body.runtime) || 3));
   const intake = body.intake && typeof body.intake === 'object' ? body.intake : {};
   const rawContest = intake.target_type === 'contest' && intake.contest && typeof intake.contest === 'object' ? intake.contest : null;
   const cleanList = (value) => Array.isArray(value) ? value.slice(0, 8).map(item => String(item).slice(0, 160)) : [];
@@ -59,7 +74,7 @@ module.exports = async function handler(req, res) {
   if (idea.length > MAX_IDEA_LENGTH) return send(res, 400, { error: `Keep the concept under ${MAX_IDEA_LENGTH} characters.` });
 
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 22000);
+  const timeout = setTimeout(() => controller.abort(), 40000);
 
   try {
     const openaiResponse = await fetch('https://api.openai.com/v1/responses', {
@@ -72,7 +87,7 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         model: 'gpt-5.6',
         reasoning: { effort: 'low' },
-        max_output_tokens: 3200,
+        max_output_tokens: 12000,
         instructions: SYSTEM_PROMPT,
         input: `USER IDEA: ${idea}\nGENRE: ${genre}\nTARGET RUNTIME: ${runtime} minutes\nPRODUCTION TYPE: ${String(intake.production_type||'animation').slice(0,30)}\nCONTEST CONTEXT: ${contest?JSON.stringify(contest):'none'}`,
         text: {
@@ -95,7 +110,7 @@ module.exports = async function handler(req, res) {
     const outputText = extractOutputText(payload);
     if (!outputText) return send(res, 502, { error: 'The live director returned no blueprint.' });
 
-    const story = JSON.parse(outputText);
+    const story = validateAndRepair(JSON.parse(outputText));
     const dropped_citations = filterCitations(story);
     return send(res, 200, {
       story,
@@ -111,4 +126,4 @@ module.exports = async function handler(req, res) {
   }
 };
 
-module.exports._test = { extractOutputText, filterCitations };
+module.exports._test = { extractOutputText, filterCitations, validateAndRepair };
