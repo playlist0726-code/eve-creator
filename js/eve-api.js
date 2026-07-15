@@ -5,6 +5,7 @@
     theme: "Winning matters less than integrating the vulnerable and competitive selves that loneliness split apart.",
     structure: { id: "pixar_spine", name: "Pixar Story Spine", why: "A ritualized daily match gives the short a legible normal, while one deceptive reversal can fracture and then renew that ritual within five visual beats." },
     director_lens: "Treat the two personas as opposing geometries inside one autumn world: rigid symmetry for rivalry, then shared space when the man becomes whole again.",
+    contest_fit: { score: 0, rationale: "No contest selected.", strengths: [], gaps: [] },
     beats: [
       {
         number: 1, name: "An Opponent Made of Absence", beat_function: "Establish the man's isolation and the self-created ritual that disguises it as competition.",
@@ -64,9 +65,18 @@
     ]
   };
 
-  function fallback(reason) {
+  function fallback(reason, input) {
+    const story=JSON.parse(JSON.stringify(demoStory));
+    const contest=input&&input.intake&&input.intake.target_type==='contest'?input.intake.contest:null;
+    if(contest){
+      const text=((input.idea||'')+' '+(input.genre||'')).toLowerCase();
+      const keywords=Array.isArray(contest.fit_keywords)?contest.fit_keywords:[];
+      const matched=keywords.filter(word=>text.includes(String(word).toLowerCase()));
+      const score=Math.min(92,62+matched.length*6);
+      story.contest_fit={score,rationale:`The curated fallback estimates fit against ${contest.name}'s supplied focus and criteria; confirm current rules on the official site.`,strengths:(contest.judged_on||[]).slice(0,3).map(item=>`Blueprint supports ${item}`),gaps:(contest.requirements||[]).slice(0,2).map(item=>`Verify delivery requirement: ${item}`)};
+    }
     return {
-      story: JSON.parse(JSON.stringify(demoStory)),
+      story,
       meta: { source: 'fallback', model: 'curated demo', reason: reason || 'Live generation unavailable.' }
     };
   }

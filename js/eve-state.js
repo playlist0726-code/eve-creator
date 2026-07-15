@@ -1,6 +1,8 @@
 (function (global) {
   'use strict';
   const KEY = 'eve.storyBlueprint.v1';
+  const INTAKE_KEY = 'eve.intake.v1';
+  const SHOT_KEY = 'eve.shotDirection.v1';
   function valid(value) {
     return Boolean(value && value.version === 1 && value.story &&
       Array.isArray(value.story.beats) && value.story.beats.length &&
@@ -18,5 +20,11 @@
       const value=JSON.parse(raw); if(!valid(value)){global.sessionStorage.removeItem(KEY);return null;} return value;
     } catch (_) { return null; }
   }
-  global.EVE_STATE={KEY,saveBlueprint,loadBlueprint};
+  function saveJSON(key,value){try{global.sessionStorage.setItem(key,JSON.stringify(value));return true;}catch(_){return false;}}
+  function loadJSON(key){try{const raw=global.sessionStorage.getItem(key);return raw?JSON.parse(raw):null;}catch(_){return null;}}
+  function saveIntake(intake){if(!intake||!['animation','live_action'].includes(intake.production_type)||!['personal','contest'].includes(intake.target_type))return false;return saveJSON(INTAKE_KEY,{version:1,...intake});}
+  function loadIntake(){const value=loadJSON(INTAKE_KEY);return value&&value.version===1?value:null;}
+  function saveShotDirection(value){return saveJSON(SHOT_KEY,{version:1,...value});}
+  function loadShotDirection(){const value=loadJSON(SHOT_KEY);return value&&value.version===1?value:null;}
+  global.EVE_STATE={KEY,INTAKE_KEY,SHOT_KEY,saveBlueprint,loadBlueprint,saveIntake,loadIntake,saveShotDirection,loadShotDirection};
 })(typeof window==='undefined'?globalThis:window);

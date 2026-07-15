@@ -56,7 +56,7 @@
 <body>
   <nav class="site-nav">
     <span class="brand">E.V.E Creator</span>
-    <a href="index.html">Home</a><a href="shotseed.html">ShotSeed</a><a href="storyboard.html">Story Flow</a><a href="concept_lab.html" class="on">Concept Lab</a>
+    <a href="index.html">0 · Intake</a><a href="concept_lab.html" class="on">1 · Concept</a><a href="shotseed.html">2 · Shot Design</a><a href="storyboard.html">3 · Storyboard</a>
   </nav>
   <header>
     <h1>Concept Lab</h1>
@@ -166,20 +166,21 @@
       </article>`;
     }
     function renderResult(payload,s,overall){
-      const story=payload.story,meta=payload.meta||{},b=bandOf(overall);
+      const story=payload.story,meta=payload.meta||{},b=bandOf(overall),fit=story.contest_fit||{score:0,rationale:'No contest selected.'};
       const dims=DIMS.map(d=>`<div class="dim"><div class="dim-top"><span class="nm">${d.label} <span style="color:#444">·${Math.round(d.w*100)}%</span></span><span class="vl">${Math.round(s[d.id]*100)}</span></div><div class="bar"><span style="width:${Math.round(s[d.id]*100)}%;background:${barColor(s[d.id])}"></span></div></div>`).join('');
       const fallback=meta.source==='fallback';
       return `<span class="source ${fallback?'fallback':''}">${fallback?'Curated demo fallback':'Live GPT-5.6 director'}</span>
         ${fallback?`<div class="fallback-note">${esc(meta.reason)} Showing the equally rich curated demo so the presentation remains complete.</div>`:''}
         <div class="gauge-row">${gauge(overall)}<div><div class="band" style="color:${b.c}">${b.t}</div><div class="band-sub">Hit-potential ${Math.round(overall*100)} / 100 · ${b.a}</div></div></div>
+        <div class="gauge-row">${gauge((Number(fit.score)||0)/100)}<div><div class="band" style="color:var(--gold-lite)">Contest fit ${esc(fit.score||'N/A')} ${fit.score?'/ 100':''}</div><div class="band-sub">${esc(fit.rationale)}</div></div></div>
         ${dims}
         <div class="story-head"><div class="story-title">${esc(story.title)}</div><div class="logline">${esc(story.logline)}</div><div class="theme"><b>Theme:</b> ${esc(story.theme)}</div></div>
         <div class="blueprint"><div class="bp-row"><span class="bk">Structure</span><span class="bv"><b>${esc(story.structure?.name)}</b> — ${esc(story.structure?.why)}</span></div><div class="bp-row"><span class="bk">Director lens</span><span class="bv">${esc(story.director_lens)}</span></div></div>
         <div class="beat-list">${(story.beats||[]).map(renderBeat).join('')}</div>
-        <button class="story-flow-btn" id="storyFlowBtn" onclick="openInStoryFlow()">Open in Story Flow →</button>`;
+        <button class="story-flow-btn" id="storyFlowBtn" onclick="openInStoryFlow()">Continue to Step 2 · Shot Design →</button>`;
     }
     function showBlueprint(payload,s,overall,input){currentBlueprint={payload,input};document.getElementById('out').innerHTML=renderResult(payload,s,overall);}
-    function openInStoryFlow(){if(!currentBlueprint)return;const btn=document.getElementById('storyFlowBtn');if(!EVE_STATE.saveBlueprint(currentBlueprint.payload,currentBlueprint.input)){btn.textContent='Could not save blueprint';btn.disabled=true;return;}window.location.href='storyboard.html';}
+    function openInStoryFlow(){if(!currentBlueprint)return;const btn=document.getElementById('storyFlowBtn');if(!EVE_STATE.saveBlueprint(currentBlueprint.payload,currentBlueprint.input)){btn.textContent='Could not save blueprint';btn.disabled=true;return;}window.location.href='shotseed.html';}
     async function validate(){
       const text=document.getElementById('idea').value.trim();
       const genre=document.getElementById('genre').value;
@@ -187,8 +188,10 @@
       const out=document.getElementById('out');
       if(!text){ out.innerHTML='<div class="empty">Please enter a concept first.</div>'; return; }
       const btn=document.getElementById('validateBtn');btn.disabled=true;const timer=loading(out);const {s,overall}=score(text,genre,runtime);
-      try{const payload=await EVE_API.generateStory({idea:text,genre,runtime});showBlueprint(payload,s,overall,{idea:text,genre,runtime});}
-      catch(err){showBlueprint(EVE_API.fallback(err.message),s,overall,{idea:text,genre,runtime});}
+      const intake=EVE_STATE.loadIntake()||{production_type:'animation',target_type:'personal',contest:null};
+      const request={idea:text,genre,runtime,intake};
+      try{const payload=await EVE_API.generateStory(request);showBlueprint(payload,s,overall,request);}
+      catch(err){showBlueprint(EVE_API.fallback(err.message,request),s,overall,request);}
       finally{clearInterval(timer);btn.disabled=false;}
     }
     function demo(){ document.getElementById('idea').value="A lonely old man plays chess against himself in an autumn park. His timid side, losing badly, fakes a heart attack to trick his aggressive side and turns the board — until finally he wins against himself, and gives himself the prize.";document.getElementById('genre').value='animated_short';document.getElementById('runtime').value=5;validate(); }

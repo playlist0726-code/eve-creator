@@ -12,7 +12,7 @@ vm.runInNewContext(stateCode,context);
 const payload={story:{title:'Test',beats:[{shot:{t2i_prompt:'still',i2v_prompt:'move',grounded_in:['CIN-001']}}]},meta:{source:'live'}};
 assert.equal(context.EVE_STATE.saveBlueprint(payload,{idea:'Test idea'}),true);
 assert.equal(context.EVE_STATE.loadBlueprint().story.beats[0].shot.i2v_prompt,'move');
-assert(concept.includes('Open in Story Flow →'));
+assert(concept.includes('Continue to Step 2 · Shot Design →'));
 assert(concept.includes('EVE_STATE.saveBlueprint'));
 assert(storyboard.includes('EVE_STATE.loadBlueprint'));
 assert(storyboard.includes('storyboard_frames/beat${b.n}.png'));

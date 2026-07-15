@@ -52,6 +52,7 @@
     .status{display:flex;gap:26px;flex-wrap:wrap;padding:22px 26px;margin:0 44px;background:#101010;border:1px solid var(--border);border-radius:14px}
     .stat .n{font-size:24px;font-weight:800;color:var(--gold-lite);line-height:1}
     .stat .l{font-size:11px;color:var(--muted);margin-top:5px}
+    .intake{margin:0 44px 28px;max-width:850px;background:var(--card);border:1px solid var(--gold-dim);border-radius:16px;padding:24px}.intake-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.intake label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:7px}.intake select{width:100%;background:#101010;color:var(--text);border:1px solid var(--border);border-radius:9px;padding:11px;font:inherit}.contest-card{margin-top:16px;padding:14px;border:1px solid var(--border);border-radius:10px;color:var(--dim);font-size:12px;line-height:1.55}.contest-card b{color:#fff}.start{margin-top:18px;background:var(--gold);color:#080808;border:0;border-radius:100px;padding:12px 20px;font-weight:800;cursor:pointer}.error{color:#d9613a;font-size:12px;margin-top:10px}
 
     footer{margin:44px 44px 0;border-top:1px solid var(--border);padding:24px 0 60px;font-size:12px;color:var(--muted);line-height:1.7}
     footer b{color:var(--dim)}
@@ -61,10 +62,10 @@
 <body>
   <nav class="site-nav">
     <span class="brand">E.V.E Creator</span>
-    <a href="index.html" class="on">Home</a>
-    <a href="shotseed.html">ShotSeed</a>
-    <a href="storyboard.html">Story Flow</a>
-    <a href="concept_lab.html">Concept Lab</a>
+    <a href="index.html" class="on">0 · Intake</a>
+    <a href="concept_lab.html">1 · Concept</a>
+    <a href="shotseed.html">2 · Shot Design</a>
+    <a href="storyboard.html">3 · Storyboard</a>
   </nav>
 
   <div class="hero">
@@ -72,6 +73,17 @@
     <h1>Bring an idea.<br>Direct it with master craft.</h1>
     <p class="lead">Enter a mood, genre, scene, or premise. E.V.E Creator uses <b>frame-level analysis of master animation</b> to design the story, structure, storyboard, and shot-level prompts. It does not replace the filmmaker; it lays out <b>exactly how to make the film</b>, while the creator keeps authorship and control.</p>
   </div>
+
+  <div class="section-lab">Step 0 · Intake</div>
+  <section class="intake">
+    <div class="intake-grid">
+      <div><label for="productionType">What are you making?</label><select id="productionType"><option value="animation">Animation</option><option value="live_action">Live-action</option></select></div>
+      <div><label for="targetType">What is the target?</label><select id="targetType"><option value="personal">Personal project</option><option value="contest">A specific contest</option></select></div>
+    </div>
+    <div id="contestWrap" style="display:none;margin-top:16px"><label for="contestSelect">Curated contest</label><select id="contestSelect"></select><div class="contest-card" id="contestCard"></div></div>
+    <div class="error" id="intakeError"></div>
+    <button class="start" onclick="startPipeline()">Continue to Step 1 · Concept →</button>
+  </section>
 
   <div class="section-lab">System Pipeline</div>
   <div class="pipe">
@@ -82,25 +94,25 @@
     <div class="stage"><div class="num">05</div><h3>Generate Externally</h3><p>The filmmaker uses the blueprint to generate images and video, with optional automation support.</p><span class="tag">Execute</span></div>
   </div>
 
-  <div class="section-lab">Open a Tool</div>
+  <div class="section-lab">Pipeline Preview</div>
   <div class="tools">
     <a class="tool" href="shotseed.html">
-      <div class="k">Tool 01 · Data Engine</div>
+      <div class="k">Step 2 · Shot Design</div>
       <h2>ShotSeed</h2>
       <p>Match a style or scene to analyzed shot data and receive T2I, I2V, and workflow recommendations, with 2D/3D filters and source-verification badges.</p>
-      <span class="go">Open →</span>
+      <span class="go">Reached through the guided flow →</span>
     </a>
     <a class="tool" href="storyboard.html">
-      <div class="k">Tool 02 · Story Flow</div>
+      <div class="k">Step 3 · Storyboard</div>
       <h2>Storyboard Sheet</h2>
       <p>Design a storyboard through directorial thinking: twist mechanics, symbolic mise-en-scène, pacing, and shot-specific image prompts.</p>
-      <span class="go">Open →</span>
+      <span class="go">Reached through the guided flow →</span>
     </a>
     <a class="tool" href="concept_lab.html">
-      <div class="k">Tool 03 · Validation</div>
+      <div class="k">Step 1 · Concept</div>
       <h2>Concept Lab</h2>
       <p>Validate an idea, score its potential with research-backed dimensions, and generate a GPT-5.6 director blueprint grounded in craft knowledge.</p>
-      <span class="go">Open →</span>
+      <span class="go">Reached through the guided flow →</span>
     </a>
   </div>
 
@@ -128,5 +140,16 @@
     <p><b>E.V.E Creator</b> (formerly SceneForge), powered by the <b>ShotSeed</b> data engine. Method: SCHEMA.md · SCHEMA_L2.md / Evaluation: evaluation/ / Roadmap: RESEARCH_PLAN.md</p>
     <p>Built &amp; analyzed by <b>Junsu (Michael) Kim</b> — AI Filmmaker</p>
   </footer>
+  <script src="js/eve-state.js"></script>
+  <script>
+    let contests=[];
+    const target=document.getElementById('targetType'),select=document.getElementById('contestSelect');
+    function deadline(value){return value==='see_site'?'See official site':value;}
+    function showContest(){const c=contests.find(x=>x.id===select.value);document.getElementById('contestCard').innerHTML=c?`<b>${c.name}</b> · ${c.org}<br>${c.focus}<br>Deadline: ${deadline(c.deadline)} · <a href="${c.url}" target="_blank" rel="noopener" style="color:var(--gold)">Official site</a>`:'';}
+    target.addEventListener('change',()=>{document.getElementById('contestWrap').style.display=target.value==='contest'?'block':'none';});
+    select.addEventListener('change',showContest);
+    fetch('data/contests.json').then(r=>r.json()).then(data=>{contests=data.contests;select.innerHTML=contests.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');showContest();const old=EVE_STATE.loadIntake();if(old){document.getElementById('productionType').value=old.production_type;target.value=old.target_type;target.dispatchEvent(new Event('change'));if(old.contest?.id){select.value=old.contest.id;showContest();}}}).catch(()=>document.getElementById('intakeError').textContent='The curated contest list could not be loaded. Personal-project mode remains available.');
+    function startPipeline(){const targetType=target.value,contest=targetType==='contest'?contests.find(c=>c.id===select.value):null;if(targetType==='contest'&&!contest){document.getElementById('intakeError').textContent='Choose a contest to continue.';return;}if(EVE_STATE.saveIntake({production_type:document.getElementById('productionType').value,target_type:targetType,contest})){location.href='concept_lab.html';}}
+  </script>
 </body>
 </html>

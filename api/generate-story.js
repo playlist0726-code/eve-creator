@@ -45,6 +45,16 @@ module.exports = async function handler(req, res) {
   const idea = typeof body.idea === 'string' ? body.idea.trim() : '';
   const genre = ALLOWED_GENRES.has(body.genre) ? body.genre : 'animated_short';
   const runtime = Math.max(1, Math.min(180, Number(body.runtime) || 4));
+  const intake = body.intake && typeof body.intake === 'object' ? body.intake : {};
+  const rawContest = intake.target_type === 'contest' && intake.contest && typeof intake.contest === 'object' ? intake.contest : null;
+  const cleanList = (value) => Array.isArray(value) ? value.slice(0, 8).map(item => String(item).slice(0, 160)) : [];
+  const contest = rawContest ? {
+    name: String(rawContest.name || '').slice(0, 120),
+    focus: String(rawContest.focus || '').slice(0, 240),
+    deadline: String(rawContest.deadline || '').slice(0, 40),
+    requirements: cleanList(rawContest.requirements),
+    judged_on: cleanList(rawContest.judged_on)
+  } : null;
   if (!idea) return send(res, 400, { error: 'Please enter a concept.' });
   if (idea.length > MAX_IDEA_LENGTH) return send(res, 400, { error: `Keep the concept under ${MAX_IDEA_LENGTH} characters.` });
 
@@ -64,7 +74,7 @@ module.exports = async function handler(req, res) {
         reasoning: { effort: 'low' },
         max_output_tokens: 3200,
         instructions: SYSTEM_PROMPT,
-        input: `USER IDEA: ${idea}\nGENRE: ${genre}\nTARGET RUNTIME: ${runtime} minutes`,
+        input: `USER IDEA: ${idea}\nGENRE: ${genre}\nTARGET RUNTIME: ${runtime} minutes\nPRODUCTION TYPE: ${String(intake.production_type||'animation').slice(0,30)}\nCONTEST CONTEXT: ${contest?JSON.stringify(contest):'none'}`,
         text: {
           format: {
             type: 'json_schema',

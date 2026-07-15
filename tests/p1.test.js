@@ -30,12 +30,15 @@ const groundedEnum = STORY_SCHEMA.properties.beats.items.properties.shot.propert
 assert.deepEqual(groundedEnum, CITABLE_IDS, 'Structured-output citation enum must use the explicit allowlist');
 assert.equal(STORY_SCHEMA.properties.beats.minItems, 5);
 assert.equal(STORY_SCHEMA.properties.beats.maxItems, 5);
+assert.ok(STORY_SCHEMA.required.includes('contest_fit'));
+assert.equal(STORY_SCHEMA.properties.contest_fit.properties.score.maximum,100);
 
 const clientCode = fs.readFileSync(path.join(root, 'js/eve-api.js'), 'utf8');
 const context = { window: {}, fetch: async () => { throw new Error('offline'); } };
 vm.runInNewContext(clientCode, context);
 const fallback = context.window.EVE_API.fallback('test');
 assert.equal(fallback.story.beats.length, 5, 'Fallback must contain five beats');
+assert.equal(fallback.story.contest_fit.score,0);
 for (const beat of fallback.story.beats) {
   assert.ok(beat.pacing_rationale);
   assert.ok(beat.twist_role?.type);

@@ -1,0 +1,84 @@
+{
+  "_comment": "Curated real AI-film / creative-AI competitions for the E.V.E Creator Intake step. Facts may change — verify on each official URL before relying. Deadlines marked 'see_site' were not confirmed at curation time. Curated 2026-07.",
+  "updated": "2026-07",
+  "contests": [
+    {
+      "id": "openai_build_week",
+      "name": "OpenAI Build Week Challenge",
+      "org": "OpenAI",
+      "focus": "Projects built with Codex + GPT-5.6",
+      "formats": ["ai_tool", "app", "creative_ai"],
+      "deadline": "2026-07-21",
+      "prize": "Cash, OpenAI credits, DevDay passes, spotlight & team experiences",
+      "requirements": ["Built with Codex", "Uses GPT-5.6", "Public YouTube demo video < 3 min", "Public repo + README"],
+      "judged_on": ["technical implementation", "design & UX", "potential impact", "quality of idea", "use of Codex & GPT-5.6"],
+      "fit_keywords": ["ai tool", "codex", "gpt-5.6", "developer", "product", "workflow", "impact"],
+      "url": "https://openai.devpost.com/"
+    },
+    {
+      "id": "runway_aif",
+      "name": "Runway AI Film Festival (AIF)",
+      "org": "Runway",
+      "focus": "AI-assisted short film + new media (film, gaming, design, advertising, fashion)",
+      "formats": ["ai_film", "animation", "live_action", "new_media"],
+      "deadline": "see_site",
+      "prize": "$15,000 first place + $10,000 per category + Runway credits",
+      "requirements": ["Short AI-assisted film", "Meaningful use of AI tools"],
+      "judged_on": ["creativity", "craft", "use of AI", "storytelling"],
+      "fit_keywords": ["ai film", "short film", "animation", "cinematic", "art", "experimental"],
+      "url": "https://aif.runwayml.com/"
+    },
+    {
+      "id": "project_odyssey",
+      "name": "Project Odyssey",
+      "org": "Project Odyssey (community + industry partners)",
+      "focus": "Worldwide AI + film competition (multiple tracks, large prize pool)",
+      "formats": ["ai_film", "animation", "live_action", "narrative", "music_video"],
+      "deadline": "see_site",
+      "prize": "Large multi-track prize pool + tool credits (Season 3 upcoming)",
+      "requirements": ["AI-generated / AI-assisted film", "Track-specific rules"],
+      "judged_on": ["storytelling", "technical execution", "originality"],
+      "fit_keywords": ["ai film", "narrative", "animation", "generative", "storytelling"],
+      "url": "https://www.projectodyssey.ai/"
+    },
+    {
+      "id": "lifeart_ai",
+      "name": "LifeArt AI Film Festival",
+      "org": "LifeArt",
+      "focus": "AI-generated films & art",
+      "formats": ["ai_film", "animation", "art"],
+      "deadline": "2026-06-02",
+      "prize": "Festival awards & screening",
+      "requirements": ["AI-generated film or art", "Regular deadline 2026-05-01 / Late 2026-06-02"],
+      "judged_on": ["artistry", "use of AI", "concept"],
+      "fit_keywords": ["ai film", "art", "animation", "experimental", "concept"],
+      "url": "https://www.lifeartfestival.com/ai"
+    },
+    {
+      "id": "aiffi",
+      "name": "AIFFI — International Festival for AI-Generated Short Films",
+      "org": "AIFFI",
+      "focus": "AI-generated short films (1–10 min)",
+      "formats": ["ai_film", "animation", "short"],
+      "deadline": "see_site",
+      "prize": "Festival selection & awards",
+      "requirements": ["1–10 minute AI-generated short", "Recent completion window"],
+      "judged_on": ["craft", "narrative", "use of AI"],
+      "fit_keywords": ["ai film", "short film", "animation", "narrative"],
+      "url": "https://filmmakers.festhome.com/festival/aiffi-film-festival"
+    },
+    {
+      "id": "reply_aiff",
+      "name": "Reply AI Film Festival",
+      "org": "Reply",
+      "focus": "AI-assisted creative films",
+      "formats": ["ai_film", "animation", "creative"],
+      "deadline": "see_site",
+      "prize": "Awards & recognition",
+      "requirements": ["AI-assisted film", "Challenge-specific brief"],
+      "judged_on": ["creativity", "use of AI", "execution"],
+      "fit_keywords": ["ai film", "creative", "animation", "brief"],
+      "url": "https://challenges.reply.com/challenges/creative/aifilmfestival/home/"
+    }
+  ]
+}

@@ -5,7 +5,7 @@ const vm = require('node:vm');
 
 const root = path.resolve(__dirname, '..');
 const pages = ['index.html', 'shotseed.html', 'storyboard.html', 'concept_lab.html'];
-const expectedNav = pages;
+const expectedNav = ['index.html','concept_lab.html','shotseed.html','storyboard.html'];
 
 for (const page of pages) {
   const source = fs.readFileSync(path.join(root, page), 'utf8');
