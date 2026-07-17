@@ -60,6 +60,40 @@
   </style>
 </head>
 <body>
+<!-- EVE guided pipeline bar (injected) -->
+<style>
+.site-nav{display:none!important}
+.eve-topbar{display:flex;align-items:center;gap:14px;padding:12px 44px;background:#131313;border-bottom:1px solid #272727;position:sticky;top:0;z-index:30;overflow-x:auto}
+.eve-topbar .eb{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;white-space:nowrap}
+.eve-steps{display:flex;align-items:center;gap:0}
+.eve-steps .ps{display:flex;align-items:center;gap:7px;text-decoration:none;white-space:nowrap;padding:2px}
+.eve-steps .pn{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;border:1.5px solid #33343d;color:#8a8a8a;background:#141419}
+.eve-steps .pl{font-size:12px;color:#8a8a8a;font-weight:600}
+.eve-steps .ps.done .pn{border-color:#c9a227;color:#c9a227}
+.eve-steps .ps.done .pl{color:#c7c7c7}
+.eve-steps .ps.cur .pn{background:#c9a227;border-color:#c9a227;color:#0d0d0d}
+.eve-steps .ps.cur .pl{color:#fff}
+.eve-steps .pline{width:22px;height:1.5px;background:#2a2a30;margin:0 7px}
+.eve-cont-wrap{position:sticky;bottom:0;padding:16px 44px;background:linear-gradient(180deg,rgba(13,13,13,0),#0d0d0d 45%);z-index:25}
+.eve-cont{display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;background:#c9a227;color:#0d0d0d;border-radius:100px;padding:11px 22px;font-weight:800;font-size:14px;max-width:540px;margin:0 auto;box-shadow:0 6px 24px rgba(0,0,0,.4)}
+.eve-cont small{font-weight:600;font-size:10.5px;opacity:.78}
+@media(max-width:860px){.eve-topbar,.eve-cont-wrap{padding-left:18px;padding-right:18px}.eve-steps .pl{display:none}}
+</style>
+<div class="eve-topbar"><span class="eb">E.V.E Creator</span><div class="eve-steps" id="eve-steps"></div></div>
+<script>
+(function(){
+ var S=[{n:0,l:'Intake',f:'index.html'},{n:1,l:'Concept',f:'concept_lab.html'},{n:2,l:'Shot Design',f:'shotseed.html'},{n:3,l:'Storyboard',f:'storyboard.html'}];
+ var H=['Choose format & target contest','Validate the idea & build the blueprint','Direct the shots','Review the full storyboard'];
+ var f=(location.pathname.split('/').pop()||'index.html').toLowerCase(); if(f==='')f='index.html';
+ var cur=0; for(var i=0;i<S.length;i++){if(S[i].f===f)cur=i;}
+ var d=[]; try{d=JSON.parse(localStorage.getItem('eve_progress')||'[]')||[];}catch(e){}
+ if(d.indexOf(cur)<0){d.push(cur);try{localStorage.setItem('eve_progress',JSON.stringify(d));}catch(e){}}
+ var h='';
+ for(var j=0;j<S.length;j++){var st=j===cur?'cur':(d.indexOf(j)>=0?'done':'');var b=(st==='done')?'✓':S[j].n;h+='<a class="ps '+st+'" href="'+S[j].f+'"><span class="pn">'+b+'</span><span class="pl">'+S[j].l+'</span></a>';if(j<S.length-1)h+='<span class="pline"></span>';}
+ var e=document.getElementById('eve-steps'); if(e)e.innerHTML=h;
+ if(cur<S.length-1){var n=S[cur+1];var w=document.createElement('div');w.className='eve-cont-wrap';w.innerHTML='<a class="eve-cont" href="'+n.f+'">Continue to Step '+n.n+' · '+n.l+' →<small>'+H[cur+1]+'</small></a>';document.body.appendChild(w);}
+})();
+</script>
   <nav class="site-nav">
     <span class="brand">E.V.E Creator</span>
     <a href="index.html" class="on">0 · Intake</a>
