@@ -14,8 +14,28 @@ assert.equal(context.EVE_STATE.saveIntake({production_type:'animation',target_ty
 assert.equal(context.EVE_STATE.loadIntake().contest.id,contest.id);
 assert.equal(context.EVE_STATE.saveShotDirection({query:'warm close-up',recommendation_ids:[1]}),true);
 assert.equal(context.EVE_STATE.loadShotDirection().recommendation_ids[0],1);
-for(const [file,step] of [['index.html','0 · Intake'],['concept_lab.html','1 · Concept'],['shotseed.html','2 · Shot Design'],['storyboard.html','3 · Storyboard']]){
+for(const [file,step] of [['index.html','0 · Intake'],['concept_lab.html','1 · Concept'],['index.html',"2 · Creator's Room"],['creators_room.html',"The Creator's Room"],['shotseed.html','3 · Shot Design'],['storyboard.html','4 · Storyboard']]){
   const source=fs.readFileSync(path.join(root,file),'utf8');assert.ok(source.includes(step),file+' missing pipeline step');
 }
 assert.ok(fs.readFileSync(path.join(root,'concept_lab.html'),'utf8').includes('Contest fit'));
-console.log('Guided pipeline tests passed.');
+
+// Creator's Room: five-role critique loop wired end to end (fallback must be self-sufficient).
+const api=new Map();
+const ctx={window:{},fetch:()=>Promise.reject(new Error('offline'))};
+vm.runInNewContext(fs.readFileSync(path.join(root,'js/eve-api.js'),'utf8'),ctx);
+vm.runInNewContext(fs.readFileSync(path.join(root,'js/eve-crew.js'),'utf8'),ctx);
+const {story}=ctx.window.EVE_API.fallback('t',{idea:'chess',genre:'animated_short'});
+const {crew,meta}=ctx.window.EVE_CREW.fallbackCrew(story,{idea:'chess'});
+assert.equal(meta.source,'fallback');
+assert.equal(crew.crew.length,5,'crew must have five roles');
+assert.equal(crew.crew.map(c=>c.role).sort().join(','),'cinematographer,director,editor,test_audience,writer');
+assert.ok(crew.revisions.length>=3,'crew must apply at least three fixes');
+assert.ok(crew.score_after>=crew.score_before,'score must not regress');
+const {CITABLE_ID_SET}=require(path.join(root,'lib/craft-knowledge'));
+crew.crew.concat(crew.revisions).forEach(x=>(x.grounded_in||[]).forEach(id=>assert.ok(CITABLE_ID_SET.has(id),'invalid citation '+id)));
+const improved=ctx.window.EVE_CREW.applyRevisions(story,crew);
+assert.ok(improved._crew_reviewed,'applyRevisions must flag the blueprint');
+// server-side endpoint accepts the same shape
+const {validate}=require(path.join(root,'api/creators-room'))._test;
+assert.ok(validate(JSON.parse(JSON.stringify(crew))),'server validate must accept crew output');
+console.log('Guided pipeline + Creator\'s Room tests passed.');

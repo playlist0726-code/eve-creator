@@ -92,13 +92,27 @@ E.V.E Creator가 소비하는 데이터/추천 레이어. 지금 `index.html` �
 ## 디자인 방향
 다크 시네마틱 테마. 배경 `#0d0d0d`, 골드 포인트 `#c9a227`, 둥근 카드 UI.
 
+## ⭐ 차별화 핵심 — The Creator's Room (Step 2)
+E.V.E의 "다른 차원" 차별점. 단순히 초안을 뱉는 게 아니라, **GPT-5.6가 5개 영화 크루 역할
+(Director · Writer · Cinematographer · Editor · Test Audience)로 나뉘어 초안 블루프린트를
+craft 데이터에 근거해 비평하고, 구체적 before/after 수정을 적용하고, 흥행 점수를 재산정**한다.
+= 자기비평(reflection) 루프. 사용자는 영화가 *측정 가능하게* 좋아지는 걸 지켜본다.
+- `api/creators-room.js` + `lib/crew-schema.js` + `lib/crew-prompt.js` — GPT-5.6 structured critique.
+- `js/eve-crew.js` — callCrew() + 블루프린트에서 결정론적으로 유도하는 리치 폴백(오프라인 데모 보장) + applyRevisions().
+- `creators_room.html` — 크루가 순차 발언, 점수 v1→v2 애니메이션, before/after diff, 개선본 저장 후 다음 단계.
+- 인용은 111개 allowlist ID로만 검증 (환각 인용 제거). 점수 상승은 리비전으로 정당화(상한 +30).
+
 ## 파일 구조
 ```
 my-short-film/
-├── eve.html                # System home (pipeline · tools · KB · status)
-├── index.html              # ShotSeed — shot recommender + browser
-├── storyboard.html         # Story Flow — storyboard sheet (twist · mise-en-scène · pacing)
-├── concept_lab.html        # Concept Lab — idea validation + hit-potential
+├── index.html              # System home / Intake (Step 0) — pipeline · differentiator · KB · status
+├── concept_lab.html        # Concept Lab (Step 1) — idea validation + hit-potential + GPT-5.6 blueprint
+├── creators_room.html      # ★ The Creator's Room (Step 2) — 5-role AI crew critique + re-score
+├── shotseed.html           # ShotSeed (Step 3) — shot recommender + browser
+├── storyboard.html         # Story Flow (Step 4) — storyboard sheet (twist · mise-en-scène · pacing)
+├── api/                     # Vercel serverless: generate-story.js · creators-room.js (GPT-5.6)
+├── lib/                     # story-schema · system-prompt · craft-knowledge · crew-schema · crew-prompt
+├── js/                      # eve-api · eve-state · eve-crew (client logic + fallbacks)
 ├── generate_frames.py      # Auto-generate storyboard frames (OpenAI image API)
 ├── storyboard_data.json    # Storyboard prompts (shared by script + storyboard.html)
 ├── CLAUDE.md               # Project north star + spec (this file)

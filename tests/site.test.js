@@ -5,7 +5,7 @@ const vm = require('node:vm');
 
 const root = path.resolve(__dirname, '..');
 const pages = ['index.html', 'shotseed.html', 'storyboard.html', 'concept_lab.html'];
-const expectedNav = ['index.html','concept_lab.html','shotseed.html','storyboard.html'];
+const expectedNav = ['index.html','concept_lab.html','creators_room.html','shotseed.html','storyboard.html'];
 
 for (const page of pages) {
   const source = fs.readFileSync(path.join(root, page), 'utf8');
@@ -46,4 +46,16 @@ const vercel = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'
 assert.equal(vercel.rewrites[0].source, '/');
 assert.equal(vercel.rewrites[0].destination, '/index.html');
 
-console.log('Site tests passed (English UI, four-page navigation, root Home rewrite).');
+// Creator's Room page: exists, English, valid scripts, links only to existing files.
+const room = fs.readFileSync(path.join(root, 'creators_room.html'), 'utf8');
+assert.match(room, /<html lang="en">/, 'creators_room must declare English');
+assert.match(room, /The .*Creator's Room/, 'creators_room must present the hero title');
+[...room.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)]
+  .map((m) => m[1]).filter((c) => c.trim())
+  .forEach((code) => new vm.Script(code, { filename: 'creators_room.html' }));
+for (const target of [...room.matchAll(/href="([^"#]+\.html)"/g)].map((m) => m[1])) {
+  assert.ok(fs.existsSync(path.resolve(root, target)), `creators_room links to missing ${target}`);
+}
+assert.doesNotMatch(room.replace(/<script[\s\S]*?<\/script>/g, ''), /[가-힣]/, 'creators_room visible markup must be English');
+
+console.log('Site tests passed (English UI, five-step navigation incl. Creator\'s Room, root Home rewrite).');

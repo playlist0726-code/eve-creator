@@ -480,8 +480,8 @@
 <div class="eve-topbar"><span class="eb">E.V.E Creator</span><div class="eve-steps" id="eve-steps"></div></div>
 <script>
 (function(){
- var S=[{n:0,l:'Intake',f:'index.html'},{n:1,l:'Concept',f:'concept_lab.html'},{n:2,l:'Shot Design',f:'shotseed.html'},{n:3,l:'Storyboard',f:'storyboard.html'}];
- var H=['Choose format & target contest','Validate the idea & build the blueprint','Direct the shots','Review the full storyboard'];
+ var S=[{n:0,l:'Intake',f:'index.html'},{n:1,l:'Concept',f:'concept_lab.html'},{n:2,l:"Creator's Room",f:'creators_room.html'},{n:3,l:'Shot Design',f:'shotseed.html'},{n:4,l:'Storyboard',f:'storyboard.html'}];
+ var H=['Choose format & target contest','Validate the idea & build the blueprint','Let the AI film crew critique & improve it','Direct the shots','Review the full storyboard'];
  var f=(location.pathname.split('/').pop()||'index.html').toLowerCase(); if(f==='')f='index.html';
  var cur=0; for(var i=0;i<S.length;i++){if(S[i].f===f)cur=i;}
  var d=[]; try{d=JSON.parse(localStorage.getItem('eve_progress')||'[]')||[];}catch(e){}
@@ -497,8 +497,9 @@
   <span class="brand">E.V.E Creator</span>
   <a href="index.html">0 · Intake</a>
   <a href="concept_lab.html">1 · Concept</a>
-  <a href="shotseed.html" class="on">2 · Shot Design</a>
-  <a href="storyboard.html">3 · Storyboard</a>
+  <a href="creators_room.html">2 · Creator's Room</a>
+  <a href="shotseed.html" class="on">3 · Shot Design</a>
+  <a href="storyboard.html">4 · Storyboard</a>
 </nav>
 
 <!-- HEADER -->
