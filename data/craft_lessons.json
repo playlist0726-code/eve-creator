@@ -1,0 +1,2126 @@
+{
+  "version": 1,
+  "updated": "2026-07-20",
+  "note": "Original First Frame lessons. Film examples identify observable craft; AI availability must be checked on official tool pages.",
+  "lessons": {
+    "three_act": {
+      "id": "three_act",
+      "deep": "Three-Act Structure is a practical form of story architecture: Setup, confrontation, resolution — the backbone of most films. It keeps a story from wandering by forcing a turn at the end of each act. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Finding Nemo (2003) makes its major turns legible through Marlin’s changing goal: protect, pursue, then trust.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Write the protagonist’s want, obstacle, irreversible turn, and final change before you add shots.",
+          "Tie three-act structure to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "openai-sora",
+          "ltx-studio"
+        ],
+        "caveats": [
+          "A structure is a diagnostic lens, not a formula. Preserve the idea’s cultural context and emotional logic."
+        ]
+      },
+      "videos": []
+    },
+    "hero_journey": {
+      "id": "hero_journey",
+      "deep": "Hero's Journey is a practical form of story architecture: A 12-stage adventure template (ordinary world → call → ordeal → return). Great for myth, fantasy, and coming-of-age arcs. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Finding Nemo (2003) makes its major turns legible through Marlin’s changing goal: protect, pursue, then trust.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Write the protagonist’s want, obstacle, irreversible turn, and final change before you add shots.",
+          "Tie hero's journey to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "openai-sora",
+          "ltx-studio"
+        ],
+        "caveats": [
+          "A structure is a diagnostic lens, not a formula. Preserve the idea’s cultural context and emotional logic."
+        ]
+      },
+      "videos": []
+    },
+    "save_the_cat": {
+      "id": "save_the_cat",
+      "deep": "Save the Cat! is a practical form of story architecture: A 15-beat screenwriting map that times each story turn. Popular in comedy and mainstream features for reliable pacing. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Finding Nemo (2003) makes its major turns legible through Marlin’s changing goal: protect, pursue, then trust.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Write the protagonist’s want, obstacle, irreversible turn, and final change before you add shots.",
+          "Tie save the cat! to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "openai-sora",
+          "ltx-studio"
+        ],
+        "caveats": [
+          "A structure is a diagnostic lens, not a formula. Preserve the idea’s cultural context and emotional logic."
+        ]
+      },
+      "videos": []
+    },
+    "pixar_spine": {
+      "id": "pixar_spine",
+      "deep": "Pixar Story Spine is a practical form of story architecture: \"Once upon a time… every day… until one day… because of that… until finally.\" A simple engine for causal, emotional shorts. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Finding Nemo (2003) makes its major turns legible through Marlin’s changing goal: protect, pursue, then trust.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Write the protagonist’s want, obstacle, irreversible turn, and final change before you add shots.",
+          "Tie pixar story spine to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "openai-sora",
+          "ltx-studio"
+        ],
+        "caveats": [
+          "A structure is a diagnostic lens, not a formula. Preserve the idea’s cultural context and emotional logic."
+        ]
+      },
+      "videos": []
+    },
+    "kishotenketsu": {
+      "id": "kishotenketsu",
+      "deep": "Kishōtenketsu is a practical form of story architecture: A four-part East-Asian structure that turns on a surprising twist instead of conflict — introduction, development, twist, reconciliation. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Finding Nemo (2003) makes its major turns legible through Marlin’s changing goal: protect, pursue, then trust.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Write the protagonist’s want, obstacle, irreversible turn, and final change before you add shots.",
+          "Tie kishōtenketsu to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "openai-sora",
+          "ltx-studio"
+        ],
+        "caveats": [
+          "A structure is a diagnostic lens, not a formula. Preserve the idea’s cultural context and emotional logic."
+        ]
+      },
+      "videos": []
+    },
+    "freytag": {
+      "id": "freytag",
+      "deep": "Freytag's Pyramid is a practical form of story architecture: Exposition → rising action → climax → falling action → dénouement. The classic dramatic arc. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Finding Nemo (2003) makes its major turns legible through Marlin’s changing goal: protect, pursue, then trust.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Write the protagonist’s want, obstacle, irreversible turn, and final change before you add shots.",
+          "Tie freytag's pyramid to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "openai-sora",
+          "ltx-studio"
+        ],
+        "caveats": [
+          "A structure is a diagnostic lens, not a formula. Preserve the idea’s cultural context and emotional logic."
+        ]
+      },
+      "videos": []
+    },
+    "EWS": {
+      "id": "EWS",
+      "deep": "Extreme Wide Shot is a practical form of shot scale: The subject is tiny in a vast space. Establishes place and makes a character feel small, lost, or free. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The opening desert vistas of Lawrence of Arabia (1962) use scale to make a human figure feel vulnerable inside a vast environment.",
+      "ai_howto": {
+        "prompt_tips": [
+          "State the shot size, the subject, the readable action, and the emotional purpose in one prompt clause.",
+          "Tie extreme wide shot to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "google-veo"
+        ],
+        "caveats": [
+          "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
+        ]
+      },
+      "videos": []
+    },
+    "WS": {
+      "id": "WS",
+      "deep": "Wide Shot is a practical form of shot scale: Shows the whole figure and surroundings. Good for context, geography, and physical action. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The opening desert vistas of Lawrence of Arabia (1962) use scale to make a human figure feel vulnerable inside a vast environment.",
+      "ai_howto": {
+        "prompt_tips": [
+          "State the shot size, the subject, the readable action, and the emotional purpose in one prompt clause.",
+          "Tie wide shot to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "google-veo"
+        ],
+        "caveats": [
+          "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
+        ]
+      },
+      "videos": []
+    },
+    "MLS": {
+      "id": "MLS",
+      "deep": "Medium Long Shot is a practical form of shot scale: Frames a person from about the knees up — between environment and intimacy. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The opening desert vistas of Lawrence of Arabia (1962) use scale to make a human figure feel vulnerable inside a vast environment.",
+      "ai_howto": {
+        "prompt_tips": [
+          "State the shot size, the subject, the readable action, and the emotional purpose in one prompt clause.",
+          "Tie medium long shot to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "google-veo"
+        ],
+        "caveats": [
+          "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
+        ]
+      },
+      "videos": []
+    },
+    "MS": {
+      "id": "MS",
+      "deep": "Medium Shot is a practical form of shot scale: Waist up. The everyday conversational distance; neutral and readable. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The opening desert vistas of Lawrence of Arabia (1962) use scale to make a human figure feel vulnerable inside a vast environment.",
+      "ai_howto": {
+        "prompt_tips": [
+          "State the shot size, the subject, the readable action, and the emotional purpose in one prompt clause.",
+          "Tie medium shot to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "google-veo"
+        ],
+        "caveats": [
+          "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
+        ]
+      },
+      "videos": []
+    },
+    "MCU": {
+      "id": "MCU",
+      "deep": "Medium Close-Up is a practical form of shot scale: Chest and head. Close enough for emotion, wide enough to keep some body language. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The opening desert vistas of Lawrence of Arabia (1962) use scale to make a human figure feel vulnerable inside a vast environment.",
+      "ai_howto": {
+        "prompt_tips": [
+          "State the shot size, the subject, the readable action, and the emotional purpose in one prompt clause.",
+          "Tie medium close-up to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "google-veo"
+        ],
+        "caveats": [
+          "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
+        ]
+      },
+      "videos": []
+    },
+    "CU": {
+      "id": "CU",
+      "deep": "Close-Up is a practical form of shot scale: The face fills the frame. Forces the audience to read emotion and makes a moment important. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Passion of Joan of Arc (1928) uses close-ups to make tiny changes in Renée Jeanne Falconetti’s face carry the scene.",
+      "ai_howto": {
+        "prompt_tips": [
+          "State the shot size, the subject, the readable action, and the emotional purpose in one prompt clause.",
+          "Tie close-up to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "google-veo"
+        ],
+        "caveats": [
+          "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
+        ]
+      },
+      "videos": []
+    },
+    "ECU": {
+      "id": "ECU",
+      "deep": "Extreme Close-Up is a practical form of shot scale: A single detail — an eye, a hand, an object. Maximum intensity or significance. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Psycho (1960) uses extreme details in the shower sequence to fragment perception and intensify panic.",
+      "ai_howto": {
+        "prompt_tips": [
+          "State the shot size, the subject, the readable action, and the emotional purpose in one prompt clause.",
+          "Tie extreme close-up to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "google-veo"
+        ],
+        "caveats": [
+          "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
+        ]
+      },
+      "videos": []
+    },
+    "INSERT": {
+      "id": "INSERT",
+      "deep": "Insert Shot is a practical form of shot scale: A quick cut to a specific detail (a note, a clock, a trigger). Directs attention to what matters. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The spinning top insert in Inception (2010) turns a small prop into a question that outlives the final cut.",
+      "ai_howto": {
+        "prompt_tips": [
+          "State the shot size, the subject, the readable action, and the emotional purpose in one prompt clause.",
+          "Tie insert shot to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "google-veo"
+        ],
+        "caveats": [
+          "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
+        ]
+      },
+      "videos": []
+    },
+    "eye_level": {
+      "id": "eye_level",
+      "deep": "Eye-Level Angle is a practical form of camera viewpoint: Camera meets the subject as an equal. Neutral, honest, relatable. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Citizen Kane (1941) repeatedly uses low viewpoints and visible ceilings to make power feel imposing and unstable.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name camera height, tilt, subject eyeline, and the intended power relationship.",
+          "Tie eye-level angle to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "higgsfield"
+        ],
+        "caveats": [
+          "An angle only has meaning in context; cutting to a contradictory eyeline can break spatial continuity."
+        ]
+      },
+      "videos": []
+    },
+    "high_angle": {
+      "id": "high_angle",
+      "deep": "High Angle is a practical form of camera viewpoint: Looking down on the subject. Makes them feel smaller, weaker, or vulnerable. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Psycho (1960) uses an overhead view on the staircase to reveal action while withholding the attacker’s identity.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name camera height, tilt, subject eyeline, and the intended power relationship.",
+          "Tie high angle to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "higgsfield"
+        ],
+        "caveats": [
+          "An angle only has meaning in context; cutting to a contradictory eyeline can break spatial continuity."
+        ]
+      },
+      "videos": []
+    },
+    "low_angle": {
+      "id": "low_angle",
+      "deep": "Low Angle is a practical form of camera viewpoint: Looking up at the subject. Makes them feel powerful, dominant, or heroic. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Citizen Kane (1941) repeatedly uses low viewpoints and visible ceilings to make power feel imposing and unstable.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name camera height, tilt, subject eyeline, and the intended power relationship.",
+          "Tie low angle to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "higgsfield"
+        ],
+        "caveats": [
+          "An angle only has meaning in context; cutting to a contradictory eyeline can break spatial continuity."
+        ]
+      },
+      "videos": []
+    },
+    "overhead_topdown": {
+      "id": "overhead_topdown",
+      "deep": "Overhead / Top-Down is a practical form of camera viewpoint: Straight down from above. Turns a scene into a pattern and suggests fate or control. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Citizen Kane (1941) repeatedly uses low viewpoints and visible ceilings to make power feel imposing and unstable.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name camera height, tilt, subject eyeline, and the intended power relationship.",
+          "Tie overhead / top-down to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "higgsfield"
+        ],
+        "caveats": [
+          "An angle only has meaning in context; cutting to a contradictory eyeline can break spatial continuity."
+        ]
+      },
+      "videos": []
+    },
+    "dutch_tilt": {
+      "id": "dutch_tilt",
+      "deep": "Dutch Tilt is a practical form of camera viewpoint: The camera is tilted off-level. Creates unease, tension, or a world out of balance. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Third Man (1949) uses canted frames to make postwar Vienna feel morally and physically unstable.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name camera height, tilt, subject eyeline, and the intended power relationship.",
+          "Tie dutch tilt to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "higgsfield"
+        ],
+        "caveats": [
+          "An angle only has meaning in context; cutting to a contradictory eyeline can break spatial continuity."
+        ]
+      },
+      "videos": []
+    },
+    "over_the_shoulder": {
+      "id": "over_the_shoulder",
+      "deep": "Over-the-Shoulder is a practical form of camera viewpoint: Shot from behind one person toward another. Builds connection and conversation geometry. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Citizen Kane (1941) repeatedly uses low viewpoints and visible ceilings to make power feel imposing and unstable.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name camera height, tilt, subject eyeline, and the intended power relationship.",
+          "Tie over-the-shoulder to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "higgsfield"
+        ],
+        "caveats": [
+          "An angle only has meaning in context; cutting to a contradictory eyeline can break spatial continuity."
+        ]
+      },
+      "videos": []
+    },
+    "pov": {
+      "id": "pov",
+      "deep": "Point of View is a practical form of camera viewpoint: The camera becomes a character's eyes. Puts the audience directly inside their experience. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Jaws (1975) gives the unseen shark a moving point of view, converting ordinary swimming into threat.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name camera height, tilt, subject eyeline, and the intended power relationship.",
+          "Tie point of view to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "higgsfield"
+        ],
+        "caveats": [
+          "An angle only has meaning in context; cutting to a contradictory eyeline can break spatial continuity."
+        ]
+      },
+      "videos": []
+    },
+    "static": {
+      "id": "static",
+      "deep": "Static Camera is a practical form of camera movement: The camera holds still. Feels controlled, observational, or tense depending on what fills the frame. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "A Ghost Story (2017) holds static frames long enough for absence and duration to become the subject.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe one motivated move with a start frame, end frame, speed, and subject relationship.",
+          "Tie static camera to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "kling-ai"
+        ],
+        "caveats": [
+          "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
+        ]
+      },
+      "videos": []
+    },
+    "pan": {
+      "id": "pan",
+      "deep": "Pan is a practical form of camera movement: The camera pivots left/right. Reveals space or follows action along a line. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Copacabana tracking shot in Goodfellas (1990) turns camera movement into Henry’s intoxicating access to a hidden social world.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe one motivated move with a start frame, end frame, speed, and subject relationship.",
+          "Tie pan to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "kling-ai"
+        ],
+        "caveats": [
+          "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
+        ]
+      },
+      "videos": []
+    },
+    "tilt": {
+      "id": "tilt",
+      "deep": "Tilt is a practical form of camera movement: The camera pivots up/down. Reveals height, scale, or a slow discovery. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Copacabana tracking shot in Goodfellas (1990) turns camera movement into Henry’s intoxicating access to a hidden social world.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe one motivated move with a start frame, end frame, speed, and subject relationship.",
+          "Tie tilt to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "kling-ai"
+        ],
+        "caveats": [
+          "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
+        ]
+      },
+      "videos": []
+    },
+    "dolly_in": {
+      "id": "dolly_in",
+      "deep": "Dolly In is a practical form of camera movement: The camera physically moves toward the subject. Intensifies a realization or emotion. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The slow push toward Chief Brody in Jaws (1975) concentrates attention as he recognizes danger on the beach.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe one motivated move with a start frame, end frame, speed, and subject relationship.",
+          "Tie dolly in to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "kling-ai"
+        ],
+        "caveats": [
+          "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
+        ]
+      },
+      "videos": []
+    },
+    "dolly_out": {
+      "id": "dolly_out",
+      "deep": "Dolly Out is a practical form of camera movement: The camera pulls back. Isolates a character or reveals a bigger, often lonelier, context. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Copacabana tracking shot in Goodfellas (1990) turns camera movement into Henry’s intoxicating access to a hidden social world.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe one motivated move with a start frame, end frame, speed, and subject relationship.",
+          "Tie dolly out to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "kling-ai"
+        ],
+        "caveats": [
+          "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
+        ]
+      },
+      "videos": []
+    },
+    "tracking": {
+      "id": "tracking",
+      "deep": "Tracking Shot is a practical form of camera movement: The camera travels alongside a moving subject. Adds momentum and keeps us with them. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Copacabana tracking shot in Goodfellas (1990) turns camera movement into Henry’s intoxicating access to a hidden social world.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe one motivated move with a start frame, end frame, speed, and subject relationship.",
+          "Tie tracking shot to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "kling-ai"
+        ],
+        "caveats": [
+          "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
+        ]
+      },
+      "videos": []
+    },
+    "crane_boom": {
+      "id": "crane_boom",
+      "deep": "Crane / Boom is a practical form of camera movement: The camera sweeps up or down through space. Grand reveals and emotional lift. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Copacabana tracking shot in Goodfellas (1990) turns camera movement into Henry’s intoxicating access to a hidden social world.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe one motivated move with a start frame, end frame, speed, and subject relationship.",
+          "Tie crane / boom to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "kling-ai"
+        ],
+        "caveats": [
+          "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
+        ]
+      },
+      "videos": []
+    },
+    "handheld": {
+      "id": "handheld",
+      "deep": "Handheld is a practical form of camera movement: Loose, human camera movement. Feels raw, urgent, immediate, documentary-like. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Copacabana tracking shot in Goodfellas (1990) turns camera movement into Henry’s intoxicating access to a hidden social world.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe one motivated move with a start frame, end frame, speed, and subject relationship.",
+          "Tie handheld to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "kling-ai"
+        ],
+        "caveats": [
+          "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
+        ]
+      },
+      "videos": []
+    },
+    "steadicam": {
+      "id": "steadicam",
+      "deep": "Steadicam is a practical form of camera movement: Smooth floating movement through space. Immersive without the shake of handheld. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Shining (1980) follows Danny’s tricycle with a low Steadicam, turning corridors into a suspense machine.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe one motivated move with a start frame, end frame, speed, and subject relationship.",
+          "Tie steadicam to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "kling-ai"
+        ],
+        "caveats": [
+          "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
+        ]
+      },
+      "videos": []
+    },
+    "whip_pan": {
+      "id": "whip_pan",
+      "deep": "Whip Pan is a practical form of camera movement: A fast blur-pan between subjects. Energy, comedy, or a sudden connection. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Whiplash (2014) uses fast pans and cuts between conductor and drummer to make tempo feel combative.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe one motivated move with a start frame, end frame, speed, and subject relationship.",
+          "Tie whip pan to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "kling-ai"
+        ],
+        "caveats": [
+          "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
+        ]
+      },
+      "videos": []
+    },
+    "crash_zoom": {
+      "id": "crash_zoom",
+      "deep": "Crash Zoom is a practical form of camera movement: A sudden fast zoom in. Shock, emphasis, or comic punctuation. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Copacabana tracking shot in Goodfellas (1990) turns camera movement into Henry’s intoxicating access to a hidden social world.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe one motivated move with a start frame, end frame, speed, and subject relationship.",
+          "Tie crash zoom to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "kling-ai"
+        ],
+        "caveats": [
+          "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
+        ]
+      },
+      "videos": []
+    },
+    "rack_focus": {
+      "id": "rack_focus",
+      "deep": "Rack Focus is a practical form of camera movement: Shifting focus from one plane to another within a shot. Links two things or redirects attention. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Jaws (1975) shifts focus between foreground conversation and the vulnerable swimmer, redirecting attention without cutting.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe one motivated move with a start frame, end frame, speed, and subject relationship.",
+          "Tie rack focus to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4",
+          "kling-ai"
+        ],
+        "caveats": [
+          "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
+        ]
+      },
+      "videos": []
+    },
+    "wide_angle": {
+      "id": "wide_angle",
+      "deep": "Wide-Angle Lens is a practical form of lens language: Exaggerates depth and space; can distort up close. Makes rooms feel big and gestures dramatic. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Favourite (2018) uses conspicuously wide lenses to bend palace space and make court life feel comic and oppressive.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Specify focal-length character, camera distance, depth of field, and background behavior rather than naming a lens alone.",
+          "Tie wide-angle lens to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "google-veo",
+          "runway-gen4"
+        ],
+        "caveats": [
+          "AI often imitates the look of a lens rather than consistent optics; check faces, edges, and depth across frames."
+        ]
+      },
+      "videos": []
+    },
+    "normal": {
+      "id": "normal",
+      "deep": "Normal Lens is a practical form of lens language: Roughly how the human eye sees. Natural, undistorted perspective. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Favourite (2018) uses conspicuously wide lenses to bend palace space and make court life feel comic and oppressive.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Specify focal-length character, camera distance, depth of field, and background behavior rather than naming a lens alone.",
+          "Tie normal lens to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "google-veo",
+          "runway-gen4"
+        ],
+        "caveats": [
+          "AI often imitates the look of a lens rather than consistent optics; check faces, edges, and depth across frames."
+        ]
+      },
+      "videos": []
+    },
+    "telephoto": {
+      "id": "telephoto",
+      "deep": "Telephoto Lens is a practical form of lens language: Compresses distance and isolates the subject with a soft background. Intimate or voyeuristic. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Favourite (2018) uses conspicuously wide lenses to bend palace space and make court life feel comic and oppressive.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Specify focal-length character, camera distance, depth of field, and background behavior rather than naming a lens alone.",
+          "Tie telephoto lens to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "google-veo",
+          "runway-gen4"
+        ],
+        "caveats": [
+          "AI often imitates the look of a lens rather than consistent optics; check faces, edges, and depth across frames."
+        ]
+      },
+      "videos": []
+    },
+    "macro": {
+      "id": "macro",
+      "deep": "Macro Lens is a practical form of lens language: Extreme detail on tiny subjects. Turns a small object into a whole world. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Microcosmos (1996) uses macro photography to turn insect-scale activity into monumental action.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Specify focal-length character, camera distance, depth of field, and background behavior rather than naming a lens alone.",
+          "Tie macro lens to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "google-veo",
+          "runway-gen4"
+        ],
+        "caveats": [
+          "AI often imitates the look of a lens rather than consistent optics; check faces, edges, and depth across frames."
+        ]
+      },
+      "videos": []
+    },
+    "rule_of_thirds": {
+      "id": "rule_of_thirds",
+      "deep": "Rule of Thirds is a practical form of composition: Place key elements on the thirds lines, not dead-center. Creates balanced, dynamic framing. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Grand Budapest Hotel (2014) uses centered symmetry as both visual order and a clue to its protagonist’s need for control.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe subject placement, dominant lines, foreground/background layers, and where negative space should remain.",
+          "Tie rule of thirds to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
+        ]
+      },
+      "videos": []
+    },
+    "central_symmetry": {
+      "id": "central_symmetry",
+      "deep": "Central Symmetry is a practical form of composition: Perfectly centered, mirrored framing. Encodes order, duality, or unease (a Kubrick/Anderson look). The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Shining (1980) uses centered corridors to create an order so rigid that every disturbance feels threatening.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe subject placement, dominant lines, foreground/background layers, and where negative space should remain.",
+          "Tie central symmetry to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
+        ]
+      },
+      "videos": []
+    },
+    "leading_lines": {
+      "id": "leading_lines",
+      "deep": "Leading Lines is a practical form of composition: Lines in the frame guide the eye to the subject. Adds depth and direction. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Grand Budapest Hotel (2014) uses centered symmetry as both visual order and a clue to its protagonist’s need for control.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe subject placement, dominant lines, foreground/background layers, and where negative space should remain.",
+          "Tie leading lines to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
+        ]
+      },
+      "videos": []
+    },
+    "framing_within_frame": {
+      "id": "framing_within_frame",
+      "deep": "Frame Within a Frame is a practical form of composition: Using doorways/windows to frame the subject. Can trap, isolate, or focus them. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Grand Budapest Hotel (2014) uses centered symmetry as both visual order and a clue to its protagonist’s need for control.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe subject placement, dominant lines, foreground/background layers, and where negative space should remain.",
+          "Tie frame within a frame to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
+        ]
+      },
+      "videos": []
+    },
+    "depth_layering": {
+      "id": "depth_layering",
+      "deep": "Depth Layering is a practical form of composition: Foreground, midground, background stacked. Creates dimensionality and visual hierarchy. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Grand Budapest Hotel (2014) uses centered symmetry as both visual order and a clue to its protagonist’s need for control.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe subject placement, dominant lines, foreground/background layers, and where negative space should remain.",
+          "Tie depth layering to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
+        ]
+      },
+      "videos": []
+    },
+    "negative_space": {
+      "id": "negative_space",
+      "deep": "Negative Space is a practical form of composition: Empty area around the subject. Creates loneliness, tension, or elegant focus. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Lost in Translation (2003) often leaves figures small within hotel and city spaces, externalizing disconnection.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe subject placement, dominant lines, foreground/background layers, and where negative space should remain.",
+          "Tie negative space to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
+        ]
+      },
+      "videos": []
+    },
+    "headroom_leadroom": {
+      "id": "headroom_leadroom",
+      "deep": "Headroom & Lead Room is a practical form of composition: Space above the head and in the direction of a look/motion. Keeps framing comfortable and directional. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Grand Budapest Hotel (2014) uses centered symmetry as both visual order and a clue to its protagonist’s need for control.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe subject placement, dominant lines, foreground/background layers, and where negative space should remain.",
+          "Tie headroom & lead room to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
+        ]
+      },
+      "videos": []
+    },
+    "180_degree_rule": {
+      "id": "180_degree_rule",
+      "deep": "180° Rule is a practical form of composition: Keep the camera on one side of the action line so screen directions stay consistent and the audience never gets lost. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Grand Budapest Hotel (2014) uses centered symmetry as both visual order and a clue to its protagonist’s need for control.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Describe subject placement, dominant lines, foreground/background layers, and where negative space should remain.",
+          "Tie 180° rule to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
+        ]
+      },
+      "videos": []
+    },
+    "shot_reverse_shot": {
+      "id": "shot_reverse_shot",
+      "deep": "Shot / Reverse Shot is a practical form of editing rhythm: Cutting between two people talking. The grammar of a conversation. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The bone-to-spacecraft match cut in 2001: A Space Odyssey (1968) compresses an immense leap in time into one visual idea.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Generate coverage with clear entrances, exits, eyelines, and matchable actions; make the cut in an editor.",
+          "Tie shot / reverse shot to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "capcut",
+          "davinci-resolve"
+        ],
+        "caveats": [
+          "Generation does not replace editorial judgment. Assemble, trim, and test rhythm against the audience’s attention."
+        ]
+      },
+      "videos": []
+    },
+    "long_take": {
+      "id": "long_take",
+      "deep": "Long Take is a practical form of editing rhythm: One unbroken shot held for a long time. Builds tension or immersion without cutting away. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Children of Men (2006) sustains complex action in long takes so danger feels continuous rather than safely fragmented.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Generate coverage with clear entrances, exits, eyelines, and matchable actions; make the cut in an editor.",
+          "Tie long take to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "capcut",
+          "davinci-resolve"
+        ],
+        "caveats": [
+          "Generation does not replace editorial judgment. Assemble, trim, and test rhythm against the audience’s attention."
+        ]
+      },
+      "videos": []
+    },
+    "slow_cutting": {
+      "id": "slow_cutting",
+      "deep": "Slow Cutting is a practical form of editing rhythm: Long-held shots, few cuts. Gives weight, calm, and contemplation. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The bone-to-spacecraft match cut in 2001: A Space Odyssey (1968) compresses an immense leap in time into one visual idea.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Generate coverage with clear entrances, exits, eyelines, and matchable actions; make the cut in an editor.",
+          "Tie slow cutting to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "capcut",
+          "davinci-resolve"
+        ],
+        "caveats": [
+          "Generation does not replace editorial judgment. Assemble, trim, and test rhythm against the audience’s attention."
+        ]
+      },
+      "videos": []
+    },
+    "fast_cutting": {
+      "id": "fast_cutting",
+      "deep": "Fast Cutting is a practical form of editing rhythm: Many quick cuts. Creates urgency, energy, or comedy. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The bone-to-spacecraft match cut in 2001: A Space Odyssey (1968) compresses an immense leap in time into one visual idea.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Generate coverage with clear entrances, exits, eyelines, and matchable actions; make the cut in an editor.",
+          "Tie fast cutting to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "capcut",
+          "davinci-resolve"
+        ],
+        "caveats": [
+          "Generation does not replace editorial judgment. Assemble, trim, and test rhythm against the audience’s attention."
+        ]
+      },
+      "videos": []
+    },
+    "match_cut": {
+      "id": "match_cut",
+      "deep": "Match Cut is a practical form of editing rhythm: Cutting on a matching shape or motion between scenes. Poetic, seamless linkage. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The bone-to-spacecraft match cut in 2001: A Space Odyssey (1968) compresses an immense leap in time into one visual idea.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Generate coverage with clear entrances, exits, eyelines, and matchable actions; make the cut in an editor.",
+          "Tie match cut to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "capcut",
+          "davinci-resolve"
+        ],
+        "caveats": [
+          "Generation does not replace editorial judgment. Assemble, trim, and test rhythm against the audience’s attention."
+        ]
+      },
+      "videos": []
+    },
+    "cross_cutting": {
+      "id": "cross_cutting",
+      "deep": "Cross-Cutting is a practical form of editing rhythm: Intercutting two parallel actions. Builds suspense or shows connection between events. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The baptism sequence in The Godfather (1972) cross-cuts ritual and murder to create an argument through juxtaposition.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Generate coverage with clear entrances, exits, eyelines, and matchable actions; make the cut in an editor.",
+          "Tie cross-cutting to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "capcut",
+          "davinci-resolve"
+        ],
+        "caveats": [
+          "Generation does not replace editorial judgment. Assemble, trim, and test rhythm against the audience’s attention."
+        ]
+      },
+      "videos": []
+    },
+    "montage": {
+      "id": "montage",
+      "deep": "Montage is a practical form of editing rhythm: A sequence of short shots compressing time or change. Growth, training, passage of time. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Rocky (1976) compresses training into a montage whose escalating actions make improvement emotionally legible.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Generate coverage with clear entrances, exits, eyelines, and matchable actions; make the cut in an editor.",
+          "Tie montage to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "capcut",
+          "davinci-resolve"
+        ],
+        "caveats": [
+          "Generation does not replace editorial judgment. Assemble, trim, and test rhythm against the audience’s attention."
+        ]
+      },
+      "videos": []
+    },
+    "high_key": {
+      "id": "high_key",
+      "deep": "High-Key Lighting is a practical form of lighting: Bright, low-contrast, few shadows. Feels cheerful, safe, comedic, or clean. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Singin’ in the Rain (1952) uses bright, even musical lighting to support clarity, energy, and play.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name the motivated source, direction, softness, contrast ratio, color temperature, and protected shadow detail.",
+          "Tie high-key lighting to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "adobe-firefly-video"
+        ],
+        "caveats": [
+          "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
+        ]
+      },
+      "videos": []
+    },
+    "low_key": {
+      "id": "low_key",
+      "deep": "Low-Key Lighting is a practical form of lighting: Dark, high-contrast, deep shadows. Feels tense, mysterious, or dangerous. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Godfather (1972) uses controlled top light and deep eye shadows to make authority feel private, guarded, and morally opaque.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name the motivated source, direction, softness, contrast ratio, color temperature, and protected shadow detail.",
+          "Tie low-key lighting to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "adobe-firefly-video"
+        ],
+        "caveats": [
+          "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
+        ]
+      },
+      "videos": []
+    },
+    "chiaroscuro": {
+      "id": "chiaroscuro",
+      "deep": "Chiaroscuro is a practical form of lighting: Bold light-vs-dark contrast. Encodes drama, moral duality, and danger. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Third Man (1949) uses hard light and deep shadow to turn faces and streets into moral uncertainty.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name the motivated source, direction, softness, contrast ratio, color temperature, and protected shadow detail.",
+          "Tie chiaroscuro to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "adobe-firefly-video"
+        ],
+        "caveats": [
+          "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
+        ]
+      },
+      "videos": []
+    },
+    "rembrandt": {
+      "id": "rembrandt",
+      "deep": "Rembrandt Lighting is a practical form of lighting: A small triangle of light on the shadowed cheek. Classic, dimensional portrait mood. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Godfather (1972) uses controlled top light and deep eye shadows to make authority feel private, guarded, and morally opaque.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name the motivated source, direction, softness, contrast ratio, color temperature, and protected shadow detail.",
+          "Tie rembrandt lighting to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "adobe-firefly-video"
+        ],
+        "caveats": [
+          "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
+        ]
+      },
+      "videos": []
+    },
+    "three_point": {
+      "id": "three_point",
+      "deep": "Three-Point Lighting is a practical form of lighting: Key, fill, and back light — the standard setup that shapes a subject cleanly. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Godfather (1972) uses controlled top light and deep eye shadows to make authority feel private, guarded, and morally opaque.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name the motivated source, direction, softness, contrast ratio, color temperature, and protected shadow detail.",
+          "Tie three-point lighting to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "adobe-firefly-video"
+        ],
+        "caveats": [
+          "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
+        ]
+      },
+      "videos": [
+        {
+          "title": "How to Shoot a Scene!",
+          "youtube_id": "IK2IAEO-FUI",
+          "channel": "Film Riot",
+          "source": "https://www.youtube.com/watch?v=IK2IAEO-FUI"
+        }
+      ]
+    },
+    "silhouette": {
+      "id": "silhouette",
+      "deep": "Silhouette is a practical form of lighting: Subject dark against a bright background. Mystery, anonymity, or iconic shape. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Godfather (1972) uses controlled top light and deep eye shadows to make authority feel private, guarded, and morally opaque.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name the motivated source, direction, softness, contrast ratio, color temperature, and protected shadow detail.",
+          "Tie silhouette to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "adobe-firefly-video"
+        ],
+        "caveats": [
+          "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
+        ]
+      },
+      "videos": []
+    },
+    "backlight_rim": {
+      "id": "backlight_rim",
+      "deep": "Backlight / Rim Light is a practical form of lighting: Light from behind edges the subject with a glow. Warmth, memory, or separation from the background. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Godfather (1972) uses controlled top light and deep eye shadows to make authority feel private, guarded, and morally opaque.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name the motivated source, direction, softness, contrast ratio, color temperature, and protected shadow detail.",
+          "Tie backlight / rim light to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "adobe-firefly-video"
+        ],
+        "caveats": [
+          "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
+        ]
+      },
+      "videos": []
+    },
+    "practical_motivated": {
+      "id": "practical_motivated",
+      "deep": "Practical / Motivated Light is a practical form of lighting: Light that comes from sources in the scene (lamps, windows). Feels real and grounded. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Godfather (1972) uses controlled top light and deep eye shadows to make authority feel private, guarded, and morally opaque.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name the motivated source, direction, softness, contrast ratio, color temperature, and protected shadow detail.",
+          "Tie practical / motivated light to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "adobe-firefly-video"
+        ],
+        "caveats": [
+          "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
+        ]
+      },
+      "videos": []
+    },
+    "golden_hour": {
+      "id": "golden_hour",
+      "deep": "Golden Hour is a practical form of lighting: Warm, low sun light. Nostalgia, warmth, transience, romance. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Days of Heaven (1978) makes extensive use of low-angle natural light to give farm labor a fleeting, elegiac beauty.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name the motivated source, direction, softness, contrast ratio, color temperature, and protected shadow detail.",
+          "Tie golden hour to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "adobe-firefly-video"
+        ],
+        "caveats": [
+          "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
+        ]
+      },
+      "videos": []
+    },
+    "top_light": {
+      "id": "top_light",
+      "deep": "Top Light is a practical form of lighting: Light straight from above. Can feel spiritual, oppressive, or isolating. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Godfather (1972) uses controlled top light and deep eye shadows to make authority feel private, guarded, and morally opaque.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name the motivated source, direction, softness, contrast ratio, color temperature, and protected shadow detail.",
+          "Tie top light to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "adobe-firefly-video"
+        ],
+        "caveats": [
+          "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
+        ]
+      },
+      "videos": []
+    },
+    "underlight": {
+      "id": "underlight",
+      "deep": "Underlight is a practical form of lighting: Light from below. Unnatural and unsettling — the campfire \"horror\" look. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "The Godfather (1972) uses controlled top light and deep eye shadows to make authority feel private, guarded, and morally opaque.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name the motivated source, direction, softness, contrast ratio, color temperature, and protected shadow detail.",
+          "Tie underlight to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "adobe-firefly-video"
+        ],
+        "caveats": [
+          "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
+        ]
+      },
+      "videos": []
+    },
+    "complementary": {
+      "id": "complementary",
+      "deep": "Complementary Colors is a practical form of color design: Opposite colors (e.g., teal/orange) side by side. Creates tension, contrast, and pop. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Mad Max: Fury Road (2015) contrasts warm desert oranges with blue night passages to separate heat, danger, and relief.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name a restrained palette, its story meaning, dominant/accent ratio, and where the accent appears.",
+          "Tie complementary colors to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "recraft",
+          "davinci-resolve"
+        ],
+        "caveats": [
+          "Prompted color is not a final grade. Normalize shots in an editor before applying a consistent look."
+        ]
+      },
+      "videos": []
+    },
+    "analogous": {
+      "id": "analogous",
+      "deep": "Analogous Colors is a practical form of color design: Neighboring colors on the wheel. Creates harmony and emotional unity. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Her (2013) builds related reds, oranges, and pinks into a warm world that still permits loneliness.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name a restrained palette, its story meaning, dominant/accent ratio, and where the accent appears.",
+          "Tie analogous colors to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "recraft",
+          "davinci-resolve"
+        ],
+        "caveats": [
+          "Prompted color is not a final grade. Normalize shots in an editor before applying a consistent look."
+        ]
+      },
+      "videos": []
+    },
+    "triadic": {
+      "id": "triadic",
+      "deep": "Triadic Colors is a practical form of color design: Three evenly spaced colors. Vibrant yet balanced. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Schindler’s List (1993) uses a largely monochrome design and a selective red accent to direct attention and memory.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name a restrained palette, its story meaning, dominant/accent ratio, and where the accent appears.",
+          "Tie triadic colors to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "recraft",
+          "davinci-resolve"
+        ],
+        "caveats": [
+          "Prompted color is not a final grade. Normalize shots in an editor before applying a consistent look."
+        ]
+      },
+      "videos": []
+    },
+    "monochrome": {
+      "id": "monochrome",
+      "deep": "Monochrome is a practical form of color design: One color/hue throughout. Concentrates a single mood powerfully. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Schindler’s List (1993) uses a largely monochrome design and a selective red accent to direct attention and memory.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name a restrained palette, its story meaning, dominant/accent ratio, and where the accent appears.",
+          "Tie monochrome to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "recraft",
+          "davinci-resolve"
+        ],
+        "caveats": [
+          "Prompted color is not a final grade. Normalize shots in an editor before applying a consistent look."
+        ]
+      },
+      "videos": []
+    },
+    "split_complementary": {
+      "id": "split_complementary",
+      "deep": "Split-Complementary is a practical form of color design: A base color plus the two beside its opposite. Contrast with less tension than pure complementary. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Schindler’s List (1993) uses a largely monochrome design and a selective red accent to direct attention and memory.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Name a restrained palette, its story meaning, dominant/accent ratio, and where the accent appears.",
+          "Tie split-complementary to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "recraft",
+          "davinci-resolve"
+        ],
+        "caveats": [
+          "Prompted color is not a final grade. Normalize shots in an editor before applying a consistent look."
+        ]
+      },
+      "videos": []
+    },
+    "depth_staging": {
+      "id": "depth_staging",
+      "deep": "Depth Staging is a practical form of mise-en-scène: Arranging actors across foreground/background. Shows relationships and hierarchy in one shot. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Parasite (2019) turns the Park house’s stairs, windows, and levels into a readable map of class and access.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Place characters, props, wardrobe, and set elements according to the beat’s conflict; state what each choice means.",
+          "Tie depth staging to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
+        ]
+      },
+      "videos": [
+        {
+          "title": "The Bad Sleep Well — The Geometry of a Scene",
+          "youtube_id": "jGc-K7giqKM",
+          "channel": "Every Frame a Painting",
+          "source": "https://www.youtube.com/watch?v=jGc-K7giqKM"
+        }
+      ]
+    },
+    "symmetrical_blocking": {
+      "id": "symmetrical_blocking",
+      "deep": "Symmetrical Blocking is a practical form of mise-en-scène: Mirrored placement of figures. Encodes confrontation, duality, or balance. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Parasite (2019) turns the Park house’s stairs, windows, and levels into a readable map of class and access.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Place characters, props, wardrobe, and set elements according to the beat’s conflict; state what each choice means.",
+          "Tie symmetrical blocking to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
+        ]
+      },
+      "videos": []
+    },
+    "proxemics": {
+      "id": "proxemics",
+      "deep": "Proxemics is a practical form of mise-en-scène: How close or far characters stand. Distance encodes power, intimacy, or conflict. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "In the Mood for Love (2000) uses constrained distance in hallways and rooms to make restrained intimacy visible.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Place characters, props, wardrobe, and set elements according to the beat’s conflict; state what each choice means.",
+          "Tie proxemics to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
+        ]
+      },
+      "videos": []
+    },
+    "negative_space_isolation": {
+      "id": "negative_space_isolation",
+      "deep": "Isolation via Negative Space is a practical form of mise-en-scène: Surrounding a character with emptiness to make them feel alone. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Parasite (2019) turns the Park house’s stairs, windows, and levels into a readable map of class and access.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Place characters, props, wardrobe, and set elements according to the beat’s conflict; state what each choice means.",
+          "Tie isolation via negative space to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
+        ]
+      },
+      "videos": []
+    },
+    "movement_toward_away": {
+      "id": "movement_toward_away",
+      "deep": "Movement Toward / Away is a practical form of mise-en-scène: Characters moving closer or apart. Externalizes connection or rejection. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Parasite (2019) turns the Park house’s stairs, windows, and levels into a readable map of class and access.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Place characters, props, wardrobe, and set elements according to the beat’s conflict; state what each choice means.",
+          "Tie movement toward / away to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
+        ]
+      },
+      "videos": [
+        {
+          "title": "The Bad Sleep Well — The Geometry of a Scene",
+          "youtube_id": "jGc-K7giqKM",
+          "channel": "Every Frame a Painting",
+          "source": "https://www.youtube.com/watch?v=jGc-K7giqKM"
+        }
+      ]
+    },
+    "prop_as_symbol": {
+      "id": "prop_as_symbol",
+      "deep": "Prop as Symbol is a practical form of mise-en-scène: An object carries theme (a ring, a clock, a toy). Lets meaning live in a thing you can see. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Citizen Kane (1941) makes the snow globe a material link between Kane’s final word, lost childhood, and the film’s investigation.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Place characters, props, wardrobe, and set elements according to the beat’s conflict; state what each choice means.",
+          "Tie prop as symbol to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
+        ]
+      },
+      "videos": []
+    },
+    "setting_as_metaphor": {
+      "id": "setting_as_metaphor",
+      "deep": "Setting as Metaphor is a practical form of mise-en-scène: The location mirrors the inner state (a storm, an empty room). The world reflects the feeling. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Parasite (2019) turns the Park house’s stairs, windows, and levels into a readable map of class and access.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Place characters, props, wardrobe, and set elements according to the beat’s conflict; state what each choice means.",
+          "Tie setting as metaphor to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
+        ]
+      },
+      "videos": []
+    },
+    "wardrobe_signals": {
+      "id": "wardrobe_signals",
+      "deep": "Wardrobe Signals is a practical form of mise-en-scène: Costume tracks identity and change. A shift in clothing shows a shift in the character. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Parasite (2019) turns the Park house’s stairs, windows, and levels into a readable map of class and access.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Place characters, props, wardrobe, and set elements according to the beat’s conflict; state what each choice means.",
+          "Tie wardrobe signals to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
+        ]
+      },
+      "videos": []
+    },
+    "texture_materiality": {
+      "id": "texture_materiality",
+      "deep": "Texture & Materiality is a practical form of mise-en-scène: The tactile feel of surfaces. Adds believability and sensory mood. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Parasite (2019) turns the Park house’s stairs, windows, and levels into a readable map of class and access.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Place characters, props, wardrobe, and set elements according to the beat’s conflict; state what each choice means.",
+          "Tie texture & materiality to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "midjourney"
+        ],
+        "caveats": [
+          "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
+        ]
+      },
+      "videos": []
+    },
+    "pixar": {
+      "id": "pixar",
+      "deep": "Pixar is a practical form of directorial pattern: Emotion-first 3D animation: clear story spine, expressive characters, a single powerful feeling per beat. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Spirited Away (2001) demonstrates how a director’s worldview can live in patient observation, environmental detail, and character action.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Translate the influence into observable choices—framing, blocking, rhythm, palette—without asking for a living artist imitation.",
+          "Tie pixar to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "google-veo"
+        ],
+        "caveats": [
+          "Study principles rather than copying a signature. Combine references and keep the result specific to your story."
+        ]
+      },
+      "videos": []
+    },
+    "disney_animation": {
+      "id": "disney_animation",
+      "deep": "Disney Animation is a practical form of directorial pattern: Character-driven, musical, richly staged animation with strong silhouettes and appeal. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Spirited Away (2001) demonstrates how a director’s worldview can live in patient observation, environmental detail, and character action.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Translate the influence into observable choices—framing, blocking, rhythm, palette—without asking for a living artist imitation.",
+          "Tie disney animation to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "google-veo"
+        ],
+        "caveats": [
+          "Study principles rather than copying a signature. Combine references and keep the result specific to your story."
+        ]
+      },
+      "videos": []
+    },
+    "miyazaki": {
+      "id": "miyazaki",
+      "deep": "Hayao Miyazaki is a practical form of directorial pattern: Hand-drawn wonder, quiet \"ma\" (pauses), nature, flight, and morally complex worlds. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Spirited Away (2001) demonstrates how a director’s worldview can live in patient observation, environmental detail, and character action.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Translate the influence into observable choices—framing, blocking, rhythm, palette—without asking for a living artist imitation.",
+          "Tie hayao miyazaki to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "google-veo"
+        ],
+        "caveats": [
+          "Study principles rather than copying a signature. Combine references and keep the result specific to your story."
+        ]
+      },
+      "videos": []
+    },
+    "wes_anderson": {
+      "id": "wes_anderson",
+      "deep": "Wes Anderson is a practical form of directorial pattern: Symmetry, centered framing, flat pastel palettes, and deadpan whimsy. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Spirited Away (2001) demonstrates how a director’s worldview can live in patient observation, environmental detail, and character action.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Translate the influence into observable choices—framing, blocking, rhythm, palette—without asking for a living artist imitation.",
+          "Tie wes anderson to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "google-veo"
+        ],
+        "caveats": [
+          "Study principles rather than copying a signature. Combine references and keep the result specific to your story."
+        ]
+      },
+      "videos": []
+    },
+    "bong_joon_ho": {
+      "id": "bong_joon_ho",
+      "deep": "Bong Joon-ho is a practical form of directorial pattern: Genre-blending, sharp social contrast, staircases and levels as class metaphor. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Spirited Away (2001) demonstrates how a director’s worldview can live in patient observation, environmental detail, and character action.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Translate the influence into observable choices—framing, blocking, rhythm, palette—without asking for a living artist imitation.",
+          "Tie bong joon-ho to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "google-veo"
+        ],
+        "caveats": [
+          "Study principles rather than copying a signature. Combine references and keep the result specific to your story."
+        ]
+      },
+      "videos": []
+    },
+    "ridley_scott": {
+      "id": "ridley_scott",
+      "deep": "Ridley Scott is a practical form of directorial pattern: Atmospheric worlds, heavy shadow and haze, epic scale and texture. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Spirited Away (2001) demonstrates how a director’s worldview can live in patient observation, environmental detail, and character action.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Translate the influence into observable choices—framing, blocking, rhythm, palette—without asking for a living artist imitation.",
+          "Tie ridley scott to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "google-veo"
+        ],
+        "caveats": [
+          "Study principles rather than copying a signature. Combine references and keep the result specific to your story."
+        ]
+      },
+      "videos": []
+    },
+    "james_cameron": {
+      "id": "james_cameron",
+      "deep": "James Cameron is a practical form of directorial pattern: Immersive spectacle, kinetic action, and pioneering visual technology. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Spirited Away (2001) demonstrates how a director’s worldview can live in patient observation, environmental detail, and character action.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Translate the influence into observable choices—framing, blocking, rhythm, palette—without asking for a living artist imitation.",
+          "Tie james cameron to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "google-veo"
+        ],
+        "caveats": [
+          "Study principles rather than copying a signature. Combine references and keep the result specific to your story."
+        ]
+      },
+      "videos": []
+    },
+    "tim_burton": {
+      "id": "tim_burton",
+      "deep": "Tim Burton is a practical form of directorial pattern: Gothic-whimsical worlds, high contrast, expressionist shapes and outsider heroes. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Spirited Away (2001) demonstrates how a director’s worldview can live in patient observation, environmental detail, and character action.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Translate the influence into observable choices—framing, blocking, rhythm, palette—without asking for a living artist imitation.",
+          "Tie tim burton to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "google-veo"
+        ],
+        "caveats": [
+          "Study principles rather than copying a signature. Combine references and keep the result specific to your story."
+        ]
+      },
+      "videos": []
+    },
+    "denis_villeneuve": {
+      "id": "denis_villeneuve",
+      "deep": "Denis Villeneuve is a practical form of directorial pattern: Monumental scale, minimalist compositions, slow dread and awe. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Spirited Away (2001) demonstrates how a director’s worldview can live in patient observation, environmental detail, and character action.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Translate the influence into observable choices—framing, blocking, rhythm, palette—without asking for a living artist imitation.",
+          "Tie denis villeneuve to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image",
+          "google-veo"
+        ],
+        "caveats": [
+          "Study principles rather than copying a signature. Combine references and keep the result specific to your story."
+        ]
+      },
+      "videos": []
+    },
+    "animated_short": {
+      "id": "animated_short",
+      "deep": "Animated Short is a practical form of genre contract: A brief, self-contained animated film — usually one clear emotional idea told visually. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Geri’s Game (1997) builds a complete setup, escalation, reversal, and payoff around one character and one table.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Prompt the genre’s audience promise, visual grammar, and emotional turn, then add one specific reversal.",
+          "Tie animated short to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "openai-sora",
+          "ltx-studio"
+        ],
+        "caveats": [
+          "Genre shorthand can create clichés. Ground every convention in a precise character objective and setting."
+        ]
+      },
+      "videos": []
+    },
+    "comedy": {
+      "id": "comedy",
+      "deep": "Comedy is a practical form of genre contract: Structured around setups and payoffs; timing and reversal drive the laughs. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Airplane! (1980) treats absurd dialogue with straight performance and precise timing, letting contrast create the joke.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Prompt the genre’s audience promise, visual grammar, and emotional turn, then add one specific reversal.",
+          "Tie comedy to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "openai-sora",
+          "ltx-studio"
+        ],
+        "caveats": [
+          "Genre shorthand can create clichés. Ground every convention in a precise character objective and setting."
+        ]
+      },
+      "videos": []
+    },
+    "drama": {
+      "id": "drama",
+      "deep": "Drama is a practical form of genre contract: Character and emotional truth first; conflict comes from people and choices. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Toy Story (1995) fulfills the adventure-comedy contract while grounding every set piece in Woody’s fear of replacement.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Prompt the genre’s audience promise, visual grammar, and emotional turn, then add one specific reversal.",
+          "Tie drama to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "openai-sora",
+          "ltx-studio"
+        ],
+        "caveats": [
+          "Genre shorthand can create clichés. Ground every convention in a precise character objective and setting."
+        ]
+      },
+      "videos": []
+    },
+    "thriller": {
+      "id": "thriller",
+      "deep": "Thriller is a practical form of genre contract: Built on suspense and a ticking clock; withholds information to keep tension high. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Psycho (1960) repeatedly redirects identification and information, making uncertainty part of the genre promise.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Prompt the genre’s audience promise, visual grammar, and emotional turn, then add one specific reversal.",
+          "Tie thriller to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "openai-sora",
+          "ltx-studio"
+        ],
+        "caveats": [
+          "Genre shorthand can create clichés. Ground every convention in a precise character objective and setting."
+        ]
+      },
+      "videos": []
+    },
+    "sci_fi_fantasy": {
+      "id": "sci_fi_fantasy",
+      "deep": "Sci-Fi / Fantasy is a practical form of genre contract: World-building genres where rules and wonder shape the story. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Toy Story (1995) fulfills the adventure-comedy contract while grounding every set piece in Woody’s fear of replacement.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Prompt the genre’s audience promise, visual grammar, and emotional turn, then add one specific reversal.",
+          "Tie sci-fi / fantasy to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "openai-sora",
+          "ltx-studio"
+        ],
+        "caveats": [
+          "Genre shorthand can create clichés. Ground every convention in a precise character objective and setting."
+        ]
+      },
+      "videos": []
+    },
+    "romance": {
+      "id": "romance",
+      "deep": "Romance is a practical form of genre contract: Structured around a relationship arc: meet, spark, obstacle, and resolution. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Before Sunrise (1995) makes conversation, walking, and changing distance the action of the romance.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Prompt the genre’s audience promise, visual grammar, and emotional turn, then add one specific reversal.",
+          "Tie romance to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "openai-sora",
+          "ltx-studio"
+        ],
+        "caveats": [
+          "Genre shorthand can create clichés. Ground every convention in a precise character objective and setting."
+        ]
+      },
+      "videos": []
+    },
+    "emotional_core": {
+      "id": "emotional_core",
+      "deep": "Emotional Core is a practical form of audience design: The single feeling the film is really about. Without it, craft is empty. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Up (2009) earns emotion through specific shared rituals and visual callbacks rather than a generic claim that its relationship matters.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Test the opening question, emotional stakes, clarity, specificity, and ending payoff with a real viewer.",
+          "Tie emotional core to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "ltx-studio",
+          "openai-sora"
+        ],
+        "caveats": [
+          "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
+        ]
+      },
+      "videos": []
+    },
+    "hook_strength": {
+      "id": "hook_strength",
+      "deep": "Hook Strength is a practical form of audience design: How fast and hard the opening grabs attention. The first seconds decide if people keep watching. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Jaws (1975) opens with an unanswered threat whose consequences define the audience’s central question.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Test the opening question, emotional stakes, clarity, specificity, and ending payoff with a real viewer.",
+          "Tie hook strength to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "ltx-studio",
+          "openai-sora"
+        ],
+        "caveats": [
+          "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
+        ]
+      },
+      "videos": []
+    },
+    "structural_completeness": {
+      "id": "structural_completeness",
+      "deep": "Structural Completeness is a practical form of audience design: Whether the story has a real setup, turn, and payoff — a whole arc, not fragments. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Up (2009) earns emotion through specific shared rituals and visual callbacks rather than a generic claim that its relationship matters.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Test the opening question, emotional stakes, clarity, specificity, and ending payoff with a real viewer.",
+          "Tie structural completeness to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "ltx-studio",
+          "openai-sora"
+        ],
+        "caveats": [
+          "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
+        ]
+      },
+      "videos": []
+    },
+    "originality_vs_familiarity": {
+      "id": "originality_vs_familiarity",
+      "deep": "Originality vs Familiarity is a practical form of audience design: The balance of fresh and recognizable. Too familiar bores; too strange loses people. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Up (2009) earns emotion through specific shared rituals and visual callbacks rather than a generic claim that its relationship matters.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Test the opening question, emotional stakes, clarity, specificity, and ending payoff with a real viewer.",
+          "Tie originality vs familiarity to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "ltx-studio",
+          "openai-sora"
+        ],
+        "caveats": [
+          "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
+        ]
+      },
+      "videos": []
+    },
+    "genre_fit": {
+      "id": "genre_fit",
+      "deep": "Genre Fit is a practical form of audience design: How well the film honors its genre’s conventions and audience expectations. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Up (2009) earns emotion through specific shared rituals and visual callbacks rather than a generic claim that its relationship matters.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Test the opening question, emotional stakes, clarity, specificity, and ending payoff with a real viewer.",
+          "Tie genre fit to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "ltx-studio",
+          "openai-sora"
+        ],
+        "caveats": [
+          "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
+        ]
+      },
+      "videos": []
+    },
+    "runtime_discipline": {
+      "id": "runtime_discipline",
+      "deep": "Runtime Discipline is a practical form of audience design: Telling the story in exactly the time it needs — no flabby stretches. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Up (2009) earns emotion through specific shared rituals and visual callbacks rather than a generic claim that its relationship matters.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Test the opening question, emotional stakes, clarity, specificity, and ending payoff with a real viewer.",
+          "Tie runtime discipline to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "ltx-studio",
+          "openai-sora"
+        ],
+        "caveats": [
+          "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
+        ]
+      },
+      "videos": []
+    },
+    "specificity": {
+      "id": "specificity",
+      "deep": "Specificity is a practical form of audience design: Concrete, particular details instead of vague generalities. Specific = memorable and believable. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Parasite (2019) grounds its class conflict in exact architecture, jobs, smells, objects, and routines.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Test the opening question, emotional stakes, clarity, specificity, and ending payoff with a real viewer.",
+          "Tie specificity to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "ltx-studio",
+          "openai-sora"
+        ],
+        "caveats": [
+          "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
+        ]
+      },
+      "videos": []
+    },
+    "shareability": {
+      "id": "shareability",
+      "deep": "Shareability is a practical form of audience design: How likely a viewer is to clip and share it — a clear peak and an unforgettable image. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Up (2009) earns emotion through specific shared rituals and visual callbacks rather than a generic claim that its relationship matters.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Test the opening question, emotional stakes, clarity, specificity, and ending payoff with a real viewer.",
+          "Tie shareability to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "ltx-studio",
+          "openai-sora"
+        ],
+        "caveats": [
+          "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
+        ]
+      },
+      "videos": []
+    },
+    "veo_3_1": {
+      "id": "veo_3_1",
+      "deep": "Veo 3.1 is a practical form of AI production tool: Google’s video model — strong at realistic motion and coherence for image-to-video shots. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Blade Runner 2049 (2017) is a useful quality reference for controlled scale, light, and continuity; it was not made with this AI model.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Use it for the shot type it controls best, start with a small test, and keep continuity anchors outside the model.",
+          "Tie veo 3.1 to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "google-veo"
+        ],
+        "caveats": [
+          "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
+        ]
+      },
+      "videos": []
+    },
+    "kling_3_0": {
+      "id": "kling_3_0",
+      "deep": "Kling 3.0 is a practical form of AI production tool: Video model known for expressive character motion and dynamic camera moves. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Blade Runner 2049 (2017) is a useful quality reference for controlled scale, light, and continuity; it was not made with this AI model.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Use it for the shot type it controls best, start with a small test, and keep continuity anchors outside the model.",
+          "Tie kling 3.0 to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "kling-ai"
+        ],
+        "caveats": [
+          "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
+        ]
+      },
+      "videos": []
+    },
+    "runway_gen_4_5": {
+      "id": "runway_gen_4_5",
+      "deep": "Runway Gen-4.5 is a practical form of AI production tool: Video generation with strong stylistic control and editing tools. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Blade Runner 2049 (2017) is a useful quality reference for controlled scale, light, and continuity; it was not made with this AI model.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Use it for the shot type it controls best, start with a small test, and keep continuity anchors outside the model.",
+          "Tie runway gen-4.5 to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "runway-gen4"
+        ],
+        "caveats": [
+          "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
+        ]
+      },
+      "videos": []
+    },
+    "minimax_hailuo_2_3": {
+      "id": "minimax_hailuo_2_3",
+      "deep": "MiniMax Hailuo 2.3 is a practical form of AI production tool: Video model with fluid motion, good for lively action beats. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Blade Runner 2049 (2017) is a useful quality reference for controlled scale, light, and continuity; it was not made with this AI model.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Use it for the shot type it controls best, start with a small test, and keep continuity anchors outside the model.",
+          "Tie minimax hailuo 2.3 to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "hailuo-ai"
+        ],
+        "caveats": [
+          "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
+        ]
+      },
+      "videos": []
+    },
+    "luma_ray_3": {
+      "id": "luma_ray_3",
+      "deep": "Luma Ray 3 is a practical form of AI production tool: Video model with cinematic camera control and smooth movement. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Blade Runner 2049 (2017) is a useful quality reference for controlled scale, light, and continuity; it was not made with this AI model.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Use it for the shot type it controls best, start with a small test, and keep continuity anchors outside the model.",
+          "Tie luma ray 3 to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "luma-ray"
+        ],
+        "caveats": [
+          "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
+        ]
+      },
+      "videos": []
+    },
+    "seedance": {
+      "id": "seedance",
+      "deep": "Seedance is a practical form of AI production tool: Image-to-video model tuned for dance-like, rhythmic motion and continuity. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Blade Runner 2049 (2017) is a useful quality reference for controlled scale, light, and continuity; it was not made with this AI model.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Use it for the shot type it controls best, start with a small test, and keep continuity anchors outside the model.",
+          "Tie seedance to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "seedance"
+        ],
+        "caveats": [
+          "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
+        ]
+      },
+      "videos": []
+    },
+    "sora_2": {
+      "id": "sora_2",
+      "deep": "Sora 2 is a practical form of AI production tool: OpenAI’s video model — strong physical realism and longer coherent shots. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Blade Runner 2049 (2017) is a useful quality reference for controlled scale, light, and continuity; it was not made with this AI model.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Use it for the shot type it controls best, start with a small test, and keep continuity anchors outside the model.",
+          "Tie sora 2 to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "openai-sora"
+        ],
+        "caveats": [
+          "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
+        ]
+      },
+      "videos": []
+    },
+    "midjourney_v6": {
+      "id": "midjourney_v6",
+      "deep": "Midjourney v6 is a practical form of AI production tool: Image model prized for painterly, stylized, high-aesthetic stills. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Blade Runner 2049 (2017) is a useful quality reference for controlled scale, light, and continuity; it was not made with this AI model.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Use it for the shot type it controls best, start with a small test, and keep continuity anchors outside the model.",
+          "Tie midjourney v6 to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "midjourney"
+        ],
+        "caveats": [
+          "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
+        ]
+      },
+      "videos": []
+    },
+    "gpt_image_1": {
+      "id": "gpt_image_1",
+      "deep": "GPT Image is a practical form of AI production tool: OpenAI’s image model — reliable, controllable keyframes that follow instructions closely. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Blade Runner 2049 (2017) is a useful quality reference for controlled scale, light, and continuity; it was not made with this AI model.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Use it for the shot type it controls best, start with a small test, and keep continuity anchors outside the model.",
+          "Tie gpt image to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "gpt-image"
+        ],
+        "caveats": [
+          "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
+        ]
+      },
+      "videos": []
+    },
+    "nano_banana_pro": {
+      "id": "nano_banana_pro",
+      "deep": "Nano Banana Pro is a practical form of AI production tool: Image model good at fast, consistent character keyframes. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Blade Runner 2049 (2017) is a useful quality reference for controlled scale, light, and continuity; it was not made with this AI model.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Use it for the shot type it controls best, start with a small test, and keep continuity anchors outside the model.",
+          "Tie nano banana pro to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "nano-banana"
+        ],
+        "caveats": [
+          "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
+        ]
+      },
+      "videos": []
+    },
+    "stable_diffusion_xl": {
+      "id": "stable_diffusion_xl",
+      "deep": "Stable Diffusion XL is a practical form of AI production tool: Open image model — endlessly customizable with community styles and control. The useful question is not “does this look cinematic?” but “what information or feeling changes because this choice is here?” Read it in sequence with the shot before and after it, then test whether the audience notices the intended shift without an explanation.",
+      "traditional_example": "Blade Runner 2049 (2017) is a useful quality reference for controlled scale, light, and continuity; it was not made with this AI model.",
+      "ai_howto": {
+        "prompt_tips": [
+          "Use it for the shot type it controls best, start with a small test, and keep continuity anchors outside the model.",
+          "Tie stable diffusion xl to the character’s immediate objective and the beat’s change; include observable visual evidence."
+        ],
+        "tool_ids": [
+          "stable-diffusion-35"
+        ],
+        "caveats": [
+          "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
+        ]
+      },
+      "videos": []
+    }
+  }
+}

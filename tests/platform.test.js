@@ -53,6 +53,34 @@ const learnIds = [...learn.matchAll(/ids:\[([^\]]*)\]/g)]
 assert.equal(learnIds.length, CITABLE_IDS.length, 'Film School must list every craft ID once');
 for (const id of CITABLE_IDS) assert.ok(learnIds.includes(id), `Film School missing ${id}`);
 
+// Film School deep-content layer: one complete, independently maintained lesson per allowlisted ID.
+const lessonPath=path.join(root,'data/craft_lessons.json');
+assert.ok(fs.existsSync(lessonPath),'Film School needs its independent craft lesson data');
+const lessonData=JSON.parse(fs.readFileSync(lessonPath,'utf8'));
+const lessonToolIds=new Set(JSON.parse(fs.readFileSync(path.join(root,'data/ai_tools.json'),'utf8')).tools.map((tool)=>tool.id));
+assert.equal(Object.keys(lessonData.lessons).length,CITABLE_IDS.length,'Film School lesson data must cover all 111 IDs');
+for(const id of CITABLE_IDS){
+  const lesson=lessonData.lessons[id];
+  assert.ok(lesson,`missing deep lesson ${id}`);
+  assert.equal(lesson.id,id,`${id} lesson id must match its key`);
+  assert.ok(lesson.deep.length>=180,`${id} needs an in-depth explanation`);
+  assert.ok(lesson.traditional_example.length>=70,`${id} needs an honest traditional-film example`);
+  assert.ok(Array.isArray(lesson.ai_howto.prompt_tips)&&lesson.ai_howto.prompt_tips.length,`${id} needs AI prompt guidance`);
+  assert.ok(Array.isArray(lesson.ai_howto.tool_ids),`${id} needs a tool_ids array`);
+  lesson.ai_howto.tool_ids.forEach((toolId)=>assert.ok(lessonToolIds.has(toolId),`${id} references missing AI tool ${toolId}`));
+  assert.ok(Array.isArray(lesson.ai_howto.caveats)&&lesson.ai_howto.caveats.length,`${id} needs honest AI caveats`);
+  assert.ok(Array.isArray(lesson.videos),`${id} videos must be an array`);
+  for(const video of lesson.videos){assert.ok(video.title&&video.channel&&video.source,`${id} video metadata must be complete`);assert.match(video.source,/^https:\/\/(?:www\.)?youtube\.com\/watch\?v=/,`${id} video must use a real YouTube watch URL`);}
+}
+assert.doesNotMatch(JSON.stringify(lessonData),/[가-힣]/,'Film School lesson data must be English');
+assert.match(learn,/class="sidebar"[^>]+aria-label="Film School syllabus"/,'Film School needs the category syllabus sidebar');
+assert.match(learn,/#cat=/,'Film School must support #cat= deep links');
+assert.match(learn,/#term=/,'Film School must support #term= deep links');
+assert.match(learn,/In traditional film/,'Film School needs the traditional-film comparison');
+assert.match(learn,/With AI video/,'Film School needs the AI-video comparison');
+assert.match(learn,/Watch & Learn/,'Film School needs a verified video lesson row');
+assert.match(learn,/Learning Paths/,'Film School needs ordered learning paths');
+
 // Research-backed safe wins: beginner launch, cross-shot continuity, minimal tool stack.
 const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const concept=fs.readFileSync(path.join(root,'concept_lab.html'),'utf8');
@@ -101,6 +129,7 @@ for(const tool of toolData.tools){
 assert.match(toolkit,/fetch\('data\/ai_tools\.json'\)/,'toolkit.html must render from the JSON catalogue');
 assert.match(toolkit,/id="tool-profile"[^>]+role="dialog"/,'toolkit.html must include an accessible detail container');
 assert.match(toolkit,/#tool=/,'toolkit.html must support #tool= deep links');
+assert.match(toolkit,/\.profile\{width:100%;height:100%/,'tool profile must be a full-screen analysis view');
 assert.match(toolkit,/categoryGlyph/,'toolkit.html must render category glyphs in tool icons');
 assert.match(toolkit,/aria-label="'\+esc\(t\.name\)\+' icon"/,'tool icons must be labelled');
 assert.match(toolkit,/google\.com\/s2\/favicons\?domain=/,'tool cards must request real service favicons');

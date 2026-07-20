@@ -1,101 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>First Frame — Film School (learn the craft)</title>
-  <link rel="stylesheet" href="css/eve-theme.css">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>First Frame — Film School</title><link rel="stylesheet" href="css/eve-theme.css">
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:70px}
-    .aura{position:fixed;inset:0;z-index:-2;background:radial-gradient(1000px 620px at 85% -8%,rgba(139,123,255,.16),transparent 60%),radial-gradient(820px 560px at 4% 3%,rgba(255,93,162,.1),transparent 55%),var(--bg)}
-    .wrap{max-width:1080px;margin:0 auto;padding:0 34px}
-    @media(max-width:640px){.wrap{padding:0 18px}}
-    .hero{padding:46px 0 20px}
-    .kick{display:inline-flex;align-items:center;gap:8px;font:700 11px 'Inter';letter-spacing:1.5px;text-transform:uppercase;color:var(--iris2,#a898ff);background:rgba(139,123,255,.1);border:1px solid rgba(139,123,255,.28);padding:6px 14px;border-radius:100px}
-    h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:44px;line-height:1.05;letter-spacing:-1px;color:var(--text);margin:16px 0 12px}
-    h1 .g{background:linear-gradient(100deg,#8b7bff,#ff5da2 55%,#f2c14e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    .lead{font-size:16px;color:var(--dim);max-width:600px;line-height:1.6}
-    .searchbar{display:flex;gap:10px;margin:26px 0 8px;position:sticky;top:58px;z-index:20;background:linear-gradient(180deg,var(--bg) 70%,transparent);padding:10px 0}
-    #q{flex:1;background:var(--card2);border:1px solid var(--border2);border-radius:100px;color:var(--text);font:500 15px 'Inter';padding:13px 20px}
-    #q:focus{outline:none;border-color:var(--iris2,#a898ff)}
-    .catnav{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
-    .catnav a{font:600 12px 'Inter';color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:100px;border:1px solid var(--border);white-space:nowrap;transition:all .14s}
-    .catnav a:hover{color:var(--text);border-color:var(--iris2,#a898ff)}
-    .count{font-size:12px;color:var(--muted);margin:2px 0 18px}
-    .cat{margin:30px 0}
-    .cat h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:700;color:var(--text);margin-bottom:4px;display:flex;align-items:center;gap:10px}
-    .cat .ci{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;background:rgba(139,123,255,.14);border:1px solid rgba(139,123,255,.3)}
-    .cat .cd{font-size:12.5px;color:var(--muted);margin:2px 0 16px 44px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
-    .term{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:15px 16px;transition:transform .15s,border-color .15s}
-    .term:hover{transform:translateY(-3px);border-color:var(--border2)}
-    .term .t{font-family:'Plus Jakarta Sans',sans-serif;font-size:15.5px;font-weight:700;color:var(--text);margin-bottom:3px}
-    .term .id{font-size:9.5px;color:var(--muted);font-family:ui-monospace,monospace;letter-spacing:.3px}
-    .term .d{font-size:12.5px;color:var(--dim);line-height:1.55;margin-top:8px}
-    .empty{color:var(--muted);text-align:center;padding:50px;font-size:14px}
-    footer{border-top:1px solid var(--border);margin-top:44px;padding:26px 0 60px;font-size:12px;color:var(--muted);line-height:1.7}
+    *,*::before,*::after{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}
+    .academy{max-width:1380px;margin:24px auto 70px;padding:0 24px}.hero{padding:54px clamp(22px,5vw,70px);border-radius:30px;background:radial-gradient(circle at 90% 0,rgba(108,92,231,.2),transparent 38%),linear-gradient(135deg,#fff,#f6f4ff);border:1px solid var(--border);box-shadow:0 26px 70px rgba(20,21,40,.07)}
+    .eyebrow,.label{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--iris)}h1{font-size:clamp(40px,6vw,76px);line-height:.98;letter-spacing:-.055em;max-width:860px;margin:14px 0 18px}.hero p{font-size:18px;line-height:1.65;color:var(--dim);max-width:720px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+    .layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:26px;margin-top:28px}.sidebar{position:sticky;top:78px;align-self:start;max-height:calc(100vh - 98px);overflow:auto;background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:15px;box-shadow:0 16px 35px rgba(20,21,40,.05)}.side-title{padding:10px 12px 7px}.side-link{min-height:44px;display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:12px;color:var(--dim);text-decoration:none;font-size:13px;font-weight:650}.side-link:hover,.side-link.active{background:#f0edff;color:var(--iris)}.side-link .num{margin-left:auto;font-size:10px;color:var(--muted)}.side-rule{border:0;border-top:1px solid var(--border);margin:12px 7px}
+    main{min-width:0}.toolbar{position:sticky;top:62px;z-index:10;padding:10px 0;background:linear-gradient(var(--bg) 75%,transparent)}#search{width:100%;min-height:48px;border:1px solid var(--border2);border-radius:999px;background:#fff;padding:0 20px;font:500 15px Inter;color:var(--text)}#search:focus{outline:3px solid rgba(108,92,231,.18);border-color:var(--iris)}
+    .section{margin:22px 0 38px}.section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:15px}.section h2{font-size:clamp(25px,3vw,36px);letter-spacing:-.035em;margin:5px 0}.section-head p{color:var(--muted);max-width:570px;line-height:1.55}.watch-row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,360px);gap:14px;overflow-x:auto;padding:2px 2px 12px;scroll-snap-type:x mandatory}.video-card{scroll-snap-align:start;color:inherit;text-decoration:none;background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden}.video-card img{width:100%;aspect-ratio:16/9;display:block;object-fit:cover;background:var(--card2)}.video-copy{padding:15px}.video-copy b{display:block;margin-bottom:5px}.video-copy span{font-size:12px;color:var(--muted)}
+    .path-grid,.scenario-grid,.term-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.path,.scenario,.term-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:19px;box-shadow:0 10px 25px rgba(20,21,40,.035)}.path-meta{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}.chip{display:inline-flex;align-items:center;min-height:28px;border-radius:99px;background:var(--card2);padding:4px 9px;font-size:10px;font-weight:750;color:var(--dim)}.syllabus{list-style:none;margin:14px 0 0;padding:0}.syllabus a{display:flex;gap:10px;min-height:44px;align-items:center;color:var(--dim);text-decoration:none;border-top:1px solid var(--border);font-size:12px}.syllabus b{color:var(--iris)}.scenario p,.path p,.term-card p{color:var(--dim);font-size:13px;line-height:1.55}.scenario a,.term-card{color:inherit;text-decoration:none}.scenario a{font-weight:750;color:var(--iris);display:inline-block;margin-top:8px;min-height:44px;padding-top:10px}.term-card{display:block;transition:.18s}.term-card:hover{transform:translateY(-2px);border-color:#bbb3ff}.term-card small{color:var(--iris);font:650 10px ui-monospace}.term-card h3{font-size:16px;margin:8px 0}.empty{padding:50px;text-align:center;color:var(--muted)}
+    .lesson{background:#fff;border:1px solid var(--border);border-radius:24px;padding:clamp(22px,4vw,46px)}.back{display:inline-flex;align-items:center;min-height:44px;color:var(--iris);font-weight:750;text-decoration:none}.lesson h2{font-size:clamp(34px,5vw,58px);letter-spacing:-.045em;margin:10px 0}.definition{font-size:18px;color:var(--dim);line-height:1.65}.deep{font-size:16px;line-height:1.8;margin:25px 0;max-width:880px}.diagram{border-radius:20px;background:linear-gradient(135deg,#f5f2ff,#f8fbff);border:1px solid var(--border);padding:18px;margin:24px 0}.diagram svg{width:100%;height:170px}.compare{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:22px 0}.compare article{border:1px solid var(--border);border-radius:18px;padding:21px}.compare .traditional{background:#fbfaf7}.compare .ai{background:#f7f5ff}.compare h3{margin:6px 0 13px}.compare p,.compare li{font-size:14px;line-height:1.65;color:var(--dim)}.compare ul{padding-left:19px}.tool-links{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}.tool-links a{min-height:36px;padding:8px 11px;border-radius:99px;background:white;border:1px solid #d8d2ff;color:var(--iris);font-size:12px;font-weight:750;text-decoration:none}.source-note{font-size:12px;color:var(--muted);border-left:3px solid var(--gold);padding-left:12px}.lesson-videos{margin-top:25px}.diagram text{font-family:Inter;fill:#44495a;font-size:12px}.diagram .accent{fill:#6c5ce7}.diagram .line{stroke:#6c5ce7;stroke-width:3;fill:none;stroke-linecap:round}
+    @media(max-width:950px){.layout{grid-template-columns:1fr}.sidebar{position:relative;top:auto;max-height:none;display:flex;overflow:auto;gap:4px}.side-title,.side-rule,.path-side{display:none}.side-link{flex:0 0 auto}.path-grid,.scenario-grid,.term-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.toolbar{top:56px}}
+    @media(max-width:620px){.academy{padding:0 12px;margin-top:12px}.hero{padding:38px 22px}.path-grid,.scenario-grid,.term-grid,.compare{grid-template-columns:1fr}.section-head{display:block}.lesson{padding:20px}.watch-row{grid-auto-columns:86%}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
-<body>
-  <div class="aura"></div>
-  <section class="hero"><div class="wrap">
-    <span class="kick">Film School · For everyone</span>
-    <h1>Learn the craft,<br><span class="g">one term at a time.</span></h1>
-    <p class="lead">Every technique First Frame uses to design your film — <b style="color:var(--text)">111 in all</b> — explained in plain language. No film degree required. Search it, browse it, or just tap around and get curious.</p>
-  </div></section>
-  <div class="wrap">
-    <div class="searchbar"><input id="q" type="text" placeholder="Search techniques…  try “close-up”, “tension”, “Pixar”, “color”"></div>
-    <div class="catnav" id="catnav"></div>
-    <div class="count" id="count"></div>
-    <div id="lib"></div>
-    <div class="empty" id="empty" style="display:none">No techniques match that search. Try another word.</div>
-  </div>
-  <footer><div class="wrap">Film School is grounded in First Frame's craft knowledge base — the same 111 IDs the AI crew cites when it designs and critiques your film. Learn a term here, then see it used in the <a href="creators_room.html" style="color:var(--gold,#f2c14e)">Creator's Room</a>.</div></footer>
-
-  <script src="js/eve-nav.js"></script>
-  <script src="js/eve-glossary.js"></script>
-  <script>
-    var CATS=[
-      {id:'story',name:'Story Structure',icon:'📖',desc:'The skeletons that keep a story from wandering.',ids:['three_act','hero_journey','save_the_cat','pixar_spine','kishotenketsu','freytag']},
-      {id:'size',name:'Shot Sizes',icon:'🔲',desc:'How much of the world is in frame — and how close we feel.',ids:['EWS','WS','MLS','MS','MCU','CU','ECU','INSERT']},
-      {id:'angle',name:'Camera Angles',icon:'📐',desc:'Where the camera looks from, and what that does to power.',ids:['eye_level','high_angle','low_angle','overhead_topdown','dutch_tilt','over_the_shoulder','pov']},
-      {id:'move',name:'Camera Movement',icon:'🎥',desc:'How the camera moves — and what motion makes us feel.',ids:['static','pan','tilt','dolly_in','dolly_out','tracking','crane_boom','handheld','steadicam','whip_pan','crash_zoom','rack_focus']},
-      {id:'lens',name:'Lenses',icon:'🔭',desc:'How the glass shapes depth, distance, and distortion.',ids:['wide_angle','normal','telephoto','macro']},
-      {id:'comp',name:'Composition',icon:'🖼️',desc:'Arranging the frame to guide the eye.',ids:['rule_of_thirds','central_symmetry','leading_lines','framing_within_frame','depth_layering','negative_space','headroom_leadroom','180_degree_rule']},
-      {id:'edit',name:'Editing',icon:'✂️',desc:'How cuts control rhythm, time, and meaning.',ids:['shot_reverse_shot','long_take','slow_cutting','fast_cutting','match_cut','cross_cutting','montage']},
-      {id:'light',name:'Lighting',icon:'💡',desc:'How light sets mood, drama, and time of day.',ids:['high_key','low_key','chiaroscuro','rembrandt','three_point','silhouette','backlight_rim','practical_motivated','golden_hour','top_light','underlight']},
-      {id:'color',name:'Color',icon:'🎨',desc:'How color schemes create tension or harmony.',ids:['complementary','analogous','triadic','monochrome','split_complementary']},
-      {id:'stage',name:'Staging & Mise-en-scène',icon:'🎭',desc:'Arranging actors, props, and space to carry meaning.',ids:['depth_staging','symmetrical_blocking','proxemics','negative_space_isolation','movement_toward_away','prop_as_symbol','setting_as_metaphor','wardrobe_signals','texture_materiality']},
-      {id:'dir',name:'Director Styles',icon:'🎬',desc:'The visual signatures of masters — learn to borrow wisely.',ids:['pixar','disney_animation','miyazaki','wes_anderson','bong_joon_ho','ridley_scott','james_cameron','tim_burton','denis_villeneuve']},
-      {id:'genre',name:'Genres',icon:'🎞️',desc:'What each genre expects from structure, pace, and tone.',ids:['animated_short','comedy','drama','thriller','sci_fi_fantasy','romance']},
-      {id:'hit',name:'What Makes a Hit',icon:'⭐',desc:'The research-backed dimensions of a film that lands.',ids:['emotional_core','hook_strength','structural_completeness','originality_vs_familiarity','genre_fit','runtime_discipline','specificity','shareability']},
-      {id:'ai',name:'AI Tools',icon:'🤖',desc:'The 2026 image & video models — and when to use each.',ids:['veo_3_1','kling_3_0','runway_gen_4_5','minimax_hailuo_2_3','luma_ray_3','seedance','sora_2','midjourney_v6','gpt_image_1','nano_banana_pro','stable_diffusion_xl']}
-    ];
-    function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-    var G=window.EVE_GLOSSARY_GET;
-    var catnav=document.getElementById('catnav');
-    catnav.innerHTML=CATS.map(function(c){return '<a href="#'+c.id+'">'+c.icon+' '+esc(c.name)+'</a>';}).join('');
-    var total=CATS.reduce(function(n,c){return n+c.ids.length;},0);
-    function render(query){
-      var q=(query||'').trim().toLowerCase();var shown=0;var html='';
-      CATS.forEach(function(c){
-        var cards=c.ids.map(function(id){var e=G(id);return {id:id,t:e.t,d:e.d};}).filter(function(x){
-          if(!q)return true;return (x.t+' '+x.d+' '+x.id).toLowerCase().indexOf(q)>=0;
-        });
-        if(!cards.length)return;shown+=cards.length;
-        html+='<section class="cat" id="'+c.id+'"><h2><span class="ci">'+c.icon+'</span>'+esc(c.name)+'</h2><div class="cd">'+esc(c.desc)+'</div><div class="grid">'+
-          cards.map(function(x){return '<div class="term"><div class="t">'+esc(x.t)+'</div><div class="id">'+esc(x.id)+'</div><div class="d">'+esc(x.d)+'</div></div>';}).join('')+
-          '</div></section>';
-      });
-      document.getElementById('lib').innerHTML=html;
-      document.getElementById('empty').style.display=shown?'none':'block';
-      document.getElementById('count').textContent=q?(shown+' of '+total+' techniques match “'+query+'”'):(total+' techniques across '+CATS.length+' topics');
-    }
-    document.getElementById('q').addEventListener('input',function(e){render(e.target.value);});
-    var lessonQuery=new URLSearchParams(location.search).get('term')||'';
-    document.getElementById('q').value=lessonQuery;
-    render(lessonQuery);
-  </script>
-</body>
-</html>
+<body><div class="academy">
+  <header class="hero"><span class="eyebrow">First Frame Film School · 111 grounded lessons</span><h1>Learn film language.<br>Then direct with AI.</h1><p>Study the same craft principles our AI crew cites—then translate each one into controllable prompts, tools, and honest production caveats. No invented credits, scores, or shortcuts.</p><div class="hero-actions"><a class="btn-primary" href="#cat=story">Browse the syllabus</a><a class="btn-secondary" href="concept_lab.html">Apply it in a film →</a></div></header>
+  <div class="layout"><aside class="sidebar" aria-label="Film School syllabus"><div class="side-title label">Craft categories</div><nav id="catnav"></nav><hr class="side-rule"><div class="side-title label path-side">Learning paths</div><a class="side-link path-side" href="#paths">Guided study paths <span class="num">4</span></a></aside>
+  <main><div class="toolbar"><label class="sr-only" for="search">Search 111 film techniques</label><input id="search" type="search" placeholder="Search camera, lighting, editing, story…"></div><div id="content" aria-live="polite"></div></main></div>
+</div><footer><div class="academy">Original educational content grounded in First Frame’s fixed 111-ID craft knowledge base. Film examples are used to observe technique; AI tool capabilities can change, so verify current access on official pages.</div></footer>
+<script src="js/eve-nav.js"></script><script src="js/eve-glossary.js"></script>
+<script>
+var CATS=[
+{id:'story',name:'Story Structure',icon:'◫',desc:'Architect change before designing shots.',ids:['three_act','hero_journey','save_the_cat','pixar_spine','kishotenketsu','freytag']},
+{id:'size',name:'Shot Sizes',icon:'▣',desc:'Control distance and emotional access.',ids:['EWS','WS','MLS','MS','MCU','CU','ECU','INSERT']},
+{id:'angle',name:'Camera Angles',icon:'⌁',desc:'Place the viewer inside a power relationship.',ids:['eye_level','high_angle','low_angle','overhead_topdown','dutch_tilt','over_the_shoulder','pov']},
+{id:'move',name:'Camera Movement',icon:'↝',desc:'Move only when the beat motivates it.',ids:['static','pan','tilt','dolly_in','dolly_out','tracking','crane_boom','handheld','steadicam','whip_pan','crash_zoom','rack_focus']},
+{id:'lens',name:'Lenses',icon:'◉',desc:'Shape depth, distance, and distortion.',ids:['wide_angle','normal','telephoto','macro']},
+{id:'comp',name:'Composition',icon:'⌗',desc:'Guide the eye and organize meaning.',ids:['rule_of_thirds','central_symmetry','leading_lines','framing_within_frame','depth_layering','negative_space','headroom_leadroom','180_degree_rule']},
+{id:'edit',name:'Editing',icon:'✂',desc:'Control rhythm, time, and juxtaposition.',ids:['shot_reverse_shot','long_take','slow_cutting','fast_cutting','match_cut','cross_cutting','montage']},
+{id:'light',name:'Lighting',icon:'☼',desc:'Make mood and motivation visible.',ids:['high_key','low_key','chiaroscuro','rembrandt','three_point','silhouette','backlight_rim','practical_motivated','golden_hour','top_light','underlight']},
+{id:'color',name:'Color',icon:'◒',desc:'Build harmony, contrast, and story emphasis.',ids:['complementary','analogous','triadic','monochrome','split_complementary']},
+{id:'stage',name:'Staging & Mise-en-scène',icon:'◇',desc:'Let bodies, props, and rooms carry meaning.',ids:['depth_staging','symmetrical_blocking','proxemics','negative_space_isolation','movement_toward_away','prop_as_symbol','setting_as_metaphor','wardrobe_signals','texture_materiality']},
+{id:'dir',name:'Director Studies',icon:'◎',desc:'Study repeatable choices, not imitation.',ids:['pixar','disney_animation','miyazaki','wes_anderson','bong_joon_ho','ridley_scott','james_cameron','tim_burton','denis_villeneuve']},
+{id:'genre',name:'Genres',icon:'▤',desc:'Understand the promise made to an audience.',ids:['animated_short','comedy','drama','thriller','sci_fi_fantasy','romance']},
+{id:'hit',name:'Audience Impact',icon:'★',desc:'Revise for clarity and resonance—not a guaranteed hit.',ids:['emotional_core','hook_strength','structural_completeness','originality_vs_familiarity','genre_fit','runtime_discipline','specificity','shareability']},
+{id:'ai',name:'AI Production Tools',icon:'✦',desc:'Choose models by the production gap they can fill.',ids:['veo_3_1','kling_3_0','runway_gen_4_5','minimax_hailuo_2_3','luma_ray_3','seedance','sora_2','midjourney_v6','gpt_image_1','nano_banana_pro','stable_diffusion_xl']}];
+var lessons={},tools={},G=window.EVE_GLOSSARY_GET;
+function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function catFor(id){return CATS.find(function(c){return c.ids.indexOf(id)>-1})}
+function parseHash(){var p=new URLSearchParams(location.hash.slice(1));return{cat:p.get('cat'),term:p.get('term')}}
+function videoCard(v){var id=v.youtube_id||'';var href=v.source||v.url;return '<a class="video-card" href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+(id?'<img loading="lazy" src="https://i.ytimg.com/vi/'+esc(id)+'/hqdefault.jpg" alt="" onerror="this.hidden=true">':'')+'<div class="video-copy"><b>'+esc(v.title)+'</b><span>'+esc(v.channel)+' · Opens on YouTube ↗</span></div></a>'}
+function diagram(cat,title){var shapes={story:'<path class="line" d="M35 130 C80 130 80 45 130 85 S205 130 245 40 S310 90 355 38"/><circle class="accent" cx="245" cy="40" r="7"/>',move:'<rect x="55" y="45" width="90" height="70" rx="12" fill="#fff" stroke="#cfc9ff"/><path class="line" d="M160 80 H330 M310 62 L330 80 310 98"/>',light:'<circle cx="85" cy="72" r="28" fill="#f5a623" opacity=".75"/><path class="line" d="M120 78 L220 95"/><ellipse cx="280" cy="95" rx="45" ry="58" fill="#ddd7ff"/><path d="M280 38 Q255 92 280 153" fill="#6c5ce7" opacity=".25"/>',edit:'<rect x="28" y="52" width="130" height="78" rx="10" fill="#ddd7ff"/><rect x="242" y="52" width="130" height="78" rx="10" fill="#ffd8e5"/><path class="line" d="M175 92 H225"/>',color:'<circle cx="140" cy="90" r="55" fill="#6c5ce7" opacity=".7"/><circle cx="260" cy="90" r="55" fill="#f5a623" opacity=".72"/>',default:'<rect x="48" y="32" width="304" height="122" rx="16" fill="#fff" stroke="#cfc9ff"/><path d="M200 32 V154 M48 93 H352" stroke="#d8d4e7" stroke-dasharray="5 5"/><circle class="accent" cx="265" cy="82" r="17"/><path class="line" d="M85 125 Q150 58 244 80"/>'};var s=shapes[cat.id]||shapes.default;return '<div class="diagram" role="img" aria-label="Concept diagram for '+esc(title)+'"><svg viewBox="0 0 400 180" aria-hidden="true">'+s+'<text x="20" y="173">Visualize the choice, then ask what changes for the viewer.</text></svg></div>'}
+function home(){var watch=[lessons.depth_staging.videos[0],lessons.three_point.videos[0]].filter(Boolean);return '<section class="section"><div class="section-head"><div><span class="label">Watch & Learn</span><h2>Real lessons, selected for craft</h2></div><p>We include a video only when its public link and topic are verified. No invented instructors or lesson counts.</p></div><div class="watch-row">'+watch.map(videoCard).join('')+'</div></section>'+paths()+scenarios()+'<section class="section"><div class="section-head"><div><span class="label">Complete syllabus</span><h2>Fourteen ways into the craft</h2></div><p>Choose a category in the sidebar. Every lesson connects traditional film practice to a concrete AI workflow.</p></div>'+categoryGrid(CATS)+'</section>'}
+function paths(){var ps=[{n:'The AI Filmmaking Pipeline',l:'Beginner',t:'45–60 min',s:[['pixar_spine','Shape the idea'],['specificity','Make it filmable'],['depth_staging','Stage the image'],['runway_gen_4_5','Choose generation control'],['match_cut','Edit for continuity'],['creators_room.html','Get crew critique']]},{n:'Camera Language',l:'Beginner',t:'35 min',s:[['WS','Establish space'],['CU','Enter emotion'],['low_angle','Design power'],['dolly_in','Motivate movement'],['180_degree_rule','Protect geography']]},{n:'Light & Color',l:'Intermediate',t:'30 min',s:[['practical_motivated','Motivate a source'],['chiaroscuro','Shape contrast'],['golden_hour','Read natural light'],['complementary','Build color tension']]},{n:'Edit for Attention',l:'Intermediate',t:'25 min',s:[['hook_strength','Open a question'],['cross_cutting','Build simultaneity'],['montage','Compress time'],['runtime_discipline','Protect the ending']]}];return '<section class="section" id="paths"><div class="section-head"><div><span class="label">Learning Paths</span><h2>Ordered, honest study plans</h2></div><p>Estimated reading and practice time—not credits, certificates, or fabricated completion data.</p></div><div class="path-grid">'+ps.map(function(p){return '<article class="path"><h3>'+esc(p.n)+'</h3><div class="path-meta"><span class="chip">'+p.l+'</span><span class="chip">'+p.s.length+' steps</span><span class="chip">'+p.t+'</span></div><ol class="syllabus">'+p.s.map(function(s,i){var href=s[0].indexOf('.html')>-1?s[0]:'#term='+s[0];return '<li><a href="'+href+'"><b>'+String(i+1).padStart(2,'0')+'</b>'+esc(s[1])+'</a></li>'}).join('')+'</ol></article>'}).join('')+'</div></section>'}
+function scenarios(){var s=[['A film student fills a missing CG crowd shot','Analyze the cut locally, study staging, then compare suitable generation tools.','detector.html'],['A beginner turns one idea into a three-minute short','Carry one brief through structure, crew critique, shot design, and storyboard.','index.html#start'],['Learn a technique, then challenge the AI crew','Study motivated lighting here, then see whether every generated shot can justify its light.','#term=practical_motivated']];return '<section class="section"><div class="section-head"><div><span class="label">Use First Frame as one package</span><h2>Learn, diagnose, then make</h2></div></div><div class="scenario-grid">'+s.map(function(x){return '<article class="scenario"><h3>'+esc(x[0])+'</h3><p>'+esc(x[1])+'</p><a href="'+x[2]+'">Follow this workflow →</a></article>'}).join('')+'</div></section>'}
+function categoryGrid(cats){return '<div class="term-grid">'+cats.map(function(c){return '<a class="term-card" href="#cat='+c.id+'"><small>'+c.ids.length+' LESSONS</small><h3>'+c.icon+' '+esc(c.name)+'</h3><p>'+esc(c.desc)+'</p></a>'}).join('')+'</div>'}
+function renderCat(cat,q){var ids=cat.ids.filter(function(id){var g=G(id),l=lessons[id];return !q||(id+' '+g.t+' '+g.d+' '+l.deep).toLowerCase().includes(q)});return '<section class="section"><a class="back" href="#">← Film School home</a><div class="section-head"><div><span class="label">'+ids.length+' lessons</span><h2>'+cat.icon+' '+esc(cat.name)+'</h2></div><p>'+esc(cat.desc)+'</p></div><div class="term-grid">'+ids.map(function(id){var g=G(id);return '<a class="term-card" href="#term='+encodeURIComponent(id)+'"><small>'+esc(id)+'</small><h3>'+esc(g.t)+'</h3><p>'+esc(g.d)+'</p></a>'}).join('')+'</div>'+(ids.length?'':'<div class="empty">No lessons match that search.</div>')+'</section>'}
+function renderLesson(id){var l=lessons[id],g=G(id),cat=catFor(id);if(!l||!cat)return '<div class="empty">That lesson was not found. <a href="#">Return to Film School</a>.</div>';var toolLinks=l.ai_howto.tool_ids.map(function(tid){var t=tools[tid];return '<a href="toolkit.html#tool='+encodeURIComponent(tid)+'">'+esc(t?t.name:tid)+' ↗</a>'}).join('');return '<article class="lesson"><a class="back" href="#cat='+cat.id+'">← '+esc(cat.name)+'</a><span class="label">'+esc(id)+'</span><h2>'+esc(g.t)+'</h2><p class="definition">'+esc(g.d)+'</p>'+diagram(cat,g.t)+'<p class="deep">'+esc(l.deep)+'</p><div class="compare"><article class="traditional"><span class="label">In traditional film</span><h3>Observe the choice in context</h3><p>'+esc(l.traditional_example)+'</p><p class="source-note">The example names an observable use of craft; it does not claim endorsement by its makers.</p></article><article class="ai"><span class="label">With AI video</span><h3>Translate craft into control</h3><ul>'+l.ai_howto.prompt_tips.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>'+(toolLinks?'<div class="tool-links">'+toolLinks+'</div>':'<p class="source-note">Use the production method, then verify the current matching tool in the Tool Study Library.</p>')+'<p class="source-note">'+esc(l.ai_howto.caveats.join(' '))+'</p></article></div>'+(l.videos.length?'<section class="lesson-videos"><h3>Related verified lesson</h3><div class="watch-row">'+l.videos.map(videoCard).join('')+'</div></section>':'<p class="source-note">No related video is listed until First Frame can verify a specific public lesson link. The written lesson remains complete.</p>')+'</article>'}
+function syncNav(){var h=parseHash();document.querySelectorAll('.side-link').forEach(function(a){a.classList.toggle('active',h.cat&&a.getAttribute('href')==='#cat='+h.cat)});var q=document.getElementById('search').value.trim().toLowerCase();if(h.term)content.innerHTML=renderLesson(h.term);else if(h.cat){var c=CATS.find(function(x){return x.id===h.cat})||CATS[0];content.innerHTML=renderCat(c,q)}else content.innerHTML=home();requestAnimationFrame(function(){document.querySelector('main').scrollIntoView({block:'start'});})}
+document.getElementById('catnav').innerHTML=CATS.map(function(c){return '<a class="side-link" href="#cat='+c.id+'"><span>'+c.icon+'</span>'+esc(c.name)+'<span class="num">'+c.ids.length+'</span></a>'}).join('');
+Promise.all([fetch('data/craft_lessons.json').then(function(r){if(!r.ok)throw Error('lesson data unavailable');return r.json()}),fetch('data/ai_tools.json').then(function(r){return r.json()})]).then(function(all){lessons=all[0].lessons;tools=Object.fromEntries(all[1].tools.map(function(t){return[t.id,t]}));syncNav()}).catch(function(){content.innerHTML='<div class="empty"><h2>Film School could not load.</h2><p>Check your connection or serve the project over HTTP, then try again.</p></div>'});
+addEventListener('hashchange',syncNav);document.getElementById('search').addEventListener('input',function(){var h=parseHash();if(h.term)location.hash='cat='+(catFor(h.term)||CATS[0]).id;else syncNav()});
+</script></body></html>
