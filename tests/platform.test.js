@@ -135,6 +135,26 @@ for (const page of ['index.html','concept_lab.html','creators_room.html','shotse
   assert.doesNotMatch(visible,/SceneForge|E\.V\.E/ ,`${page} must not show a retired product name`);
 }
 assert.doesNotMatch(community,/coming soon/i,'Showcase must not contain a placeholder community CTA');
+const communityData=JSON.parse(fs.readFileSync(path.join(root,'data/community.json'),'utf8'));
+assert.ok(Array.isArray(communityData.entries)&&communityData.entries.length>=15,'Community Hub needs at least 15 sourced destinations');
+const communityKinds=new Set(['discord','news','subreddit','twitter','youtube','forum']);
+const communityIds=new Set();
+for(const entry of communityData.entries){
+  for(const field of ['id','name','kind','url','blurb','brand_color','source']) assert.ok(entry[field],`${entry.id||'community entry'} missing ${field}`);
+  assert.ok(!communityIds.has(entry.id),`duplicate community id ${entry.id}`);communityIds.add(entry.id);
+  assert.ok(communityKinds.has(entry.kind),`${entry.id} has invalid kind`);
+  assert.match(entry.url,/^https:\/\//,`${entry.id} needs an HTTPS destination`);
+  assert.match(entry.source,/^https:\/\//,`${entry.id} needs an HTTPS verification source`);
+  assert.match(entry.brand_color,/^#[0-9A-F]{6}$/i,`${entry.id} needs a hex brand color`);
+  assert.doesNotMatch(JSON.stringify(entry),/[가-힣]/,`${entry.id} must be English`);
+  if(entry.tool_id)assert.ok(toolIds.has(entry.tool_id),`${entry.id} references missing tool ${entry.tool_id}`);
+}
+assert.match(community,/fetch\('data\/community\.json'\)/,'Community Hub must render from its verified JSON directory');
+for(const filter of ['all','discord','news','subreddit','social'])assert.match(community,new RegExp(`data-filter="${filter}"`),`Community Hub missing ${filter} filter`);
+assert.match(community,/ArrowLeft.*ArrowRight/,'Community filter tabs must support arrow-key navigation');
+assert.match(community,/target="_blank" rel="noopener noreferrer"/,'External community links must open safely');
+assert.match(community,/Native community: roadmap/,'Community Hub must keep the honest native-account roadmap note');
+assert.doesNotMatch(community,/\b\d+[KM+]?\s+(followers|members|likes|comments|views)\b/i,'Community Hub must not invent engagement metrics');
 assert.match(home,/Internal grounding audit:/,'Home must label the 25-vs-10 result as internal evidence');
 assert.match(fs.readFileSync(path.join(root,'evaluation/RESULTS.md'),'utf8'),/source images[^\n]+not currently included/i,'Evaluation must disclose missing source artifacts');
 const readme=fs.readFileSync(path.join(root,'README.md'),'utf8');
