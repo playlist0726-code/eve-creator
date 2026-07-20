@@ -33,6 +33,7 @@ for (const page of newPages) {
 for (const page of ['index.html', 'concept_lab.html', 'creators_room.html', 'shotseed.html', 'storyboard.html', ...newPages]) {
   const pageSource = fs.readFileSync(path.join(root, page), 'utf8');
   assert.match(pageSource, /js\/eve-nav\.js/, `${page} must include the global nav`);
+  assert.match(pageSource, /js\/eve-ui\.js/, `${page} must include the shared best-of UI layer`);
   assert.match(pageSource, /css\/eve-theme\.css/, `${page} must include the shared light theme`);
   assert.doesNotMatch(pageSource, /E\.V\.E Creator/, `${page} must not expose the retired brand`);
 }
@@ -44,6 +45,18 @@ for(const token of ['--bg:#eef0f4','--surface:#ffffff','--text:#14151a','--iris:
 assert.match(theme,/Plus\+Jakarta\+Sans/,'light theme must load Plus Jakarta Sans');
 assert.match(theme,/:focus-visible/,'shared theme must expose a keyboard focus indicator');
 assert.match(theme,/min-height:\s*44px/,'shared controls must meet the 44px touch-target baseline');
+const sharedUiPath=path.join(root,'js/eve-ui.js');
+assert.ok(fs.existsSync(sharedUiPath),'shared command and feedback UI must exist');
+const sharedUi=fs.readFileSync(sharedUiPath,'utf8');
+new vm.Script(sharedUi,{filename:'js/eve-ui.js'});
+assert.match(sharedUi,/e\.metaKey\|\|e\.ctrlKey/,'command palette must support Command/Ctrl shortcuts');
+assert.match(sharedUi,/key\.toLowerCase\(\)==='k'/,'command palette must bind K');
+assert.match(sharedUi,/ArrowDown.*ArrowUp/,'command palette must support arrow navigation');
+assert.match(sharedUi,/window\.fftoast/,'shared UI must expose the toast helper');
+assert.match(sharedUi,/ff-shortcuts/,'shared UI must provide the shortcuts overlay');
+assert.match(sharedUi,/role="dialog"[^>]+aria-modal="true"/,'shared overlays must be accessible modal dialogs');
+assert.match(sharedUi,/data\/craft_lessons\.json/,'palette must index all Film School lessons');
+assert.match(sharedUi,/data\/ai_tools\.json/,'palette must index the tool catalogue');
 
 // Film School must cover every craft ID exactly once across its categories.
 const learn = fs.readFileSync(path.join(root, 'learn.html'), 'utf8');
@@ -80,6 +93,8 @@ assert.match(learn,/In traditional film/,'Film School needs the traditional-film
 assert.match(learn,/With AI video/,'Film School needs the AI-video comparison');
 assert.match(learn,/Watch & Learn/,'Film School needs a verified video lesson row');
 assert.match(learn,/Learning Paths/,'Film School needs ordered learning paths');
+assert.match(learn,/class="ff-breadcrumb"/,'Film School detail view needs breadcrumbs');
+assert.match(learn,/id="lessonToc"[^>]+aria-label="On this page"/,'Film School detail view needs an on-this-page table of contents');
 
 // Research-backed safe wins: beginner launch, cross-shot continuity, minimal tool stack.
 const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
@@ -130,6 +145,8 @@ assert.match(toolkit,/fetch\('data\/ai_tools\.json'\)/,'toolkit.html must render
 assert.match(toolkit,/id="tool-profile"[^>]+role="dialog"/,'toolkit.html must include an accessible detail container');
 assert.match(toolkit,/#tool=/,'toolkit.html must support #tool= deep links');
 assert.match(toolkit,/\.profile\{width:100%;height:100%/,'tool profile must be a full-screen analysis view');
+assert.match(toolkit,/class="ff-breadcrumb"/,'tool detail view needs breadcrumbs');
+assert.match(toolkit,/class="ff-toc"[^>]+aria-label="On this page"/,'tool detail view needs an on-this-page table of contents');
 assert.match(toolkit,/categoryGlyph/,'toolkit.html must render category glyphs in tool icons');
 assert.match(toolkit,/aria-label="'\+esc\(t\.name\)\+' icon"/,'tool icons must be labelled');
 assert.match(toolkit,/google\.com\/s2\/favicons\?domain=/,'tool cards must request real service favicons');

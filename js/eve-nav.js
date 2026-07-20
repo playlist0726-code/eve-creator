@@ -23,7 +23,7 @@
     '.eve-gnav .gt:hover{color:#14151a;background:#f3f4f7}' +
     '.eve-gnav .gt.on{color:#5b4bd8;background:#f0edff}' +
     '.eve-gnav .gt .nb{font-size:8px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:#b83f70;border:1px solid #ffc2d8;background:#fff2f7;border-radius:100px;padding:1px 5px;margin-left:6px;vertical-align:middle}' +
-    '.eve-gnav .gcta{margin-left:auto;font:800 13px "Inter",sans-serif;color:#fff;background:#14151a;border-radius:100px;padding:10px 19px;text-decoration:none;white-space:nowrap;box-shadow:0 8px 20px rgba(20,21,26,.16)}' +
+    '.eve-gnav .gcta{font:800 13px "Inter",sans-serif;color:#fff;background:#14151a;border-radius:100px;padding:10px 19px;text-decoration:none;white-space:nowrap}' +
     '@media(max-width:820px){.eve-gnav{padding:8px 16px;gap:10px;scrollbar-width:none;scroll-snap-type:x proximity}.eve-gnav::-webkit-scrollbar{display:none}.eve-gnav .gbrand,.eve-gnav .gt{scroll-snap-align:start}.eve-gnav .gcta{display:none}}';
 
   function currentFile() {

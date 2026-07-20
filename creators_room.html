@@ -125,7 +125,7 @@
     </div>
   </div>
 
-  <script src="js/eve-nav.js"></script>
+  <script src="js/eve-nav.js"></script><script src="js/eve-ui.js"></script>
   <script src="js/eve-state.js"></script>
   <script src="js/eve-api.js"></script>
   <script src="js/eve-glossary.js"></script>
@@ -166,7 +166,7 @@
   async function loadDemo(){
     var input={idea:"A lonely old man plays chess against himself in an autumn park. His timid side fakes a heart attack to trick his aggressive side and turns the board — until finally he wins against himself.",genre:'animated_short',runtime:3,intake:{production_type:'animation',target_type:'personal',contest:null}};
     var out=document.getElementById('out');
-    out.innerHTML='<div class="loading"><div class="loader"></div><div class="stage">Drafting a blueprint to review…</div><div class="stage-sub">GPT-5.6 · then the crew takes over</div></div>';
+    out.innerHTML='<div class="loading"><div class="ff-skeleton" style="height:18px;width:38%;margin:0 auto 13px"></div><div class="ff-skeleton" style="height:11px;width:62%;margin:0 auto 22px"></div><div class="stage">Drafting a blueprint to review…</div><div class="stage-sub">GPT-5.6 · then the crew takes over</div></div>';
     var payload;
     try{payload=await EVE_API.generateStory(input);}catch(e){payload=EVE_API.fallback(e.message,input);}
     state.story=payload.story;state.input=input;
@@ -177,7 +177,7 @@
   function loading(){
     var out=document.getElementById('out');
     var stages=['Assembling the crew…','Director & Writer read the spine…','Cinematographer inspects every frame…','Editor walks the tension curve…','Test Audience reacts to the cut…','Applying the fixes & re-scoring…'];
-    var i=0;out.innerHTML='<div class="loading"><div class="loader"></div><div class="stage" id="ls">'+stages[0]+'</div><div class="stage-sub">GPT-5.6 · five-role critique pass</div></div>';
+    var i=0;out.innerHTML='<div class="loading"><div class="ff-skeleton" style="height:18px;width:38%;margin:0 auto 13px"></div><div class="ff-skeleton" style="height:11px;width:64%;margin:0 auto 22px"></div><div class="stage" id="ls">'+stages[0]+'</div><div class="stage-sub">GPT-5.6 · five-role critique pass</div></div>';
     return setInterval(function(){i=(i+1)%stages.length;var el=document.getElementById('ls');if(el)el.textContent=stages[i];},900);
   }
 
@@ -264,7 +264,8 @@
     var improved=EVE_CREW.applyRevisions(state.story,state.crew);
     var payload={story:improved,meta:{source:(state.meta&&state.meta.source)||'fallback',crew_reviewed:true}};
     var btn=document.getElementById('applyBtn');
-    if(!EVE_STATE.saveBlueprint(payload,state.input)){btn.textContent='Could not save';btn.disabled=true;return;}
+    if(!EVE_STATE.saveBlueprint(payload,state.input)){btn.textContent='Could not save';btn.disabled=true;if(window.fftoast)fftoast('Crew changes could not be saved');return;}
+    if(window.fftoast)fftoast('Crew revisions applied');
     window.location.href='shotseed.html';
   }
 
