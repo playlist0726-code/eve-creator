@@ -1,4 +1,4 @@
-# E.V.E Creator — Codex Handoff Brief
+# First Frame — Codex Handoff Brief
 
 > Paste this into Codex/ChatGPT to continue the build. It contains the full project context, current state, architecture, and the prioritized next tasks for the OpenAI Build Week Challenge (submission deadline **July 21, 2026**).
 
@@ -6,7 +6,7 @@
 
 ## 0. TL;DR
 
-**E.V.E Creator** is a 1-person film-preproduction copilot: give it an idea (mood, genre, scene, story) and it designs the whole plan — story → structure → storyboard → per-shot image (t2i) & video (i2v) prompts → recommended generation workflow. Every decision is **grounded** in frame-by-frame analysis of master animated films (Pixar/Disney) plus a researched knowledge base. It does not generate the film for you; it designs exactly *how* to make it, and the human runs the generation.
+**First Frame** is a 1-person film-preproduction copilot: give it an idea (mood, genre, scene, story) and it designs the whole plan — story → structure → storyboard → per-shot image (t2i) & video (i2v) prompts → recommended generation workflow. Every decision is **grounded** in frame-by-frame analysis of master animated films (Pixar/Disney) plus a researched knowledge base. It does not generate the film for you; it designs exactly *how* to make it, and the human runs the generation.
 
 **Proven differentiator:** grounded prompts beat naive prompts **25 vs 10** in our evaluation (see `evaluation/`).
 

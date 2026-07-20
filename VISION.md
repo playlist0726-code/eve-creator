@@ -1,4 +1,4 @@
-# E.V.E Creator — Vision
+# First Frame — Vision
 
 **One line:** *The complete platform that lets anyone — even people who never studied film — design and generate cinema-grade films with AI, grounded in how the masters actually did it.*
 
@@ -16,7 +16,7 @@ Preproduction (idea → story → boards → shot list → look) is where films 
 
 ## The Vision
 
-E.V.E Creator collapses preproduction into an **idea-in, plan-out** system, and eventually a **self-improving artist program**:
+First Frame collapses preproduction into an **idea-in, plan-out** system, and eventually a **self-improving artist program**:
 
 - **Input:** mood, genre, the scene you want, the story you want — in plain language.
 - **Output:** full story → script → storyboard → per-shot image (t2i) & video (i2v) prompts → recommended generation workflow.

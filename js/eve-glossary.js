@@ -1,6 +1,6 @@
 /*
  * eve-glossary.js — the education layer.
- * Every craft ID E.V.E cites is defined here in plain language: what it is, and what it
+ * Every craft ID First Frame cites is defined here in plain language: what it is, and what it
  * *does* to the audience. This is what turns the whole product into a teacher — a learner
  * building their film can tap any cited term and learn the film-craft principle behind it.
  * Keyed by the exact 111 IDs in lib/craft-knowledge.js (grounding stays consistent).
@@ -146,14 +146,14 @@
     global.__eveTipReady = true;
     var tip = document.createElement('div');
     tip.className = 'eve-tip';
-    tip.style.cssText = 'position:fixed;z-index:9999;max-width:280px;background:#0b0b0b;border:1px solid #3a3320;border-radius:10px;padding:10px 12px;box-shadow:0 10px 30px rgba(0,0,0,.55);font:400 12px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#cfcfcf;opacity:0;transform:translateY(4px);transition:opacity .12s,transform .12s;pointer-events:none;display:none';
+    tip.style.cssText = 'position:fixed;z-index:9999;max-width:280px;background:rgba(255,255,255,.96);border:1px solid #d7dae1;border-radius:12px;padding:11px 13px;box-shadow:0 18px 44px rgba(20,20,40,.14);font:400 12px/1.5 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#3f4350;opacity:0;transform:translateY(4px);transition:opacity .12s,transform .12s;pointer-events:none;display:none;backdrop-filter:blur(16px)';
     document.addEventListener('DOMContentLoaded', function () { document.body.appendChild(tip); });
     if (document.body) document.body.appendChild(tip);
     var cur = null;
     function show(el) {
       var id = el.getAttribute('data-teach'); if (!id) return;
       var e = get(id);
-      tip.innerHTML = '<b style="color:#e8bc3a;font-size:12.5px">' + esc(e.t) + '</b> <code style="color:#7a7a7a;font-size:10px">' + esc(id) + '</code><br><span>' + esc(e.d) + '</span>';
+      tip.innerHTML = '<b style="color:#14151a;font-size:12.5px">' + esc(e.t) + '</b> <code style="color:#6c5ce7;font-size:10px">' + esc(id) + '</code><br><span>' + esc(e.d) + '</span>';
       tip.style.display = 'block';
       var r = el.getBoundingClientRect();
       tip.style.opacity = '0';

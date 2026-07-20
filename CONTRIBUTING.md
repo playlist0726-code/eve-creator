@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for your interest in E.V.E Creator.
+Thanks for your interest in First Frame.
 
 ## Getting started
 

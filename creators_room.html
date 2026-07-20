@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E.V.E Creator — The Creator's Room (AI film crew review)</title>
+  <title>First Frame — The Creator's Room (AI film crew review)</title>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--bg:#0d0d0d;--surface:#131313;--card:#1a1a1a;--border:#272727;--gold:#c9a227;--gold-dim:#7a6118;--gold-lite:#e8bc3a;--text:#e4e4e4;--muted:#5a5a5a;--dim:#8a8a8a;--good:#4caf7d;--warn:#d9a13a;--bad:#d9613a}
+    :root{--bg:var(--bg);--surface:var(--surface);--card:var(--card);--border:var(--border);--gold:#c9a227;--gold-dim:#7a6118;--gold-lite:#e8bc3a;--text:#e4e4e4;--muted:#5a5a5a;--dim:#8a8a8a;--good:#4caf7d;--warn:#d9a13a;--bad:#d9613a}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:90px}
     /* stepper */
-    .eve-topbar{display:flex;align-items:center;gap:14px;padding:12px 44px;background:#131313;border-bottom:1px solid #272727;position:sticky;top:0;z-index:30;overflow-x:auto}
-    .eve-topbar .eb{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;white-space:nowrap}
+    .eve-topbar{display:flex;align-items:center;gap:14px;padding:12px 44px;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:30;overflow-x:auto}
+    .eve-topbar .eb{font-size:14px;font-weight:800;color:var(--text);letter-spacing:-.2px;white-space:nowrap}
     .eve-steps{display:flex;align-items:center;gap:0}
     .eve-steps .ps{display:flex;align-items:center;gap:7px;text-decoration:none;white-space:nowrap;padding:2px}
-    .eve-steps .pn{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;border:1.5px solid #33343d;color:#8a8a8a;background:#141419}
+    .eve-steps .pn{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;border:1.5px solid var(--border2);color:#8a8a8a;background:var(--card2)}
     .eve-steps .pl{font-size:12px;color:#8a8a8a;font-weight:600}
     .eve-steps .ps.done .pn{border-color:#c9a227;color:#c9a227}.eve-steps .ps.done .pl{color:#c7c7c7}
-    .eve-steps .ps.cur .pn{background:#c9a227;border-color:#c9a227;color:#0d0d0d}.eve-steps .ps.cur .pl{color:#fff}
-    .eve-steps .pline{width:20px;height:1.5px;background:#2a2a30;margin:0 6px}
+    .eve-steps .ps.cur .pn{background:#c9a227;border-color:#c9a227;color:var(--bg)}.eve-steps .ps.cur .pl{color:var(--text)}
+    .eve-steps .pline{width:20px;height:1.5px;background:var(--border2);margin:0 6px}
     @media(max-width:900px){.eve-steps .pl{display:none}.eve-topbar{padding-left:18px;padding-right:18px}}
     header{padding:34px 44px 6px;max-width:1040px}
-    h1{font-size:27px;font-weight:800;color:#fff;letter-spacing:-.4px}
+    h1{font-size:27px;font-weight:800;color:var(--text);letter-spacing:-.4px}
     h1 .accent{color:var(--gold)}
     .sub{font-size:13.5px;color:var(--dim);margin-top:8px;max-width:680px;line-height:1.6}
     .wrap{padding:22px 44px;max-width:1040px}
@@ -32,18 +32,18 @@
     .btn:disabled{opacity:.55;cursor:wait}
     /* loading */
     .loading{padding:64px 22px;text-align:center}
-    .loader{width:38px;height:38px;border:3px solid #292929;border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 18px}
+    .loader{width:38px;height:38px;border:3px solid var(--border2);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 18px}
     @keyframes spin{to{transform:rotate(360deg)}}
     .loading .stage{font-size:14px;color:var(--text)}.loading .stage-sub{font-size:11.5px;color:var(--muted);margin-top:8px}
     /* film bar */
     .filmbar{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;margin-bottom:18px}
     .filmbar .ft{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
-    .filmbar .fn{font-size:18px;font-weight:800;color:#fff;margin-top:2px}
+    .filmbar .fn{font-size:18px;font-weight:800;color:var(--text);margin-top:2px}
     .filmbar .fl{font-size:12px;color:var(--dim);margin-top:4px;line-height:1.5;max-width:640px}
     .source{display:inline-flex;align-items:center;gap:6px;font-size:9.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--good);border:1px solid rgba(76,175,125,.3);background:rgba(76,175,125,.08);padding:5px 9px;border-radius:100px}
     .source.fallback{color:var(--warn);border-color:rgba(217,161,58,.35);background:rgba(217,161,58,.08)}
     /* score strip */
-    .scorestrip{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:linear-gradient(180deg,#161616,#111);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin-bottom:20px}
+    .scorestrip{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:linear-gradient(180deg,var(--card2),var(--card2));border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin-bottom:20px}
     @media(max-width:640px){.scorestrip{grid-template-columns:1fr;text-align:center}}
     .verdict-pill{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.4px;padding:5px 12px;border-radius:100px;margin-top:10px}
     .verdict-pill.ok{background:rgba(76,175,125,.14);color:var(--good)}
@@ -59,15 +59,15 @@
     .crew{display:grid;gap:12px}
     .cc{display:grid;grid-template-columns:44px 1fr;gap:14px;background:var(--card);border:1px solid var(--border);border-radius:13px;padding:15px 17px;opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s}
     .cc.in{opacity:1;transform:none}
-    .mono{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#0d0d0d}
+    .mono{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--bg)}
     .cc .top{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
-    .cc .rn{font-size:13px;font-weight:800;color:#fff}
+    .cc .rn{font-size:13px;font-weight:800;color:var(--text)}
     .cc .rf{font-size:10.5px;color:var(--muted)}
     .vchip{font-size:9px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:3px 8px;border-radius:100px}
     .vchip.strong{background:rgba(76,175,125,.15);color:var(--good)}
     .vchip.revise{background:rgba(217,161,58,.15);color:var(--warn)}
     .vchip.weak{background:rgba(217,97,58,.15);color:var(--bad)}
-    .cc .hl{font-size:14px;color:#fff;font-weight:600;margin:8px 0 6px;line-height:1.45}
+    .cc .hl{font-size:14px;color:var(--text);font-weight:600;margin:8px 0 6px;line-height:1.45}
     .cc .nt{font-size:12.5px;color:#b6b6b6;line-height:1.6}
     .cc .cite{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
     .cite span{font-size:9.5px;padding:3px 7px;border-radius:100px;background:rgba(201,162,39,.09);color:var(--gold-lite)}
@@ -79,20 +79,20 @@
     .dd .dt{display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px}
     .dd .dt .nm{color:var(--dim)}.dd .dt .vl{font-weight:700}
     .dd .vl .b0{color:var(--muted)}.dd .vl .arw{color:#555;margin:0 5px}.dd .vl .b1{color:var(--good)}
-    .track{position:relative;height:7px;background:#202020;border-radius:4px;overflow:hidden}
+    .track{position:relative;height:7px;background:var(--card2);border-radius:4px;overflow:hidden}
     .track .base{position:absolute;left:0;top:0;height:100%;background:#3a3a3a;border-radius:4px}
     .track .grow{position:absolute;top:0;height:100%;background:linear-gradient(90deg,var(--gold-dim),var(--good));border-radius:4px;width:0;transition:width 1s ease}
     .dd .wy{font-size:10.5px;color:var(--muted);margin-top:5px;line-height:1.5}
     /* revisions */
     .rev{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:16px 18px;margin-bottom:12px}
     .rev .rt{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:9px}
-    .rev .sn{font-size:10px;font-weight:800;color:#0d0d0d;background:var(--gold);padding:3px 9px;border-radius:100px}
+    .rev .sn{font-size:10px;font-weight:800;color:var(--bg);background:var(--gold);padding:3px 9px;border-radius:100px}
     .rev .fld{font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:var(--dim)}
     .rev .who{font-size:10px;color:var(--muted);margin-left:auto}
     .rev .prob{font-size:12.5px;color:#d9a13a;line-height:1.55;margin-bottom:11px}
     .diff{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     @media(max-width:640px){.diff{grid-template-columns:1fr}}
-    .diff .col{border:1px solid #242424;border-radius:9px;padding:10px 12px}
+    .diff .col{border:1px solid var(--border);border-radius:9px;padding:10px 12px}
     .diff .bad{background:rgba(217,97,58,.05);border-color:rgba(217,97,58,.2)}
     .diff .good{background:rgba(76,175,125,.05);border-color:rgba(76,175,125,.22)}
     .diff .lab{font-size:9px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:5px}
@@ -100,19 +100,19 @@
     .diff p{font-size:12px;line-height:1.55;color:#c4c4c4}
     .rev .cite{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
     /* footer cta */
-    .footer-cta{position:fixed;bottom:0;left:0;right:0;padding:16px 44px;background:linear-gradient(180deg,rgba(13,13,13,0),#0d0d0d 42%);z-index:25}
+    .footer-cta{position:fixed;bottom:0;left:0;right:0;padding:16px 44px;background:linear-gradient(180deg,rgba(238,240,244,0),var(--bg) 42%);z-index:25}
     .footer-inner{max-width:560px;margin:0 auto;display:flex;gap:12px}
     .footer-inner .btn{box-shadow:0 6px 24px rgba(0,0,0,.45)}
-    .closing{font-size:12.5px;color:var(--dim);line-height:1.6;background:#101010;border:1px solid var(--border);border-left:2px solid var(--gold-dim);border-radius:10px;padding:13px 15px;margin:20px 0 4px}
+    .closing{font-size:12.5px;color:var(--dim);line-height:1.6;background:var(--card2);border:1px solid var(--border);border-left:2px solid var(--gold-dim);border-radius:10px;padding:13px 15px;margin:20px 0 4px}
     .hidden{display:none!important}
   </style>
   <link rel="stylesheet" href="css/eve-theme.css">
 </head>
 <body>
-  <div class="eve-topbar"><span class="eb">E.V.E Creator</span><div class="eve-steps" id="eve-steps"></div></div>
+  <div class="eve-topbar"><span class="eb">First Frame</span><div class="eve-steps" id="eve-steps"></div></div>
   <header>
     <h1>The <span class="accent">Creator's Room</span></h1>
-    <p class="sub">Every other tool hands you one draft and stops. E.V.E convenes a five-person AI film crew — Director, Writer, Cinematographer, Editor, and a Test Audience — that critiques your blueprint against analyzed film craft, applies concrete fixes, and re-scores it. You watch the film get measurably better.</p>
+    <p class="sub">Every other tool hands you one draft and stops. First Frame convenes a five-person AI film crew — Director, Writer, Cinematographer, Editor, and a Test Audience — that critiques your blueprint against analyzed film craft, applies concrete fixes, and re-scores it. You watch the film get measurably better.</p>
   </header>
   <div class="wrap" id="out">
     <div class="empty">Loading the room…</div>
@@ -204,7 +204,7 @@
       '<div class="filmbar"><div><div class="ft">Now in review</div><div class="fn">'+esc(story.title)+'</div><div class="fl">'+esc(story.logline)+'</div></div>'
         +'<div style="margin-left:auto"><span class="source '+(fb?'fallback':'')+'">'+(fb?'Deterministic review':'Live GPT-5.6 crew')+'</span></div></div>'
       +'<div class="scorestrip"><div><div class="ft" style="font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)">Hit-potential</div>'
-        +'<div style="font-size:15px;color:var(--dim);margin-top:6px">Before <b style="color:#fff" id="sb">'+c.score_before+'</b> <span style="color:#555">→</span> After <b style="color:var(--good)" id="sa">'+c.score_before+'</b> / 100</div>'
+        +'<div style="font-size:15px;color:var(--dim);margin-top:6px">Before <b style="color:var(--text)" id="sb">'+c.score_before+'</b> <span style="color:#555">→</span> After <b style="color:var(--good)" id="sa">'+c.score_before+'</b> / 100</div>'
         +'<div class="verdict-pill '+(ready?'ok':'no')+'">'+(ready?'Crew signed off — ready to shoot':'Needs another pass')+'</div></div>'
         +'<div><div class="gain">+<span id="gain">0</span> <small>points after the room</small></div><div class="delta-line" style="margin-top:8px">'+esc(c.round_summary)+'</div></div></div>'
       +'<div class="sec-h">The crew weighs in</div><div class="crew" id="crew"></div>'

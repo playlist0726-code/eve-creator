@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E.V.E Creator — Concept Lab (Idea Validation & Hit-Potential)</title>
+  <title>First Frame — Concept Lab (Idea Validation & Hit-Potential)</title>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--bg:#0d0d0d;--surface:#131313;--card:#1a1a1a;--border:#272727;--gold:#c9a227;--gold-dim:#7a6118;--gold-lite:#e8bc3a;--text:#e4e4e4;--muted:#5a5a5a;--dim:#8a8a8a;--good:#4caf7d;--warn:#d9a13a;--bad:#d9613a}
+    :root{--bg:var(--bg);--surface:var(--surface);--card:var(--card);--border:var(--border);--gold:#c9a227;--gold-dim:#7a6118;--gold-lite:#e8bc3a;--text:#e4e4e4;--muted:#5a5a5a;--dim:#8a8a8a;--good:#4caf7d;--warn:#d9a13a;--bad:#d9613a}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:60px}
     .site-nav{display:flex;align-items:center;gap:4px;padding:12px 44px;border-bottom:1px solid var(--border);background:var(--surface);position:sticky;top:0;z-index:20}
-    .site-nav .brand{font-size:14px;font-weight:800;color:#fff;margin-right:auto}
+    .site-nav .brand{font-size:14px;font-weight:800;color:var(--text);margin-right:auto}
     .site-nav a{font-size:12.5px;color:var(--dim);text-decoration:none;padding:6px 13px;border-radius:100px;transition:all .14s}
-    .site-nav a:hover{color:#fff;background:#1e1e1e}.site-nav a.on{color:var(--gold);background:rgba(201,162,39,.1)}
+    .site-nav a:hover{color:var(--text);background:#1e1e1e}.site-nav a.on{color:var(--gold);background:rgba(201,162,39,.1)}
     header{padding:34px 44px 6px}
-    h1{font-size:26px;font-weight:800;color:#fff;letter-spacing:-.3px}
+    h1{font-size:26px;font-weight:800;color:var(--text);letter-spacing:-.3px}
     .sub{font-size:13px;color:var(--muted);margin-top:6px;max-width:640px;line-height:1.5}
     .wrap{padding:24px 44px;display:grid;grid-template-columns:1fr 1.15fr;gap:22px}
     @media(max-width:860px){.wrap{grid-template-columns:1fr}.site-nav,header,.wrap{padding-left:22px;padding-right:22px}}
     .panel{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
     label.k{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:7px}
-    textarea,select,input{width:100%;background:#0f0f0f;border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;padding:11px 13px;font-family:inherit;margin-bottom:16px}
+    textarea,select,input{width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:14px;padding:11px 13px;font-family:inherit;margin-bottom:16px}
     textarea{height:110px;resize:none;line-height:1.5}
     textarea:focus,select:focus,input:focus{outline:none;border-color:var(--gold-dim)}
     .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -34,7 +34,7 @@
     .band-sub{font-size:12px;color:var(--dim);margin-top:2px}
     .dim{margin-bottom:10px}
     .dim-top{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
-    .dim-top .nm{color:var(--dim)}.dim-top .vl{color:#fff;font-weight:600}
+    .dim-top .nm{color:var(--dim)}.dim-top .vl{color:var(--text);font-weight:600}
     .bar{height:6px;background:#222;border-radius:3px;overflow:hidden}
     .bar span{display:block;height:100%;border-radius:3px}
     .blueprint{margin-top:20px;border-top:1px solid var(--border);padding-top:16px}
@@ -42,16 +42,16 @@
     .bp-row .bk{font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);width:88px;flex-shrink:0;padding-top:2px}
     .bp-row .bv{color:var(--text)}.bp-row .bv b{color:var(--gold-lite)}
     .beats{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-    .beatchip{font-size:11px;padding:3px 9px;border-radius:100px;background:#202020;color:var(--dim)}
-    .tips{margin-top:16px;background:#101010;border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+    .beatchip{font-size:11px;padding:3px 9px;border-radius:100px;background:var(--card2);color:var(--dim)}
+    .tips{margin-top:16px;background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
     .tips .h{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--warn);margin-bottom:6px}
     .tips li{font-size:12px;color:var(--dim);line-height:1.6;margin-left:16px}
     .note{font-size:10.5px;color:var(--muted);margin-top:14px;line-height:1.5}
-    .btn:disabled{opacity:.55;cursor:wait}.loading{padding:48px 22px;text-align:center}.loader{width:34px;height:34px;border:3px solid #292929;border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}@keyframes spin{to{transform:rotate(360deg)}}
+    .btn:disabled{opacity:.55;cursor:wait}.loading{padding:48px 22px;text-align:center}.loader{width:34px;height:34px;border:3px solid var(--border2);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}@keyframes spin{to{transform:rotate(360deg)}}
     .loading .stage{font-size:13px;color:var(--text)}.loading .stage-sub{font-size:11px;color:var(--muted);margin-top:7px}.source{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.7px;text-transform:uppercase;color:var(--good);border:1px solid rgba(76,175,125,.3);background:rgba(76,175,125,.08);padding:5px 9px;border-radius:100px;margin-bottom:14px}.source.fallback{color:var(--warn);border-color:rgba(217,161,58,.35);background:rgba(217,161,58,.08)}
-    .story-head{margin:18px 0 8px;border-top:1px solid var(--border);padding-top:18px}.story-title{font-size:21px;color:#fff;font-weight:800}.logline{font-size:13px;color:#b9b9b9;line-height:1.6;margin-top:7px}.theme{font-size:12px;color:var(--dim);line-height:1.55;margin-top:7px}.beat-list{display:grid;gap:13px;margin-top:18px}.beat-card{background:#101010;border:1px solid var(--border);border-radius:12px;padding:15px}.beat-top{display:flex;align-items:flex-start;gap:10px}.beat-num{display:flex;align-items:center;justify-content:center;width:26px;height:26px;flex:0 0 26px;border-radius:50%;background:var(--gold);color:#080808;font-size:11px;font-weight:800}.beat-name{font-size:14px;color:#fff;font-weight:700}.beat-fn{font-size:11.5px;color:var(--dim);line-height:1.45;margin-top:3px}.tension{margin-left:auto;min-width:48px;text-align:right;font-size:10px;color:var(--gold-lite)}
-    .action{font-size:13px;line-height:1.55;color:#d5d5d5;margin:12px 0}.reason-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}@media(max-width:600px){.reason-grid{grid-template-columns:1fr}}.reason{border:1px solid #242424;background:#151515;border-radius:9px;padding:10px}.reason .rh{font-size:9px;letter-spacing:.9px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:5px}.reason p{font-size:11.5px;line-height:1.5;color:#a9a9a9}.shot-spec{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0 9px}.shot-spec span,.citation{font-size:10px;padding:3px 7px;border-radius:100px;background:#202020;color:#a0a0a0}.meaning{border-left:2px solid var(--gold-dim);padding-left:10px;margin-top:10px}.meaning .mh{font-size:9px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted)}.meaning p{font-size:11.5px;color:#b9b9b9;line-height:1.5;margin-top:4px}.citations{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}.citation{color:var(--gold-lite);background:rgba(201,162,39,.09)}.teach{cursor:help;border:1px solid rgba(201,162,39,.28)!important;transition:background .12s,border-color .12s}.teach:hover,.teach:focus{background:rgba(201,162,39,.2)!important;border-color:var(--gold)!important;outline:none}details.prompts{margin-top:11px;border-top:1px solid #242424;padding-top:9px}details.prompts summary{cursor:pointer;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}.prompt{margin-top:8px;font-size:10.5px;line-height:1.5;color:#8e8e8e}.prompt b{color:#bcbcbc}.copy{font:600 9px inherit;letter-spacing:.5px;text-transform:uppercase;color:var(--gold-lite);background:rgba(201,162,39,.1);border:1px solid var(--gold-dim);border-radius:100px;padding:3px 9px;cursor:pointer;margin-left:4px}.copy:hover{background:rgba(201,162,39,.2)}.copy:disabled{color:var(--good);border-color:var(--good)}.mkhint{margin-top:9px;font-size:10.5px;color:var(--dim);line-height:1.5;border-left:2px solid var(--gold-dim);padding-left:9px}.fallback-note{font-size:11px;line-height:1.5;color:var(--warn);margin-bottom:12px}.story-flow-btn{display:block;text-align:center;margin-top:18px;background:var(--gold);color:#080808;border:0;border-radius:100px;padding:12px 16px;font:700 14px inherit;cursor:pointer;width:100%}.story-flow-btn:disabled{opacity:.55;cursor:not-allowed}
-    .act-overview{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:14px 0}.act-mini{background:#101010;border:1px solid var(--border);border-radius:9px;padding:9px}.act-mini b{display:block;font-size:11px;color:#fff}.act-mini span{font-size:9px;color:var(--muted)}.act-curve{height:90px;width:100%;margin:8px 0 16px}.act-group{border:1px solid var(--border);border-radius:12px;margin:12px 0;overflow:hidden}.act-head{padding:12px 14px;background:#151515}.act-head b{color:#fff}.act-head p{font-size:11px;color:var(--dim);margin-top:4px;line-height:1.45}.shot-fold{border-top:1px solid var(--border)}.shot-fold>summary{cursor:pointer;padding:11px 14px;color:#ddd;font-size:12px}.shot-fold>summary span{color:var(--gold);margin-right:8px}.shot-fold .beat-card{border:0;border-radius:0;margin:0}@media(max-width:700px){.act-overview{grid-template-columns:1fr 1fr}}
+    .story-head{margin:18px 0 8px;border-top:1px solid var(--border);padding-top:18px}.story-title{font-size:21px;color:var(--text);font-weight:800}.logline{font-size:13px;color:#b9b9b9;line-height:1.6;margin-top:7px}.theme{font-size:12px;color:var(--dim);line-height:1.55;margin-top:7px}.beat-list{display:grid;gap:13px;margin-top:18px}.beat-card{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:15px}.beat-top{display:flex;align-items:flex-start;gap:10px}.beat-num{display:flex;align-items:center;justify-content:center;width:26px;height:26px;flex:0 0 26px;border-radius:50%;background:var(--gold);color:#080808;font-size:11px;font-weight:800}.beat-name{font-size:14px;color:var(--text);font-weight:700}.beat-fn{font-size:11.5px;color:var(--dim);line-height:1.45;margin-top:3px}.tension{margin-left:auto;min-width:48px;text-align:right;font-size:10px;color:var(--gold-lite)}
+    .action{font-size:13px;line-height:1.55;color:#d5d5d5;margin:12px 0}.reason-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}@media(max-width:600px){.reason-grid{grid-template-columns:1fr}}.reason{border:1px solid var(--border);background:var(--card2);border-radius:9px;padding:10px}.reason .rh{font-size:9px;letter-spacing:.9px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:5px}.reason p{font-size:11.5px;line-height:1.5;color:#a9a9a9}.shot-spec{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0 9px}.shot-spec span,.citation{font-size:10px;padding:3px 7px;border-radius:100px;background:var(--card2);color:#a0a0a0}.meaning{border-left:2px solid var(--gold-dim);padding-left:10px;margin-top:10px}.meaning .mh{font-size:9px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted)}.meaning p{font-size:11.5px;color:#b9b9b9;line-height:1.5;margin-top:4px}.citations{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}.citation{color:var(--gold-lite);background:rgba(201,162,39,.09)}.teach{cursor:help;border:1px solid rgba(201,162,39,.28)!important;transition:background .12s,border-color .12s}.teach:hover,.teach:focus{background:rgba(201,162,39,.2)!important;border-color:var(--gold)!important;outline:none}details.prompts{margin-top:11px;border-top:1px solid var(--border);padding-top:9px}details.prompts summary{cursor:pointer;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}.prompt{margin-top:8px;font-size:10.5px;line-height:1.5;color:#8e8e8e}.prompt b{color:#bcbcbc}.copy{font:600 9px inherit;letter-spacing:.5px;text-transform:uppercase;color:var(--gold-lite);background:rgba(201,162,39,.1);border:1px solid var(--gold-dim);border-radius:100px;padding:3px 9px;cursor:pointer;margin-left:4px}.copy:hover{background:rgba(201,162,39,.2)}.copy:disabled{color:var(--good);border-color:var(--good)}.mkhint{margin-top:9px;font-size:10.5px;color:var(--dim);line-height:1.5;border-left:2px solid var(--gold-dim);padding-left:9px}.fallback-note{font-size:11px;line-height:1.5;color:var(--warn);margin-bottom:12px}.story-flow-btn{display:block;text-align:center;margin-top:18px;background:var(--gold);color:#080808;border:0;border-radius:100px;padding:12px 16px;font:700 14px inherit;cursor:pointer;width:100%}.story-flow-btn:disabled{opacity:.55;cursor:not-allowed}
+    .act-overview{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:14px 0}.act-mini{background:var(--card2);border:1px solid var(--border);border-radius:9px;padding:9px}.act-mini b{display:block;font-size:11px;color:var(--text)}.act-mini span{font-size:9px;color:var(--muted)}.act-curve{height:90px;width:100%;margin:8px 0 16px}.act-group{border:1px solid var(--border);border-radius:12px;margin:12px 0;overflow:hidden}.act-head{padding:12px 14px;background:var(--card2)}.act-head b{color:var(--text)}.act-head p{font-size:11px;color:var(--dim);margin-top:4px;line-height:1.45}.shot-fold{border-top:1px solid var(--border)}.shot-fold>summary{cursor:pointer;padding:11px 14px;color:#ddd;font-size:12px}.shot-fold>summary span{color:var(--gold);margin-right:8px}.shot-fold .beat-card{border:0;border-radius:0;margin:0}@media(max-width:700px){.act-overview{grid-template-columns:1fr 1fr}}
   </style>
   <link rel="stylesheet" href="css/eve-theme.css">
 </head>
@@ -59,23 +59,23 @@
 <!-- EVE guided pipeline bar (injected) -->
 <style>
 .site-nav{display:none!important}
-.eve-topbar{display:flex;align-items:center;gap:14px;padding:12px 44px;background:#131313;border-bottom:1px solid #272727;position:sticky;top:0;z-index:30;overflow-x:auto}
-.eve-topbar .eb{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;white-space:nowrap}
+.eve-topbar{display:flex;align-items:center;gap:14px;padding:12px 44px;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:30;overflow-x:auto}
+.eve-topbar .eb{font-size:14px;font-weight:800;color:var(--text);letter-spacing:-.2px;white-space:nowrap}
 .eve-steps{display:flex;align-items:center;gap:0}
 .eve-steps .ps{display:flex;align-items:center;gap:7px;text-decoration:none;white-space:nowrap;padding:2px}
-.eve-steps .pn{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;border:1.5px solid #33343d;color:#8a8a8a;background:#141419}
+.eve-steps .pn{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;border:1.5px solid var(--border2);color:#8a8a8a;background:var(--card2)}
 .eve-steps .pl{font-size:12px;color:#8a8a8a;font-weight:600}
 .eve-steps .ps.done .pn{border-color:#c9a227;color:#c9a227}
 .eve-steps .ps.done .pl{color:#c7c7c7}
-.eve-steps .ps.cur .pn{background:#c9a227;border-color:#c9a227;color:#0d0d0d}
-.eve-steps .ps.cur .pl{color:#fff}
-.eve-steps .pline{width:22px;height:1.5px;background:#2a2a30;margin:0 7px}
-.eve-cont-wrap{position:sticky;bottom:0;padding:16px 44px;background:linear-gradient(180deg,rgba(13,13,13,0),#0d0d0d 45%);z-index:25}
-.eve-cont{display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;background:#c9a227;color:#0d0d0d;border-radius:100px;padding:11px 22px;font-weight:800;font-size:14px;max-width:540px;margin:0 auto;box-shadow:0 6px 24px rgba(0,0,0,.4)}
+.eve-steps .ps.cur .pn{background:#c9a227;border-color:#c9a227;color:var(--bg)}
+.eve-steps .ps.cur .pl{color:var(--text)}
+.eve-steps .pline{width:22px;height:1.5px;background:var(--border2);margin:0 7px}
+.eve-cont-wrap{position:sticky;bottom:0;padding:16px 44px;background:linear-gradient(180deg,rgba(238,240,244,0),var(--bg) 45%);z-index:25}
+.eve-cont{display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;background:#c9a227;color:var(--bg);border-radius:100px;padding:11px 22px;font-weight:800;font-size:14px;max-width:540px;margin:0 auto;box-shadow:0 6px 24px rgba(0,0,0,.4)}
 .eve-cont small{font-weight:600;font-size:10.5px;opacity:.78}
 @media(max-width:860px){.eve-topbar,.eve-cont-wrap{padding-left:18px;padding-right:18px}.eve-steps .pl{display:none}}
 </style>
-<div class="eve-topbar"><span class="eb">E.V.E Creator</span><div class="eve-steps" id="eve-steps"></div></div>
+<div class="eve-topbar"><span class="eb">First Frame</span><div class="eve-steps" id="eve-steps"></div></div>
 <script>
 (function(){
  var S=[{n:0,l:'Intake',f:'index.html'},{n:1,l:'Concept',f:'concept_lab.html'},{n:2,l:"Creator's Room",f:'creators_room.html'},{n:3,l:'Shot Design',f:'shotseed.html'},{n:4,l:'Storyboard',f:'storyboard.html'}];
@@ -91,7 +91,7 @@
 })();
 </script>
   <nav class="site-nav">
-    <span class="brand">E.V.E Creator</span>
+    <span class="brand">First Frame</span>
     <a href="index.html">0 · Intake</a><a href="concept_lab.html" class="on">1 · Concept</a><a href="creators_room.html">2 · Creator's Room</a><a href="shotseed.html">3 · Shot Design</a><a href="storyboard.html">4 · Storyboard</a>
   </nav>
   <header>
@@ -117,7 +117,7 @@
       </div>
       <button class="btn" id="validateBtn" onclick="validate()">Build director blueprint →</button>
       <div class="ex">Try: <a onclick="demo()">the Geri's Game concept</a></div>
-      <p class="note">Hit-potential remains a transparent heuristic. The director blueprint is generated live by GPT-5.6 and grounded in E.V.E's curated craft IDs; a curated fallback keeps the demo reliable.</p>
+      <p class="note">Hit-potential remains a transparent heuristic. The director blueprint is generated live by GPT-5.6 and grounded in First Frame's curated craft IDs; a curated fallback keeps the demo reliable.</p>
     </div>
 
     <div class="panel" id="out"><div class="empty">Enter a concept and click Validate to see its hit-potential blueprint.</div></div>
@@ -201,7 +201,7 @@
         </div>
         <div class="citations">${(shot.grounded_in||[]).map(id=>window.EVE_GLOSSARY_CHIP?EVE_GLOSSARY_CHIP(id,'citation'):`<span class="citation">${esc(id)}</span>`).join('')}</div>
         <div class="reason"><div class="rh">Recommended tool · ${esc(tool.id)}</div><p>${esc(tool.why)}</p></div>
-        <details class="prompts"><summary>Generation prompts — copy &amp; make it yourself</summary><div class="prompt"><b>T2I</b> — <span class="pt">${esc(shot.t2i_prompt)}</span> <button class="copy" onclick="copyPrompt(this)">Copy</button></div><div class="prompt"><b>I2V</b> — <span class="pt">${esc(shot.i2v_prompt)}</span> <button class="copy" onclick="copyPrompt(this)">Copy</button></div><div class="mkhint">Paste into ${esc((shot.recommended_tool||{}).name||'your image/video tool')} (or any generator) to create this shot yourself. E.V.E designs it; you make it.</div></details>
+        <details class="prompts"><summary>Generation prompts — copy &amp; make it yourself</summary><div class="prompt"><b>T2I</b> — <span class="pt">${esc(shot.t2i_prompt)}</span> <button class="copy" onclick="copyPrompt(this)">Copy</button></div><div class="prompt"><b>I2V</b> — <span class="pt">${esc(shot.i2v_prompt)}</span> <button class="copy" onclick="copyPrompt(this)">Copy</button></div><div class="mkhint">Paste into ${esc((shot.recommended_tool||{}).name||'your image/video tool')} (or any generator) to create this shot yourself. First Frame designs it; you make it.</div></details>
       </article></details>`;
     }
     function actCurve(acts){const pts=acts.map((a,i)=>`${20+i*140},${80-a.tension*65}`).join(' ');return `<svg class="act-curve" viewBox="0 0 600 90"><polyline points="${pts}" fill="none" stroke="#c9a227" stroke-width="3"/>${acts.map((a,i)=>`<circle cx="${20+i*140}" cy="${80-a.tension*65}" r="5" fill="#c9a227"/><text x="${20+i*140}" y="88" text-anchor="middle" fill="#777" font-size="9">${esc(a.name)}</text>`).join('')}</svg>`;}

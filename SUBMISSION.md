@@ -1,6 +1,6 @@
 # OpenAI Build Week Challenge — Submission
 
-**Project:** E.V.E Creator — the one-person film studio with an AI film crew that argues
+**Project:** First Frame — the one-person film studio with an AI film crew that argues
 **Author:** Junsu (Michael) Kim
 **Track:** Education
 **Live demo:** https://eve-creator.vercel.app
@@ -18,11 +18,11 @@
 Making even a 3-minute animated short takes weeks of pre-production most people never learn — story structure, shot grammar, pacing, symbolic staging — and, with AI generators, dozens of precise prompts. Generic "AI story" tools hand back a plausible draft with no craft behind it and no way to know if it's good. I wanted a tool that reasons like a real film crew and can prove its choices.
 
 ### What it does
-You enter one idea (mood · genre · scene · premise). E.V.E designs the whole plan: story → five-act structure → storyboard → per-shot image (T2I) and video (I2V) prompts → recommended generation tools. It doesn't generate the film — it designs exactly *how* to make it, so you keep authorship. Every choice is grounded in a knowledge base built from frame-by-frame analysis of master animation.
+You enter one idea (mood · genre · scene · premise). First Frame designs the whole plan: story → five-act structure → storyboard → per-shot image (T2I) and video (I2V) prompts → recommended generation tools. It doesn't generate the film — it designs exactly *how* to make it, so you keep authorship. Every choice is grounded in a knowledge base built from frame-by-frame analysis of master animation.
 
 Then the differentiator: **The Creator's Room**. GPT-5.6 role-plays a five-person crew (Director, Writer, Cinematographer, Editor, Test Audience) that critiques your draft against the craft data, applies concrete before/after fixes, and re-scores its hit-potential. You watch the film measurably improve.
 
-**It's built to teach.** Every technique E.V.E cites (`low_angle`, `chiaroscuro`, `pixar_spine`, +108 more) is tap-to-learn with a plain-language explanation, and the crew explains *why* each fix works. A beginner finishes with a shootable film **and** a real understanding of the craft — then copies the generation prompts to make it themselves.
+**It's built to teach.** Every technique First Frame cites (`low_angle`, `chiaroscuro`, `pixar_spine`, +108 more) is tap-to-learn with a plain-language explanation, and the crew explains *why* each fix works. A beginner finishes with a shootable film **and** a real understanding of the craft — then copies the generation prompts to make it themselves.
 
 Research-backed onboarding now gives absolute beginners a bounded 60-second starter, a reusable cross-shot Continuity Kit, and a minimum viable still → motion → edit path. Sources and the honest rubric audit are in [research](research/).
 
@@ -48,7 +48,7 @@ Reference-clip upload → on-the-fly shot analysis; generating the storyboard an
 
 ## Tracks (pick one)
 
-| Track | Fit for E.V.E |
+| Track | Fit for First Frame |
 |-------|---------------|
 | **Apps for Your Life** | Strong — a consumer *creativity* app that lets anyone design a film. |
 | **Education** | Strong — teaches film craft; the Creator's Room shows *why* every choice, like sitting in a director's room. Judge Leah Belsky = VP of Education. |
@@ -72,10 +72,10 @@ Reference-clip upload → on-the-fly shot analysis; generating the storyboard an
 
 Record with voice-over. The audio has to explicitly say *how GPT-5.6 and Codex were used* — that's a scored requirement.
 
-1. **0:00–0:20 — Hook (Education).** *"Most people never get to learn filmmaking. E.V.E lets anyone direct a film — and learn how while they do it."* Show the Home hero + differentiator band.
+1. **0:00–0:20 — Hook (Education).** *"Most people never get to learn filmmaking. First Frame lets anyone direct a film — and learn how while they do it."* Show the Home hero + differentiator band.
 2. **0:20–0:50 — Intake + Concept.** Enter an idea. *"GPT-5.6, through the Responses API with strict structured output, drafts a grounded five-act blueprint."* Tap a citation chip → the plain-language lesson pops up. *"Every craft term is tap-to-learn — that's the education layer."*
 3. **0:50–1:55 — The Creator's Room (the star).** Continue. The five-role crew speaks in turn; the hit-score animates up; show one before/after fix and tap a term in it. *"This is a second GPT-5.6 pass — the model critiques its own draft as five specialists and teaches why each fix is better."*
-4. **1:55–2:20 — Make it yourself.** Copy a T2I prompt. *"E.V.E hands you the plan and the vocabulary; you generate the film and keep authorship."* Flow into Shot Design + Storyboard.
+4. **1:55–2:20 — Make it yourself.** Copy a T2I prompt. *"First Frame hands you the plan and the vocabulary; you generate the film and keep authorship."* Flow into Shot Design + Storyboard.
 5. **2:20–2:45 — Proof + Codex.** Flash 25-vs-10 evaluation and the green CI badge. *"I built this with Codex — it scaffolded the GPT-5.6 endpoints, the strict schemas, and the test suite you see passing in CI."* End on the live URL + `/feedback` session ID note.
 
 ## Submission checklist

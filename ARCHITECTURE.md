@@ -1,6 +1,6 @@
 # Architecture
 
-E.V.E Creator is a static front end plus two GPT-5.6 serverless endpoints. There is no
+First Frame is a static front end plus two GPT-5.6 serverless endpoints. There is no
 build step and no runtime dependency — every file is directly inspectable. State flows
 through the browser (sessionStorage) across a five-step guided pipeline.
 

@@ -1,5 +1,5 @@
 {
-  "_comment": "E.V.E Creator storyboard data shared by generate_frames.py and storyboard.html. style_suffix keeps all storyboard frames visually consistent.",
+  "_comment": "First Frame storyboard data shared by generate_frames.py and storyboard.html. style_suffix keeps all storyboard frames visually consistent.",
   "style_suffix": "cinematic animation storyboard frame, painterly concept art, warm autumn palette, soft cinematic lighting, 16:9 composition",
   "reference": "Pixar · Geri's Game",
   "beats": [

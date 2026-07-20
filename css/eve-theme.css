@@ -1,22 +1,65 @@
-/* eve-theme.css — shared premium palette + type, loaded AFTER each page's inline
- * <style> so it re-skins the pipeline pages to match the home without touching layout.
- * Only re-maps existing CSS variables + fonts; every page keeps its own structure. */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap');
+/* First Frame — shared light glass SaaS design system.
+ * Loaded by every product route. !important is intentional for legacy pages whose
+ * page-local styles are declared after this file; these tokens remain authoritative. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
 :root{
-  --bg:#0b0910;--surface:#161320;--card:#1a1626;--border:#2b2540;
-  --gold:#f2c14e;--gold-dim:#b98f2e;--gold-lite:#ffdd80;
-  --text:#eceaf2;--muted:#8b8598;--dim:#c3bdd4;
-  --good:#4fd1a5;--warn:#f2c14e;--bad:#ff7a59;
+  --bg:#eef0f4!important;--bg2:#f6f7f9!important;--surface:#ffffff!important;
+  --card:#ffffff!important;--card2:#f6f7f9!important;
+  --border:#e6e8ec!important;--border2:#d7dae1!important;
+  --text:#14151a!important;--txt:#14151a!important;--muted:#6b7280!important;--dim:#3f4350!important;
+  --gold:#f5a623!important;--gold2:#d8890d!important;--gold-dim:#b86e00!important;--gold-lite:#9a5d00!important;
+  --iris:#6c5ce7!important;--iris2:#8b7cff!important;--pink:#ff6b9a!important;
+  --sky:#4c9ffe!important;--mint:#2ec4a6!important;--good:#16a34a!important;
+  --warn:#d97706!important;--bad:#dc2626!important;--coral:#dc2626!important;
+  --grad:linear-gradient(110deg,#6c5ce7,#8b7cff 56%,#b5a9ff)!important;
+  --display:'Plus Jakarta Sans','Inter',sans-serif!important;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif!important;
+  --shadow-sm:0 8px 24px rgba(20,20,40,.05);--shadow-md:0 18px 44px rgba(20,20,40,.07);
+  --shadow-shell:0 30px 60px rgba(20,20,40,.06);
 }
 
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-h1,h2,.story-title,.fn{font-family:'Fraunces',Georgia,serif;letter-spacing:-.3px}
+html{background:var(--bg);color-scheme:light}
+body{font-family:var(--sans)!important;background:var(--bg)!important;color:var(--text)!important}
+body::before{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;background:radial-gradient(900px 560px at 88% -8%,rgba(108,92,231,.10),transparent 62%),radial-gradient(760px 520px at 5% 5%,rgba(76,159,254,.09),transparent 58%),radial-gradient(680px 480px at 52% 104%,rgba(255,107,154,.07),transparent 62%)}
+.aura{background:radial-gradient(950px 600px at 88% -8%,rgba(108,92,231,.10),transparent 62%),radial-gradient(800px 540px at 4% 4%,rgba(76,159,254,.08),transparent 58%),radial-gradient(700px 500px at 52% 104%,rgba(255,107,154,.06),transparent 62%),var(--bg)!important}
+.aura::before{opacity:.25!important;filter:blur(110px)!important}.grain{opacity:.12!important;mix-blend-mode:multiply}
 
-/* the pipeline stepper becomes a sub-bar under the global platform nav */
-.eve-topbar{position:static !important;top:auto !important}
+h1,h2,h3,h4,.story-title,.fn,.brand,.eb,.nm,.rn,.tool-name,.metric-value,.readiness strong,.legacy-score,.meter,.stat .n,.pstat .n{font-family:var(--display)!important;color:var(--text)!important;letter-spacing:-.035em!important}
+p,li,label{color:inherit}.lead b,.sub b,.note b,.rf b,.flow b,.flags b,.contest-card b,.starter b,.scope-list b,.priority b,.sign b{color:var(--text)!important}
+a{color:inherit}.g{-webkit-text-fill-color:transparent!important}
 
-/* subtle ambient warmth so the flat black reads richer, matching the home */
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(900px 560px at 88% -6%,rgba(139,123,255,.12),transparent 60%),
-             radial-gradient(760px 520px at 4% 2%,rgba(255,93,162,.08),transparent 55%)}
+/* Reusable shell and controls */
+.app-shell{max-width:1240px;margin:24px auto;background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.86);border-radius:26px;box-shadow:var(--shadow-shell);overflow:hidden}
+.glass{background:rgba(255,255,255,.62)!important;border:1px solid rgba(255,255,255,.82)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 20px 50px rgba(59,45,120,.10)!important;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.btn-primary,.start,.eve-cont,.story-flow-btn,.footer-inner .btn,.official{background:#14151a!important;color:#fff!important;border-color:#14151a!important;border-radius:100px!important;box-shadow:0 10px 24px rgba(20,21,26,.16)!important}
+.btn-primary:hover,.start:hover,.eve-cont:hover,.story-flow-btn:hover,.official:hover{background:#292b33!important;box-shadow:0 14px 30px rgba(20,21,26,.2)!important}
+.btn-secondary,.btn-ghost{background:#fff!important;color:var(--text)!important;border:1px solid var(--border2)!important;border-radius:100px!important;box-shadow:var(--shadow-sm)!important}
+button,input,select,textarea{font-family:var(--sans)}
+input,select,textarea{background:#fff!important;color:var(--text)!important;border-color:var(--border2)!important}
+input::placeholder,textarea::placeholder{color:#9ca3af!important}
+
+/* Shared cards and legacy dark surfaces */
+.panel,.card,.acard,.stage,.learnbox,.pstat,.stat,.route,.mc,.tool,.metric,.sign,.soon,.intake,.filmbar,.scorestrip,.cc,.rev,.shot-card,.beat-card,.act,.an-box,.context,.recap,.gate,.handoff,.footer-inner,.room-mock,.starter,.contest-card,.flow,.file-meta,.legacy,.closing,.diff .col,.crewcard,.big,.showcase{background:var(--card)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important;color:var(--text)!important}
+.card:hover,.acard:hover,.stage:hover,.tool:hover,.route:hover{border-color:#c9c3ff!important;box-shadow:var(--shadow-md)!important}
+.card2,.track,.progress,.meter-track,.curve-wrap,.chart,.prompt,.source,.code,.context-chip{background:var(--card2)!important;border-color:var(--border)!important}
+.showcase,.big,.summary,.callout{background:linear-gradient(145deg,rgba(108,92,231,.08),rgba(255,255,255,.94) 48%,rgba(76,159,254,.06))!important;border-color:#ddd9ff!important;box-shadow:var(--shadow-md)!important}
+.crewcard{background:rgba(255,255,255,.72)!important}.legacy{background:rgba(255,255,255,.72)!important}
+.track,.progress{background:#e8eaf0!important}.footer-cta{background:linear-gradient(180deg,rgba(238,240,244,0),rgba(238,240,244,.96) 42%)!important}
+
+/* Light typography for formerly white-on-dark local selectors */
+.rh .t,.crewcard .nm,.stage h3,.acard h3,.showcase h2,.showcase p b,.intake h2,.contest-card b,.starter b,.panel h2,.cat h2,.big h2,.card h4,.soon h3,.scope-list b,.drop strong,.metric-value,.priority b,.secondary>summary,.sign b,.filmbar .fn,.cc .rn,.cc .hl,.rev h3,.shot-card h3,.act h2,.logo-row h1,.idea-block .txt,.story-title{color:var(--text)!important}
+.kick,.kicker,.eyebrow,.lab,.tag,.tg,.raw,.citation,.chip{color:#5b4bd8!important}
+.warn,.status{color:#9a5d00!important}.error{color:var(--bad)!important}
+
+/* Shared pipeline chrome */
+.eve-topbar{position:static!important;top:auto!important;background:rgba(255,255,255,.82)!important;border-color:var(--border)!important;box-shadow:0 1px 0 rgba(20,21,26,.03)!important;backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important}
+.eve-topbar .eb{color:var(--text)!important}.eve-steps .pn{background:#fff!important;border-color:var(--border2)!important;color:var(--muted)!important}.eve-steps .ps.cur .pn{background:var(--iris)!important;color:#fff!important;border-color:var(--iris)!important}.eve-steps .ps.cur .pl{color:var(--text)!important}.eve-steps .pline{background:var(--border2)!important}
+
+/* Accessible glossary tooltip, charts, and badges */
+.source-badge,.badge,.chip,.pill,.citation,.teach,.lesson,.tool-link{background:#f5f3ff!important;border-color:#d9d4ff!important;color:#5145cd!important}
+code{color:#5b4bd8!important}.axis,.axis-lab,.curve-label{fill:#6b7280!important}.curve-line{stroke:#6c5ce7!important}.beat-dot{fill:#fff!important;stroke:#6c5ce7!important}
+
+footer{border-color:var(--border)!important;color:var(--muted)!important}
+@media(max-width:1288px){.app-shell{margin:12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}

@@ -1,4 +1,4 @@
-# CODEX MISSION BRIEF — help E.V.E Creator win OpenAI Build Week
+# CODEX MISSION BRIEF — help First Frame win OpenAI Build Week
 
 > Codex: read this whole file, then execute the mission in §4. Work autonomously, verify
 > meticulously, and keep the test suite green. Everything here is context you can trust
@@ -14,7 +14,7 @@
 - Capture your `/feedback` session ID for the Devpost submission.
 
 ## 1. The vision
-**E.V.E Creator** is a **learning platform for people who never studied film** but want to
+**First Frame** is a **learning platform for people who never studied film** but want to
 make or understand AI film and AI art. Bring an idea → an AI film crew designs the story,
 shots, and prompts **and teaches you why every choice works**, grounded in frame-level
 analysis of master animation. Then the human generates the film themselves and keeps
@@ -68,16 +68,16 @@ curve, no feedback on whether their idea is any good. Cite every claim with a re
 Rank pains by frequency × severity.
 
 ### B. Gap analysis (append to the same file)
-For each top pain, state whether E.V.E already addresses it, partially, or not at all — and
+For each top pain, state whether First Frame already addresses it, partially, or not at all — and
 where in the product. Produce a short prioritized list of **gaps we should close**.
 
 ### C. Competitive scan (save to `research/competitive_scan.md`)
 Find comparable tools (AI story/storyboard generators, LTX/Runway workflows, film-education
-apps). For each: what it does, and **how E.V.E is different** (grounded craft, the arguing
+apps). For each: what it does, and **how First Frame is different** (grounded craft, the arguing
 crew, tap-to-learn education). Be honest about where they're ahead. Cite sources.
 
 ### D. Win-audit against the rubric (save to `research/win_audit.md`)
-Score E.V.E honestly (1–5) on each of the 4 judging criteria, with specific evidence and
+Score First Frame honestly (1–5) on each of the 4 judging criteria, with specific evidence and
 specific weaknesses. Check every submission requirement in §3 and mark done/missing.
 
 ### E. Prioritized recommendations + implement the safe wins
@@ -100,7 +100,7 @@ Do not add heavy dependencies or a build step.
 ## 5. Guardrails
 - Cite sources for every external claim; if you can't verify, say so.
 - No invented statistics, no fake testimonials, no fabricated contest rules.
-- Preserve authorship framing: E.V.E *designs and teaches*; the human generates the film.
+- Preserve authorship framing: First Frame *designs and teaches*; the human generates the film.
 - Small, reviewable commits with clear messages. Keep tests green at every commit.
 
 ## 6. Definition of done

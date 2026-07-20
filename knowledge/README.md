@@ -1,4 +1,4 @@
-# knowledge/ — E.V.E Creator Knowledge Base (Layer 0)
+# knowledge/ — First Frame Knowledge Base (Layer 0)
 
 Researched, film-agnostic craft data — the domain expertise the system reasons with.
 All English, versioned JSON. (Layer 1 = specific film shot data in `../shotseed.html`; Layer 2 = narrative structure in `../SCHEMA_L2.md`.)

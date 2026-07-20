@@ -1,12 +1,12 @@
 <div align="center">
 
-# 🎬 E.V.E Creator
+# 🎬 First Frame
 
 ### Learn to direct a film — even if you've never studied one.
 
 **A shared learning platform for anyone curious about AI film and AI art. Bring an idea; an AI film crew designs the whole film *and teaches you why every choice works* — grounded in frame-level analysis of master animation. Then you make it yourself.**
 
-> 🎓 **OpenAI Build Week — Education track.** E.V.E turns filmmaking's hidden craft into something a beginner can learn by doing: every cited technique is tap-to-learn, and a five-role AI crew shows you *why* it critiques and fixes your film.
+> 🎓 **OpenAI Build Week — Education track.** First Frame turns filmmaking's hidden craft into something a beginner can learn by doing: every cited technique is tap-to-learn, and a five-role AI crew shows you *why* it critiques and fixes your film.
 
 [![CI](https://github.com/playlist0726-code/eve-creator/actions/workflows/ci.yml/badge.svg)](https://github.com/playlist0726-code/eve-creator/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-c9a227.svg)](LICENSE)
@@ -26,7 +26,7 @@ Making even a 3-minute animated short means weeks of pre-production most people 
 
 ## The solution
 
-**E.V.E Creator** turns one idea (mood · genre · scene · premise) into a complete, *grounded* pre-production plan: story → five-act structure → storyboard → per-shot image (T2I) and video (I2V) prompts → recommended generation tools. It does **not** generate the film for you — it designs exactly *how* to make it, and you keep authorship and run the generation.
+**First Frame** turns one idea (mood · genre · scene · premise) into a complete, *grounded* pre-production plan: story → five-act structure → storyboard → per-shot image (T2I) and video (I2V) prompts → recommended generation tools. It does **not** generate the film for you — it designs exactly *how* to make it, and you keep authorship and run the generation.
 
 Every decision is **grounded**: not "AI-invented advice," but reasoning tied to a knowledge base built from **frame-by-frame analysis of master animation** (Pixar / Disney) and researched film craft.
 
@@ -36,7 +36,7 @@ Every decision is **grounded**: not "AI-invented advice," but reasoning tied to 
 
 ## ⭐ The differentiator — The Creator's Room
 
-Most "idea → storyboard" tools are one-shot: prompt in, draft out. E.V.E adds a step nobody else has.
+Most "idea → storyboard" tools are one-shot: prompt in, draft out. First Frame adds a step nobody else has.
 
 **The Creator's Room** is a **reflection / self-critique loop**. GPT-5.6 role-plays a five-person film crew, each with a distinct — and sometimes conflicting — lens:
 
@@ -56,17 +56,17 @@ Score gains are justified by the revisions (capped at +30), and every citation i
 
 ## 🎓 Learn while you build (Education)
 
-E.V.E is built for people who never studied film. Instead of a separate "course," the teaching is woven into the act of making:
+First Frame is built for people who never studied film. Instead of a separate "course," the teaching is woven into the act of making:
 
-- **Tap-to-learn craft, everywhere.** Every technique E.V.E cites — `low_angle`, `chiaroscuro`, `pixar_spine`, and 108 more — is a **learnable term**. Tap any chip and get a plain-language explanation of what it is and *what it does to the audience* (`js/eve-glossary.js`, all 111 grounded IDs covered).
+- **Tap-to-learn craft, everywhere.** Every technique First Frame cites — `low_angle`, `chiaroscuro`, `pixar_spine`, and 108 more — is a **learnable term**. Tap any chip and get a plain-language explanation of what it is and *what it does to the audience* (`js/eve-glossary.js`, all 111 grounded IDs covered).
 - **The crew explains its reasoning.** In the Creator's Room, each fix is attached to a real principle and a before/after example, so you learn *why* a change makes the film better — like sitting in a director's room.
-- **Then make it yourself.** The pipeline ends with copy-ready image (T2I) and video (I2V) prompts and recommended tools. E.V.E hands you the plan and the vocabulary; **you generate the film and keep authorship.**
+- **Then make it yourself.** The pipeline ends with copy-ready image (T2I) and video (I2V) prompts and recommended tools. First Frame hands you the plan and the vocabulary; **you generate the film and keep authorship.**
 
 The result: a beginner finishes with a shootable film *and* a working understanding of the craft behind it.
 
 ### Research-backed beginner support
 
-The 2026-07 research pass found three recurring barriers: beginners do not know where to start, multi-shot characters and worlds drift, and model/tool choice is overwhelming. E.V.E now includes:
+The 2026-07 research pass found three recurring barriers: beginners do not know where to start, multi-shot characters and worlds drift, and model/tool choice is overwhelming. First Frame now includes:
 
 - **First Film starters** that prefill a bounded 60-second practice concept.
 - A **Continuity Kit** that turns the director lens and first shot into a reusable cross-shot anchor.
@@ -113,7 +113,7 @@ This project was built **with Codex** as the pair-programmer:
 
 - Codex scaffolded the GPT-5.6 engine — the Responses-API handler, the strict JSON schema, the system prompt, and the client fetch/fallback layer (`api/`, `lib/`, `js/eve-api.js`).
 - Codex wrote and iterated the Node test suite (`tests/`) that guards the citation contract, runtime math, and pipeline hand-off.
-- Codex handled the English rebrand (SceneForge → E.V.E Creator), the file renames, and the Vercel deploy config.
+- Codex handled the English rebrand (SceneForge → First Frame), the file renames, and the Vercel deploy config.
 - Human + Codex then added **The Creator's Room** — schema, prompt, endpoint, deterministic fallback, and the animated review UI.
 
 See [`CODEX_HANDOFF.md`](CODEX_HANDOFF.md) for the running brief passed to Codex between sessions.

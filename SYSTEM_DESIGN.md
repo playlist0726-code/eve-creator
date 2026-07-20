@@ -1,4 +1,4 @@
-# E.V.E Creator — System Design
+# First Frame — System Design
 
 Netflix-grade architecture for an idea-to-film preproduction engine and self-learning artist program.
 

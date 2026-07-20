@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E.V.E Creator — Film School (learn the craft)</title>
+  <title>First Frame — Film School (learn the craft)</title>
   <link rel="stylesheet" href="css/eve-theme.css">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,28 +13,28 @@
     @media(max-width:640px){.wrap{padding:0 18px}}
     .hero{padding:46px 0 20px}
     .kick{display:inline-flex;align-items:center;gap:8px;font:700 11px 'Inter';letter-spacing:1.5px;text-transform:uppercase;color:var(--iris2,#a898ff);background:rgba(139,123,255,.1);border:1px solid rgba(139,123,255,.28);padding:6px 14px;border-radius:100px}
-    h1{font-family:'Fraunces',serif;font-weight:900;font-size:44px;line-height:1.05;letter-spacing:-1px;color:#fff;margin:16px 0 12px}
+    h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:44px;line-height:1.05;letter-spacing:-1px;color:var(--text);margin:16px 0 12px}
     h1 .g{background:linear-gradient(100deg,#8b7bff,#ff5da2 55%,#f2c14e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
     .lead{font-size:16px;color:var(--dim);max-width:600px;line-height:1.6}
     .searchbar{display:flex;gap:10px;margin:26px 0 8px;position:sticky;top:58px;z-index:20;background:linear-gradient(180deg,var(--bg) 70%,transparent);padding:10px 0}
-    #q{flex:1;background:#100d18;border:1px solid var(--border2,#3b3355);border-radius:100px;color:var(--text);font:500 15px 'Inter';padding:13px 20px}
+    #q{flex:1;background:var(--card2);border:1px solid var(--border2);border-radius:100px;color:var(--text);font:500 15px 'Inter';padding:13px 20px}
     #q:focus{outline:none;border-color:var(--iris2,#a898ff)}
     .catnav{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
-    .catnav a{font:600 12px 'Inter';color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:100px;border:1px solid var(--border,#2b2540);white-space:nowrap;transition:all .14s}
-    .catnav a:hover{color:#fff;border-color:var(--iris2,#a898ff)}
+    .catnav a{font:600 12px 'Inter';color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:100px;border:1px solid var(--border);white-space:nowrap;transition:all .14s}
+    .catnav a:hover{color:var(--text);border-color:var(--iris2,#a898ff)}
     .count{font-size:12px;color:var(--muted);margin:2px 0 18px}
     .cat{margin:30px 0}
-    .cat h2{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:4px;display:flex;align-items:center;gap:10px}
+    .cat h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:700;color:var(--text);margin-bottom:4px;display:flex;align-items:center;gap:10px}
     .cat .ci{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;background:rgba(139,123,255,.14);border:1px solid rgba(139,123,255,.3)}
     .cat .cd{font-size:12.5px;color:var(--muted);margin:2px 0 16px 44px}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
-    .term{background:var(--card,#1a1626);border:1px solid var(--border,#2b2540);border-radius:14px;padding:15px 16px;transition:transform .15s,border-color .15s}
-    .term:hover{transform:translateY(-3px);border-color:var(--border2,#3b3355)}
-    .term .t{font-family:'Fraunces',serif;font-size:15.5px;font-weight:700;color:#fff;margin-bottom:3px}
+    .term{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:15px 16px;transition:transform .15s,border-color .15s}
+    .term:hover{transform:translateY(-3px);border-color:var(--border2)}
+    .term .t{font-family:'Plus Jakarta Sans',sans-serif;font-size:15.5px;font-weight:700;color:var(--text);margin-bottom:3px}
     .term .id{font-size:9.5px;color:var(--muted);font-family:ui-monospace,monospace;letter-spacing:.3px}
     .term .d{font-size:12.5px;color:var(--dim);line-height:1.55;margin-top:8px}
     .empty{color:var(--muted);text-align:center;padding:50px;font-size:14px}
-    footer{border-top:1px solid var(--border,#2b2540);margin-top:44px;padding:26px 0 60px;font-size:12px;color:var(--muted);line-height:1.7}
+    footer{border-top:1px solid var(--border);margin-top:44px;padding:26px 0 60px;font-size:12px;color:var(--muted);line-height:1.7}
   </style>
 </head>
 <body>
@@ -42,7 +42,7 @@
   <section class="hero"><div class="wrap">
     <span class="kick">Film School · For everyone</span>
     <h1>Learn the craft,<br><span class="g">one term at a time.</span></h1>
-    <p class="lead">Every technique E.V.E uses to design your film — <b style="color:#fff">111 in all</b> — explained in plain language. No film degree required. Search it, browse it, or just tap around and get curious.</p>
+    <p class="lead">Every technique First Frame uses to design your film — <b style="color:var(--text)">111 in all</b> — explained in plain language. No film degree required. Search it, browse it, or just tap around and get curious.</p>
   </div></section>
   <div class="wrap">
     <div class="searchbar"><input id="q" type="text" placeholder="Search techniques…  try “close-up”, “tension”, “Pixar”, “color”"></div>
@@ -51,7 +51,7 @@
     <div id="lib"></div>
     <div class="empty" id="empty" style="display:none">No techniques match that search. Try another word.</div>
   </div>
-  <footer><div class="wrap">Film School is grounded in E.V.E's craft knowledge base — the same 111 IDs the AI crew cites when it designs and critiques your film. Learn a term here, then see it used in the <a href="creators_room.html" style="color:var(--gold,#f2c14e)">Creator's Room</a>.</div></footer>
+  <footer><div class="wrap">Film School is grounded in First Frame's craft knowledge base — the same 111 IDs the AI crew cites when it designs and critiques your film. Learn a term here, then see it used in the <a href="creators_room.html" style="color:var(--gold,#f2c14e)">Creator's Room</a>.</div></footer>
 
   <script src="js/eve-nav.js"></script>
   <script src="js/eve-glossary.js"></script>

@@ -6,6 +6,7 @@ const root = path.resolve(__dirname, '..');
 
 // The global platform nav must point only to pages that exist.
 const nav = fs.readFileSync(path.join(root, 'js/eve-nav.js'), 'utf8');
+assert.match(nav, /First Frame/, 'global nav must carry the First Frame brand');
 const navTargets = [...nav.matchAll(/f:\s*'([^']+\.html)'/g)].map((m) => m[1]);
 const expectTabs = ['index.html', 'concept_lab.html', 'learn.html', 'toolkit.html', 'detector.html', 'community.html'];
 for (const t of expectTabs) assert.ok(navTargets.includes(t), `nav missing tab target ${t}`);
@@ -30,8 +31,17 @@ for (const page of newPages) {
 
 // Every page carries the global nav so the platform feels consistent.
 for (const page of ['index.html', 'concept_lab.html', 'creators_room.html', 'shotseed.html', 'storyboard.html', ...newPages]) {
-  assert.match(fs.readFileSync(path.join(root, page), 'utf8'), /js\/eve-nav\.js/, `${page} must include the global nav`);
+  const pageSource = fs.readFileSync(path.join(root, page), 'utf8');
+  assert.match(pageSource, /js\/eve-nav\.js/, `${page} must include the global nav`);
+  assert.match(pageSource, /css\/eve-theme\.css/, `${page} must include the shared light theme`);
+  assert.doesNotMatch(pageSource, /E\.V\.E Creator/, `${page} must not expose the retired brand`);
 }
+
+const theme=fs.readFileSync(path.join(root,'css/eve-theme.css'),'utf8');
+for(const token of ['--bg:#eef0f4','--surface:#ffffff','--text:#14151a','--iris:#6c5ce7']) {
+  assert.ok(theme.includes(token),`light theme missing ${token}`);
+}
+assert.match(theme,/Plus\+Jakarta\+Sans/,'light theme must load Plus Jakarta Sans');
 
 // Film School must cover every craft ID exactly once across its categories.
 const learn = fs.readFileSync(path.join(root, 'learn.html'), 'utf8');
@@ -46,6 +56,8 @@ const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const concept=fs.readFileSync(path.join(root,'concept_lab.html'),'utf8');
 const storyboard=fs.readFileSync(path.join(root,'storyboard.html'),'utf8');
 const toolkit=fs.readFileSync(path.join(root,'toolkit.html'),'utf8');
+assert.match(home,/glass-stack/,'Home must include the CSS glass hero object');
+assert.match(home,/social-proof/,'Home must include creator social proof');
 assert.match(home,/startPractice\('paper_boat'\)/,'Home must offer a bounded beginner practice brief');
 assert.match(home,/eve\.starter\.v1/,'Starter must carry context forward');
 assert.match(concept,/loadStarter/,'Concept Lab must consume starter context');

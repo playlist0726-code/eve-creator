@@ -1,6 +1,6 @@
 /*
  * eve-nav.js — the global platform navigation.
- * Injects one consistent top tab-bar on every page so E.V.E feels like a real
+ * Injects one consistent top tab-bar on every page so First Frame feels like a real
  * learning platform (Home · Create · Learn · AI Tools · Footage Lab · Community),
  * not a single wizard. Self-mounts at the top of <body>; highlights the current tab.
  */
@@ -15,15 +15,15 @@
     { l: 'Community', f: 'community.html' }
   ];
   var CSS = '' +
-    '.eve-gnav{display:flex;align-items:center;gap:18px;padding:12px 34px;background:rgba(12,10,20,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border,#2b2540);position:sticky;top:0;z-index:60;overflow-x:auto}' +
-    '.eve-gnav .gbrand{font-family:"Fraunces",Georgia,serif;font-weight:900;font-size:18px;letter-spacing:-.3px;color:#fff;text-decoration:none;white-space:nowrap}' +
-    '.eve-gnav .gbrand i{font-style:normal;background:linear-gradient(100deg,#8b7bff,#ff5da2 52%,#f2c14e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}' +
+    '.eve-gnav{display:flex;align-items:center;gap:18px;padding:14px 34px;background:rgba(255,255,255,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border,#e6e8ec);position:sticky;top:0;z-index:60;overflow-x:auto;box-shadow:0 1px 0 rgba(20,21,26,.03)}' +
+    '.eve-gnav .gbrand{display:inline-flex;align-items:center;gap:9px;font-family:"Plus Jakarta Sans","Inter",sans-serif;font-weight:800;font-size:17px;letter-spacing:-.5px;color:#14151a;text-decoration:none;white-space:nowrap}' +
+    '.eve-gnav .gbrand i{display:grid;place-items:center;width:24px;height:24px;border-radius:8px;font-style:normal;color:#fff;background:linear-gradient(135deg,#6c5ce7,#8b7cff 55%,#4c9ffe);box-shadow:0 6px 16px rgba(108,92,231,.22)}' +
     '.eve-gnav .gtabs{display:flex;align-items:center;gap:3px;margin-left:8px}' +
-    '.eve-gnav .gt{position:relative;font:600 13.5px "Inter",sans-serif;color:#9a94ad;text-decoration:none;padding:8px 14px;border-radius:100px;white-space:nowrap;transition:color .14s,background .14s}' +
-    '.eve-gnav .gt:hover{color:#fff;background:rgba(255,255,255,.05)}' +
-    '.eve-gnav .gt.on{color:#fff;background:rgba(139,123,255,.16)}' +
-    '.eve-gnav .gt .nb{font-size:8px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:#ff5da2;border:1px solid rgba(255,93,162,.5);border-radius:100px;padding:1px 5px;margin-left:6px;vertical-align:middle}' +
-    '.eve-gnav .gcta{margin-left:auto;font:800 13px "Inter",sans-serif;color:#120c1c;background:linear-gradient(100deg,#8b7bff,#ff5da2 55%,#f2c14e);border-radius:100px;padding:9px 18px;text-decoration:none;white-space:nowrap;box-shadow:0 6px 20px rgba(139,123,255,.3)}' +
+    '.eve-gnav .gt{position:relative;font:600 13px "Inter",sans-serif;color:#656b78;text-decoration:none;padding:8px 13px;border-radius:100px;white-space:nowrap;transition:color .14s,background .14s}' +
+    '.eve-gnav .gt:hover{color:#14151a;background:#f3f4f7}' +
+    '.eve-gnav .gt.on{color:#5b4bd8;background:#f0edff}' +
+    '.eve-gnav .gt .nb{font-size:8px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:#b83f70;border:1px solid #ffc2d8;background:#fff2f7;border-radius:100px;padding:1px 5px;margin-left:6px;vertical-align:middle}' +
+    '.eve-gnav .gcta{margin-left:auto;font:800 13px "Inter",sans-serif;color:#fff;background:#14151a;border-radius:100px;padding:10px 19px;text-decoration:none;white-space:nowrap;box-shadow:0 8px 20px rgba(20,21,26,.16)}' +
     '@media(max-width:820px){.eve-gnav{padding:10px 16px;gap:10px}.eve-gnav .gcta{display:none}}';
 
   function currentFile() {
@@ -35,7 +35,7 @@
     var cur = currentFile();
     var style = document.createElement('style'); style.textContent = CSS; document.head.appendChild(style);
     var bar = document.createElement('div'); bar.className = 'eve-gnav';
-    var html = '<a class="gbrand" href="index.html">E.V.E <i>Creator</i></a><nav class="gtabs">';
+    var html = '<a class="gbrand" href="index.html"><i>F</i>First Frame</a><nav class="gtabs">';
     TABS.forEach(function (t) {
       var on = t.f === cur || (t.match && t.match.indexOf(cur) >= 0);
       html += '<a class="gt' + (on ? ' on' : '') + '" href="' + t.f + '">' + t.l + (t.badge ? '<span class="nb">' + t.badge + '</span>' : '') + '</a>';

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-generate_frames.py — E.V.E Creator 스토리보드 프레임 자동 생성기
+generate_frames.py — First Frame 스토리보드 프레임 자동 생성기
 
 storyboard_data.json의 각 프롬프트를 OpenAI 이미지 API로 생성해
 storyboard_frames/beat<N>.png 로 저장한다. storyboard.html이 이를 자동 표시한다.
