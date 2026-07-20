@@ -51,6 +51,30 @@ assert.match(concept,/loadStarter/,'Concept Lab must consume starter context');
 assert.match(storyboard,/Continuity Kit/,'Storyboard must teach cross-shot continuity');
 assert.match(storyboard,/Copy continuity anchor/,'Continuity anchor must be reusable');
 assert.match(toolkit,/minimum viable stack/i,'Toolkit must reduce model overload');
+// Tool Study Library: independent, source-linked catalogue rendered at runtime.
+const toolDataPath=path.join(root,'data/ai_tools.json');
+assert.ok(fs.existsSync(toolDataPath),'Tool Study Library data must exist');
+const toolData=JSON.parse(fs.readFileSync(toolDataPath,'utf8'));
+assert.ok(Array.isArray(toolData.tools),'Tool Study Library must expose a tools array');
+assert.ok(toolData.tools.length>=25,'Tool Study Library must cover at least 25 tools');
+const requiredToolFields=['id','name','maker','category','type','what','strengths','weak_at','best_for','access','level','url','special'];
+const toolTypes=new Set(['t2v','i2v','both','image','avatar','motion','editor']);
+const accessTypes=new Set(['free','freemium','paid','open_source']);
+const levels=new Set(['beginner','intermediate','advanced']);
+const toolIds=new Set();
+for(const tool of toolData.tools){
+  for(const field of requiredToolFields) assert.ok(Object.hasOwn(tool,field),`${tool.id||'tool'} missing ${field}`);
+  assert.ok(!toolIds.has(tool.id),`duplicate AI tool id ${tool.id}`);toolIds.add(tool.id);
+  assert.ok(toolTypes.has(tool.type),`${tool.id} has invalid type`);
+  assert.ok(accessTypes.has(tool.access),`${tool.id} has invalid access`);
+  assert.ok(levels.has(tool.level),`${tool.id} has invalid level`);
+  assert.ok(Array.isArray(tool.strengths)&&tool.strengths.length,`${tool.id} needs strengths`);
+  assert.ok(Array.isArray(tool.weak_at)&&tool.weak_at.length,`${tool.id} needs weak_at`);
+  assert.match(tool.url,/^https:\/\//,`${tool.id} needs an official HTTPS source`);
+}
+assert.match(toolkit,/fetch\('data\/ai_tools\.json'\)/,'toolkit.html must render from the JSON catalogue');
+assert.match(toolkit,/prefers-reduced-motion:\s*reduce/,'toolkit motion must respect reduced-motion preferences');
+assert.doesNotMatch(JSON.stringify(toolData),/[가-힣]/,'Tool Study Library data must be English');
 for(const file of ['research/ai_pain_points.md','research/competitive_scan.md','research/win_audit.md']){
   const research=fs.readFileSync(path.join(root,file),'utf8');
   assert.match(research,/https:\/\//,`${file} must contain real source URLs`);
