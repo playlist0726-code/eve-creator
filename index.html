@@ -3,147 +3,287 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E.V.E Creator — One-Person Film Copilot</title>
+  <title>E.V.E Creator — Learn to make films with AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --bg:#0d0d0d;--surface:#131313;--card:#1a1a1a;--border:#272727;
-      --gold:#c9a227;--gold-dim:#7a6118;--gold-lite:#e8bc3a;
-      --text:#e4e4e4;--muted:#5a5a5a;--dim:#8a8a8a;
+      --bg:#0b0910;--bg2:#0e0b17;--surface:#161320;--card:#1a1626;--card2:#221c31;
+      --border:#2b2540;--border2:#3b3355;
+      --txt:#eceaf2;--muted:#9a94ad;--dim:#c3bdd4;
+      --gold:#f2c14e;--gold2:#ffdd80;--iris:#8b7bff;--iris2:#a898ff;--pink:#ff5da2;--coral:#ff7a59;--mint:#4fd1a5;--sky:#5bc0ff;
+      --grad:linear-gradient(100deg,var(--iris),var(--pink) 52%,var(--gold));
+      --display:'Fraunces',Georgia,serif;--sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     }
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-
-    /* site nav */
-    .site-nav{display:flex;align-items:center;gap:4px;padding:14px 44px;border-bottom:1px solid var(--border);background:var(--surface);position:sticky;top:0;z-index:10}
-    .site-nav .brand{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;margin-right:auto}
-    .site-nav a{font-size:12.5px;color:var(--dim);text-decoration:none;padding:7px 14px;border-radius:100px;transition:all .14s}
-    .site-nav a:hover{color:#fff;background:#1e1e1e}
-    .site-nav a.on{color:var(--gold);background:rgba(201,162,39,.1)}
-
-    .hero{padding:64px 44px 40px;max-width:900px}
-    .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px}
-    h1{font-size:46px;font-weight:800;letter-spacing:-1px;color:#fff;line-height:1.08;margin-bottom:16px}
-    .lead{font-size:17px;color:var(--dim);line-height:1.6;max-width:680px}
-    .lead b{color:var(--text)}
-
-    .section-lab{margin:14px 44px 16px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
-
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden;line-height:1.5}
+    /* ambient background */
+    .aura{position:fixed;inset:0;z-index:-2;overflow:hidden;background:radial-gradient(1200px 700px at 78% -8%,rgba(139,123,255,.20),transparent 60%),radial-gradient(1000px 620px at 6% 4%,rgba(255,93,162,.14),transparent 55%),radial-gradient(900px 700px at 92% 96%,rgba(242,193,78,.12),transparent 55%),var(--bg)}
+    .aura::before{content:"";position:absolute;width:60vw;height:60vw;left:-10vw;top:20vh;background:conic-gradient(from 120deg,rgba(139,123,255,.16),rgba(255,93,162,.10),rgba(242,193,78,.08),rgba(139,123,255,.16));filter:blur(90px);border-radius:50%;animation:float1 22s ease-in-out infinite}
+    @keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(8vw,6vh) scale(1.12)}}
+    .grain{position:fixed;inset:0;z-index:-1;opacity:.5;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E")}
+    /* stepper */
+    .eve-topbar{display:flex;align-items:center;gap:16px;padding:14px 40px;background:rgba(14,11,23,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:30;overflow-x:auto}
+    .eve-topbar .eb{font-family:var(--display);font-size:17px;font-weight:900;letter-spacing:-.2px;color:#fff;white-space:nowrap}
+    .eve-topbar .eb i{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .eve-steps{display:flex;align-items:center;gap:0;margin-left:auto}
+    .eve-steps .ps{display:flex;align-items:center;gap:7px;text-decoration:none;white-space:nowrap;padding:2px}
+    .eve-steps .pn{width:23px;height:23px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;border:1.5px solid var(--border2);color:var(--muted);background:#161320}
+    .eve-steps .pl{font-size:12px;color:var(--muted);font-weight:600}
+    .eve-steps .ps.cur .pn{background:var(--grad);border-color:transparent;color:#fff}
+    .eve-steps .ps.cur .pl{color:#fff}
+    .eve-steps .pline{width:20px;height:1.5px;background:var(--border);margin:0 7px}
+    @media(max-width:900px){.eve-steps .pl{display:none}.eve-topbar{padding:12px 20px}}
+    .site-nav{display:none}
+    /* layout */
+    section{position:relative}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 40px}
+    @media(max-width:720px){.wrap{padding:0 22px}}
+    .kicker{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--iris2);background:rgba(139,123,255,.1);border:1px solid rgba(139,123,255,.28);padding:7px 15px;border-radius:100px}
+    .kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--pink);box-shadow:0 0 10px var(--pink)}
+    .eyebrow{font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+    /* hero */
+    .hero{padding:70px 0 40px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+    h1{font-family:var(--display);font-weight:900;font-size:60px;line-height:1.02;letter-spacing:-1.5px;color:#fff;margin:20px 0 20px}
+    h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    @media(max-width:900px){h1{font-size:44px}}
+    .lead{font-size:18px;line-height:1.62;color:var(--dim);max-width:560px}
+    .lead b{color:#fff;font-weight:600}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:15px;font-weight:700;text-decoration:none;border:none;cursor:pointer;border-radius:100px;padding:14px 26px;transition:transform .16s,box-shadow .16s,background .16s}
+    .btn-primary{background:var(--grad);color:#120c1c;font-weight:800;box-shadow:0 10px 30px rgba(139,123,255,.34)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(255,93,162,.4)}
+    .btn-ghost{background:rgba(255,255,255,.03);color:var(--txt);border:1px solid var(--border2)}
+    .btn-ghost:hover{border-color:var(--iris2);transform:translateY(-2px)}
+    .trust{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:26px;font-size:12.5px;color:var(--muted)}
+    .trust .tb{display:inline-flex;align-items:center;gap:7px}
+    .trust b{color:var(--dim);font-weight:600}
+    .badge-mini{font-size:10px;font-weight:800;letter-spacing:.4px;padding:4px 10px;border-radius:100px;border:1px solid var(--border2)}
+    .b-gpt{color:var(--sky);border-color:rgba(91,192,255,.4);background:rgba(91,192,255,.08)}
+    .b-codex{color:var(--pink);border-color:rgba(255,93,162,.4);background:rgba(255,93,162,.08)}
+    .b-proof{color:var(--mint);border-color:rgba(79,209,165,.4);background:rgba(79,209,165,.08)}
+    /* hero card mock */
+    .room-mock{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--border2);border-radius:22px;padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+    .room-mock .rh{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+    .room-mock .rh .t{font-family:var(--display);font-weight:700;font-size:16px;color:#fff}
+    .room-mock .rh .s{font-size:11px;color:var(--mint);font-weight:700}
+    .crew-row{display:flex;gap:8px;margin-bottom:16px}
+    .cm{flex:1;text-align:center}
+    .cm .av{width:100%;aspect-ratio:1;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#120c1c;margin-bottom:5px}
+    .cm .cl{font-size:8.5px;color:var(--muted);letter-spacing:.3px}
+    .scoremini{margin-top:4px}
+    .scoremini .sl{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:6px}
+    .scoremini .sl b{color:var(--mint)}
+    .track{height:8px;background:#100d18;border-radius:5px;overflow:hidden}
+    .track span{display:block;height:100%;width:0;background:var(--grad);border-radius:5px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+    .mock-note{font-size:11px;color:var(--muted);margin-top:14px;line-height:1.5}
+    /* floating learn chips */
+    .learnchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px;max-width:560px}
+    .learnchips .lc-label{width:100%;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+    .teach{font-size:12px;font-weight:600;padding:7px 13px;border-radius:100px;background:rgba(255,255,255,.04);border:1px solid var(--border2);color:var(--dim);cursor:help;transition:transform .14s,border-color .14s,background .14s}
+    .teach:hover,.teach:focus{transform:translateY(-2px);border-color:var(--iris2);background:rgba(139,123,255,.12);color:#fff;outline:none}
+    /* section heading */
+    .sec{padding:64px 0}
+    .sec-head{max-width:640px;margin-bottom:34px}
+    .sec-head h2{font-family:var(--display);font-weight:900;font-size:38px;line-height:1.1;letter-spacing:-.6px;color:#fff}
+    .sec-head p{font-size:16px;color:var(--dim);margin-top:12px;line-height:1.6}
+    /* audience cards */
+    .aud{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media(max-width:820px){.aud{grid-template-columns:1fr}}
+    .acard{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px;position:relative;overflow:hidden;transition:transform .18s,border-color .18s}
+    .acard:hover{transform:translateY(-4px);border-color:var(--border2)}
+    .acard .ic{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:25px;margin-bottom:16px}
+    .acard h3{font-family:var(--display);font-size:21px;font-weight:700;color:#fff;margin-bottom:9px}
+    .acard p{font-size:13.5px;color:var(--dim);line-height:1.6}
+    .acard .tag{display:inline-block;margin-top:14px;font-size:11px;font-weight:700;letter-spacing:.4px;padding:5px 11px;border-radius:100px}
+    .a1 .ic{background:rgba(139,123,255,.16);border:1px solid rgba(139,123,255,.35)}.a1 .tag{color:var(--iris2);background:rgba(139,123,255,.12)}
+    .a2 .ic{background:rgba(255,93,162,.16);border:1px solid rgba(255,93,162,.35)}.a2 .tag{color:var(--pink);background:rgba(255,93,162,.12)}
+    .a3 .ic{background:rgba(242,193,78,.16);border:1px solid rgba(242,193,78,.35)}.a3 .tag{color:var(--gold);background:rgba(242,193,78,.12)}
+    /* creator's room showcase */
+    .showcase{background:linear-gradient(150deg,#1b1430,#141020 60%);border:1px solid var(--border2);border-radius:26px;padding:40px;position:relative;overflow:hidden}
+    .showcase::after{content:"";position:absolute;width:420px;height:420px;right:-120px;top:-140px;background:radial-gradient(circle,rgba(139,123,255,.22),transparent 60%);pointer-events:none}
+    .showcase .in-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;position:relative;z-index:1}
+    @media(max-width:820px){.showcase{padding:28px}.showcase .in-grid{grid-template-columns:1fr;gap:24px}}
+    .showcase h2{font-family:var(--display);font-size:32px;font-weight:900;color:#fff;line-height:1.12;letter-spacing:-.5px;margin-bottom:14px}
+    .showcase p{font-size:15px;color:var(--dim);line-height:1.65;margin-bottom:16px}
+    .showcase p b{color:#fff}
+    .crewgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .crewcard{background:rgba(0,0,0,.28);border:1px solid var(--border);border-radius:14px;padding:13px 14px}
+    .crewcard .top{display:flex;align-items:center;gap:9px;margin-bottom:6px}
+    .crewcard .mono{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#120c1c}
+    .crewcard .nm{font-size:12.5px;font-weight:700;color:#fff}
+    .crewcard .rl{font-size:11px;color:var(--muted);line-height:1.45}
     /* pipeline */
-    .pipe{display:flex;gap:12px;padding:0 44px;overflow-x:auto;flex-wrap:wrap}
-    .stage{flex:1 1 200px;min-width:190px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 18px 16px;position:relative}
-    .stage .num{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
-    .stage h3{font-size:16px;color:#fff;font-weight:700;margin-bottom:6px}
-    .stage p{font-size:12.5px;color:var(--dim);line-height:1.55}
-    .stage .tag{display:inline-block;margin-top:10px;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);padding:2px 8px;border-radius:4px}
-
-    /* tool cards */
-    .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;padding:0 44px;margin-top:8px}
-    .kb{display:flex;flex-wrap:wrap;gap:8px;padding:0 44px}
-    .kb .kbi{font-size:11.5px;color:var(--dim);background:var(--card);border:1px solid var(--border);border-radius:100px;padding:6px 13px}
-    .kb .kbi b{color:var(--gold-lite);font-weight:600}
-    .tool{display:block;text-decoration:none;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;transition:border-color .18s,transform .18s}
-    .tool:hover{border-color:var(--gold);transform:translateY(-3px)}
-    .tool .k{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-    .tool h2{font-size:22px;color:#fff;font-weight:700;margin-bottom:8px}
-    .tool p{font-size:13px;color:var(--dim);line-height:1.6;margin-bottom:14px}
-    .tool .go{font-size:13px;color:var(--gold-lite);font-weight:600}
-
-    /* status */
-    .status{display:flex;gap:26px;flex-wrap:wrap;padding:22px 26px;margin:0 44px;background:#101010;border:1px solid var(--border);border-radius:14px}
-    .stat .n{font-size:24px;font-weight:800;color:var(--gold-lite);line-height:1}
-    .stat .l{font-size:11px;color:var(--muted);margin-top:5px}
-    .intake{margin:0 44px 28px;max-width:850px;background:var(--card);border:1px solid var(--gold-dim);border-radius:16px;padding:24px}.intake-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.intake label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:7px}.intake select{width:100%;background:#101010;color:var(--text);border:1px solid var(--border);border-radius:9px;padding:11px;font:inherit}.contest-card{margin-top:16px;padding:14px;border:1px solid var(--border);border-radius:10px;color:var(--dim);font-size:12px;line-height:1.55}.contest-card b{color:#fff}.start{margin-top:18px;background:var(--gold);color:#080808;border:0;border-radius:100px;padding:12px 20px;font-weight:800;cursor:pointer}.error{color:#d9613a;font-size:12px;margin-top:10px}
-
-    /* creator's room differentiator band */
-    .room-band{display:grid;grid-template-columns:1.5fr 1fr;gap:0;margin:0 44px 8px;text-decoration:none;background:linear-gradient(135deg,#17140c,#131313 55%);border:1px solid var(--gold-dim);border-radius:18px;overflow:hidden;transition:border-color .18s,transform .18s}
-    .room-band:hover{border-color:var(--gold);transform:translateY(-2px)}
-    .room-copy{padding:26px 28px}
-    .room-eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:10px}
-    .room-copy h2{font-size:23px;color:#fff;font-weight:800;line-height:1.2;letter-spacing:-.3px;margin-bottom:10px}
-    .room-copy p{font-size:13.5px;color:var(--dim);line-height:1.65;margin-bottom:14px}
-    .room-copy p b{color:var(--text)}
-    .room-copy .go{font-size:13.5px;color:var(--gold-lite);font-weight:700}
-    .room-proof{padding:26px 28px;border-left:1px solid var(--border);background:rgba(0,0,0,.22);display:flex;flex-direction:column;justify-content:center}
-    .proof-n{font-size:38px;font-weight:800;color:var(--good);line-height:1;letter-spacing:-1px}
-    .proof-n span{font-size:15px;color:var(--muted);font-weight:600;margin:0 4px}
-    .proof-l{font-size:11.5px;color:var(--dim);line-height:1.55;margin-top:10px}
-    .crew-dots{display:flex;gap:6px;margin-top:16px}
-    .crew-dots span{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#0d0d0d}
-    @media(max-width:720px){.room-band{grid-template-columns:1fr}.room-proof{border-left:0;border-top:1px solid var(--border)}}
-    footer{margin:44px 44px 0;border-top:1px solid var(--border);padding:24px 0 60px;font-size:12px;color:var(--muted);line-height:1.7}
+    .pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    @media(max-width:820px){.pipe{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.pipe{grid-template-columns:1fr}}
+    .stage{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;transition:transform .16s,border-color .16s}
+    .stage:hover{transform:translateY(-3px);border-color:var(--border2)}
+    .stage .num{font-family:var(--display);font-size:13px;font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+    .stage h3{font-size:15px;color:#fff;font-weight:700;margin-bottom:6px}
+    .stage p{font-size:12px;color:var(--muted);line-height:1.55}
+    .stage.star{border-color:rgba(139,123,255,.5);background:linear-gradient(160deg,rgba(139,123,255,.1),var(--card))}
+    /* learn strip */
+    .learnbox{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:30px}
+    .learnbox .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px}
+    /* KB */
+    .kb{display:flex;flex-wrap:wrap;gap:9px}
+    .kbi{font-size:12.5px;color:var(--dim);background:var(--card);border:1px solid var(--border);border-radius:100px;padding:8px 15px}
+    .kbi b{color:var(--gold2);font-weight:600}
+    /* proof stats */
+    .proof{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    @media(max-width:720px){.proof{grid-template-columns:1fr 1fr}}
+    .pstat{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;text-align:center}
+    .pstat .n{font-family:var(--display);font-size:34px;font-weight:900;color:#fff;line-height:1}
+    .pstat.hl .n{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .pstat .l{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+    /* intake */
+    .intake{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--border2);border-radius:24px;padding:34px}
+    .intake h2{font-family:var(--display);font-size:30px;font-weight:900;color:#fff;margin-bottom:8px}
+    .intake .isub{font-size:14px;color:var(--dim);margin-bottom:22px}
+    .intake-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:620px){.intake-grid{grid-template-columns:1fr}}
+    .intake label{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:8px}
+    .intake select{width:100%;background:#100d18;color:var(--txt);border:1px solid var(--border2);border-radius:12px;padding:13px;font:inherit}
+    .intake select:focus{outline:none;border-color:var(--iris2)}
+    .contest-card{margin-top:16px;padding:16px;border:1px solid var(--border);border-radius:12px;color:var(--dim);font-size:12.5px;line-height:1.6;background:rgba(0,0,0,.2)}
+    .contest-card b{color:#fff}
+    .start{margin-top:22px;background:var(--grad);color:#120c1c;border:0;border-radius:100px;padding:15px 30px;font:800 15px var(--sans);cursor:pointer;box-shadow:0 12px 34px rgba(139,123,255,.32)}
+    .start:hover{transform:translateY(-2px)}
+    .error{color:var(--coral);font-size:12.5px;margin-top:12px}
+    footer{border-top:1px solid var(--border);margin-top:40px;padding:34px 0 70px;font-size:12.5px;color:var(--muted);line-height:1.8}
     footer b{color:var(--dim)}
-    @media(max-width:720px){.tools{grid-template-columns:1fr}h1{font-size:34px}.hero{padding:44px 24px 30px}.site-nav,.section-lab,.pipe,.tools,.status,.room-band,.intake,footer{padding-left:24px;padding-right:24px;margin-left:0;margin-right:0}.room-band{padding:0}}
+    /* reveal */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.in{opacity:1;transform:none}
   </style>
 </head>
 <body>
-<!-- EVE guided pipeline bar (injected) -->
-<style>
-.site-nav{display:none!important}
-.eve-topbar{display:flex;align-items:center;gap:14px;padding:12px 44px;background:#131313;border-bottom:1px solid #272727;position:sticky;top:0;z-index:30;overflow-x:auto}
-.eve-topbar .eb{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;white-space:nowrap}
-.eve-steps{display:flex;align-items:center;gap:0}
-.eve-steps .ps{display:flex;align-items:center;gap:7px;text-decoration:none;white-space:nowrap;padding:2px}
-.eve-steps .pn{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;border:1.5px solid #33343d;color:#8a8a8a;background:#141419}
-.eve-steps .pl{font-size:12px;color:#8a8a8a;font-weight:600}
-.eve-steps .ps.done .pn{border-color:#c9a227;color:#c9a227}
-.eve-steps .ps.done .pl{color:#c7c7c7}
-.eve-steps .ps.cur .pn{background:#c9a227;border-color:#c9a227;color:#0d0d0d}
-.eve-steps .ps.cur .pl{color:#fff}
-.eve-steps .pline{width:22px;height:1.5px;background:#2a2a30;margin:0 7px}
-.eve-cont-wrap{position:sticky;bottom:0;padding:16px 44px;background:linear-gradient(180deg,rgba(13,13,13,0),#0d0d0d 45%);z-index:25}
-.eve-cont{display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;background:#c9a227;color:#0d0d0d;border-radius:100px;padding:11px 22px;font-weight:800;font-size:14px;max-width:540px;margin:0 auto;box-shadow:0 6px 24px rgba(0,0,0,.4)}
-.eve-cont small{font-weight:600;font-size:10.5px;opacity:.78}
-@media(max-width:860px){.eve-topbar,.eve-cont-wrap{padding-left:18px;padding-right:18px}.eve-steps .pl{display:none}}
-</style>
-<div class="eve-topbar"><span class="eb">E.V.E Creator</span><div class="eve-steps" id="eve-steps"></div></div>
-<script>
-(function(){
- var S=[{n:0,l:'Intake',f:'index.html'},{n:1,l:'Concept',f:'concept_lab.html'},{n:2,l:"Creator's Room",f:'creators_room.html'},{n:3,l:'Shot Design',f:'shotseed.html'},{n:4,l:'Storyboard',f:'storyboard.html'}];
- var H=['Choose format & target contest','Validate the idea & build the blueprint','Let the AI film crew critique & improve it','Direct the shots','Review the full storyboard'];
- var f=(location.pathname.split('/').pop()||'index.html').toLowerCase(); if(f==='')f='index.html';
- var cur=0; for(var i=0;i<S.length;i++){if(S[i].f===f)cur=i;}
- var d=[]; try{d=JSON.parse(localStorage.getItem('eve_progress')||'[]')||[];}catch(e){}
- if(d.indexOf(cur)<0){d.push(cur);try{localStorage.setItem('eve_progress',JSON.stringify(d));}catch(e){}}
- var h='';
- for(var j=0;j<S.length;j++){var st=j===cur?'cur':(d.indexOf(j)>=0?'done':'');var b=(st==='done')?'✓':S[j].n;h+='<a class="ps '+st+'" href="'+S[j].f+'"><span class="pn">'+b+'</span><span class="pl">'+S[j].l+'</span></a>';if(j<S.length-1)h+='<span class="pline"></span>';}
- var e=document.getElementById('eve-steps'); if(e)e.innerHTML=h;
- if(cur<S.length-1){var n=S[cur+1];var w=document.createElement('div');w.className='eve-cont-wrap';w.innerHTML='<a class="eve-cont" href="'+n.f+'">Continue to Step '+n.n+' · '+n.l+' →<small>'+H[cur+1]+'</small></a>';document.body.appendChild(w);}
-})();
-</script>
+  <div class="aura"></div><div class="grain"></div>
+
+  <div class="eve-topbar"><span class="eb">E.V.E <i>Creator</i></span><div class="eve-steps" id="eve-steps"></div></div>
   <nav class="site-nav">
-    <span class="brand">E.V.E Creator</span>
-    <a href="index.html" class="on">0 · Intake</a>
+    <a href="index.html">0 · Intake</a>
     <a href="concept_lab.html">1 · Concept</a>
     <a href="creators_room.html">2 · Creator's Room</a>
     <a href="shotseed.html">3 · Shot Design</a>
     <a href="storyboard.html">4 · Storyboard</a>
   </nav>
 
-  <div class="hero">
-    <div class="eyebrow">Learn to Direct with AI · For People Who Never Studied Film</div>
-    <h1>Never studied film?<br>Direct one anyway — and learn how.</h1>
-    <p class="lead">E.V.E Creator is a <b>shared learning platform</b> for anyone curious about AI film and AI art. Bring a mood, genre, or scene, and an <b>AI film crew</b> designs the story, structure, storyboard, and shot-level prompts — <b>teaching you why every choice works</b>, grounded in frame-level analysis of master animation. Tap any craft term to learn it. Then take the plan and <b>make the film yourself</b>. You keep authorship; E.V.E gives you the crew and the film education.</p>
-  </div>
-
-  <div class="section-lab">Why E.V.E is different</div>
-  <a class="room-band" href="creators_room.html">
-    <div class="room-copy">
-      <div class="room-eyebrow">The Creator's Room</div>
-      <h2>Other tools hand you one draft. E.V.E gives you a film crew.</h2>
-      <p>A single idea becomes a blueprint — then a five-role AI crew (Director · Writer · Cinematographer · Editor · Test Audience) <b>critiques it against analyzed film craft, applies concrete fixes, and re-scores it</b>. You watch the film measurably improve — and <b>every note teaches a real film principle you can tap to learn</b>. Powered by GPT-5.6, built with Codex.</p>
-      <span class="go">Enter the Creator's Room →</span>
+  <!-- HERO -->
+  <section class="hero"><div class="wrap"><div class="hero-grid">
+    <div>
+      <span class="kicker"><span class="dot"></span>OpenAI Build Week · Education</span>
+      <h1>Never studied film?<br><span class="g">Make one anyway.</span></h1>
+      <p class="lead">E.V.E Creator is a playful learning studio for anyone curious about <b>AI film and AI art</b>. Bring an idea — an <b>AI film crew</b> designs the story, shots, and prompts, <b>teaching you why every choice works</b>. Then you make it yourself. For creators, for kids, for film students filling the gaps.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#start">Start creating — it's free →</a>
+        <a class="btn btn-ghost" href="creators_room.html">See the AI crew in action</a>
+      </div>
+      <div class="trust">
+        <span class="tb badge-mini b-gpt">GPT-5.6</span>
+        <span class="tb badge-mini b-codex">Built with Codex</span>
+        <span class="tb badge-mini b-proof">Grounded 25 vs 10</span>
+      </div>
+      <div class="learnchips" id="heroChips"><span class="lc-label">Tap any term to learn it</span></div>
     </div>
-    <div class="room-proof">
-      <div class="proof-n">25 <span>vs</span> 10</div>
-      <div class="proof-l">Grounded vs naive blueprint, scored 25/25 against 10/25 in our evaluation — the grounding is measured, not claimed.</div>
-      <div class="crew-dots">
-        <span style="background:#c9a227">DR</span><span style="background:#6ea8fe">WR</span><span style="background:#4caf7d">DP</span><span style="background:#d98b3a">ED</span><span style="background:#c86ad9">TA</span>
+    <div class="reveal">
+      <div class="room-mock">
+        <div class="rh"><span class="t">The Creator's Room</span><span class="s">▲ ready to shoot</span></div>
+        <div class="crew-row">
+          <div class="cm"><div class="av" style="background:linear-gradient(145deg,#f2c14e,#ffdd80)">DR</div><div class="cl">Director</div></div>
+          <div class="cm"><div class="av" style="background:linear-gradient(145deg,#5bc0ff,#8b7bff)">WR</div><div class="cl">Writer</div></div>
+          <div class="cm"><div class="av" style="background:linear-gradient(145deg,#4fd1a5,#5bc0ff)">DP</div><div class="cl">Camera</div></div>
+          <div class="cm"><div class="av" style="background:linear-gradient(145deg,#ff7a59,#ff5da2)">ED</div><div class="cl">Editor</div></div>
+          <div class="cm"><div class="av" style="background:linear-gradient(145deg,#ff5da2,#8b7bff)">TA</div><div class="cl">Audience</div></div>
+        </div>
+        <div class="scoremini">
+          <div class="sl"><span>Hit-potential after the crew</span><b>61 → <span id="mockScore">61</span></b></div>
+          <div class="track"><span id="mockBar"></span></div>
+        </div>
+        <div class="mock-note">Five AI specialists critique your draft, apply concrete before/after fixes, and re-score it — and explain the craft as they go.</div>
       </div>
     </div>
-  </a>
+  </div></div></section>
 
-  <div class="section-lab">Step 0 · Intake</div>
-  <section class="intake">
+  <!-- WHO IT'S FOR -->
+  <section class="sec"><div class="wrap">
+    <div class="sec-head reveal"><h2>One studio, three kinds of creators</h2><p>Whether you're making your first video, playing to learn, or leveling up film-school work — E.V.E meets you where you are.</p></div>
+    <div class="aud">
+      <div class="acard a1 reveal"><div class="ic">🎬</div><h3>AI-video makers</h3><p>Want to make something with AI but don't know where to start? Turn a rough idea into a full shot plan with ready-to-copy image and video prompts — and the tools to generate each shot.</p><span class="tag">Idea → shot plan → make it</span></div>
+      <div class="acard a2 reveal"><div class="ic">🎨</div><h3>Kids & art learners</h3><p>A playground for creativity. Try ideas, watch a story take shape, and tap any technique to learn what it means — learning film and art by playing, not by lectures.</p><span class="tag">Play · create · learn</span></div>
+      <div class="acard a3 reveal"><div class="ic">🎓</div><h3>Film & media students</h3><p>Fill the gaps in your projects — CG, VFX, and shots you can't afford to build — with the right AI tools, plus grounded craft knowledge and a working map of the 2026 AI toolchain.</p><span class="tag">Fill CG/VFX · learn the tools</span></div>
+    </div>
+  </div></section>
+
+  <!-- CREATOR'S ROOM SHOWCASE -->
+  <section class="sec" style="padding-top:20px"><div class="wrap">
+    <a href="creators_room.html" style="text-decoration:none;color:inherit"><div class="showcase reveal"><div class="in-grid">
+      <div>
+        <span class="eyebrow">The differentiator</span>
+        <h2>Other tools give you one draft.<br>E.V.E gives you a crew that argues.</h2>
+        <p>A single idea becomes a blueprint — then a five-role AI crew critiques it against analyzed film craft, applies concrete fixes, and <b>re-scores it so you watch the film measurably improve</b>. Every note teaches a real principle you can tap to learn.</p>
+        <span class="btn btn-primary" style="pointer-events:none">Enter the Creator's Room →</span>
+      </div>
+      <div class="crewgrid">
+        <div class="crewcard"><div class="top"><div class="mono" style="background:linear-gradient(145deg,#f2c14e,#ffdd80)">DR</div><div class="nm">Director</div></div><div class="rl">"Make the ending mean more."</div></div>
+        <div class="crewcard"><div class="top"><div class="mono" style="background:linear-gradient(145deg,#5bc0ff,#8b7bff)">WR</div><div class="nm">Writer</div></div><div class="rl">"Plant the payoff harder."</div></div>
+        <div class="crewcard"><div class="top"><div class="mono" style="background:linear-gradient(145deg,#4fd1a5,#5bc0ff)">DP</div><div class="nm">Camera</div></div><div class="rl">"Give the climax a moving camera."</div></div>
+        <div class="crewcard"><div class="top"><div class="mono" style="background:linear-gradient(145deg,#ff7a59,#ff5da2)">ED</div><div class="nm">Editor</div></div><div class="rl">"The middle plateaus — step it up."</div></div>
+      </div>
+    </div></div></a>
+  </div></section>
+
+  <!-- HOW IT WORKS -->
+  <section class="sec"><div class="wrap">
+    <div class="sec-head reveal"><h2>How it works</h2><p>A guided five-step pipeline. Each step hands its result to the next — you're never staring at a blank page.</p></div>
+    <div class="pipe">
+      <a class="stage reveal" href="#start" style="text-decoration:none"><div class="num">01</div><h3>Intake</h3><p>Pick your format and (optionally) a target contest.</p></a>
+      <a class="stage reveal" href="concept_lab.html" style="text-decoration:none"><div class="num">02</div><h3>Concept Lab</h3><p>GPT-5.6 drafts a grounded five-act blueprint with hit-potential.</p></a>
+      <a class="stage star reveal" href="creators_room.html" style="text-decoration:none"><div class="num">03</div><h3>Creator's Room</h3><p>A 5-role AI crew critiques, fixes, and re-scores the film.</p></a>
+      <a class="stage reveal" href="shotseed.html" style="text-decoration:none"><div class="num">04</div><h3>Shot Design</h3><p>Match shots to analyzed craft; get T2I / I2V prompts + tools.</p></a>
+      <a class="stage reveal" href="storyboard.html" style="text-decoration:none"><div class="num">05</div><h3>Storyboard</h3><p>The tension curve and full shot board — then you generate it.</p></a>
+    </div>
+  </div></section>
+
+  <!-- LEARN WHILE YOU BUILD -->
+  <section class="sec"><div class="wrap"><div class="learnbox reveal">
+    <div class="sec-head" style="margin-bottom:14px"><h2 style="font-size:30px">Learn the craft while you build</h2><p>Every technique E.V.E uses is tap-to-learn — plain-language, no film degree required. Try these:</p></div>
+    <div class="chips" id="learnChips"></div>
+  </div></div></section>
+
+  <!-- KB -->
+  <section class="sec" style="padding-top:20px"><div class="wrap">
+    <div class="sec-head reveal"><h2 style="font-size:28px">Grounded in real film knowledge</h2><p>Not AI-invented advice — a researched knowledge base plus frame-by-frame analysis of master animation.</p></div>
+    <div class="kb reveal">
+      <span class="kbi"><b>Story structures</b> · 6 frameworks</span>
+      <span class="kbi"><b>Cinematography</b> · shots · angles · moves</span>
+      <span class="kbi"><b>Mise-en-scène</b> · lighting · color · staging</span>
+      <span class="kbi"><b>Genres</b> · 6</span>
+      <span class="kbi"><b>Director styles</b> · 9 masters</span>
+      <span class="kbi"><b>Success factors</b> · researched predictors</span>
+      <span class="kbi"><b>AI toolchain</b> · 2026 models + routing</span>
+    </div>
+  </div></section>
+
+  <!-- PROOF -->
+  <section class="sec" style="padding-top:20px"><div class="wrap">
+    <div class="proof">
+      <div class="pstat hl reveal"><div class="n">25<span style="font-size:18px;color:var(--muted)">vs</span>10</div><div class="l">Grounded vs naive blueprint, scored in our evaluation</div></div>
+      <div class="pstat reveal"><div class="n">111</div><div class="l">Craft techniques, each tap-to-learn</div></div>
+      <div class="pstat reveal"><div class="n">5</div><div class="l">AI crew roles critiquing your film</div></div>
+      <div class="pstat reveal"><div class="n">2D·3D</div><div class="l">Animation, grounded in analyzed master shots</div></div>
+    </div>
+  </div></section>
+
+  <!-- INTAKE / START -->
+  <section class="sec" id="start"><div class="wrap"><div class="intake reveal">
+    <h2>Start your film</h2>
+    <p class="isub">Two quick choices, then E.V.E builds with you. Free to try — no account needed.</p>
     <div class="intake-grid">
       <div><label for="productionType">What are you making?</label><select id="productionType"><option value="animation">Animation</option><option value="live_action">Live-action</option></select></div>
       <div><label for="targetType">What is the target?</label><select id="targetType"><option value="personal">Personal project</option><option value="contest">A specific contest</option></select></div>
@@ -151,71 +291,51 @@
     <div id="contestWrap" style="display:none;margin-top:16px"><label for="contestSelect">Curated contest</label><select id="contestSelect"></select><div class="contest-card" id="contestCard"></div></div>
     <div class="error" id="intakeError"></div>
     <button class="start" onclick="startPipeline()">Continue to Step 1 · Concept →</button>
-  </section>
+  </div></div></section>
 
-  <div class="section-lab">System Pipeline</div>
-  <div class="pipe">
-    <div class="stage"><div class="num">01</div><h3>Idea</h3><p>Enter the mood, genre, scene, and story premise.</p><span class="tag">Input</span></div>
-    <div class="stage"><div class="num">02</div><h3>Grounded Blueprint</h3><p>GPT-5.6 drafts a five-act blueprint grounded in ShotSeed craft data (Layer 1 shots + Layer 2 structure), across 2D and 3D.</p><span class="tag">Draft</span></div>
-    <div class="stage" style="border-color:var(--gold-dim)"><div class="num">03</div><h3>Creator's Room</h3><p>A five-role AI crew critiques the draft, applies before/after fixes, and re-scores it. The film measurably improves.</p><span class="tag">Critique loop</span></div>
-    <div class="stage"><div class="num">04</div><h3>Storyboard + Prompts</h3><p>Build the tension curve, shot board, and generation-ready T2I/I2V prompts.</p><span class="tag">Design</span></div>
-    <div class="stage"><div class="num">05</div><h3>Generate Externally</h3><p>The filmmaker uses the blueprint to generate images and video, with optional automation support.</p><span class="tag">Execute</span></div>
-  </div>
+  <footer><div class="wrap">
+    <p><b>E.V.E Creator</b> — a learn-to-direct studio powered by the <b>ShotSeed</b> craft engine, GPT-5.6, and Codex. Method: SCHEMA.md · SCHEMA_L2.md · Evaluation: evaluation/ · Architecture: ARCHITECTURE.md</p>
+    <p>Built &amp; analyzed by <b>Junsu (Michael) Kim</b> — AI filmmaker. For the OpenAI Build Week Challenge · Education track.</p>
+  </div></footer>
 
-  <div class="section-lab">Pipeline Preview</div>
-  <div class="tools">
-    <a class="tool" href="concept_lab.html">
-      <div class="k">Step 1 · Concept</div>
-      <h2>Concept Lab</h2>
-      <p>Validate an idea, score its potential with research-backed dimensions, and generate a GPT-5.6 director blueprint grounded in craft knowledge.</p>
-      <span class="go">Reached through the guided flow →</span>
-    </a>
-    <a class="tool" href="creators_room.html" style="border-color:var(--gold-dim)">
-      <div class="k">Step 2 · Creator's Room</div>
-      <h2>The Creator's Room</h2>
-      <p>A five-role AI film crew critiques the blueprint against analyzed craft, applies concrete before/after fixes, and re-scores it. The differentiator.</p>
-      <span class="go">Enter the room →</span>
-    </a>
-    <a class="tool" href="shotseed.html">
-      <div class="k">Step 3 · Shot Design</div>
-      <h2>ShotSeed</h2>
-      <p>Match a style or scene to analyzed shot data and receive T2I, I2V, and workflow recommendations, with 2D/3D filters and source-verification badges.</p>
-      <span class="go">Reached through the guided flow →</span>
-    </a>
-    <a class="tool" href="storyboard.html">
-      <div class="k">Step 4 · Storyboard</div>
-      <h2>Storyboard Sheet</h2>
-      <p>Design a storyboard through directorial thinking: twist mechanics, symbolic mise-en-scène, pacing, and shot-specific image prompts.</p>
-      <span class="go">Reached through the guided flow →</span>
-    </a>
-  </div>
-
-  <div class="section-lab">What You'll Learn · Grounded Knowledge Base</div>
-  <div class="kb">
-    <span class="kbi"><b>Story structures</b> · 6 frameworks</span>
-    <span class="kbi"><b>Cinematography</b> · shots·angles·moves·comp</span>
-    <span class="kbi"><b>Mise-en-scène</b> · lighting·color·staging</span>
-    <span class="kbi"><b>Genres</b> · 6</span>
-    <span class="kbi"><b>Director styles</b> · 9 masters</span>
-    <span class="kbi"><b>Success factors</b> · researched predictors</span>
-    <span class="kbi"><b>AI toolchain</b> · 2026 models + routing</span>
-  </div>
-
-  <div class="section-lab">System Status</div>
-  <div class="status">
-    <div class="stat"><div class="n">14</div><div class="l">Analyzed Shots (Layer 1)</div></div>
-    <div class="stat"><div class="n">2</div><div class="l">Frame-Analyzed Films</div></div>
-    <div class="stat"><div class="n">6</div><div class="l">Narrative Beats (Layer 2)</div></div>
-    <div class="stat"><div class="n">2D · 3D</div><div class="l">Animation Dimensions</div></div>
-    <div class="stat"><div class="n">25 vs 10</div><div class="l">Grounded vs Naive Evaluation</div></div>
-  </div>
-
-  <footer>
-    <p><b>E.V.E Creator</b> (formerly SceneForge), powered by the <b>ShotSeed</b> data engine. Method: SCHEMA.md · SCHEMA_L2.md / Evaluation: evaluation/ / Roadmap: RESEARCH_PLAN.md</p>
-    <p>Built &amp; analyzed by <b>Junsu (Michael) Kim</b> — AI Filmmaker</p>
-  </footer>
   <script src="js/eve-state.js"></script>
+  <script src="js/eve-glossary.js"></script>
   <script>
+    /* stepper */
+    (function(){
+      var S=[{n:0,l:'Intake',f:'index.html'},{n:1,l:'Concept',f:'concept_lab.html'},{n:2,l:"Creator's Room",f:'creators_room.html'},{n:3,l:'Shot Design',f:'shotseed.html'},{n:4,l:'Storyboard',f:'storyboard.html'}];
+      var f=(location.pathname.split('/').pop()||'index.html').toLowerCase();if(f==='')f='index.html';
+      var cur=0;for(var i=0;i<S.length;i++){if(S[i].f===f)cur=i;}
+      var d=[];try{d=JSON.parse(localStorage.getItem('eve_progress')||'[]')||[];}catch(e){}
+      if(d.indexOf(cur)<0){d.push(cur);try{localStorage.setItem('eve_progress',JSON.stringify(d));}catch(e){}}
+      var h='';for(var j=0;j<S.length;j++){var st=j===cur?'cur':'';h+='<a class="ps '+st+'" href="'+S[j].f+'"><span class="pn">'+S[j].n+'</span><span class="pl">'+S[j].l+'</span></a>';if(j<S.length-1)h+='<span class="pline"></span>';}
+      var e=document.getElementById('eve-steps');if(e)e.innerHTML=h;
+    })();
+
+    /* hero + learn chips (tap-to-learn via glossary) */
+    (function(){
+      var hero=['low_angle','golden_hour','match_cut','chiaroscuro','pixar_spine','negative_space'];
+      var learn=['dolly_in','rack_focus','complementary','kishotenketsu','silhouette','proxemics','montage','rule_of_thirds','high_angle','prop_as_symbol','fast_cutting','backlight_rim'];
+      var hc=document.getElementById('heroChips');
+      if(hc&&window.EVE_GLOSSARY_CHIP){hero.forEach(function(id){hc.insertAdjacentHTML('beforeend',EVE_GLOSSARY_CHIP(id,''));});}
+      var lc=document.getElementById('learnChips');
+      if(lc&&window.EVE_GLOSSARY_CHIP){learn.forEach(function(id){lc.insertAdjacentHTML('beforeend',EVE_GLOSSARY_CHIP(id,''));});}
+    })();
+
+    /* reveal on scroll */
+    (function(){
+      var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.14});
+      document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+    })();
+
+    /* animate the mock score when hero reveals */
+    (function(){
+      var bar=document.getElementById('mockBar'),num=document.getElementById('mockScore');
+      var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){bar.style.width='83%';var t0=null;function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1400);num.textContent=Math.round(61+(83-61)*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);io.disconnect();}});},{threshold:.5});
+      if(bar)io.observe(bar.closest('.room-mock'));
+    })();
+
+    /* intake logic */
     let contests=[];
     const target=document.getElementById('targetType'),select=document.getElementById('contestSelect');
     function deadline(value){return value==='see_site'?'See official site':value;}

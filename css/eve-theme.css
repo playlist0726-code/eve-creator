@@ -1,0 +1,19 @@
+/* eve-theme.css — shared premium palette + type, loaded AFTER each page's inline
+ * <style> so it re-skins the pipeline pages to match the home without touching layout.
+ * Only re-maps existing CSS variables + fonts; every page keeps its own structure. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --bg:#0b0910;--surface:#161320;--card:#1a1626;--border:#2b2540;
+  --gold:#f2c14e;--gold-dim:#b98f2e;--gold-lite:#ffdd80;
+  --text:#eceaf2;--muted:#8b8598;--dim:#c3bdd4;
+  --good:#4fd1a5;--warn:#f2c14e;--bad:#ff7a59;
+}
+
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+h1,h2,.story-title,.fn{font-family:'Fraunces',Georgia,serif;letter-spacing:-.3px}
+
+/* subtle ambient warmth so the flat black reads richer, matching the home */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(900px 560px at 88% -6%,rgba(139,123,255,.12),transparent 60%),
+             radial-gradient(760px 520px at 4% 2%,rgba(255,93,162,.08),transparent 55%)}
