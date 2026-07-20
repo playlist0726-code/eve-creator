@@ -10,6 +10,7 @@ const navTargets = [...nav.matchAll(/f:\s*'([^']+\.html)'/g)].map((m) => m[1]);
 const expectTabs = ['index.html', 'concept_lab.html', 'learn.html', 'toolkit.html', 'detector.html', 'community.html'];
 for (const t of expectTabs) assert.ok(navTargets.includes(t), `nav missing tab target ${t}`);
 for (const t of navTargets) assert.ok(fs.existsSync(path.join(root, t)), `nav links to missing ${t}`);
+assert.match(nav,/l:\s*'Footage Lab',\s*f:\s*'detector\.html'/,'Detector route must be visibly renamed Footage Lab without changing its target');
 
 // New platform pages: exist, English, valid scripts, load the shared nav + theme, links resolve.
 const newPages = ['learn.html', 'toolkit.html', 'detector.html', 'community.html'];
@@ -75,6 +76,20 @@ for(const tool of toolData.tools){
 assert.match(toolkit,/fetch\('data\/ai_tools\.json'\)/,'toolkit.html must render from the JSON catalogue');
 assert.match(toolkit,/prefers-reduced-motion:\s*reduce/,'toolkit motion must respect reduced-motion preferences');
 assert.doesNotMatch(JSON.stringify(toolData),/[가-힣]/,'Tool Study Library data must be English');
+// Footage Lab must remain private, local-only, and transparent about its limits.
+const detector=fs.readFileSync(path.join(root,'detector.html'),'utf8');
+assert.match(detector,/type="file"[^>]+accept="video\/\*"/,'Footage Lab needs a video file input');
+assert.match(detector,/<video[^>]+id="video"/,'Footage Lab needs a local analysis video element');
+assert.match(detector,/<canvas[^>]+id="canvas"/,'Footage Lab needs a canvas for frame analysis');
+assert.match(detector,/URL\.createObjectURL\(file\)/,'Footage Lab must keep video input local');
+assert.match(detector,/getImageData\(/,'Footage Lab must analyze canvas pixels');
+assert.match(detector,/decodeAudioData\(/,'Footage Lab must guard optional local WebAudio analysis');
+assert.match(detector,/Your video never leaves your computer\./,'Footage Lab must show the privacy promise');
+assert.match(detector,/fetch\('data\/ai_tools\.json'\)/,'Footage Lab suggestions must use the verified local catalogue');
+assert.doesNotMatch(detector,/fetch\s*\(\s*['"]https?:\/\//,'Footage Lab must not call an external HTTP API');
+assert.doesNotMatch(detector,/XMLHttpRequest|WebSocket|EventSource/,'Footage Lab must not use alternate network APIs');
+assert.match(detector,/Media literacy: spot common AI-video tells/,'The previous detector lesson must remain as a secondary section');
+assert.match(detector,/signals—not story, performance, intention, or meaning/i,'Footage Lab must not overclaim what it measures');
 for(const file of ['research/ai_pain_points.md','research/competitive_scan.md','research/win_audit.md']){
   const research=fs.readFileSync(path.join(root,file),'utf8');
   assert.match(research,/https:\/\//,`${file} must contain real source URLs`);

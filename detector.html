@@ -3,133 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E.V.E Creator — Film AI Detector (train your eye)</title>
+  <title>E.V.E Creator — Footage Lab</title>
   <link rel="stylesheet" href="css/eve-theme.css">
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:70px}
-    .aura{position:fixed;inset:0;z-index:-2;background:radial-gradient(1000px 600px at 85% -8%,rgba(255,93,162,.14),transparent 60%),radial-gradient(820px 560px at 4% 3%,rgba(79,209,165,.1),transparent 55%),var(--bg)}
-    .wrap{max-width:1000px;margin:0 auto;padding:0 34px}
-    @media(max-width:640px){.wrap{padding:0 18px}}
-    .hero{padding:46px 0 12px}
-    .kick{display:inline-flex;gap:8px;font:700 11px 'Inter';letter-spacing:1.5px;text-transform:uppercase;color:var(--pink,#ff5da2);background:rgba(255,93,162,.1);border:1px solid rgba(255,93,162,.3);padding:6px 14px;border-radius:100px}
-    h1{font-family:'Fraunces',serif;font-weight:900;font-size:44px;line-height:1.05;letter-spacing:-1px;color:#fff;margin:16px 0 12px}
-    h1 .g{background:linear-gradient(100deg,#ff5da2,#8b7bff 60%,#4fd1a5);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    .lead{font-size:16px;color:var(--dim);max-width:640px;line-height:1.6}
-    .lead b{color:#fff}
-    .grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin-top:26px}
-    @media(max-width:860px){.grid2{grid-template-columns:1fr}}
-    .panel{background:var(--card,#1a1626);border:1px solid var(--border,#2b2540);border-radius:18px;padding:22px}
-    .panel h2{font-family:'Fraunces',serif;font-size:20px;color:#fff;margin-bottom:4px}
-    .panel .p-sub{font-size:12.5px;color:var(--muted);margin-bottom:16px}
-    .qcat{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--pink,#ff5da2);margin:16px 0 8px;font-weight:700}
-    .q{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer}
-    .q input{margin-top:3px;width:17px;height:17px;accent-color:#ff5da2;flex-shrink:0}
-    .q span{font-size:13px;color:var(--dim);line-height:1.5}
-    .result{position:sticky;top:78px}
-    .meter-wrap{text-align:center;padding:8px 0 14px}
-    .meter{font-family:'Fraunces',serif;font-size:52px;font-weight:900;line-height:1;color:#fff}
-    .meter small{font-size:16px;color:var(--muted)}
-    .verdict{font-size:15px;font-weight:800;margin-top:8px}
-    .track{height:10px;background:#100d18;border-radius:6px;overflow:hidden;margin:16px 0 6px}
-    .track span{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,#4fd1a5,#f2c14e 55%,#ff5da2);transition:width .5s}
-    .flags{margin-top:14px;font-size:12px;color:var(--dim);line-height:1.6}
-    .flags b{color:#fff}
-    .disc{margin-top:16px;font-size:11px;color:var(--muted);line-height:1.55;border-top:1px solid var(--border,#2b2540);padding-top:12px}
-    .reset{margin-top:14px;width:100%;background:transparent;border:1px solid var(--border2,#3b3355);color:var(--dim);border-radius:100px;padding:10px;font:600 12px 'Inter';cursor:pointer}
-    .ref{margin-top:40px}
-    .ref h2{font-family:'Fraunces',serif;font-size:26px;color:#fff;margin-bottom:6px}
-    .ref .rs{font-size:13px;color:var(--muted);margin-bottom:20px}
-    .signs{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
-    .sign{background:var(--card,#1a1626);border:1px solid var(--border,#2b2540);border-radius:14px;padding:16px}
-    .sign h3{font-size:15px;color:#fff;margin-bottom:7px}
-    .sign p{font-size:12.5px;color:var(--dim);line-height:1.55}
-    footer{border-top:1px solid var(--border,#2b2540);margin-top:42px;padding:26px 0 60px;font-size:12px;color:var(--muted);line-height:1.7}
+    *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:70px}.aura{position:fixed;inset:0;z-index:-2;background:radial-gradient(900px 560px at 88% -5%,rgba(255,93,162,.14),transparent 60%),radial-gradient(760px 520px at 5% 10%,rgba(139,123,255,.15),transparent 58%),radial-gradient(700px 480px at 50% 110%,rgba(242,193,78,.07),transparent 60%),var(--bg)}
+    button,input{font:inherit}.wrap{max-width:1080px;margin:0 auto;padding:0 34px}@media(max-width:640px){.wrap{padding:0 18px}}.hero{padding:48px 0 20px}.kick{display:inline-flex;font:700 11px Inter,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#ff9cc6;background:rgba(255,93,162,.09);border:1px solid rgba(255,93,162,.3);padding:7px 14px;border-radius:100px}h1{font-family:Fraunces,serif;font-weight:900;font-size:clamp(42px,7vw,66px);line-height:.98;letter-spacing:-2px;color:#fff;margin:18px 0 14px}.g{background:linear-gradient(100deg,#8b7bff,#ff5da2 58%,#f2c14e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}.lead{font-size:16px;color:var(--dim);max-width:720px;line-height:1.7}.lead b{color:#fff}.truth{display:flex;align-items:center;gap:10px;margin-top:18px;color:#dcd7ff;font:700 12px Inter,sans-serif}.lock{width:26px;height:26px;border-radius:9px;background:rgba(139,123,255,.13);display:grid;place-items:center;border:1px solid rgba(139,123,255,.3)}
+    .lab{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;margin-top:18px}@media(max-width:860px){.lab{grid-template-columns:1fr}}.panel{background:linear-gradient(150deg,rgba(255,255,255,.025),transparent 45%),var(--card,#1a1626);border:1px solid var(--border,#2b2540);border-radius:20px;padding:22px}.panel h2{font-family:Fraunces,serif;color:#fff;font-size:22px;margin:0 0 5px}.muted{font-size:12.5px;color:var(--muted);line-height:1.55}.drop{min-height:270px;border:1px dashed rgba(139,123,255,.5);border-radius:17px;margin-top:18px;display:grid;place-items:center;text-align:center;padding:28px;cursor:pointer;background:radial-gradient(circle at 50% 20%,rgba(139,123,255,.12),transparent 62%);transition:border-color .2s,background .2s,transform .2s}.drop:hover,.drop.drag{border-color:#ff5da2;background:rgba(255,93,162,.06);transform:translateY(-2px)}.drop:focus-visible{outline:3px solid rgba(139,123,255,.35);outline-offset:3px}.drop-icon{width:72px;height:72px;margin:0 auto 16px;border-radius:23px;background:linear-gradient(145deg,rgba(139,123,255,.22),rgba(255,93,162,.12));display:grid;place-items:center;position:relative}.drop-icon::before{content:'';width:24px;height:28px;border:2px solid #dcd7ff;border-radius:5px}.drop-icon::after{content:'↑';position:absolute;color:#f2c14e;font:900 20px Inter,sans-serif;animation:bob 1.8s ease-in-out infinite}.drop strong{display:block;font:800 18px Fraunces,serif;color:#fff}.drop span{display:block;color:var(--muted);font-size:12px;margin-top:8px}.file-input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}.analysis-video,.analysis-canvas{position:fixed;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+    .file-meta{display:none;margin-top:14px;padding:13px 15px;border-radius:12px;background:#100d18;border:1px solid var(--border,#2b2540);font-size:12px;color:var(--dim);line-height:1.6}.file-meta b{color:#fff}.progress-wrap{display:none;margin-top:14px}.progress-label{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-bottom:7px}.progress{height:8px;background:#100d18;border-radius:10px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#8b7bff,#ff5da2,#f2c14e);border-radius:10px;transition:width .2s}.error{display:none;margin-top:12px;padding:10px 12px;border-radius:10px;background:rgba(255,93,162,.08);border:1px solid rgba(255,93,162,.3);color:#ffb1d2;font-size:12px;line-height:1.5}.new-file{display:none;margin-top:12px;border:1px solid var(--border2,#3b3355);border-radius:100px;background:transparent;color:var(--dim);padding:9px 14px;cursor:pointer;font:700 11px Inter,sans-serif}
+    .scope{position:sticky;top:78px}.scope-list{margin:15px 0 0;padding:0;list-style:none}.scope-list li{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:12px;color:var(--dim);line-height:1.45}.scope-list i{font-style:normal;color:#8b7bff}.scope-note{font-size:11px;color:var(--muted);line-height:1.55;margin-top:15px;padding-top:13px;border-top:1px solid var(--border,#2b2540)}
+    .results{display:none;margin-top:40px}.summary{display:grid;grid-template-columns:250px 1fr;gap:18px;background:linear-gradient(145deg,rgba(139,123,255,.13),rgba(255,93,162,.06));border:1px solid rgba(139,123,255,.32);border-radius:22px;padding:24px}@media(max-width:720px){.summary{grid-template-columns:1fr}}.readiness{display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(255,255,255,.09);padding-right:22px}@media(max-width:720px){.readiness{border:0;border-bottom:1px solid rgba(255,255,255,.09);padding:0 0 18px}}.readiness .eyebrow{font:800 10px Inter,sans-serif;letter-spacing:1.3px;text-transform:uppercase;color:#b9afff}.readiness strong{font:900 32px Fraunces,serif;color:#fff;margin:8px 0}.readiness p{font-size:11px;color:var(--muted);line-height:1.5;margin:0}.priorities h2{font:800 20px Fraunces,serif;color:#fff;margin:0 0 12px}.priority{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07)}.priority:last-child{border:0}.priority b{font-size:12px;color:#fff}.priority p{font-size:11.5px;color:var(--dim);margin:4px 0 7px;line-height:1.45}.links{display:flex;gap:7px;flex-wrap:wrap}.lesson,.tool-link{display:inline-flex;align-items:center;text-decoration:none;font:700 10px Inter,sans-serif;border-radius:100px;padding:5px 9px}.lesson{color:#c8c0ff;background:rgba(139,123,255,.11);border:1px solid rgba(139,123,255,.28)}.tool-link{color:#ffdd80;background:rgba(242,193,78,.08);border:1px solid rgba(242,193,78,.28)}
+    .report-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:34px 0 14px}.report-head h2{font-family:Fraunces,serif;color:#fff;font-size:28px;margin:0}.report-head p{font-size:11px;color:var(--muted);max-width:440px;text-align:right;line-height:1.5}.reports{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}.metric{background:var(--card,#1a1626);border:1px solid var(--border,#2b2540);border-radius:16px;padding:17px;position:relative;overflow:hidden}.metric::before{content:'';position:absolute;inset:0 auto 0 0;width:3px;background:#4fd1a5}.metric.gap::before{background:#f2c14e}.metric.warn::before{background:#ff5da2}.metric-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.metric-name{font:800 11px Inter,sans-serif;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}.metric-value{font:800 17px Fraunces,serif;color:#fff;text-align:right}.metric p{font-size:12px;color:var(--dim);line-height:1.55;margin:10px 0 12px}.raw{font:700 10px Inter,sans-serif;color:#8b7bff;background:rgba(139,123,255,.08);padding:4px 7px;border-radius:6px}.metric .links{margin-top:8px}
+    .secondary{margin-top:48px}.secondary>summary{cursor:pointer;list-style:none;border:1px solid var(--border,#2b2540);background:var(--card,#1a1626);border-radius:17px;padding:18px 20px;font:800 17px Fraunces,serif;color:#fff;display:flex;justify-content:space-between}.secondary>summary::-webkit-details-marker{display:none}.secondary>summary span{font:600 11px Inter,sans-serif;color:var(--muted)}.secondary[open]>summary{border-radius:17px 17px 0 0}.legacy{border:1px solid var(--border,#2b2540);border-top:0;border-radius:0 0 17px 17px;padding:20px;background:rgba(26,22,38,.72)}.legacy-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:750px){.legacy-grid{grid-template-columns:1fr}}.qcat{font:800 10px Inter,sans-serif;letter-spacing:1px;text-transform:uppercase;color:#ff5da2;margin:15px 0 7px}.q{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer}.q input{margin-top:3px;accent-color:#ff5da2}.q span{font-size:12px;color:var(--dim);line-height:1.45}.legacy-score{font:900 42px Fraunces,serif;color:#fff}.legacy-verdict{color:#4fd1a5;font-weight:800;font-size:13px;margin:7px 0}.legacy-disc{font-size:11px;color:var(--muted);line-height:1.55}.signs{display:grid;gap:9px;margin-top:15px}.sign{border:1px solid var(--border,#2b2540);border-radius:10px;padding:11px}.sign b{color:#fff;font-size:12px}.sign p{font-size:11px;color:var(--dim);line-height:1.45;margin:4px 0 0}
+    footer{border-top:1px solid var(--border,#2b2540);margin-top:44px;padding:26px 0 60px;font-size:12px;color:var(--muted);line-height:1.7}@keyframes bob{50%{transform:translateY(-5px)}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
   </style>
 </head>
 <body>
   <div class="aura"></div>
   <section class="hero"><div class="wrap">
-    <span class="kick">Film AI Detector · Media literacy</span>
-    <h1>Is it real, or AI?<br><span class="g">Train your eye.</span></h1>
-    <p class="lead">As AI film gets better, knowing <b>how to look</b> matters — for creators, students, and everyone else. Run a clip through the checklist below to learn the tell-tale signs, and get a rough read on how likely it is AI-generated. It's a <b>learning tool, not a forensic verdict</b>.</p>
+    <span class="kick">Footage Lab · Local technical feedback</span>
+    <h1>Drop a clip.<br><span class="g">See what to improve.</span></h1>
+    <p class="lead">Footage Lab gives students a quick technical read before the edit: exposure, color, sharpness, motion, pacing, format, and audio. It measures <b>signals—not story, performance, intention, or meaning</b>.</p>
+    <div class="truth"><span class="lock" aria-hidden="true">⌂</span>Your video never leaves your computer.</div>
   </div></section>
 
-  <div class="wrap">
-    <div class="grid2">
-      <div class="panel">
-        <h2>Observation checklist</h2>
-        <div class="p-sub">Watch the clip a few times. Check what you actually notice — don't guess.</div>
-        <div id="quiz"></div>
-      </div>
-      <div class="panel result">
-        <div class="meter-wrap">
-          <div class="meter"><span id="score">0</span><small>/100</small></div>
-          <div class="verdict" id="verdict" style="color:var(--good,#4fd1a5)">Looks clean so far</div>
+  <main class="wrap">
+    <div class="lab">
+      <section class="panel">
+        <h2>Bring your own footage</h2><p class="muted">Most browser-playable video files work. Analysis samples up to 22 small frames and never uploads the source.</p>
+        <div class="drop" id="drop" role="button" tabindex="0" aria-controls="file" aria-label="Choose or drop a video file">
+          <div><div class="drop-icon" aria-hidden="true"></div><strong>Drop a video here</strong><span>or click to choose a file · video only</span></div>
         </div>
-        <div class="track"><span id="bar"></span></div>
-        <div class="flags" id="flags">Check items on the left as you spot them.</div>
-        <button class="reset" onclick="resetAll()">Reset</button>
-        <div class="disc">This score is a weighted heuristic to build your intuition — real footage can trip flags, and good AI can pass them. Never treat it as proof; use it to know <b>what to look for</b>.</div>
-      </div>
+        <input class="file-input" id="file" type="file" accept="video/*">
+        <video class="analysis-video" id="video" muted playsinline preload="metadata"></video>
+        <canvas class="analysis-canvas" id="canvas" width="160" height="90"></canvas>
+        <div class="file-meta" id="fileMeta"></div>
+        <div class="progress-wrap" id="progressWrap"><div class="progress-label"><span id="stage">Preparing local analysis…</span><span id="progressText">0%</span></div><div class="progress"><span id="progressBar"></span></div></div>
+        <div class="error" id="error" role="alert"></div>
+        <button class="new-file" id="newFile" type="button">Choose another clip</button>
+      </section>
+      <aside class="panel scope">
+        <h2>What this can—and cannot—see</h2><p class="muted">A transparent preflight, not an AI critic.</p>
+        <ul class="scope-list">
+          <li><i>01</i><span><b>Can:</b> sample pixel brightness, contrast, saturation, edge detail, frame change, and metadata.</span></li>
+          <li><i>02</i><span><b>Can:</b> decode audio locally when the browser supports the codec and the file is not too large.</span></li>
+          <li><i>03</i><span><b>Cannot:</b> judge whether your story, acting, composition, or style is good.</span></li>
+          <li><i>04</i><span><b>Cannot:</b> reliably detect every cut from sparse samples or diagnose codec/color-management issues.</span></li>
+        </ul>
+        <div class="scope-note">Thresholds are learning heuristics. A dark, quiet, static, or monochrome shot may be exactly the right creative decision.</div>
+      </aside>
     </div>
 
-    <div class="ref">
-      <h2>The tell-tale signs</h2>
-      <div class="rs">What to look for, and why AI tends to get it wrong.</div>
-      <div class="signs" id="signs"></div>
-    </div>
-  </div>
-  <footer><div class="wrap">Media literacy is part of learning AI film: understanding how these tools fail teaches you how they work. Learn the craft next in <a href="learn.html" style="color:var(--gold,#f2c14e)">Film School</a>.</div></footer>
+    <section class="results" id="results" aria-live="polite">
+      <div class="summary"><div class="readiness"><span class="eyebrow">Technical readiness</span><strong id="readiness">—</strong><p id="readinessNote"></p></div><div class="priorities"><h2>Three useful next moves</h2><div id="priorities"></div></div></div>
+      <div class="report-head"><h2>Your technical report</h2><p>Frame-based values come from 22 or fewer downscaled samples. Pacing is a rough transition estimate, not a frame-accurate edit decision list.</p></div>
+      <div class="reports" id="reports"></div>
+    </section>
+
+    <details class="secondary">
+      <summary>Media literacy: spot common AI-video tells <span>Secondary checklist · not proof</span></summary>
+      <div class="legacy"><div class="legacy-grid"><div><p class="muted">Watch a clip closely and check only what you actually observe.</p><div id="quiz"></div></div><div><div class="legacy-score"><span id="legacyScore">0</span>/100</div><div class="legacy-verdict" id="legacyVerdict">Looks clean so far</div><p class="legacy-disc">This is a weighted observation exercise, not a forensic detector. Real footage can trigger flags and polished generated footage can pass them. Provenance is stronger evidence than pixel-peeping.</p><div class="signs" id="signs"></div></div></div></div>
+    </details>
+  </main>
+  <footer><div class="wrap">Footage Lab performs basic browser-side measurements only. Use the report to ask better craft questions, then study the linked terms in <a href="learn.html" style="color:#f2c14e">Film School</a>.</div></footer>
 
   <script src="js/eve-nav.js"></script>
+  <script src="js/eve-glossary.js"></script>
   <script>
-    var QUESTIONS=[
-      {c:'Hands & anatomy',w:16,t:'Hands have wrong finger counts, fused or bending oddly.'},
-      {c:'Hands & anatomy',w:10,t:'Teeth, ears, or eyes shift shape between frames.'},
-      {c:'Text & symbols',w:14,t:'On-screen text, logos, or signage is garbled or nonsensical.'},
-      {c:'Temporal stability',w:14,t:'Textures shimmer, flicker, or “boil” frame to frame.'},
-      {c:'Temporal stability',w:10,t:'Objects appear, vanish, or morph between cuts.'},
-      {c:'Physics & continuity',w:12,t:'Motion feels weightless, or collisions/water/cloth behave wrongly.'},
-      {c:'Lighting & reflections',w:10,t:'Shadows or reflections don’t match the light source.'},
-      {c:'Backgrounds',w:8,t:'Background patterns repeat, warp, or dissolve into mush.'},
-      {c:'Faces & skin',w:8,t:'Skin looks waxy/too smooth; expressions are subtly “off”.'},
-      {c:'Overall',w:6,t:'It feels uncanny but you can’t say exactly why.'},
-      {c:'Provenance',w:-14,t:'You can verify a real source, camera, or credible origin.'}
-    ];
-    var SIGNS=[
-      {h:'✋ Hands & anatomy',p:'Extra or fused fingers, warping jewelry, teeth and ears that drift. Fine articulated structures are still where AI slips most.'},
-      {h:'🔤 Text & symbols',p:'Signs, labels, subtitles, and logos often come out as dreamlike gibberish — AI mimics letter shapes without spelling.'},
-      {h:'🌊 Temporal flicker',p:'Play it frame by frame: AI video often shimmers, and textures “boil” or crawl because each frame is re-imagined.'},
-      {h:'🧲 Physics & continuity',p:'Weightless motion, cloth and water that move wrong, objects that pop in and out — the model doesn’t truly simulate the world.'},
-      {h:'💡 Light & reflections',p:'Shadows pointing the wrong way, reflections that don’t match, eyes without consistent catchlights.'},
-      {h:'🧱 Backgrounds',p:'Crowds and repeating patterns melt into mush; straight architecture bends. Detail degrades away from the subject.'},
-      {h:'🧑 Faces & skin',p:'Waxy, too-even skin and micro-expressions that feel subtly hollow — the “almost human” uncanny valley.'},
-      {h:'🔎 Verify provenance',p:'The strongest check isn’t visual: can you trace a real source, creator, or camera? Context beats pixel-peeping.'}
-    ];
-    function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-    var maxPos=QUESTIONS.reduce(function(n,q){return n+(q.w>0?q.w:0);},0);
-    var quiz=document.getElementById('quiz');var lastc='';
-    quiz.innerHTML=QUESTIONS.map(function(q,i){
-      var head=q.c!==lastc?('<div class="qcat">'+esc(q.c)+'</div>'):'';lastc=q.c;
-      return head+'<label class="q"><input type="checkbox" data-i="'+i+'" onchange="recalc()"><span>'+esc(q.t)+'</span></label>';
-    }).join('');
-    document.getElementById('signs').innerHTML=SIGNS.map(function(s){return '<div class="sign"><h3>'+esc(s.h)+'</h3><p>'+esc(s.p)+'</p></div>';}).join('');
-    function recalc(){
-      var sum=0,flags=[];
-      document.querySelectorAll('#quiz input:checked').forEach(function(el){var q=QUESTIONS[+el.getAttribute('data-i')];sum+=q.w;if(q.w>0)flags.push(q.c);});
-      var score=Math.max(0,Math.min(100,Math.round(sum/maxPos*100)));
-      document.getElementById('score').textContent=score;
-      document.getElementById('bar').style.width=score+'%';
-      var v=document.getElementById('verdict');
-      if(score>=60){v.textContent='Strong signs of AI generation';v.style.color='#ff5da2';}
-      else if(score>=30){v.textContent='Some AI tells — look closer';v.style.color='#f2c14e';}
-      else{v.textContent='Looks clean so far';v.style.color='#4fd1a5';}
-      var uniq=flags.filter(function(x,i){return flags.indexOf(x)===i;});
-      document.getElementById('flags').innerHTML=uniq.length?('<b>Flagged:</b> '+uniq.map(esc).join(' · ')):'Check items on the left as you spot them.';
-    }
-    function resetAll(){document.querySelectorAll('#quiz input:checked').forEach(function(el){el.checked=false;});recalc();}
-    recalc();
+    (function(){
+      'use strict';
+      var SAMPLE_COUNT=22,CANVAS_WIDTH=160,AUDIO_LIMIT=100*1024*1024,ANALYSIS_LIMIT=600;
+      var fileInput=document.getElementById('file'),drop=document.getElementById('drop'),video=document.getElementById('video'),canvas=document.getElementById('canvas'),ctx=canvas.getContext('2d',{willReadFrequently:true});
+      var runId=0,objectUrl='',toolMap={},toolReady=null;
+      var CRAFT_SECTIONS={practical_motivated:'light',high_key:'light',low_key:'light',chiaroscuro:'light',monochrome:'color',complementary:'color',rack_focus:'move',static:'move',tracking:'move',slow_cutting:'edit',fast_cutting:'edit',headroom_leadroom:'comp',runtime_discipline:'hit',emotional_core:'hit',specificity:'hit'};
+      var GAP_MAP={
+        exposure:{tool:'capcut',lesson:'practical_motivated',tip:'Adjust exposure in an editor first; generate replacement footage only if the shot cannot be recovered.'},
+        contrast:{tool:'capcut',lesson:'chiaroscuro',tip:'Shape black and white points in the grade while protecting intentional lighting.'},
+        color:{tool:'capcut',lesson:'monochrome',tip:'Try a restrained color grade before asking a generator to restyle the shot.'},
+        sharpness:{tool:'krea',lesson:'rack_focus',tip:'Test enhancement gently; sharpening cannot recreate detail that was never captured.'},
+        pacing:{tool:'capcut',lesson:'slow_cutting',tip:'Re-cut in an editor. Generation is not the first fix for pacing.'},
+        motion:{tool:'higgsfield',lesson:'static',tip:'Keep a static shot when it serves the beat; otherwise test one camera-controlled insert or dynamic B-roll.'},
+        resolution:{tool:'krea',lesson:'specificity',tip:'Enhance only after the edit is locked, or replace an essential soft insert with a new controlled shot.'},
+        aspect:{tool:'capcut',lesson:'headroom_leadroom',tip:'Reframe carefully in an editor and protect headroom, eyelines, and lead room.'},
+        audio:{tool:'capcut',lesson:'emotional_core',tip:'Add room tone, music, or sound effects in the editor; do not invent sound with an unrelated visual model.'},
+        duration:{tool:'capcut',lesson:'runtime_discipline',tip:'Trim for the target format and make every held second earn its place.'}
+      };
+      function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+      function fmtTime(s){if(!isFinite(s))return 'Unknown';var m=Math.floor(s/60),x=Math.round(s%60);return(m?m+'m ':'')+x+'s';}
+      function fmtBytes(n){if(n<1024*1024)return(n/1024).toFixed(0)+' KB';return(n/(1024*1024)).toFixed(1)+' MB';}
+      function setProgress(p,label){document.getElementById('progressWrap').style.display='block';document.getElementById('progressBar').style.width=p+'%';document.getElementById('progressText').textContent=Math.round(p)+'%';document.getElementById('stage').textContent=label;}
+      function showError(message){var e=document.getElementById('error');e.textContent=message;e.style.display='block';document.getElementById('progressWrap').style.display='none';}
+      function clearError(){document.getElementById('error').style.display='none';}
+      function metadata(file){var ratio=video.videoWidth/video.videoHeight;return{file:file,duration:video.duration,width:video.videoWidth,height:video.videoHeight,ratio:ratio,resolution:video.videoHeight>=2160?'4K':video.videoHeight>=720?'HD':'SD',aspect:aspectLabel(ratio)};}
+      function aspectLabel(r){if(r<.8)return 'Vertical';if(r<1.2)return 'Square / near-square';if(r>=1.65&&r<=1.9)return '16:9 widescreen';if(r>2)return 'Cinematic wide';return 'Standard landscape';}
+      function waitMetadata(id){return new Promise(function(resolve,reject){var done=false;function ok(){if(done||id!==runId)return;done=true;cleanup();resolve();}function bad(){if(done)return;done=true;cleanup();reject(new Error('This browser could not read that video codec. Try MP4/H.264 or WebM.'));}function cleanup(){video.removeEventListener('loadedmetadata',ok);video.removeEventListener('error',bad);}video.addEventListener('loadedmetadata',ok);video.addEventListener('error',bad);if(video.readyState>=1)ok();});}
+      function seekTo(time,id){return new Promise(function(resolve,reject){var timer,done=false;function finish(err){if(done)return;done=true;clearTimeout(timer);video.removeEventListener('seeked',ok);video.removeEventListener('error',bad);if(err)reject(err);else resolve();}function ok(){if(id!==runId)return finish(new Error('Analysis replaced'));finish();}function bad(){finish(new Error('A frame could not be decoded.'));}video.addEventListener('seeked',ok,{once:true});video.addEventListener('error',bad,{once:true});timer=setTimeout(function(){finish(new Error('Seeking took too long for this codec.'));},5000);try{video.currentTime=Math.max(0,Math.min(time,Math.max(0,video.duration-.05)));}catch(e){finish(e);}});}
+      function frameStats(image){var d=image.data,count=image.width*image.height,lumas=new Float32Array(count),sum=0,sum2=0,sat=0,hist=new Float32Array(16),i,p=0;for(i=0;i<d.length;i+=4){var r=d[i],g=d[i+1],b=d[i+2],y=.2126*r+.7152*g+.0722*b,max=Math.max(r,g,b),min=Math.min(r,g,b);lumas[p++]=y;sum+=y;sum2+=y*y;sat+=max===0?0:(max-min)/max;hist[Math.min(15,Math.floor(y/16))]++;}for(i=0;i<16;i++)hist[i]/=count;var mean=sum/count,std=Math.sqrt(Math.max(0,sum2/count-mean*mean)),lapSum=0,lapSum2=0,lapN=0,w=image.width,h=image.height;for(var y0=1;y0<h-1;y0++){for(var x=1;x<w-1;x++){var q=y0*w+x,lap=4*lumas[q]-lumas[q-1]-lumas[q+1]-lumas[q-w]-lumas[q+w];lapSum+=lap;lapSum2+=lap*lap;lapN++;}}var lapMean=lapN?lapSum/lapN:0,sharp=lapN?Math.max(0,lapSum2/lapN-lapMean*lapMean):0;return{mean:mean,contrast:std,saturation:sat/count,sharpness:sharp,hist:hist,lumas:lumas};}
+      function compare(a,b){var hist=0,diff=0,n=Math.min(a.lumas.length,b.lumas.length);for(var i=0;i<16;i++)hist+=Math.abs(a.hist[i]-b.hist[i]);for(i=0;i<n;i++)diff+=Math.abs(a.lumas[i]-b.lumas[i]);return{hist:hist/2,motion:diff/n};}
+      async function sampleFrames(meta,id){var span=Math.min(meta.duration,ANALYSIS_LIMIT),n=Math.max(2,Math.min(SAMPLE_COUNT,Math.floor(span*2)||2)),frames=[],changes=[];canvas.width=CANVAS_WIDTH;canvas.height=Math.max(45,Math.round(CANVAS_WIDTH*meta.height/meta.width));for(var i=0;i<n;i++){if(id!==runId)throw new Error('Analysis replaced');var t=n===1?0:Math.min(span-.05,.05+(span-.1)*(i/(n-1)));setProgress(8+(i/n)*66,'Sampling frame '+(i+1)+' of '+n+' locally…');await seekTo(t,id);ctx.drawImage(video,0,0,canvas.width,canvas.height);var s=frameStats(ctx.getImageData(0,0,canvas.width,canvas.height));s.time=t;if(frames.length)changes.push(compare(frames[frames.length-1],s));frames.push(s);}return{frames:frames,changes:changes,span:span};}
+      function average(list,key){return list.length?list.reduce(function(n,x){return n+x[key];},0)/list.length:0;}
+      async function analyzeAudio(file,id){if(file.size>AUDIO_LIMIT)return{state:'skipped',rms:null,note:'Audio analysis skipped because the file is over 100 MB.'};var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return{state:'unsupported',rms:null,note:'This browser does not expose WebAudio decoding.'};setProgress(78,'Checking audio locally…');var ac=new AC();try{var buffer=await file.arrayBuffer();if(id!==runId)throw new Error('Analysis replaced');var decoded=await ac.decodeAudioData(buffer.slice(0)),sum=0,count=0;for(var c=0;c<decoded.numberOfChannels;c++){var data=decoded.getChannelData(c),step=Math.max(1,Math.floor(data.length/200000));for(var i=0;i<data.length;i+=step){sum+=data[i]*data[i];count++;}}var rms=count?Math.sqrt(sum/count):0;return{state:'decoded',rms:rms,note:''};}catch(e){return{state:'failed',rms:null,note:'The video loaded, but its audio codec could not be decoded here.'};}finally{try{await ac.close();}catch(ignore){}}}
+      function lessonLink(id){var g=window.EVE_GLOSSARY_GET?window.EVE_GLOSSARY_GET(id):{t:id};return'<a class="lesson" href="learn.html?term='+encodeURIComponent(id)+'#'+esc(CRAFT_SECTIONS[id]||'lib')+'" data-craft-id="'+esc(id)+'">Learn · '+esc(g.t)+'</a>';}
+      function toolLink(id){var t=toolMap[id];return t?'<a class="tool-link" href="toolkit.html?tool='+encodeURIComponent(id)+'">Tool · '+esc(t.name)+'</a>':'';}
+      function advice(key){var m=GAP_MAP[key];return m?'<div class="links">'+lessonLink(m.lesson)+toolLink(m.tool)+'</div>':'';}
+      function makeMetric(key,name,value,label,explanation,raw,severity){return{key:key,name:name,value:value,label:label,explanation:explanation,raw:raw,severity:severity||'ok',gap:severity==='gap'||severity==='warn'};}
+      function buildMetrics(meta,sampled,audio){var f=sampled.frames,c=sampled.changes,bright=average(f,'mean'),contrast=average(f,'contrast'),sat=average(f,'saturation'),sharp=average(f,'sharpness'),motion=average(c,'motion'),cutThreshold=.34,cuts=c.filter(function(x){return x.hist>cutThreshold&&x.motion>12;}).length,avgShot=sampled.span/(cuts+1),metrics=[];
+        metrics.push(bright<55?makeMetric('exposure','Exposure','Too dark','Shadow-heavy','Average sampled luma is low. This may be intentional low-key lighting; check whether faces and story information remain readable.',bright.toFixed(0)+'/255','gap'):bright>205?makeMetric('exposure','Exposure','Very bright','Highlight-heavy','Average sampled luma is very high. Check for clipped highlights before calling it a clean high-key look.',bright.toFixed(0)+'/255','gap'):makeMetric('exposure','Exposure','Balanced range','Readable midrange','Sampled brightness sits in a broadly usable range; inspect important faces and highlights by eye.',bright.toFixed(0)+'/255','ok'));
+        metrics.push(contrast<28?makeMetric('contrast','Contrast','Flat','Narrow tonal range','Light and dark values are close together. A gentle grade may add separation, unless softness is the intent.',contrast.toFixed(0)+' luma σ','gap'):contrast>82?makeMetric('contrast','Contrast','Very hard','Wide tonal range','The sampled frame range is harsh. Check whether shadows or highlights lose needed detail.',contrast.toFixed(0)+' luma σ','gap'):makeMetric('contrast','Contrast','Balanced','Useful separation','The sampled tonal spread is moderate rather than flat or extreme.',contrast.toFixed(0)+' luma σ','ok'));
+        metrics.push(sat<.12?makeMetric('color','Color','Muted','Low saturation','Color is restrained. That can be a strong monochrome choice; if unintended, grade before restyling.',Math.round(sat*100)+'% saturation','gap'):sat>.72?makeMetric('color','Color','Very intense','High saturation','Color is highly saturated. Check skin, practical lights, and brand colors for clipping or distraction.',Math.round(sat*100)+'% saturation','gap'):makeMetric('color','Color','Moderate','Controlled color','Sampled colorfulness is neither near-monochrome nor extremely saturated.',Math.round(sat*100)+'% saturation','ok'));
+        metrics.push(sharp<75?makeMetric('sharpness','Sharpness','Soft','Low edge detail','Downscaled frames show limited high-frequency detail. Confirm focus on the original before enhancing.',Math.round(sharp)+' Laplacian variance','gap'):makeMetric('sharpness','Sharpness','Clear enough','Visible edge detail','The small samples retain useful edge detail; this does not guarantee perfect focus at full size.',Math.round(sharp)+' Laplacian variance','ok'));
+        metrics.push(avgShot>9?makeMetric('pacing','Pacing','Slow / few sampled transitions','Long sampled segments','Sparse samples found '+cuts+' strong frame transition'+(cuts===1?'':'s')+'. This rough estimate suggests longer-held material.',avgShot.toFixed(1)+'s rough avg','gap'):avgShot<2.4?makeMetric('pacing','Pacing','Fast','Short sampled segments','Sparse samples found '+cuts+' strong transitions. Confirm the actual cut rhythm on the timeline.',avgShot.toFixed(1)+'s rough avg','gap'):makeMetric('pacing','Pacing','Moderate','Mixed sampled rhythm','The sparse transition estimate sits in a moderate range. Only the timeline can confirm true shot length.',avgShot.toFixed(1)+'s rough avg','ok'));
+        metrics.push(motion<3.2?makeMetric('motion','Motion','Mostly static','Low frame change','Little pixel change appears between sampled moments. Keep it if stillness serves the beat; otherwise consider a motivated moving insert.',motion.toFixed(1)+' mean luma diff','gap'):motion>28?makeMetric('motion','Motion','Very active','High frame change','Large changes appear between samples. Check whether motion remains readable and compression holds up.',motion.toFixed(1)+' mean luma diff','gap'):makeMetric('motion','Motion','Moderate','Visible movement','Sampled frame change suggests some movement without an extreme level.',motion.toFixed(1)+' mean luma diff','ok'));
+        metrics.push(meta.height<720?makeMetric('resolution','Resolution','SD','Limited output size','The source is below 720p. Avoid aggressive cropping and test enhancement only after the edit is locked.',meta.width+'×'+meta.height,'gap'):makeMetric('resolution','Resolution',meta.height>=2160?'4K':'HD','Useful output size','The source resolution is suitable for common HD delivery, subject to focus and compression.',meta.width+'×'+meta.height,'ok'));
+        metrics.push(makeMetric('aspect','Aspect ratio',meta.aspect,'Framing format','Ratio is '+meta.ratio.toFixed(2)+':1. Format is not a quality score—compose and export for the intended screen.',meta.ratio.toFixed(2)+':1','ok'));
+        if(audio.state==='decoded'){metrics.push(audio.rms<.002?makeMetric('audio','Audio','Silent / near-silent','No meaningful level','Decoded RMS is near silence. Add intentional room tone, effects, dialogue, or music in the edit.',audio.rms.toFixed(4)+' RMS','gap'):audio.rms<.02?makeMetric('audio','Audio','Very quiet','Low average level','Audio exists but its average level is low. Listen on headphones before normalizing or adding sound.',audio.rms.toFixed(4)+' RMS','gap'):makeMetric('audio','Audio','Present','Decodable signal','The browser decoded a meaningful audio signal. This does not measure clarity, clipping, dialogue quality, or mix balance.',audio.rms.toFixed(4)+' RMS','ok'));}else{metrics.push(makeMetric('audio','Audio','Not measured','Decode unavailable',audio.note,'—','ok'));}
+        metrics.push(meta.duration>600?makeMetric('duration','Duration','Long clip','Over ten minutes','Technical sampling was capped at the first ten minutes. Edit toward the actual assignment or festival limit.',fmtTime(meta.duration),'gap'):makeMetric('duration','Duration',meta.duration<=180?'Short-form':'Extended short','Full duration read','The full duration is '+fmtTime(meta.duration)+'. Runtime quality depends on the target and whether every beat earns its time.',fmtTime(meta.duration),'ok'));
+        return metrics;}
+      function render(meta,sampled,audio){var metrics=buildMetrics(meta,sampled,audio),gaps=metrics.filter(function(m){return m.gap;}),score=Math.max(35,100-gaps.length*9),read=score>=82?'Strong technical start':score>=64?'Usable with a focused pass':'Needs a technical pass';document.getElementById('readiness').textContent=read;document.getElementById('readinessNote').textContent='A '+score+'/100 heuristic based only on measured technical signals—not a score for your film.';
+        var priorities=gaps.slice(0,3);if(!priorities.length)priorities=[{key:'duration',name:'Review with intent',explanation:'No large threshold flags appeared. Watch the full clip for story, performance, continuity, and meaning.'}];document.getElementById('priorities').innerHTML=priorities.map(function(m){var map=GAP_MAP[m.key];return'<div class="priority"><b>'+esc(m.name||'Review the full cut')+'</b><p>'+esc((map&&map.tip)||m.explanation)+'</p>'+(map?'<div class="links">'+lessonLink(map.lesson)+toolLink(map.tool)+'</div>':'')+'</div>';}).join('');
+        document.getElementById('reports').innerHTML=metrics.map(function(m){return'<article class="metric '+esc(m.severity)+'"><div class="metric-top"><div><div class="metric-name">'+esc(m.name)+'</div><span class="raw">'+esc(m.raw)+'</span></div><div class="metric-value">'+esc(m.value)+'</div></div><p><b>'+esc(m.label)+'.</b> '+esc(m.explanation)+'</p>'+(m.gap?advice(m.key):'')+'</article>';}).join('');document.getElementById('results').style.display='block';document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});}
+      async function analyze(file){if(!file||!file.type.startsWith('video/'))return showError('Choose a video file. Other file types are not analyzed.');var id=++runId;clearError();document.getElementById('results').style.display='none';document.getElementById('newFile').style.display='inline-block';if(objectUrl)URL.revokeObjectURL(objectUrl);objectUrl=URL.createObjectURL(file);video.src=objectUrl;video.load();setProgress(2,'Reading video metadata locally…');try{await waitMetadata(id);if(!isFinite(video.duration)||video.duration<=0||!video.videoWidth)throw new Error('The video metadata is incomplete or unsupported.');var meta=metadata(file);document.getElementById('fileMeta').style.display='block';document.getElementById('fileMeta').innerHTML='<b>'+esc(file.name)+'</b><br>'+esc(fmtTime(meta.duration))+' · '+meta.width+'×'+meta.height+' '+meta.resolution+' · '+esc(meta.aspect)+' · '+esc(fmtBytes(file.size))+(meta.duration>ANALYSIS_LIMIT?'<br>Frame sampling is capped to the first 10 minutes.':'');var sampled=await sampleFrames(meta,id);var audio=await analyzeAudio(file,id);if(toolReady)await toolReady;if(id!==runId)return;setProgress(96,'Building your report…');render(meta,sampled,audio);setProgress(100,'Local analysis complete');setTimeout(function(){if(id===runId)document.getElementById('progressWrap').style.display='none';},700);}catch(e){if(id===runId&&e.message!=='Analysis replaced')showError(e.message||'The browser could not analyze this clip. Try MP4/H.264 or WebM.');}}
+      drop.addEventListener('click',function(){fileInput.click();});drop.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();fileInput.click();}});fileInput.addEventListener('change',function(){analyze(this.files[0]);});document.getElementById('newFile').addEventListener('click',function(){fileInput.click();});['dragenter','dragover'].forEach(function(n){drop.addEventListener(n,function(e){e.preventDefault();drop.classList.add('drag');});});['dragleave','drop'].forEach(function(n){drop.addEventListener(n,function(e){e.preventDefault();drop.classList.remove('drag');});});drop.addEventListener('drop',function(e){analyze(e.dataTransfer.files[0]);});window.addEventListener('beforeunload',function(){if(objectUrl)URL.revokeObjectURL(objectUrl);});
+      toolReady=fetch('data/ai_tools.json').then(function(r){if(!r.ok)throw new Error('Catalogue unavailable');return r.json();}).then(function(data){data.tools.forEach(function(t){toolMap[t.id]=t;});}).catch(function(){toolMap={};});
+
+      var QUESTIONS=[{c:'Hands & anatomy',w:16,t:'Hands have wrong finger counts, fused or bending oddly.'},{c:'Hands & anatomy',w:10,t:'Teeth, ears, or eyes shift shape between frames.'},{c:'Text & symbols',w:14,t:'On-screen text, logos, or signage is garbled.'},{c:'Temporal stability',w:14,t:'Textures shimmer, flicker, or “boil” frame to frame.'},{c:'Temporal stability',w:10,t:'Objects appear, vanish, or morph between cuts.'},{c:'Physics & continuity',w:12,t:'Motion feels weightless, or cloth, water, or collisions behave wrongly.'},{c:'Lighting & reflections',w:10,t:'Shadows or reflections do not match the light source.'},{c:'Provenance',w:-14,t:'You can verify a credible source, creator, camera, or origin.'}],SIGNS=[{h:'Hands and anatomy',p:'Fine articulated structures may warp or drift between frames.'},{h:'Text and symbols',p:'Signs and logos can become inconsistent or nonsensical.'},{h:'Temporal flicker',p:'Textures may shimmer because details are regenerated through time.'},{h:'Physics and continuity',p:'Watch for objects, weight, reflections, and cause-and-effect changing unexpectedly.'},{h:'Verify provenance',p:'A traceable source is stronger evidence than any visual hunch.'}],last='';document.getElementById('quiz').innerHTML=QUESTIONS.map(function(q,i){var h=q.c!==last?'<div class="qcat">'+esc(q.c)+'</div>':'';last=q.c;return h+'<label class="q"><input type="checkbox" data-q="'+i+'"><span>'+esc(q.t)+'</span></label>';}).join('');document.getElementById('signs').innerHTML=SIGNS.map(function(s){return'<div class="sign"><b>'+esc(s.h)+'</b><p>'+esc(s.p)+'</p></div>';}).join('');document.getElementById('quiz').addEventListener('change',function(){var total=QUESTIONS.reduce(function(n,q){return n+(q.w>0?q.w:0);},0),sum=0;document.querySelectorAll('#quiz input:checked').forEach(function(el){sum+=QUESTIONS[+el.getAttribute('data-q')].w;});var score=Math.max(0,Math.min(100,Math.round(sum/total*100))),v=document.getElementById('legacyVerdict');document.getElementById('legacyScore').textContent=score;if(score>=60){v.textContent='Several common AI tells flagged';v.style.color='#ff5da2';}else if(score>=30){v.textContent='Some tells—inspect source and context';v.style.color='#f2c14e';}else{v.textContent='Looks clean so far';v.style.color='#4fd1a5';}});
+    }());
   </script>
 </body>
 </html>

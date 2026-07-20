@@ -1,7 +1,7 @@
 /*
  * eve-nav.js — the global platform navigation.
  * Injects one consistent top tab-bar on every page so E.V.E feels like a real
- * learning platform (Home · Create · Learn · AI Tools · Detector · Community),
+ * learning platform (Home · Create · Learn · AI Tools · Footage Lab · Community),
  * not a single wizard. Self-mounts at the top of <body>; highlights the current tab.
  */
 (function () {
@@ -11,7 +11,7 @@
     { l: 'Create', f: 'concept_lab.html', match: ['concept_lab.html', 'creators_room.html', 'shotseed.html', 'storyboard.html'] },
     { l: 'Learn', f: 'learn.html' },
     { l: 'AI Tools', f: 'toolkit.html' },
-    { l: 'Detector', f: 'detector.html', badge: 'New' },
+    { l: 'Footage Lab', f: 'detector.html', badge: 'New' },
     { l: 'Community', f: 'community.html' }
   ];
   var CSS = '' +

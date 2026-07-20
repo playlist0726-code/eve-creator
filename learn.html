@@ -93,7 +93,9 @@
       document.getElementById('count').textContent=q?(shown+' of '+total+' techniques match “'+query+'”'):(total+' techniques across '+CATS.length+' topics');
     }
     document.getElementById('q').addEventListener('input',function(e){render(e.target.value);});
-    render('');
+    var lessonQuery=new URLSearchParams(location.search).get('term')||'';
+    document.getElementById('q').value=lessonQuery;
+    render(lessonQuery);
   </script>
 </body>
 </html>
