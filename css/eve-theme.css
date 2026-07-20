@@ -13,6 +13,9 @@
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
 h1,h2,.story-title,.fn{font-family:'Fraunces',Georgia,serif;letter-spacing:-.3px}
 
+/* the pipeline stepper becomes a sub-bar under the global platform nav */
+.eve-topbar{position:static !important;top:auto !important}
+
 /* subtle ambient warmth so the flat black reads richer, matching the home */
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:radial-gradient(900px 560px at 88% -6%,rgba(139,123,255,.12),transparent 60%),

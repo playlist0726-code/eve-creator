@@ -4,6 +4,6 @@
   "private": true,
   "description": "Director-grounded film pre-production copilot",
   "scripts": {
-    "test": "node tests/p1.test.js && node tests/p2.test.js && node tests/pipeline.test.js && node tests/site.test.js && node tests/glossary.test.js"
+    "test": "node tests/p1.test.js && node tests/p2.test.js && node tests/pipeline.test.js && node tests/site.test.js && node tests/glossary.test.js && node tests/platform.test.js"
   }
 }

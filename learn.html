@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E.V.E Creator — Film School (learn the craft)</title>
+  <link rel="stylesheet" href="css/eve-theme.css">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:70px}
+    .aura{position:fixed;inset:0;z-index:-2;background:radial-gradient(1000px 620px at 85% -8%,rgba(139,123,255,.16),transparent 60%),radial-gradient(820px 560px at 4% 3%,rgba(255,93,162,.1),transparent 55%),var(--bg)}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 34px}
+    @media(max-width:640px){.wrap{padding:0 18px}}
+    .hero{padding:46px 0 20px}
+    .kick{display:inline-flex;align-items:center;gap:8px;font:700 11px 'Inter';letter-spacing:1.5px;text-transform:uppercase;color:var(--iris2,#a898ff);background:rgba(139,123,255,.1);border:1px solid rgba(139,123,255,.28);padding:6px 14px;border-radius:100px}
+    h1{font-family:'Fraunces',serif;font-weight:900;font-size:44px;line-height:1.05;letter-spacing:-1px;color:#fff;margin:16px 0 12px}
+    h1 .g{background:linear-gradient(100deg,#8b7bff,#ff5da2 55%,#f2c14e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .lead{font-size:16px;color:var(--dim);max-width:600px;line-height:1.6}
+    .searchbar{display:flex;gap:10px;margin:26px 0 8px;position:sticky;top:58px;z-index:20;background:linear-gradient(180deg,var(--bg) 70%,transparent);padding:10px 0}
+    #q{flex:1;background:#100d18;border:1px solid var(--border2,#3b3355);border-radius:100px;color:var(--text);font:500 15px 'Inter';padding:13px 20px}
+    #q:focus{outline:none;border-color:var(--iris2,#a898ff)}
+    .catnav{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+    .catnav a{font:600 12px 'Inter';color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:100px;border:1px solid var(--border,#2b2540);white-space:nowrap;transition:all .14s}
+    .catnav a:hover{color:#fff;border-color:var(--iris2,#a898ff)}
+    .count{font-size:12px;color:var(--muted);margin:2px 0 18px}
+    .cat{margin:30px 0}
+    .cat h2{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:4px;display:flex;align-items:center;gap:10px}
+    .cat .ci{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;background:rgba(139,123,255,.14);border:1px solid rgba(139,123,255,.3)}
+    .cat .cd{font-size:12.5px;color:var(--muted);margin:2px 0 16px 44px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+    .term{background:var(--card,#1a1626);border:1px solid var(--border,#2b2540);border-radius:14px;padding:15px 16px;transition:transform .15s,border-color .15s}
+    .term:hover{transform:translateY(-3px);border-color:var(--border2,#3b3355)}
+    .term .t{font-family:'Fraunces',serif;font-size:15.5px;font-weight:700;color:#fff;margin-bottom:3px}
+    .term .id{font-size:9.5px;color:var(--muted);font-family:ui-monospace,monospace;letter-spacing:.3px}
+    .term .d{font-size:12.5px;color:var(--dim);line-height:1.55;margin-top:8px}
+    .empty{color:var(--muted);text-align:center;padding:50px;font-size:14px}
+    footer{border-top:1px solid var(--border,#2b2540);margin-top:44px;padding:26px 0 60px;font-size:12px;color:var(--muted);line-height:1.7}
+  </style>
+</head>
+<body>
+  <div class="aura"></div>
+  <section class="hero"><div class="wrap">
+    <span class="kick">Film School · For everyone</span>
+    <h1>Learn the craft,<br><span class="g">one term at a time.</span></h1>
+    <p class="lead">Every technique E.V.E uses to design your film — <b style="color:#fff">111 in all</b> — explained in plain language. No film degree required. Search it, browse it, or just tap around and get curious.</p>
+  </div></section>
+  <div class="wrap">
+    <div class="searchbar"><input id="q" type="text" placeholder="Search techniques…  try “close-up”, “tension”, “Pixar”, “color”"></div>
+    <div class="catnav" id="catnav"></div>
+    <div class="count" id="count"></div>
+    <div id="lib"></div>
+    <div class="empty" id="empty" style="display:none">No techniques match that search. Try another word.</div>
+  </div>
+  <footer><div class="wrap">Film School is grounded in E.V.E's craft knowledge base — the same 111 IDs the AI crew cites when it designs and critiques your film. Learn a term here, then see it used in the <a href="creators_room.html" style="color:var(--gold,#f2c14e)">Creator's Room</a>.</div></footer>
+
+  <script src="js/eve-nav.js"></script>
+  <script src="js/eve-glossary.js"></script>
+  <script>
+    var CATS=[
+      {id:'story',name:'Story Structure',icon:'📖',desc:'The skeletons that keep a story from wandering.',ids:['three_act','hero_journey','save_the_cat','pixar_spine','kishotenketsu','freytag']},
+      {id:'size',name:'Shot Sizes',icon:'🔲',desc:'How much of the world is in frame — and how close we feel.',ids:['EWS','WS','MLS','MS','MCU','CU','ECU','INSERT']},
+      {id:'angle',name:'Camera Angles',icon:'📐',desc:'Where the camera looks from, and what that does to power.',ids:['eye_level','high_angle','low_angle','overhead_topdown','dutch_tilt','over_the_shoulder','pov']},
+      {id:'move',name:'Camera Movement',icon:'🎥',desc:'How the camera moves — and what motion makes us feel.',ids:['static','pan','tilt','dolly_in','dolly_out','tracking','crane_boom','handheld','steadicam','whip_pan','crash_zoom','rack_focus']},
+      {id:'lens',name:'Lenses',icon:'🔭',desc:'How the glass shapes depth, distance, and distortion.',ids:['wide_angle','normal','telephoto','macro']},
+      {id:'comp',name:'Composition',icon:'🖼️',desc:'Arranging the frame to guide the eye.',ids:['rule_of_thirds','central_symmetry','leading_lines','framing_within_frame','depth_layering','negative_space','headroom_leadroom','180_degree_rule']},
+      {id:'edit',name:'Editing',icon:'✂️',desc:'How cuts control rhythm, time, and meaning.',ids:['shot_reverse_shot','long_take','slow_cutting','fast_cutting','match_cut','cross_cutting','montage']},
+      {id:'light',name:'Lighting',icon:'💡',desc:'How light sets mood, drama, and time of day.',ids:['high_key','low_key','chiaroscuro','rembrandt','three_point','silhouette','backlight_rim','practical_motivated','golden_hour','top_light','underlight']},
+      {id:'color',name:'Color',icon:'🎨',desc:'How color schemes create tension or harmony.',ids:['complementary','analogous','triadic','monochrome','split_complementary']},
+      {id:'stage',name:'Staging & Mise-en-scène',icon:'🎭',desc:'Arranging actors, props, and space to carry meaning.',ids:['depth_staging','symmetrical_blocking','proxemics','negative_space_isolation','movement_toward_away','prop_as_symbol','setting_as_metaphor','wardrobe_signals','texture_materiality']},
+      {id:'dir',name:'Director Styles',icon:'🎬',desc:'The visual signatures of masters — learn to borrow wisely.',ids:['pixar','disney_animation','miyazaki','wes_anderson','bong_joon_ho','ridley_scott','james_cameron','tim_burton','denis_villeneuve']},
+      {id:'genre',name:'Genres',icon:'🎞️',desc:'What each genre expects from structure, pace, and tone.',ids:['animated_short','comedy','drama','thriller','sci_fi_fantasy','romance']},
+      {id:'hit',name:'What Makes a Hit',icon:'⭐',desc:'The research-backed dimensions of a film that lands.',ids:['emotional_core','hook_strength','structural_completeness','originality_vs_familiarity','genre_fit','runtime_discipline','specificity','shareability']},
+      {id:'ai',name:'AI Tools',icon:'🤖',desc:'The 2026 image & video models — and when to use each.',ids:['veo_3_1','kling_3_0','runway_gen_4_5','minimax_hailuo_2_3','luma_ray_3','seedance','sora_2','midjourney_v6','gpt_image_1','nano_banana_pro','stable_diffusion_xl']}
+    ];
+    function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+    var G=window.EVE_GLOSSARY_GET;
+    var catnav=document.getElementById('catnav');
+    catnav.innerHTML=CATS.map(function(c){return '<a href="#'+c.id+'">'+c.icon+' '+esc(c.name)+'</a>';}).join('');
+    var total=CATS.reduce(function(n,c){return n+c.ids.length;},0);
+    function render(query){
+      var q=(query||'').trim().toLowerCase();var shown=0;var html='';
+      CATS.forEach(function(c){
+        var cards=c.ids.map(function(id){var e=G(id);return {id:id,t:e.t,d:e.d};}).filter(function(x){
+          if(!q)return true;return (x.t+' '+x.d+' '+x.id).toLowerCase().indexOf(q)>=0;
+        });
+        if(!cards.length)return;shown+=cards.length;
+        html+='<section class="cat" id="'+c.id+'"><h2><span class="ci">'+c.icon+'</span>'+esc(c.name)+'</h2><div class="cd">'+esc(c.desc)+'</div><div class="grid">'+
+          cards.map(function(x){return '<div class="term"><div class="t">'+esc(x.t)+'</div><div class="id">'+esc(x.id)+'</div><div class="d">'+esc(x.d)+'</div></div>';}).join('')+
+          '</div></section>';
+      });
+      document.getElementById('lib').innerHTML=html;
+      document.getElementById('empty').style.display=shown?'none':'block';
+      document.getElementById('count').textContent=q?(shown+' of '+total+' techniques match “'+query+'”'):(total+' techniques across '+CATS.length+' topics');
+    }
+    document.getElementById('q').addEventListener('input',function(e){render(e.target.value);});
+    render('');
+  </script>
+</body>
+</html>

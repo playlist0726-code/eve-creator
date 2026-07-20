@@ -258,5 +258,6 @@
     function bindCurve(){document.querySelectorAll('.beat-dot').forEach(d=>d.addEventListener('click',()=>highlight(+d.getAttribute('data-n'))));}
     const saved=EVE_STATE.loadBlueprint();const beats=saved?dynamicBeats(saved.story):fixedBeats;if(saved)renderIdea(saved);renderCurve(beats);renderSheet(beats,Boolean(saved));bindCurve();
   </script>
+<script src="js/eve-nav.js"></script>
 </body>
 </html>

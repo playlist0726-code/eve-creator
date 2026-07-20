@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E.V.E Creator — AI Toolkit (which model for which shot)</title>
+  <link rel="stylesheet" href="css/eve-theme.css">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:70px}
+    .aura{position:fixed;inset:0;z-index:-2;background:radial-gradient(1000px 600px at 15% -8%,rgba(91,192,255,.14),transparent 60%),radial-gradient(820px 560px at 96% 4%,rgba(242,193,78,.1),transparent 55%),var(--bg)}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 34px}
+    @media(max-width:640px){.wrap{padding:0 18px}}
+    .hero{padding:46px 0 14px}
+    .kick{display:inline-flex;gap:8px;font:700 11px 'Inter';letter-spacing:1.5px;text-transform:uppercase;color:var(--sky,#5bc0ff);background:rgba(91,192,255,.1);border:1px solid rgba(91,192,255,.3);padding:6px 14px;border-radius:100px}
+    h1{font-family:'Fraunces',serif;font-weight:900;font-size:44px;line-height:1.05;letter-spacing:-1px;color:#fff;margin:16px 0 12px}
+    h1 .g{background:linear-gradient(100deg,#5bc0ff,#8b7bff 60%,#f2c14e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .lead{font-size:16px;color:var(--dim);max-width:640px;line-height:1.6}
+    .lead b{color:#fff}
+    h2.sh{font-family:'Fraunces',serif;font-size:24px;color:#fff;margin:38px 0 6px}
+    .sub{font-size:13px;color:var(--muted);margin-bottom:18px}
+    .routes{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+    .route{background:var(--card,#1a1626);border:1px solid var(--border,#2b2540);border-radius:14px;padding:16px}
+    .route .w{font-size:13px;color:var(--gold-lite,#ffdd80);font-weight:700;margin-bottom:10px}
+    .route .pick{display:flex;gap:8px;flex-wrap:wrap}
+    .route .pill{font-size:11px;font-weight:600;padding:5px 10px;border-radius:100px;border:1px solid var(--border2,#3b3355);color:var(--dim)}
+    .route .pill.img{color:#a898ff;border-color:rgba(139,123,255,.4);background:rgba(139,123,255,.1)}
+    .route .pill.vid{color:#5bc0ff;border-color:rgba(91,192,255,.4);background:rgba(91,192,255,.1)}
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+    .mc{background:var(--card,#1a1626);border:1px solid var(--border,#2b2540);border-radius:16px;padding:18px;position:relative}
+    .mc .top{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:4px}
+    .mc .nm{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:#fff}
+    .mc .vn{font-size:11px;color:var(--muted)}
+    .mc .rf{font-size:12.5px;color:var(--dim);line-height:1.55;margin:10px 0}
+    .mc .rf b{color:var(--gold-lite,#ffdd80);font-weight:600}
+    .mc .str{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+    .mc .str span{font-size:10.5px;padding:4px 9px;border-radius:100px;background:rgba(255,255,255,.04);border:1px solid var(--border,#2b2540);color:var(--dim)}
+    .warn{margin-top:10px;font-size:11px;color:#ff7a59;background:rgba(255,122,89,.08);border:1px solid rgba(255,122,89,.3);border-radius:8px;padding:7px 10px}
+    .callout{margin:34px 0 0;background:linear-gradient(150deg,rgba(242,193,78,.1),var(--card,#1a1626));border:1px solid rgba(242,193,78,.35);border-radius:18px;padding:22px 24px}
+    .callout h3{font-family:'Fraunces',serif;font-size:19px;color:#fff;margin-bottom:8px}
+    .callout p{font-size:13.5px;color:var(--dim);line-height:1.6}
+    .flow{font-size:13px;color:var(--dim);background:#100d18;border:1px solid var(--border,#2b2540);border-radius:12px;padding:14px 16px;margin-top:14px;line-height:1.7}
+    .flow b{color:#fff}
+    .asof{font-size:11px;color:var(--muted);margin-top:24px}
+    footer{border-top:1px solid var(--border,#2b2540);margin-top:40px;padding:26px 0 60px;font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="aura"></div>
+  <section class="hero"><div class="wrap">
+    <span class="kick">AI Toolkit · 2026</span>
+    <h1>Which AI model<br><span class="g">for which shot?</span></h1>
+    <p class="lead">Not sure whether to use Veo, Kling, Runway, or Midjourney? This is the map. Pick by <b>what the shot needs</b> — realism, camera control, character consistency, or a montage — and E.V.E routes you to the right image and video model. <b>Film students:</b> this is how you fill CG/VFX gaps you can't shoot.</p>
+  </div></section>
+
+  <div class="wrap">
+    <h2 class="sh">Quick routing — by what the shot needs</h2>
+    <div class="sub">The fast answer. E.V.E uses these same rules when it recommends a tool per shot.</div>
+    <div class="routes" id="routes"></div>
+
+    <h2 class="sh">🎥 Video models</h2>
+    <div class="sub">Image-to-video: turn a still into motion.</div>
+    <div class="cards" id="video"></div>
+
+    <h2 class="sh">🖼️ Image models</h2>
+    <div class="sub">Text-to-image: generate the keyframe first.</div>
+    <div class="cards" id="image"></div>
+
+    <div class="callout">
+      <h3>🎓 For film & media students</h3>
+      <p>Can't afford a CG shot, a crowd, a location, or a VFX element? Generate the missing piece: a keyframe with an image model, then motion with a video model, and composite it into your footage. Keep a locked character reference across shots for consistency. E.V.E gives you the exact prompt and the recommended tool for each gap.</p>
+      <div class="flow" id="flow"></div>
+    </div>
+    <div class="asof" id="asof"></div>
+  </div>
+  <footer><div class="wrap">This space moves fast — versions are a current-best snapshot; always re-verify a model's latest capabilities before you rely on it. Grounded in E.V.E's <code>knowledge/ai_toolchain.json</code>.</div></footer>
+
+  <script src="js/eve-nav.js"></script>
+  <script src="js/eve-glossary.js"></script>
+  <script>
+    var DATA={
+      video:[
+        {id:'veo_3_1',vendor:'Google',route:'Photoreal cinematic shots, establishing, nature, hero beauty',str:['cinematic realism','prompt adherence','native audio','4K','natural water/hair/fabric']},
+        {id:'kling_3_0',vendor:'Kuaishou',route:'Sequence & montage beats, narrative continuity',str:['multi-shot (~6 in one pass)','narrative production','strong motion']},
+        {id:'runway_gen_4_5',vendor:'Runway',route:'Precise camera moves, controlled character shots, i2v with references',str:['camera control','motion brush','video-to-video','character consistency','keyframes']},
+        {id:'minimax_hailuo_2_3',vendor:'MiniMax',route:'Character motion, cost-sensitive drafts',str:['expressive motion','value']},
+        {id:'luma_ray_3',vendor:'Luma',route:'Stylized or quick exploratory clips',str:['fast iteration','dream/stylized motion']},
+        {id:'seedance',vendor:'ByteDance',route:'Image-to-video with sound',str:['strong i2v','audio generation']},
+        {id:'sora_2',vendor:'OpenAI',route:'Avoid for new pipelines; migrate off',str:['quality'],warn:'Deprecating — web/app end 2026-04-26, API end 2026-09-24.'}
+      ],
+      image:[
+        {id:'midjourney_v6',vendor:'',route:'Key visuals, stylized frames, mood',str:['aesthetic quality','style references (--sref)','art direction']},
+        {id:'gpt_image_1',vendor:'OpenAI',route:'Storyboard frames, precise composition, automated batch',str:['prompt adherence','text in image','diagrams','API automation']},
+        {id:'nano_banana_pro',vendor:'',route:'High-res one-off frames',str:['4K','text','general']},
+        {id:'stable_diffusion_xl',vendor:'',route:'Consistent characters via training, controlled composition',str:['local control','LoRA/ControlNet','free']}
+      ],
+      routes:[
+        {w:'Establishing / photoreal beauty',img:'Midjourney v6',vid:'Veo 3.1'},
+        {w:'Multi-shot montage / sequence',vid:'Kling 3.0'},
+        {w:'Precise camera move or character consistency',vid:'Runway Gen-4.5'},
+        {w:'Storyboard frame (automated)',img:'GPT Image'},
+        {w:'Trained recurring character',img:'Stable Diffusion XL'}
+      ]
+    };
+    function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+    var name=function(id){return (window.EVE_GLOSSARY_GET?EVE_GLOSSARY_GET(id).t:id);};
+    document.getElementById('routes').innerHTML=DATA.routes.map(function(r){
+      var pills='';if(r.img)pills+='<span class="pill img">🖼️ '+esc(r.img)+'</span>';if(r.vid)pills+='<span class="pill vid">🎥 '+esc(r.vid)+'</span>';
+      return '<div class="route"><div class="w">'+esc(r.w)+'</div><div class="pick">'+pills+'</div></div>';
+    }).join('');
+    function card(m){
+      return '<div class="mc"><div class="top"><span class="nm">'+esc(name(m.id))+'</span><span class="vn">'+esc(m.vendor||'')+'</span></div>'+
+        '<div class="rf"><b>Best for:</b> '+esc(m.route)+'</div>'+
+        '<div class="str">'+m.str.map(function(s){return '<span>'+esc(s)+'</span>';}).join('')+'</div>'+
+        (m.warn?'<div class="warn">⚠ '+esc(m.warn)+'</div>':'')+'</div>';
+    }
+    document.getElementById('video').innerHTML=DATA.video.map(card).join('');
+    document.getElementById('image').innerHTML=DATA.image.map(card).join('');
+    document.getElementById('flow').innerHTML='<b>Pipeline:</b> text-to-image (still, chosen image model) → image-to-video (motion, chosen video model) → assemble + voice-over + music in an editor. Lock the character reference across shots.';
+    document.getElementById('asof').textContent='Toolkit as of 2026-07 · re-verify before relying.';
+  </script>
+</body>
+</html>

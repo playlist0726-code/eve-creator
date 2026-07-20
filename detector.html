@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E.V.E Creator — Film AI Detector (train your eye)</title>
+  <link rel="stylesheet" href="css/eve-theme.css">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:70px}
+    .aura{position:fixed;inset:0;z-index:-2;background:radial-gradient(1000px 600px at 85% -8%,rgba(255,93,162,.14),transparent 60%),radial-gradient(820px 560px at 4% 3%,rgba(79,209,165,.1),transparent 55%),var(--bg)}
+    .wrap{max-width:1000px;margin:0 auto;padding:0 34px}
+    @media(max-width:640px){.wrap{padding:0 18px}}
+    .hero{padding:46px 0 12px}
+    .kick{display:inline-flex;gap:8px;font:700 11px 'Inter';letter-spacing:1.5px;text-transform:uppercase;color:var(--pink,#ff5da2);background:rgba(255,93,162,.1);border:1px solid rgba(255,93,162,.3);padding:6px 14px;border-radius:100px}
+    h1{font-family:'Fraunces',serif;font-weight:900;font-size:44px;line-height:1.05;letter-spacing:-1px;color:#fff;margin:16px 0 12px}
+    h1 .g{background:linear-gradient(100deg,#ff5da2,#8b7bff 60%,#4fd1a5);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .lead{font-size:16px;color:var(--dim);max-width:640px;line-height:1.6}
+    .lead b{color:#fff}
+    .grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin-top:26px}
+    @media(max-width:860px){.grid2{grid-template-columns:1fr}}
+    .panel{background:var(--card,#1a1626);border:1px solid var(--border,#2b2540);border-radius:18px;padding:22px}
+    .panel h2{font-family:'Fraunces',serif;font-size:20px;color:#fff;margin-bottom:4px}
+    .panel .p-sub{font-size:12.5px;color:var(--muted);margin-bottom:16px}
+    .qcat{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--pink,#ff5da2);margin:16px 0 8px;font-weight:700}
+    .q{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer}
+    .q input{margin-top:3px;width:17px;height:17px;accent-color:#ff5da2;flex-shrink:0}
+    .q span{font-size:13px;color:var(--dim);line-height:1.5}
+    .result{position:sticky;top:78px}
+    .meter-wrap{text-align:center;padding:8px 0 14px}
+    .meter{font-family:'Fraunces',serif;font-size:52px;font-weight:900;line-height:1;color:#fff}
+    .meter small{font-size:16px;color:var(--muted)}
+    .verdict{font-size:15px;font-weight:800;margin-top:8px}
+    .track{height:10px;background:#100d18;border-radius:6px;overflow:hidden;margin:16px 0 6px}
+    .track span{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,#4fd1a5,#f2c14e 55%,#ff5da2);transition:width .5s}
+    .flags{margin-top:14px;font-size:12px;color:var(--dim);line-height:1.6}
+    .flags b{color:#fff}
+    .disc{margin-top:16px;font-size:11px;color:var(--muted);line-height:1.55;border-top:1px solid var(--border,#2b2540);padding-top:12px}
+    .reset{margin-top:14px;width:100%;background:transparent;border:1px solid var(--border2,#3b3355);color:var(--dim);border-radius:100px;padding:10px;font:600 12px 'Inter';cursor:pointer}
+    .ref{margin-top:40px}
+    .ref h2{font-family:'Fraunces',serif;font-size:26px;color:#fff;margin-bottom:6px}
+    .ref .rs{font-size:13px;color:var(--muted);margin-bottom:20px}
+    .signs{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+    .sign{background:var(--card,#1a1626);border:1px solid var(--border,#2b2540);border-radius:14px;padding:16px}
+    .sign h3{font-size:15px;color:#fff;margin-bottom:7px}
+    .sign p{font-size:12.5px;color:var(--dim);line-height:1.55}
+    footer{border-top:1px solid var(--border,#2b2540);margin-top:42px;padding:26px 0 60px;font-size:12px;color:var(--muted);line-height:1.7}
+  </style>
+</head>
+<body>
+  <div class="aura"></div>
+  <section class="hero"><div class="wrap">
+    <span class="kick">Film AI Detector · Media literacy</span>
+    <h1>Is it real, or AI?<br><span class="g">Train your eye.</span></h1>
+    <p class="lead">As AI film gets better, knowing <b>how to look</b> matters — for creators, students, and everyone else. Run a clip through the checklist below to learn the tell-tale signs, and get a rough read on how likely it is AI-generated. It's a <b>learning tool, not a forensic verdict</b>.</p>
+  </div></section>
+
+  <div class="wrap">
+    <div class="grid2">
+      <div class="panel">
+        <h2>Observation checklist</h2>
+        <div class="p-sub">Watch the clip a few times. Check what you actually notice — don't guess.</div>
+        <div id="quiz"></div>
+      </div>
+      <div class="panel result">
+        <div class="meter-wrap">
+          <div class="meter"><span id="score">0</span><small>/100</small></div>
+          <div class="verdict" id="verdict" style="color:var(--good,#4fd1a5)">Looks clean so far</div>
+        </div>
+        <div class="track"><span id="bar"></span></div>
+        <div class="flags" id="flags">Check items on the left as you spot them.</div>
+        <button class="reset" onclick="resetAll()">Reset</button>
+        <div class="disc">This score is a weighted heuristic to build your intuition — real footage can trip flags, and good AI can pass them. Never treat it as proof; use it to know <b>what to look for</b>.</div>
+      </div>
+    </div>
+
+    <div class="ref">
+      <h2>The tell-tale signs</h2>
+      <div class="rs">What to look for, and why AI tends to get it wrong.</div>
+      <div class="signs" id="signs"></div>
+    </div>
+  </div>
+  <footer><div class="wrap">Media literacy is part of learning AI film: understanding how these tools fail teaches you how they work. Learn the craft next in <a href="learn.html" style="color:var(--gold,#f2c14e)">Film School</a>.</div></footer>
+
+  <script src="js/eve-nav.js"></script>
+  <script>
+    var QUESTIONS=[
+      {c:'Hands & anatomy',w:16,t:'Hands have wrong finger counts, fused or bending oddly.'},
+      {c:'Hands & anatomy',w:10,t:'Teeth, ears, or eyes shift shape between frames.'},
+      {c:'Text & symbols',w:14,t:'On-screen text, logos, or signage is garbled or nonsensical.'},
+      {c:'Temporal stability',w:14,t:'Textures shimmer, flicker, or “boil” frame to frame.'},
+      {c:'Temporal stability',w:10,t:'Objects appear, vanish, or morph between cuts.'},
+      {c:'Physics & continuity',w:12,t:'Motion feels weightless, or collisions/water/cloth behave wrongly.'},
+      {c:'Lighting & reflections',w:10,t:'Shadows or reflections don’t match the light source.'},
+      {c:'Backgrounds',w:8,t:'Background patterns repeat, warp, or dissolve into mush.'},
+      {c:'Faces & skin',w:8,t:'Skin looks waxy/too smooth; expressions are subtly “off”.'},
+      {c:'Overall',w:6,t:'It feels uncanny but you can’t say exactly why.'},
+      {c:'Provenance',w:-14,t:'You can verify a real source, camera, or credible origin.'}
+    ];
+    var SIGNS=[
+      {h:'✋ Hands & anatomy',p:'Extra or fused fingers, warping jewelry, teeth and ears that drift. Fine articulated structures are still where AI slips most.'},
+      {h:'🔤 Text & symbols',p:'Signs, labels, subtitles, and logos often come out as dreamlike gibberish — AI mimics letter shapes without spelling.'},
+      {h:'🌊 Temporal flicker',p:'Play it frame by frame: AI video often shimmers, and textures “boil” or crawl because each frame is re-imagined.'},
+      {h:'🧲 Physics & continuity',p:'Weightless motion, cloth and water that move wrong, objects that pop in and out — the model doesn’t truly simulate the world.'},
+      {h:'💡 Light & reflections',p:'Shadows pointing the wrong way, reflections that don’t match, eyes without consistent catchlights.'},
+      {h:'🧱 Backgrounds',p:'Crowds and repeating patterns melt into mush; straight architecture bends. Detail degrades away from the subject.'},
+      {h:'🧑 Faces & skin',p:'Waxy, too-even skin and micro-expressions that feel subtly hollow — the “almost human” uncanny valley.'},
+      {h:'🔎 Verify provenance',p:'The strongest check isn’t visual: can you trace a real source, creator, or camera? Context beats pixel-peeping.'}
+    ];
+    function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+    var maxPos=QUESTIONS.reduce(function(n,q){return n+(q.w>0?q.w:0);},0);
+    var quiz=document.getElementById('quiz');var lastc='';
+    quiz.innerHTML=QUESTIONS.map(function(q,i){
+      var head=q.c!==lastc?('<div class="qcat">'+esc(q.c)+'</div>'):'';lastc=q.c;
+      return head+'<label class="q"><input type="checkbox" data-i="'+i+'" onchange="recalc()"><span>'+esc(q.t)+'</span></label>';
+    }).join('');
+    document.getElementById('signs').innerHTML=SIGNS.map(function(s){return '<div class="sign"><h3>'+esc(s.h)+'</h3><p>'+esc(s.p)+'</p></div>';}).join('');
+    function recalc(){
+      var sum=0,flags=[];
+      document.querySelectorAll('#quiz input:checked').forEach(function(el){var q=QUESTIONS[+el.getAttribute('data-i')];sum+=q.w;if(q.w>0)flags.push(q.c);});
+      var score=Math.max(0,Math.min(100,Math.round(sum/maxPos*100)));
+      document.getElementById('score').textContent=score;
+      document.getElementById('bar').style.width=score+'%';
+      var v=document.getElementById('verdict');
+      if(score>=60){v.textContent='Strong signs of AI generation';v.style.color='#ff5da2';}
+      else if(score>=30){v.textContent='Some AI tells — look closer';v.style.color='#f2c14e';}
+      else{v.textContent='Looks clean so far';v.style.color='#4fd1a5';}
+      var uniq=flags.filter(function(x,i){return flags.indexOf(x)===i;});
+      document.getElementById('flags').innerHTML=uniq.length?('<b>Flagged:</b> '+uniq.map(esc).join(' · ')):'Check items on the left as you spot them.';
+    }
+    function resetAll(){document.querySelectorAll('#quiz input:checked').forEach(function(el){el.checked=false;});recalc();}
+    recalc();
+  </script>
+</body>
+</html>
