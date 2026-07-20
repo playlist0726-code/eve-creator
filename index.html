@@ -155,6 +155,7 @@
     .start{margin-top:22px;background:var(--grad);color:#120c1c;border:0;border-radius:100px;padding:15px 30px;font:800 15px var(--sans);cursor:pointer;box-shadow:0 12px 34px rgba(139,123,255,.32)}
     .start:hover{transform:translateY(-2px)}
     .error{color:var(--coral);font-size:12.5px;margin-top:12px}
+    .starter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 22px}.starter{background:#100d18;border:1px solid var(--border2);border-radius:14px;padding:15px;text-align:left;color:var(--txt);cursor:pointer;font:inherit}.starter:hover,.starter:focus{border-color:var(--iris2);outline:none}.starter b{display:block;color:#fff;font-size:13px;margin-bottom:5px}.starter span{font-size:11px;color:var(--dim);line-height:1.45}@media(max-width:700px){.starter-grid{grid-template-columns:1fr}}
     footer{border-top:1px solid var(--border);margin-top:40px;padding:34px 0 70px;font-size:12.5px;color:var(--muted);line-height:1.8}
     footer b{color:var(--dim)}
     /* reveal */
@@ -283,6 +284,12 @@
   <section class="sec" id="start"><div class="wrap"><div class="intake reveal">
     <h2>Start your film</h2>
     <p class="isub">Two quick choices, then E.V.E builds with you. Free to try — no account needed.</p>
+    <label>New here? Start with a 60-second practice film</label>
+    <div class="starter-grid">
+      <button class="starter" onclick="startPractice('paper_boat')"><b>The Paper Boat</b><span>A lost paper boat follows rainwater home. Learn visual setup and payoff.</span></button>
+      <button class="starter" onclick="startPractice('shy_robot')"><b>The Shy Robot</b><span>A repair robot must cross a noisy market. Learn tension and camera scale.</span></button>
+      <button class="starter" onclick="startPractice('last_seed')"><b>The Last Seed</b><span>A child protects one glowing seed through a storm. Learn props, color, and light.</span></button>
+    </div>
     <div class="intake-grid">
       <div><label for="productionType">What are you making?</label><select id="productionType"><option value="animation">Animation</option><option value="live_action">Live-action</option></select></div>
       <div><label for="targetType">What is the target?</label><select id="targetType"><option value="personal">Personal project</option><option value="contest">A specific contest</option></select></div>
@@ -333,6 +340,7 @@
     select.addEventListener('change',showContest);
     fetch('data/contests.json').then(r=>r.json()).then(data=>{contests=data.contests;select.innerHTML=contests.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');showContest();const old=EVE_STATE.loadIntake();if(old){document.getElementById('productionType').value=old.production_type;target.value=old.target_type;target.dispatchEvent(new Event('change'));if(old.contest?.id){select.value=old.contest.id;showContest();}}}).catch(()=>document.getElementById('intakeError').textContent='The curated contest list could not be loaded. Personal-project mode remains available.');
     function startPipeline(){const targetType=target.value,contest=targetType==='contest'?contests.find(c=>c.id===select.value):null;if(targetType==='contest'&&!contest){document.getElementById('intakeError').textContent='Choose a contest to continue.';return;}if(EVE_STATE.saveIntake({production_type:document.getElementById('productionType').value,target_type:targetType,contest})){location.href='concept_lab.html';}}
+    function startPractice(id){const briefs={paper_boat:{idea:'A lost paper boat follows rainwater through a city and returns to the child who folded it.',genre:'animated_short'},shy_robot:{idea:'A shy repair robot must cross a noisy market to return a musician’s broken instrument before sunset.',genre:'animated_short'},last_seed:{idea:'During a violent storm, a child protects the village’s last glowing seed and discovers it grows only when shared.',genre:'sci_fi_fantasy'}};const brief=briefs[id];if(!brief)return;sessionStorage.setItem('eve.starter.v1',JSON.stringify(brief));if(EVE_STATE.saveIntake({production_type:'animation',target_type:'personal',contest:null,starter:id})){location.href='concept_lab.html';}}
   </script>
 </body>
 </html>

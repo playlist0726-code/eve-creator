@@ -2,7 +2,7 @@
 
 **Project:** E.V.E Creator — the one-person film studio with an AI film crew that argues
 **Author:** Junsu (Michael) Kim
-**Track:** _(choose one: Apps for Your Life · Work & Productivity · Developer Tools · Education)_
+**Track:** Education
 **Live demo:** https://eve-creator.vercel.app
 **Repo:** https://github.com/playlist0726-code/eve-creator (public, MIT)
 **Demo video:** _(public YouTube, < 3 min, audio must explain how Codex AND GPT-5.6 were used)_
@@ -23,6 +23,8 @@ You enter one idea (mood · genre · scene · premise). E.V.E designs the whole 
 Then the differentiator: **The Creator's Room**. GPT-5.6 role-plays a five-person crew (Director, Writer, Cinematographer, Editor, Test Audience) that critiques your draft against the craft data, applies concrete before/after fixes, and re-scores its hit-potential. You watch the film measurably improve.
 
 **It's built to teach.** Every technique E.V.E cites (`low_angle`, `chiaroscuro`, `pixar_spine`, +108 more) is tap-to-learn with a plain-language explanation, and the crew explains *why* each fix works. A beginner finishes with a shootable film **and** a real understanding of the craft — then copies the generation prompts to make it themselves.
+
+Research-backed onboarding now gives absolute beginners a bounded 60-second starter, a reusable cross-shot Continuity Kit, and a minimum viable still → motion → edit path. Sources and the honest rubric audit are in [research](research/).
 
 ### How we built it
 Static HTML/CSS/vanilla JS front end (no build step), Vercel serverless functions calling **GPT-5.6** via the Responses API with strict JSON-schema structured output. Two agentic passes: one drafts a grounded five-act blueprint; a second convenes the Creator's Room for a self-critique loop. Citations are validated against a 111-ID craft allowlist so the model can't fabricate evidence. Built pair-programming with **Codex**, guarded by a Node test suite in CI.
@@ -83,7 +85,7 @@ Record with voice-over. The audio has to explicitly say *how GPT-5.6 and Codex w
 - [x] Live, clickable demo (Vercel) — no rebuild needed for judges to test
 - [x] Tests + CI (green badge)
 - [x] Public repo with MIT license _(or share private repo with testing@devpost.com + build-week-event@openai.com)_
-- [ ] **Choose a track** and set it in the Devpost form (see table above)
+- [x] **Education track** selected in the submission materials; confirm it in Devpost
 - [ ] **Public YouTube demo video < 3 min**, with **audio** covering how Codex AND GPT-5.6 were used
 - [ ] **Codex `/feedback` session ID** obtained and pasted into the Devpost form
 - [ ] Project description on Devpost (use the fields above)

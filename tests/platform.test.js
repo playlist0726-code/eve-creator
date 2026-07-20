@@ -40,4 +40,20 @@ const learnIds = [...learn.matchAll(/ids:\[([^\]]*)\]/g)]
 assert.equal(learnIds.length, CITABLE_IDS.length, 'Film School must list every craft ID once');
 for (const id of CITABLE_IDS) assert.ok(learnIds.includes(id), `Film School missing ${id}`);
 
+// Research-backed safe wins: beginner launch, cross-shot continuity, minimal tool stack.
+const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const concept=fs.readFileSync(path.join(root,'concept_lab.html'),'utf8');
+const storyboard=fs.readFileSync(path.join(root,'storyboard.html'),'utf8');
+const toolkit=fs.readFileSync(path.join(root,'toolkit.html'),'utf8');
+assert.match(home,/startPractice\('paper_boat'\)/,'Home must offer a bounded beginner practice brief');
+assert.match(home,/eve\.starter\.v1/,'Starter must carry context forward');
+assert.match(concept,/loadStarter/,'Concept Lab must consume starter context');
+assert.match(storyboard,/Continuity Kit/,'Storyboard must teach cross-shot continuity');
+assert.match(storyboard,/Copy continuity anchor/,'Continuity anchor must be reusable');
+assert.match(toolkit,/minimum viable stack/i,'Toolkit must reduce model overload');
+for(const file of ['research/ai_pain_points.md','research/competitive_scan.md','research/win_audit.md']){
+  const research=fs.readFileSync(path.join(root,file),'utf8');
+  assert.match(research,/https:\/\//,`${file} must contain real source URLs`);
+}
+
 console.log(`Platform tests passed (6 nav tabs, ${newPages.length} new pages, Film School covers ${CITABLE_IDS.length} terms).`);

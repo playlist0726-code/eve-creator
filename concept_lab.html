@@ -237,6 +237,7 @@
       finally{clearInterval(timer);btn.disabled=false;}
     }
     function demo(){ document.getElementById('idea').value="A lonely old man plays chess against himself in an autumn park. His timid side, losing badly, fakes a heart attack to trick his aggressive side and turns the board — until finally he wins against himself, and gives himself the prize.";document.getElementById('genre').value='animated_short';document.getElementById('runtime').value=5;validate(); }
+    (function loadStarter(){try{const raw=sessionStorage.getItem('eve.starter.v1');if(!raw)return;const brief=JSON.parse(raw);document.getElementById('idea').value=brief.idea||'';document.getElementById('genre').value=brief.genre||'animated_short';document.getElementById('runtime').value=1;sessionStorage.removeItem('eve.starter.v1');}catch(_){}})();
   </script>
 </body>
 </html>

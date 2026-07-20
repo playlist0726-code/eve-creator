@@ -64,6 +64,16 @@ E.V.E is built for people who never studied film. Instead of a separate "course,
 
 The result: a beginner finishes with a shootable film *and* a working understanding of the craft behind it.
 
+### Research-backed beginner support
+
+The 2026-07 research pass found three recurring barriers: beginners do not know where to start, multi-shot characters and worlds drift, and model/tool choice is overwhelming. E.V.E now includes:
+
+- **First Film starters** that prefill a bounded 60-second practice concept.
+- A **Continuity Kit** that turns the director lens and first shot into a reusable cross-shot anchor.
+- A **minimum viable stack**—one still model, one motion model, one editor—before advanced routing.
+
+See [AI pain points](research/ai_pain_points.md), [competitive scan](research/competitive_scan.md), and [win audit](research/win_audit.md) for sourced evidence and honest limits.
+
 ## How it works — the guided pipeline
 
 ```mermaid
