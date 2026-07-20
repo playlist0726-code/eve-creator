@@ -70,7 +70,7 @@ assert.ok(fs.existsSync(toolDataPath),'Tool Study Library data must exist');
 const toolData=JSON.parse(fs.readFileSync(toolDataPath,'utf8'));
 assert.ok(Array.isArray(toolData.tools),'Tool Study Library must expose a tools array');
 assert.ok(toolData.tools.length>=25,'Tool Study Library must cover at least 25 tools');
-const requiredToolFields=['id','name','maker','category','type','what','strengths','weak_at','best_for','access','level','url','special'];
+const requiredToolFields=['id','name','maker','category','type','what','strengths','weak_at','best_for','access','level','url','special','maker_company','founded_year','country_hq','key_people','overview','history','versions','pricing','access_how','notable_features','best_use_cases','compare','brand_color','sources','status','status_note'];
 const toolTypes=new Set(['t2v','i2v','both','image','avatar','motion','editor']);
 const accessTypes=new Set(['free','freemium','paid','open_source']);
 const levels=new Set(['beginner','intermediate','advanced']);
@@ -83,9 +83,25 @@ for(const tool of toolData.tools){
   assert.ok(levels.has(tool.level),`${tool.id} has invalid level`);
   assert.ok(Array.isArray(tool.strengths)&&tool.strengths.length,`${tool.id} needs strengths`);
   assert.ok(Array.isArray(tool.weak_at)&&tool.weak_at.length,`${tool.id} needs weak_at`);
+  assert.ok(Array.isArray(tool.key_people)&&tool.key_people.length,`${tool.id} needs key_people`);
+  assert.ok(tool.key_people.every((p)=>p.name&&p.role),`${tool.id} key_people entries must have name and role`);
+  assert.ok(tool.overview.length>=140,`${tool.id} needs a substantial overview`);
+  assert.ok(Array.isArray(tool.history)&&tool.history.length,`${tool.id} needs history`);
+  assert.ok(Array.isArray(tool.versions)&&tool.versions.length,`${tool.id} needs versions`);
+  assert.ok(Array.isArray(tool.notable_features)&&tool.notable_features.length,`${tool.id} needs notable_features`);
+  assert.ok(Array.isArray(tool.best_use_cases)&&tool.best_use_cases.length,`${tool.id} needs best_use_cases`);
+  assert.match(tool.brand_color,/^#[0-9A-F]{6}$/i,`${tool.id} needs a hex brand_color`);
+  assert.ok(Array.isArray(tool.sources)&&tool.sources.length,`${tool.id} needs cited sources`);
+  tool.sources.forEach((source)=>assert.match(source,/^https:\/\//,`${tool.id} source must use HTTPS`));
+  assert.ok(['active','deprecating','discontinued'].includes(tool.status),`${tool.id} has invalid status`);
   assert.match(tool.url,/^https:\/\//,`${tool.id} needs an official HTTPS source`);
 }
 assert.match(toolkit,/fetch\('data\/ai_tools\.json'\)/,'toolkit.html must render from the JSON catalogue');
+assert.match(toolkit,/id="tool-profile"[^>]+role="dialog"/,'toolkit.html must include an accessible detail container');
+assert.match(toolkit,/#tool=/,'toolkit.html must support #tool= deep links');
+assert.match(toolkit,/categoryGlyph/,'toolkit.html must render category glyphs in tool icons');
+assert.match(toolkit,/aria-label="'\+esc\(t\.name\)\+' monogram icon"/,'tool icons must be labelled');
+assert.match(toolkit,/e\.key==='Escape'/,'tool profile must close with Escape');
 assert.match(toolkit,/prefers-reduced-motion:\s*reduce/,'toolkit motion must respect reduced-motion preferences');
 assert.doesNotMatch(JSON.stringify(toolData),/[가-힣]/,'Tool Study Library data must be English');
 // Footage Lab must remain private, local-only, and transparent about its limits.

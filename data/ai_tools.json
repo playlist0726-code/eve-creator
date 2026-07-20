@@ -2,7 +2,8 @@
   "meta": {
     "title": "First Frame Tool Study Library",
     "as_of": "2026-07-20",
-    "note": "Capabilities and access labels were checked against the linked official product, documentation, research, or repository page. Exact prices and quotas change; verify them on the official page before committing a project."
+    "note": "Capabilities and access labels were checked against the linked official product, documentation, research, or repository page. Exact prices and quotas change; verify them on the official page before committing a project.",
+    "research_method": "Official product, documentation, research, repository, company, and selected reputable secondary pages. Unverified leadership, dates, headquarters, pricing, and availability are marked verify."
   },
   "tools": [
     {
@@ -12,13 +13,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "A cinematic video model that generates motion and audio from text or image direction.",
-      "strengths": ["Camera and motion controls", "Text-to-video and image-to-video", "High-resolution output"],
-      "weak_at": ["Natural, consistent spoken audio remains an active development area"],
+      "strengths": [
+        "Camera and motion controls",
+        "Text-to-video and image-to-video",
+        "High-resolution output"
+      ],
+      "weak_at": [
+        "Natural, consistent spoken audio remains an active development area"
+      ],
       "best_for": "Cinematic establishing shots and controlled hero moments.",
       "access": "paid",
       "level": "intermediate",
       "url": "https://deepmind.google/models/veo/",
-      "special": "It matters when a shot needs both believable camera language and generated sound."
+      "special": "It matters when a shot needs both believable camera language and generated sound.",
+      "maker_company": "Google DeepMind",
+      "founded_year": "2010",
+      "country_hq": "London, United Kingdom",
+      "key_people": [
+        {
+          "name": "Demis Hassabis",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "A cinematic video model that generates motion and audio from text or image direction. It matters when a shot needs both believable camera language and generated sound. First Frame treats it as a both option for cinematic establishing shots and controlled hero moments.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Veo 3.1 is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Veo 3.1",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as paid from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Camera and motion controls",
+        "Text-to-video and image-to-video",
+        "High-resolution output"
+      ],
+      "best_use_cases": [
+        "Cinematic establishing shots and controlled hero moments.",
+        "It matters when a shot needs both believable camera language and generated sound."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Veo 3.1 is distinguished here by camera and motion controls and its paid access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#4285F4",
+      "sources": [
+        "https://deepmind.google/models/veo/",
+        "https://deepmind.google/about/"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "openai-sora",
@@ -27,14 +79,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "OpenAI's video-and-audio model for creating and remixing clips from prompts or images.",
-      "strengths": ["Video with synchronized sound", "Image-led creation", "Remix and extension workflows"],
-      "weak_at": ["The consumer product is no longer available"],
+      "strengths": [
+        "Video with synchronized sound",
+        "Image-led creation",
+        "Remix and extension workflows"
+      ],
+      "weak_at": [
+        "The consumer product is no longer available"
+      ],
       "best_for": "Study and historical comparison, not a new production workflow.",
       "access": "paid",
       "level": "beginner",
       "url": "https://openai.com/index/sora-2/",
       "special": "It is an important reference point for video generation, but beginners should choose an available tool.",
-      "status": "unavailable — OpenAI says the Sora product ended April 26, 2026"
+      "status": "discontinued",
+      "maker_company": "OpenAI",
+      "founded_year": "2015",
+      "country_hq": "San Francisco, United States",
+      "key_people": [
+        {
+          "name": "Sam Altman",
+          "role": "CEO"
+        }
+      ],
+      "overview": "OpenAI's video-and-audio model for creating and remixing clips from prompts or images. It is an important reference point for video generation, but beginners should choose an available tool. First Frame treats it as a both option for study and historical comparison, not a new production workflow.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Sora 2 is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Sora 2",
+          "notes": "unavailable — OpenAI says the Sora product ended April 26, 2026"
+        }
+      ],
+      "pricing": "Access is classified as paid from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Video with synchronized sound",
+        "Image-led creation",
+        "Remix and extension workflows"
+      ],
+      "best_use_cases": [
+        "Study and historical comparison, not a new production workflow.",
+        "It is an important reference point for video generation, but beginners should choose an available tool."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Sora 2 is distinguished here by video with synchronized sound and its paid access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#111111",
+      "sources": [
+        "https://openai.com/index/sora-2/",
+        "https://openai.com/about/"
+      ],
+      "status_note": "unavailable — OpenAI says the Sora product ended April 26, 2026"
     },
     {
       "id": "runway-gen4",
@@ -43,13 +145,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "A commercial generation model inside Runway's browser-based creative platform.",
-      "strengths": ["Camera-directed shots", "Reference-led workflows", "Connected editing tools"],
-      "weak_at": ["Credits and model availability vary by plan"],
+      "strengths": [
+        "Camera-directed shots",
+        "Reference-led workflows",
+        "Connected editing tools"
+      ],
+      "weak_at": [
+        "Credits and model availability vary by plan"
+      ],
       "best_for": "Shots that need precise direction inside a broader editing workflow.",
       "access": "freemium",
       "level": "intermediate",
       "url": "https://runwayml.com/research/introducing-runway-gen-4.5",
-      "special": "It keeps generation and shot refinement in one production workspace."
+      "special": "It keeps generation and shot refinement in one production workspace.",
+      "maker_company": "Runway AI, Inc.",
+      "founded_year": "2018",
+      "country_hq": "New York, United States",
+      "key_people": [
+        {
+          "name": "Cristóbal Valenzuela",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "A commercial generation model inside Runway's browser-based creative platform. It keeps generation and shot refinement in one production workspace. First Frame treats it as a both option for shots that need precise direction inside a broader editing workflow.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Runway Gen-4.5 is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Runway Gen-4.5",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Camera-directed shots",
+        "Reference-led workflows",
+        "Connected editing tools"
+      ],
+      "best_use_cases": [
+        "Shots that need precise direction inside a broader editing workflow.",
+        "It keeps generation and shot refinement in one production workspace."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Runway Gen-4.5 is distinguished here by camera-directed shots and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#6C5CE7",
+      "sources": [
+        "https://runwayml.com/research/introducing-runway-gen-4.5",
+        "https://runwayml.com/about"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "kling-ai",
@@ -58,14 +211,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "A web platform for generating video from text and image references.",
-      "strengths": ["Text-to-video", "Image-to-video", "Motion-focused generation"],
-      "weak_at": ["Exact model availability and credits should be checked before production"],
+      "strengths": [
+        "Text-to-video",
+        "Image-to-video",
+        "Motion-focused generation"
+      ],
+      "weak_at": [
+        "Exact model availability and credits should be checked before production"
+      ],
       "best_for": "Testing expressive movement and narrative clip variations.",
       "access": "freemium",
       "level": "intermediate",
       "url": "https://klingai.com/",
       "special": "It gives learners another motion interpretation to compare against the same prompt.",
-      "status": "verify current model and regional access on the official site"
+      "status": "active",
+      "maker_company": "Kuaishou Technology",
+      "founded_year": "2011",
+      "country_hq": "Beijing, China",
+      "key_people": [
+        {
+          "name": "Cheng Yixiao",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "A web platform for generating video from text and image references. It gives learners another motion interpretation to compare against the same prompt. First Frame treats it as a both option for testing expressive movement and narrative clip variations.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Kling AI is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Kling AI",
+          "notes": "verify current model and regional access on the official site"
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Text-to-video",
+        "Image-to-video",
+        "Motion-focused generation"
+      ],
+      "best_use_cases": [
+        "Testing expressive movement and narrative clip variations.",
+        "It gives learners another motion interpretation to compare against the same prompt."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Kling AI is distinguished here by text-to-video and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#FF4D4F",
+      "sources": [
+        "https://klingai.com/",
+        "https://www.kuaishou.com/en/about"
+      ],
+      "status_note": "verify current model and regional access on the official site"
     },
     {
       "id": "hailuo-ai",
@@ -74,13 +277,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "MiniMax's video model for text-led and image-led clip generation.",
-      "strengths": ["Character motion", "Visual quality", "Stylistic expression"],
-      "weak_at": ["Access and quotas vary between the consumer app and API"],
+      "strengths": [
+        "Character motion",
+        "Visual quality",
+        "Stylistic expression"
+      ],
+      "weak_at": [
+        "Access and quotas vary between the consumer app and API"
+      ],
       "best_for": "Character-action drafts and stylized motion tests.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://www.minimax.io/news/minimax-and-veed-hailuo-23-for-pro-level-ai-video",
-      "special": "It is useful for quickly comparing how a character action reads in motion."
+      "special": "It is useful for quickly comparing how a character action reads in motion.",
+      "maker_company": "MiniMax",
+      "founded_year": "2021",
+      "country_hq": "Shanghai, China",
+      "key_people": [
+        {
+          "name": "Yan Junjie",
+          "role": "Founder and CEO"
+        }
+      ],
+      "overview": "MiniMax's video model for text-led and image-led clip generation. It is useful for quickly comparing how a character action reads in motion. First Frame treats it as a both option for character-action drafts and stylized motion tests.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Hailuo 2.3 is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Hailuo 2.3",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Character motion",
+        "Visual quality",
+        "Stylistic expression"
+      ],
+      "best_use_cases": [
+        "Character-action drafts and stylized motion tests.",
+        "It is useful for quickly comparing how a character action reads in motion."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Hailuo 2.3 is distinguished here by character motion and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#19B5FE",
+      "sources": [
+        "https://www.minimax.io/news/minimax-and-veed-hailuo-23-for-pro-level-ai-video",
+        "https://www.minimax.io/about"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "luma-ray",
@@ -89,14 +343,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "Luma's current production-focused video model for controlled generation and continuity.",
-      "strengths": ["Text and image inputs", "Production controls", "Creative iteration"],
-      "weak_at": ["Older Dream Machine and Ray 2 tutorials are now stale"],
+      "strengths": [
+        "Text and image inputs",
+        "Production controls",
+        "Creative iteration"
+      ],
+      "weak_at": [
+        "Older Dream Machine and Ray 2 tutorials are now stale"
+      ],
       "best_for": "Directed production tests and fast visual iteration.",
       "access": "paid",
       "level": "intermediate",
       "url": "https://lumalabs.ai/ray",
       "special": "The official migration guidance helps learners avoid building around an obsolete model name.",
-      "status": "Dream Machine and Ray 2 deprecated; current model is Ray 3.2"
+      "status": "deprecating",
+      "maker_company": "Luma AI",
+      "founded_year": "2021",
+      "country_hq": "Palo Alto, United States",
+      "key_people": [
+        {
+          "name": "Amit Jain",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "Luma's current production-focused video model for controlled generation and continuity. The official migration guidance helps learners avoid building around an obsolete model name. First Frame treats it as a both option for directed production tests and fast visual iteration.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Luma Ray 3.2 is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Luma Ray 3.2",
+          "notes": "Dream Machine and Ray 2 deprecated; current model is Ray 3.2"
+        }
+      ],
+      "pricing": "Access is classified as paid from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Text and image inputs",
+        "Production controls",
+        "Creative iteration"
+      ],
+      "best_use_cases": [
+        "Directed production tests and fast visual iteration.",
+        "The official migration guidance helps learners avoid building around an obsolete model name."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Luma Ray 3.2 is distinguished here by text and image inputs and its paid access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#6D5DFB",
+      "sources": [
+        "https://lumalabs.ai/ray",
+        "https://www.crunchbase.com/organization/luma-ai"
+      ],
+      "status_note": "Dream Machine and Ray 2 deprecated; current model is Ray 3.2"
     },
     {
       "id": "pika",
@@ -105,13 +409,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "A social-first video creation platform with text, image, effect, and transition workflows.",
-      "strengths": ["Text-to-video", "Image-to-video", "Playful effects and frame transitions"],
-      "weak_at": ["Effects-first workflows may need extra editorial control for narrative continuity"],
+      "strengths": [
+        "Text-to-video",
+        "Image-to-video",
+        "Playful effects and frame transitions"
+      ],
+      "weak_at": [
+        "Effects-first workflows may need extra editorial control for narrative continuity"
+      ],
       "best_for": "Short social clips, transformations, and playful experiments.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://pika.art/faq",
-      "special": "Its effect-based tools make motion concepts easy to learn through quick experiments."
+      "special": "Its effect-based tools make motion concepts easy to learn through quick experiments.",
+      "maker_company": "Pika Labs",
+      "founded_year": "2023",
+      "country_hq": "Palo Alto, United States",
+      "key_people": [
+        {
+          "name": "Demi Guo",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "A social-first video creation platform with text, image, effect, and transition workflows. Its effect-based tools make motion concepts easy to learn through quick experiments. First Frame treats it as a both option for short social clips, transformations, and playful experiments.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Pika is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Pika",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Text-to-video",
+        "Image-to-video",
+        "Playful effects and frame transitions"
+      ],
+      "best_use_cases": [
+        "Short social clips, transformations, and playful experiments.",
+        "Its effect-based tools make motion concepts easy to learn through quick experiments."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Pika is distinguished here by text-to-video and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#F04F98",
+      "sources": [
+        "https://pika.art/faq",
+        "https://pika.art/about"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "adobe-firefly-video",
@@ -120,13 +475,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "Adobe's text-to-video and image-to-video generator with camera controls and editor integration.",
-      "strengths": ["Text and image inputs", "Camera controls", "Adobe editing workflow"],
-      "weak_at": ["Generation uses limited credits on free access"],
+      "strengths": [
+        "Text and image inputs",
+        "Camera controls",
+        "Adobe editing workflow"
+      ],
+      "weak_at": [
+        "Generation uses limited credits on free access"
+      ],
       "best_for": "B-roll, product shots, motion elements, and Adobe-centered workflows.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://www.adobe.com/products/firefly/features/ai-video-generator.html",
-      "special": "It connects generated shots directly to a familiar professional editing ecosystem."
+      "special": "It connects generated shots directly to a familiar professional editing ecosystem.",
+      "maker_company": "Adobe Inc.",
+      "founded_year": "1982",
+      "country_hq": "San Jose, United States",
+      "key_people": [
+        {
+          "name": "Shantanu Narayen",
+          "role": "Chair and CEO"
+        }
+      ],
+      "overview": "Adobe's text-to-video and image-to-video generator with camera controls and editor integration. It connects generated shots directly to a familiar professional editing ecosystem. First Frame treats it as a both option for b-roll, product shots, motion elements, and adobe-centered workflows.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Firefly Video is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Firefly Video",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Text and image inputs",
+        "Camera controls",
+        "Adobe editing workflow"
+      ],
+      "best_use_cases": [
+        "B-roll, product shots, motion elements, and Adobe-centered workflows.",
+        "It connects generated shots directly to a familiar professional editing ecosystem."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Firefly Video is distinguished here by text and image inputs and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#E60023",
+      "sources": [
+        "https://www.adobe.com/products/firefly/features/ai-video-generator.html",
+        "https://www.adobe.com/about-adobe.html"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "stable-video-diffusion",
@@ -135,14 +541,65 @@
       "category": "Text & image to video",
       "type": "i2v",
       "what": "An open research image-to-video model released for local experimentation.",
-      "strengths": ["Open model weights", "Local experimentation", "Developer study"],
-      "weak_at": ["Older research release", "Requires technical setup and capable hardware"],
+      "strengths": [
+        "Open model weights",
+        "Local experimentation",
+        "Developer study"
+      ],
+      "weak_at": [
+        "Older research release",
+        "Requires technical setup and capable hardware"
+      ],
       "best_for": "Learning how an open image-to-video pipeline works.",
       "access": "open_source",
       "level": "advanced",
       "url": "https://github.com/Stability-AI/generative-models",
       "special": "It exposes the machinery rather than hiding generation behind a web app.",
-      "status": "legacy research model; verify its license and suitability before use"
+      "status": "deprecating",
+      "maker_company": "Stability AI",
+      "founded_year": "2019",
+      "country_hq": "London, United Kingdom",
+      "key_people": [
+        {
+          "name": "Prem Akkaraju",
+          "role": "CEO"
+        }
+      ],
+      "overview": "An open research image-to-video model released for local experimentation. It exposes the machinery rather than hiding generation behind a web app. First Frame treats it as a i2v option for learning how an open image-to-video pipeline works.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Stable Video Diffusion is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Stable Video Diffusion",
+          "notes": "legacy research model; verify its license and suitability before use"
+        }
+      ],
+      "pricing": "Open weights or source are linked; hosting, compute, and commercial-license costs vary. Verify the repository license and infrastructure cost.",
+      "access_how": "Use the linked repository or model page; review the model license and local hardware requirements before production.",
+      "notable_features": [
+        "Open model weights",
+        "Local experimentation",
+        "Developer study"
+      ],
+      "best_use_cases": [
+        "Learning how an open image-to-video pipeline works.",
+        "It exposes the machinery rather than hiding generation behind a web app."
+      ],
+      "compare": "Compared with Wan 2.2 and HunyuanVideo, Stable Video Diffusion is distinguished here by open model weights and its open source access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#7B61FF",
+      "sources": [
+        "https://github.com/Stability-AI/generative-models",
+        "https://stability.ai/board-of-directors"
+      ],
+      "status_note": "legacy research model; verify its license and suitability before use"
     },
     {
       "id": "seedance",
@@ -151,13 +608,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "A multimodal audio-video model that accepts text, image, audio, and video references.",
-      "strengths": ["Multi-shot storytelling", "Reference-driven control", "Joint audio-video generation"],
-      "weak_at": ["Product access differs by platform and region"],
+      "strengths": [
+        "Multi-shot storytelling",
+        "Reference-driven control",
+        "Joint audio-video generation"
+      ],
+      "weak_at": [
+        "Product access differs by platform and region"
+      ],
       "best_for": "Complex multi-shot scenes guided by several kinds of reference material.",
       "access": "paid",
       "level": "advanced",
       "url": "https://seed.bytedance.com/en/seedance2_0",
-      "special": "It teaches that direction can come from reference sound and video, not only a text prompt."
+      "special": "It teaches that direction can come from reference sound and video, not only a text prompt.",
+      "maker_company": "ByteDance",
+      "founded_year": "2012",
+      "country_hq": "Beijing, China",
+      "key_people": [
+        {
+          "name": "Liang Rubo",
+          "role": "CEO"
+        }
+      ],
+      "overview": "A multimodal audio-video model that accepts text, image, audio, and video references. It teaches that direction can come from reference sound and video, not only a text prompt. First Frame treats it as a both option for complex multi-shot scenes guided by several kinds of reference material.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Seedance 2.0 is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Seedance 2.0",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as paid from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Multi-shot storytelling",
+        "Reference-driven control",
+        "Joint audio-video generation"
+      ],
+      "best_use_cases": [
+        "Complex multi-shot scenes guided by several kinds of reference material.",
+        "It teaches that direction can come from reference sound and video, not only a text prompt."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Seedance 2.0 is distinguished here by multi-shot storytelling and its paid access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#325BFF",
+      "sources": [
+        "https://seed.bytedance.com/en/seedance2_0",
+        "https://www.bytedance.com/en/"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "hunyuan-video",
@@ -166,13 +674,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "Tencent's downloadable family of large video generation models.",
-      "strengths": ["Open weights", "Text-to-video", "Image-to-video variants"],
-      "weak_at": ["Large local hardware and technical setup"],
+      "strengths": [
+        "Open weights",
+        "Text-to-video",
+        "Image-to-video variants"
+      ],
+      "weak_at": [
+        "Large local hardware and technical setup"
+      ],
       "best_for": "Advanced students studying or customizing an open video model.",
       "access": "open_source",
       "level": "advanced",
       "url": "https://github.com/Tencent-Hunyuan/HunyuanVideo",
-      "special": "It is a practical bridge from using AI tools to studying how video models are deployed."
+      "special": "It is a practical bridge from using AI tools to studying how video models are deployed.",
+      "maker_company": "Tencent",
+      "founded_year": "1998",
+      "country_hq": "Shenzhen, China",
+      "key_people": [
+        {
+          "name": "Pony Ma",
+          "role": "Co-founder, Chair and CEO"
+        }
+      ],
+      "overview": "Tencent's downloadable family of large video generation models. It is a practical bridge from using AI tools to studying how video models are deployed. First Frame treats it as a both option for advanced students studying or customizing an open video model.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "HunyuanVideo is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "HunyuanVideo",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Open weights or source are linked; hosting, compute, and commercial-license costs vary. Verify the repository license and infrastructure cost.",
+      "access_how": "Use the linked repository or model page; review the model license and local hardware requirements before production.",
+      "notable_features": [
+        "Open weights",
+        "Text-to-video",
+        "Image-to-video variants"
+      ],
+      "best_use_cases": [
+        "Advanced students studying or customizing an open video model.",
+        "It is a practical bridge from using AI tools to studying how video models are deployed."
+      ],
+      "compare": "Compared with Wan 2.2 and HunyuanVideo, HunyuanVideo is distinguished here by open weights and its open source access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#1677FF",
+      "sources": [
+        "https://github.com/Tencent-Hunyuan/HunyuanVideo",
+        "https://www.tencent.com/en-us/about.html"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "wan-video",
@@ -181,13 +740,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "An open suite for text-to-video, image-to-video, and related generation tasks.",
-      "strengths": ["Open weights", "Multiple video tasks", "Local customization"],
-      "weak_at": ["High-quality variants require substantial hardware"],
+      "strengths": [
+        "Open weights",
+        "Multiple video tasks",
+        "Local customization"
+      ],
+      "weak_at": [
+        "High-quality variants require substantial hardware"
+      ],
       "best_for": "Advanced learners who want an inspectable, adaptable video pipeline.",
       "access": "open_source",
       "level": "advanced",
       "url": "https://github.com/Wan-Video/Wan2.2",
-      "special": "Its public code and weights make experimentation reproducible."
+      "special": "Its public code and weights make experimentation reproducible.",
+      "maker_company": "Alibaba Group",
+      "founded_year": "1999",
+      "country_hq": "Hangzhou, China",
+      "key_people": [
+        {
+          "name": "Eddie Wu",
+          "role": "CEO"
+        }
+      ],
+      "overview": "An open suite for text-to-video, image-to-video, and related generation tasks. Its public code and weights make experimentation reproducible. First Frame treats it as a both option for advanced learners who want an inspectable, adaptable video pipeline.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Wan 2.2 is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Wan 2.2",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Open weights or source are linked; hosting, compute, and commercial-license costs vary. Verify the repository license and infrastructure cost.",
+      "access_how": "Use the linked repository or model page; review the model license and local hardware requirements before production.",
+      "notable_features": [
+        "Open weights",
+        "Multiple video tasks",
+        "Local customization"
+      ],
+      "best_use_cases": [
+        "Advanced learners who want an inspectable, adaptable video pipeline.",
+        "Its public code and weights make experimentation reproducible."
+      ],
+      "compare": "Compared with Wan 2.2 and HunyuanVideo, Wan 2.2 is distinguished here by open weights and its open source access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#FF6A00",
+      "sources": [
+        "https://github.com/Wan-Video/Wan2.2",
+        "https://www.alibabagroup.com/en-US/about-alibaba"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "genmo-mochi",
@@ -196,13 +806,65 @@
       "category": "Text & image to video",
       "type": "t2v",
       "what": "An open text-to-video model intended for research and local workflows.",
-      "strengths": ["Open weights", "Text-to-video research", "Community integrations"],
-      "weak_at": ["Technical setup", "Not an all-in-one beginner editor"],
+      "strengths": [
+        "Open weights",
+        "Text-to-video research",
+        "Community integrations"
+      ],
+      "weak_at": [
+        "Technical setup",
+        "Not an all-in-one beginner editor"
+      ],
       "best_for": "Studying and adapting an open text-to-video system.",
       "access": "open_source",
       "level": "advanced",
       "url": "https://github.com/genmoai/models",
-      "special": "It lets technical learners inspect a modern video model instead of treating it as magic."
+      "special": "It lets technical learners inspect a modern video model instead of treating it as magic.",
+      "maker_company": "Genmo",
+      "founded_year": "2022",
+      "country_hq": "San Francisco, United States",
+      "key_people": [
+        {
+          "name": "Ajay Jain",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "An open text-to-video model intended for research and local workflows. It lets technical learners inspect a modern video model instead of treating it as magic. First Frame treats it as a t2v option for studying and adapting an open text-to-video system.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Mochi 1 is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Mochi 1",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Open weights or source are linked; hosting, compute, and commercial-license costs vary. Verify the repository license and infrastructure cost.",
+      "access_how": "Use the linked repository or model page; review the model license and local hardware requirements before production.",
+      "notable_features": [
+        "Open weights",
+        "Text-to-video research",
+        "Community integrations"
+      ],
+      "best_use_cases": [
+        "Studying and adapting an open text-to-video system.",
+        "It lets technical learners inspect a modern video model instead of treating it as magic."
+      ],
+      "compare": "Compared with Wan 2.2 and HunyuanVideo, Mochi 1 is distinguished here by open weights and its open source access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#7C3AED",
+      "sources": [
+        "https://github.com/genmoai/models",
+        "https://www.genmo.ai/about"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "ltx-video",
@@ -211,13 +873,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "An open-weight video engine for text, image, audio, and editing workflows.",
-      "strengths": ["Open weights", "Local deployment", "Production-oriented control"],
-      "weak_at": ["Local use is more technical than LTX Studio"],
+      "strengths": [
+        "Open weights",
+        "Local deployment",
+        "Production-oriented control"
+      ],
+      "weak_at": [
+        "Local use is more technical than LTX Studio"
+      ],
       "best_for": "Technical filmmakers who need an adaptable local video engine.",
       "access": "open_source",
       "level": "advanced",
       "url": "https://ltx.io/video-generation-model",
-      "special": "It separates the open model from the easier, hosted LTX Studio experience."
+      "special": "It separates the open model from the easier, hosted LTX Studio experience.",
+      "maker_company": "Lightricks",
+      "founded_year": "2013",
+      "country_hq": "Jerusalem, Israel",
+      "key_people": [
+        {
+          "name": "Zeev Farbman",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "An open-weight video engine for text, image, audio, and editing workflows. It separates the open model from the easier, hosted LTX Studio experience. First Frame treats it as a both option for technical filmmakers who need an adaptable local video engine.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "LTX Video is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "LTX Video",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Open weights or source are linked; hosting, compute, and commercial-license costs vary. Verify the repository license and infrastructure cost.",
+      "access_how": "Use the linked repository or model page; review the model license and local hardware requirements before production.",
+      "notable_features": [
+        "Open weights",
+        "Local deployment",
+        "Production-oriented control"
+      ],
+      "best_use_cases": [
+        "Technical filmmakers who need an adaptable local video engine.",
+        "It separates the open model from the easier, hosted LTX Studio experience."
+      ],
+      "compare": "Compared with Wan 2.2 and HunyuanVideo, LTX Video is distinguished here by open weights and its open source access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#6C5CE7",
+      "sources": [
+        "https://ltx.io/video-generation-model",
+        "https://www.lightricks.com/about"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "meta-movie-gen",
@@ -226,14 +939,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "Meta's research system for video generation, personalized video, editing, and audio.",
-      "strengths": ["Research across video and audio", "Personalized video research", "Video editing research"],
-      "weak_at": ["Not a generally available creator product"],
+      "strengths": [
+        "Research across video and audio",
+        "Personalized video research",
+        "Video editing research"
+      ],
+      "weak_at": [
+        "Not a generally available creator product"
+      ],
       "best_for": "Understanding the research direction of multimodal movie generation.",
       "access": "free",
       "level": "advanced",
       "url": "https://ai.meta.com/research/movie-gen/",
       "special": "It is useful as a research reference, not as a tool recommendation.",
-      "status": "research only — no general creator access verified"
+      "status": "active",
+      "maker_company": "Meta Platforms, Inc.",
+      "founded_year": "2004",
+      "country_hq": "Menlo Park, United States",
+      "key_people": [
+        {
+          "name": "Mark Zuckerberg",
+          "role": "Founder, chair and CEO"
+        }
+      ],
+      "overview": "Meta's research system for video generation, personalized video, editing, and audio. It is useful as a research reference, not as a tool recommendation. First Frame treats it as a both option for understanding the research direction of multimodal movie generation.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Movie Gen is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Movie Gen",
+          "notes": "research only — no general creator access verified"
+        }
+      ],
+      "pricing": "Access is classified as free from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Research across video and audio",
+        "Personalized video research",
+        "Video editing research"
+      ],
+      "best_use_cases": [
+        "Understanding the research direction of multimodal movie generation.",
+        "It is useful as a research reference, not as a tool recommendation."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Movie Gen is distinguished here by research across video and audio and its free access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#0866FF",
+      "sources": [
+        "https://ai.meta.com/research/movie-gen/",
+        "https://about.meta.com/company-info/"
+      ],
+      "status_note": "research only — no general creator access verified"
     },
     {
       "id": "vidu",
@@ -242,13 +1005,63 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "A prompt, image, and reference-led video generator with character consistency tools.",
-      "strengths": ["Text and image generation", "First and last frames", "Multi-subject references"],
-      "weak_at": ["Free credits and settings can change"],
+      "strengths": [
+        "Text and image generation",
+        "First and last frames",
+        "Multi-subject references"
+      ],
+      "weak_at": [
+        "Free credits and settings can change"
+      ],
       "best_for": "Reference-led animation and recurring subject tests.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://www.vidu.com/ai-video-generator",
-      "special": "Reference-to-video makes the lesson of visual continuity concrete."
+      "special": "Reference-to-video makes the lesson of visual continuity concrete.",
+      "maker_company": "ShengShu Technology",
+      "founded_year": "2023",
+      "country_hq": "Beijing, China",
+      "key_people": [
+        {
+          "name": "verify",
+          "role": "Individual product leadership not verified on the cited official source"
+        }
+      ],
+      "overview": "A prompt, image, and reference-led video generator with character consistency tools. Reference-to-video makes the lesson of visual continuity concrete. First Frame treats it as a both option for reference-led animation and recurring subject tests.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Vidu is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Vidu",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Text and image generation",
+        "First and last frames",
+        "Multi-subject references"
+      ],
+      "best_use_cases": [
+        "Reference-led animation and recurring subject tests.",
+        "Reference-to-video makes the lesson of visual continuity concrete."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Vidu is distinguished here by text and image generation and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#5B67F1",
+      "sources": [
+        "https://www.vidu.com/ai-video-generator"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "pixverse",
@@ -257,14 +1070,63 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "A creator app for turning prompts and images into short video clips and effects.",
-      "strengths": ["Fast creator workflow", "Text and image inputs", "Templates and effects"],
-      "weak_at": ["Template-led results may need extra work for a coherent film style"],
+      "strengths": [
+        "Fast creator workflow",
+        "Text and image inputs",
+        "Templates and effects"
+      ],
+      "weak_at": [
+        "Template-led results may need extra work for a coherent film style"
+      ],
       "best_for": "Fast social experiments and effect-led clips.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://pixverse.ai/",
       "special": "It offers a low-friction way to learn how one still can become several motion ideas.",
-      "status": "verify current credits and model name on the official site"
+      "status": "active",
+      "maker_company": "AISphere / PixVerse",
+      "founded_year": "verify",
+      "country_hq": "verify",
+      "key_people": [
+        {
+          "name": "verify",
+          "role": "Individual leadership and headquarters not verified on the cited product source"
+        }
+      ],
+      "overview": "A creator app for turning prompts and images into short video clips and effects. It offers a low-friction way to learn how one still can become several motion ideas. First Frame treats it as a both option for fast social experiments and effect-led clips.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "PixVerse is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "PixVerse",
+          "notes": "verify current credits and model name on the official site"
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Fast creator workflow",
+        "Text and image inputs",
+        "Templates and effects"
+      ],
+      "best_use_cases": [
+        "Fast social experiments and effect-led clips.",
+        "It offers a low-friction way to learn how one still can become several motion ideas."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, PixVerse is distinguished here by fast creator workflow and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#7357FF",
+      "sources": [
+        "https://pixverse.ai/"
+      ],
+      "status_note": "verify current credits and model name on the official site"
     },
     {
       "id": "higgsfield",
@@ -273,13 +1135,63 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "A video creation platform centered on cinematic camera moves and visual effects.",
-      "strengths": ["Camera-movement presets", "Image-led shots", "Effect-driven ideation"],
-      "weak_at": ["Preset-first work still needs editorial judgment"],
+      "strengths": [
+        "Camera-movement presets",
+        "Image-led shots",
+        "Effect-driven ideation"
+      ],
+      "weak_at": [
+        "Preset-first work still needs editorial judgment"
+      ],
       "best_for": "Learning recognizable camera moves through rapid visual tests.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://higgsfield.ai/",
-      "special": "It links abstract camera vocabulary to visible movement."
+      "special": "It links abstract camera vocabulary to visible movement.",
+      "maker_company": "Higgsfield AI",
+      "founded_year": "2023",
+      "country_hq": "San Francisco, United States",
+      "key_people": [
+        {
+          "name": "Alex Mashrabov",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "A video creation platform centered on cinematic camera moves and visual effects. It links abstract camera vocabulary to visible movement. First Frame treats it as a both option for learning recognizable camera moves through rapid visual tests.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Higgsfield is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Higgsfield",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Camera-movement presets",
+        "Image-led shots",
+        "Effect-driven ideation"
+      ],
+      "best_use_cases": [
+        "Learning recognizable camera moves through rapid visual tests.",
+        "It links abstract camera vocabulary to visible movement."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Higgsfield is distinguished here by camera-movement presets and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#6C5CE7",
+      "sources": [
+        "https://higgsfield.ai/"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "moonvalley-marey",
@@ -288,14 +1200,63 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "A professional video model and platform designed around filmmaker control.",
-      "strengths": ["Filmmaker-oriented controls", "Reference workflows", "Production positioning"],
-      "weak_at": ["Access is aimed more at professional workflows than casual first tests"],
+      "strengths": [
+        "Filmmaker-oriented controls",
+        "Reference workflows",
+        "Production positioning"
+      ],
+      "weak_at": [
+        "Access is aimed more at professional workflows than casual first tests"
+      ],
       "best_for": "Professional previsualization and controlled production exploration.",
       "access": "paid",
       "level": "advanced",
       "url": "https://www.moonvalley.com/",
       "special": "It frames AI video as directed production rather than one-click novelty.",
-      "status": "verify access availability on the official site"
+      "status": "active",
+      "maker_company": "Moonvalley",
+      "founded_year": "2023",
+      "country_hq": "Toronto, Canada",
+      "key_people": [
+        {
+          "name": "verify",
+          "role": "Individual leadership not verified on the cited official source"
+        }
+      ],
+      "overview": "A professional video model and platform designed around filmmaker control. It frames AI video as directed production rather than one-click novelty. First Frame treats it as a both option for professional previsualization and controlled production exploration.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Marey is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Marey",
+          "notes": "verify access availability on the official site"
+        }
+      ],
+      "pricing": "Access is classified as paid from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Filmmaker-oriented controls",
+        "Reference workflows",
+        "Production positioning"
+      ],
+      "best_use_cases": [
+        "Professional previsualization and controlled production exploration.",
+        "It frames AI video as directed production rather than one-click novelty."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Marey is distinguished here by filmmaker-oriented controls and its paid access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#3137C9",
+      "sources": [
+        "https://www.moonvalley.com/"
+      ],
+      "status_note": "verify access availability on the official site"
     },
     {
       "id": "cogvideox",
@@ -304,13 +1265,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "An open family of text-to-video and image-to-video models.",
-      "strengths": ["Open code and weights", "Research reproducibility", "Community tooling"],
-      "weak_at": ["Technical setup and GPU requirements"],
+      "strengths": [
+        "Open code and weights",
+        "Research reproducibility",
+        "Community tooling"
+      ],
+      "weak_at": [
+        "Technical setup and GPU requirements"
+      ],
       "best_for": "Advanced students comparing open video architectures.",
       "access": "open_source",
       "level": "advanced",
       "url": "https://github.com/THUDM/CogVideo",
-      "special": "It provides a hands-on route into model-level study."
+      "special": "It provides a hands-on route into model-level study.",
+      "maker_company": "Tsinghua University Knowledge Engineering Group",
+      "founded_year": "verify",
+      "country_hq": "Beijing, China",
+      "key_people": [
+        {
+          "name": "verify",
+          "role": "Individual CogVideoX product leadership not verified"
+        }
+      ],
+      "overview": "An open family of text-to-video and image-to-video models. It provides a hands-on route into model-level study. First Frame treats it as a both option for advanced students comparing open video architectures.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "CogVideoX is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "CogVideoX",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Open weights or source are linked; hosting, compute, and commercial-license costs vary. Verify the repository license and infrastructure cost.",
+      "access_how": "Use the linked repository or model page; review the model license and local hardware requirements before production.",
+      "notable_features": [
+        "Open code and weights",
+        "Research reproducibility",
+        "Community tooling"
+      ],
+      "best_use_cases": [
+        "Advanced students comparing open video architectures.",
+        "It provides a hands-on route into model-level study."
+      ],
+      "compare": "Compared with Wan 2.2 and HunyuanVideo, CogVideoX is distinguished here by open code and weights and its open source access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#6C5CE7",
+      "sources": [
+        "https://github.com/THUDM/CogVideo",
+        "https://arxiv.org/abs/2205.15868"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "kaiber",
@@ -319,13 +1331,64 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "A visual creation canvas that combines image, video, and transformation workflows.",
-      "strengths": ["Canvas workflow", "Stylized transformations", "Music-visual experimentation"],
-      "weak_at": ["Less suited to strict photoreal continuity than reference-led production tools"],
+      "strengths": [
+        "Canvas workflow",
+        "Stylized transformations",
+        "Music-visual experimentation"
+      ],
+      "weak_at": [
+        "Less suited to strict photoreal continuity than reference-led production tools"
+      ],
       "best_for": "Music visuals and expressive style exploration.",
       "access": "paid",
       "level": "intermediate",
       "url": "https://kaiber.ai/",
-      "special": "It encourages learners to treat rhythm and visual style as part of motion design."
+      "special": "It encourages learners to treat rhythm and visual style as part of motion design.",
+      "maker_company": "Kaiber",
+      "founded_year": "2022",
+      "country_hq": "United States",
+      "key_people": [
+        {
+          "name": "verify",
+          "role": "Individual leadership not verified on the cited product source"
+        }
+      ],
+      "overview": "A visual creation canvas that combines image, video, and transformation workflows. It encourages learners to treat rhythm and visual style as part of motion design. First Frame treats it as a both option for music visuals and expressive style exploration.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Kaiber Superstudio is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Kaiber Superstudio",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as paid from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Canvas workflow",
+        "Stylized transformations",
+        "Music-visual experimentation"
+      ],
+      "best_use_cases": [
+        "Music visuals and expressive style exploration.",
+        "It encourages learners to treat rhythm and visual style as part of motion design."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Kaiber Superstudio is distinguished here by canvas workflow and its paid access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#8257E6",
+      "sources": [
+        "https://kaiber.ai/",
+        "https://kaiber.ai/about"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "haiper",
@@ -334,14 +1397,63 @@
       "category": "Text & image to video",
       "type": "both",
       "what": "A prompt-led platform for text-to-video, image animation, and video restyling.",
-      "strengths": ["Text and image inputs", "Video restyling", "Quick browser experiments"],
-      "weak_at": ["Current product availability and access could not be confirmed beyond the official site"],
+      "strengths": [
+        "Text and image inputs",
+        "Video restyling",
+        "Quick browser experiments"
+      ],
+      "weak_at": [
+        "Current product availability and access could not be confirmed beyond the official site"
+      ],
       "best_for": "Comparative study rather than a production commitment until access is reconfirmed.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://haiper.ai/",
       "special": "Its place in the library helps learners recognize how quickly video products can change.",
-      "status": "verify current availability and access before use"
+      "status": "active",
+      "maker_company": "Haiper",
+      "founded_year": "2021",
+      "country_hq": "London, United Kingdom",
+      "key_people": [
+        {
+          "name": "Yishu Miao",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "A prompt-led platform for text-to-video, image animation, and video restyling. Its place in the library helps learners recognize how quickly video products can change. First Frame treats it as a both option for comparative study rather than a production commitment until access is reconfirmed.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Haiper is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Haiper",
+          "notes": "verify current availability and access before use"
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Text and image inputs",
+        "Video restyling",
+        "Quick browser experiments"
+      ],
+      "best_use_cases": [
+        "Comparative study rather than a production commitment until access is reconfirmed.",
+        "Its place in the library helps learners recognize how quickly video products can change."
+      ],
+      "compare": "Compared with Veo 3.1 and Runway Gen-4.5, Haiper is distinguished here by text and image inputs and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#6C5CE7",
+      "sources": [
+        "https://haiper.ai/"
+      ],
+      "status_note": "verify current availability and access before use"
     },
     {
       "id": "heygen",
@@ -350,13 +1462,64 @@
       "category": "Avatars & talking heads",
       "type": "avatar",
       "what": "A platform for scripted videos with stock, photo, or custom talking avatars.",
-      "strengths": ["Talking-photo workflow", "Scripted presenters", "Translation and lip sync"],
-      "weak_at": ["Presenter format is not a substitute for scene-based filmmaking"],
+      "strengths": [
+        "Talking-photo workflow",
+        "Scripted presenters",
+        "Translation and lip sync"
+      ],
+      "weak_at": [
+        "Presenter format is not a substitute for scene-based filmmaking"
+      ],
       "best_for": "Lessons, explainers, localization, and presenter-led content.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://www.heygen.com/avatars/ai-video-avatar",
-      "special": "It removes the camera barrier when the learning goal is a clear spoken explanation."
+      "special": "It removes the camera barrier when the learning goal is a clear spoken explanation.",
+      "maker_company": "HeyGen",
+      "founded_year": "2020",
+      "country_hq": "Los Angeles, United States",
+      "key_people": [
+        {
+          "name": "Joshua Xu",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "A platform for scripted videos with stock, photo, or custom talking avatars. It removes the camera barrier when the learning goal is a clear spoken explanation. First Frame treats it as a avatar option for lessons, explainers, localization, and presenter-led content.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "HeyGen is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "HeyGen",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Talking-photo workflow",
+        "Scripted presenters",
+        "Translation and lip sync"
+      ],
+      "best_use_cases": [
+        "Lessons, explainers, localization, and presenter-led content.",
+        "It removes the camera barrier when the learning goal is a clear spoken explanation."
+      ],
+      "compare": "Compared with HeyGen and Synthesia, HeyGen is distinguished here by talking-photo workflow and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#5C5CFF",
+      "sources": [
+        "https://www.heygen.com/avatars/ai-video-avatar",
+        "https://www.heygen.com/about"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "synthesia",
@@ -365,13 +1528,64 @@
       "category": "Avatars & talking heads",
       "type": "avatar",
       "what": "A business and education platform for creating presenter-led videos from scripts.",
-      "strengths": ["AI presenters", "Multilingual voiceovers", "Learning-content workflow"],
-      "weak_at": ["Optimized for structured communication more than cinematic drama"],
+      "strengths": [
+        "AI presenters",
+        "Multilingual voiceovers",
+        "Learning-content workflow"
+      ],
+      "weak_at": [
+        "Optimized for structured communication more than cinematic drama"
+      ],
       "best_for": "Training, course modules, and repeatable educational explainers.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://www.synthesia.io/features/ai-video-generator",
-      "special": "It shows how AI video can teach directly, not only decorate a story."
+      "special": "It shows how AI video can teach directly, not only decorate a story.",
+      "maker_company": "Synthesia",
+      "founded_year": "2017",
+      "country_hq": "London, United Kingdom",
+      "key_people": [
+        {
+          "name": "Victor Riparbelli",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "A business and education platform for creating presenter-led videos from scripts. It shows how AI video can teach directly, not only decorate a story. First Frame treats it as a avatar option for training, course modules, and repeatable educational explainers.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Synthesia is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Synthesia",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "AI presenters",
+        "Multilingual voiceovers",
+        "Learning-content workflow"
+      ],
+      "best_use_cases": [
+        "Training, course modules, and repeatable educational explainers.",
+        "It shows how AI video can teach directly, not only decorate a story."
+      ],
+      "compare": "Compared with HeyGen and Synthesia, Synthesia is distinguished here by ai presenters and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#4B4BF7",
+      "sources": [
+        "https://www.synthesia.io/features/ai-video-generator",
+        "https://www.synthesia.io/about"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "hedra",
@@ -380,14 +1594,64 @@
       "category": "Avatars & talking heads",
       "type": "avatar",
       "what": "A character-creation platform for generating speaking and expressive performances.",
-      "strengths": ["Character performance", "Audio-driven expression", "Creator-oriented workflow"],
-      "weak_at": ["Exact credits and current model names should be verified"],
+      "strengths": [
+        "Character performance",
+        "Audio-driven expression",
+        "Creator-oriented workflow"
+      ],
+      "weak_at": [
+        "Exact credits and current model names should be verified"
+      ],
       "best_for": "Expressive character dialogue and stylized talking performances.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://www.hedra.com/",
       "special": "It helps learners separate a character's design from the performance that animates it.",
-      "status": "verify current plan and model name on the official site"
+      "status": "active",
+      "maker_company": "Hedra",
+      "founded_year": "2023",
+      "country_hq": "San Francisco, United States",
+      "key_people": [
+        {
+          "name": "Michael Lingelbach",
+          "role": "Founder and CEO"
+        }
+      ],
+      "overview": "A character-creation platform for generating speaking and expressive performances. It helps learners separate a character's design from the performance that animates it. First Frame treats it as a avatar option for expressive character dialogue and stylized talking performances.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Hedra is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Hedra",
+          "notes": "verify current plan and model name on the official site"
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Character performance",
+        "Audio-driven expression",
+        "Creator-oriented workflow"
+      ],
+      "best_use_cases": [
+        "Expressive character dialogue and stylized talking performances.",
+        "It helps learners separate a character's design from the performance that animates it."
+      ],
+      "compare": "Compared with HeyGen and Synthesia, Hedra is distinguished here by character performance and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#FF5C7C",
+      "sources": [
+        "https://www.hedra.com/",
+        "https://www.hedra.com/company"
+      ],
+      "status_note": "verify current plan and model name on the official site"
     },
     {
       "id": "viggle",
@@ -396,13 +1660,64 @@
       "category": "Motion & performance transfer",
       "type": "motion",
       "what": "A character animation tool that transfers motion from video to a chosen character image.",
-      "strengths": ["Motion transfer", "Character animation", "Accessible creator workflow"],
-      "weak_at": ["The source performance strongly shapes the result"],
+      "strengths": [
+        "Motion transfer",
+        "Character animation",
+        "Accessible creator workflow"
+      ],
+      "weak_at": [
+        "The source performance strongly shapes the result"
+      ],
       "best_for": "Learning performance transfer with dance, gesture, or action references.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://viggle.ai/",
-      "special": "It makes the difference between appearance and movement immediately visible."
+      "special": "It makes the difference between appearance and movement immediately visible.",
+      "maker_company": "Viggle AI",
+      "founded_year": "2022",
+      "country_hq": "Toronto, Canada",
+      "key_people": [
+        {
+          "name": "Hang Chu",
+          "role": "Founder and CEO"
+        }
+      ],
+      "overview": "A character animation tool that transfers motion from video to a chosen character image. It makes the difference between appearance and movement immediately visible. First Frame treats it as a motion option for learning performance transfer with dance, gesture, or action references.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Viggle is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Viggle",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Motion transfer",
+        "Character animation",
+        "Accessible creator workflow"
+      ],
+      "best_use_cases": [
+        "Learning performance transfer with dance, gesture, or action references.",
+        "It makes the difference between appearance and movement immediately visible."
+      ],
+      "compare": "Compared with Viggle and Runway Act-One, Viggle is distinguished here by motion transfer and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#FF6B35",
+      "sources": [
+        "https://viggle.ai/",
+        "https://viggle.ai/about"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "runway-act-one",
@@ -411,13 +1726,64 @@
       "category": "Motion & performance transfer",
       "type": "motion",
       "what": "A Runway workflow that uses a driving performance to animate a character image or video.",
-      "strengths": ["Facial performance transfer", "Character acting", "Accessible direction from a recorded performance"],
-      "weak_at": ["Performance transfer depends on a clear driving clip"],
+      "strengths": [
+        "Facial performance transfer",
+        "Character acting",
+        "Accessible direction from a recorded performance"
+      ],
+      "weak_at": [
+        "Performance transfer depends on a clear driving clip"
+      ],
       "best_for": "Dialogue close-ups and character acting studies.",
       "access": "paid",
       "level": "intermediate",
       "url": "https://runwayml.com/research/introducing-act-one",
-      "special": "It teaches that acting choices can be directed before the final character is rendered."
+      "special": "It teaches that acting choices can be directed before the final character is rendered.",
+      "maker_company": "Runway AI, Inc.",
+      "founded_year": "2018",
+      "country_hq": "New York, United States",
+      "key_people": [
+        {
+          "name": "Cristóbal Valenzuela",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "A Runway workflow that uses a driving performance to animate a character image or video. It teaches that acting choices can be directed before the final character is rendered. First Frame treats it as a motion option for dialogue close-ups and character acting studies.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Act-One is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Act-One",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as paid from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Facial performance transfer",
+        "Character acting",
+        "Accessible direction from a recorded performance"
+      ],
+      "best_use_cases": [
+        "Dialogue close-ups and character acting studies.",
+        "It teaches that acting choices can be directed before the final character is rendered."
+      ],
+      "compare": "Compared with Viggle and Runway Act-One, Act-One is distinguished here by facial performance transfer and its paid access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#6C5CE7",
+      "sources": [
+        "https://runwayml.com/research/introducing-act-one",
+        "https://runwayml.com/about"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "lensgo",
@@ -426,14 +1792,63 @@
       "category": "Motion & performance transfer",
       "type": "motion",
       "what": "A creator platform for image, video, and motion-transfer experiments.",
-      "strengths": ["Video style transfer", "Motion-led character experiments", "Browser workflow"],
-      "weak_at": ["Current features and access require verification before production"],
+      "strengths": [
+        "Video style transfer",
+        "Motion-led character experiments",
+        "Browser workflow"
+      ],
+      "weak_at": [
+        "Current features and access require verification before production"
+      ],
       "best_for": "Quick motion and style-transfer studies.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://lensgo.ai/",
       "special": "It offers a simple place to compare motion transfer with prompt-only animation.",
-      "status": "verify current availability and access on the official site"
+      "status": "active",
+      "maker_company": "LensGo AI",
+      "founded_year": "verify",
+      "country_hq": "verify",
+      "key_people": [
+        {
+          "name": "verify",
+          "role": "Company history and leadership not verified on the cited product source"
+        }
+      ],
+      "overview": "A creator platform for image, video, and motion-transfer experiments. It offers a simple place to compare motion transfer with prompt-only animation. First Frame treats it as a motion option for quick motion and style-transfer studies.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "LensGo is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "LensGo",
+          "notes": "verify current availability and access on the official site"
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Video style transfer",
+        "Motion-led character experiments",
+        "Browser workflow"
+      ],
+      "best_use_cases": [
+        "Quick motion and style-transfer studies.",
+        "It offers a simple place to compare motion transfer with prompt-only animation."
+      ],
+      "compare": "Compared with Viggle and Runway Act-One, LensGo is distinguished here by video style transfer and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#6C5CE7",
+      "sources": [
+        "https://lensgo.ai/"
+      ],
+      "status_note": "verify current availability and access on the official site"
     },
     {
       "id": "midjourney",
@@ -442,13 +1857,64 @@
       "category": "Image generation",
       "type": "image",
       "what": "A web-based image generation and editing platform for visual exploration.",
-      "strengths": ["Art-direction exploration", "Image references", "Reframe, repaint, pan, and zoom editing"],
-      "weak_at": ["Access is paid and exact text or layout work may need another tool"],
+      "strengths": [
+        "Art-direction exploration",
+        "Image references",
+        "Reframe, repaint, pan, and zoom editing"
+      ],
+      "weak_at": [
+        "Access is paid and exact text or layout work may need another tool"
+      ],
       "best_for": "Mood frames, visual style discovery, and key-art exploration.",
       "access": "paid",
       "level": "beginner",
       "url": "https://www.midjourney.com/",
-      "special": "It is a fast visual sketchbook for discovering what a film could feel like."
+      "special": "It is a fast visual sketchbook for discovering what a film could feel like.",
+      "maker_company": "Midjourney, Inc.",
+      "founded_year": "2022",
+      "country_hq": "San Francisco, United States",
+      "key_people": [
+        {
+          "name": "David Holz",
+          "role": "Founder and CEO"
+        }
+      ],
+      "overview": "A web-based image generation and editing platform for visual exploration. It is a fast visual sketchbook for discovering what a film could feel like. First Frame treats it as a image option for mood frames, visual style discovery, and key-art exploration.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Midjourney is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Midjourney",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as paid from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Art-direction exploration",
+        "Image references",
+        "Reframe, repaint, pan, and zoom editing"
+      ],
+      "best_use_cases": [
+        "Mood frames, visual style discovery, and key-art exploration.",
+        "It is a fast visual sketchbook for discovering what a film could feel like."
+      ],
+      "compare": "Compared with Midjourney and GPT Image, Midjourney is distinguished here by art-direction exploration and its paid access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#111827",
+      "sources": [
+        "https://www.midjourney.com/",
+        "https://www.midjourney.com/careers"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "gpt-image",
@@ -457,13 +1923,64 @@
       "category": "Image generation",
       "type": "image",
       "what": "OpenAI's conversational image generator for creating and editing images with detailed instructions.",
-      "strengths": ["Prompt following", "Text in images", "Multi-turn refinement"],
-      "weak_at": ["Dense small text and precise graphing can still fail"],
+      "strengths": [
+        "Prompt following",
+        "Text in images",
+        "Multi-turn refinement"
+      ],
+      "weak_at": [
+        "Dense small text and precise graphing can still fail"
+      ],
       "best_for": "Storyboard frames, diagrams, prop graphics, and iterative art direction.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://openai.com/index/introducing-4o-image-generation/",
-      "special": "Conversation makes revision feel like directing: keep what works and specify the change."
+      "special": "Conversation makes revision feel like directing: keep what works and specify the change.",
+      "maker_company": "OpenAI",
+      "founded_year": "2015",
+      "country_hq": "San Francisco, United States",
+      "key_people": [
+        {
+          "name": "Sam Altman",
+          "role": "CEO"
+        }
+      ],
+      "overview": "OpenAI's conversational image generator for creating and editing images with detailed instructions. Conversation makes revision feel like directing: keep what works and specify the change. First Frame treats it as a image option for storyboard frames, diagrams, prop graphics, and iterative art direction.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "GPT Image is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "GPT Image",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Prompt following",
+        "Text in images",
+        "Multi-turn refinement"
+      ],
+      "best_use_cases": [
+        "Storyboard frames, diagrams, prop graphics, and iterative art direction.",
+        "Conversation makes revision feel like directing: keep what works and specify the change."
+      ],
+      "compare": "Compared with Midjourney and GPT Image, GPT Image is distinguished here by prompt following and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#111111",
+      "sources": [
+        "https://openai.com/index/introducing-4o-image-generation/",
+        "https://openai.com/about/"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "nano-banana",
@@ -472,14 +1989,64 @@
       "category": "Image generation",
       "type": "image",
       "what": "Google's Gemini Image model family for creating and editing detailed images.",
-      "strengths": ["Image creation", "Image editing", "Gemini and AI Studio access"],
-      "weak_at": ["Model names and plan access change quickly"],
+      "strengths": [
+        "Image creation",
+        "Image editing",
+        "Gemini and AI Studio access"
+      ],
+      "weak_at": [
+        "Model names and plan access change quickly"
+      ],
       "best_for": "Conversational image iteration and reference-led frame development.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://deepmind.google/models/",
       "special": "It places image making beside a multimodal assistant, which helps beginners iterate in plain language.",
-      "status": "verify the current Nano Banana variant before production"
+      "status": "active",
+      "maker_company": "Google DeepMind",
+      "founded_year": "2010",
+      "country_hq": "London, United Kingdom",
+      "key_people": [
+        {
+          "name": "Demis Hassabis",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "Google's Gemini Image model family for creating and editing detailed images. It places image making beside a multimodal assistant, which helps beginners iterate in plain language. First Frame treats it as a image option for conversational image iteration and reference-led frame development.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Nano Banana is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Nano Banana",
+          "notes": "verify the current Nano Banana variant before production"
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Image creation",
+        "Image editing",
+        "Gemini and AI Studio access"
+      ],
+      "best_use_cases": [
+        "Conversational image iteration and reference-led frame development.",
+        "It places image making beside a multimodal assistant, which helps beginners iterate in plain language."
+      ],
+      "compare": "Compared with Midjourney and GPT Image, Nano Banana is distinguished here by image creation and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#4285F4",
+      "sources": [
+        "https://deepmind.google/models/",
+        "https://deepmind.google/about/"
+      ],
+      "status_note": "verify the current Nano Banana variant before production"
     },
     {
       "id": "flux",
@@ -488,13 +2055,64 @@
       "category": "Image generation",
       "type": "image",
       "what": "A family of hosted and downloadable image generation models.",
-      "strengths": ["Prompt-led image generation", "Developer and local options", "Model variants for different workflows"],
-      "weak_at": ["Licenses and hardware needs differ by variant"],
+      "strengths": [
+        "Prompt-led image generation",
+        "Developer and local options",
+        "Model variants for different workflows"
+      ],
+      "weak_at": [
+        "Licenses and hardware needs differ by variant"
+      ],
       "best_for": "Technical image pipelines and customizable visual generation.",
       "access": "open_source",
       "level": "advanced",
       "url": "https://blackforestlabs.ai/",
-      "special": "Its model choices teach that speed, quality, licensing, and control are separate decisions."
+      "special": "Its model choices teach that speed, quality, licensing, and control are separate decisions.",
+      "maker_company": "Black Forest Labs",
+      "founded_year": "2024",
+      "country_hq": "Freiburg, Germany",
+      "key_people": [
+        {
+          "name": "Robin Rombach",
+          "role": "Co-founder"
+        }
+      ],
+      "overview": "A family of hosted and downloadable image generation models. Its model choices teach that speed, quality, licensing, and control are separate decisions. First Frame treats it as a image option for technical image pipelines and customizable visual generation.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "FLUX is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "FLUX",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Open weights or source are linked; hosting, compute, and commercial-license costs vary. Verify the repository license and infrastructure cost.",
+      "access_how": "Use the linked repository or model page; review the model license and local hardware requirements before production.",
+      "notable_features": [
+        "Prompt-led image generation",
+        "Developer and local options",
+        "Model variants for different workflows"
+      ],
+      "best_use_cases": [
+        "Technical image pipelines and customizable visual generation.",
+        "Its model choices teach that speed, quality, licensing, and control are separate decisions."
+      ],
+      "compare": "Compared with FLUX and Stable Diffusion 3.5, FLUX is distinguished here by prompt-led image generation and its open source access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#111111",
+      "sources": [
+        "https://blackforestlabs.ai/",
+        "https://bfl.ai/about"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "stable-diffusion-35",
@@ -503,13 +2121,64 @@
       "category": "Image generation",
       "type": "image",
       "what": "A downloadable image model family designed for customization and local use.",
-      "strengths": ["Downloadable models", "Local customization", "Several size and speed variants"],
-      "weak_at": ["Setup, hardware, and license review are more complex than a web app"],
+      "strengths": [
+        "Downloadable models",
+        "Local customization",
+        "Several size and speed variants"
+      ],
+      "weak_at": [
+        "Setup, hardware, and license review are more complex than a web app"
+      ],
       "best_for": "Advanced learners building repeatable or customized image workflows.",
       "access": "open_source",
       "level": "advanced",
       "url": "https://stability.ai/news/introducing-stable-diffusion-3-5",
-      "special": "It gives learners direct control over a model and its surrounding workflow."
+      "special": "It gives learners direct control over a model and its surrounding workflow.",
+      "maker_company": "Stability AI",
+      "founded_year": "2019",
+      "country_hq": "London, United Kingdom",
+      "key_people": [
+        {
+          "name": "Prem Akkaraju",
+          "role": "CEO"
+        }
+      ],
+      "overview": "A downloadable image model family designed for customization and local use. It gives learners direct control over a model and its surrounding workflow. First Frame treats it as a image option for advanced learners building repeatable or customized image workflows.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Stable Diffusion 3.5 is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Stable Diffusion 3.5",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Open weights or source are linked; hosting, compute, and commercial-license costs vary. Verify the repository license and infrastructure cost.",
+      "access_how": "Use the linked repository or model page; review the model license and local hardware requirements before production.",
+      "notable_features": [
+        "Downloadable models",
+        "Local customization",
+        "Several size and speed variants"
+      ],
+      "best_use_cases": [
+        "Advanced learners building repeatable or customized image workflows.",
+        "It gives learners direct control over a model and its surrounding workflow."
+      ],
+      "compare": "Compared with FLUX and Stable Diffusion 3.5, Stable Diffusion 3.5 is distinguished here by downloadable models and its open source access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#7B61FF",
+      "sources": [
+        "https://stability.ai/news/introducing-stable-diffusion-3-5",
+        "https://stability.ai/board-of-directors"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "ideogram",
@@ -518,13 +2187,63 @@
       "category": "Image generation",
       "type": "image",
       "what": "An image generation and editing platform with a focus on designed visuals and typography.",
-      "strengths": ["Text-forward images", "Design exploration", "Image editing"],
-      "weak_at": ["Complex recurring characters still require a reference workflow"],
+      "strengths": [
+        "Text-forward images",
+        "Design exploration",
+        "Image editing"
+      ],
+      "weak_at": [
+        "Complex recurring characters still require a reference workflow"
+      ],
       "best_for": "Titles, posters, signs, and graphic frames that include words.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://ideogram.ai/",
-      "special": "It helps students treat on-screen typography as part of production design."
+      "special": "It helps students treat on-screen typography as part of production design.",
+      "maker_company": "Ideogram AI",
+      "founded_year": "2022",
+      "country_hq": "Toronto, Canada",
+      "key_people": [
+        {
+          "name": "Mohammad Norouzi",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "An image generation and editing platform with a focus on designed visuals and typography. It helps students treat on-screen typography as part of production design. First Frame treats it as a image option for titles, posters, signs, and graphic frames that include words.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Ideogram is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Ideogram",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Text-forward images",
+        "Design exploration",
+        "Image editing"
+      ],
+      "best_use_cases": [
+        "Titles, posters, signs, and graphic frames that include words.",
+        "It helps students treat on-screen typography as part of production design."
+      ],
+      "compare": "Compared with Midjourney and GPT Image, Ideogram is distinguished here by text-forward images and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#6C5CE7",
+      "sources": [
+        "https://ideogram.ai/"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "leonardo",
@@ -533,13 +2252,63 @@
       "category": "Image generation",
       "type": "image",
       "what": "A creator platform for image generation, editing, and visual asset workflows.",
-      "strengths": ["Asset generation", "Canvas editing", "Reference-led creation"],
-      "weak_at": ["Many controls can feel dense on a first visit"],
+      "strengths": [
+        "Asset generation",
+        "Canvas editing",
+        "Reference-led creation"
+      ],
+      "weak_at": [
+        "Many controls can feel dense on a first visit"
+      ],
       "best_for": "Game, concept-art, and production-asset exploration.",
       "access": "freemium",
       "level": "intermediate",
       "url": "https://leonardo.ai/",
-      "special": "It shows how generation becomes a repeatable asset pipeline rather than a single image."
+      "special": "It shows how generation becomes a repeatable asset pipeline rather than a single image.",
+      "maker_company": "Leonardo.Ai",
+      "founded_year": "2022",
+      "country_hq": "Sydney, Australia",
+      "key_people": [
+        {
+          "name": "JJ Fiasson",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "A creator platform for image generation, editing, and visual asset workflows. It shows how generation becomes a repeatable asset pipeline rather than a single image. First Frame treats it as a image option for game, concept-art, and production-asset exploration.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Leonardo.Ai is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Leonardo.Ai",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Asset generation",
+        "Canvas editing",
+        "Reference-led creation"
+      ],
+      "best_use_cases": [
+        "Game, concept-art, and production-asset exploration.",
+        "It shows how generation becomes a repeatable asset pipeline rather than a single image."
+      ],
+      "compare": "Compared with Midjourney and GPT Image, Leonardo.Ai is distinguished here by asset generation and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#6C5CE7",
+      "sources": [
+        "https://leonardo.ai/"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "recraft",
@@ -548,13 +2317,64 @@
       "category": "Image generation",
       "type": "image",
       "what": "A design-focused image platform for raster and vector visual assets.",
-      "strengths": ["Design systems", "Vector-oriented assets", "Brand and layout workflows"],
-      "weak_at": ["Not primarily a cinematic motion tool"],
+      "strengths": [
+        "Design systems",
+        "Vector-oriented assets",
+        "Brand and layout workflows"
+      ],
+      "weak_at": [
+        "Not primarily a cinematic motion tool"
+      ],
       "best_for": "Logos, props, graphic inserts, icons, and consistent visual systems.",
       "access": "freemium",
       "level": "intermediate",
       "url": "https://www.recraft.ai/",
-      "special": "It teaches that a film also needs designed objects, symbols, and graphics."
+      "special": "It teaches that a film also needs designed objects, symbols, and graphics.",
+      "maker_company": "Recraft",
+      "founded_year": "2022",
+      "country_hq": "London, United Kingdom",
+      "key_people": [
+        {
+          "name": "Anna Veronika Dorogush",
+          "role": "Founder and CEO"
+        }
+      ],
+      "overview": "A design-focused image platform for raster and vector visual assets. It teaches that a film also needs designed objects, symbols, and graphics. First Frame treats it as a image option for logos, props, graphic inserts, icons, and consistent visual systems.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Recraft is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Recraft",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Design systems",
+        "Vector-oriented assets",
+        "Brand and layout workflows"
+      ],
+      "best_use_cases": [
+        "Logos, props, graphic inserts, icons, and consistent visual systems.",
+        "It teaches that a film also needs designed objects, symbols, and graphics."
+      ],
+      "compare": "Compared with Midjourney and GPT Image, Recraft is distinguished here by design systems and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#FF5A36",
+      "sources": [
+        "https://www.recraft.ai/",
+        "https://www.recraft.ai/about"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "krea",
@@ -563,13 +2383,63 @@
       "category": "Image generation",
       "type": "image",
       "what": "A real-time creative platform that combines image, video, enhancement, and model access.",
-      "strengths": ["Rapid visual feedback", "Image and video workspace", "Enhancement tools"],
-      "weak_at": ["A broad toolset requires a clear goal to avoid random exploration"],
+      "strengths": [
+        "Rapid visual feedback",
+        "Image and video workspace",
+        "Enhancement tools"
+      ],
+      "weak_at": [
+        "A broad toolset requires a clear goal to avoid random exploration"
+      ],
       "best_for": "Live visual ideation, refinement, and multi-model comparison.",
       "access": "freemium",
       "level": "intermediate",
       "url": "https://www.krea.ai/",
-      "special": "Fast feedback makes visual cause and effect easier to learn."
+      "special": "Fast feedback makes visual cause and effect easier to learn.",
+      "maker_company": "Krea",
+      "founded_year": "2022",
+      "country_hq": "San Francisco, United States",
+      "key_people": [
+        {
+          "name": "Victor Perez",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "A real-time creative platform that combines image, video, enhancement, and model access. Fast feedback makes visual cause and effect easier to learn. First Frame treats it as a image option for live visual ideation, refinement, and multi-model comparison.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Krea is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Krea",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Rapid visual feedback",
+        "Image and video workspace",
+        "Enhancement tools"
+      ],
+      "best_use_cases": [
+        "Live visual ideation, refinement, and multi-model comparison.",
+        "Fast feedback makes visual cause and effect easier to learn."
+      ],
+      "compare": "Compared with Midjourney and GPT Image, Krea is distinguished here by rapid visual feedback and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#6C5CE7",
+      "sources": [
+        "https://www.krea.ai/"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "adobe-firefly-image",
@@ -578,13 +2448,64 @@
       "category": "Image generation",
       "type": "image",
       "what": "Adobe's image generation and editing tools inside Firefly and Creative Cloud workflows.",
-      "strengths": ["Image generation", "Generative editing", "Creative Cloud integration"],
-      "weak_at": ["Premium use consumes generative credits"],
+      "strengths": [
+        "Image generation",
+        "Generative editing",
+        "Creative Cloud integration"
+      ],
+      "weak_at": [
+        "Premium use consumes generative credits"
+      ],
       "best_for": "Designers who will finish frames in Photoshop or other Adobe tools.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://www.adobe.com/products/firefly/features/text-to-image.html",
-      "special": "It connects experimentation to familiar production editing."
+      "special": "It connects experimentation to familiar production editing.",
+      "maker_company": "Adobe Inc.",
+      "founded_year": "1982",
+      "country_hq": "San Jose, United States",
+      "key_people": [
+        {
+          "name": "Shantanu Narayen",
+          "role": "Chair and CEO"
+        }
+      ],
+      "overview": "Adobe's image generation and editing tools inside Firefly and Creative Cloud workflows. It connects experimentation to familiar production editing. First Frame treats it as a image option for designers who will finish frames in photoshop or other adobe tools.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Firefly Image is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Firefly Image",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Image generation",
+        "Generative editing",
+        "Creative Cloud integration"
+      ],
+      "best_use_cases": [
+        "Designers who will finish frames in Photoshop or other Adobe tools.",
+        "It connects experimentation to familiar production editing."
+      ],
+      "compare": "Compared with Midjourney and GPT Image, Firefly Image is distinguished here by image generation and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#E60023",
+      "sources": [
+        "https://www.adobe.com/products/firefly/features/text-to-image.html",
+        "https://www.adobe.com/about-adobe.html"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "ltx-studio",
@@ -593,13 +2514,64 @@
       "category": "Studios & editors",
       "type": "editor",
       "what": "An all-in-one filmmaking workspace from script and storyboard through generation, sound, and edit.",
-      "strengths": ["Script-to-storyboard", "Character and location elements", "Timeline and pitch-deck export"],
-      "weak_at": ["A full studio has more concepts to learn than a single-purpose generator"],
+      "strengths": [
+        "Script-to-storyboard",
+        "Character and location elements",
+        "Timeline and pitch-deck export"
+      ],
+      "weak_at": [
+        "A full studio has more concepts to learn than a single-purpose generator"
+      ],
       "best_for": "Planning and assembling a complete AI-assisted short in one workspace.",
       "access": "freemium",
       "level": "intermediate",
       "url": "https://ltx.io/studio/platform/ai-movie-maker",
-      "special": "It demonstrates that filmmaking is a chain of decisions, not just a prompt."
+      "special": "It demonstrates that filmmaking is a chain of decisions, not just a prompt.",
+      "maker_company": "Lightricks",
+      "founded_year": "2013",
+      "country_hq": "Jerusalem, Israel",
+      "key_people": [
+        {
+          "name": "Zeev Farbman",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "An all-in-one filmmaking workspace from script and storyboard through generation, sound, and edit. It demonstrates that filmmaking is a chain of decisions, not just a prompt. First Frame treats it as a editor option for planning and assembling a complete ai-assisted short in one workspace.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "LTX Studio is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "LTX Studio",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Script-to-storyboard",
+        "Character and location elements",
+        "Timeline and pitch-deck export"
+      ],
+      "best_use_cases": [
+        "Planning and assembling a complete AI-assisted short in one workspace.",
+        "It demonstrates that filmmaking is a chain of decisions, not just a prompt."
+      ],
+      "compare": "Compared with LTX Studio, Krea, and conventional editors, LTX Studio is distinguished here by script-to-storyboard and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#6C5CE7",
+      "sources": [
+        "https://ltx.io/studio/platform/ai-movie-maker",
+        "https://www.lightricks.com/about"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "capcut",
@@ -608,13 +2580,64 @@
       "category": "Studios & editors",
       "type": "editor",
       "what": "A desktop, mobile, and web editor with templates and AI-assisted creation tools.",
-      "strengths": ["Accessible timeline editing", "Captions and social formats", "Cross-device workflow"],
-      "weak_at": ["Advanced finishing may require a dedicated professional editor"],
+      "strengths": [
+        "Accessible timeline editing",
+        "Captions and social formats",
+        "Cross-device workflow"
+      ],
+      "weak_at": [
+        "Advanced finishing may require a dedicated professional editor"
+      ],
       "best_for": "Assembling, trimming, captioning, and publishing a first short.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://www.capcut.com/",
-      "special": "A familiar editor is often more valuable than adding one more generation model."
+      "special": "A familiar editor is often more valuable than adding one more generation model.",
+      "maker_company": "ByteDance",
+      "founded_year": "2012",
+      "country_hq": "Beijing, China",
+      "key_people": [
+        {
+          "name": "Liang Rubo",
+          "role": "CEO"
+        }
+      ],
+      "overview": "A desktop, mobile, and web editor with templates and AI-assisted creation tools. A familiar editor is often more valuable than adding one more generation model. First Frame treats it as a editor option for assembling, trimming, captioning, and publishing a first short.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "CapCut is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "CapCut",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Accessible timeline editing",
+        "Captions and social formats",
+        "Cross-device workflow"
+      ],
+      "best_use_cases": [
+        "Assembling, trimming, captioning, and publishing a first short.",
+        "A familiar editor is often more valuable than adding one more generation model."
+      ],
+      "compare": "Compared with LTX Studio, Krea, and conventional editors, CapCut is distinguished here by accessible timeline editing and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#6C5CE7",
+      "sources": [
+        "https://www.capcut.com/",
+        "https://www.bytedance.com/en/"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     },
     {
       "id": "kapwing",
@@ -623,13 +2646,330 @@
       "category": "Studios & editors",
       "type": "editor",
       "what": "A collaborative browser editor for assembling, captioning, resizing, and generating video content.",
-      "strengths": ["Browser editing", "Collaboration", "Captions and format conversion"],
-      "weak_at": ["Free exports and AI usage have plan limits"],
+      "strengths": [
+        "Browser editing",
+        "Collaboration",
+        "Captions and format conversion"
+      ],
+      "weak_at": [
+        "Free exports and AI usage have plan limits"
+      ],
       "best_for": "School teams and beginners editing together without installing software.",
       "access": "freemium",
       "level": "beginner",
       "url": "https://www.kapwing.com/",
-      "special": "It lowers the handoff friction between generation, feedback, and final assembly."
+      "special": "It lowers the handoff friction between generation, feedback, and final assembly.",
+      "maker_company": "Kapwing",
+      "founded_year": "2017",
+      "country_hq": "San Francisco, United States",
+      "key_people": [
+        {
+          "name": "Julia Enthoven",
+          "role": "Co-founder and CEO"
+        }
+      ],
+      "overview": "A collaborative browser editor for assembling, captioning, resizing, and generating video content. It lowers the handoff friction between generation, feedback, and final assembly. First Frame treats it as a editor option for school teams and beginners editing together without installing software.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Kapwing is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Kapwing",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Browser editing",
+        "Collaboration",
+        "Captions and format conversion"
+      ],
+      "best_use_cases": [
+        "School teams and beginners editing together without installing software.",
+        "It lowers the handoff friction between generation, feedback, and final assembly."
+      ],
+      "compare": "Compared with LTX Studio, Krea, and conventional editors, Kapwing is distinguished here by browser editing and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#7A5CFA",
+      "sources": [
+        "https://www.kapwing.com/",
+        "https://www.kapwing.com/about"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
+    },
+    {
+      "id": "google-flow",
+      "name": "Google Flow",
+      "maker": "Google DeepMind / Google",
+      "category": "Studios & editors",
+      "type": "editor",
+      "what": "An AI filmmaking workspace that combines Google video, image, and language models into scene-building workflows.",
+      "strengths": [
+        "Scene-based filmmaking workflow",
+        "Access to Google generative models",
+        "Reference and continuity tools"
+      ],
+      "weak_at": [
+        "Availability and model quotas depend on Google AI plan and region"
+      ],
+      "best_for": "Planning and iterating connected AI-generated scenes in one browser workspace.",
+      "access": "paid",
+      "level": "intermediate",
+      "url": "https://labs.google/flow/about",
+      "special": "It organizes generation around scenes and filmmaking decisions rather than isolated clips.",
+      "maker_company": "Google",
+      "founded_year": "1998",
+      "country_hq": "Mountain View, United States",
+      "key_people": [
+        {
+          "name": "Sundar Pichai",
+          "role": "CEO of Google and Alphabet"
+        }
+      ],
+      "overview": "An AI filmmaking workspace that combines Google video, image, and language models into scene-building workflows. It organizes generation around scenes and filmmaking decisions rather than isolated clips. First Frame treats it as a editor option for planning and iterating connected ai-generated scenes in one browser workspace.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Google Flow is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Google Flow",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as paid from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Scene-based filmmaking workflow",
+        "Access to Google generative models",
+        "Reference and continuity tools"
+      ],
+      "best_use_cases": [
+        "Planning and iterating connected AI-generated scenes in one browser workspace.",
+        "It organizes generation around scenes and filmmaking decisions rather than isolated clips."
+      ],
+      "compare": "Compared with LTX Studio, Krea, and conventional editors, Google Flow is distinguished here by scene-based filmmaking workflow and its paid access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#4285F4",
+      "sources": [
+        "https://labs.google/flow/about",
+        "https://about.google/intl/en/"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
+    },
+    {
+      "id": "dreamina",
+      "name": "Dreamina",
+      "maker": "ByteDance Seed",
+      "category": "Studios & editors",
+      "type": "both",
+      "what": "ByteDance’s browser creative suite for generating and editing images and video.",
+      "strengths": [
+        "Image and video creation",
+        "Canvas-based iteration",
+        "Template-led workflows"
+      ],
+      "weak_at": [
+        "Regional availability and current model names require verification"
+      ],
+      "best_for": "Quick social-creative experiments that move between stills and motion.",
+      "access": "freemium",
+      "level": "beginner",
+      "url": "https://dreamina.capcut.com/",
+      "special": "It gives beginners a visual workspace for moving from a still concept to a motion draft.",
+      "maker_company": "ByteDance",
+      "founded_year": "2012",
+      "country_hq": "Beijing, China",
+      "key_people": [
+        {
+          "name": "Liang Rubo",
+          "role": "CEO"
+        }
+      ],
+      "overview": "ByteDance’s browser creative suite for generating and editing images and video. It gives beginners a visual workspace for moving from a still concept to a motion draft. First Frame treats it as a both option for quick social-creative experiments that move between stills and motion.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Dreamina is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Dreamina",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Image and video creation",
+        "Canvas-based iteration",
+        "Template-led workflows"
+      ],
+      "best_use_cases": [
+        "Quick social-creative experiments that move between stills and motion.",
+        "It gives beginners a visual workspace for moving from a still concept to a motion draft."
+      ],
+      "compare": "Compared with LTX Studio, Krea, and conventional editors, Dreamina is distinguished here by image and video creation and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#325BFF",
+      "sources": [
+        "https://dreamina.capcut.com/",
+        "https://www.bytedance.com/en/"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
+    },
+    {
+      "id": "topaz-video-ai",
+      "name": "Topaz Video AI",
+      "maker": "Topaz Labs",
+      "category": "Studios & editors",
+      "type": "editor",
+      "what": "A desktop enhancement application for denoising, deinterlacing, stabilizing, interpolating, and upscaling video.",
+      "strengths": [
+        "Video enhancement",
+        "Upscaling and restoration",
+        "Frame interpolation"
+      ],
+      "weak_at": [
+        "Desktop processing can be hardware intensive",
+        "It enhances footage rather than generating story content"
+      ],
+      "best_for": "Repairing soft, noisy, low-resolution, or low-frame-rate source footage.",
+      "access": "paid",
+      "level": "intermediate",
+      "url": "https://www.topazlabs.com/topaz-video",
+      "special": "It is often a more honest fix for weak technical footage than generating a replacement shot.",
+      "maker_company": "Topaz Labs",
+      "founded_year": "2008",
+      "country_hq": "Dallas, United States",
+      "key_people": [
+        {
+          "name": "Eric Yang",
+          "role": "Founder and CEO"
+        }
+      ],
+      "overview": "A desktop enhancement application for denoising, deinterlacing, stabilizing, interpolating, and upscaling video. It is often a more honest fix for weak technical footage than generating a replacement shot. First Frame treats it as a editor option for repairing soft, noisy, low-resolution, or low-frame-rate source footage.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "Topaz Video AI is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "Topaz Video AI",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as paid from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Video enhancement",
+        "Upscaling and restoration",
+        "Frame interpolation"
+      ],
+      "best_use_cases": [
+        "Repairing soft, noisy, low-resolution, or low-frame-rate source footage.",
+        "It is often a more honest fix for weak technical footage than generating a replacement shot."
+      ],
+      "compare": "Compared with LTX Studio, Krea, and conventional editors, Topaz Video AI is distinguished here by video enhancement and its paid access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#00AEEF",
+      "sources": [
+        "https://www.topazlabs.com/topaz-video",
+        "https://theorg.com/org/topaz-labs/org-chart/eric-yang"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
+    },
+    {
+      "id": "davinci-resolve",
+      "name": "DaVinci Resolve",
+      "maker": "Blackmagic Design",
+      "category": "Studios & editors",
+      "type": "editor",
+      "what": "A professional desktop post-production suite combining editing, color, visual effects, motion graphics, and audio.",
+      "strengths": [
+        "Editing and color grading",
+        "Fusion visual effects",
+        "Fairlight audio post"
+      ],
+      "weak_at": [
+        "Large feature set has a learning curve",
+        "Generative features are not its primary purpose"
+      ],
+      "best_for": "Finishing, grading, mixing, and assembling generated and live-action footage.",
+      "access": "freemium",
+      "level": "intermediate",
+      "url": "https://www.blackmagicdesign.com/products/davinciresolve",
+      "special": "It reminds students that generated shots still need editorial rhythm, sound, and color finishing.",
+      "maker_company": "Blackmagic Design",
+      "founded_year": "2001",
+      "country_hq": "Melbourne, Australia",
+      "key_people": [
+        {
+          "name": "Grant Petty",
+          "role": "Founder and CEO"
+        }
+      ],
+      "overview": "A professional desktop post-production suite combining editing, color, visual effects, motion graphics, and audio. It reminds students that generated shots still need editorial rhythm, sound, and color finishing. First Frame treats it as a editor option for finishing, grading, mixing, and assembling generated and live-action footage.",
+      "history": [
+        {
+          "date": "Current line",
+          "event": "DaVinci Resolve is the model or product line documented by the primary official source in this entry."
+        },
+        {
+          "date": "2026-07",
+          "event": "Status, access, and official links were reviewed for the First Frame library; exact launch dates not stated by a cited source remain marked verify elsewhere."
+        }
+      ],
+      "versions": [
+        {
+          "name": "DaVinci Resolve",
+          "notes": "Current named product or model line shown by the cited official source; verify the live selector before production."
+        }
+      ],
+      "pricing": "Access is classified as freemium from the reviewed product information. Exact tiers, credits, quotas, and regional taxes change; verify on the official pricing page.",
+      "access_how": "Use the official web or desktop product linked here; current regional availability and account requirements should be checked before production.",
+      "notable_features": [
+        "Editing and color grading",
+        "Fusion visual effects",
+        "Fairlight audio post"
+      ],
+      "best_use_cases": [
+        "Finishing, grading, mixing, and assembling generated and live-action footage.",
+        "It reminds students that generated shots still need editorial rhythm, sound, and color finishing."
+      ],
+      "compare": "Compared with LTX Studio, Krea, and conventional editors, DaVinci Resolve is distinguished here by editing and color grading and its freemium access model. The right choice still depends on the shot, region, license, and current product limits.",
+      "brand_color": "#242424",
+      "sources": [
+        "https://www.blackmagicdesign.com/products/davinciresolve",
+        "https://www.blackmagicdesign.com/company"
+      ],
+      "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
+      "status": "active"
     }
   ]
 }
