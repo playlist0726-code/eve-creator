@@ -2,9 +2,11 @@
 
 # 🎬 E.V.E Creator
 
-### The one-person film studio — with an AI film crew that argues.
+### Learn to direct a film — even if you've never studied one.
 
-**Other AI tools hand you one draft and stop. E.V.E convenes a five-role film crew that critiques your film against analyzed master craft, applies concrete fixes, and re-scores it — so you watch the film measurably get better.**
+**A shared learning platform for anyone curious about AI film and AI art. Bring an idea; an AI film crew designs the whole film *and teaches you why every choice works* — grounded in frame-level analysis of master animation. Then you make it yourself.**
+
+> 🎓 **OpenAI Build Week — Education track.** E.V.E turns filmmaking's hidden craft into something a beginner can learn by doing: every cited technique is tap-to-learn, and a five-role AI crew shows you *why* it critiques and fixes your film.
 
 [![CI](https://github.com/playlist0726-code/eve-creator/actions/workflows/ci.yml/badge.svg)](https://github.com/playlist0726-code/eve-creator/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-c9a227.svg)](LICENSE)
@@ -51,6 +53,16 @@ The crew **critiques the draft against the craft knowledge base, applies concret
 Score gains are justified by the revisions (capped at +30), and every citation is validated against a 111-ID allowlist, so the crew can't hallucinate evidence or inflate itself.
 
 ---
+
+## 🎓 Learn while you build (Education)
+
+E.V.E is built for people who never studied film. Instead of a separate "course," the teaching is woven into the act of making:
+
+- **Tap-to-learn craft, everywhere.** Every technique E.V.E cites — `low_angle`, `chiaroscuro`, `pixar_spine`, and 108 more — is a **learnable term**. Tap any chip and get a plain-language explanation of what it is and *what it does to the audience* (`js/eve-glossary.js`, all 111 grounded IDs covered).
+- **The crew explains its reasoning.** In the Creator's Room, each fix is attached to a real principle and a before/after example, so you learn *why* a change makes the film better — like sitting in a director's room.
+- **Then make it yourself.** The pipeline ends with copy-ready image (T2I) and video (I2V) prompts and recommended tools. E.V.E hands you the plan and the vocabulary; **you generate the film and keep authorship.**
+
+The result: a beginner finishes with a shootable film *and* a working understanding of the craft behind it.
 
 ## How it works — the guided pipeline
 

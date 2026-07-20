@@ -71,6 +71,8 @@
     .cc .nt{font-size:12.5px;color:#b6b6b6;line-height:1.6}
     .cc .cite{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
     .cite span{font-size:9.5px;padding:3px 7px;border-radius:100px;background:rgba(201,162,39,.09);color:var(--gold-lite)}
+    .teach{cursor:help;border:1px solid rgba(201,162,39,.28)!important;transition:background .12s,border-color .12s}
+    .teach:hover,.teach:focus{background:rgba(201,162,39,.2)!important;border-color:var(--gold)!important;outline:none}
     .cc .tgt{font-size:10px;color:var(--muted);margin-top:8px}
     /* dimension deltas */
     .dd{margin-bottom:11px}
@@ -124,6 +126,7 @@
 
   <script src="js/eve-state.js"></script>
   <script src="js/eve-api.js"></script>
+  <script src="js/eve-glossary.js"></script>
   <script src="js/eve-crew.js"></script>
   <script>
   /* ---- stepper (5 steps, Creator's Room = step 2) ---- */
@@ -222,7 +225,7 @@
         +'<div class="top"><span class="rn">'+esc(m.name)+'</span><span class="rf">'+esc(ROLE_FOCUS[m.role]||'')+'</span><span class="vchip '+esc(m.verdict)+'">'+esc(m.verdict)+'</span></div>'
         +'<div class="hl">"'+esc(m.headline)+'"</div><div class="nt">'+esc(m.note)+'</div>'
         +(m.target_shots&&m.target_shots.length?'<div class="tgt">Targets shot'+(m.target_shots.length>1?'s':'')+' '+m.target_shots.join(', ')+'</div>':'')
-        +'<div class="cite">'+(m.grounded_in||[]).map(function(id){return '<span>'+esc(id)+'</span>';}).join('')+'</div></div>';
+        +'<div class="cite">'+(m.grounded_in||[]).map(function(id){return EVE_GLOSSARY_CHIP(id,'');}).join('')+'</div></div>';
       wrap.appendChild(el);
       setTimeout(function(){el.classList.add('in');},260*idx+120);
     });
@@ -242,7 +245,7 @@
       return '<div class="rev"><div class="rt"><span class="sn">SHOT '+r.shot_number+'</span><span class="fld">'+esc(r.field)+'</span><span class="who">raised by '+esc(state.crew.crew.find(function(x){return x.role===r.by_role;})?.name||r.by_role)+'</span></div>'
         +'<div class="prob">'+esc(r.problem)+'</div>'
         +'<div class="diff"><div class="col bad"><div class="lab">Draft</div><p>'+esc(r.before)+'</p></div><div class="col good"><div class="lab">Crew revision</div><p>'+esc(r.after)+'</p></div></div>'
-        +'<div class="cite">'+(r.grounded_in||[]).map(function(id){return '<span>'+esc(id)+'</span>';}).join('')+'</div></div>';
+        +'<div class="cite">'+(r.grounded_in||[]).map(function(id){return EVE_GLOSSARY_CHIP(id,'');}).join('')+'</div></div>';
     }).join('');
 
     document.getElementById('footer').classList.remove('hidden');

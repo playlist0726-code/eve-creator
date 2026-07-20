@@ -2,10 +2,13 @@
 
 **Project:** E.V.E Creator — the one-person film studio with an AI film crew that argues
 **Author:** Junsu (Michael) Kim
+**Track:** _(choose one: Apps for Your Life · Work & Productivity · Developer Tools · Education)_
 **Live demo:** https://eve-creator.vercel.app
-**Repo:** https://github.com/playlist0726-code/eve-creator
-**Demo video:** _(paste public YouTube link — must be < 3 min)_
+**Repo:** https://github.com/playlist0726-code/eve-creator (public, MIT)
+**Demo video:** _(public YouTube, < 3 min, audio must explain how Codex AND GPT-5.6 were used)_
+**Codex `/feedback` session ID:** _(run `/feedback` in the Codex session where you built the core; paste the ID into the Devpost form)_
 **Built with:** Codex + GPT-5.6
+**Deadline:** Tue Jul 21, 5:00 PM PT (= Wed Jul 22, 9:00 AM KST)
 
 ---
 
@@ -18,6 +21,8 @@ Making even a 3-minute animated short takes weeks of pre-production most people 
 You enter one idea (mood · genre · scene · premise). E.V.E designs the whole plan: story → five-act structure → storyboard → per-shot image (T2I) and video (I2V) prompts → recommended generation tools. It doesn't generate the film — it designs exactly *how* to make it, so you keep authorship. Every choice is grounded in a knowledge base built from frame-by-frame analysis of master animation.
 
 Then the differentiator: **The Creator's Room**. GPT-5.6 role-plays a five-person crew (Director, Writer, Cinematographer, Editor, Test Audience) that critiques your draft against the craft data, applies concrete before/after fixes, and re-scores its hit-potential. You watch the film measurably improve.
+
+**It's built to teach.** Every technique E.V.E cites (`low_angle`, `chiaroscuro`, `pixar_spine`, +108 more) is tap-to-learn with a plain-language explanation, and the crew explains *why* each fix works. A beginner finishes with a shootable film **and** a real understanding of the craft — then copies the generation prompts to make it themselves.
 
 ### How we built it
 Static HTML/CSS/vanilla JS front end (no build step), Vercel serverless functions calling **GPT-5.6** via the Responses API with strict JSON-schema structured output. Two agentic passes: one drafts a grounded five-act blueprint; a second convenes the Creator's Room for a self-critique loop. Citations are validated against a 111-ID craft allowlist so the model can't fabricate evidence. Built pair-programming with **Codex**, guarded by a Node test suite in CI.
@@ -39,34 +44,47 @@ Reference-clip upload → on-the-fly shot analysis; generating the storyboard an
 
 ---
 
-## Judging-criteria map (what to look at)
+## Tracks (pick one)
 
-| Criterion | Where it shows | One-liner |
-|-----------|----------------|-----------|
-| **Thoughtful use of GPT-5.6** | `api/generate-story.js`, `api/creators-room.js` | Two agentic passes + a self-critique loop, not a single prompt; strict structured output. |
-| **Use of Codex** | [README → How Codex built this](README.md#-how-codex-built-this), `CODEX_HANDOFF.md` | Codex scaffolded the engine, tests, rebrand, and deploy config. |
-| **Technical implementation** | `lib/*-schema.js`, `tests/`, CI badge | Strict schemas, citation validation, gain cap, green test suite. |
-| **Quality of idea** | `creators_room.html` | "An AI film crew that argues," grounded in analyzed master craft. |
-| **Design & UX** | the guided 5-step pipeline | Sequential crew debate, animated v1→v2 score, before/after diffs. |
-| **Potential impact** | Home + `evaluation/` | Gives non-filmmakers a whole crew; grounding is measured (25 vs 10). |
+| Track | Fit for E.V.E |
+|-------|---------------|
+| **Apps for Your Life** | Strong — a consumer *creativity* app that lets anyone design a film. |
+| **Education** | Strong — teaches film craft; the Creator's Room shows *why* every choice, like sitting in a director's room. Judge Leah Belsky = VP of Education. |
+| Work & Productivity | Weaker — not team/back-office focused. |
+| Developer Tools | Weaker — not aimed at developers. |
+
+## Judging-criteria map (official 4 criteria)
+
+| Criterion | What judges ask | Where it shows |
+|-----------|-----------------|----------------|
+| **Technological Implementation** (Codex depth) | How thoroughly & skillfully does it use **Codex**? Real, non-trivial working code. | [README → How Codex built this](README.md#-how-codex-built-this), `CODEX_HANDOFF.md`, `tests/` + green CI, `/feedback` session ID. |
+| **Design** | Complete, coherent *product* experience — not just a POC. | Guided 5-step pipeline; Creator's Room sequential debate, animated v1→v2 score, before/after diffs; graceful fallbacks so nothing breaks. |
+| **Potential Impact** | Credible, specific real problem + audience the solution actually addresses. | Non-filmmakers get a full crew + measured grounding (25 vs 10 in `evaluation/`). |
+| **Quality of the Idea** | Creative, novel, different from existing concepts. | "An AI film crew that argues and improves your film," grounded in frame-analyzed master craft — a self-critique loop nobody else ships. |
+
+> Note: 4 of the 5 judges are product people (Thibault Sottiaux, Kath Korevec, Tara Seshan, Leah Belsky) + 1 technical (Peter Steinberger). So **product completeness (Design)** and **Codex depth** carry the most weight. The demo video's **audio must explicitly explain how Codex AND GPT-5.6 were used.**
 
 ---
 
-## Demo video script (~2:40, for the < 3 min requirement)
+## Demo video script (~2:45, < 3 min · audio MUST explain Codex AND GPT-5.6)
 
-1. **0:00–0:20 — Hook.** "Every AI tool hands you one draft and stops. Mine gives you a film crew." Show the Home differentiator band.
-2. **0:20–0:50 — Intake + Concept.** Enter an idea; GPT-5.6 builds a grounded five-act blueprint. Point out the per-shot citations — "these aren't invented; they're from analyzed film craft."
-3. **0:50–1:50 — The Creator's Room (the star).** Hit continue. The crew speaks in turn; the hit-score animates 61 → 78; show one before/after fix. "GPT-5.6 is critiquing its own draft as five specialists and improving it — measurably."
-4. **1:50–2:15 — Payoff.** Apply crew notes → the improved blueprint flows into Shot Design + Storyboard with generation-ready prompts.
-5. **2:15–2:40 — Proof + Codex.** Flash the 25-vs-10 evaluation and the green CI badge; "built with Codex and GPT-5.6." End on the live URL.
+Record with voice-over. The audio has to explicitly say *how GPT-5.6 and Codex were used* — that's a scored requirement.
+
+1. **0:00–0:20 — Hook (Education).** *"Most people never get to learn filmmaking. E.V.E lets anyone direct a film — and learn how while they do it."* Show the Home hero + differentiator band.
+2. **0:20–0:50 — Intake + Concept.** Enter an idea. *"GPT-5.6, through the Responses API with strict structured output, drafts a grounded five-act blueprint."* Tap a citation chip → the plain-language lesson pops up. *"Every craft term is tap-to-learn — that's the education layer."*
+3. **0:50–1:55 — The Creator's Room (the star).** Continue. The five-role crew speaks in turn; the hit-score animates up; show one before/after fix and tap a term in it. *"This is a second GPT-5.6 pass — the model critiques its own draft as five specialists and teaches why each fix is better."*
+4. **1:55–2:20 — Make it yourself.** Copy a T2I prompt. *"E.V.E hands you the plan and the vocabulary; you generate the film and keep authorship."* Flow into Shot Design + Storyboard.
+5. **2:20–2:45 — Proof + Codex.** Flash 25-vs-10 evaluation and the green CI badge. *"I built this with Codex — it scaffolded the GPT-5.6 endpoints, the strict schemas, and the test suite you see passing in CI."* End on the live URL + `/feedback` session ID note.
 
 ## Submission checklist
 
-- [ ] Public YouTube demo video, under 3 minutes, explains Codex + GPT-5.6 use
-- [x] Public repo with a strong README
-- [x] Built with Codex
-- [x] Uses GPT-5.6
-- [x] Live, clickable demo (Vercel)
-- [x] Tests + CI
-- [ ] Devpost form filled from the fields above
-- [ ] `OPENAI_API_KEY` set in Vercel; Deployment Protection off so judges can open it
+- [x] Public repo with a strong README (setup instructions, sample data, how to run)
+- [x] Built with Codex · [x] Uses GPT-5.6
+- [x] Live, clickable demo (Vercel) — no rebuild needed for judges to test
+- [x] Tests + CI (green badge)
+- [x] Public repo with MIT license _(or share private repo with testing@devpost.com + build-week-event@openai.com)_
+- [ ] **Choose a track** and set it in the Devpost form (see table above)
+- [ ] **Public YouTube demo video < 3 min**, with **audio** covering how Codex AND GPT-5.6 were used
+- [ ] **Codex `/feedback` session ID** obtained and pasted into the Devpost form
+- [ ] Project description on Devpost (use the fields above)
+- [ ] `OPENAI_API_KEY` set in Vercel; Deployment Protection **off** so judges can open the live demo
