@@ -1,5 +1,12 @@
 {
   "updated": "2026-07-20",
+  "fallback_news": [
+    {"title":"Runway product updates","source":"Runway Changelog","source_domain":"runwayml.com","url":"https://runwayml.com/changelog","published":"","kind":"news"},
+    {"title":"Luma product updates","source":"Luma Changelog","source_domain":"lumalabs.ai","url":"https://lumalabs.ai/changelog","published":"","kind":"news"},
+    {"title":"Stability AI news and updates","source":"Stability AI","source_domain":"stability.ai","url":"https://stability.ai/news-updates","published":"","kind":"news"},
+    {"title":"OpenAI product news","source":"OpenAI","source_domain":"openai.com","url":"https://openai.com/news/product/","published":"","kind":"news"},
+    {"title":"Google DeepMind Veo updates","source":"Google DeepMind","source_domain":"deepmind.google","url":"https://deepmind.google/models/veo/","published":"","kind":"news"}
+  ],
   "entries": [
     {"id":"runway-discord","name":"Runway Discord","kind":"discord","tool_id":"runway-gen4","url":"https://discord.com/invite/runwayml","blurb":"Official Runway community for creator help, events, and discussion.","brand_color":"#111111","source":"https://help.runwayml.com/hc/en-us/articles/37464713358099-Runway-Resources"},
     {"id":"midjourney-discord","name":"Midjourney Discord","kind":"discord","tool_id":"midjourney","url":"https://discord.com/invite/midjourney","blurb":"Official Midjourney server for creating, support, announcements, and discussion.","brand_color":"#111827","source":"https://docs.midjourney.com/hc/en-us/articles/32631709682573-Discord-Quick-Start"},

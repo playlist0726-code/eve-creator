@@ -102,7 +102,9 @@ assert.match(toolkit,/fetch\('data\/ai_tools\.json'\)/,'toolkit.html must render
 assert.match(toolkit,/id="tool-profile"[^>]+role="dialog"/,'toolkit.html must include an accessible detail container');
 assert.match(toolkit,/#tool=/,'toolkit.html must support #tool= deep links');
 assert.match(toolkit,/categoryGlyph/,'toolkit.html must render category glyphs in tool icons');
-assert.match(toolkit,/aria-label="'\+esc\(t\.name\)\+' monogram icon"/,'tool icons must be labelled');
+assert.match(toolkit,/aria-label="'\+esc\(t\.name\)\+' icon"/,'tool icons must be labelled');
+assert.match(toolkit,/google\.com\/s2\/favicons\?domain=/,'tool cards must request real service favicons');
+assert.match(toolkit,/onerror="this\.hidden=true"/,'tool favicons must fall back to monograms');
 assert.match(toolkit,/e\.key==='Escape'/,'tool profile must close with Escape');
 assert.match(toolkit,/prefers-reduced-motion:\s*reduce/,'toolkit motion must respect reduced-motion preferences');
 assert.doesNotMatch(JSON.stringify(toolData),/[가-힣]/,'Tool Study Library data must be English');
@@ -137,6 +139,7 @@ for (const page of ['index.html','concept_lab.html','creators_room.html','shotse
 assert.doesNotMatch(community,/coming soon/i,'Showcase must not contain a placeholder community CTA');
 const communityData=JSON.parse(fs.readFileSync(path.join(root,'data/community.json'),'utf8'));
 assert.ok(Array.isArray(communityData.entries)&&communityData.entries.length>=15,'Community Hub needs at least 15 sourced destinations');
+assert.ok(Array.isArray(communityData.fallback_news)&&communityData.fallback_news.length>=3,'Community Hub needs an honest curated news fallback');
 const communityKinds=new Set(['discord','news','subreddit','twitter','youtube','forum']);
 const communityIds=new Set();
 for(const entry of communityData.entries){
@@ -150,11 +153,31 @@ for(const entry of communityData.entries){
   if(entry.tool_id)assert.ok(toolIds.has(entry.tool_id),`${entry.id} references missing tool ${entry.tool_id}`);
 }
 assert.match(community,/fetch\('data\/community\.json'\)/,'Community Hub must render from its verified JSON directory');
-for(const filter of ['all','discord','news','subreddit','social'])assert.match(community,new RegExp(`data-filter="${filter}"`),`Community Hub missing ${filter} filter`);
+for(const filter of ['all','discord','news','subreddit','social','clips'])assert.match(community,new RegExp(`data-filter="${filter}"`),`Community Hub missing ${filter} filter`);
 assert.match(community,/ArrowLeft.*ArrowRight/,'Community filter tabs must support arrow-key navigation');
+assert.match(community,/id="feed-sentinel"/,'Community Hub needs an infinite-scroll sentinel');
+assert.match(community,/IntersectionObserver/,'Community Hub must progressively load feed items');
+assert.match(community,/id="clips-section"/,'Community Hub needs a trending clips carousel');
+assert.match(community,/Trending in AI video/,'Clips must be honestly labelled');
+assert.match(community,/fetch\('\/api\/news'\)/,'Community Hub must request live normalized news');
+assert.match(community,/news=community\.fallback_news\|\|\[\]/,'Live news failure must use curated local fallback data');
+assert.match(community,/google\.com\/s2\/favicons\?domain=/,'Community cards must request source favicons');
+assert.match(community,/onerror="this\.hidden=true"/,'Community favicons and thumbnails must retain fallbacks');
 assert.match(community,/target="_blank" rel="noopener noreferrer"/,'External community links must open safely');
 assert.match(community,/Native community: roadmap/,'Community Hub must keep the honest native-account roadmap note');
 assert.doesNotMatch(community,/\b\d+[KM+]?\s+(followers|members|likes|comments|views)\b/i,'Community Hub must not invent engagement metrics');
+
+// Live news parser is testable without the network and normalizes both RSS and Atom.
+const newsHandler=require(path.join(root,'api/news'));
+assert.equal(typeof newsHandler,'function','api/news.js must export a Vercel handler');
+assert.equal(typeof newsHandler._test?.parseFeed,'function','news handler must expose its inline parser for deterministic tests');
+const sampleRss=`<rss><channel><item><title>New &amp; real</title><link>https://example.com/post</link><pubDate>Sun, 19 Jul 2026 10:00:00 GMT</pubDate><media:thumbnail url="https://example.com/thumb.jpg"/></item></channel></rss>`;
+const sampleAtom=`<feed><entry><title><![CDATA[Video update]]></title><link rel="alternate" href="https://youtube.com/watch?v=abc123"/><published>2026-07-20T10:00:00Z</published><yt:videoId>abc123</yt:videoId></entry></feed>`;
+const parsedNews=[...newsHandler._test.parseFeed(sampleRss,{source:'Example',kind:'news'}),...newsHandler._test.parseFeed(sampleAtom,{source:'Example Video',kind:'youtube'})];
+assert.equal(parsedNews.length,2,'inline feed parser must normalize RSS and Atom entries');
+for(const item of parsedNews){for(const field of ['title','source','source_domain','url','published'])assert.equal(typeof item[field],'string',`normalized news ${field} must be a string`);assert.match(item.url,/^https:\/\//);}
+assert.equal(parsedNews[0].title,'New & real','parser must decode XML entities');
+assert.match(parsedNews[1].thumbnail,/i\.ytimg\.com\/vi\/abc123/,'YouTube entries must derive a real thumbnail URL');
 assert.match(home,/Internal grounding audit:/,'Home must label the 25-vs-10 result as internal evidence');
 assert.match(fs.readFileSync(path.join(root,'evaluation/RESULTS.md'),'utf8'),/source images[^\n]+not currently included/i,'Evaluation must disclose missing source artifacts');
 const readme=fs.readFileSync(path.join(root,'README.md'),'utf8');
