@@ -42,6 +42,8 @@ for(const token of ['--bg:#eef0f4','--surface:#ffffff','--text:#14151a','--iris:
   assert.ok(theme.includes(token),`light theme missing ${token}`);
 }
 assert.match(theme,/Plus\+Jakarta\+Sans/,'light theme must load Plus Jakarta Sans');
+assert.match(theme,/:focus-visible/,'shared theme must expose a keyboard focus indicator');
+assert.match(theme,/min-height:\s*44px/,'shared controls must meet the 44px touch-target baseline');
 
 // Film School must cover every craft ID exactly once across its categories.
 const learn = fs.readFileSync(path.join(root, 'learn.html'), 'utf8');
@@ -107,6 +109,8 @@ assert.doesNotMatch(JSON.stringify(toolData),/[가-힣]/,'Tool Study Library dat
 // Footage Lab must remain private, local-only, and transparent about its limits.
 const detector=fs.readFileSync(path.join(root,'detector.html'),'utf8');
 assert.match(detector,/type="file"[^>]+accept="video\/\*"/,'Footage Lab needs a video file input');
+assert.match(detector,/type="file"[^>]+aria-label=/,'Footage Lab file input needs an accessible name');
+assert.match(detector,/role="progressbar"/,'Footage Lab progress needs an accessible role');
 assert.match(detector,/<video[^>]+id="video"/,'Footage Lab needs a local analysis video element');
 assert.match(detector,/<canvas[^>]+id="canvas"/,'Footage Lab needs a canvas for frame analysis');
 assert.match(detector,/URL\.createObjectURL\(file\)/,'Footage Lab must keep video input local');
@@ -118,6 +122,24 @@ assert.doesNotMatch(detector,/fetch\s*\(\s*['"]https?:\/\//,'Footage Lab must no
 assert.doesNotMatch(detector,/XMLHttpRequest|WebSocket|EventSource/,'Footage Lab must not use alternate network APIs');
 assert.match(detector,/Media literacy: spot common AI-video tells/,'The previous detector lesson must remain as a secondary section');
 assert.match(detector,/signals—not story, performance, intention, or meaning/i,'Footage Lab must not overclaim what it measures');
+assert.match(concept,/<label[^>]+for="idea">/,'Concept idea input needs an associated label');
+assert.match(concept,/id="out"[^>]+aria-live="polite"/,'Concept output status must be announced');
+assert.match(concept,/<button[^>]+text-action[^>]+onclick="demo\(\)"/,'Concept demo affordance must be keyboard-operable');
+assert.match(storyboard,/\(b\.citations\|\|\[\]\)/,'Storyboard must tolerate stale blueprints with missing citations');
+assert.match(storyboard,/Array\.isArray\(candidate\.story\?\.acts\)/,'Storyboard must validate stored blueprint shape before rendering');
+
+// Judge-facing claims must stay transparent and the product must not expose stale names.
+const community=fs.readFileSync(path.join(root,'community.html'),'utf8');
+for (const page of ['index.html','concept_lab.html','creators_room.html','shotseed.html','storyboard.html',...newPages]) {
+  const visible=fs.readFileSync(path.join(root,page),'utf8').replace(/<script[\s\S]*?<\/script>/g,'');
+  assert.doesNotMatch(visible,/SceneForge|E\.V\.E/ ,`${page} must not show a retired product name`);
+}
+assert.doesNotMatch(community,/coming soon/i,'Showcase must not contain a placeholder community CTA');
+assert.match(home,/Internal grounding audit:/,'Home must label the 25-vs-10 result as internal evidence');
+assert.match(fs.readFileSync(path.join(root,'evaluation/RESULTS.md'),'utf8'),/source images[^\n]+not currently included/i,'Evaluation must disclose missing source artifacts');
+const readme=fs.readFileSync(path.join(root,'README.md'),'utf8');
+assert.doesNotMatch(readme,/\]\(https:\/\/youtube\.com\)/,'README must not ship a placeholder demo link');
+assert.match(readme,/How Codex built this/,'README must explain concrete Codex implementation work');
 for(const file of ['research/ai_pain_points.md','research/competitive_scan.md','research/win_audit.md']){
   const research=fs.readFileSync(path.join(root,file),'utf8');
   assert.match(research,/https:\/\//,`${file} must contain real source URLs`);

@@ -38,6 +38,9 @@ a{color:inherit}.g{-webkit-text-fill-color:transparent!important}
 button,input,select,textarea{font-family:var(--sans)}
 input,select,textarea{background:#fff!important;color:var(--text)!important;border-color:var(--border2)!important}
 input::placeholder,textarea::placeholder{color:#9ca3af!important}
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:3px solid rgba(108,92,231,.42)!important;outline-offset:3px!important}
+:where(button,.btn,.btn-primary,.btn-secondary,.btn-ghost,.start,.eve-cont,.story-flow-btn,.teach){min-height:44px}
+.text-action{display:inline;border:0;background:transparent;color:#5145cd;text-decoration:underline;text-underline-offset:3px;padding:5px 2px;cursor:pointer;font-weight:700}
 
 /* Shared cards and legacy dark surfaces */
 .panel,.card,.acard,.stage,.learnbox,.pstat,.stat,.route,.mc,.tool,.metric,.sign,.soon,.intake,.filmbar,.scorestrip,.cc,.rev,.shot-card,.beat-card,.act,.an-box,.context,.recap,.gate,.handoff,.footer-inner,.room-mock,.starter,.contest-card,.flow,.file-meta,.legacy,.closing,.diff .col,.crewcard,.big,.showcase{background:var(--card)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important;color:var(--text)!important}
@@ -49,6 +52,7 @@ input::placeholder,textarea::placeholder{color:#9ca3af!important}
 
 /* Light typography for formerly white-on-dark local selectors */
 .rh .t,.crewcard .nm,.stage h3,.acard h3,.showcase h2,.showcase p b,.intake h2,.contest-card b,.starter b,.panel h2,.cat h2,.big h2,.card h4,.soon h3,.scope-list b,.drop strong,.metric-value,.priority b,.secondary>summary,.sign b,.filmbar .fn,.cc .rn,.cc .hl,.rev h3,.shot-card h3,.act h2,.logo-row h1,.idea-block .txt,.story-title{color:var(--text)!important}
+.logline,.action,.reason p,.meaning p,.prompt,.prompt b,.cc .nt,.diff p,.truth,.readiness .eyebrow{color:var(--dim)!important}
 .kick,.kicker,.eyebrow,.lab,.tag,.tg,.raw,.citation,.chip{color:#5b4bd8!important}
 .warn,.status{color:#9a5d00!important}.error{color:var(--bad)!important}
 
@@ -61,5 +65,6 @@ input::placeholder,textarea::placeholder{color:#9ca3af!important}
 code{color:#5b4bd8!important}.axis,.axis-lab,.curve-label{fill:#6b7280!important}.curve-line{stroke:#6c5ce7!important}.beat-dot{fill:#fff!important;stroke:#6c5ce7!important}
 
 footer{border-color:var(--border)!important;color:var(--muted)!important}
+@media(max-width:520px){.glass-stage{transform:scale(.9);transform-origin:center}.pipe{gap:5px}.pipe .node{min-width:0}.pipe .bubble{width:58px;height:58px}}
 @media(max-width:1288px){.app-shell{margin:12px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}

@@ -19,12 +19,12 @@
     '.eve-gnav .gbrand{display:inline-flex;align-items:center;gap:9px;font-family:"Plus Jakarta Sans","Inter",sans-serif;font-weight:800;font-size:17px;letter-spacing:-.5px;color:#14151a;text-decoration:none;white-space:nowrap}' +
     '.eve-gnav .gbrand i{display:grid;place-items:center;width:24px;height:24px;border-radius:8px;font-style:normal;color:#fff;background:linear-gradient(135deg,#6c5ce7,#8b7cff 55%,#4c9ffe);box-shadow:0 6px 16px rgba(108,92,231,.22)}' +
     '.eve-gnav .gtabs{display:flex;align-items:center;gap:3px;margin-left:8px}' +
-    '.eve-gnav .gt{position:relative;font:600 13px "Inter",sans-serif;color:#656b78;text-decoration:none;padding:8px 13px;border-radius:100px;white-space:nowrap;transition:color .14s,background .14s}' +
+    '.eve-gnav .gt{position:relative;display:inline-flex;align-items:center;min-height:44px;font:600 13px "Inter",sans-serif;color:#656b78;text-decoration:none;padding:8px 13px;border-radius:100px;white-space:nowrap;transition:color .14s,background .14s}' +
     '.eve-gnav .gt:hover{color:#14151a;background:#f3f4f7}' +
     '.eve-gnav .gt.on{color:#5b4bd8;background:#f0edff}' +
     '.eve-gnav .gt .nb{font-size:8px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:#b83f70;border:1px solid #ffc2d8;background:#fff2f7;border-radius:100px;padding:1px 5px;margin-left:6px;vertical-align:middle}' +
     '.eve-gnav .gcta{margin-left:auto;font:800 13px "Inter",sans-serif;color:#fff;background:#14151a;border-radius:100px;padding:10px 19px;text-decoration:none;white-space:nowrap;box-shadow:0 8px 20px rgba(20,21,26,.16)}' +
-    '@media(max-width:820px){.eve-gnav{padding:10px 16px;gap:10px}.eve-gnav .gcta{display:none}}';
+    '@media(max-width:820px){.eve-gnav{padding:8px 16px;gap:10px;scrollbar-width:none;scroll-snap-type:x proximity}.eve-gnav::-webkit-scrollbar{display:none}.eve-gnav .gbrand,.eve-gnav .gt{scroll-snap-align:start}.eve-gnav .gcta{display:none}}';
 
   function currentFile() {
     var f = (location.pathname.split('/').pop() || 'index.html').toLowerCase();

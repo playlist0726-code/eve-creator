@@ -100,7 +100,7 @@ Matching engine (in `index.html`): KO/EN synonym map → keyword scoring over sh
 - **Verify each step** (the project was built with per-step validation: JSON validity, jsdom render checks, prompt dry-runs).
 - **Keep relative links** between the 4 HTML tools intact when moving/renaming files.
 - **Human-in-the-loop:** the system designs and scores; it does not claim to auto-generate finished films.
-- Dark cinematic theme: bg `#0d0d0d`, gold accent `#c9a227`, rounded cards.
+- Light glass SaaS theme: soft-gray page, white rounded surfaces, near-black type, and restrained periwinkle accents.
 
 ## 7. How to run / test
 

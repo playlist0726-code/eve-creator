@@ -27,14 +27,14 @@ Three audiences:
 
 ## 2. Current state (what's already built)
 Static HTML/CSS/vanilla JS (no build step) + Vercel serverless (GPT-5.6, Responses API,
-strict structured output). Global top nav: **Home · Create · Learn · AI Tools · Detector ·
+strict structured output). Global top nav: **Home · Create · Learn · AI Tools · Footage Lab ·
 Community**.
 - **Create** pipeline: Intake → Concept Lab (grounded five-act blueprint) → **The Creator's
   Room** (5-role AI crew critiques, fixes, re-scores — the differentiator) → Shot Design →
   Storyboard.
 - **Learn (Film School)**: searchable 111-term craft library.
 - **AI Tools**: 2026 model routing guide (from `knowledge/ai_toolchain.json`).
-- **Detector**: interactive AI-media-literacy checklist.
+- **Footage Lab**: local-only technical video analysis plus a secondary AI-media-literacy checklist.
 - **Community**: showcase of the reference build + the 25-vs-10 grounding evidence.
 - Grounding: `knowledge/` (7 JSON), `lib/craft-knowledge.js` (111-ID allowlist),
   `js/eve-glossary.js` (all 111 defined in plain language).

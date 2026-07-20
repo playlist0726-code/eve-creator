@@ -33,11 +33,11 @@
         <div class="drop" id="drop" role="button" tabindex="0" aria-controls="file" aria-label="Choose or drop a video file">
           <div><div class="drop-icon" aria-hidden="true"></div><strong>Drop a video here</strong><span>or click to choose a file · video only</span></div>
         </div>
-        <input class="file-input" id="file" type="file" accept="video/*">
+        <input class="file-input" id="file" type="file" accept="video/*" aria-label="Choose a video file for local analysis">
         <video class="analysis-video" id="video" muted playsinline preload="metadata"></video>
         <canvas class="analysis-canvas" id="canvas" width="160" height="90"></canvas>
         <div class="file-meta" id="fileMeta"></div>
-        <div class="progress-wrap" id="progressWrap"><div class="progress-label"><span id="stage">Preparing local analysis…</span><span id="progressText">0%</span></div><div class="progress"><span id="progressBar"></span></div></div>
+        <div class="progress-wrap" id="progressWrap"><div class="progress-label"><span id="stage">Preparing local analysis…</span><span id="progressText">0%</span></div><div class="progress" id="analysisProgress" role="progressbar" aria-label="Local video analysis progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progressBar"></span></div></div>
         <div class="error" id="error" role="alert"></div>
         <button class="new-file" id="newFile" type="button">Choose another clip</button>
       </section>
@@ -90,7 +90,7 @@
       function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
       function fmtTime(s){if(!isFinite(s))return 'Unknown';var m=Math.floor(s/60),x=Math.round(s%60);return(m?m+'m ':'')+x+'s';}
       function fmtBytes(n){if(n<1024*1024)return(n/1024).toFixed(0)+' KB';return(n/(1024*1024)).toFixed(1)+' MB';}
-      function setProgress(p,label){document.getElementById('progressWrap').style.display='block';document.getElementById('progressBar').style.width=p+'%';document.getElementById('progressText').textContent=Math.round(p)+'%';document.getElementById('stage').textContent=label;}
+      function setProgress(p,label){document.getElementById('progressWrap').style.display='block';document.getElementById('progressBar').style.width=p+'%';document.getElementById('progressText').textContent=Math.round(p)+'%';document.getElementById('stage').textContent=label;document.getElementById('analysisProgress').setAttribute('aria-valuenow',Math.round(p));}
       function showError(message){var e=document.getElementById('error');e.textContent=message;e.style.display='block';document.getElementById('progressWrap').style.display='none';}
       function clearError(){document.getElementById('error').style.display='none';}
       function metadata(file){var ratio=video.videoWidth/video.videoHeight;return{file:file,duration:video.duration,width:video.videoWidth,height:video.videoHeight,ratio:ratio,resolution:video.videoHeight>=2160?'4K':video.videoHeight>=720?'HD':'SD',aspect:aspectLabel(ratio)};}

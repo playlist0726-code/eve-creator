@@ -101,10 +101,10 @@
 
   <div class="wrap">
     <div class="panel">
-      <label class="k">Your concept (mood · scene · what happens)</label>
+      <label class="k" for="idea">Your concept (mood · scene · what happens)</label>
       <textarea id="idea" placeholder="e.g. A lonely old man plays chess against himself in an autumn park — until his timid side outwits his aggressive side through a clever trick."></textarea>
       <div class="two">
-        <div><label class="k">Genre</label>
+        <div><label class="k" for="genre">Genre</label>
           <select id="genre">
             <option value="animated_short">Animated Short</option>
             <option value="comedy">Comedy</option>
@@ -113,14 +113,14 @@
             <option value="sci_fi_fantasy">Sci-Fi / Fantasy</option>
             <option value="romance">Romance</option>
           </select></div>
-        <div><label class="k">Runtime (min)</label><input id="runtime" type="number" value="3" min="1" max="10"></div>
+        <div><label class="k" for="runtime">Runtime (min)</label><input id="runtime" type="number" value="3" min="1" max="10"></div>
       </div>
       <button class="btn" id="validateBtn" onclick="validate()">Build director blueprint →</button>
-      <div class="ex">Try: <a onclick="demo()">the Geri's Game concept</a></div>
+      <div class="ex">Try: <button type="button" class="text-action" onclick="demo()">the built-in reference concept</button></div>
       <p class="note">Hit-potential remains a transparent heuristic. The director blueprint is generated live by GPT-5.6 and grounded in First Frame's curated craft IDs; a curated fallback keeps the demo reliable.</p>
     </div>
 
-    <div class="panel" id="out"><div class="empty">Enter a concept and click Validate to see its hit-potential blueprint.</div></div>
+    <div class="panel" id="out" aria-live="polite"><div class="empty">Enter a concept and click “Build director blueprint” to see the transparent hit-potential heuristic and shot plan.</div></div>
   </div>
 
   <script src="js/eve-nav.js"></script>

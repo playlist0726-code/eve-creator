@@ -14,7 +14,7 @@
 [![Built with GPT‑5.6](https://img.shields.io/badge/Built%20with-GPT--5.6-6ea8fe.svg)](#-how-gpt-56-is-used)
 [![Built with Codex](https://img.shields.io/badge/Built%20with-Codex-c86ad9.svg)](#-how-codex-built-this)
 
-**🔗 [Live demo](https://eve-creator.vercel.app) · 🎥 [Demo video](https://youtube.com) · 🏆 OpenAI Build Week Challenge**
+**🔗 [Live demo](https://eve-creator.vercel.app) · 🎥 Demo video pending final upload · 🏆 OpenAI Build Week Challenge**
 
 </div>
 
@@ -30,7 +30,7 @@ Making even a 3-minute animated short means weeks of pre-production most people 
 
 Every decision is **grounded**: not "AI-invented advice," but reasoning tied to a knowledge base built from **frame-by-frame analysis of master animation** (Pixar / Disney) and researched film craft.
 
-> **Measured, not claimed:** in our evaluation a grounded blueprint scored **25/25** against a naive prompt's **10/25**. See [`evaluation/`](evaluation/).
+> **Internal grounding check, with limits:** one controlled prompt comparison scored a grounded output **25/25** and a naive output **10/25** on a disclosed five-part directorial rubric. The repository currently includes the prompts, rubric, observations, and limitations; the source images still need to be added before this should be treated as independently auditable evidence. See [`evaluation/`](evaluation/).
 
 ---
 
@@ -109,14 +109,15 @@ Both endpoints run server-side (key never exposed), are bounded (`reasoning.effo
 
 ## 🛠 How Codex built this
 
-This project was built **with Codex** as the pair-programmer:
+Codex was the implementation partner across the repository, not a one-off code generator. The work is visible in the commit history and in these concrete systems:
 
-- Codex scaffolded the GPT-5.6 engine — the Responses-API handler, the strict JSON schema, the system prompt, and the client fetch/fallback layer (`api/`, `lib/`, `js/eve-api.js`).
-- Codex wrote and iterated the Node test suite (`tests/`) that guards the citation contract, runtime math, and pipeline hand-off.
-- Codex handled the English rebrand (SceneForge → First Frame), the file renames, and the Vercel deploy config.
-- Human + Codex then added **The Creator's Room** — schema, prompt, endpoint, deterministic fallback, and the animated review UI.
+- **Model contracts and safety rails:** Codex iterated the two Responses-API endpoints, strict JSON schemas, 40-second request bounds, server-only key handling, citation/tool allowlists, validation, and deterministic fallbacks (`api/`, `lib/story-schema.js`, `lib/crew-schema.js`).
+- **Agentic creative loop:** Codex implemented and debugged the Creator's Room’s second GPT-5.6 pass, five role-specific critiques, constrained score deltas, before/after shot revisions, and revision application into downstream state (`lib/crew-prompt.js`, `js/eve-crew.js`, `creators_room.html`).
+- **Connected product state:** Codex wired intake → concept → crew → shot design → storyboard, including session persistence, stale-state defenses, curated demos, locked-route recovery, and source badges (`js/eve-state.js` and the five Create pages).
+- **Inspectable education features:** Codex built the 111-term glossary contract, Film School search, the cited AI Tool Study Library, and local-only Footage Lab analysis using Canvas/WebAudio—without adding a framework or runtime dependency.
+- **Verification loop:** Codex repeatedly audited the live pages and local flows, added six Node contract suites plus CI, and used failures to harden schema compatibility, accessibility, mobile behavior, and fallback reliability (`tests/`, `.github/workflows/ci.yml`).
 
-See [`CODEX_HANDOFF.md`](CODEX_HANDOFF.md) for the running brief passed to Codex between sessions.
+The human set the filmmaking vision, curated craft knowledge, and reviewed product decisions; Codex converted that direction into working, tested systems. See [`CODEX_HANDOFF.md`](CODEX_HANDOFF.md) and the commit history for the continuing collaboration trail.
 
 ---
 
@@ -135,7 +136,7 @@ cp .env.example .env         # add your server-side key
 #   OPENAI_API_KEY=sk-...
 ```
 
-The site is fully usable offline: without a key, the Concept Lab and Creator's Room use their curated/deterministic fallbacks.
+The Create flow remains demoable without a working API key: failed live requests fall back to curated/deterministic results. Static catalogue pages require their local JSON files to be served from the same site origin.
 
 ---
 

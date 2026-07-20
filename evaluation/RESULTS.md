@@ -1,40 +1,44 @@
 # Evaluation Results — Grounded vs. Naive
 
-> 실험 설계·프롬프트는 `EXPERIMENT.md` 참조. 이미지는 `images/` 참조.
+> This is a single internal prompt comparison, not a benchmark or user study. See `EXPERIMENT.md` for the design and prompts. The source images referenced below are not currently included in the repository, so the numeric score is not yet independently auditable.
 
-## 비교 대상
+## Compared conditions
 
-| | 조건 A — Naive | 조건 B — Grounded |
+| | Condition A — Naive | Condition B — Grounded |
 |---|---|---|
-| 프롬프트 | `an old man playing chess alone in an autumn park` | ShotSeed 조립 (framing·lighting·palette·style 포함) |
-| 이미지 | `images/naive_A.png` | `images/grounded_B.png` |
-| 결과 요약 | 사진 같은 실사, 단일 인물, 미디엄샷, 자연광 | 픽사풍 3D, 와이드 설정샷, 따뜻한 백라이트, 가을 팔레트 |
+| Prompt | `an old man playing chess alone in an autumn park` | ShotSeed assembly specifying framing, lighting, palette, and style |
+| Image | `images/naive_A.png` — **not committed** | `images/grounded_B.png` — **not committed** |
+| Recorded observation | Photoreal, one person, medium shot, natural light | Stylized 3D, wide establishing shot, warm backlight, autumn palette |
 
-## 기준별 비교 (1~5점)
+## Internal rubric (1–5)
 
-| 기준 | A(Naive) | B(Grounded) | 관찰 |
+| Criterion | A (Naive) | B (Grounded) | Recorded observation |
 |------|:---:|:---:|------|
-| 1. 구도 충실도 (와이드 설정샷) | 2 | 5 | A는 미디엄샷·비대칭. B는 테이블을 중앙, 양쪽 벤치·나무로 프레이밍한 전형적 establishing 와이드 |
-| 2. 조명/분위기 (따뜻한 백라이트) | 2 | 5 | A는 흐린 자연광. B는 황금빛 백라이트로 인물 가장자리에 warm rim, 오후 황혼톤 |
-| 3. 색 일관성 (가을 팔레트) | 3 | 5 | A는 탁한 갈색·올리브. B는 앰버·골드·레드 단풍 + 초록 테이블 + 하늘 블루 — 지정 팔레트 적중 |
-| 4. 스타일 일관성 (픽사 3D) | 1 | 5 | A는 완전한 포토리얼. B는 명확한 픽사/스타일라이즈드 3D 캐릭터 룩 |
-| 5. 의도성 (설계된 샷 느낌) | 2 | 5 | A는 "스톡 사진". B는 실제 영화의 오프닝 프레임처럼 연출됨 |
-| **합계** | **10 / 25** | **25 / 25** | |
+| 1. Composition fidelity (wide establishing shot) | 2 | 5 | A was recorded as medium and asymmetric; B centered the table and used benches/trees to frame a wide establishing view. |
+| 2. Lighting and mood (warm backlight) | 2 | 5 | A used diffuse natural light; B showed a warm rim and late-afternoon tone. |
+| 3. Color consistency (autumn palette) | 3 | 5 | A used muted brown/olive; B followed amber, gold, red, green, and blue palette directions. |
+| 4. Style consistency (stylized 3D) | 1 | 5 | A was photoreal; B followed the requested stylized 3D direction. |
+| 5. Directorial intentionality | 2 | 5 | A read as a generic image; B read as a deliberately staged opening frame. |
+| **Total** | **10 / 25** | **25 / 25** | |
 
-## 관찰 (정성)
+## Qualitative notes
 
-- **A (Naive):** 모델이 빈 정보를 *기본값(포토리얼·미디엄·자연광)* 으로 채웠다. "가을 공원에서 체스 두는 노인"이라는 사실만 맞고, **연출은 우연**이다. 애니메이션 룩·시네마틱 구도·의도된 색은 전혀 나오지 않았다.
-- **B (Grounded):** ShotSeed의 각 필드가 화면에 **그대로 나타났다** — 와이드 설정 구도, 따뜻한 백라이트, 가을 팔레트, 픽사 3D 스타일, 양쪽 벤치 사이 초록 테이블. "우연히 나온 그림"이 아니라 **설계된 샷**으로 읽힌다.
+- **A (Naive):** The recorded output filled unspecified direction with common defaults: photorealism, medium framing, and natural light. It represented the subject but not a deliberate animation look, palette, or cinematic composition.
+- **B (Grounded):** The recorded output followed more of the structured direction: wide framing, warm backlight, autumn colors, stylized 3D treatment, and staged environmental elements.
 
-### 정직 고지 (limitation)
-- B는 프롬프트가 "lone(1인)"이었지만 **인물 2명**을 렌더했다. → 프롬프트는 *연출(구도·조명·색·스타일)* 을 강하게 유도하지만, **피사체 수 같은 개별 요소는 여전히 명시적 통제가 필요**하다. (이것 자체가 유의미한 발견 — 어떤 필드가 잘 유도되고 어떤 게 덜 되는지.)
+### Limitations
 
-## 결론
+- The grounded prompt requested one person, but the recorded output rendered two. Structured direction improved composition, lighting, color, and style but did not guarantee subject count.
+- This is one example, scored by the project author on a custom rubric. It does not establish general model performance or learning impact.
+- Because the two source images are missing from the repository, judges cannot currently reproduce the visual scoring from the committed artifacts alone.
 
-- **가설 지지:** 예. Grounded는 5개 연출 기준 중 4~5개에서 압도(25 vs 10). 특히 **스타일·조명·구도**에서 격차가 크다.
-- **핵심 발견 한 줄:** *"같은 장면이라도, ShotSeed로 근거를 넣으면 결과가 '사진'에서 '연출된 영화 프레임'으로 바뀐다."*
-- **함의:** ShotSeed의 구조화 데이터는 AI 생성의 *연출 의도*를 실제로 이식한다. (First Frame가 프롬프트로 제공할 가치의 증거.)
+## Conclusion
 
-## 재현 정보
-- 종횡비: 16:9 · 대상 샷: Geri's Game establishing (id 9) · 조건: naive vs grounded (프롬프트만 상이)
-- ※ 이미지 파일을 `images/naive_A.png`, `images/grounded_B.png`로 저장하면 위 링크가 활성화됨.
+The recorded result supports the narrow hypothesis that more explicit directorial constraints can improve adherence on the selected composition, light, color, style, and intentionality criteria. It should be presented as an internal case study, not as proof that First Frame improves every generation.
+
+## Reproduction information
+
+- Aspect ratio: 16:9
+- Reference scenario: an establishing shot inspired by the analyzed chess-short dataset (shot id 9)
+- Controlled variable: prompt wording; naive vs grounded
+- Required next step: commit the original `naive_A.png` and `grounded_B.png`, record the generating model/settings/date, and have a second evaluator score blind.

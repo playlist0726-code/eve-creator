@@ -112,7 +112,7 @@
   <div class="eve-topbar"><span class="eb">First Frame</span><div class="eve-steps" id="eve-steps"></div></div>
   <header>
     <h1>The <span class="accent">Creator's Room</span></h1>
-    <p class="sub">Every other tool hands you one draft and stops. First Frame convenes a five-person AI film crew — Director, Writer, Cinematographer, Editor, and a Test Audience — that critiques your blueprint against analyzed film craft, applies concrete fixes, and re-scores it. You watch the film get measurably better.</p>
+    <p class="sub">First Frame convenes a five-role GPT-5.6 film crew — Director, Writer, Cinematographer, Editor, and Test Audience — that critiques your blueprint against analyzed film craft and applies concrete fixes. The before/after score is a transparent internal heuristic, not a prediction of audience success.</p>
   </header>
   <div class="wrap" id="out">
     <div class="empty">Loading the room…</div>
@@ -206,7 +206,7 @@
       +'<div class="scorestrip"><div><div class="ft" style="font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)">Hit-potential</div>'
         +'<div style="font-size:15px;color:var(--dim);margin-top:6px">Before <b style="color:var(--text)" id="sb">'+c.score_before+'</b> <span style="color:#555">→</span> After <b style="color:var(--good)" id="sa">'+c.score_before+'</b> / 100</div>'
         +'<div class="verdict-pill '+(ready?'ok':'no')+'">'+(ready?'Crew signed off — ready to shoot':'Needs another pass')+'</div></div>'
-        +'<div><div class="gain">+<span id="gain">0</span> <small>points after the room</small></div><div class="delta-line" style="margin-top:8px">'+esc(c.round_summary)+'</div></div></div>'
+        +'<div><div class="gain">+<span id="gain">0</span> <small>internal rubric points</small></div><div class="delta-line" style="margin-top:8px">'+esc(c.round_summary)+'</div><div class="scope-note">This heuristic explains the crew’s revisions; it does not predict reviews, contest results, or commercial success.</div></div></div>'
       +'<div class="sec-h">The crew weighs in</div><div class="crew" id="crew"></div>'
       +'<div class="sec-h">What the room changed</div><div id="deltas"></div>'
       +'<div class="sec-h">Applied fixes · before → after</div><div id="revs"></div>'

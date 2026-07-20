@@ -260,9 +260,9 @@
           ${b.twist?`<div class="twistbox"><span class="k">${b.name==='Reversal / Low Point'?'★ Core Twist':'Twist role'}</span><p>${esc(b.twist)}</p></div>`:''}
           ${b.why?`<div class="craft"><span class="k">Why this shot</span>${esc(b.why)}</div>`:''}
           ${b.pacing?`<div class="craft"><span class="k">Pacing rationale</span>${esc(b.pacing)}</div>`:''}
-          ${b.citations.length?`<div class="citations">${b.citations.map(id=>`<span class="citation">${esc(id)}</span>`).join('')}</div>`:''}
-          <div class="moodchips">${b.mood.map(m=>`<span class="moodchip">${m}</span>`).join('')}</div>
-          <div class="sw">${b.palette.map(c=>`<div style="background:${c}"></div>`).join('')}</div>
+          ${(b.citations||[]).length?`<div class="citations">${(b.citations||[]).map(id=>`<span class="citation">${esc(id)}</span>`).join('')}</div>`:''}
+          <div class="moodchips">${(b.mood||[]).map(m=>`<span class="moodchip">${esc(m)}</span>`).join('')}</div>
+          <div class="sw">${(b.palette||[]).map(c=>`<div style="background:${esc(c)}"></div>`).join('')}</div>
           <div class="t2i"><span class="k">T2I PROMPT → GPT / DALL·E</span>${esc(b.t2i)}</div>
           ${b.i2v?`<div class="t2i"><span class="k">I2V PROMPT</span>${esc(b.i2v)}</div>`:''}
         </div>
@@ -271,7 +271,7 @@
     // interactivity
     function highlight(n){document.querySelectorAll('.panel').forEach(el=>el.classList.remove('active'));const el=document.getElementById('beat-'+n);if(el){el.classList.add('active');el.scrollIntoView({behavior:'smooth',block:'center'});}}
     function bindCurve(){document.querySelectorAll('.beat-dot').forEach(d=>d.addEventListener('click',()=>highlight(+d.getAttribute('data-n'))));}
-    const saved=EVE_STATE.loadBlueprint();const beats=saved?dynamicBeats(saved.story):fixedBeats;if(saved){renderIdea(saved);renderContinuity(saved);}renderCurve(beats);renderSheet(beats,Boolean(saved));bindCurve();
+    const candidate=EVE_STATE.loadBlueprint();const saved=candidate&&Array.isArray(candidate.story?.acts)&&candidate.story.acts.some(a=>Array.isArray(a.shots)&&a.shots.length)?candidate:null;const beats=saved?dynamicBeats(saved.story):fixedBeats;if(saved){renderIdea(saved);renderContinuity(saved);}renderCurve(beats);renderSheet(beats,Boolean(saved));bindCurve();
   </script>
 <script src="js/eve-nav.js"></script>
 </body>

@@ -31,7 +31,7 @@ Research date: 2026-07-20. This is a qualitative scan of community posts, open r
 | Tool overload | Partial | AI Tools routing and per-shot recommendations | Minimum viable three-tool path is not prominent. |
 | Cross-shot consistency | Partial | Per-shot prompts and director lens | No explicit continuity bible/anchor checklist. |
 | Flicker/motion failure | Partial | I2V prompts and model routing | No clip inspection or temporal checker. |
-| Ethics/authorship | Partial | Detector and “you make it” framing | No authorship reflection checkpoint in Create. |
+| Ethics/authorship | Partial | Footage Lab media-literacy checklist and “you make it” framing | No authorship reflection checkpoint in Create. |
 | Cost/access | Partial | Routing and fallback demo | No budget estimator or credit-aware plan. |
 
 ## Priority gaps to close now

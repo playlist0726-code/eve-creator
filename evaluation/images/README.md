@@ -1,9 +1,8 @@
 # images/
 
-여기에 생성한 비교 이미지를 넣으세요.
+The two source images have not been committed yet.
 
-- `naive_A.png`  — 조건 A (naive 프롬프트) 결과
-- `grounded_B.png` — 조건 B (grounded 프롬프트) 결과
+- `naive_A.png` — Condition A (naive prompt)
+- `grounded_B.png` — Condition B (grounded prompt)
 
-두 이미지는 **같은 툴 · 같은 종횡비(16:9) · 같은 시도 수**로 생성 (통제 변수 유지).
-넣은 뒤 알려주면 `../RESULTS.md`에 나란히 비교를 채웁니다.
+For a valid comparison, generate both with the **same model, aspect ratio (16:9), settings, and number of attempts**. Record the model, settings, and generation date in `../RESULTS.md`; do not present the score as independently auditable until both original files are present.
