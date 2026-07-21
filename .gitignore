@@ -28,3 +28,5 @@ storyboard_frames/*.png
 storyboard_frames/*.jpg
 storyboard_frames/*.jpeg
 storyboard_frames/*.webp
+.vercel
+.env*

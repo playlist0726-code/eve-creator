@@ -41,8 +41,6 @@ Each item includes severity, location, and the smallest root-cause fix.
 | major | Tests mostly assert source substrings; they missed the runtime-unit bug, false progress, unrelated fallback handoff, and XSS sink. | `tests/*.test.js` | Add behavioral contract tests for scoring, fallback ownership, state transitions, and escaped rendering. |
 | major | State validators are asymmetric: blueprints are validated, but intake and ShotSeed payloads accept weak shapes and stale/malicious values. | `js/eve-state.js` | Validate every stored object on both save and load and delete invalid state. |
 | major | README claims “locked-route recovery” and a fallback where “the live demo never breaks,” but routes are not locked and fallback changes the user's story. | `README.md`, `SUBMISSION.md` | Replace absolute claims with the exact recovery behavior and its limitations. |
-| minor | `README.md` duplicates the same human/Codex responsibility paragraph. | `README.md` | Remove the duplicate. |
-| minor | `synonymMap` defines `원경` twice. | `shotseed.html` | Remove the duplicate key. |
 | minor | Package metadata still uses the retired `eve-creator` name. | `package.json` | Rename the package to `first-frame` without changing runtime behavior. |
 | minor | `.gitignore` contains duplicated `.vercel`/`.env*` patterns in a pre-existing uncommitted user edit. | `.gitignore` | Leave untouched unless the owner asks; do not absorb unrelated dirty work. |
 
@@ -63,10 +61,10 @@ Each item includes severity, location, and the smallest root-cause fix.
 | Page | 320 / 768 / 1440 | Console | Empty/error/loading | Links and copy |
 |---|---|---|---|---|
 | Home / Intake | No document overflow | Clean | Contest fetch error exists | Local links resolve; evidence caveat present |
-| Concept Lab | No document overflow | Clean in fallback flow | Empty, loading, fallback states exist | Runtime scoring and fallback ownership are wrong |
-| Creator's Room | No document overflow | Clean in fallback flow | Empty, loading, deterministic fallback exist | Unconditional pipeline skip/progress is wrong |
-| Shot Design | No document overflow | Clean | Empty and no-match states exist | Raw-query XSS; no explicit selection |
-| Storyboard | No document overflow | Clean with generated fallback data | Missing-blueprint recovery exists | ShotSeed direction is only a count |
+| Concept Lab | No document overflow | Clean in fallback flow | Empty, loading, fallback states exist | Short-film scoring fixed; reference fallback requires consent |
+| Creator's Room | No document overflow | Clean in fallback flow | Empty, loading, deterministic fallback exist | Shared artifact-derived progress; no skip control |
+| Shot Design | No document overflow | Clean | Empty and no-match states exist | User text escaped; explicit direction selection required |
+| Storyboard | No document overflow | Clean with generated fallback data | Missing-blueprint recovery exists | Selected direction and portable export are available |
 | Film School | No document overflow | Clean | Data-load error exists | 111 allowlisted lessons present |
 | AI Tools | No document overflow | Clean | Load and no-filter-match states exist | External sources open safely; data is as-of dated |
 | Footage Lab | No document overflow | Clean before upload | Codec, metadata, progress, and analysis errors exist | Local-only promise matches implementation |
@@ -86,7 +84,7 @@ Static local `href`/`src` resolution found no missing project file. Browser chec
 | Harden all session-state validators | High | Low–medium | **Fix now** with unit coverage. |
 | Honest claims and README/setup cleanup | High | Low | **Fix now**. |
 | Automate page-integrity/source checks | Medium | Low | **Fix now** without adding browser dependencies. |
-| JSON project export | High | Medium | **Propose, do not risk in this sweep** unless the core fixes finish early; changes product data contract and deserves UX design. |
+| JSON project export | High | Medium | **Fixed** — dependency-free, versioned export from Storyboard. |
 | Accounts/cloud persistence/collaboration | High | Very high | **Do not build** — auth, privacy, storage, and moderation scope. |
 | Storyboard-aware Footage Lab | Medium | High | **Do not build** — needs a designed comparison contract and real evaluation. |
 | Redeploy production, record demo, obtain feedback ID | Critical | External/user action | **Cannot fix in repo**; report as explicit blockers and never invent completion. |
@@ -97,4 +95,36 @@ Static local `href`/`src` resolution found no missing project file. Browser chec
 - Baseline: `npm test` passed all six suites before edits.
 - Browser baseline: all nine pages loaded at 320, 768, and 1440 px with zero document overflow, console errors/warnings, missing `alt` attributes, unnamed buttons, or empty local links.
 - Full baseline flow: Paper Boat → Concept fallback → Creator's Room fallback → ShotSeed reproduced the unrelated-story handoff and false progress state.
-- Final verification and commit hashes will be appended after each fix batch.
+
+## Final disposition after two audit/fix loops
+
+### Closed blockers and majors
+
+| Original gap | Resolution | Commit |
+|---|---|---|
+| ShotSeed DOM XSS | Escaped the displayed query and user-derived match chips; added a regression contract. | `be488c2` |
+| Incorrect 80–150 minute scoring bands | All genre scoring now uses the product's explicit 1–10 minute short-film unit. | `be488c2` |
+| Unrelated fallback replaced learner work | Curated reference output now requires an explicit “Use this reference demo” choice; retry remains available and new-project state resets downstream artifacts. | `0b1a339`, `d8b6141` |
+| False visit-based progress and skip controls | Replaced four copies with `js/eve-flow.js`; status derives from validated Intake, Blueprint, crew-reviewed, and selected-direction artifacts. | `c9831aa` |
+| Weak stored-state shapes | Intake and ShotSeed state validate on save/load; invalid state is removed; selected direction uses a bounded schema. | `0b1a339`, `d8b6141` |
+| ShotSeed dead-end / decorative handoff | Learner must select one recommendation; its prompts, camera/light language, palette, and workflow appear in Storyboard. | `d8b6141` |
+| Session state produced no portable work product | Storyboard exports a versioned, dependency-free project JSON containing the blueprint and selected direction. | `46bb907` |
+| Overbroad competitor/outcome claims | Replaced “nobody else” and “measurably better” claims with specific, inspectable differentiation and rubric limitations; synthesized ShotSeed records are labelled. | `d8b6141` |
+
+### Deliberately left
+
+1. **Production deployment verification — blocker, external.** This workspace cannot prove that Vercel now serves current `main`, that deployment protection is off, or that both GPT routes have a valid key. Redeploy and test signed out.
+2. **Narrated demo and Codex feedback ID — blocker, user/submission action.** Neither can be truthfully created from repository code; `SUBMISSION.md` keeps both unchecked.
+3. **Source images for the 25-vs-10 audit — major evidence weakness, artifact unavailable.** The UI and docs disclose the limitation. Add the original evaluation images plus reproduction metadata or remove the prominent number.
+4. **Accounts/cloud collaboration — roadmap, intentionally out of scope.** The new JSON export makes the static product usable without introducing auth, privacy, storage, or moderation risk.
+5. **Storyboard-aware Footage Lab — roadmap.** Connecting technical clip signals to intended shot language needs a designed comparison/evaluation contract; a rushed heuristic would overclaim.
+
+### Final verification
+
+- `npm test` passed after every one of five implementation commits; all six suites remain green.
+- A fresh browser tab reloaded all nine public pages at 320, 768, and 1440 px after the final changes.
+- Final browser result: zero document overflow, console errors/warnings, missing `alt` attributes, unnamed buttons, empty local links, retired sticky continuation controls, or non-English page declarations.
+- Re-walked the changed path: new concept clears stale downstream status → failed live generation offers retry or explicit reference-demo consent → ShotSeed requires a choice → Storyboard displays that choice.
+- Static local link resolution found no missing project target. The 111-ID allowlist was not edited and no dependency or build step was added.
+
+No in-repository blocker or major remains after the second loop. The remaining blockers are external submission/deployment state, and the largest honest product weakness is still the missing independently reproducible evaluation imagery.
