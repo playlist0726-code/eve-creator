@@ -92,6 +92,21 @@ assert.match(learn,/#term=/,'Film School must support #term= deep links');
 assert.match(learn,/In traditional film/,'Film School needs the traditional-film comparison');
 assert.match(learn,/With AI video/,'Film School needs the AI-video comparison');
 assert.match(learn,/Watch & Learn/,'Film School needs a verified video lesson row');
+assert.match(learn,/No closely relevant public lesson has passed verification yet/,'Film School needs an honest video empty state');
+
+// ShotSeed must remain an auditable source-frame dataset, not a set of untraceable examples.
+const shotseed=fs.readFileSync(path.join(root,'shotseed.html'),'utf8');
+const shotStart=shotseed.indexOf('const shots = '),shotEnd=shotseed.indexOf('\n];',shotStart);
+assert.ok(shotStart>=0&&shotEnd>shotStart,'ShotSeed must expose its local shots array');
+const shotContext={};vm.runInNewContext(shotseed.slice(shotStart,shotEnd+3).replace('const shots = ','shots = '),shotContext);
+assert.ok(shotContext.shots.length>=55,'ShotSeed must carry at least 55 audited shots');
+for(const shot of shotContext.shots){
+  assert.ok(shot.source,`${shot.id} must carry a source`);
+  assert.match(shot.timestamp,/^\d{2}:\d{2}$/,`${shot.id} must carry an auditable timestamp`);
+  assert.ok(['2d','3d'].includes(shot.dimension),`${shot.id} must carry a 2d/3d dimension`);
+}
+assert.deepEqual([...new Set(shotContext.shots.map(s=>s.dimension))].sort(),['2d','3d'],'ShotSeed must represent both 2D and 3D work');
+assert.match(shotseed,/id="sourceFilter"/,'ShotSeed browser must expose a studio/source filter');
 assert.match(learn,/Learning Paths/,'Film School needs ordered learning paths');
 assert.match(learn,/class="ff-breadcrumb"/,'Film School detail view needs breadcrumbs');
 assert.match(learn,/id="lessonToc"[^>]+aria-label="On this page"/,'Film School detail view needs an on-this-page table of contents');

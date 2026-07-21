@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-07-20",
-  "note": "Original First Frame lessons. Film examples identify observable craft; AI availability must be checked on official tool pages.",
+  "updated": "2026-07-21",
+  "note": "Original First Frame lessons. Watch & Learn links were resolved through YouTube public metadata on 2026-07-21; lessons without a closely relevant authoritative public video remain intentionally empty.",
   "lessons": {
     "three_act": {
       "id": "three_act",
@@ -20,7 +20,14 @@
           "A structure is a diagnostic lens, not a formula. Preserve the idea’s cultural context and emotional logic."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Pixar in a Box: Story Structure",
+          "youtube_id": "bKrCKg9ggVI",
+          "channel": "Khan Academy Labs",
+          "source": "https://www.youtube.com/watch?v=bKrCKg9ggVI"
+        }
+      ]
     },
     "hero_journey": {
       "id": "hero_journey",
@@ -39,7 +46,14 @@
           "A structure is a diagnostic lens, not a formula. Preserve the idea’s cultural context and emotional logic."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Pixar in a Box: Story Structure",
+          "youtube_id": "bKrCKg9ggVI",
+          "channel": "Khan Academy Labs",
+          "source": "https://www.youtube.com/watch?v=bKrCKg9ggVI"
+        }
+      ]
     },
     "save_the_cat": {
       "id": "save_the_cat",
@@ -58,7 +72,14 @@
           "A structure is a diagnostic lens, not a formula. Preserve the idea’s cultural context and emotional logic."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Pixar in a Box: Story Structure",
+          "youtube_id": "bKrCKg9ggVI",
+          "channel": "Khan Academy Labs",
+          "source": "https://www.youtube.com/watch?v=bKrCKg9ggVI"
+        }
+      ]
     },
     "pixar_spine": {
       "id": "pixar_spine",
@@ -77,7 +98,14 @@
           "A structure is a diagnostic lens, not a formula. Preserve the idea’s cultural context and emotional logic."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Pixar in a Box: Story Structure",
+          "youtube_id": "bKrCKg9ggVI",
+          "channel": "Khan Academy Labs",
+          "source": "https://www.youtube.com/watch?v=bKrCKg9ggVI"
+        }
+      ]
     },
     "kishotenketsu": {
       "id": "kishotenketsu",
@@ -96,7 +124,14 @@
           "A structure is a diagnostic lens, not a formula. Preserve the idea’s cultural context and emotional logic."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Pixar in a Box: Story Structure",
+          "youtube_id": "bKrCKg9ggVI",
+          "channel": "Khan Academy Labs",
+          "source": "https://www.youtube.com/watch?v=bKrCKg9ggVI"
+        }
+      ]
     },
     "freytag": {
       "id": "freytag",
@@ -115,7 +150,14 @@
           "A structure is a diagnostic lens, not a formula. Preserve the idea’s cultural context and emotional logic."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Pixar in a Box: Story Structure",
+          "youtube_id": "bKrCKg9ggVI",
+          "channel": "Khan Academy Labs",
+          "source": "https://www.youtube.com/watch?v=bKrCKg9ggVI"
+        }
+      ]
     },
     "EWS": {
       "id": "EWS",
@@ -134,7 +176,14 @@
           "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Shots: Every Shot Size Explained",
+          "youtube_id": "AyML8xuKfoc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=AyML8xuKfoc"
+        }
+      ]
     },
     "WS": {
       "id": "WS",
@@ -153,7 +202,14 @@
           "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Shots: Every Shot Size Explained",
+          "youtube_id": "AyML8xuKfoc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=AyML8xuKfoc"
+        }
+      ]
     },
     "MLS": {
       "id": "MLS",
@@ -172,7 +228,14 @@
           "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Shots: Every Shot Size Explained",
+          "youtube_id": "AyML8xuKfoc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=AyML8xuKfoc"
+        }
+      ]
     },
     "MS": {
       "id": "MS",
@@ -191,7 +254,14 @@
           "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Shots: Every Shot Size Explained",
+          "youtube_id": "AyML8xuKfoc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=AyML8xuKfoc"
+        }
+      ]
     },
     "MCU": {
       "id": "MCU",
@@ -210,7 +280,14 @@
           "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Shots: Every Shot Size Explained",
+          "youtube_id": "AyML8xuKfoc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=AyML8xuKfoc"
+        }
+      ]
     },
     "CU": {
       "id": "CU",
@@ -229,7 +306,14 @@
           "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Shots: Every Shot Size Explained",
+          "youtube_id": "AyML8xuKfoc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=AyML8xuKfoc"
+        }
+      ]
     },
     "ECU": {
       "id": "ECU",
@@ -248,7 +332,14 @@
           "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Shots: Every Shot Size Explained",
+          "youtube_id": "AyML8xuKfoc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=AyML8xuKfoc"
+        }
+      ]
     },
     "INSERT": {
       "id": "INSERT",
@@ -267,7 +358,14 @@
           "Models may drift toward a medium shot. Reinforce scale with subject-to-frame proportions and a reference image."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Shots: Every Shot Size Explained",
+          "youtube_id": "AyML8xuKfoc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=AyML8xuKfoc"
+        }
+      ]
     },
     "eye_level": {
       "id": "eye_level",
@@ -286,7 +384,14 @@
           "An angle only has meaning in context; cutting to a contradictory eyeline can break spatial continuity."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Angles: Every Camera Shot Explained",
+          "youtube_id": "wLfZL9PZI9k",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=wLfZL9PZI9k"
+        }
+      ]
     },
     "high_angle": {
       "id": "high_angle",
@@ -305,7 +410,14 @@
           "An angle only has meaning in context; cutting to a contradictory eyeline can break spatial continuity."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Angles: Every Camera Shot Explained",
+          "youtube_id": "wLfZL9PZI9k",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=wLfZL9PZI9k"
+        }
+      ]
     },
     "low_angle": {
       "id": "low_angle",
@@ -324,7 +436,14 @@
           "An angle only has meaning in context; cutting to a contradictory eyeline can break spatial continuity."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Angles: Every Camera Shot Explained",
+          "youtube_id": "wLfZL9PZI9k",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=wLfZL9PZI9k"
+        }
+      ]
     },
     "overhead_topdown": {
       "id": "overhead_topdown",
@@ -343,7 +462,14 @@
           "An angle only has meaning in context; cutting to a contradictory eyeline can break spatial continuity."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Angles: Every Camera Shot Explained",
+          "youtube_id": "wLfZL9PZI9k",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=wLfZL9PZI9k"
+        }
+      ]
     },
     "dutch_tilt": {
       "id": "dutch_tilt",
@@ -362,7 +488,14 @@
           "An angle only has meaning in context; cutting to a contradictory eyeline can break spatial continuity."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Angles: Every Camera Shot Explained",
+          "youtube_id": "wLfZL9PZI9k",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=wLfZL9PZI9k"
+        }
+      ]
     },
     "over_the_shoulder": {
       "id": "over_the_shoulder",
@@ -381,7 +514,14 @@
           "An angle only has meaning in context; cutting to a contradictory eyeline can break spatial continuity."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Angles: Every Camera Shot Explained",
+          "youtube_id": "wLfZL9PZI9k",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=wLfZL9PZI9k"
+        }
+      ]
     },
     "pov": {
       "id": "pov",
@@ -400,7 +540,14 @@
           "An angle only has meaning in context; cutting to a contradictory eyeline can break spatial continuity."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Angles: Every Camera Shot Explained",
+          "youtube_id": "wLfZL9PZI9k",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=wLfZL9PZI9k"
+        }
+      ]
     },
     "static": {
       "id": "static",
@@ -419,7 +566,14 @@
           "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Movement",
+          "youtube_id": "IiyBo-qLDeM",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=IiyBo-qLDeM"
+        }
+      ]
     },
     "pan": {
       "id": "pan",
@@ -438,7 +592,14 @@
           "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Movement",
+          "youtube_id": "IiyBo-qLDeM",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=IiyBo-qLDeM"
+        }
+      ]
     },
     "tilt": {
       "id": "tilt",
@@ -457,7 +618,14 @@
           "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Movement",
+          "youtube_id": "IiyBo-qLDeM",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=IiyBo-qLDeM"
+        }
+      ]
     },
     "dolly_in": {
       "id": "dolly_in",
@@ -476,7 +644,14 @@
           "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Movement",
+          "youtube_id": "IiyBo-qLDeM",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=IiyBo-qLDeM"
+        }
+      ]
     },
     "dolly_out": {
       "id": "dolly_out",
@@ -495,7 +670,14 @@
           "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Movement",
+          "youtube_id": "IiyBo-qLDeM",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=IiyBo-qLDeM"
+        }
+      ]
     },
     "tracking": {
       "id": "tracking",
@@ -514,7 +696,14 @@
           "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Movement",
+          "youtube_id": "IiyBo-qLDeM",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=IiyBo-qLDeM"
+        }
+      ]
     },
     "crane_boom": {
       "id": "crane_boom",
@@ -533,7 +722,14 @@
           "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Movement",
+          "youtube_id": "IiyBo-qLDeM",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=IiyBo-qLDeM"
+        }
+      ]
     },
     "handheld": {
       "id": "handheld",
@@ -552,7 +748,14 @@
           "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Movement",
+          "youtube_id": "IiyBo-qLDeM",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=IiyBo-qLDeM"
+        }
+      ]
     },
     "steadicam": {
       "id": "steadicam",
@@ -571,7 +774,14 @@
           "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Movement",
+          "youtube_id": "IiyBo-qLDeM",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=IiyBo-qLDeM"
+        }
+      ]
     },
     "whip_pan": {
       "id": "whip_pan",
@@ -590,7 +800,14 @@
           "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Movement",
+          "youtube_id": "IiyBo-qLDeM",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=IiyBo-qLDeM"
+        }
+      ]
     },
     "crash_zoom": {
       "id": "crash_zoom",
@@ -609,7 +826,14 @@
           "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Movement",
+          "youtube_id": "IiyBo-qLDeM",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=IiyBo-qLDeM"
+        }
+      ]
     },
     "rack_focus": {
       "id": "rack_focus",
@@ -628,7 +852,14 @@
           "Generated motion can warp geometry or ignore a precise endpoint. Shorter clips and image-to-video references are easier to control."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Movement",
+          "youtube_id": "IiyBo-qLDeM",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=IiyBo-qLDeM"
+        }
+      ]
     },
     "wide_angle": {
       "id": "wide_angle",
@@ -647,7 +878,14 @@
           "AI often imitates the look of a lens rather than consistent optics; check faces, edges, and depth across frames."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Lenses",
+          "youtube_id": "uSsIqR3DuK8",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=uSsIqR3DuK8"
+        }
+      ]
     },
     "normal": {
       "id": "normal",
@@ -666,7 +904,14 @@
           "AI often imitates the look of a lens rather than consistent optics; check faces, edges, and depth across frames."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Lenses",
+          "youtube_id": "uSsIqR3DuK8",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=uSsIqR3DuK8"
+        }
+      ]
     },
     "telephoto": {
       "id": "telephoto",
@@ -685,7 +930,14 @@
           "AI often imitates the look of a lens rather than consistent optics; check faces, edges, and depth across frames."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Lenses",
+          "youtube_id": "uSsIqR3DuK8",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=uSsIqR3DuK8"
+        }
+      ]
     },
     "macro": {
       "id": "macro",
@@ -704,7 +956,14 @@
           "AI often imitates the look of a lens rather than consistent optics; check faces, edges, and depth across frames."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Camera Lenses",
+          "youtube_id": "uSsIqR3DuK8",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=uSsIqR3DuK8"
+        }
+      ]
     },
     "rule_of_thirds": {
       "id": "rule_of_thirds",
@@ -723,7 +982,14 @@
           "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Film Composition & Framing",
+          "youtube_id": "hUmZldt0DTg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=hUmZldt0DTg"
+        }
+      ]
     },
     "central_symmetry": {
       "id": "central_symmetry",
@@ -742,7 +1008,14 @@
           "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Film Composition & Framing",
+          "youtube_id": "hUmZldt0DTg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=hUmZldt0DTg"
+        }
+      ]
     },
     "leading_lines": {
       "id": "leading_lines",
@@ -761,7 +1034,14 @@
           "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Film Composition & Framing",
+          "youtube_id": "hUmZldt0DTg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=hUmZldt0DTg"
+        }
+      ]
     },
     "framing_within_frame": {
       "id": "framing_within_frame",
@@ -780,7 +1060,14 @@
           "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Film Composition & Framing",
+          "youtube_id": "hUmZldt0DTg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=hUmZldt0DTg"
+        }
+      ]
     },
     "depth_layering": {
       "id": "depth_layering",
@@ -799,7 +1086,14 @@
           "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Film Composition & Framing",
+          "youtube_id": "hUmZldt0DTg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=hUmZldt0DTg"
+        }
+      ]
     },
     "negative_space": {
       "id": "negative_space",
@@ -818,7 +1112,14 @@
           "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Film Composition & Framing",
+          "youtube_id": "hUmZldt0DTg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=hUmZldt0DTg"
+        }
+      ]
     },
     "headroom_leadroom": {
       "id": "headroom_leadroom",
@@ -837,7 +1138,14 @@
           "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Film Composition & Framing",
+          "youtube_id": "hUmZldt0DTg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=hUmZldt0DTg"
+        }
+      ]
     },
     "180_degree_rule": {
       "id": "180_degree_rule",
@@ -856,7 +1164,14 @@
           "Composition can drift during motion. Lock a strong still first, then animate it conservatively."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Film Composition & Framing",
+          "youtube_id": "hUmZldt0DTg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=hUmZldt0DTg"
+        }
+      ]
     },
     "shot_reverse_shot": {
       "id": "shot_reverse_shot",
@@ -875,7 +1190,14 @@
           "Generation does not replace editorial judgment. Assemble, trim, and test rhythm against the audience’s attention."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "6 Ways to Edit Any Scene",
+          "youtube_id": "FVR8zz8ci2k",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=FVR8zz8ci2k"
+        }
+      ]
     },
     "long_take": {
       "id": "long_take",
@@ -894,7 +1216,14 @@
           "Generation does not replace editorial judgment. Assemble, trim, and test rhythm against the audience’s attention."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "6 Ways to Edit Any Scene",
+          "youtube_id": "FVR8zz8ci2k",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=FVR8zz8ci2k"
+        }
+      ]
     },
     "slow_cutting": {
       "id": "slow_cutting",
@@ -913,7 +1242,14 @@
           "Generation does not replace editorial judgment. Assemble, trim, and test rhythm against the audience’s attention."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "6 Ways to Edit Any Scene",
+          "youtube_id": "FVR8zz8ci2k",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=FVR8zz8ci2k"
+        }
+      ]
     },
     "fast_cutting": {
       "id": "fast_cutting",
@@ -932,7 +1268,14 @@
           "Generation does not replace editorial judgment. Assemble, trim, and test rhythm against the audience’s attention."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "6 Ways to Edit Any Scene",
+          "youtube_id": "FVR8zz8ci2k",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=FVR8zz8ci2k"
+        }
+      ]
     },
     "match_cut": {
       "id": "match_cut",
@@ -951,7 +1294,14 @@
           "Generation does not replace editorial judgment. Assemble, trim, and test rhythm against the audience’s attention."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Cuts & Transitions 101",
+          "youtube_id": "OAH0MoAv2CI",
+          "channel": "RocketJump Film School",
+          "source": "https://www.youtube.com/watch?v=OAH0MoAv2CI"
+        }
+      ]
     },
     "cross_cutting": {
       "id": "cross_cutting",
@@ -970,7 +1320,14 @@
           "Generation does not replace editorial judgment. Assemble, trim, and test rhythm against the audience’s attention."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "6 Ways to Edit Any Scene",
+          "youtube_id": "FVR8zz8ci2k",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=FVR8zz8ci2k"
+        }
+      ]
     },
     "montage": {
       "id": "montage",
@@ -989,7 +1346,14 @@
           "Generation does not replace editorial judgment. Assemble, trim, and test rhythm against the audience’s attention."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "6 Ways to Edit Any Scene",
+          "youtube_id": "FVR8zz8ci2k",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=FVR8zz8ci2k"
+        }
+      ]
     },
     "high_key": {
       "id": "high_key",
@@ -1008,7 +1372,14 @@
           "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Cinematic Lighting",
+          "youtube_id": "r2nD_knsNrc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=r2nD_knsNrc"
+        }
+      ]
     },
     "low_key": {
       "id": "low_key",
@@ -1027,7 +1398,14 @@
           "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Cinematic Lighting",
+          "youtube_id": "r2nD_knsNrc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=r2nD_knsNrc"
+        }
+      ]
     },
     "chiaroscuro": {
       "id": "chiaroscuro",
@@ -1046,7 +1424,14 @@
           "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Cinematic Lighting",
+          "youtube_id": "r2nD_knsNrc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=r2nD_knsNrc"
+        }
+      ]
     },
     "rembrandt": {
       "id": "rembrandt",
@@ -1065,7 +1450,14 @@
           "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Cinematic Lighting",
+          "youtube_id": "r2nD_knsNrc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=r2nD_knsNrc"
+        }
+      ]
     },
     "three_point": {
       "id": "three_point",
@@ -1086,10 +1478,10 @@
       },
       "videos": [
         {
-          "title": "How to Shoot a Scene!",
-          "youtube_id": "IK2IAEO-FUI",
-          "channel": "Film Riot",
-          "source": "https://www.youtube.com/watch?v=IK2IAEO-FUI"
+          "title": "Ultimate Guide to Cinematic Lighting",
+          "youtube_id": "r2nD_knsNrc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=r2nD_knsNrc"
         }
       ]
     },
@@ -1110,7 +1502,14 @@
           "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Cinematic Lighting",
+          "youtube_id": "r2nD_knsNrc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=r2nD_knsNrc"
+        }
+      ]
     },
     "backlight_rim": {
       "id": "backlight_rim",
@@ -1129,7 +1528,14 @@
           "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Cinematic Lighting",
+          "youtube_id": "r2nD_knsNrc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=r2nD_knsNrc"
+        }
+      ]
     },
     "practical_motivated": {
       "id": "practical_motivated",
@@ -1148,7 +1554,14 @@
           "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Cinematic Lighting",
+          "youtube_id": "r2nD_knsNrc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=r2nD_knsNrc"
+        }
+      ]
     },
     "golden_hour": {
       "id": "golden_hour",
@@ -1167,7 +1580,14 @@
           "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Cinematic Lighting",
+          "youtube_id": "r2nD_knsNrc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=r2nD_knsNrc"
+        }
+      ]
     },
     "top_light": {
       "id": "top_light",
@@ -1186,7 +1606,14 @@
           "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Cinematic Lighting",
+          "youtube_id": "r2nD_knsNrc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=r2nD_knsNrc"
+        }
+      ]
     },
     "underlight": {
       "id": "underlight",
@@ -1205,7 +1632,14 @@
           "Lighting continuity is fragile across generated shots. Reuse a lighting anchor and compare adjacent frames."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ultimate Guide to Cinematic Lighting",
+          "youtube_id": "r2nD_knsNrc",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=r2nD_knsNrc"
+        }
+      ]
     },
     "complementary": {
       "id": "complementary",
@@ -1224,7 +1658,14 @@
           "Prompted color is not a final grade. Normalize shots in an editor before applying a consistent look."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Color Theory in Film",
+          "youtube_id": "lINVnA3rVIE",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=lINVnA3rVIE"
+        }
+      ]
     },
     "analogous": {
       "id": "analogous",
@@ -1243,7 +1684,14 @@
           "Prompted color is not a final grade. Normalize shots in an editor before applying a consistent look."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Color Theory in Film",
+          "youtube_id": "lINVnA3rVIE",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=lINVnA3rVIE"
+        }
+      ]
     },
     "triadic": {
       "id": "triadic",
@@ -1262,7 +1710,14 @@
           "Prompted color is not a final grade. Normalize shots in an editor before applying a consistent look."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Color Theory in Film",
+          "youtube_id": "lINVnA3rVIE",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=lINVnA3rVIE"
+        }
+      ]
     },
     "monochrome": {
       "id": "monochrome",
@@ -1281,7 +1736,14 @@
           "Prompted color is not a final grade. Normalize shots in an editor before applying a consistent look."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Color Theory in Film",
+          "youtube_id": "lINVnA3rVIE",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=lINVnA3rVIE"
+        }
+      ]
     },
     "split_complementary": {
       "id": "split_complementary",
@@ -1300,7 +1762,14 @@
           "Prompted color is not a final grade. Normalize shots in an editor before applying a consistent look."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Color Theory in Film",
+          "youtube_id": "lINVnA3rVIE",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=lINVnA3rVIE"
+        }
+      ]
     },
     "depth_staging": {
       "id": "depth_staging",
@@ -1321,10 +1790,10 @@
       },
       "videos": [
         {
-          "title": "The Bad Sleep Well — The Geometry of a Scene",
-          "youtube_id": "jGc-K7giqKM",
-          "channel": "Every Frame a Painting",
-          "source": "https://www.youtube.com/watch?v=jGc-K7giqKM"
+          "title": "What is Mise en Scene",
+          "youtube_id": "3euNFd7-TCg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=3euNFd7-TCg"
         }
       ]
     },
@@ -1345,7 +1814,14 @@
           "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "What is Mise en Scene",
+          "youtube_id": "3euNFd7-TCg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=3euNFd7-TCg"
+        }
+      ]
     },
     "proxemics": {
       "id": "proxemics",
@@ -1364,7 +1840,14 @@
           "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "What is Mise en Scene",
+          "youtube_id": "3euNFd7-TCg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=3euNFd7-TCg"
+        }
+      ]
     },
     "negative_space_isolation": {
       "id": "negative_space_isolation",
@@ -1383,7 +1866,14 @@
           "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "What is Mise en Scene",
+          "youtube_id": "3euNFd7-TCg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=3euNFd7-TCg"
+        }
+      ]
     },
     "movement_toward_away": {
       "id": "movement_toward_away",
@@ -1404,10 +1894,10 @@
       },
       "videos": [
         {
-          "title": "The Bad Sleep Well — The Geometry of a Scene",
-          "youtube_id": "jGc-K7giqKM",
-          "channel": "Every Frame a Painting",
-          "source": "https://www.youtube.com/watch?v=jGc-K7giqKM"
+          "title": "What is Mise en Scene",
+          "youtube_id": "3euNFd7-TCg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=3euNFd7-TCg"
         }
       ]
     },
@@ -1428,7 +1918,14 @@
           "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "What is Mise en Scene",
+          "youtube_id": "3euNFd7-TCg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=3euNFd7-TCg"
+        }
+      ]
     },
     "setting_as_metaphor": {
       "id": "setting_as_metaphor",
@@ -1447,7 +1944,14 @@
           "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "What is Mise en Scene",
+          "youtube_id": "3euNFd7-TCg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=3euNFd7-TCg"
+        }
+      ]
     },
     "wardrobe_signals": {
       "id": "wardrobe_signals",
@@ -1466,7 +1970,14 @@
           "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "What is Mise en Scene",
+          "youtube_id": "3euNFd7-TCg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=3euNFd7-TCg"
+        }
+      ]
     },
     "texture_materiality": {
       "id": "texture_materiality",
@@ -1485,7 +1996,14 @@
           "Generated props and spatial relationships can mutate. Maintain a continuity sheet and reference images."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "What is Mise en Scene",
+          "youtube_id": "3euNFd7-TCg",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=3euNFd7-TCg"
+        }
+      ]
     },
     "pixar": {
       "id": "pixar",
@@ -1504,7 +2022,14 @@
           "Study principles rather than copying a signature. Combine references and keep the result specific to your story."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Pixar in a Box: Introduction to Storytelling",
+          "youtube_id": "1rMnzNZkIX0",
+          "channel": "Khan Academy Labs",
+          "source": "https://www.youtube.com/watch?v=1rMnzNZkIX0"
+        }
+      ]
     },
     "disney_animation": {
       "id": "disney_animation",
@@ -1523,7 +2048,14 @@
           "Study principles rather than copying a signature. Combine references and keep the result specific to your story."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Pixar in a Box: Introduction to Storytelling",
+          "youtube_id": "1rMnzNZkIX0",
+          "channel": "Khan Academy Labs",
+          "source": "https://www.youtube.com/watch?v=1rMnzNZkIX0"
+        }
+      ]
     },
     "miyazaki": {
       "id": "miyazaki",
@@ -1675,7 +2207,14 @@
           "Genre shorthand can create clichés. Ground every convention in a precise character objective and setting."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Movie Genres Explained",
+          "youtube_id": "rDVVE8ZHJ3o",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=rDVVE8ZHJ3o"
+        }
+      ]
     },
     "comedy": {
       "id": "comedy",
@@ -1694,7 +2233,14 @@
           "Genre shorthand can create clichés. Ground every convention in a precise character objective and setting."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Movie Genres Explained",
+          "youtube_id": "rDVVE8ZHJ3o",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=rDVVE8ZHJ3o"
+        }
+      ]
     },
     "drama": {
       "id": "drama",
@@ -1713,7 +2259,14 @@
           "Genre shorthand can create clichés. Ground every convention in a precise character objective and setting."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Movie Genres Explained",
+          "youtube_id": "rDVVE8ZHJ3o",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=rDVVE8ZHJ3o"
+        }
+      ]
     },
     "thriller": {
       "id": "thriller",
@@ -1732,7 +2285,14 @@
           "Genre shorthand can create clichés. Ground every convention in a precise character objective and setting."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Movie Genres Explained",
+          "youtube_id": "rDVVE8ZHJ3o",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=rDVVE8ZHJ3o"
+        }
+      ]
     },
     "sci_fi_fantasy": {
       "id": "sci_fi_fantasy",
@@ -1751,7 +2311,14 @@
           "Genre shorthand can create clichés. Ground every convention in a precise character objective and setting."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Movie Genres Explained",
+          "youtube_id": "rDVVE8ZHJ3o",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=rDVVE8ZHJ3o"
+        }
+      ]
     },
     "romance": {
       "id": "romance",
@@ -1770,7 +2337,14 @@
           "Genre shorthand can create clichés. Ground every convention in a precise character objective and setting."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Movie Genres Explained",
+          "youtube_id": "rDVVE8ZHJ3o",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=rDVVE8ZHJ3o"
+        }
+      ]
     },
     "emotional_core": {
       "id": "emotional_core",
@@ -1789,7 +2363,14 @@
           "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Directing Without Words: Visual Storytelling in Film",
+          "youtube_id": "WMcWLFtGnAs",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=WMcWLFtGnAs"
+        }
+      ]
     },
     "hook_strength": {
       "id": "hook_strength",
@@ -1808,7 +2389,14 @@
           "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Directing Without Words: Visual Storytelling in Film",
+          "youtube_id": "WMcWLFtGnAs",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=WMcWLFtGnAs"
+        }
+      ]
     },
     "structural_completeness": {
       "id": "structural_completeness",
@@ -1827,7 +2415,14 @@
           "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Directing Without Words: Visual Storytelling in Film",
+          "youtube_id": "WMcWLFtGnAs",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=WMcWLFtGnAs"
+        }
+      ]
     },
     "originality_vs_familiarity": {
       "id": "originality_vs_familiarity",
@@ -1846,7 +2441,14 @@
           "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Directing Without Words: Visual Storytelling in Film",
+          "youtube_id": "WMcWLFtGnAs",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=WMcWLFtGnAs"
+        }
+      ]
     },
     "genre_fit": {
       "id": "genre_fit",
@@ -1865,7 +2467,14 @@
           "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Movie Genres Explained",
+          "youtube_id": "rDVVE8ZHJ3o",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=rDVVE8ZHJ3o"
+        }
+      ]
     },
     "runtime_discipline": {
       "id": "runtime_discipline",
@@ -1884,7 +2493,14 @@
           "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Directing Without Words: Visual Storytelling in Film",
+          "youtube_id": "WMcWLFtGnAs",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=WMcWLFtGnAs"
+        }
+      ]
     },
     "specificity": {
       "id": "specificity",
@@ -1903,7 +2519,14 @@
           "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Directing Without Words: Visual Storytelling in Film",
+          "youtube_id": "WMcWLFtGnAs",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=WMcWLFtGnAs"
+        }
+      ]
     },
     "shareability": {
       "id": "shareability",
@@ -1922,7 +2545,14 @@
           "No model can guarantee popularity. Treat these dimensions as revision prompts, not a success score."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Directing Without Words: Visual Storytelling in Film",
+          "youtube_id": "WMcWLFtGnAs",
+          "channel": "StudioBinder",
+          "source": "https://www.youtube.com/watch?v=WMcWLFtGnAs"
+        }
+      ]
     },
     "veo_3_1": {
       "id": "veo_3_1",
@@ -1940,7 +2570,14 @@
           "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Meet Veo 3, our latest video generation model",
+          "youtube_id": "ODyROOW1dCo",
+          "channel": "Google",
+          "source": "https://www.youtube.com/watch?v=ODyROOW1dCo"
+        }
+      ]
     },
     "kling_3_0": {
       "id": "kling_3_0",
@@ -1958,7 +2595,14 @@
           "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Kling 3.0 Model: Everyone a Director. It’s Time.",
+          "youtube_id": "XD_7FNPhZQY",
+          "channel": "Kling AI",
+          "source": "https://www.youtube.com/watch?v=XD_7FNPhZQY"
+        }
+      ]
     },
     "runway_gen_4_5": {
       "id": "runway_gen_4_5",
@@ -1976,7 +2620,14 @@
           "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Introducing Gen-4.5",
+          "youtube_id": "ei2PsDpPbB4",
+          "channel": "Runway",
+          "source": "https://www.youtube.com/watch?v=ei2PsDpPbB4"
+        }
+      ]
     },
     "minimax_hailuo_2_3": {
       "id": "minimax_hailuo_2_3",
@@ -2012,7 +2663,14 @@
           "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Ray3 Modify Walkthrough",
+          "youtube_id": "oxBaihKTiLE",
+          "channel": "Luma",
+          "source": "https://www.youtube.com/watch?v=oxBaihKTiLE"
+        }
+      ]
     },
     "seedance": {
       "id": "seedance",
@@ -2030,7 +2688,14 @@
           "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Introducing Dreamina Seedance 2.0",
+          "youtube_id": "l89woJ0jidw",
+          "channel": "BytePlus",
+          "source": "https://www.youtube.com/watch?v=l89woJ0jidw"
+        }
+      ]
     },
     "sora_2": {
       "id": "sora_2",
@@ -2048,7 +2713,14 @@
           "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Introducing Sora 2",
+          "youtube_id": "gzneGhpXwjU",
+          "channel": "OpenAI",
+          "source": "https://www.youtube.com/watch?v=gzneGhpXwjU"
+        }
+      ]
     },
     "midjourney_v6": {
       "id": "midjourney_v6",
@@ -2084,7 +2756,14 @@
           "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "OpenAI 4o Image Generation",
+          "youtube_id": "E9RN8jX--uc",
+          "channel": "OpenAI",
+          "source": "https://www.youtube.com/watch?v=E9RN8jX--uc"
+        }
+      ]
     },
     "nano_banana_pro": {
       "id": "nano_banana_pro",
@@ -2102,7 +2781,14 @@
           "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Meet Nano Banana Pro",
+          "youtube_id": "AeBOzler4nE",
+          "channel": "Google",
+          "source": "https://www.youtube.com/watch?v=AeBOzler4nE"
+        }
+      ]
     },
     "stable_diffusion_xl": {
       "id": "stable_diffusion_xl",
@@ -2120,7 +2806,14 @@
           "Capabilities, access, and pricing change. Verify the current official product page before planning a production."
         ]
       },
-      "videos": []
+      "videos": [
+        {
+          "title": "Stability AI Announces Stable Diffusion XL 1.0",
+          "youtube_id": "lPuJojDe5Q0",
+          "channel": "Stability AI",
+          "source": "https://www.youtube.com/watch?v=lPuJojDe5Q0"
+        }
+      ]
     }
   }
 }
