@@ -29,7 +29,11 @@
   function loadIntake(){const value=loadJSON(INTAKE_KEY);return validIntake(value)?value:forgetInvalid(INTAKE_KEY);}
   function validShotDirection(value){return Boolean(value&&value.version===1&&typeof value.query==='string'&&value.query.length<=2000&&
     Array.isArray(value.recommendation_ids)&&value.recommendation_ids.every(id=>Number.isInteger(id))&&
-    (value.selected_id==null||value.recommendation_ids.includes(value.selected_id)));}
+    (value.selected_id==null||value.recommendation_ids.includes(value.selected_id))&&
+    (value.selection==null||(value.selected_id===value.selection.id&&typeof value.selection.title==='string'&&
+      ['establishing','emotional_cu','action','transition'].includes(value.selection.purpose)&&
+      ['framing','angle','movement','lighting','t2iPrompt','i2vPrompt','workflow'].every(key=>typeof value.selection[key]==='string')&&
+      Array.isArray(value.selection.palette)&&value.selection.palette.every(color=>/^#[0-9a-f]{6}$/i.test(color)))));}
   function saveShotDirection(value){const next={version:1,...value};return validShotDirection(next)&&saveJSON(SHOT_KEY,next);}
   function loadShotDirection(){const value=loadJSON(SHOT_KEY);return validShotDirection(value)?value:forgetInvalid(SHOT_KEY);}
   global.EVE_STATE={KEY,INTAKE_KEY,SHOT_KEY,saveBlueprint,loadBlueprint,clearBlueprint,saveIntake,loadIntake,saveShotDirection,loadShotDirection};

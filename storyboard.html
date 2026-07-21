@@ -111,20 +111,7 @@
 @media(max-width:860px){.eve-topbar,.eve-cont-wrap{padding-left:18px;padding-right:18px}.eve-steps .pl{display:none}}
 </style>
 <div class="eve-topbar"><span class="eb">First Frame</span><div class="eve-steps" id="eve-steps"></div></div>
-<script>
-(function(){
- var S=[{n:0,l:'Intake',f:'index.html'},{n:1,l:'Concept',f:'concept_lab.html'},{n:2,l:"Creator's Room",f:'creators_room.html'},{n:3,l:'Shot Design',f:'shotseed.html'},{n:4,l:'Storyboard',f:'storyboard.html'}];
- var H=['Choose format & target contest','Validate the idea & build the blueprint','Let the AI film crew critique & improve it','Direct the shots','Review the full storyboard'];
- var f=(location.pathname.split('/').pop()||'index.html').toLowerCase(); if(f==='')f='index.html';
- var cur=0; for(var i=0;i<S.length;i++){if(S[i].f===f)cur=i;}
- var d=[]; try{d=JSON.parse(localStorage.getItem('eve_progress')||'[]')||[];}catch(e){}
- if(d.indexOf(cur)<0){d.push(cur);try{localStorage.setItem('eve_progress',JSON.stringify(d));}catch(e){}}
- var h='';
- for(var j=0;j<S.length;j++){var st=j===cur?'cur':(d.indexOf(j)>=0?'done':'');var b=(st==='done')?'✓':S[j].n;h+='<a class="ps '+st+'" href="'+S[j].f+'"><span class="pn">'+b+'</span><span class="pl">'+S[j].l+'</span></a>';if(j<S.length-1)h+='<span class="pline"></span>';}
- var e=document.getElementById('eve-steps'); if(e)e.innerHTML=h;
- if(cur<S.length-1){var n=S[cur+1];var w=document.createElement('div');w.className='eve-cont-wrap';w.innerHTML='<a class="eve-cont" href="'+n.f+'">Continue to Step '+n.n+' · '+n.l+' →<small>'+H[cur+1]+'</small></a>';document.body.appendChild(w);}
-})();
-</script>
+<script src="js/eve-flow.js"></script>
   <nav class="site-nav">
     <span class="brand">First Frame</span>
     <a href="index.html">0 · Intake</a>
@@ -151,6 +138,8 @@
       <div class="an-box mise"><div class="h">Mise-en-scène Motif</div><p>Opposing chairs symbolize a divided self. The empty autumn park encodes solitude and life's twilight. A low-angle chess insert enlarges an internal threat; warm amber carries nostalgia, while the humble denture prize restores humor.</p></div>
     </div>
   </div>
+
+  <section class="continuity" id="shotDirection" aria-labelledby="shotDirectionTitle"></section>
 
   <section class="continuity" id="continuityKit">
     <h2>Continuity Kit · keep every shot in the same film</h2>
@@ -223,6 +212,7 @@
     function esc(value){return String(value??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
     function dynamicBeats(story){return story.acts.flatMap(act=>act.shots.map(shot=>{const mise=shot.mise_en_scene||{},twist=shot.twist_role||{},tool=shot.recommended_tool||{};return {n:shot.shot_number,name:shot.name,t:shot.duration_seconds+'s',tension:Math.max(0,Math.min(1,Number(shot.tension)||0)),mood:[],palette:[],action:shot.story_action||'',cam:[shot.framing,shot.angle,shot.movement].filter(Boolean).join(' · '),mise:[mise.symbolic_meaning,mise.staging,mise.props,mise.color,mise.light].filter(Boolean).join(' '),t2i:shot.t2i_prompt||'',i2v:shot.i2v_prompt||'',why:shot.why_this_shot||'',pacing:shot.pacing_rationale||'',twist:twist.type&&twist.type!=='none'?`${twist.type}: ${twist.mechanism||''}`:'',citations:Array.isArray(shot.grounded_in)?shot.grounded_in:[],hook:twist.type==='setup',actNumber:act.act_number,actName:act.name,actFunction:act.dramatic_function,actDuration:act.target_duration_seconds,tool};}));}
     function renderIdea(saved){const story=saved.story,live=saved.meta?.source!=='fallback',intake=saved.input?.intake||{},shot=EVE_STATE.loadShotDirection();const target=intake.target_type==='contest'?(intake.contest?.name||'Contest project'):'Personal project';document.getElementById('ideaBlock').innerHTML=`<span class="source-badge ${live?'':'fallback'}">${live?'Powered by GPT-5.6':'Curated fallback'}</span><div class="lab">${live?'Generated Blueprint':'Reliable Demo Blueprint'}</div><div class="txt">${esc(story.title)}</div><div class="chips"><span class="chip">${esc(intake.production_type==='live_action'?'Live-action':'Animation')}</span><span class="chip">${esc(target)}</span><span class="chip">${esc(story.structure?.name||'Story structure')}</span>${shot?`<span class="chip">ShotSeed: ${esc(shot.recommendation_ids?.length||0)} matches</span>`:''}<span class="chip ref">${esc(story.director_lens||'Director-grounded')}</span></div><div class="analysis"><div class="an-box twist"><div class="h">Logline</div><p>${esc(story.logline)}</p></div><div class="an-box mise"><div class="h">Theme</div><p>${esc(story.theme)}</p></div></div>`;}
+    function renderShotDirection(){const saved=EVE_STATE.loadShotDirection(),shot=saved?.selection,root=document.getElementById('shotDirection');if(!shot){root.hidden=true;root.classList.remove('show');return;}root.hidden=false;root.classList.add('show');root.innerHTML=`<h2 id="shotDirectionTitle">Selected ShotSeed direction · ${esc(shot.title)}</h2><p>${esc(shot.framing)} · ${esc(shot.angle)} · ${esc(shot.movement)}. ${esc(shot.lighting)}</p><div class="continuity-grid"><div class="continuity-item"><b>Image prompt</b><br>${esc(shot.t2iPrompt)}</div><div class="continuity-item"><b>Motion prompt</b><br>${esc(shot.i2vPrompt)}</div><div class="continuity-item"><b>Workflow</b><br>${esc(shot.workflow)}</div><div class="continuity-item"><b>Use it well</b><br>Treat this as visual direction; adapt each beat rather than copying one composition across the film.</div></div>`;}
     function renderContinuity(saved){const story=saved.story,first=story.acts?.[0]?.shots?.[0];if(!first)return;const text='CONTINUITY ANCHOR — '+story.title+': '+story.director_lens+' Preserve exactly: '+first.mise_en_scene.staging+' '+first.mise_en_scene.props+' '+first.mise_en_scene.color+' '+first.mise_en_scene.light+' Use the approved first keyframe as the visual reference for every later shot.';document.getElementById('anchorText').textContent=text;document.getElementById('continuityKit').classList.add('show');}
     function copyAnchor(btn){const text=document.getElementById('anchorText').textContent;const done=()=>{btn.textContent='Copied ✓';if(window.fftoast)fftoast('Continuity anchor copied');setTimeout(()=>btn.textContent='Copy continuity anchor',1200);};if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(done).catch(done);else done();}
     function renderCurve(beats){
@@ -271,7 +261,7 @@
     // interactivity
     function highlight(n){document.querySelectorAll('.panel').forEach(el=>el.classList.remove('active'));const el=document.getElementById('beat-'+n);if(el){el.classList.add('active');el.scrollIntoView({behavior:'smooth',block:'center'});}}
     function bindCurve(){document.querySelectorAll('.beat-dot').forEach(d=>d.addEventListener('click',()=>highlight(+d.getAttribute('data-n'))));}
-    const candidate=EVE_STATE.loadBlueprint();const saved=candidate&&Array.isArray(candidate.story?.acts)&&candidate.story.acts.some(a=>Array.isArray(a.shots)&&a.shots.length)?candidate:null;const beats=saved?dynamicBeats(saved.story):fixedBeats;if(saved){renderIdea(saved);renderContinuity(saved);}renderCurve(beats);renderSheet(beats,Boolean(saved));bindCurve();
+    const candidate=EVE_STATE.loadBlueprint();const saved=candidate&&Array.isArray(candidate.story?.acts)&&candidate.story.acts.some(a=>Array.isArray(a.shots)&&a.shots.length)?candidate:null;const beats=saved?dynamicBeats(saved.story):fixedBeats;if(saved){renderIdea(saved);renderContinuity(saved);}renderShotDirection();renderCurve(beats);renderSheet(beats,Boolean(saved));bindCurve();
   </script>
 <script src="js/eve-nav.js"></script><script src="js/eve-ui.js"></script>
 </body>

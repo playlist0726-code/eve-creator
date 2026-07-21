@@ -76,20 +76,7 @@
 @media(max-width:860px){.eve-topbar,.eve-cont-wrap{padding-left:18px;padding-right:18px}.eve-steps .pl{display:none}}
 </style>
 <div class="eve-topbar"><span class="eb">First Frame</span><div class="eve-steps" id="eve-steps"></div></div>
-<script>
-(function(){
- var S=[{n:0,l:'Intake',f:'index.html'},{n:1,l:'Concept',f:'concept_lab.html'},{n:2,l:"Creator's Room",f:'creators_room.html'},{n:3,l:'Shot Design',f:'shotseed.html'},{n:4,l:'Storyboard',f:'storyboard.html'}];
- var H=['Choose format & target contest','Validate the idea & build the blueprint','Let the AI film crew critique & improve it','Direct the shots','Review the full storyboard'];
- var f=(location.pathname.split('/').pop()||'index.html').toLowerCase(); if(f==='')f='index.html';
- var cur=0; for(var i=0;i<S.length;i++){if(S[i].f===f)cur=i;}
- var d=[]; try{d=JSON.parse(localStorage.getItem('eve_progress')||'[]')||[];}catch(e){}
- if(d.indexOf(cur)<0){d.push(cur);try{localStorage.setItem('eve_progress',JSON.stringify(d));}catch(e){}}
- var h='';
- for(var j=0;j<S.length;j++){var st=j===cur?'cur':(d.indexOf(j)>=0?'done':'');var b=(st==='done')?'✓':S[j].n;h+='<a class="ps '+st+'" href="'+S[j].f+'"><span class="pn">'+b+'</span><span class="pl">'+S[j].l+'</span></a>';if(j<S.length-1)h+='<span class="pline"></span>';}
- var e=document.getElementById('eve-steps'); if(e)e.innerHTML=h;
- if(cur<S.length-1){var n=S[cur+1];var w=document.createElement('div');w.className='eve-cont-wrap';w.innerHTML='<a class="eve-cont" href="'+n.f+'">Continue to Step '+n.n+' · '+n.l+' →<small>'+H[cur+1]+'</small></a>';document.body.appendChild(w);}
-})();
-</script>
+<script src="js/eve-flow.js"></script>
   <nav class="site-nav">
     <span class="brand">First Frame</span>
     <a href="index.html">0 · Intake</a><a href="concept_lab.html" class="on">1 · Concept</a><a href="creators_room.html">2 · Creator's Room</a><a href="shotseed.html">3 · Shot Design</a><a href="storyboard.html">4 · Storyboard</a>

@@ -15,11 +15,20 @@ assert.equal(context.EVE_STATE.loadIntake().contest.id,contest.id);
 assert.equal(context.EVE_STATE.saveShotDirection({query:'warm close-up',recommendation_ids:[1]}),true);
 assert.equal(context.EVE_STATE.loadShotDirection().recommendation_ids[0],1);
 assert.equal(context.EVE_STATE.saveShotDirection({query:'bad',recommendation_ids:'1'}),false,'Shot direction rejects malformed IDs');
+assert.equal(context.EVE_STATE.saveShotDirection({query:'warm',recommendation_ids:[1],selected_id:1,selection:{id:1,title:'Warm close-up',purpose:'emotional_cu',framing:'CU',angle:'eye level',movement:'static',lighting:'soft',palette:['#112233'],t2iPrompt:'still',i2vPrompt:'move',workflow:'still → motion'}}),true,'Selected direction accepts the complete handoff shape');
 data.set(context.EVE_STATE.SHOT_KEY,JSON.stringify({version:1,query:'bad',recommendation_ids:['x']}));
 assert.equal(context.EVE_STATE.loadShotDirection(),null,'Malformed stored shot direction is removed');
 assert.equal(data.has(context.EVE_STATE.SHOT_KEY),false);
 for(const [file,step] of [['index.html','0 · Intake'],['concept_lab.html','1 · Concept'],['index.html',"2 · Creator's Room"],['creators_room.html',"The Creator's Room"],['shotseed.html','3 · Shot Design'],['storyboard.html','4 · Storyboard']]){
   const source=fs.readFileSync(path.join(root,file),'utf8');assert.ok(source.includes(step),file+' missing pipeline step');
+}
+const flowSource=fs.readFileSync(path.join(root,'js/eve-flow.js'),'utf8');
+assert.match(flowSource,/Completion is derived from validated artifacts/,'Create progress must use the shared artifact-derived stepper');
+assert.doesNotMatch(flowSource,/localStorage|eve_progress/,'Visiting a page must not mark a step complete');
+for(const file of ['concept_lab.html','creators_room.html','shotseed.html','storyboard.html']){
+  const source=fs.readFileSync(path.join(root,file),'utf8');
+  assert.match(source,/js\/eve-flow\.js/,`${file} must use the shared Create stepper`);
+  assert.doesNotMatch(source,/eve_progress/,`${file} must not maintain visit-based progress`);
 }
 assert.ok(fs.readFileSync(path.join(root,'concept_lab.html'),'utf8').includes('Contest fit'));
 const conceptSource=fs.readFileSync(path.join(root,'concept_lab.html'),'utf8');
