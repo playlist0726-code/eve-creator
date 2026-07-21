@@ -1,0 +1,653 @@
+{
+  "version": 1,
+  "privacy_note": "These are private publication-intake records, not public community submissions. Machine-derived fields come from the listed source files; unanswered human fields remain null.",
+  "films": [
+    {
+      "id": "slimetime",
+      "status": "maker_confirmation_required",
+      "working_title": "Slime Time",
+      "year": null,
+      "poster": "assets/showcase/slimetime.jpg",
+      "derived": {
+        "id": "slimetime",
+        "runtime_seconds": 481.814059,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "aspect_ratio": 1.777778,
+        "frame_rate": 24.0,
+        "shot_count": 27,
+        "cut_timestamps_seconds": [
+          2.5,
+          8.0,
+          35.5,
+          38.5,
+          42.5,
+          44.0,
+          69.5,
+          92.5,
+          99.5,
+          180.0,
+          198.0,
+          215.5,
+          219.0,
+          240.0,
+          299.0,
+          310.0,
+          319.5,
+          324.5,
+          326.5,
+          346.5,
+          352.0,
+          373.0,
+          387.0,
+          394.5,
+          437.5,
+          471.5
+        ],
+        "sequence_palettes": [
+          {
+            "sequence": 1,
+            "start_seconds": 0,
+            "end_seconds": 160.605,
+            "palette": [
+              "#867E72",
+              "#23201B",
+              "#919C97",
+              "#E0E8D1",
+              "#B4A994"
+            ]
+          },
+          {
+            "sequence": 2,
+            "start_seconds": 160.605,
+            "end_seconds": 321.209,
+            "palette": [
+              "#372E32",
+              "#B6A995",
+              "#CBD0B1",
+              "#6C6E6E",
+              "#BF7543"
+            ]
+          },
+          {
+            "sequence": 3,
+            "start_seconds": 321.209,
+            "end_seconds": 481.814,
+            "palette": [
+              "#181719",
+              "#AE977E",
+              "#8C7664",
+              "#66564A",
+              "#EEF7F2"
+            ]
+          }
+        ],
+        "poster_timestamp_seconds": 326.0,
+        "method": "ffprobe stream metadata; frames sampled at 2 fps and 320 px width; adjacent-frame 16-bin luma histogram distance > 0.34 plus mean absolute luma difference > 12; candidates within 0.75 s consolidated; sequence palettes use median-cut quantization across eight real frames per runtime third; poster is the non-edge sampled frame maximizing luma contrast with a midtone penalty",
+        "derived_on": "2026-07-21"
+      },
+      "questions": {
+        "confirmed_title": null,
+        "release_year": null,
+        "creator_credit_name": null,
+        "creator_url": null,
+        "one_sentence_synopsis": null,
+        "public_source_url": null,
+        "may_list_publicly": null,
+        "tools_by_step": {
+          "image": [],
+          "motion": [],
+          "voice_sound": [],
+          "edit": [],
+          "other": []
+        },
+        "workflow_steps": [],
+        "published_prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": []
+      }
+    },
+    {
+      "id": "destiny",
+      "status": "maker_confirmation_required",
+      "working_title": "Destiny",
+      "year": null,
+      "poster": "assets/showcase/destiny.jpg",
+      "derived": {
+        "id": "destiny",
+        "runtime_seconds": 325.938503,
+        "resolution": {
+          "width": 1920,
+          "height": 1038
+        },
+        "aspect_ratio": 1.849711,
+        "frame_rate": 25.0,
+        "shot_count": 50,
+        "cut_timestamps_seconds": [
+          2.0,
+          6.5,
+          30.0,
+          44.0,
+          45.0,
+          46.5,
+          62.0,
+          64.0,
+          66.5,
+          74.5,
+          82.5,
+          85.0,
+          126.5,
+          127.5,
+          131.0,
+          132.0,
+          137.5,
+          138.5,
+          140.0,
+          141.0,
+          143.5,
+          157.5,
+          159.0,
+          166.5,
+          179.5,
+          184.5,
+          186.0,
+          187.0,
+          188.0,
+          189.0,
+          202.0,
+          209.0,
+          210.5,
+          212.0,
+          213.5,
+          219.5,
+          221.0,
+          224.5,
+          234.5,
+          247.5,
+          251.0,
+          280.5,
+          282.0,
+          294.0,
+          295.0,
+          303.0,
+          304.5,
+          318.0,
+          323.0
+        ],
+        "sequence_palettes": [
+          {
+            "sequence": 1,
+            "start_seconds": 0,
+            "end_seconds": 108.646,
+            "palette": [
+              "#483C30",
+              "#080806",
+              "#231E18",
+              "#705F4D",
+              "#35251D"
+            ]
+          },
+          {
+            "sequence": 2,
+            "start_seconds": 108.646,
+            "end_seconds": 217.292,
+            "palette": [
+              "#181714",
+              "#352C27",
+              "#58473C",
+              "#41403A",
+              "#735F53"
+            ]
+          },
+          {
+            "sequence": 3,
+            "start_seconds": 217.292,
+            "end_seconds": 325.939,
+            "palette": [
+              "#2F3235",
+              "#63554C",
+              "#E8E3DA",
+              "#23282E",
+              "#B0937D"
+            ]
+          }
+        ],
+        "poster_timestamp_seconds": 248.0,
+        "method": "ffprobe stream metadata; frames sampled at 2 fps and 320 px width; adjacent-frame 16-bin luma histogram distance > 0.34 plus mean absolute luma difference > 12; candidates within 0.75 s consolidated; sequence palettes use median-cut quantization across eight real frames per runtime third; poster is the non-edge sampled frame maximizing luma contrast with a midtone penalty",
+        "derived_on": "2026-07-21"
+      },
+      "questions": {
+        "confirmed_title": null,
+        "release_year": null,
+        "creator_credit_name": null,
+        "creator_url": null,
+        "one_sentence_synopsis": null,
+        "public_source_url": null,
+        "may_list_publicly": null,
+        "tools_by_step": {
+          "image": [],
+          "motion": [],
+          "voice_sound": [],
+          "edit": [],
+          "other": []
+        },
+        "workflow_steps": [],
+        "published_prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": []
+      }
+    },
+    {
+      "id": "detective-ep1",
+      "status": "maker_confirmation_required",
+      "working_title": "탐정 당연한",
+      "year": null,
+      "poster": "assets/showcase/detective-ep1.jpg",
+      "derived": {
+        "id": "detective-ep1",
+        "runtime_seconds": 103.458333,
+        "resolution": {
+          "width": 1080,
+          "height": 1920
+        },
+        "aspect_ratio": 0.5625,
+        "frame_rate": 24.0,
+        "shot_count": 30,
+        "cut_timestamps_seconds": [
+          7.5,
+          14.5,
+          18.5,
+          26.5,
+          28.0,
+          30.5,
+          35.0,
+          46.0,
+          47.0,
+          51.0,
+          58.0,
+          59.0,
+          61.5,
+          62.5,
+          65.5,
+          66.5,
+          68.0,
+          69.5,
+          74.5,
+          85.0,
+          89.0,
+          91.0,
+          94.5,
+          95.5,
+          96.5,
+          98.0,
+          99.5,
+          101.5,
+          102.5
+        ],
+        "sequence_palettes": [
+          {
+            "sequence": 1,
+            "start_seconds": 0,
+            "end_seconds": 34.486,
+            "palette": [
+              "#0D151B",
+              "#7C4C37",
+              "#3E2824",
+              "#384743",
+              "#746D5B"
+            ]
+          },
+          {
+            "sequence": 2,
+            "start_seconds": 34.486,
+            "end_seconds": 68.972,
+            "palette": [
+              "#1C1611",
+              "#38251C",
+              "#625246",
+              "#7C7C70",
+              "#533226"
+            ]
+          },
+          {
+            "sequence": 3,
+            "start_seconds": 68.972,
+            "end_seconds": 103.458,
+            "palette": [
+              "#0E0907",
+              "#714D42",
+              "#9F7666",
+              "#33241F",
+              "#4F2F25"
+            ]
+          }
+        ],
+        "poster_timestamp_seconds": 26.0,
+        "method": "ffprobe stream metadata; frames sampled at 2 fps and 320 px width; adjacent-frame 16-bin luma histogram distance > 0.34 plus mean absolute luma difference > 12; candidates within 0.75 s consolidated; sequence palettes use median-cut quantization across eight real frames per runtime third; poster is the non-edge sampled frame maximizing luma contrast with a midtone penalty",
+        "derived_on": "2026-07-21"
+      },
+      "questions": {
+        "confirmed_title": null,
+        "release_year": null,
+        "creator_credit_name": null,
+        "creator_url": null,
+        "one_sentence_synopsis": null,
+        "public_source_url": null,
+        "may_list_publicly": null,
+        "tools_by_step": {
+          "image": [],
+          "motion": [],
+          "voice_sound": [],
+          "edit": [],
+          "other": []
+        },
+        "workflow_steps": [],
+        "published_prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": []
+      }
+    },
+    {
+      "id": "detective-ep2",
+      "status": "maker_confirmation_required",
+      "working_title": "탐정 당연한 2화",
+      "year": null,
+      "poster": "assets/showcase/detective-ep2.jpg",
+      "derived": {
+        "id": "detective-ep2",
+        "runtime_seconds": 106.375,
+        "resolution": {
+          "width": 1080,
+          "height": 1920
+        },
+        "aspect_ratio": 0.5625,
+        "frame_rate": 24.0,
+        "shot_count": 15,
+        "cut_timestamps_seconds": [
+          6.0,
+          9.0,
+          11.0,
+          14.0,
+          15.0,
+          32.0,
+          33.0,
+          35.0,
+          37.5,
+          51.5,
+          53.0,
+          93.0,
+          101.5,
+          103.0
+        ],
+        "sequence_palettes": [
+          {
+            "sequence": 1,
+            "start_seconds": 0,
+            "end_seconds": 35.458,
+            "palette": [
+              "#030810",
+              "#3B332E",
+              "#100D0E",
+              "#5D5A49",
+              "#2A1511"
+            ]
+          },
+          {
+            "sequence": 2,
+            "start_seconds": 35.458,
+            "end_seconds": 70.917,
+            "palette": [
+              "#3B1C17",
+              "#0F141C",
+              "#173A45",
+              "#603C34",
+              "#525E5D"
+            ]
+          },
+          {
+            "sequence": 3,
+            "start_seconds": 70.917,
+            "end_seconds": 106.375,
+            "palette": [
+              "#101926",
+              "#3F2726",
+              "#344D55",
+              "#B9AEA2",
+              "#815651"
+            ]
+          }
+        ],
+        "poster_timestamp_seconds": 14.5,
+        "method": "ffprobe stream metadata; frames sampled at 2 fps and 320 px width; adjacent-frame 16-bin luma histogram distance > 0.34 plus mean absolute luma difference > 12; candidates within 0.75 s consolidated; sequence palettes use median-cut quantization across eight real frames per runtime third; poster is the non-edge sampled frame maximizing luma contrast with a midtone penalty",
+        "derived_on": "2026-07-21"
+      },
+      "questions": {
+        "confirmed_title": null,
+        "release_year": null,
+        "creator_credit_name": null,
+        "creator_url": null,
+        "one_sentence_synopsis": null,
+        "public_source_url": null,
+        "may_list_publicly": null,
+        "tools_by_step": {
+          "image": [],
+          "motion": [],
+          "voice_sound": [],
+          "edit": [],
+          "other": []
+        },
+        "workflow_steps": [],
+        "published_prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": []
+      }
+    },
+    {
+      "id": "detective-ep3",
+      "status": "maker_confirmation_required",
+      "working_title": "탐정 3화",
+      "year": null,
+      "poster": "assets/showcase/detective-ep3.jpg",
+      "derived": {
+        "id": "detective-ep3",
+        "runtime_seconds": 87.125,
+        "resolution": {
+          "width": 1080,
+          "height": 1920
+        },
+        "aspect_ratio": 0.5625,
+        "frame_rate": 24.0,
+        "shot_count": 22,
+        "cut_timestamps_seconds": [
+          3.0,
+          6.5,
+          14.0,
+          18.0,
+          32.0,
+          33.5,
+          38.0,
+          39.5,
+          48.5,
+          51.0,
+          60.0,
+          61.0,
+          66.5,
+          67.5,
+          71.0,
+          73.0,
+          77.0,
+          82.5,
+          84.0,
+          85.0,
+          86.5
+        ],
+        "sequence_palettes": [
+          {
+            "sequence": 1,
+            "start_seconds": 0,
+            "end_seconds": 29.042,
+            "palette": [
+              "#1D191B",
+              "#4B2F1E",
+              "#34545E",
+              "#825A3D",
+              "#8E835D"
+            ]
+          },
+          {
+            "sequence": 2,
+            "start_seconds": 29.042,
+            "end_seconds": 58.083,
+            "palette": [
+              "#150F12",
+              "#2F1C17",
+              "#513F2B",
+              "#716837",
+              "#482215"
+            ]
+          },
+          {
+            "sequence": 3,
+            "start_seconds": 58.083,
+            "end_seconds": 87.125,
+            "palette": [
+              "#1F1918",
+              "#040E0A",
+              "#57572C",
+              "#7A7C4B",
+              "#A4B5AB"
+            ]
+          }
+        ],
+        "poster_timestamp_seconds": 10.0,
+        "method": "ffprobe stream metadata; frames sampled at 2 fps and 320 px width; adjacent-frame 16-bin luma histogram distance > 0.34 plus mean absolute luma difference > 12; candidates within 0.75 s consolidated; sequence palettes use median-cut quantization across eight real frames per runtime third; poster is the non-edge sampled frame maximizing luma contrast with a midtone penalty",
+        "derived_on": "2026-07-21"
+      },
+      "questions": {
+        "confirmed_title": null,
+        "release_year": null,
+        "creator_credit_name": null,
+        "creator_url": null,
+        "one_sentence_synopsis": null,
+        "public_source_url": null,
+        "may_list_publicly": null,
+        "tools_by_step": {
+          "image": [],
+          "motion": [],
+          "voice_sound": [],
+          "edit": [],
+          "other": []
+        },
+        "workflow_steps": [],
+        "published_prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": []
+      }
+    },
+    {
+      "id": "detective-feature",
+      "status": "maker_confirmation_required",
+      "working_title": "당연한 탐정 극장판 최종본",
+      "year": null,
+      "poster": "assets/showcase/detective-feature.jpg",
+      "derived": {
+        "id": "detective-feature",
+        "runtime_seconds": 178.52,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "aspect_ratio": 1.777778,
+        "frame_rate": 25.0,
+        "shot_count": 23,
+        "cut_timestamps_seconds": [
+          0.5,
+          7.5,
+          8.5,
+          13.5,
+          15.0,
+          16.5,
+          21.5,
+          24.5,
+          31.0,
+          33.0,
+          44.0,
+          60.5,
+          102.0,
+          103.5,
+          108.0,
+          114.0,
+          135.0,
+          145.5,
+          147.0,
+          153.5,
+          157.5,
+          160.5
+        ],
+        "sequence_palettes": [
+          {
+            "sequence": 1,
+            "start_seconds": 0,
+            "end_seconds": 59.507,
+            "palette": [
+              "#091016",
+              "#331C16",
+              "#364958",
+              "#A38F6D",
+              "#D1BFA6"
+            ]
+          },
+          {
+            "sequence": 2,
+            "start_seconds": 59.507,
+            "end_seconds": 119.013,
+            "palette": [
+              "#666460",
+              "#1C2431",
+              "#3F3435",
+              "#5B4439",
+              "#D3B587"
+            ]
+          },
+          {
+            "sequence": 3,
+            "start_seconds": 119.013,
+            "end_seconds": 178.52,
+            "palette": [
+              "#000000",
+              "#3E4052",
+              "#868589",
+              "#001F49",
+              "#1E1D2B"
+            ]
+          }
+        ],
+        "poster_timestamp_seconds": 50.0,
+        "method": "ffprobe stream metadata; frames sampled at 2 fps and 320 px width; adjacent-frame 16-bin luma histogram distance > 0.34 plus mean absolute luma difference > 12; candidates within 0.75 s consolidated; sequence palettes use median-cut quantization across eight real frames per runtime third; poster is the non-edge sampled frame maximizing luma contrast with a midtone penalty",
+        "derived_on": "2026-07-21"
+      },
+      "questions": {
+        "confirmed_title": null,
+        "release_year": null,
+        "creator_credit_name": null,
+        "creator_url": null,
+        "one_sentence_synopsis": null,
+        "public_source_url": null,
+        "may_list_publicly": null,
+        "tools_by_step": {
+          "image": [],
+          "motion": [],
+          "voice_sound": [],
+          "edit": [],
+          "other": []
+        },
+        "workflow_steps": [],
+        "published_prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": []
+      }
+    }
+  ]
+}
