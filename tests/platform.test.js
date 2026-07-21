@@ -157,16 +157,35 @@ const showcasePath=path.join(root,'data/showcase.json');
 const showcaseData=JSON.parse(fs.readFileSync(showcasePath,'utf8'));
 const showcasePage=fs.readFileSync(path.join(root,'showcase.html'),'utf8');
 const showcaseJs=fs.readFileSync(path.join(root,'js/showcase.js'),'utf8');
-assert.ok(Array.isArray(showcaseData.pieces)&&showcaseData.pieces.length,'Showcase needs at least one verified film');
+assert.ok(Array.isArray(showcaseData.pieces)&&showcaseData.pieces.length>=12,'Showcase needs at least 12 verified films');
+const primaryToolCounts=new Map();
 for(const piece of showcaseData.pieces){
   assert.ok(piece.creator&&piece.creator.name,`${piece.id} needs a credited creator`);
   assert.match(piece.creator.url,/^https:\/\//,`${piece.id} creator link must use HTTPS`);
   assert.match(piece.source.url,/^https:\/\//,`${piece.id} source must use HTTPS`);
   assert.match(piece.verified_on,/^\d{4}-\d{2}-\d{2}$/,`${piece.id} needs a verification date`);
   assert.ok(piece.synopsis,`${piece.id} needs a text alternative/synopsis`);
+  assert.ok(Array.isArray(piece.recipe_sources)&&piece.recipe_sources.length>=2,`${piece.id} needs original and making-of evidence`);
+  piece.recipe_sources.forEach(url=>assert.match(url,/^https:\/\//,`${piece.id} recipe evidence must use HTTPS`));
+  assert.ok(piece.recipe.primary_tool,`${piece.id} needs one primary tool`);
+  assert.ok(piece.recipe.tools.includes(piece.recipe.primary_tool),`${piece.id} primary tool must resolve in its stack`);
+  primaryToolCounts.set(piece.recipe.primary_tool,(primaryToolCounts.get(piece.recipe.primary_tool)||0)+1);
   piece.recipe.tools.forEach(id=>assert.ok(lessonToolIds.has(id),`${piece.id} references missing tool ${id}`));
   piece.recipe.craft_ids.forEach(id=>assert.ok(CITABLE_IDS.includes(id),`${piece.id} invents craft ID ${id}`));
 }
+for(const [id,count] of primaryToolCounts)assert.ok(count<=3,`${id} dominates the showcase with ${count} primary placements`);
+const makerIntake=JSON.parse(fs.readFileSync(path.join(root,'data/maker_showcase_intake.json'),'utf8'));
+assert.ok(Array.isArray(makerIntake.films)&&makerIntake.films.length>=6,'Maker archive needs all six supplied films');
+for(const film of makerIntake.films){
+  const d=film.derived;
+  assert.equal(film.status,'maker_confirmation_required',`${film.id} must remain unverified until the maker answers`);
+  assert.ok(d&&d.runtime_seconds>0&&d.resolution.width>0&&d.resolution.height>0&&d.frame_rate>0,`${film.id} needs measured media metadata`);
+  assert.ok(d.shot_count>0&&d.cut_timestamps_seconds.length===d.shot_count-1,`${film.id} needs internally consistent cut detection`);
+  assert.ok(d.sequence_palettes.length>=3&&d.sequence_palettes.every(s=>s.palette.every(c=>/^#[0-9A-F]{6}$/.test(c))),`${film.id} needs measured HEX palettes`);
+  assert.ok(d.method&&d.derived_on,`${film.id} needs a reproducible derivation record`);
+  assert.ok(fs.existsSync(path.join(root,film.poster)),`${film.id} poster must exist`);
+}
+assert.doesNotMatch(JSON.stringify(showcaseData)+JSON.stringify(makerIntake)+showcaseJs,/references\/disney_pixar_shorts\//,'Showcase must not reuse the craft-reference film cache');
 assert.match(showcasePage,/<html lang="en" data-surface="pro">/,'Showcase must declare the dark pro surface');
 assert.match(showcasePage,/css\/eve-theme\.css/,'Showcase must reuse the shared dark tokens');
 assert.doesNotMatch(showcasePage,/purple|glassmorphism|glass-|var\(--grad|#6c5ce7/i,'Showcase must not import purple-gradient or glass styling');
