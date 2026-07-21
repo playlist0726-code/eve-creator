@@ -14,6 +14,10 @@ assert.equal(context.EVE_STATE.saveIntake({production_type:'animation',target_ty
 assert.equal(context.EVE_STATE.loadIntake().contest.id,contest.id);
 assert.equal(context.EVE_STATE.saveShotDirection({query:'warm close-up',recommendation_ids:[1]}),true);
 assert.equal(context.EVE_STATE.loadShotDirection().recommendation_ids[0],1);
+assert.equal(context.EVE_STATE.saveShotDirection({query:'bad',recommendation_ids:'1'}),false,'Shot direction rejects malformed IDs');
+data.set(context.EVE_STATE.SHOT_KEY,JSON.stringify({version:1,query:'bad',recommendation_ids:['x']}));
+assert.equal(context.EVE_STATE.loadShotDirection(),null,'Malformed stored shot direction is removed');
+assert.equal(data.has(context.EVE_STATE.SHOT_KEY),false);
 for(const [file,step] of [['index.html','0 · Intake'],['concept_lab.html','1 · Concept'],['index.html',"2 · Creator's Room"],['creators_room.html',"The Creator's Room"],['shotseed.html','3 · Shot Design'],['storyboard.html','4 · Storyboard']]){
   const source=fs.readFileSync(path.join(root,file),'utf8');assert.ok(source.includes(step),file+' missing pipeline step');
 }
@@ -25,6 +29,7 @@ for(const match of conceptSource.matchAll(/ideal:\[(\d+),(\d+)\]/g)){
 const shotseedSource=fs.readFileSync(path.join(root,'shotseed.html'),'utf8');
 assert.match(shotseedSource,/results-meta\">\"\$\{esc\(input\)\}/,'ShotSeed must escape the displayed user query');
 assert.match(shotseedSource,/kw-chip\">\$\{esc\(k\)\}/,'ShotSeed must escape user-derived match chips');
+assert.match(conceptSource,/useReferenceDemo/,'Fallback reference must require an explicit user choice before handoff');
 
 // Creator's Room: five-role critique loop wired end to end (fallback must be self-sufficient).
 const api=new Map();

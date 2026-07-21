@@ -128,7 +128,7 @@
   <script src="js/eve-state.js"></script>
   <script src="js/eve-glossary.js"></script>
   <script>
-    let currentBlueprint=null;
+    let currentBlueprint=null,pendingDemo=null;
     const DIMS=[
       {id:'emotional_core',label:'Emotional core',w:0.20},
       {id:'hook_strength',label:'Hook strength',w:0.15},
@@ -219,9 +219,10 @@
         <div class="act-overview">${story.acts.map(a=>`<div class="act-mini"><b>${esc(a.name)}</b><span>${esc(a.target_duration_seconds)}s · tension ${Math.round(a.tension*100)}<br>${esc(a.shots.length)} shots</span></div>`).join('')}</div>
         ${actCurve(story.acts)}
         <div class="beat-list">${story.acts.map(a=>`<section class="act-group"><div class="act-head"><b>ACT ${a.act_number} · ${esc(a.name)}</b><p>${esc(a.dramatic_function)} · ${esc(a.target_duration_seconds)} seconds</p></div>${a.shots.map(renderShot).join('')}</section>`).join('')}</div>
-        <button class="story-flow-btn" id="storyFlowBtn" onclick="openInStoryFlow()">Continue to Step 2 · The Creator's Room →</button>`;
+        ${fallback?`<button class="story-flow-btn" id="useDemoBtn" onclick="useReferenceDemo()">Use this reference demo instead →</button><button class="story-flow-btn" style="margin-top:8px;background:var(--card2);color:var(--text)" onclick="validate()">Retry my concept</button>`:`<button class="story-flow-btn" id="storyFlowBtn" onclick="openInStoryFlow()">Continue to Step 2 · The Creator's Room →</button>`}`;
     }
-    function showBlueprint(payload,s,overall,input){currentBlueprint={payload,input};document.getElementById('out').innerHTML=renderResult(payload,s,overall);}
+    function showBlueprint(payload,s,overall,input){const item={payload,input};if(payload.meta?.source==='fallback'){pendingDemo=item;currentBlueprint=null;}else{currentBlueprint=item;pendingDemo=null;}document.getElementById('out').innerHTML=renderResult(payload,s,overall);}
+    function useReferenceDemo(){if(!pendingDemo)return;currentBlueprint=pendingDemo;pendingDemo=null;openInStoryFlow();}
     function openInStoryFlow(){if(!currentBlueprint)return;const btn=document.getElementById('storyFlowBtn');if(!EVE_STATE.saveBlueprint(currentBlueprint.payload,currentBlueprint.input)){btn.textContent='Could not save blueprint';btn.disabled=true;return;}window.location.href='creators_room.html';}
     async function validate(){
       const text=document.getElementById('idea').value.trim();
