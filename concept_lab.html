@@ -53,7 +53,7 @@
     .action{font-size:13px;line-height:1.55;color:#d5d5d5;margin:12px 0}.reason-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}@media(max-width:600px){.reason-grid{grid-template-columns:1fr}}.reason{border:1px solid var(--border);background:var(--card2);border-radius:9px;padding:10px}.reason .rh{font-size:9px;letter-spacing:.9px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:5px}.reason p{font-size:11.5px;line-height:1.5;color:#a9a9a9}.shot-spec{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0 9px}.shot-spec span,.citation{font-size:10px;padding:3px 7px;border-radius:100px;background:var(--card2);color:#a0a0a0}.meaning{border-left:2px solid var(--gold-dim);padding-left:10px;margin-top:10px}.meaning .mh{font-size:9px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted)}.meaning p{font-size:11.5px;color:#b9b9b9;line-height:1.5;margin-top:4px}.citations{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}.citation{color:var(--gold-lite);background:rgba(201,162,39,.09)}.teach{cursor:help;border:1px solid rgba(201,162,39,.28)!important;transition:background .12s,border-color .12s}.teach:hover,.teach:focus{background:rgba(201,162,39,.2)!important;border-color:var(--gold)!important;outline:none}details.prompts{margin-top:11px;border-top:1px solid var(--border);padding-top:9px}details.prompts summary{cursor:pointer;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}.prompt{margin-top:8px;font-size:10.5px;line-height:1.5;color:#8e8e8e}.prompt b{color:#bcbcbc}.copy{font:600 9px inherit;letter-spacing:.5px;text-transform:uppercase;color:var(--gold-lite);background:rgba(201,162,39,.1);border:1px solid var(--gold-dim);border-radius:100px;padding:3px 9px;cursor:pointer;margin-left:4px}.copy:hover{background:rgba(201,162,39,.2)}.copy:disabled{color:var(--good);border-color:var(--good)}.mkhint{margin-top:9px;font-size:10.5px;color:var(--dim);line-height:1.5;border-left:2px solid var(--gold-dim);padding-left:9px}.fallback-note{font-size:11px;line-height:1.5;color:var(--warn);margin-bottom:12px}.story-flow-btn{display:block;text-align:center;margin-top:18px;background:var(--gold);color:#080808;border:0;border-radius:100px;padding:12px 16px;font:700 14px inherit;cursor:pointer;width:100%}.story-flow-btn:disabled{opacity:.55;cursor:not-allowed}
     .act-overview{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:14px 0}.act-mini{background:var(--card2);border:1px solid var(--border);border-radius:9px;padding:9px}.act-mini b{display:block;font-size:11px;color:var(--text)}.act-mini span{font-size:9px;color:var(--muted)}.act-curve{height:90px;width:100%;margin:8px 0 16px}.act-group{border:1px solid var(--border);border-radius:12px;margin:12px 0;overflow:hidden}.act-head{padding:12px 14px;background:var(--card2)}.act-head b{color:var(--text)}.act-head p{font-size:11px;color:var(--dim);margin-top:4px;line-height:1.45}.shot-fold{border-top:1px solid var(--border)}.shot-fold>summary{cursor:pointer;padding:11px 14px;color:#ddd;font-size:12px}.shot-fold>summary span{color:var(--gold);margin-right:8px}.shot-fold .beat-card{border:0;border-radius:0;margin:0}@media(max-width:700px){.act-overview{grid-template-columns:1fr 1fr}}
   </style>
-  <link rel="stylesheet" href="css/eve-theme.css">
+  <link rel="stylesheet" href="css/eve-theme.css?v=5">
 </head>
 <body>
 <!-- EVE guided pipeline bar (injected) -->
@@ -76,7 +76,7 @@
 @media(max-width:860px){.eve-topbar,.eve-cont-wrap{padding-left:18px;padding-right:18px}.eve-steps .pl{display:none}}
 </style>
 <div class="eve-topbar"><span class="eb">First Frame</span><div class="eve-steps" id="eve-steps"></div></div>
-<script src="js/eve-flow.js?v=2"></script>
+<script src="js/eve-flow.js?v=5"></script>
   <nav class="site-nav">
     <span class="brand">First Frame</span>
     <a href="index.html">0 · Intake</a><a href="concept_lab.html" class="on">1 · Concept</a><a href="creators_room.html">2 · Creator's Room</a><a href="shotseed.html">3 · Shot Design</a><a href="storyboard.html">4 · Storyboard</a>
@@ -110,10 +110,10 @@
     <div class="panel" id="out" aria-live="polite"><div class="empty">Enter a concept and click “Build director blueprint” to see the transparent hit-potential heuristic and shot plan.</div></div>
   </div>
 
-  <script src="js/eve-nav.js"></script><script src="js/eve-ui.js"></script>
-  <script src="js/eve-api.js"></script>
-  <script src="js/eve-state.js?v=2"></script>
-  <script src="js/eve-glossary.js"></script>
+  <script src="js/eve-nav.js?v=5"></script><script src="js/eve-ui.js?v=5"></script>
+  <script src="js/eve-api.js?v=5"></script>
+  <script src="js/eve-state.js?v=5"></script>
+  <script src="js/eve-glossary.js?v=5"></script>
   <script>
     let currentBlueprint=null,pendingDemo=null;
     const DIMS=[

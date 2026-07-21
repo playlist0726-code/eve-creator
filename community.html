@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>First Frame — Community Hub</title><link rel="stylesheet" href="css/eve-theme.css">
+  <title>First Frame — Community Hub</title><link rel="stylesheet" href="css/eve-theme.css?v=5">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:72px}.aura{position:fixed;inset:0;z-index:-2;background:radial-gradient(800px 460px at 15% -10%,rgba(108,92,231,.11),transparent 65%),radial-gradient(700px 440px at 92% 8%,rgba(76,159,254,.09),transparent 62%),var(--bg)}
     .shell{max-width:1240px;margin:auto;padding:34px 24px 0}.intro{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin:8px 0 24px}.eyebrow{font:800 11px Inter;letter-spacing:1.4px;text-transform:uppercase;color:var(--iris)}h1{font:800 clamp(30px,4vw,46px)/1.08 'Plus Jakarta Sans';letter-spacing:-1.5px;margin:9px 0 8px}.intro p{max-width:720px;color:var(--dim);font-size:14px;line-height:1.65}.verified{flex:0 0 auto;font-size:11px;color:var(--muted);background:rgba(255,255,255,.72);border:1px solid var(--border);border-radius:100px;padding:8px 12px}.layout{display:grid;grid-template-columns:230px minmax(0,1fr) 260px;gap:20px;align-items:start}.layout>section{min-width:0}.rail{position:sticky;top:82px;display:grid;gap:14px}
@@ -25,7 +25,7 @@
     </section>
     <aside class="rail right" aria-label="Community recommendations"><section class="box"><h3>Communities to join</h3><p>Official help spaces and public craft discussion.</p><div class="rail-list" id="join-list"><span class="rail-link">Loading…</span></div></section><section class="box"><h3>Active tools</h3><p>Explore the maintained study library.</p><div class="rail-list" id="tool-list"><span class="rail-link">Loading…</span></div></section><section class="box roadmap"><h3>Contribute a source</h3><p>Found a missing feed, official channel, or broken URL? Open a pull request with verification.</p><a href="https://github.com/playlist0726-code/eve-creator" target="_blank" rel="noopener noreferrer">Contribute on GitHub ↗</a></section><section class="box"><h3>Native community: roadmap</h3><p>First Frame has no public accounts, posting, likes, or follower counts. Those require persistent identity and real moderation; they remain a post–Build Week roadmap item.</p></section></aside>
   </div>
-</main><script src="js/eve-nav.js"></script><script src="js/eve-ui.js"></script><script>
+</main><script src="js/eve-nav.js?v=5"></script><script src="js/eve-ui.js?v=5"></script><script>
   const feed=document.getElementById('feed'),search=document.getElementById('search'),sentinel=document.getElementById('feed-sentinel');
   const labels={discord:'Discord',news:'News',subreddit:'Subreddit',twitter:'X',youtube:'YouTube',forum:'Forum',reddit:'Reddit',clips:'Clip'},glyphs={discord:'D',news:'N',subreddit:'r/',twitter:'X',youtube:'▶',forum:'F',reddit:'r/',clips:'▶'};
   let directory=[],news=[],clips=[],tools=[],filter='all',visible=10,ready=false;

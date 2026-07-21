@@ -339,4 +339,33 @@ for(const file of ['research/ai_pain_points.md','research/competitive_scan.md','
   assert.match(research,/https:\/\//,`${file} must contain real source URLs`);
 }
 
+// Cache-busting must be uniform. Mixed or missing ?v= values silently serve a stale shared
+// script to returning visitors — that is how the Showcase tab went missing from the nav.
+{
+  const shared = ['js/eve-nav.js', 'js/eve-ui.js', 'js/eve-flow.js', 'js/eve-glossary.js', 'css/eve-theme.css'];
+  const versions = new Set();
+  for (const page of fs.readdirSync(root).filter((f) => f.endsWith('.html'))) {
+    const src = fs.readFileSync(path.join(root, page), 'utf8');
+    for (const asset of shared) {
+      const found = [...src.matchAll(new RegExp(asset.replace(/[.]/g, '\\$&') + '(\\?v=(\\d+))?', 'g'))];
+      for (const hit of found) {
+        assert.ok(hit[2], `${page} loads ${asset} without a ?v= cache-buster`);
+        versions.add(hit[2]);
+      }
+    }
+  }
+  assert.equal(versions.size, 1, `shared assets must share one cache-buster version, found: ${[...versions].join(', ')}`);
+}
+
+// The Showcase must be reachable from the global nav, and its data must not be a stub.
+assert.match(nav, /l:\s*'Showcase',\s*f:\s*'showcase\.html'/, 'global nav must expose the Showcase tab');
+{
+  const showcase = JSON.parse(fs.readFileSync(path.join(root, 'data/showcase.json'), 'utf8'));
+  assert.ok(showcase.pieces.length >= 10, 'Showcase needs enough pieces for the editorial wall to read as a wall');
+  for (const piece of showcase.pieces) {
+    assert.ok(piece.creator && piece.creator.name, `${piece.title} must credit a named creator`);
+    assert.match(piece.source.url, /^https:\/\//, `${piece.title} must link its source over HTTPS`);
+  }
+}
+
 console.log(`Platform tests passed (6 nav tabs, ${newPages.length} new pages, Film School covers ${CITABLE_IDS.length} terms).`);
