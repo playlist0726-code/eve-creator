@@ -16,14 +16,15 @@
     v=v&&typeof v==='object'?v:{};
     return {track:['kids','beginner','student'].includes(v.track)?v.track:null,modules_completed:unique(v.modules_completed).filter(String),lessons_read:unique(v.lessons_read).filter(String),artifacts:Array.isArray(v.artifacts)?v.artifacts.slice(-40):[],skills:{}};
   }
-  function load(){try{return clean(JSON.parse(global.localStorage.getItem(KEY)||'null'));}catch(_){return clean();}}
-  function save(p){var next=clean(p);try{global.localStorage.setItem(KEY,JSON.stringify(next));return next;}catch(_){return next;}}
+  function derived(p){p.skills=scores(p);return p;}
+  function load(){try{return derived(clean(JSON.parse(global.localStorage.getItem(KEY)||'null')));}catch(_){return derived(clean());}}
+  function save(p){var next=derived(clean(p));try{global.localStorage.setItem(KEY,JSON.stringify(next));return next;}catch(_){return next;}}
   function update(fn){var p=load();fn(p);return save(p);}
   function setTrack(track){return update(function(p){p.track=track;});}
   function completeModule(id,artifact){return update(function(p){p.modules_completed=unique(p.modules_completed.concat(id));if(artifact)p.artifacts.push(Object.assign({module_id:id,saved_at:new Date().toISOString()},artifact));});}
   function markLesson(id){return update(function(p){p.lessons_read=unique(p.lessons_read.concat(id));});}
   function addArtifact(artifact){return update(function(p){p.artifacts.push(Object.assign({saved_at:new Date().toISOString()},artifact));});}
-  function reset(){try{global.localStorage.removeItem(KEY);}catch(_){}global.dispatchEvent&&global.dispatchEvent(new CustomEvent('ff-progress-change'));return clean();}
+  function reset(){try{global.localStorage.removeItem(KEY);}catch(_){}global.dispatchEvent&&global.dispatchEvent(new CustomEvent('ff-progress-change'));return derived(clean());}
   function configure(data){courses=Array.isArray(data)?data:(data&&data.modules)||[];return api;}
   function scores(profile){
     var p=profile||load(),raw=Object.fromEntries(SKILLS.map(function(k){return[k,0];}));
