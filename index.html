@@ -198,11 +198,11 @@
     <div>
       <span class="kicker"><span class="dot"></span>OpenAI Build Week · Education</span>
       <h1>Never studied film?<br><span class="g">Make one anyway.</span></h1>
-      <div class="audience-switch" role="group" aria-label="Choose your learning perspective"><button class="active" type="button" data-audience="beginner" aria-pressed="true">Beginner</button><button type="button" data-audience="student" aria-pressed="false">Film student</button><button type="button" data-audience="kid" aria-pressed="false">Kid</button></div>
+      <div class="audience-switch" role="group" aria-label="Preview a learning track"><button class="active" type="button" data-audience="beginner" aria-pressed="true">Beginner</button><button type="button" data-audience="student" aria-pressed="false">Film student</button><button type="button" data-audience="kid" aria-pressed="false">Kids 8–12</button></div>
       <p class="lead" id="audienceCopy"><b>Start with one idea—no film vocabulary required.</b> A five-role AI crew explains each choice while it helps shape your three-minute short.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" id="audienceCta" href="#start">Start with a guided idea →</a>
-        <a class="btn btn-ghost" href="creators_room.html">See the AI crew in action</a>
+        <a class="btn btn-primary" id="audienceCta" href="beginner.html">Start the Beginner track →</a>
+        <a class="btn btn-ghost" href="tracks.html">Compare all three tracks</a>
       </div>
       <div class="social-proof"><div class="avatar-stack"><span class="proof-av">DR</span><span class="proof-av">WR</span><span class="proof-av">DP</span><span class="proof-av">ED</span></div><p><b>A five-role AI film crew</b><br>teaches while you create</p></div>
       <div class="trust">
@@ -323,7 +323,7 @@
       var lc=document.getElementById('learnChips');
       if(lc&&window.EVE_GLOSSARY_CHIP){learn.forEach(function(id){lc.insertAdjacentHTML('beforeend',EVE_GLOSSARY_CHIP(id,''));});}
     })();
-    (function(){var options={beginner:{copy:'<b>Start with one idea—no film vocabulary required.</b> A five-role AI crew explains each choice while it helps shape your three-minute short.',cta:'Start with a guided idea →',href:'#start'},student:{copy:'<b>Turn film theory into production decisions.</b> Study the grounded principle, compare traditional and AI workflows, then test it in your own blueprint.',cta:'Open Film School →',href:'learn.html'},kid:{copy:'<b>Learn by making a tiny visual story.</b> Begin with a safe practice prompt, discover what shots and colors mean, and keep control of the final film.',cta:'Try a 60-second story →',href:'#start'}};document.querySelectorAll('.audience-switch button').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.audience-switch button').forEach(function(b){var on=b===btn;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});var o=options[btn.dataset.audience];document.getElementById('audienceCopy').innerHTML=o.copy;var c=document.getElementById('audienceCta');c.textContent=o.cta;c.href=o.href})})})();
+    (function(){var options={beginner:{copy:'<b>Finish your first 60-second film plan in a weekend.</b> Learn why each production step exists, use the real tools, then return with crew feedback.',cta:'Start the Beginner track →',href:'beginner.html'},student:{copy:'<b>Use AI for the production gaps you cannot shoot.</b> Read real frames, diagnose plates, and design a cited CG, VFX, or previz plan.',cta:'Enter The Dark Room →',href:'darkroom.html'},kid:{copy:'<b>Make a safe picture-book story in five small steps.</b> Draw four pictures, add your own sentences, and print the finished book.',cta:'Open Story Playground →',href:'kids.html'}};document.querySelectorAll('.audience-switch button').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.audience-switch button').forEach(function(b){var on=b===btn;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});var o=options[btn.dataset.audience];document.getElementById('audienceCopy').innerHTML=o.copy;var c=document.getElementById('audienceCta');c.textContent=o.cta;c.href=o.href})})})();
 
     /* reveal on scroll */
     (function(){

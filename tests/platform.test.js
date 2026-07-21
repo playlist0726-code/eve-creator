@@ -8,7 +8,7 @@ const root = path.resolve(__dirname, '..');
 const nav = fs.readFileSync(path.join(root, 'js/eve-nav.js'), 'utf8');
 assert.match(nav, /First Frame/, 'global nav must carry the First Frame brand');
 const navTargets = [...nav.matchAll(/f:\s*'([^']+\.html)'/g)].map((m) => m[1]);
-const expectTabs = ['index.html', 'concept_lab.html', 'learn.html', 'toolkit.html', 'detector.html', 'community.html'];
+const expectTabs = ['index.html', 'tracks.html', 'concept_lab.html', 'learn.html', 'toolkit.html', 'detector.html', 'community.html'];
 for (const t of expectTabs) assert.ok(navTargets.includes(t), `nav missing tab target ${t}`);
 for (const t of navTargets) assert.ok(fs.existsSync(path.join(root, t)), `nav links to missing ${t}`);
 assert.match(nav,/l:\s*'Footage Lab',\s*f:\s*'detector\.html'/,'Detector route must be visibly renamed Footage Lab without changing its target');
@@ -110,6 +110,47 @@ assert.match(shotseed,/id="sourceFilter"/,'ShotSeed browser must expose a studio
 assert.match(learn,/Learning Paths/,'Film School needs ordered learning paths');
 assert.match(learn,/class="ff-breadcrumb"/,'Film School detail view needs breadcrumbs');
 assert.match(learn,/id="lessonToc"[^>]+aria-label="On this page"/,'Film School detail view needs an on-this-page table of contents');
+
+// Three audience tracks share one validated curriculum and device-local capability profile.
+const coursePath=path.join(root,'data/courses.json');
+const courseData=JSON.parse(fs.readFileSync(coursePath,'utf8'));
+assert.ok(Array.isArray(courseData.modules),'courses.json must expose modules');
+assert.equal(courseData.modules.length,19,'courses must contain 5 kids, 6 beginner, and 8 student modules');
+for(const track of ['kids','beginner','student'])assert.ok(courseData.modules.some(m=>m.track===track),`missing ${track} curriculum`);
+for(const module of courseData.modules){
+  assert.ok(module.id&&module.title&&module.goal&&module.checkpoint&&module.output,`${module.id||'module'} needs complete learning-loop copy`);
+  assert.ok(Number.isInteger(module.order)&&module.order>0,`${module.id} needs a valid order`);
+  assert.ok(Number.isInteger(module.minutes)&&module.minutes>0,`${module.id} needs an honest time estimate`);
+  assert.ok(Array.isArray(module.teaches)&&module.teaches.length,`${module.id} must teach allowlisted craft`);
+  module.teaches.forEach(id=>assert.ok(CITABLE_IDS.includes(id),`${module.id} invents craft ID ${id}`));
+  assert.ok(module.do&&fs.existsSync(path.join(root,module.do.page)),`${module.id} links to missing working page`);
+  assert.equal(typeof module.do.params,'object',`${module.id} needs explicit handoff params`);
+}
+const trackPages=['kids.html','beginner.html','darkroom.html'];
+for(const page of trackPages){
+  const src=fs.readFileSync(path.join(root,page),'utf8');
+  for(const asset of ['js/eve-nav.js','js/eve-ui.js','css/eve-theme.css'])assert.ok(src.includes(asset),`${page} must load ${asset}`);
+  const visible=src.replace(/<script[\s\S]*?<\/script>/g,'').replace(/<style[\s\S]*?<\/style>/g,'');
+  assert.doesNotMatch(visible,/[가-힣]/,`${page} visible markup must be English`);
+  [...src.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(m=>m[1]).filter(Boolean).forEach(code=>new vm.Script(code,{filename:page}));
+  assert.ok(/prefers-reduced-motion:\s*reduce/.test(src)||src.includes('css/courses.css'),`${page} must respect reduced motion`);
+}
+assert.match(fs.readFileSync(path.join(root,'css/courses.css'),'utf8'),/prefers-reduced-motion:\s*reduce/,'shared course motion must respect user preferences');
+assert.match(fs.readFileSync(path.join(root,'darkroom.html'),'utf8'),/<html lang="en" data-surface="pro">/,'The Dark Room must declare the pro surface');
+const progressSource=fs.readFileSync(path.join(root,'js/ff-progress.js'),'utf8');
+const progressStore=new Map(),progressContext={localStorage:{getItem:k=>progressStore.get(k)||null,setItem:(k,v)=>progressStore.set(k,v),removeItem:k=>progressStore.delete(k)},dispatchEvent(){},CustomEvent:function(){}};
+vm.runInNewContext(progressSource,progressContext,{filename:'js/ff-progress.js'});
+assert.equal(progressContext.FF_PROGRESS.KEY,'ff.learner.v1','learner profile must use the documented key');
+assert.equal(typeof progressContext.FF_PROGRESS.reset,'function','learner profile must expose reset');
+progressContext.FF_PROGRESS.configure(courseData);
+progressContext.FF_PROGRESS.completeModule('begin-intake',{type:'test-checkpoint'});
+const derivedProfile=progressContext.FF_PROGRESS.load();
+assert.ok(derivedProfile.skills.Story>0&&derivedProfile.skills.Editing>0,'skill meters must derive from completed module craft');
+assert.equal(progressContext.FF_PROGRESS.reset().modules_completed.length,0,'reset must visibly clear device-local progress');
+for(const file of fs.readdirSync(root).filter(f=>f.endsWith('.html')).concat(fs.readdirSync(path.join(root,'js')).map(f=>'js/'+f))){
+  const src=fs.readFileSync(path.join(root,file),'utf8');
+  assert.doesNotMatch(src,/(?:login[_-]?streak|streak[_-]?(?:count|days)|daily[_-]?(?:login|attendance))/i,`${file} must measure capability, not attendance`);
+}
 
 // Research-backed safe wins: beginner launch, cross-shot continuity, minimal tool stack.
 const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
