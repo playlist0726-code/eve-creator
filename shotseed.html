@@ -430,6 +430,18 @@
       font-weight: 700;
     }
 
+    .filter-select {
+      min-height: 34px;
+      max-width: 230px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      background: var(--surface);
+      color: var(--dim);
+      padding: 6px 30px 6px 12px;
+      font: inherit;
+      font-size: 12px;
+    }
+
     .stats-text { font-size: 11px; color: var(--muted); }
     .stats-text span { color: var(--gold); font-weight: 700; }
 
@@ -552,250 +564,1654 @@
 // ─────────────────────────────────────────────
 const shots = [
   {
-    id: 1,
-    dimension: '2d',
-    title: 'Twilight Village Vista',
-    source: 'Reference pattern · Ghibli-inspired',
-    purpose: 'establishing',
-    mood: ['warm','golden','amber','landscape','peaceful','ghibli','nature','village','sunset','wide','twilight','따뜻','황혼','자연','마을','넓은'],
-    framing: 'Extreme Wide Shot',
-    angle: 'Slightly High',
-    movement: 'Slow Push-in',
-    lighting: 'Golden hour — warm amber and deep orange with long shadows',
-    palette: ['#F4A52B','#C2522A','#2B3A5E','#8FAB7A','#F2DEB0'],
-    description: 'A small hilltop village glows at sunset. Chimney smoke rises as the camera slowly pushes toward the center, introducing the story world.',
-    t2iPrompt: 'anime landscape, hilltop village at golden hour, warm amber sunset, smoke from chimneys, Studio Ghibli style, lush greenery, cinematic wide shot, painterly',
-    i2vPrompt: 'slow push-in toward village center, 6 seconds, gentle camera drift, ambient breeze, smoke curling upward',
-    workflow: 'Midjourney v6 → Kling 1.6 (slow push-in) → DaVinci color grade'
+    "id": 1,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "00:32",
+    "title": "Pasture Rock Introduction",
+    "source": "Pixar · Boundin'",
+    "purpose": "establishing",
+    "mood": [
+      "playful",
+      "pastoral",
+      "calm"
+    ],
+    "framing": "Wide shot",
+    "angle": "Eye level",
+    "movement": "Locked-off; sheep move within frame",
+    "lighting": "Soft overcast daylight",
+    "palette": [
+      "#766D80",
+      "#A0B7CA",
+      "#A37682",
+      "#584B58",
+      "#D3D8DA",
+      "#9D9FB1"
+    ],
+    "description": "A woolly sheep performs on a pink rock while the surrounding pasture introduces its small stage.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A woolly sheep performs on a pink rock while the surrounding pasture introduces its small stage. Wide shot, eye level, soft overcast daylight, palette derived from source frame #766D80, #A0B7CA, #A37682, #584B58, no text or logos.",
+    "i2vPrompt": "Locked-off; sheep move within frame; preserve character and environment continuity, 4 seconds, playful pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
   },
   {
-    id: 2,
-    dimension: '2d',
-    title: 'Symmetrical Interior Opening',
-    source: 'Reference pattern · centered tableau',
-    purpose: 'establishing',
-    mood: ['establishing','symmetry','retro','pastel','calm','flat','wes anderson','indoor','centered','quirky','대칭','도입','고요','실내'],
-    framing: 'Wide Shot',
-    angle: 'Eye Level / Frontal',
-    movement: 'Static',
-    lighting: 'Softbox-like illumination, pastel saturation, and even exposure across the frame',
-    palette: ['#E8C9A0','#B5645A','#4A7C8E','#F2E6D4','#6B4F3A'],
-    description: 'A room arranged in perfect bilateral symmetry. The protagonist enters through the centered doorway while the camera remains completely locked, declaring the world\'s rigid order.',
-    t2iPrompt: 'perfectly symmetrical room interior, pastel color palette, centered composition, retro aesthetic, soft even lighting, Wes Anderson style, detailed set design',
-    i2vPrompt: 'static locked-off camera, center door opens, character steps forward, 4 seconds, no camera movement',
-    workflow: 'Midjourney v6 (--ar 16:9 --style raw) → Runway Gen-3 (static hold) → Premiere'
+    "id": 2,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:12",
+    "title": "Shorn Sheep in the Valley",
+    "source": "Pixar · Boundin'",
+    "purpose": "emotional_cu",
+    "mood": [
+      "vulnerable",
+      "quiet",
+      "embarrassed"
+    ],
+    "framing": "Medium close-up",
+    "angle": "Eye level",
+    "movement": "Gentle push-in",
+    "lighting": "Diffuse daylight with cool sky fill",
+    "palette": [
+      "#695E63",
+      "#A9A3A3",
+      "#DEC2B8",
+      "#87BCD2",
+      "#92CEE0",
+      "#E8DED5"
+    ],
+    "description": "The newly shorn sheep sits exposed among the flock, its lowered posture carrying the emotional turn.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The newly shorn sheep sits exposed among the flock, its lowered posture carrying the emotional turn. Medium close-up, eye level, diffuse daylight with cool sky fill, palette derived from source frame #695E63, #A9A3A3, #DEC2B8, #87BCD2, no text or logos.",
+    "i2vPrompt": "Gentle push-in; preserve character and environment continuity, 4 seconds, vulnerable pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
   },
   {
-    id: 3,
-    dimension: '3d',
-    title: 'Close-Up Before the Tear',
-    source: 'Reference pattern · stylized 3D',
-    purpose: 'emotional_cu',
-    mood: ['emotional','close-up','tears','sad','melancholic','pixar','warmth','eyes','feeling','intense','눈물','감정','슬픈','클로즈업','따뜻'],
-    framing: 'Extreme Close-up',
-    angle: 'Eye Level',
-    movement: 'Micro Dolly-in',
-    lighting: 'Rim light plus subtle underlight, strong eye catchlights, and a warm amber tint',
-    palette: ['#1A2540','#3B5998','#F0C27F','#A8C8E8','#2C1810'],
-    description: 'The character\'s eyes fill the frame. Light refracts through the lashes just before a tear forms, concentrating the emotional peak into one suspended moment.',
-    t2iPrompt: 'extreme close-up anime eyes, tears welling up, catchlight reflection, rim lighting, deep blue and amber tones, Pixar inspired, high detail, emotional',
-    i2vPrompt: 'ultra slow dolly-in on eyes, 5 seconds, single tear forming, subtle lash tremor, shallow depth of field',
-    workflow: 'Stable Diffusion XL (anime model) → Kling 1.6 (slow zoom) → After Effects glow composite'
+    "id": 3,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:58",
+    "title": "Jackalope Leap Lesson",
+    "source": "Pixar · Boundin'",
+    "purpose": "action",
+    "mood": [
+      "buoyant",
+      "encouraging",
+      "comic"
+    ],
+    "framing": "Medium wide shot",
+    "angle": "Low angle",
+    "movement": "Upward follow with subject leap",
+    "lighting": "Bright open-sky daylight",
+    "palette": [
+      "#57BFE7",
+      "#6E5A61",
+      "#D99884",
+      "#E5D7CA",
+      "#6BD0E6",
+      "#5E9FCA"
+    ],
+    "description": "A jackalope springs beside the sheep, turning advice into an energetic physical demonstration.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A jackalope springs beside the sheep, turning advice into an energetic physical demonstration. Medium wide shot, low angle, bright open-sky daylight, palette derived from source frame #57BFE7, #6E5A61, #D99884, #E5D7CA, no text or logos.",
+    "i2vPrompt": "Upward follow with subject leap; preserve character and environment continuity, 4 seconds, buoyant pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
   },
   {
-    id: 4,
-    dimension: '2d',
-    title: 'Monologue by the Window',
-    source: 'Reference pattern · hand-painted 2D',
-    purpose: 'emotional_cu',
-    mood: ['emotional','close-up','backlit','melancholic','lonely','ghibli','window','silhouette','quiet','reflection','창문','슬픈','고요','독백','역광','외로운','감정'],
-    framing: 'Medium Close-up',
-    angle: 'Slightly Low',
-    movement: 'Static + Subtle Rack Focus',
-    lighting: 'Backlit window, a halo along the silhouette, and cool interior shadows',
-    palette: ['#D4E8F0','#8BB5C8','#2A3545','#F5DEB3','#6B8FA3'],
-    description: 'A character faces the window as exterior light shapes a silhouette. Distant trees drift out of focus, externalizing the character\'s inner isolation.',
-    t2iPrompt: 'anime character standing by window, backlit silhouette, soft halo rim light, cool indoor shadows, Studio Ghibli atmosphere, melancholic mood, detailed background',
-    i2vPrompt: 'static shot, subtle rack focus from character to window background, 5 seconds, gentle curtain sway',
-    workflow: 'Midjourney v6 → Kling 1.6 (rack focus effect) → Topaz Video Enhance'
+    "id": 4,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "02:46",
+    "title": "Face-to-Face Encouragement",
+    "source": "Pixar · Boundin'",
+    "purpose": "transition",
+    "mood": [
+      "reassuring",
+      "intimate",
+      "hopeful"
+    ],
+    "framing": "Two-shot medium close-up",
+    "angle": "Eye level",
+    "movement": "Locked two-shot; gestural motion",
+    "lighting": "Soft daylight with warm skin and fur bounce",
+    "palette": [
+      "#76C7D3",
+      "#50433D",
+      "#EBD7CD",
+      "#BF806F",
+      "#688286",
+      "#96ADB9"
+    ],
+    "description": "The jackalope leans close to the sheep, bridging shame into a new idea through direct eye contact.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The jackalope leans close to the sheep, bridging shame into a new idea through direct eye contact. Two-shot medium close-up, eye level, soft daylight with warm skin and fur bounce, palette derived from source frame #76C7D3, #50433D, #EBD7CD, #BF806F, no text or logos.",
+    "i2vPrompt": "Locked two-shot; gestural motion; preserve character and environment continuity, 4 seconds, reassuring pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
   },
   {
-    id: 5,
-    dimension: '2d',
-    title: 'Rooftop Chase Ignition',
-    source: 'Reference pattern · comic-book action',
-    purpose: 'action',
-    mood: ['action','chase','dynamic','neon','urban','night','rain','fast','rooftop','kinetic','추격','액션','도시','네온','야간','역동','옥상'],
-    framing: 'Medium Wide',
-    angle: 'Dynamic Low Angle',
-    movement: 'Handheld Follow + Quick Tilt',
-    lighting: 'Neon nightscape, high-contrast cool purple tones, and reflections on wet surfaces',
-    palette: ['#0D0D1A','#7B2FBE','#FF4D6D','#00F5D4','#1A1A3E'],
-    description: 'On a rain-soaked city rooftop, the camera snaps upward as the character leaps and the horizon tilts. The explosive first action shot launches the chase.',
-    t2iPrompt: 'anime rooftop chase, neon city night, rain-slicked surfaces, purple and teal lighting, dynamic low angle, motion blur, comic-inspired, high contrast',
-    i2vPrompt: 'handheld follow as character leaps, quick upward tilt, 3 seconds, speed ramp on peak jump, neon reflections on wet roof',
-    workflow: 'Midjourney v6 → Runway Gen-3 (motion brush) → Premiere speed ramp'
+    "id": 5,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "03:44",
+    "title": "Winter Bounce Payoff",
+    "source": "Pixar · Boundin'",
+    "purpose": "establishing",
+    "mood": [
+      "triumphant",
+      "wintry",
+      "joyful"
+    ],
+    "framing": "Wide shot",
+    "angle": "Slightly high angle",
+    "movement": "Lateral follow; repeated bouncing",
+    "lighting": "Cold winter daylight with pale snow bounce",
+    "palette": [
+      "#56A4D9",
+      "#D1BFC1",
+      "#72748A",
+      "#86C1D8",
+      "#9BA8B9",
+      "#E2DAD8"
+    ],
+    "description": "The sheep bounces across the transformed winter landscape, re-establishing the location after the seasonal change.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The sheep bounces across the transformed winter landscape, re-establishing the location after the seasonal change. Wide shot, slightly high angle, cold winter daylight with pale snow bounce, palette derived from source frame #56A4D9, #D1BFC1, #72748A, #86C1D8, no text or logos.",
+    "i2vPrompt": "Lateral follow; repeated bouncing; preserve character and environment continuity, 4 seconds, triumphant pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
   },
   {
-    id: 6,
-    dimension: '2d',
-    title: 'Collision Impact Frame',
-    source: 'Reference pattern · anime impact',
-    purpose: 'action',
-    mood: ['action','impact','explosion','dynamic','kinetic','intense','flash','energy','dramatic','폭발','액션','역동','충돌','임팩트'],
-    framing: 'Close-up / Dutch Angle',
-    angle: 'Extreme Low',
-    movement: 'Crash Zoom + Freeze Frame',
-    lighting: 'Overexposed explosion flash, silhouette outlines, and flame orange',
-    palette: ['#FF6B00','#FFD700','#1A0A00','#FF2200','#FFFFFF'],
-    description: 'Two forces collide. The camera crash-zooms into the contact point, freezes on impact, and radiates energy lines toward the frame edges.',
-    t2iPrompt: 'anime impact frame, giant robot clash, extreme low angle dutch, explosion flash overexposure, energy lines radiating, Gainax/Trigger style, orange and white bloom',
-    i2vPrompt: 'crash zoom to impact point, 2 seconds, freeze frame on hit, screen flash white, energy shockwave ripple outward',
-    workflow: 'Midjourney v6 → After Effects (crash zoom + flash) → Kling 1.6 shockwave'
+    "id": 6,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "00:32",
+    "title": "Stork Delivery Yard",
+    "source": "Pixar · Partly Cloudy",
+    "purpose": "establishing",
+    "mood": [
+      "busy",
+      "whimsical",
+      "warm"
+    ],
+    "framing": "Wide shot",
+    "angle": "Slightly high angle",
+    "movement": "Slow settling drift",
+    "lighting": "Warm sunset backlight",
+    "palette": [
+      "#261B0B",
+      "#D18C77",
+      "#5B2212",
+      "#8F5B3B",
+      "#D8A99C",
+      "#3F180D"
+    ],
+    "description": "A stork delivery station and clustered clouds establish the airborne workplace and its warm evening sky.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A stork delivery station and clustered clouds establish the airborne workplace and its warm evening sky. Wide shot, slightly high angle, warm sunset backlight, palette derived from source frame #261B0B, #D18C77, #5B2212, #8F5B3B, no text or logos.",
+    "i2vPrompt": "Slow settling drift; preserve character and environment continuity, 4 seconds, busy pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
   },
   {
-    id: 7,
-    dimension: '2d',
-    title: 'Match Cut — Watch to Moon',
-    source: 'Reference pattern · lyrical match cut',
-    purpose: 'transition',
-    mood: ['transition','match cut','moon','night','poetic','shinkai','time','circular','lyrical','달','전환','매치','시적','밤','시간'],
-    framing: 'Close-up (Round Object Match)',
-    angle: 'Eye Level',
-    movement: 'Static → Slow Zoom Out',
-    lighting: 'Watch: warm interior light / Moon: cold blue glow',
-    palette: ['#F5E6C8','#2C3E6B','#C8B89A','#0A0F1E','#E8D4A0'],
-    description: 'A pocket-watch close-up cuts to the moon in identical circular framing, creating an emotional connection across time and space.',
-    t2iPrompt: 'close-up pocket watch face, warm amber light, round frame composition — match: full moon close-up, cold blue glow, identical circular framing, Shinkai style',
-    i2vPrompt: 'cut from watch to moon at circular match, slow zoom-out from moon revealing night sky, 4 seconds, ethereal ambient tone',
-    workflow: 'Midjourney v6 (2 matched frames) → Premiere match cut edit → Kling dissolve optional'
+    "id": 7,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:22",
+    "title": "Hazardous Gift Reaction",
+    "source": "Pixar · Partly Cloudy",
+    "purpose": "emotional_cu",
+    "mood": [
+      "anxious",
+      "comic",
+      "tender"
+    ],
+    "framing": "Medium close-up",
+    "angle": "Eye level",
+    "movement": "Locked reaction; subject recoil",
+    "lighting": "Soft peach cloud light",
+    "palette": [
+      "#C5A39E",
+      "#ECE3D8",
+      "#976765",
+      "#DCCAC1",
+      "#DDB2A2",
+      "#EBC8B2"
+    ],
+    "description": "A battered stork studies the cloud-made delivery with a wary expression that mixes loyalty and fear.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A battered stork studies the cloud-made delivery with a wary expression that mixes loyalty and fear. Medium close-up, eye level, soft peach cloud light, palette derived from source frame #C5A39E, #ECE3D8, #976765, #DCCAC1, no text or logos.",
+    "i2vPrompt": "Locked reaction; subject recoil; preserve character and environment continuity, 4 seconds, anxious pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
   },
   {
-    id: 8,
-    dimension: '2d',
-    title: 'Seasonal Transformation Wipe',
-    source: 'Reference pattern · seasonal anime',
-    purpose: 'transition',
-    mood: ['transition','seasonal','spring','winter','nature','ghibli','lateral','sakura','snow','변환','전환','봄','겨울','자연','계절'],
-    framing: 'Wide Shot',
-    angle: 'Eye Level',
-    movement: 'Lateral Pan → Dissolve',
-    lighting: 'Spring: soft pink and green / Winter: desaturated blue and white',
-    palette: ['#F9C8D4','#A8D8A8','#B8D4E8','#F5F5F5','#6B9E6B'],
-    description: 'During a lateral pan across one location, cherry petals transform into snowflakes, compressing the passage of seasons into a single shot.',
-    t2iPrompt: 'same location split — left half spring cherry blossoms, right half winter snow, lateral pan transition, anime style, soft pastel tones, Studio Ghibli inspired',
-    i2vPrompt: 'lateral pan across scene, seasonal dissolve mid-pan, cherry petals morphing into snowflakes, 5 seconds',
-    workflow: 'Midjourney v6 (2 season frames) → After Effects lateral wipe morph → DaVinci color split'
-  },
-  // ── Source-verified analysis — Pixar «Geri's Game» ──
-  {
-    id: 9,
-    dimension: '3d',
-    verified: true,
-    title: "Autumn Park Chess Table",
-    source: "Pixar · Geri's Game",
-    purpose: 'establishing',
-    mood: ["establishing","wide","autumn","warm","golden","red foliage","park","peaceful","pixar","nature","가을","공원","설정","넓은","따뜻","고요"],
-    framing: "Wide Shot",
-    angle: "Eye Level / Slightly High",
-    movement: "Static (very slow settle)",
-    lighting: "Natural afternoon light with warm backlight diffused through the leaves",
-    palette: ["#9B6226","#D5A058","#A79053","#C0392B","#6B7B3A","#A9C8E0"],
-    description: "An elderly man sits alone at a green chess table between two benches, playing against himself. Red and yellow foliage establishes a warm, quiet world.",
-    t2iPrompt: "cozy autumn park, a lone elderly man at a green chess table between two park benches, red and golden foliage, warm afternoon backlight, Pixar 3D style, wide establishing shot, painterly bokeh",
-    i2vPrompt: "static wide shot, gentle falling leaves, subtle breeze through the trees, 6 seconds, no camera movement",
-    workflow: "Midjourney v6 (--ar 16:9) → Kling 1.6 (ambient falling leaves) → DaVinci warm autumn grade"
+    "id": 8,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:58",
+    "title": "Difficult Delivery Toss",
+    "source": "Pixar · Partly Cloudy",
+    "purpose": "action",
+    "mood": [
+      "chaotic",
+      "comic",
+      "energetic"
+    ],
+    "framing": "Medium shot",
+    "angle": "Eye level",
+    "movement": "Fast subject motion across locked frame",
+    "lighting": "Warm rim light against mauve clouds",
+    "palette": [
+      "#35273E",
+      "#D5A99F",
+      "#C79B97",
+      "#B1827E",
+      "#6E5764",
+      "#DFBAAF"
+    ],
+    "description": "The gray cloud launches another unruly creation toward the stork, staging the gag through abrupt motion.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The gray cloud launches another unruly creation toward the stork, staging the gag through abrupt motion. Medium shot, eye level, warm rim light against mauve clouds, palette derived from source frame #35273E, #D5A99F, #C79B97, #B1827E, no text or logos.",
+    "i2vPrompt": "Fast subject motion across locked frame; preserve character and environment continuity, 4 seconds, chaotic pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
   },
   {
-    id: 10,
-    dimension: '3d',
-    verified: true,
-    title: "Geri's Expressive Close-Up",
-    source: "Pixar · Geri's Game",
-    purpose: 'emotional_cu',
-    mood: ["emotional","close-up","expressive","comedic","sly","warm","character","face","pixar","autumn","red","감정","클로즈업","표정","익살","따뜻"],
-    framing: "Close-up (3/4)",
-    angle: "Eye Level",
-    movement: "Static + subtle handheld",
-    lighting: "Soft side light, warm facial highlights, and red autumn bokeh behind him",
-    palette: ["#912C30","#A15E57","#C97A5A","#AFCED9","#2A211C","#8A8A8A"],
-    description: "Geri's weathered face fills the frame as a sly smile tests his opponent—himself. Soft red foliage bokeh concentrates attention on the performance.",
-    t2iPrompt: "extreme close-up of an elderly man, expressive sly smile, round glasses, wispy white hair, warm side lighting, blurred red autumn foliage background, Pixar 3D render, fine character detail",
-    i2vPrompt: "static close-up, subtle eyebrow raise into a sly smile, eyes dart sideways, 4 seconds, shallow depth of field",
-    workflow: "Midjourney v6 (character reference) → Runway Gen-3 (facial micro-motion) → After Effects subtle warmth"
+    "id": 9,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "02:56",
+    "title": "Blue Storm Separation",
+    "source": "Pixar · Partly Cloudy",
+    "purpose": "transition",
+    "mood": [
+      "hurt",
+      "lonely",
+      "tense"
+    ],
+    "framing": "Close-up",
+    "angle": "Eye level",
+    "movement": "Cut-driven reverse angle; cloud billows",
+    "lighting": "Cool blue storm glow",
+    "palette": [
+      "#3B4257",
+      "#7E89B3",
+      "#A5B5E0",
+      "#769DD8",
+      "#C0CAE6",
+      "#68708B"
+    ],
+    "description": "The gray cloud darkens as the stork departs, using a cool color shift to bridge comedy into rejection.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The gray cloud darkens as the stork departs, using a cool color shift to bridge comedy into rejection. Close-up, eye level, cool blue storm glow, palette derived from source frame #3B4257, #7E89B3, #A5B5E0, #769DD8, no text or logos.",
+    "i2vPrompt": "Cut-driven reverse angle; cloud billows; preserve character and environment continuity, 4 seconds, hurt pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
   },
   {
-    id: 11,
-    dimension: '3d',
-    verified: true,
-    title: "Chess King Insert",
-    source: "Pixar · Geri's Game",
-    purpose: 'transition',
-    mood: ["transition","insert","detail","shallow focus","tension","cutaway","stakes","pixar","전환","인서트","디테일","긴장"],
-    framing: "Extreme Close-up (Insert)",
-    angle: "Low / Table Level",
-    movement: "Rack Focus → Cut",
-    lighting: "Shallow depth of field: the king is sharp while the green bench and foliage dissolve into bokeh",
-    palette: ["#E7A252","#DC8E34","#9E5F24","#6E6327","#CCD9DA","#D36E2E"],
-    description: "A golden king stands sharp in the foreground while the bench and foliage blur behind it. A hand enters low in frame, turning the insert into a bridge between the two performed players.",
-    t2iPrompt: "extreme close-up of a golden wooden chess king piece, sharp focus, shallow depth of field, blurred green park bench and autumn bokeh, a hand entering the lower frame, Pixar 3D, warm light",
-    i2vPrompt: "rack focus from the king to the background, a hand reaches into frame, 3 seconds, then cut to reverse angle",
-    workflow: "Midjourney v6 (macro insert) → Kling 1.6 (rack focus) → Premiere shot-reverse-shot cut"
-  },
-  // ── Source-verified analysis — Disney «Paperman» (2D, monochrome with one red accent) ──
-  {
-    id: 12,
-    dimension: '2d',
-    verified: true,
-    title: "1940s City Rooftop Opening",
-    source: "Disney · Paperman",
-    purpose: 'establishing',
-    mood: ["establishing","wide","monochrome","black and white","1940s","city","romance","longing","disney","paperman","흑백","도시","도입","로맨스","넓은"],
-    framing: "Wide / Medium Wide",
-    angle: "Eye Level",
-    movement: "Static (slow drift)",
-    lighting: "Soft high-key monochrome, diffused city haze, and restrained highlights",
-    palette: ["#E9EAE5","#9A9B95","#6F706A","#2F302B","#B0433A"],
-    description: "A man holding papers stands alone against 1940s New York. One red accent in the monochrome world plants the first visual seed of romance.",
-    t2iPrompt: "1940s New York, black-and-white hand-drawn look, a young man in a suit holding papers on a rooftop railing, soft high-key monochrome, city buildings behind, Disney Paperman style, painterly 2D-on-3D",
-    i2vPrompt: "static wide shot, gentle wind ruffles the papers, distant city haze, 5 seconds, minimal camera drift",
-    workflow: "Midjourney v6 (--style raw, b&w) → Runway Gen-3 (subtle wind) → DaVinci monochrome + single red-accent isolation"
+    "id": 10,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "04:32",
+    "title": "Sunset Reconciliation",
+    "source": "Pixar · Partly Cloudy",
+    "purpose": "establishing",
+    "mood": [
+      "relieved",
+      "affectionate",
+      "warm"
+    ],
+    "framing": "Wide two-shot",
+    "angle": "Eye level",
+    "movement": "Slow pullback",
+    "lighting": "Deep rose sunset backlight",
+    "palette": [
+      "#3B1B28",
+      "#662C3E",
+      "#6B3C60",
+      "#98515F",
+      "#88414E",
+      "#C5806B"
+    ],
+    "description": "Cloud and stork reunite against a rose sky, widening the frame to restore their shared world.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: Cloud and stork reunite against a rose sky, widening the frame to restore their shared world. Wide two-shot, eye level, deep rose sunset backlight, palette derived from source frame #3B1B28, #662C3E, #6B3C60, #98515F, no text or logos.",
+    "i2vPrompt": "Slow pullback; preserve character and environment continuity, 4 seconds, relieved pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
   },
   {
-    id: 13,
-    dimension: '2d',
-    verified: true,
-    title: "Wistful Expression Close-Up",
-    source: "Disney · Paperman",
-    purpose: 'emotional_cu',
-    mood: ["emotional","close-up","longing","monochrome","wistful","yearning","disney","paperman","흑백","감정","클로즈업","그리움","무기력"],
-    framing: "Close-up",
-    angle: "Eye Level / Slightly Low",
-    movement: "Static + subtle",
-    lighting: "Soft monochrome side light, half the face in shadow, with diffused window light",
-    palette: ["#EDEEE8","#979893","#5B5C57","#30302E","#B0433A"],
-    description: "A close-up catches the man looking listlessly through the window before memory sharpens his gaze. Gentle monochrome contrast quietly reveals his longing.",
-    t2iPrompt: "black-and-white close-up of a young man's face, wistful longing expression, soft monochrome side lighting, window diffusion, Disney Paperman hand-drawn look, delicate 2D shading",
-    i2vPrompt: "static close-up, eyes drift toward the window, a faint sigh, 4 seconds, shallow focus",
-    workflow: "Midjourney v6 (b&w portrait) → Kling 1.6 (facial micro-motion) → After Effects monochrome grade"
+    "id": 11,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "00:36",
+    "title": "Boat Beneath the Moon",
+    "source": "Pixar · La Luna",
+    "purpose": "establishing",
+    "mood": [
+      "mysterious",
+      "quiet",
+      "nocturnal"
+    ],
+    "framing": "Extreme wide shot",
+    "angle": "Eye level",
+    "movement": "Slow lateral drift",
+    "lighting": "Moonlit low-key blue",
+    "palette": [
+      "#000000",
+      "#0B1A3A",
+      "#132C54",
+      "#070E24",
+      "#000002",
+      "#010001"
+    ],
+    "description": "A tiny wooden boat crosses a dark sea beneath the moon, establishing isolation and scale.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A tiny wooden boat crosses a dark sea beneath the moon, establishing isolation and scale. Extreme wide shot, eye level, moonlit low-key blue, palette derived from source frame #000000, #0B1A3A, #132C54, #070E24, no text or logos.",
+    "i2vPrompt": "Slow lateral drift; preserve character and environment continuity, 4 seconds, mysterious pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
   },
   {
-    id: 14,
-    dimension: '2d',
-    verified: true,
-    title: "Paper Airplanes Through the City",
-    source: "Disney · Paperman",
-    purpose: 'action',
-    mood: ["action","kinetic","paper airplanes","flight","dynamic","climax","swarm","disney","paperman","흑백","종이비행기","역동","비행"],
-    framing: "Wide / High Angle",
-    angle: "High Overhead",
-    movement: "Dynamic sweeping follow",
-    lighting: "Monochrome urban daylight, long shadows, and high-contrast asphalt",
-    palette: ["#EDEEEA","#A1A29C","#4C4D48","#2C2D28","#B0433A"],
-    description: "A swarm of paper airplanes surges through city streets. The monochrome overhead view converts the story's restrained romance into an explosive kinetic climax.",
-    t2iPrompt: "high overhead angle of a black-and-white city street, a swarm of paper airplanes sweeping through the air between buildings, long shadows, high contrast, Disney Paperman 2D style",
-    i2vPrompt: "sweeping follow of paper airplanes flying through the street, dynamic overhead motion, planes swirling toward a figure, 4 seconds",
-    workflow: "Midjourney v6 (b&w cityscape) → Runway Gen-3 (motion brush on planes) → Premiere kinetic edit"
+    "id": 12,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:48",
+    "title": "Boy Between Traditions",
+    "source": "Pixar · La Luna",
+    "purpose": "emotional_cu",
+    "mood": [
+      "curious",
+      "uncertain",
+      "intimate"
+    ],
+    "framing": "Medium close-up",
+    "angle": "Eye level",
+    "movement": "Locked reaction",
+    "lighting": "Dim moonlight with soft facial fill",
+    "palette": [
+      "#000000",
+      "#1E202C",
+      "#444853",
+      "#0E0A0D",
+      "#000002",
+      "#000303"
+    ],
+    "description": "The boy watches the two adults from the boat, his face held between their competing expectations.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The boy watches the two adults from the boat, his face held between their competing expectations. Medium close-up, eye level, dim moonlight with soft facial fill, palette derived from source frame #000000, #1E202C, #444853, #0E0A0D, no text or logos.",
+    "i2vPrompt": "Locked reaction; preserve character and environment continuity, 4 seconds, curious pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 13,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "02:54",
+    "title": "First Step on Starlight",
+    "source": "Pixar · La Luna",
+    "purpose": "action",
+    "mood": [
+      "awed",
+      "adventurous",
+      "magical"
+    ],
+    "framing": "Medium wide shot",
+    "angle": "Low angle",
+    "movement": "Upward follow as the boy climbs",
+    "lighting": "Warm star glow against blue night",
+    "palette": [
+      "#1C2936",
+      "#DB9F66",
+      "#2D3848",
+      "#987359",
+      "#F9DD8E",
+      "#7E463E"
+    ],
+    "description": "The boy climbs onto a mound of glowing stars, converting discovery into physical ascent.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The boy climbs onto a mound of glowing stars, converting discovery into physical ascent. Medium wide shot, low angle, warm star glow against blue night, palette derived from source frame #1C2936, #DB9F66, #2D3848, #987359, no text or logos.",
+    "i2vPrompt": "Upward follow as the boy climbs; preserve character and environment continuity, 4 seconds, awed pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 14,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "03:58",
+    "title": "Three Figures on the Moon",
+    "source": "Pixar · La Luna",
+    "purpose": "transition",
+    "mood": [
+      "contemplative",
+      "magical",
+      "suspended"
+    ],
+    "framing": "Wide shot",
+    "angle": "High angle",
+    "movement": "Slow pan across figures",
+    "lighting": "Low-key blue with scattered gold practical glow",
+    "palette": [
+      "#1C1F38",
+      "#121825",
+      "#2F3041",
+      "#161D32",
+      "#5A555E",
+      "#A79475"
+    ],
+    "description": "Three figures pause across the lunar surface, a quiet spatial bridge before the work resumes.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: Three figures pause across the lunar surface, a quiet spatial bridge before the work resumes. Wide shot, high angle, low-key blue with scattered gold practical glow, palette derived from source frame #1C1F38, #121825, #2F3041, #161D32, no text or logos.",
+    "i2vPrompt": "Slow pan across figures; preserve character and environment continuity, 4 seconds, contemplative pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 15,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "05:36",
+    "title": "Luminous Lunar Resolution",
+    "source": "Pixar · La Luna",
+    "purpose": "establishing",
+    "mood": [
+      "wonder",
+      "completion",
+      "celebratory"
+    ],
+    "framing": "Extreme wide shot",
+    "angle": "Slightly high angle",
+    "movement": "Slow pullback",
+    "lighting": "Radiant golden star light",
+    "palette": [
+      "#422131",
+      "#F0C08D",
+      "#D38B6D",
+      "#924F45",
+      "#6A3437",
+      "#FBE6B0"
+    ],
+    "description": "The cleaned moon glows around the tiny workers, closing on a renewed view of the celestial workplace.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The cleaned moon glows around the tiny workers, closing on a renewed view of the celestial workplace. Extreme wide shot, slightly high angle, radiant golden star light, palette derived from source frame #422131, #F0C08D, #D38B6D, #924F45, no text or logos.",
+    "i2vPrompt": "Slow pullback; preserve character and environment continuity, 4 seconds, wonder pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 16,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "00:32",
+    "title": "Chess Case Opening",
+    "source": "Pixar · Geri's Game",
+    "purpose": "establishing",
+    "mood": [
+      "methodical",
+      "cozy",
+      "anticipatory"
+    ],
+    "framing": "Insert close-up",
+    "angle": "High angle",
+    "movement": "Locked-off; hands enter frame",
+    "lighting": "Warm afternoon side light",
+    "palette": [
+      "#301B07",
+      "#885920",
+      "#5A3714",
+      "#502C0E",
+      "#D69447",
+      "#F1C06B"
+    ],
+    "description": "Weathered hands open a wooden chess case, introducing the game through its tactile ritual.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: Weathered hands open a wooden chess case, introducing the game through its tactile ritual. Insert close-up, high angle, warm afternoon side light, palette derived from source frame #301B07, #885920, #5A3714, #502C0E, no text or logos.",
+    "i2vPrompt": "Locked-off; hands enter frame; preserve character and environment continuity, 4 seconds, methodical pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 17,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:14",
+    "title": "Opponent Chair Switch",
+    "source": "Pixar · Geri's Game",
+    "purpose": "emotional_cu",
+    "mood": [
+      "mischievous",
+      "playful",
+      "intimate"
+    ],
+    "framing": "Medium shot",
+    "angle": "Eye level",
+    "movement": "Quick pan with chair change",
+    "lighting": "Warm park light through autumn leaves",
+    "palette": [
+      "#403219",
+      "#C0A069",
+      "#94653D",
+      "#A98952",
+      "#99412A",
+      "#D3C7A4"
+    ],
+    "description": "Geri shifts seats and posture to become his own opponent, letting performance define the second character.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: Geri shifts seats and posture to become his own opponent, letting performance define the second character. Medium shot, eye level, warm park light through autumn leaves, palette derived from source frame #403219, #C0A069, #94653D, #A98952, no text or logos.",
+    "i2vPrompt": "Quick pan with chair change; preserve character and environment continuity, 4 seconds, mischievous pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 18,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "02:06",
+    "title": "Sly Player Close-Up",
+    "source": "Pixar · Geri's Game",
+    "purpose": "action",
+    "mood": [
+      "competitive",
+      "comic",
+      "alert"
+    ],
+    "framing": "Close-up",
+    "angle": "Eye level",
+    "movement": "Sharp head and eye movement",
+    "lighting": "Warm side light with autumn bokeh",
+    "palette": [
+      "#743B28",
+      "#382716",
+      "#A37350",
+      "#B39B5D",
+      "#DEC493",
+      "#B73E3A"
+    ],
+    "description": "A sly glance and sudden move punctuate the match as Geri accelerates the contest.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A sly glance and sudden move punctuate the match as Geri accelerates the contest. Close-up, eye level, warm side light with autumn bokeh, palette derived from source frame #743B28, #382716, #A37350, #B39B5D, no text or logos.",
+    "i2vPrompt": "Sharp head and eye movement; preserve character and environment continuity, 4 seconds, competitive pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 19,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "02:56",
+    "title": "King Piece Bridge",
+    "source": "Pixar · Geri's Game",
+    "purpose": "transition",
+    "mood": [
+      "tense",
+      "precise",
+      "anticipatory"
+    ],
+    "framing": "Extreme close-up insert",
+    "angle": "Table-level low angle",
+    "movement": "Rack focus; hand enters",
+    "lighting": "Golden reflected light",
+    "palette": [
+      "#CF7B33",
+      "#915522",
+      "#E6B560",
+      "#8E7834",
+      "#DEDAB1",
+      "#BD9443"
+    ],
+    "description": "A chess king fills the foreground while a hand enters, bridging opposing sides of the match.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A chess king fills the foreground while a hand enters, bridging opposing sides of the match. Extreme close-up insert, table-level low angle, golden reflected light, palette derived from source frame #CF7B33, #915522, #E6B560, #8E7834, no text or logos.",
+    "i2vPrompt": "Rack focus; hand enters; preserve character and environment continuity, 4 seconds, tense pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 20,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "04:04",
+    "title": "Victorious Smile",
+    "source": "Pixar · Geri's Game",
+    "purpose": "emotional_cu",
+    "mood": [
+      "satisfied",
+      "tender",
+      "comic"
+    ],
+    "framing": "Medium close-up",
+    "angle": "Eye level",
+    "movement": "Gentle settle",
+    "lighting": "Warm soft side light",
+    "palette": [
+      "#643D2B",
+      "#9E6C43",
+      "#362618",
+      "#B2954E",
+      "#8A442F",
+      "#DAB16B"
+    ],
+    "description": "Geri relaxes into a quiet smile after the game, holding the payoff on his weathered face.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: Geri relaxes into a quiet smile after the game, holding the payoff on his weathered face. Medium close-up, eye level, warm soft side light, palette derived from source frame #643D2B, #9E6C43, #362618, #B2954E, no text or logos.",
+    "i2vPrompt": "Gentle settle; preserve character and environment continuity, 4 seconds, satisfied pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 21,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "00:34",
+    "title": "Interview in Darkness",
+    "source": "Pixar · Jack-Jack Attack",
+    "purpose": "establishing",
+    "mood": [
+      "confessional",
+      "uneasy",
+      "comic"
+    ],
+    "framing": "Medium close-up",
+    "angle": "Eye level",
+    "movement": "Locked interview frame",
+    "lighting": "Low-key frontal pool of light",
+    "palette": [
+      "#010101",
+      "#383030",
+      "#615453",
+      "#090707",
+      "#181213",
+      "#AA9090"
+    ],
+    "description": "A babysitter sits isolated against darkness, establishing the story as a nervous recollection.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A babysitter sits isolated against darkness, establishing the story as a nervous recollection. Medium close-up, eye level, low-key frontal pool of light, palette derived from source frame #010101, #383030, #615453, #090707, no text or logos.",
+    "i2vPrompt": "Locked interview frame; preserve character and environment continuity, 4 seconds, confessional pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 22,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:18",
+    "title": "Kitchen Alarm Reaction",
+    "source": "Pixar · Jack-Jack Attack",
+    "purpose": "emotional_cu",
+    "mood": [
+      "alarmed",
+      "comic",
+      "frantic"
+    ],
+    "framing": "Medium shot",
+    "angle": "Eye level",
+    "movement": "Fast pan and recoil",
+    "lighting": "Warm practical interior light",
+    "palette": [
+      "#1A0A04",
+      "#4F301F",
+      "#6D452E",
+      "#2D180E",
+      "#451F0D",
+      "#B17B57"
+    ],
+    "description": "The babysitter recoils in the kitchen as the baby’s behavior breaks the calm domestic setup.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The babysitter recoils in the kitchen as the baby’s behavior breaks the calm domestic setup. Medium shot, eye level, warm practical interior light, palette derived from source frame #1A0A04, #4F301F, #6D452E, #2D180E, no text or logos.",
+    "i2vPrompt": "Fast pan and recoil; preserve character and environment continuity, 4 seconds, alarmed pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 23,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "02:04",
+    "title": "Hallway Power Burst",
+    "source": "Pixar · Jack-Jack Attack",
+    "purpose": "action",
+    "mood": [
+      "dangerous",
+      "frantic",
+      "supernatural"
+    ],
+    "framing": "Wide shot",
+    "angle": "Slightly low angle",
+    "movement": "Rapid follow and subject blur",
+    "lighting": "Low-key interior with hot effect light",
+    "palette": [
+      "#3C2B24",
+      "#1C1410",
+      "#0F0C09",
+      "#16120E",
+      "#6D4E46",
+      "#AB7F78"
+    ],
+    "description": "The baby’s power erupts in the hallway while the babysitter scrambles through the dark space.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The baby’s power erupts in the hallway while the babysitter scrambles through the dark space. Wide shot, slightly low angle, low-key interior with hot effect light, palette derived from source frame #3C2B24, #1C1410, #0F0C09, #16120E, no text or logos.",
+    "i2vPrompt": "Rapid follow and subject blur; preserve character and environment continuity, 4 seconds, dangerous pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 24,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "02:44",
+    "title": "Smoke Outside the House",
+    "source": "Pixar · Jack-Jack Attack",
+    "purpose": "transition",
+    "mood": [
+      "aftermath",
+      "absurd",
+      "uneasy"
+    ],
+    "framing": "Wide exterior",
+    "angle": "Eye level",
+    "movement": "Locked exterior; smoke drifts",
+    "lighting": "Flat daylight through smoke",
+    "palette": [
+      "#735C54",
+      "#BF997F",
+      "#AA8779",
+      "#B4907D",
+      "#9F7E70",
+      "#C6A084"
+    ],
+    "description": "Smoke hangs around the suburban house, cutting from interior chaos to an exterior consequence.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: Smoke hangs around the suburban house, cutting from interior chaos to an exterior consequence. Wide exterior, eye level, flat daylight through smoke, palette derived from source frame #735C54, #BF997F, #AA8779, #B4907D, no text or logos.",
+    "i2vPrompt": "Locked exterior; smoke drifts; preserve character and environment continuity, 4 seconds, aftermath pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 25,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "03:16",
+    "title": "Intruder Recognition",
+    "source": "Pixar · Jack-Jack Attack",
+    "purpose": "emotional_cu",
+    "mood": [
+      "suspicious",
+      "tense",
+      "comic"
+    ],
+    "framing": "Medium close-up",
+    "angle": "Eye level",
+    "movement": "Slow push-in",
+    "lighting": "Low-key warm side light",
+    "palette": [
+      "#291E18",
+      "#0C0704",
+      "#522921",
+      "#704D42",
+      "#49130F",
+      "#D9977E"
+    ],
+    "description": "A shadowed visitor studies the room, holding recognition and uncertainty in a tight reaction.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A shadowed visitor studies the room, holding recognition and uncertainty in a tight reaction. Medium close-up, eye level, low-key warm side light, palette derived from source frame #291E18, #0C0704, #522921, #704D42, no text or logos.",
+    "i2vPrompt": "Slow push-in; preserve character and environment continuity, 4 seconds, suspicious pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 26,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "00:30",
+    "title": "Island in the Pacific",
+    "source": "Pixar · Lava",
+    "purpose": "establishing",
+    "mood": [
+      "serene",
+      "expansive",
+      "lonely"
+    ],
+    "framing": "Extreme wide shot",
+    "angle": "High aerial angle",
+    "movement": "Slow aerial drift",
+    "lighting": "Bright tropical daylight",
+    "palette": [
+      "#5E6F75",
+      "#0D0E0F",
+      "#5A9BE5",
+      "#80BDE5",
+      "#A3DBE4",
+      "#7AA1C4"
+    ],
+    "description": "A single volcanic island sits in a broad blue ocean, making its isolation immediately legible.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A single volcanic island sits in a broad blue ocean, making its isolation immediately legible. Extreme wide shot, high aerial angle, bright tropical daylight, palette derived from source frame #5E6F75, #0D0E0F, #5A9BE5, #80BDE5, no text or logos.",
+    "i2vPrompt": "Slow aerial drift; preserve character and environment continuity, 4 seconds, serene pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 27,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:22",
+    "title": "Volcano Under Stars",
+    "source": "Pixar · Lava",
+    "purpose": "emotional_cu",
+    "mood": [
+      "yearning",
+      "nocturnal",
+      "romantic"
+    ],
+    "framing": "Wide portrait shot",
+    "angle": "Low angle",
+    "movement": "Slow push-in",
+    "lighting": "Cool moonlight with faint warm lava glow",
+    "palette": [
+      "#71BEE1",
+      "#10161A",
+      "#5195C6",
+      "#95CFE1",
+      "#A9E0EA",
+      "#699CC8"
+    ],
+    "description": "The volcano sings beneath a starry sky, its face small against the night and open ocean.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The volcano sings beneath a starry sky, its face small against the night and open ocean. Wide portrait shot, low angle, cool moonlight with faint warm lava glow, palette derived from source frame #71BEE1, #10161A, #5195C6, #95CFE1, no text or logos.",
+    "i2vPrompt": "Slow push-in; preserve character and environment continuity, 4 seconds, yearning pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 28,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "02:12",
+    "title": "Underwater Awakening",
+    "source": "Pixar · Lava",
+    "purpose": "action",
+    "mood": [
+      "hopeful",
+      "awakening",
+      "magical"
+    ],
+    "framing": "Medium close-up",
+    "angle": "Low angle",
+    "movement": "Upward rise with drifting particles",
+    "lighting": "Deep blue underwater light",
+    "palette": [
+      "#234EA6",
+      "#010512",
+      "#1B3172",
+      "#0E2468",
+      "#3477D0",
+      "#46A7EC"
+    ],
+    "description": "A submerged volcano opens her eyes as blue water and particles move around her face.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A submerged volcano opens her eyes as blue water and particles move around her face. Medium close-up, low angle, deep blue underwater light, palette derived from source frame #234EA6, #010512, #1B3172, #0E2468, no text or logos.",
+    "i2vPrompt": "Upward rise with drifting particles; preserve character and environment continuity, 4 seconds, hopeful pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 29,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "03:04",
+    "title": "Island Breaking the Surface",
+    "source": "Pixar · Lava",
+    "purpose": "transition",
+    "mood": [
+      "urgent",
+      "transformative",
+      "dramatic"
+    ],
+    "framing": "Wide shot",
+    "angle": "Water-level angle",
+    "movement": "Vertical rise through spray",
+    "lighting": "Cool daylight with bright foam",
+    "palette": [
+      "#151417",
+      "#9BCFF4",
+      "#77737E",
+      "#8C868E",
+      "#A3B0C0",
+      "#DCE2E7"
+    ],
+    "description": "A new island rises through ocean spray, bridging underwater longing to the surface world.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A new island rises through ocean spray, bridging underwater longing to the surface world. Wide shot, water-level angle, cool daylight with bright foam, palette derived from source frame #151417, #9BCFF4, #77737E, #8C868E, no text or logos.",
+    "i2vPrompt": "Vertical rise through spray; preserve character and environment continuity, 4 seconds, urgent pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 30,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "04:18",
+    "title": "Dark Ocean Low Point",
+    "source": "Pixar · Lava",
+    "purpose": "emotional_cu",
+    "mood": [
+      "grieving",
+      "isolated",
+      "subdued"
+    ],
+    "framing": "Close-up",
+    "angle": "Eye level",
+    "movement": "Very slow drift",
+    "lighting": "Near-black underwater ambient light",
+    "palette": [
+      "#0B1D20",
+      "#0F262B",
+      "#000101",
+      "#091517",
+      "#050E10",
+      "#1E424A"
+    ],
+    "description": "The submerged figure recedes into dark water, concentrating the story’s lowest emotional beat.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The submerged figure recedes into dark water, concentrating the story’s lowest emotional beat. Close-up, eye level, near-black underwater ambient light, palette derived from source frame #0B1D20, #0F262B, #000101, #091517, no text or logos.",
+    "i2vPrompt": "Very slow drift; preserve character and environment continuity, 4 seconds, grieving pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 31,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "00:34",
+    "title": "Farmhouse at Night",
+    "source": "Pixar · Lifted",
+    "purpose": "establishing",
+    "mood": [
+      "quiet",
+      "ominous",
+      "rural"
+    ],
+    "framing": "Extreme wide shot",
+    "angle": "Eye level",
+    "movement": "Locked-off; subtle atmospheric drift",
+    "lighting": "Low-key moonlight",
+    "palette": [
+      "#01090C",
+      "#111B1F",
+      "#070F11",
+      "#000A0C",
+      "#030505",
+      "#060A0A"
+    ],
+    "description": "A lone farmhouse and windmill sit in darkness before the alien test begins.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A lone farmhouse and windmill sit in darkness before the alien test begins. Extreme wide shot, eye level, low-key moonlight, palette derived from source frame #01090C, #111B1F, #070F11, #000A0C, no text or logos.",
+    "i2vPrompt": "Locked-off; subtle atmospheric drift; preserve character and environment continuity, 4 seconds, quiet pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 32,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:10",
+    "title": "Examiner Watches",
+    "source": "Pixar · Lifted",
+    "purpose": "emotional_cu",
+    "mood": [
+      "stern",
+      "restrained",
+      "evaluative"
+    ],
+    "framing": "Medium close-up",
+    "angle": "Eye level",
+    "movement": "Locked reaction",
+    "lighting": "Cool control-room fill",
+    "palette": [
+      "#1C3E3B",
+      "#1B6C51",
+      "#BDCCD2",
+      "#60968C",
+      "#8ABCB7",
+      "#6A7077"
+    ],
+    "description": "The examiner watches without expression, turning a silent reaction into pressure on the trainee.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The examiner watches without expression, turning a silent reaction into pressure on the trainee. Medium close-up, eye level, cool control-room fill, palette derived from source frame #1C3E3B, #1B6C51, #BDCCD2, #60968C, no text or logos.",
+    "i2vPrompt": "Locked reaction; preserve character and environment continuity, 4 seconds, stern pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 33,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:52",
+    "title": "Trainee at the Console",
+    "source": "Pixar · Lifted",
+    "purpose": "action",
+    "mood": [
+      "overwhelmed",
+      "comic",
+      "frantic"
+    ],
+    "framing": "Medium shot",
+    "angle": "Slightly high angle",
+    "movement": "Rapid hand movement; snap pans",
+    "lighting": "Cool metallic console light",
+    "palette": [
+      "#363F3E",
+      "#738484",
+      "#84979E",
+      "#AAADB7",
+      "#BACBD1",
+      "#8CAFA6"
+    ],
+    "description": "The trainee searches a vast switchboard, hands darting across identical controls.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The trainee searches a vast switchboard, hands darting across identical controls. Medium shot, slightly high angle, cool metallic console light, palette derived from source frame #363F3E, #738484, #84979E, #AAADB7, no text or logos.",
+    "i2vPrompt": "Rapid hand movement; snap pans; preserve character and environment continuity, 4 seconds, overwhelmed pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 34,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "02:54",
+    "title": "Blue Tractor Beam",
+    "source": "Pixar · Lifted",
+    "purpose": "transition",
+    "mood": [
+      "tense",
+      "uncanny",
+      "suspended"
+    ],
+    "framing": "Wide shot",
+    "angle": "High angle",
+    "movement": "Vertical beam movement",
+    "lighting": "Saturated blue beam in low-key room",
+    "palette": [
+      "#112954",
+      "#101F33",
+      "#061329",
+      "#091E49",
+      "#1953A3",
+      "#8CCCF5"
+    ],
+    "description": "A blue tractor beam lifts the sleeping subject, connecting the control room to the bedroom below.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A blue tractor beam lifts the sleeping subject, connecting the control room to the bedroom below. Wide shot, high angle, saturated blue beam in low-key room, palette derived from source frame #112954, #101F33, #061329, #091E49, no text or logos.",
+    "i2vPrompt": "Vertical beam movement; preserve character and environment continuity, 4 seconds, tense pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 35,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "04:22",
+    "title": "UFO Exit at Dawn",
+    "source": "Pixar · Lifted",
+    "purpose": "action",
+    "mood": [
+      "chaotic",
+      "relieved",
+      "comic"
+    ],
+    "framing": "Extreme wide shot",
+    "angle": "Eye level",
+    "movement": "Fast lateral departure",
+    "lighting": "Muted dawn ambient light",
+    "palette": [
+      "#191F1E",
+      "#52504B",
+      "#6E675F",
+      "#293439",
+      "#41392A",
+      "#9E9987"
+    ],
+    "description": "The craft departs across the rural horizon after the test, leaving visible consequences behind.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The craft departs across the rural horizon after the test, leaving visible consequences behind. Extreme wide shot, eye level, muted dawn ambient light, palette derived from source frame #191F1E, #52504B, #6E675F, #293439, no text or logos.",
+    "i2vPrompt": "Fast lateral departure; preserve character and environment continuity, 4 seconds, chaotic pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 36,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "00:34",
+    "title": "Dorm Party Setup",
+    "source": "Pixar · Party Central",
+    "purpose": "establishing",
+    "mood": [
+      "expectant",
+      "youthful",
+      "awkward"
+    ],
+    "framing": "Wide shot",
+    "angle": "Eye level",
+    "movement": "Slow pan across room",
+    "lighting": "Warm practical party light",
+    "palette": [
+      "#7B582A",
+      "#4E2811",
+      "#1C0C06",
+      "#95753C",
+      "#6F3324",
+      "#AC9C51"
+    ],
+    "description": "A decorated dorm room waits for guests, establishing the party space before the plan unravels.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A decorated dorm room waits for guests, establishing the party space before the plan unravels. Wide shot, eye level, warm practical party light, palette derived from source frame #7B582A, #4E2811, #1C0C06, #95753C, no text or logos.",
+    "i2vPrompt": "Slow pan across room; preserve character and environment continuity, 4 seconds, expectant pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 37,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:24",
+    "title": "Dance Floor Reaction",
+    "source": "Pixar · Party Central",
+    "purpose": "emotional_cu",
+    "mood": [
+      "excited",
+      "nervous",
+      "comic"
+    ],
+    "framing": "Medium close-up",
+    "angle": "Eye level",
+    "movement": "Handheld-like sway",
+    "lighting": "Saturated red and violet party light",
+    "palette": [
+      "#130004",
+      "#750119",
+      "#3C010F",
+      "#56338C",
+      "#5A1977",
+      "#630929"
+    ],
+    "description": "A student reacts amid pulsing party color, grounding the spectacle in an anxious face.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A student reacts amid pulsing party color, grounding the spectacle in an anxious face. Medium close-up, eye level, saturated red and violet party light, palette derived from source frame #130004, #750119, #3C010F, #56338C, no text or logos.",
+    "i2vPrompt": "Handheld-like sway; preserve character and environment continuity, 4 seconds, excited pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 38,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "02:16",
+    "title": "Doorway Sneak",
+    "source": "Pixar · Party Central",
+    "purpose": "action",
+    "mood": [
+      "secretive",
+      "kinetic",
+      "mischievous"
+    ],
+    "framing": "Medium wide shot",
+    "angle": "Low angle",
+    "movement": "Quick tracking move",
+    "lighting": "Low-key magenta spill",
+    "palette": [
+      "#0C010B",
+      "#1B0012",
+      "#060005",
+      "#331325",
+      "#24051C",
+      "#21021B"
+    ],
+    "description": "Characters hurry through a dark doorway as the party operation shifts locations.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: Characters hurry through a dark doorway as the party operation shifts locations. Medium wide shot, low angle, low-key magenta spill, palette derived from source frame #0C010B, #1B0012, #060005, #331325, no text or logos.",
+    "i2vPrompt": "Quick tracking move; preserve character and environment continuity, 4 seconds, secretive pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 39,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "03:50",
+    "title": "Food Table Transfer",
+    "source": "Pixar · Party Central",
+    "purpose": "transition",
+    "mood": [
+      "chaotic",
+      "playful",
+      "strange"
+    ],
+    "framing": "Insert / medium shot",
+    "angle": "High angle",
+    "movement": "Cut-driven object movement",
+    "lighting": "Dark practical light with colored spill",
+    "palette": [
+      "#0D0107",
+      "#2D010B",
+      "#040002",
+      "#200513",
+      "#3B1A35",
+      "#2C000A"
+    ],
+    "description": "Party food moves through the improvised portal path, linking two spaces through a visual handoff.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: Party food moves through the improvised portal path, linking two spaces through a visual handoff. Insert / medium shot, high angle, dark practical light with colored spill, palette derived from source frame #0D0107, #2D010B, #040002, #200513, no text or logos.",
+    "i2vPrompt": "Cut-driven object movement; preserve character and environment continuity, 4 seconds, chaotic pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 40,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "05:26",
+    "title": "Group Shock Payoff",
+    "source": "Pixar · Party Central",
+    "purpose": "action",
+    "mood": [
+      "surprised",
+      "comic",
+      "explosive"
+    ],
+    "framing": "Wide group shot",
+    "angle": "Eye level",
+    "movement": "Abrupt recoil across frame",
+    "lighting": "Warm low-key party light",
+    "palette": [
+      "#120A0C",
+      "#050202",
+      "#692C0F",
+      "#A6721E",
+      "#1D0708",
+      "#1C0C0C"
+    ],
+    "description": "The gathered group recoils together at the final party disruption, landing the climax as ensemble action.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The gathered group recoils together at the final party disruption, landing the climax as ensemble action. Wide group shot, eye level, warm low-key party light, palette derived from source frame #120A0C, #050202, #692C0F, #A6721E, no text or logos.",
+    "i2vPrompt": "Abrupt recoil across frame; preserve character and environment continuity, 4 seconds, surprised pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 41,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "00:34",
+    "title": "Empty Italian Piazza",
+    "source": "Pixar · One Man Band",
+    "purpose": "establishing",
+    "mood": [
+      "quiet",
+      "storybook",
+      "expectant"
+    ],
+    "framing": "Extreme wide shot",
+    "angle": "Slightly high angle",
+    "movement": "Slow pan",
+    "lighting": "Soft overcast daylight",
+    "palette": [
+      "#3D3125",
+      "#B5B9B1",
+      "#6B5A48",
+      "#554E45",
+      "#90877A",
+      "#C7D2C7"
+    ],
+    "description": "An empty stone piazza and fountain establish the arena before the musicians compete.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: An empty stone piazza and fountain establish the arena before the musicians compete. Extreme wide shot, slightly high angle, soft overcast daylight, palette derived from source frame #3D3125, #B5B9B1, #6B5A48, #554E45, no text or logos.",
+    "i2vPrompt": "Slow pan; preserve character and environment continuity, 4 seconds, quiet pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 42,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:10",
+    "title": "Tall Musician Looms",
+    "source": "Pixar · One Man Band",
+    "purpose": "emotional_cu",
+    "mood": [
+      "imposing",
+      "theatrical",
+      "comic"
+    ],
+    "framing": "Medium close-up",
+    "angle": "Low angle",
+    "movement": "Slow push-in",
+    "lighting": "Soft directional daylight",
+    "palette": [
+      "#94755A",
+      "#493633",
+      "#695240",
+      "#835D47",
+      "#AE8A6B",
+      "#D7B18C"
+    ],
+    "description": "The tall musician leans into frame, using scale and a low angle to pressure the child.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The tall musician leans into frame, using scale and a low angle to pressure the child. Medium close-up, low angle, soft directional daylight, palette derived from source frame #94755A, #493633, #695240, #835D47, no text or logos.",
+    "i2vPrompt": "Slow push-in; preserve character and environment continuity, 4 seconds, imposing pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 43,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:56",
+    "title": "Child Between Performers",
+    "source": "Pixar · One Man Band",
+    "purpose": "action",
+    "mood": [
+      "competitive",
+      "confused",
+      "lively"
+    ],
+    "framing": "Medium wide shot",
+    "angle": "Eye level",
+    "movement": "Alternating pans and gestures",
+    "lighting": "Diffuse plaza daylight",
+    "palette": [
+      "#574F41",
+      "#292032",
+      "#37302D",
+      "#46362D",
+      "#BDA487",
+      "#82715C"
+    ],
+    "description": "The child turns between two performers as their gestures and instruments compete for attention.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The child turns between two performers as their gestures and instruments compete for attention. Medium wide shot, eye level, diffuse plaza daylight, palette derived from source frame #574F41, #292032, #37302D, #46362D, no text or logos.",
+    "i2vPrompt": "Alternating pans and gestures; preserve character and environment continuity, 4 seconds, competitive pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 44,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "02:44",
+    "title": "Musical Duel Escalation",
+    "source": "Pixar · One Man Band",
+    "purpose": "transition",
+    "mood": [
+      "escalating",
+      "comic",
+      "tense"
+    ],
+    "framing": "Wide two-shot",
+    "angle": "Slightly low angle",
+    "movement": "Whip-pan between performers",
+    "lighting": "Warm neutral daylight",
+    "palette": [
+      "#463829",
+      "#5C483A",
+      "#372D1F",
+      "#846858",
+      "#C7A688",
+      "#4B2D22"
+    ],
+    "description": "The rivals trade increasingly forceful phrases, bridging solicitation into a full musical duel.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The rivals trade increasingly forceful phrases, bridging solicitation into a full musical duel. Wide two-shot, slightly low angle, warm neutral daylight, palette derived from source frame #463829, #5C483A, #372D1F, #846858, no text or logos.",
+    "i2vPrompt": "Whip-pan between performers; preserve character and environment continuity, 4 seconds, escalating pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 45,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "03:46",
+    "title": "Coin Well Resolution",
+    "source": "Pixar · One Man Band",
+    "purpose": "action",
+    "mood": [
+      "decisive",
+      "comic",
+      "satisfying"
+    ],
+    "framing": "Medium shot",
+    "angle": "High angle",
+    "movement": "Quick reach and recoil",
+    "lighting": "Soft shadowed daylight",
+    "palette": [
+      "#2D2622",
+      "#583C2D",
+      "#565045",
+      "#7B523E",
+      "#7F6D5B",
+      "#C09E89"
+    ],
+    "description": "The child acts on the fallen coin, converting the musicians’ rivalry into her own decisive payoff.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The child acts on the fallen coin, converting the musicians’ rivalry into her own decisive payoff. Medium shot, high angle, soft shadowed daylight, palette derived from source frame #2D2622, #583C2D, #565045, #7B523E, no text or logos.",
+    "i2vPrompt": "Quick reach and recoil; preserve character and environment continuity, 4 seconds, decisive pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 46,
+    "dimension": "2d",
+    "verified": true,
+    "timestamp": "00:20",
+    "title": "Platform Encounter",
+    "source": "Disney · Paperman",
+    "purpose": "establishing",
+    "mood": [
+      "chance",
+      "romantic",
+      "restrained"
+    ],
+    "framing": "Medium wide two-shot",
+    "angle": "Eye level",
+    "movement": "Locked-off; wind moves paper",
+    "lighting": "Soft high-key daylight",
+    "palette": [
+      "#95978F",
+      "#7C7E77",
+      "#4C4D47",
+      "#878881",
+      "#F2F3EC",
+      "#BBBCB4"
+    ],
+    "description": "Two commuters share a train platform as a loose page creates their first connection.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: Two commuters share a train platform as a loose page creates their first connection. Medium wide two-shot, eye level, soft high-key daylight, palette derived from source frame #95978F, #7C7E77, #4C4D47, #878881, no text or logos.",
+    "i2vPrompt": "Locked-off; wind moves paper; preserve character and environment continuity, 4 seconds, chance pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 47,
+    "dimension": "2d",
+    "verified": true,
+    "timestamp": "01:04",
+    "title": "Office Window Reach",
+    "source": "Disney · Paperman",
+    "purpose": "emotional_cu",
+    "mood": [
+      "hopeful",
+      "wistful",
+      "urgent"
+    ],
+    "framing": "Medium shot",
+    "angle": "Eye level",
+    "movement": "Small push toward window",
+    "lighting": "Diffuse window light",
+    "palette": [
+      "#40423C",
+      "#B0B1A9",
+      "#CACCC3",
+      "#696A63",
+      "#8B8C84",
+      "#E1E2DB"
+    ],
+    "description": "The office worker leans toward the window after recognizing the woman across the street.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The office worker leans toward the window after recognizing the woman across the street. Medium shot, eye level, diffuse window light, palette derived from source frame #40423C, #B0B1A9, #CACCC3, #696A63, no text or logos.",
+    "i2vPrompt": "Small push toward window; preserve character and environment continuity, 4 seconds, hopeful pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 48,
+    "dimension": "2d",
+    "verified": true,
+    "timestamp": "01:52",
+    "title": "Supervisor Enters",
+    "source": "Disney · Paperman",
+    "purpose": "action",
+    "mood": [
+      "tense",
+      "comic",
+      "interrupted"
+    ],
+    "framing": "Wide office shot",
+    "angle": "Eye level",
+    "movement": "Quick pan and character entrance",
+    "lighting": "High-key window light",
+    "palette": [
+      "#252620",
+      "#4E4F49",
+      "#FAFFF6",
+      "#FDFEF6",
+      "#CDCEC6",
+      "#F9FFF5"
+    ],
+    "description": "A supervisor enters the orderly office, abruptly stopping the paper-plane attempt.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A supervisor enters the orderly office, abruptly stopping the paper-plane attempt. Wide office shot, eye level, high-key window light, palette derived from source frame #252620, #4E4F49, #FAFFF6, #FDFEF6, no text or logos.",
+    "i2vPrompt": "Quick pan and character entrance; preserve character and environment continuity, 4 seconds, tense pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 49,
+    "dimension": "2d",
+    "verified": true,
+    "timestamp": "02:52",
+    "title": "Woman Across the Street",
+    "source": "Disney · Paperman",
+    "purpose": "transition",
+    "mood": [
+      "longing",
+      "attentive",
+      "quiet"
+    ],
+    "framing": "Medium close-up",
+    "angle": "Eye level",
+    "movement": "Cut to held reaction",
+    "lighting": "Soft monochrome daylight",
+    "palette": [
+      "#73746E",
+      "#444640",
+      "#353630",
+      "#53544E",
+      "#A2A39B",
+      "#E3E4DD"
+    ],
+    "description": "The woman appears across the street, a held reverse angle that reconnects the separated characters.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The woman appears across the street, a held reverse angle that reconnects the separated characters. Medium close-up, eye level, soft monochrome daylight, palette derived from source frame #73746E, #444640, #353630, #53544E, no text or logos.",
+    "i2vPrompt": "Cut to held reaction; preserve character and environment continuity, 4 seconds, longing pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 50,
+    "dimension": "2d",
+    "verified": true,
+    "timestamp": "04:06",
+    "title": "Paper Plane Swarm",
+    "source": "Disney · Paperman",
+    "purpose": "transition",
+    "mood": [
+      "magical",
+      "kinetic",
+      "climactic"
+    ],
+    "framing": "Wide shot",
+    "angle": "High angle",
+    "movement": "Sweeping follow through street",
+    "lighting": "High-contrast monochrome daylight",
+    "palette": [
+      "#60615C",
+      "#363731",
+      "#2B2C26",
+      "#FCFDF9",
+      "#454640",
+      "#ACADA8"
+    ],
+    "description": "A swarm of paper planes streams through the city, carrying the story into its final encounter.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A swarm of paper planes streams through the city, carrying the story into its final encounter. Wide shot, high angle, high-contrast monochrome daylight, palette derived from source frame #60615C, #363731, #2B2C26, #FCFDF9, no text or logos.",
+    "i2vPrompt": "Sweeping follow through street; preserve character and environment continuity, 4 seconds, magical pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 51,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "00:34",
+    "title": "Rabbit Backstage",
+    "source": "Pixar · Presto",
+    "purpose": "establishing",
+    "mood": [
+      "hungry",
+      "theatrical",
+      "expectant"
+    ],
+    "framing": "Medium wide shot",
+    "angle": "Eye level",
+    "movement": "Slow lateral drift",
+    "lighting": "Warm low-key backstage practicals",
+    "palette": [
+      "#0F0C09",
+      "#513D2D",
+      "#36261A",
+      "#80654D",
+      "#241B14",
+      "#BB9D81"
+    ],
+    "description": "A rabbit waits in its backstage cage beside theater props, establishing hunger before the act.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: A rabbit waits in its backstage cage beside theater props, establishing hunger before the act. Medium wide shot, eye level, warm low-key backstage practicals, palette derived from source frame #0F0C09, #513D2D, #36261A, #80654D, no text or logos.",
+    "i2vPrompt": "Slow lateral drift; preserve character and environment continuity, 4 seconds, hungry pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 52,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:14",
+    "title": "Magician and Rabbit Standoff",
+    "source": "Pixar · Presto",
+    "purpose": "emotional_cu",
+    "mood": [
+      "annoyed",
+      "comic",
+      "tense"
+    ],
+    "framing": "Medium two-shot",
+    "angle": "Eye level",
+    "movement": "Locked confrontation",
+    "lighting": "Warm tungsten side light",
+    "palette": [
+      "#34281E",
+      "#0E0B09",
+      "#241B13",
+      "#1B1611",
+      "#5C4636",
+      "#A08069"
+    ],
+    "description": "Magician and rabbit face each other backstage, their opposing wants clear in a compact two-shot.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: Magician and rabbit face each other backstage, their opposing wants clear in a compact two-shot. Medium two-shot, eye level, warm tungsten side light, palette derived from source frame #34281E, #0E0B09, #241B13, #1B1611, no text or logos.",
+    "i2vPrompt": "Locked confrontation; preserve character and environment continuity, 4 seconds, annoyed pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 53,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "01:58",
+    "title": "Hat Trick Reversal",
+    "source": "Pixar · Presto",
+    "purpose": "action",
+    "mood": [
+      "surprised",
+      "theatrical",
+      "kinetic"
+    ],
+    "framing": "Medium stage shot",
+    "angle": "Eye level",
+    "movement": "Fast arm motion and snap reframing",
+    "lighting": "Hot red stage light",
+    "palette": [
+      "#491811",
+      "#2D120E",
+      "#B24429",
+      "#661B13",
+      "#822B1D",
+      "#E18857"
+    ],
+    "description": "The stage trick reverses on the magician as the rabbit manipulates the linked hats from backstage.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The stage trick reverses on the magician as the rabbit manipulates the linked hats from backstage. Medium stage shot, eye level, hot red stage light, palette derived from source frame #491811, #2D120E, #B24429, #661B13, no text or logos.",
+    "i2vPrompt": "Fast arm motion and snap reframing; preserve character and environment continuity, 4 seconds, surprised pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 54,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "02:52",
+    "title": "Contorted Stage Beat",
+    "source": "Pixar · Presto",
+    "purpose": "transition",
+    "mood": [
+      "absurd",
+      "suspenseful",
+      "comic"
+    ],
+    "framing": "Medium wide shot",
+    "angle": "Low angle",
+    "movement": "Whip-like subject motion then hold",
+    "lighting": "Warm spotlight against dark theater",
+    "palette": [
+      "#1C110B",
+      "#6F3220",
+      "#36150F",
+      "#582317",
+      "#521811",
+      "#A1583D"
+    ],
+    "description": "The magician lands in an impossible pose, holding a visual punctuation before the next escalation.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: The magician lands in an impossible pose, holding a visual punctuation before the next escalation. Medium wide shot, low angle, warm spotlight against dark theater, palette derived from source frame #1C110B, #6F3220, #36150F, #582317, no text or logos.",
+    "i2vPrompt": "Whip-like subject motion then hold; preserve character and environment continuity, 4 seconds, absurd pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
+  },
+  {
+    "id": 55,
+    "dimension": "3d",
+    "verified": true,
+    "timestamp": "04:12",
+    "title": "Backstage Chase Blur",
+    "source": "Pixar · Presto",
+    "purpose": "transition",
+    "mood": [
+      "frantic",
+      "climactic",
+      "chaotic"
+    ],
+    "framing": "Wide backstage shot",
+    "angle": "Eye level",
+    "movement": "Rapid lateral tracking",
+    "lighting": "Very low-key neutral light",
+    "palette": [
+      "#212324",
+      "#0D0D0F",
+      "#18191A",
+      "#2D2E30",
+      "#131616",
+      "#3A3C3E"
+    ],
+    "description": "Figures streak through the dark backstage corridor, carrying the chase into the final act.",
+    "t2iPrompt": "Copyright-safe animated short keyframe: Figures streak through the dark backstage corridor, carrying the chase into the final act. Wide backstage shot, eye level, very low-key neutral light, palette derived from source frame #212324, #0D0D0F, #18191A, #2D2E30, no text or logos.",
+    "i2vPrompt": "Rapid lateral tracking; preserve character and environment continuity, 4 seconds, frantic pacing, no cuts unless specified.",
+    "workflow": "Source-frame study → approved T2I keyframe → continuity-locked I2V pass → edit and color check"
   }
 ];
 
@@ -945,12 +2361,12 @@ function renderCard(shot, rank = null) {
         <div class="card-head-row">
           <div>
             <div class="purpose-tag">${PURPOSE_LABELS[shot.purpose] || shot.purpose}</div>
-            <div class="card-title">${shot.title}</div>
+            <div class="card-title">${esc(shot.title)}</div>
           </div>
           <div class="tag-col">
-            <span class="source-tag">${shot.source}</span>
+            <span class="source-tag">${esc(shot.source)} · ${esc(shot.timestamp)}</span>
             ${shot.dimension ? `<span class="dim-tag">${shot.dimension.toUpperCase()}</span>` : ''}
-            ${shot.verified ? `<span class="verified-tag">✓ Frame-analyzed</span>` : `<span class="dim-tag">Synthesized</span>`}
+            <span class="verified-tag">✓ Frame-analyzed</span>
           </div>
         </div>
       </div>
@@ -1056,6 +2472,7 @@ const DIM_OPTS = [
 
 let activeFilter = 'all';
 let activeDim = 'all';
+let activeSource = 'all';
 
 function renderFilters() {
   const purpose = FILTER_OPTS.map(f => `
@@ -1064,18 +2481,25 @@ function renderFilters() {
   const dim = DIM_OPTS.map(f => `
     <button class="filter-btn ${f.value === activeDim ? 'active' : ''}"
       onclick="setDim('${f.value}')">${f.label}</button>`).join('');
+  const sources = [...new Set(shots.map(s => s.source))].sort().map(source =>
+    `<option value="${esc(source)}" ${source === activeSource ? 'selected' : ''}>${esc(source)}</option>`
+  ).join('');
   document.getElementById('filters').innerHTML =
     `<span class="filter-group-label">Purpose</span>${purpose}` +
-    `<span class="filter-group-label" style="margin-left:14px">Dimension</span>${dim}`;
+    `<span class="filter-group-label" style="margin-left:14px">Dimension</span>${dim}` +
+    `<label class="filter-group-label" for="sourceFilter" style="margin-left:14px">Studio / source</label>` +
+    `<select class="filter-select" id="sourceFilter" onchange="setSource(this.value)"><option value="all">All studios and films</option>${sources}</select>`;
 }
 
 function setFilter(v) { activeFilter = v; renderFilters(); renderGrid(); }
 function setDim(v)    { activeDim = v;    renderFilters(); renderGrid(); }
+function setSource(v) { activeSource = v; renderFilters(); renderGrid(); }
 
 function renderGrid() {
   const list = shots.filter(s =>
     (activeFilter === 'all' || s.purpose === activeFilter) &&
-    (activeDim === 'all' || s.dimension === activeDim)
+    (activeDim === 'all' || s.dimension === activeDim) &&
+    (activeSource === 'all' || s.source === activeSource)
   );
   document.getElementById('statsBar').innerHTML = `<span>${list.length}</span> shots`;
   document.getElementById('grid').innerHTML = list.length
