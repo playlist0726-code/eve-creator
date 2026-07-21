@@ -105,7 +105,7 @@ GPT-5.6 is used **agentically, not as a single prompt:**
 1. **Director blueprint** (`api/generate-story.js`) — turns one idea into a dense five-act, 12–18-shot blueprint via the **Responses API with strict JSON-schema structured output** ([`lib/story-schema.js`](lib/story-schema.js)). Every shot must cite 2–5 IDs from a **111-ID craft allowlist**; hallucinated citations are dropped server-side.
 2. **The Creator's Room** (`api/creators-room.js`) — a **second GPT-5.6 pass** that role-plays five specialists reviewing the draft and returns a structured critique: per-role verdicts, re-scored dimensions (before → after), and concrete shot revisions ([`lib/crew-schema.js`](lib/crew-schema.js), [`lib/crew-prompt.js`](lib/crew-prompt.js)). This is the self-critique loop.
 
-Both endpoints run server-side (key never exposed), are bounded (`reasoning.effort: low`, hard 40s timeout), validate and repair the model output, and fall back to a **rich deterministic result** so the live demo never breaks.
+Both endpoints run server-side (key never exposed), are bounded (`reasoning.effort: low`, hard 40s timeout), and validate and repair model output. If live generation is unavailable, First Frame identifies its fixed reference result as a curated demo rather than presenting it as the learner's generated story.
 
 ## 🛠 How Codex built this
 
@@ -113,7 +113,7 @@ Codex was the implementation partner across the repository, not a one-off code g
 
 - **Model contracts and safety rails:** Codex iterated the two Responses-API endpoints, strict JSON schemas, 40-second request bounds, server-only key handling, citation/tool allowlists, validation, and deterministic fallbacks (`api/`, `lib/story-schema.js`, `lib/crew-schema.js`).
 - **Agentic creative loop:** Codex implemented and debugged the Creator's Room’s second GPT-5.6 pass, five role-specific critiques, constrained score deltas, before/after shot revisions, and revision application into downstream state (`lib/crew-prompt.js`, `js/eve-crew.js`, `creators_room.html`).
-- **Connected product state:** Codex wired intake → concept → crew → shot design → storyboard, including session persistence, stale-state defenses, curated demos, locked-route recovery, and source badges (`js/eve-state.js` and the five Create pages).
+- **Connected product state:** Codex wired intake → concept → crew → shot design → storyboard, including session persistence, stale-state defenses, curated demo recovery, and source badges (`js/eve-state.js` and the five Create pages).
 - **Inspectable education features:** Codex built the 111-term glossary contract, Film School search, the cited AI Tool Study Library, and local-only Footage Lab analysis using Canvas/WebAudio—without adding a framework or runtime dependency.
 - **Verification loop:** Codex repeatedly audited the live pages and local flows, added six Node contract suites plus CI, and used failures to harden schema compatibility, accessibility, mobile behavior, and fallback reliability (`tests/`, `.github/workflows/ci.yml`).
 

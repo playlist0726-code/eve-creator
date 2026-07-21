@@ -20,7 +20,7 @@ Making even a 3-minute animated short takes weeks of pre-production most people 
 ### What it does
 You enter one idea (mood · genre · scene · premise). First Frame designs the whole plan: story → five-act structure → storyboard → per-shot image (T2I) and video (I2V) prompts → recommended generation tools. It doesn't generate the film — it designs exactly *how* to make it, so you keep authorship. Every choice is grounded in a knowledge base built from frame-by-frame analysis of master animation.
 
-Then the differentiator: **The Creator's Room**. GPT-5.6 role-plays a five-person crew (Director, Writer, Cinematographer, Editor, Test Audience) that critiques your draft against the craft data, applies concrete before/after fixes, and re-scores its hit-potential. You watch the film measurably improve.
+Then the differentiator: **The Creator's Room**. GPT-5.6 role-plays a five-person crew (Director, Writer, Cinematographer, Editor, Test Audience) that critiques your draft against the craft data, applies concrete before/after fixes, and shows how those revisions change its transparent internal rubric score. The score is an explanation aid, not a prediction of audience response or contest success.
 
 **It's built to teach.** Every technique First Frame cites (`low_angle`, `chiaroscuro`, `pixar_spine`, +108 more) is tap-to-learn with a plain-language explanation, and the crew explains *why* each fix works. A beginner finishes with a shootable film **and** a real understanding of the craft — then copies the generation prompts to make it themselves.
 

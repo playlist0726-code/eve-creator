@@ -18,6 +18,13 @@ for(const [file,step] of [['index.html','0 · Intake'],['concept_lab.html','1 ·
   const source=fs.readFileSync(path.join(root,file),'utf8');assert.ok(source.includes(step),file+' missing pipeline step');
 }
 assert.ok(fs.readFileSync(path.join(root,'concept_lab.html'),'utf8').includes('Contest fit'));
+const conceptSource=fs.readFileSync(path.join(root,'concept_lab.html'),'utf8');
+for(const match of conceptSource.matchAll(/ideal:\[(\d+),(\d+)\]/g)){
+  assert.ok(Number(match[1])>=1&&Number(match[2])<=10,'Concept runtime bands must use the 1–10 minute short-film input unit');
+}
+const shotseedSource=fs.readFileSync(path.join(root,'shotseed.html'),'utf8');
+assert.match(shotseedSource,/results-meta\">\"\$\{esc\(input\)\}/,'ShotSeed must escape the displayed user query');
+assert.match(shotseedSource,/kw-chip\">\$\{esc\(k\)\}/,'ShotSeed must escape user-derived match chips');
 
 // Creator's Room: five-role critique loop wired end to end (fallback must be self-sufficient).
 const api=new Map();
