@@ -1,18 +1,27 @@
 {
   "version": 1,
-  "note": "Only publicly watchable work with a verified creator and original source is included. Null shot counts and empty prompt lists mean the creator did not publish those details.",
+  "note": "Public pieces require a named creator, a resolvable HTTPS work source, and production evidence. Empty prompt arrays mean the creator did not publish exact prompts; they are not reconstructed.",
   "pieces": [
     {
       "id": "air-head-shy-kids",
       "title": "Air Head",
-      "creator": {"name": "shy kids", "url": "https://www.shy-kids.com/film"},
+      "creator": {
+        "name": "shy kids",
+        "url": "https://www.shy-kids.com/film"
+      },
       "year": 2024,
       "runtime_seconds": 81,
-      "source": {"platform": "youtube", "url": "https://www.youtube.com/watch?v=G4wJ4WeJrz4", "embed_id": "G4wJ4WeJrz4"},
+      "source": {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=G4wJ4WeJrz4",
+        "embed_id": "G4wJ4WeJrz4"
+      },
       "poster": "https://i.ytimg.com/vi/G4wJ4WeJrz4/maxresdefault.jpg",
       "synopsis": "A man with a yellow balloon for a head reflects on the strange practicalities and possibilities of his life.",
       "recipe": {
-        "tools": ["openai-sora"],
+        "tools": [
+          "openai-sora"
+        ],
         "shot_count": null,
         "workflow_steps": [
           "Write a short script and define the story beats before generating.",
@@ -21,29 +30,56 @@
           "Use conventional VFX, rotoscoping, sound design, colour correction, and editorial timing to finish the film."
         ],
         "prompts": [
-          {"shot": "Published prompt fragment", "text": "Man with a yellow balloon for a head. 35mm film."}
+          {
+            "shot": "Published prompt fragment",
+            "text": "Man with a yellow balloon for a head. 35mm film."
+          }
         ],
-        "craft_ids": ["specificity", "texture_materiality", "montage", "runtime_discipline"]
+        "craft_ids": [
+          "specificity",
+          "texture_materiality",
+          "montage",
+          "runtime_discipline"
+        ],
+        "primary_tool": "openai-sora",
+        "problems_and_solutions": [],
+        "attempts_per_usable_shot": null
       },
-      "tags": ["short film", "surreal", "Sora", "hybrid post-production"],
+      "tags": [
+        "short film",
+        "surreal",
+        "Sora",
+        "hybrid post-production"
+      ],
       "verified_on": "2026-07-21",
       "recipe_sources": [
         "https://openai.com/blog/sora-first-impressions",
         "https://www.fxguide.com/fxfeatured/actually-using-sora/",
         "https://nofilmschool.com/sora-ai-filmmaker-interview"
-      ]
+      ],
+      "historic_tool_note": "Made with a tool that is no longer available.",
+      "current_alternative_id": "google-veo"
     },
     {
       "id": "hardest-part-paul-trillo",
       "title": "The Hardest Part",
-      "creator": {"name": "Paul Trillo", "url": "https://vimeo.com/paultrillo"},
+      "creator": {
+        "name": "Paul Trillo",
+        "url": "https://vimeo.com/paultrillo"
+      },
       "year": 2024,
       "runtime_seconds": 242,
-      "source": {"platform": "youtube", "url": "https://www.youtube.com/watch?v=-Nb-M1GAOX8", "embed_id": "-Nb-M1GAOX8"},
+      "source": {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=-Nb-M1GAOX8",
+        "embed_id": "-Nb-M1GAOX8"
+      },
       "poster": "https://i.ytimg.com/vi/-Nb-M1GAOX8/maxresdefault.jpg",
       "synopsis": "An unbroken dreamlike journey moves through a couple’s imagined life, memory, loss, and the impossibility of going back.",
       "recipe": {
-        "tools": ["openai-sora"],
+        "tools": [
+          "openai-sora"
+        ],
         "shot_count": null,
         "workflow_steps": [
           "Return to a decade-old concept built around an impossible continuous zoom through a couple’s life.",
@@ -52,17 +88,552 @@
           "Direct and edit the generated scenes into one continuous memory journey set to the finished Washed Out track."
         ],
         "prompts": [
-          {"shot": "Bubblegum-to-football-field transition", "text": "We zoom through the bubble it pops and we zoom through the bubblegum and enter an open football field."}
+          {
+            "shot": "Bubblegum-to-football-field transition",
+            "text": "We zoom through the bubble it pops and we zoom through the bubblegum and enter an open football field."
+          }
         ],
-        "craft_ids": ["dolly_in", "match_cut", "montage", "emotional_core"]
+        "craft_ids": [
+          "dolly_in",
+          "match_cut",
+          "montage",
+          "emotional_core"
+        ],
+        "primary_tool": "openai-sora",
+        "problems_and_solutions": [],
+        "attempts_per_usable_shot": null
       },
-      "tags": ["music video", "infinite zoom", "memory", "Sora"],
+      "tags": [
+        "music video",
+        "infinite zoom",
+        "memory",
+        "Sora"
+      ],
       "verified_on": "2026-07-21",
       "recipe_sources": [
         "https://vimeo.com/941713443",
         "https://www.latimes.com/entertainment-arts/business/story/2024-05-02/first-major-music-artist-uses-openai-sora-to-create-music-video",
         "https://www.isea-symposium-archives.org/art-events/washed-out-the-hardest-part-by-paul-trillo/"
+      ],
+      "historic_tool_note": "Made with a tool that is no longer available.",
+      "current_alternative_id": "google-veo"
+    },
+    {
+      "id": "the-frost-waymark",
+      "title": "The Frost",
+      "creator": {
+        "name": "Josh Rubin",
+        "url": "https://thefrost.squarespace.com/"
+      },
+      "year": 2023,
+      "runtime_seconds": 164,
+      "source": {
+        "platform": "vimeo",
+        "url": "https://vimeo.com/806393028",
+        "embed_id": "806393028"
+      },
+      "poster": "https://i.vimeocdn.com/video/1639845163-be5582f5ea7dbc5002d3265ec0c947ee6a2ab862b01ceab0b21ee105d8647391-d_640",
+      "synopsis": "A remote expedition encounters an uncanny frozen world assembled from AI-generated still imagery.",
+      "recipe": {
+        "primary_tool": "dall-e-2",
+        "tools": [
+          "dall-e-2",
+          "d-id"
+        ],
+        "shot_count": null,
+        "workflow_steps": [
+          "Start from Josh Rubin’s written screenplay.",
+          "Prompt and curate DALL·E 2 stills, using inpainting and outpainting to build each shot.",
+          "Cut images into layers and animate them with puppetry, After Effects-style compositing, and D-ID facial motion.",
+          "Assemble the quasi-video shots into the finished science-fiction sequence."
+        ],
+        "prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": [
+          "DALL·E 2 struggled with precise emotional facial responses; the filmmakers stopped fighting for photographic precision and built the film around the model’s uncanny aesthetic."
+        ],
+        "craft_ids": [
+          "setting_as_metaphor",
+          "low_key",
+          "montage",
+          "texture_materiality"
+        ]
+      },
+      "tags": [
+        "historic workflow",
+        "science fiction",
+        "DALL·E 2"
+      ],
+      "verified_on": "2026-07-21",
+      "recipe_sources": [
+        "https://www.technologyreview.com/2023/06/01/1073858/surreal-ai-generative-video-changing-film/",
+        "https://www.cognitiverevolution.ai/ai-powered-filmmaking-with-waymarks-stephen-parker-and-josh-rubin/",
+        "https://thefrost.squarespace.com/"
+      ],
+      "historic_tool_note": "Made with DALL·E 2, which is no longer available.",
+      "current_alternative_id": "gpt-image"
+    },
+    {
+      "id": "thank-you-paul-trillo",
+      "title": "Thank You For Not Answering",
+      "creator": {
+        "name": "Paul Trillo",
+        "url": "https://vimeo.com/paultrillo"
+      },
+      "year": 2023,
+      "runtime_seconds": 145,
+      "source": {
+        "platform": "vimeo",
+        "url": "https://vimeo.com/821101511",
+        "embed_id": "821101511"
+      },
+      "poster": "https://i.vimeocdn.com/video/1664222966-e283ae5e2b515d3f0507c5c0cfd59452a6731b04de279b4d54bf16769ee2090e-d_640",
+      "synopsis": "A voicemail opens into fragments of memory and an imagined life that never happened.",
+      "recipe": {
+        "primary_tool": "runway-gen2",
+        "tools": [
+          "runway-gen2"
+        ],
+        "shot_count": null,
+        "workflow_steps": [
+          "Write the voicemail-led script.",
+          "Generate short image- and text-prompted clips in Runway Gen-2.",
+          "Curate the model’s aberrations and unexpected images instead of forcing realism.",
+          "Edit the fragments into a subjective memory flow around the spoken message."
+        ],
+        "prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": [
+          "The generated footage produced surreal side effects and aberrations; Trillo treated those accidents as the film’s visual language rather than defects to erase."
+        ],
+        "craft_ids": [
+          "montage",
+          "emotional_core",
+          "match_cut",
+          "slow_cutting"
+        ]
+      },
+      "tags": [
+        "memory",
+        "Runway Gen-2",
+        "solo filmmaking"
+      ],
+      "verified_on": "2026-07-21",
+      "recipe_sources": [
+        "https://vimeo.com/blog/post/filmmakers-ai/",
+        "https://shots.net/news/view/how-paul-trillos-short-film-found-the-artist-within-ai",
+        "https://www.europeanfilmawards.eu/vimeo-movie/thank-you-for-not-answering/"
+      ],
+      "historic_tool_note": "Made with Runway Gen-2, which is no longer available.",
+      "current_alternative_id": "runway-gen4"
+    },
+    {
+      "id": "plstc-laen-sanches",
+      "title": "PLSTC",
+      "creator": {
+        "name": "Laen Sanches",
+        "url": "https://www.linkedin.com/in/laen-sanches"
+      },
+      "year": 2022,
+      "runtime_seconds": 97,
+      "source": {
+        "platform": "vimeo",
+        "url": "https://vimeo.com/723429393",
+        "embed_id": "723429393"
+      },
+      "poster": "",
+      "synopsis": "An underwater dystopia confronts the damage plastic pollution causes to marine life.",
+      "recipe": {
+        "primary_tool": "midjourney",
+        "tools": [
+          "midjourney",
+          "topaz-video-ai"
+        ],
+        "shot_count": null,
+        "workflow_steps": [
+          "Build a sequence around the environmental premise.",
+          "Generate ocean-creature imagery with Midjourney.",
+          "Hand-composite and animate the selected images with conventional digital tools.",
+          "Finish with dedicated music, sound design, and mix."
+        ],
+        "prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": [],
+        "craft_ids": [
+          "setting_as_metaphor",
+          "montage",
+          "texture_materiality",
+          "chiaroscuro"
+        ]
+      },
+      "tags": [
+        "environment",
+        "hand compositing",
+        "AIFF 2023"
+      ],
+      "verified_on": "2026-07-21",
+      "recipe_sources": [
+        "https://vimeo.com/723429393",
+        "https://vimeo.com/blog/post/filmmakers-ai/",
+        "https://aif.runwayml.com/2023"
       ]
+    },
+    {
+      "id": "hairy-pouter-carboni",
+      "title": "Hairy Pouter",
+      "creator": {
+        "name": "Chris Carboni",
+        "url": "https://www.chriscarboni.com/"
+      },
+      "year": 2022,
+      "runtime_seconds": 147,
+      "source": {
+        "platform": "vimeo",
+        "url": "https://vimeo.com/741893324",
+        "embed_id": "741893324"
+      },
+      "poster": "https://i.vimeocdn.com/video/1492893012-6d3266991f512c9d65d1f7a9c0053472eefdc4427f8ee03b8280042bed0525be-d_640",
+      "synopsis": "A grandmother’s idiosyncratic book review is interpreted through an early AI image generator.",
+      "recipe": {
+        "primary_tool": "midjourney",
+        "tools": [
+          "midjourney"
+        ],
+        "shot_count": null,
+        "workflow_steps": [
+          "Select recorded review excerpts from the director’s grandmother.",
+          "Enter her words into early Midjourney without adding franchise context.",
+          "Identify a compelling generated art direction and guide later images toward that thread.",
+          "Edit the still-image progression to the original narration with human sound and music."
+        ],
+        "prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": [
+          "The first generations varied wildly; the team wrote down the visual hallmarks of a successful image and reused that direction to keep the sequence readable and consistent."
+        ],
+        "craft_ids": [
+          "montage",
+          "specificity",
+          "originality_vs_familiarity",
+          "comedy"
+        ]
+      },
+      "tags": [
+        "documentary voice",
+        "early Midjourney",
+        "Staff Pick"
+      ],
+      "verified_on": "2026-07-21",
+      "recipe_sources": [
+        "https://vimeo.com/741893324",
+        "https://vimeo.com/blog/post/hairy-pouter",
+        "https://vimeo.com/blog/post/filmmakers-ai/"
+      ]
+    },
+    {
+      "id": "sunspring-oscar-sharp",
+      "title": "Sunspring",
+      "creator": {
+        "name": "Oscar Sharp and Ross Goodwin",
+        "url": "https://www.thereforefilms.com/"
+      },
+      "year": 2016,
+      "runtime_seconds": 540,
+      "source": {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=LY7x2Ihqjmc",
+        "embed_id": "LY7x2Ihqjmc"
+      },
+      "poster": "https://i.ytimg.com/vi/LY7x2Ihqjmc/hqdefault.jpg",
+      "synopsis": "Three performers enact a surreal science-fiction screenplay written by a recurrent neural network.",
+      "recipe": {
+        "primary_tool": "benjamin-lstm",
+        "tools": [
+          "benjamin-lstm"
+        ],
+        "shot_count": null,
+        "workflow_steps": [
+          "Train an LSTM recurrent neural network on science-fiction screenplays.",
+          "Supply the 48-hour challenge requirements and generate the screenplay.",
+          "Interpret the generated stage directions with actors and a conventional film crew.",
+          "Shoot and finish the short within the festival deadline."
+        ],
+        "prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": [],
+        "craft_ids": [
+          "sci_fi_fantasy",
+          "originality_vs_familiarity",
+          "three_act",
+          "proxemics"
+        ]
+      },
+      "tags": [
+        "historic AI",
+        "screenwriting",
+        "live action"
+      ],
+      "verified_on": "2026-07-21",
+      "recipe_sources": [
+        "https://www.youtube.com/watch?v=LY7x2Ihqjmc",
+        "https://arstechnica.com/gaming/2021/05/an-ai-wrote-this-movie-and-its-strangely-moving/",
+        "https://nofilmschool.com/2016/06/sunspring-short-sci-fi-film-written-ai"
+      ],
+      "historic_tool_note": "Written with a custom historic LSTM model that is not a public service.",
+      "current_alternative_id": null
+    },
+    {
+      "id": "the-script-aturi",
+      "title": "The Script",
+      "creator": {
+        "name": "Aturi, Lucía Clavijo, and Victor Martinez",
+        "url": "https://vimeo.com/1010519099"
+      },
+      "year": 2024,
+      "runtime_seconds": 76,
+      "source": {
+        "platform": "vimeo",
+        "url": "https://vimeo.com/1010519099",
+        "embed_id": "1010519099"
+      },
+      "poster": "https://i.vimeocdn.com/video/2036828349-000f4054e8bc488b8f494ce0fcf118d2800589de74f16a8441b10a3c1fde81a7-d_640",
+      "synopsis": "A compact short created under a 48-hour generative-film constraint.",
+      "recipe": {
+        "primary_tool": "runway-gen3",
+        "tools": [
+          "midjourney",
+          "runway-gen3"
+        ],
+        "shot_count": null,
+        "workflow_steps": [
+          "Write and plan the short within the Gen:48 deadline.",
+          "Generate the images in Midjourney.",
+          "Animate the selected images with Runway Gen-3 Alpha.",
+          "Edit and finish the film before the 48-hour cutoff."
+        ],
+        "prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": [],
+        "craft_ids": [
+          "runtime_discipline",
+          "montage",
+          "fast_cutting"
+        ]
+      },
+      "tags": [
+        "Gen:48",
+        "48-hour film",
+        "Runway Gen-3"
+      ],
+      "verified_on": "2026-07-21",
+      "recipe_sources": [
+        "https://vimeo.com/1010519099",
+        "https://runwayml.com/customers/48-hours-to-generate-a-film"
+      ],
+      "historic_tool_note": "Made with Runway Gen-3 Alpha, which has been superseded.",
+      "current_alternative_id": "runway-gen4"
+    },
+    {
+      "id": "grow-pabli-poulain",
+      "title": "Grow",
+      "creator": {
+        "name": "Pabli Poulain",
+        "url": "https://vimeo.com/1012886708"
+      },
+      "year": 2024,
+      "runtime_seconds": 197,
+      "source": {
+        "platform": "vimeo",
+        "url": "https://vimeo.com/1012886708",
+        "embed_id": "1012886708"
+      },
+      "poster": "https://i.vimeocdn.com/video/1930750496-d3bc9243e9e2b4411c2b5f5c75eaae7733c0fe73d84b4113217ad0185a3efda3-d_640",
+      "synopsis": "A short about learning to cope with life and letting go, made during a 48-hour challenge.",
+      "recipe": {
+        "primary_tool": "runway-gen3",
+        "tools": [
+          "leonardo",
+          "runway-gen3"
+        ],
+        "shot_count": null,
+        "workflow_steps": [
+          "Develop the story and prompts inside the 48-hour limit.",
+          "Generate still images with Leonardo.Ai.",
+          "Turn those images into video with Runway Gen-3.",
+          "Assemble the complete short before the challenge deadline."
+        ],
+        "prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": [],
+        "craft_ids": [
+          "emotional_core",
+          "montage",
+          "runtime_discipline"
+        ]
+      },
+      "tags": [
+        "Gen:48",
+        "Leonardo",
+        "Runway Gen-3"
+      ],
+      "verified_on": "2026-07-21",
+      "recipe_sources": [
+        "https://vimeo.com/1012886708",
+        "https://runwayml.com/customers/48-hours-to-generate-a-film"
+      ],
+      "historic_tool_note": "Made with Runway Gen-3, which has been superseded.",
+      "current_alternative_id": "runway-gen4"
+    },
+    {
+      "id": "instant-batista-nayara",
+      "title": "Instant",
+      "creator": {
+        "name": "Pedro Batista and Nayara Kattah",
+        "url": "https://vimeo.com/880268511"
+      },
+      "year": 2023,
+      "runtime_seconds": 218,
+      "source": {
+        "platform": "vimeo",
+        "url": "https://vimeo.com/880268511",
+        "embed_id": "880268511"
+      },
+      "poster": "https://i.vimeocdn.com/video/1747185222-ed07df8298474ff85722b6b94ffc88ba3d2413e074307da36fb094625257c6e5-d_640",
+      "synopsis": "An anachronistic dialogue considers time and the ways people perceive it.",
+      "recipe": {
+        "primary_tool": "runway-gen2",
+        "tools": [
+        "runway-gen2"
+        ],
+        "shot_count": null,
+        "workflow_steps": [
+          "Shape the dialogue-driven idea for the Gen:48 constraint.",
+          "Generate occasional supporting images with Stable Diffusion.",
+          "Create the scenes end to end with Runway Gen-1 and Gen-2.",
+          "Build sound effects and score, then finish the edit."
+        ],
+        "prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": [],
+        "craft_ids": [
+          "montage",
+          "cross_cutting",
+          "setting_as_metaphor"
+        ]
+      },
+      "tags": [
+        "Gen:48",
+        "time",
+        "Runway Gen-2"
+      ],
+      "verified_on": "2026-07-21",
+      "recipe_sources": [
+        "https://vimeo.com/880268511",
+        "https://runwayml.com/customers/48-hours-to-generate-a-film"
+      ],
+      "historic_tool_note": "Made primarily with Runway Gen-1/Gen-2, which are no longer available.",
+      "current_alternative_id": "runway-gen4"
+    },
+    {
+      "id": "caspah-chris-carboni",
+      "title": "Caspah",
+      "creator": {
+        "name": "Chris Carboni",
+        "url": "https://www.chriscarboni.com/"
+      },
+      "year": 2025,
+      "runtime_seconds": 140,
+      "source": {
+        "platform": "vimeo",
+        "url": "https://vimeo.com/1131740306",
+        "embed_id": "1131740306"
+      },
+      "poster": "https://i.vimeocdn.com/video/2075762846-a8d70fb73434a34bf5d1ba45e0030d893eeaad0a729ff133b6e891f3ceb243a2-d_640",
+      "synopsis": "A grandmother’s remembered horror films become a playful, personal ghost-story collage.",
+      "recipe": {
+        "primary_tool": "google-flow",
+        "tools": [
+          "google-flow"
+        ],
+        "shot_count": null,
+        "workflow_steps": [
+          "Return to recorded conversations about the creator’s grandmother’s favorite scary films.",
+          "Use Google Flow within the Flow Sessions program to interpret those memories as scenes.",
+          "Direct for character, cinematography, and story while staying open to unexpected generations.",
+          "Edit the generated material around the original personal recordings."
+        ],
+        "prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": [],
+        "craft_ids": [
+          "comedy",
+          "montage",
+          "emotional_core",
+          "specificity"
+        ]
+      },
+      "tags": [
+        "Google Flow",
+        "family archive",
+        "current tool"
+      ],
+      "verified_on": "2026-07-21",
+      "recipe_sources": [
+        "https://vimeo.com/1131740306",
+        "https://blog.google/innovation-and-ai/models-and-research/google-labs/3-things-learned-flow-sessions/"
+      ]
+    },
+    {
+      "id": "last-stand-al-ghaili",
+      "title": "Last Stand",
+      "creator": {
+        "name": "Hashem Al-Ghaili",
+        "url": "https://www.hashem-alghaili.com/"
+      },
+      "year": 2023,
+      "runtime_seconds": 599,
+      "source": {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=6dtSqhYhcrs",
+        "embed_id": "6dtSqhYhcrs"
+      },
+      "poster": "https://i.ytimg.com/vi/6dtSqhYhcrs/hqdefault.jpg",
+      "synopsis": "Humanity responds to apparent extraterrestrial contact in an AI-assisted science-fiction scenario.",
+      "recipe": {
+        "primary_tool": "brightpen",
+        "tools": [
+          "brightpen"
+        ],
+        "shot_count": null,
+        "workflow_steps": [
+          "Use Brightpen to assist with the screenplay.",
+          "Generate concept art and synthetic voices through the same credited service.",
+          "Make human editorial and creative decisions around the generated material.",
+          "Assemble the science-fiction short with an original score."
+        ],
+        "prompts": [],
+        "attempts_per_usable_shot": null,
+        "problems_and_solutions": [],
+        "craft_ids": [
+          "sci_fi_fantasy",
+          "structural_completeness",
+          "setting_as_metaphor",
+          "cross_cutting"
+        ]
+      },
+      "tags": [
+        "historic workflow",
+        "Brightpen",
+        "science fiction"
+      ],
+      "verified_on": "2026-07-21",
+      "recipe_sources": [
+        "https://www.youtube.com/watch?v=6dtSqhYhcrs",
+        "https://informedsauce.com/news/ai/watch-last-stand-a-sci-fi-short-made-mostly-with-ai/",
+        "https://vimeo.com/blog/post/can-ai-unleash-creative-potential/"
+      ],
+      "historic_tool_note": "Made with Brightpen, a service that is no longer reliably available.",
+      "current_alternative_id": "gpt-image"
     }
   ]
 }

@@ -2970,6 +2970,526 @@
       ],
       "status_note": "No discontinuation notice found on the reviewed official source; re-check before production.",
       "status": "active"
+    },
+{
+  "id": "dall-e-2",
+  "name": "DALL·E 2",
+  "maker": "OpenAI",
+  "category": "Image generation",
+  "type": "image",
+  "what": "A historic text-to-image and image-editing model used in early generative-film pipelines.",
+  "strengths": [
+    "Text-to-image generation",
+    "Inpainting and outpainting"
+  ],
+  "weak_at": [
+    "No current product access; retained for production history"
+  ],
+  "best_for": "Studying and reproducing the documented production stage for which this tool was actually credited.",
+  "access": "paid",
+  "level": "intermediate",
+  "url": "https://openai.com/index/dall-e-2/",
+  "special": "Included because a source-verified Showcase recipe genuinely used it; historic status is shown rather than hidden.",
+  "maker_company": "OpenAI",
+  "founded_year": null,
+  "country_hq": null,
+  "key_people": [
+    {
+      "name": "Not asserted",
+      "role": "See official source"
     }
+  ],
+  "overview": "A historic text-to-image and image-editing model used in early generative-film pipelines. First Frame includes it to preserve an auditable production history, not to imply endorsement or current availability. Learners should follow the status note and choose a current alternative when necessary.",
+  "history": [
+    {
+      "date": "Historic record",
+      "event": "Documented in a source-verified Showcase production workflow."
+    },
+    {
+      "date": "2026-07-21",
+      "event": "Catalogue entry reviewed for Showcase recipe resolution."
+    }
+  ],
+  "versions": [
+    {
+      "name": "DALL·E 2",
+      "notes": "Version named by the cited production source; current access is described by status."
+    }
+  ],
+  "pricing": null,
+  "access_how": "Follow the official URL when active. Historic entries remain for study and may no longer offer access.",
+  "notable_features": [
+    "Text-to-image generation",
+    "Inpainting and outpainting"
+  ],
+  "best_use_cases": [
+    "Auditing the documented Showcase workflow.",
+    "Comparing historic constraints with current alternatives."
+  ],
+  "compare": "Compare the documented role and constraints with a currently available tool in the same category; this entry does not claim feature parity.",
+  "brand_color": "#10A37F",
+  "sources": [
+    "https://openai.com/index/dall-e-2/"
+  ],
+  "verified_on": "2026-07-21",
+  "status_note": "Historic or discontinued in this recipe context; retained as production history.",
+  "status": "discontinued"
+},
+    {
+  "id": "d-id",
+  "name": "D-ID Creative Reality",
+  "maker": "D-ID",
+  "category": "Avatar and image animation",
+  "type": "avatar",
+  "what": "A talking-avatar and still-image animation service used to add facial motion and speech to generated portraits.",
+  "strengths": [
+    "Still-image facial animation",
+    "Text-to-speech avatars"
+  ],
+  "weak_at": [
+    "Not a general cinematic motion generator"
+  ],
+  "best_for": "Studying and reproducing the documented production stage for which this tool was actually credited.",
+  "access": "paid",
+  "level": "intermediate",
+  "url": "https://www.d-id.com/creative-reality-studio/",
+  "special": "Included because a source-verified Showcase recipe genuinely used it; historic status is shown rather than hidden.",
+  "maker_company": "D-ID",
+  "founded_year": null,
+  "country_hq": null,
+  "key_people": [
+    {
+      "name": "Not asserted",
+      "role": "See official source"
+    }
+  ],
+  "overview": "A talking-avatar and still-image animation service used to add facial motion and speech to generated portraits. First Frame includes it to preserve an auditable production history, not to imply endorsement or current availability. Learners should follow the status note and choose a current alternative when necessary.",
+  "history": [
+    {
+      "date": "Historic record",
+      "event": "Documented in a source-verified Showcase production workflow."
+    },
+    {
+      "date": "2026-07-21",
+      "event": "Catalogue entry reviewed for Showcase recipe resolution."
+    }
+  ],
+  "versions": [
+    {
+      "name": "D-ID Creative Reality",
+      "notes": "Version named by the cited production source; current access is described by status."
+    }
+  ],
+  "pricing": "Current pricing changes; verify on the official product page.",
+  "access_how": "Follow the official URL when active. Historic entries remain for study and may no longer offer access.",
+  "notable_features": [
+    "Still-image facial animation",
+    "Text-to-speech avatars"
+  ],
+  "best_use_cases": [
+    "Auditing the documented Showcase workflow.",
+    "Comparing historic constraints with current alternatives."
+  ],
+  "compare": "Compare the documented role and constraints with a currently available tool in the same category; this entry does not claim feature parity.",
+  "brand_color": "#6C63FF",
+  "sources": [
+    "https://www.d-id.com/creative-reality-studio/"
+  ],
+  "verified_on": "2026-07-21",
+  "status_note": "Currently available; verify account and regional access.",
+  "status": "active"
+},
+    {
+  "id": "runway-gen2",
+  "name": "Runway Gen-2",
+  "maker": "Runway",
+  "category": "Historic text and image to video",
+  "type": "both",
+  "what": "A historic Runway video model used by early AI filmmakers to animate stills and generate short clips.",
+  "strengths": [
+    "Text-to-video",
+    "Image-to-video"
+  ],
+  "weak_at": [
+    "Superseded by newer Runway generations"
+  ],
+  "best_for": "Studying and reproducing the documented production stage for which this tool was actually credited.",
+  "access": "paid",
+  "level": "intermediate",
+  "url": "https://runwayml.com/research/gen-2",
+  "special": "Included because a source-verified Showcase recipe genuinely used it; historic status is shown rather than hidden.",
+  "maker_company": "Runway",
+  "founded_year": null,
+  "country_hq": null,
+  "key_people": [
+    {
+      "name": "Not asserted",
+      "role": "See official source"
+    }
+  ],
+  "overview": "A historic Runway video model used by early AI filmmakers to animate stills and generate short clips. First Frame includes it to preserve an auditable production history, not to imply endorsement or current availability. Learners should follow the status note and choose a current alternative when necessary.",
+  "history": [
+    {
+      "date": "Historic record",
+      "event": "Documented in a source-verified Showcase production workflow."
+    },
+    {
+      "date": "2026-07-21",
+      "event": "Catalogue entry reviewed for Showcase recipe resolution."
+    }
+  ],
+  "versions": [
+    {
+      "name": "Runway Gen-2",
+      "notes": "Version named by the cited production source; current access is described by status."
+    }
+  ],
+  "pricing": null,
+  "access_how": "Follow the official URL when active. Historic entries remain for study and may no longer offer access.",
+  "notable_features": [
+    "Text-to-video",
+    "Image-to-video"
+  ],
+  "best_use_cases": [
+    "Auditing the documented Showcase workflow.",
+    "Comparing historic constraints with current alternatives."
+  ],
+  "compare": "Compare the documented role and constraints with a currently available tool in the same category; this entry does not claim feature parity.",
+  "brand_color": "#000000",
+  "sources": [
+    "https://runwayml.com/research/gen-2"
+  ],
+  "verified_on": "2026-07-21",
+  "status_note": "Historic or discontinued in this recipe context; retained as production history.",
+  "status": "discontinued"
+},
+    {
+  "id": "runway-gen3",
+  "name": "Runway Gen-3 Alpha",
+  "maker": "Runway",
+  "category": "Historic text and image to video",
+  "type": "both",
+  "what": "A historic Runway generation that improved motion, fidelity, and temporal control for short AI film clips.",
+  "strengths": [
+    "Text-to-video",
+    "Image-to-video",
+    "Improved temporal consistency"
+  ],
+  "weak_at": [
+    "Superseded by newer Runway generations"
+  ],
+  "best_for": "Studying and reproducing the documented production stage for which this tool was actually credited.",
+  "access": "paid",
+  "level": "intermediate",
+  "url": "https://runwayml.com/research/introducing-gen-3-alpha",
+  "special": "Included because a source-verified Showcase recipe genuinely used it; historic status is shown rather than hidden.",
+  "maker_company": "Runway",
+  "founded_year": null,
+  "country_hq": null,
+  "key_people": [
+    {
+      "name": "Not asserted",
+      "role": "See official source"
+    }
+  ],
+  "overview": "A historic Runway generation that improved motion, fidelity, and temporal control for short AI film clips. First Frame includes it to preserve an auditable production history, not to imply endorsement or current availability. Learners should follow the status note and choose a current alternative when necessary.",
+  "history": [
+    {
+      "date": "Historic record",
+      "event": "Documented in a source-verified Showcase production workflow."
+    },
+    {
+      "date": "2026-07-21",
+      "event": "Catalogue entry reviewed for Showcase recipe resolution."
+    }
+  ],
+  "versions": [
+    {
+      "name": "Runway Gen-3 Alpha",
+      "notes": "Version named by the cited production source; current access is described by status."
+    }
+  ],
+  "pricing": null,
+  "access_how": "Follow the official URL when active. Historic entries remain for study and may no longer offer access.",
+  "notable_features": [
+    "Text-to-video",
+    "Image-to-video",
+    "Improved temporal consistency"
+  ],
+  "best_use_cases": [
+    "Auditing the documented Showcase workflow.",
+    "Comparing historic constraints with current alternatives."
+  ],
+  "compare": "Compare the documented role and constraints with a currently available tool in the same category; this entry does not claim feature parity.",
+  "brand_color": "#111111",
+  "sources": [
+    "https://runwayml.com/research/introducing-gen-3-alpha"
+  ],
+  "verified_on": "2026-07-21",
+  "status_note": "Historic or discontinued in this recipe context; retained as production history.",
+  "status": "discontinued"
+},
+    {
+  "id": "benjamin-lstm",
+  "name": "Benjamin LSTM Screenwriter",
+  "maker": "Ross Goodwin and Oscar Sharp",
+  "category": "Historic screenplay model",
+  "type": "editor",
+  "what": "A custom long short-term memory recurrent neural network trained on science-fiction screenplays for the 2016 film Sunspring.",
+  "strengths": [
+    "Generated screenplay text",
+    "Historic computational-writing case study"
+  ],
+  "weak_at": [
+    "Not a public production service"
+  ],
+  "best_for": "Studying and reproducing the documented production stage for which this tool was actually credited.",
+  "access": "free",
+  "level": "intermediate",
+  "url": "https://arstechnica.com/gaming/2021/05/an-ai-wrote-this-movie-and-its-strangely-moving/",
+  "special": "Included because a source-verified Showcase recipe genuinely used it; historic status is shown rather than hidden.",
+  "maker_company": "Ross Goodwin and Oscar Sharp",
+  "founded_year": null,
+  "country_hq": null,
+  "key_people": [
+    {
+      "name": "Not asserted",
+      "role": "See official source"
+    }
+  ],
+  "overview": "A custom long short-term memory recurrent neural network trained on science-fiction screenplays for the 2016 film Sunspring. First Frame includes it to preserve an auditable production history, not to imply endorsement or current availability. Learners should follow the status note and choose a current alternative when necessary.",
+  "history": [
+    {
+      "date": "Historic record",
+      "event": "Documented in a source-verified Showcase production workflow."
+    },
+    {
+      "date": "2026-07-21",
+      "event": "Catalogue entry reviewed for Showcase recipe resolution."
+    }
+  ],
+  "versions": [
+    {
+      "name": "Benjamin LSTM Screenwriter",
+      "notes": "Version named by the cited production source; current access is described by status."
+    }
+  ],
+  "pricing": null,
+  "access_how": "Follow the official URL when active. Historic entries remain for study and may no longer offer access.",
+  "notable_features": [
+    "Generated screenplay text",
+    "Historic computational-writing case study"
+  ],
+  "best_use_cases": [
+    "Auditing the documented Showcase workflow.",
+    "Comparing historic constraints with current alternatives."
+  ],
+  "compare": "Compare the documented role and constraints with a currently available tool in the same category; this entry does not claim feature parity.",
+  "brand_color": "#6B7280",
+  "sources": [
+    "https://arstechnica.com/gaming/2021/05/an-ai-wrote-this-movie-and-its-strangely-moving/"
+  ],
+  "verified_on": "2026-07-21",
+  "status_note": "Historic or discontinued in this recipe context; retained as production history.",
+  "status": "discontinued"
+},
+    {
+  "id": "brightpen",
+  "name": "Brightpen",
+  "maker": "Brightpen",
+  "category": "Historic multi-modal creation",
+  "type": "editor",
+  "what": "A discontinued AI creation service credited with writing, concept art, and voice generation on the 2023 short Last Stand.",
+  "strengths": [
+    "Script assistance",
+    "Concept art",
+    "Voice generation"
+  ],
+  "weak_at": [
+    "Official service no longer resolves reliably"
+  ],
+  "best_for": "Studying and reproducing the documented production stage for which this tool was actually credited.",
+  "access": "free",
+  "level": "intermediate",
+  "url": "https://www.brightpen.ai/",
+  "special": "Included because a source-verified Showcase recipe genuinely used it; historic status is shown rather than hidden.",
+  "maker_company": "Brightpen",
+  "founded_year": null,
+  "country_hq": null,
+  "key_people": [
+    {
+      "name": "Not asserted",
+      "role": "See official source"
+    }
+  ],
+  "overview": "A discontinued AI creation service credited with writing, concept art, and voice generation on the 2023 short Last Stand. First Frame includes it to preserve an auditable production history, not to imply endorsement or current availability. Learners should follow the status note and choose a current alternative when necessary.",
+  "history": [
+    {
+      "date": "Historic record",
+      "event": "Documented in a source-verified Showcase production workflow."
+    },
+    {
+      "date": "2026-07-21",
+      "event": "Catalogue entry reviewed for Showcase recipe resolution."
+    }
+  ],
+  "versions": [
+    {
+      "name": "Brightpen",
+      "notes": "Version named by the cited production source; current access is described by status."
+    }
+  ],
+  "pricing": null,
+  "access_how": "Follow the official URL when active. Historic entries remain for study and may no longer offer access.",
+  "notable_features": [
+    "Script assistance",
+    "Concept art",
+    "Voice generation"
+  ],
+  "best_use_cases": [
+    "Auditing the documented Showcase workflow.",
+    "Comparing historic constraints with current alternatives."
+  ],
+  "compare": "Compare the documented role and constraints with a currently available tool in the same category; this entry does not claim feature parity.",
+  "brand_color": "#E6A700",
+  "sources": [
+    "https://www.brightpen.ai/"
+  ],
+  "verified_on": "2026-07-21",
+  "status_note": "Historic or discontinued in this recipe context; retained as production history.",
+  "status": "discontinued"
+},
+    {
+  "id": "elevenlabs",
+  "name": "ElevenLabs",
+  "maker": "ElevenLabs",
+  "category": "Voice and sound",
+  "type": "editor",
+  "what": "A generative audio platform for text-to-speech, voice design, dubbing, sound effects, and music workflows.",
+  "strengths": [
+    "Text-to-speech",
+    "Voice design",
+    "Sound effects"
+  ],
+  "weak_at": [
+    "Consent, licensing, and performance direction still require human review"
+  ],
+  "best_for": "Studying and reproducing the documented production stage for which this tool was actually credited.",
+  "access": "paid",
+  "level": "intermediate",
+  "url": "https://elevenlabs.io/",
+  "special": "Included because a source-verified Showcase recipe genuinely used it; historic status is shown rather than hidden.",
+  "maker_company": "ElevenLabs",
+  "founded_year": null,
+  "country_hq": null,
+  "key_people": [
+    {
+      "name": "Not asserted",
+      "role": "See official source"
+    }
+  ],
+  "overview": "A generative audio platform for text-to-speech, voice design, dubbing, sound effects, and music workflows. First Frame includes it to preserve an auditable production history, not to imply endorsement or current availability. Learners should follow the status note and choose a current alternative when necessary.",
+  "history": [
+    {
+      "date": "Historic record",
+      "event": "Documented in a source-verified Showcase production workflow."
+    },
+    {
+      "date": "2026-07-21",
+      "event": "Catalogue entry reviewed for Showcase recipe resolution."
+    }
+  ],
+  "versions": [
+    {
+      "name": "ElevenLabs",
+      "notes": "Version named by the cited production source; current access is described by status."
+    }
+  ],
+  "pricing": "Current pricing changes; verify on the official product page.",
+  "access_how": "Follow the official URL when active. Historic entries remain for study and may no longer offer access.",
+  "notable_features": [
+    "Text-to-speech",
+    "Voice design",
+    "Sound effects"
+  ],
+  "best_use_cases": [
+    "Auditing the documented Showcase workflow.",
+    "Comparing historic constraints with current alternatives."
+  ],
+  "compare": "Compare the documented role and constraints with a currently available tool in the same category; this entry does not claim feature parity.",
+  "brand_color": "#000000",
+  "sources": [
+    "https://elevenlabs.io/"
+  ],
+  "verified_on": "2026-07-21",
+  "status_note": "Currently available; verify account and regional access.",
+  "status": "active"
+},
+    {
+  "id": "adobe-premiere-pro",
+  "name": "Adobe Premiere Pro",
+  "maker": "Adobe",
+  "category": "Editing and finishing",
+  "type": "editor",
+  "what": "A professional nonlinear editor used to assemble, time, caption, mix, and finish generated and live-action footage.",
+  "strengths": [
+    "Timeline editing",
+    "Audio and caption tools",
+    "Generative workflow integration"
+  ],
+  "weak_at": [
+    "It does not replace editorial judgment"
+  ],
+  "best_for": "Studying and reproducing the documented production stage for which this tool was actually credited.",
+  "access": "paid",
+  "level": "intermediate",
+  "url": "https://www.adobe.com/products/premiere.html",
+  "special": "Included because a source-verified Showcase recipe genuinely used it; historic status is shown rather than hidden.",
+  "maker_company": "Adobe",
+  "founded_year": null,
+  "country_hq": null,
+  "key_people": [
+    {
+      "name": "Not asserted",
+      "role": "See official source"
+    }
+  ],
+  "overview": "A professional nonlinear editor used to assemble, time, caption, mix, and finish generated and live-action footage. First Frame includes it to preserve an auditable production history, not to imply endorsement or current availability. Learners should follow the status note and choose a current alternative when necessary.",
+  "history": [
+    {
+      "date": "Historic record",
+      "event": "Documented in a source-verified Showcase production workflow."
+    },
+    {
+      "date": "2026-07-21",
+      "event": "Catalogue entry reviewed for Showcase recipe resolution."
+    }
+  ],
+  "versions": [
+    {
+      "name": "Adobe Premiere Pro",
+      "notes": "Version named by the cited production source; current access is described by status."
+    }
+  ],
+  "pricing": "Current pricing changes; verify on the official product page.",
+  "access_how": "Follow the official URL when active. Historic entries remain for study and may no longer offer access.",
+  "notable_features": [
+    "Timeline editing",
+    "Audio and caption tools",
+    "Generative workflow integration"
+  ],
+  "best_use_cases": [
+    "Auditing the documented Showcase workflow.",
+    "Comparing historic constraints with current alternatives."
+  ],
+  "compare": "Compare the documented role and constraints with a currently available tool in the same category; this entry does not claim feature parity.",
+  "brand_color": "#9999FF",
+  "sources": [
+    "https://www.adobe.com/products/premiere.html"
+  ],
+  "verified_on": "2026-07-21",
+  "status_note": "Currently available; verify account and regional access.",
+  "status": "active"
+}
   ]
 }
