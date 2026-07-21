@@ -480,7 +480,7 @@
 @media(max-width:860px){.eve-topbar,.eve-cont-wrap{padding-left:18px;padding-right:18px}.eve-steps .pl{display:none}}
 </style>
 <div class="eve-topbar"><span class="eb">First Frame</span><div class="eve-steps" id="eve-steps"></div></div>
-<script src="js/eve-flow.js"></script>
+<script src="js/eve-flow.js?v=2"></script>
 
 <nav class="site-nav">
   <span class="brand">First Frame</span>
@@ -545,7 +545,7 @@
   <p>Built &amp; analyzed by <b>Junsu (Michael) Kim</b> — AI Filmmaker</p>
 </footer>
 
-<script src="js/eve-state.js"></script>
+<script src="js/eve-state.js?v=2"></script>
 <script>
 // ─────────────────────────────────────────────
 // DATA
@@ -555,7 +555,7 @@ const shots = [
     id: 1,
     dimension: '2d',
     title: 'Twilight Village Vista',
-    source: 'Ghibli',
+    source: 'Reference pattern · Ghibli-inspired',
     purpose: 'establishing',
     mood: ['warm','golden','amber','landscape','peaceful','ghibli','nature','village','sunset','wide','twilight','따뜻','황혼','자연','마을','넓은'],
     framing: 'Extreme Wide Shot',
@@ -572,7 +572,7 @@ const shots = [
     id: 2,
     dimension: '2d',
     title: 'Symmetrical Interior Opening',
-    source: 'Wes Anderson',
+    source: 'Reference pattern · centered tableau',
     purpose: 'establishing',
     mood: ['establishing','symmetry','retro','pastel','calm','flat','wes anderson','indoor','centered','quirky','대칭','도입','고요','실내'],
     framing: 'Wide Shot',
@@ -589,7 +589,7 @@ const shots = [
     id: 3,
     dimension: '3d',
     title: 'Close-Up Before the Tear',
-    source: 'Pixar',
+    source: 'Reference pattern · stylized 3D',
     purpose: 'emotional_cu',
     mood: ['emotional','close-up','tears','sad','melancholic','pixar','warmth','eyes','feeling','intense','눈물','감정','슬픈','클로즈업','따뜻'],
     framing: 'Extreme Close-up',
@@ -606,7 +606,7 @@ const shots = [
     id: 4,
     dimension: '2d',
     title: 'Monologue by the Window',
-    source: 'Ghibli',
+    source: 'Reference pattern · hand-painted 2D',
     purpose: 'emotional_cu',
     mood: ['emotional','close-up','backlit','melancholic','lonely','ghibli','window','silhouette','quiet','reflection','창문','슬픈','고요','독백','역광','외로운','감정'],
     framing: 'Medium Close-up',
@@ -623,7 +623,7 @@ const shots = [
     id: 5,
     dimension: '2d',
     title: 'Rooftop Chase Ignition',
-    source: 'Spider-Man ATSV',
+    source: 'Reference pattern · comic-book action',
     purpose: 'action',
     mood: ['action','chase','dynamic','neon','urban','night','rain','fast','rooftop','kinetic','추격','액션','도시','네온','야간','역동','옥상'],
     framing: 'Medium Wide',
@@ -640,7 +640,7 @@ const shots = [
     id: 6,
     dimension: '2d',
     title: 'Collision Impact Frame',
-    source: 'Trigger',
+    source: 'Reference pattern · anime impact',
     purpose: 'action',
     mood: ['action','impact','explosion','dynamic','kinetic','intense','flash','energy','dramatic','폭발','액션','역동','충돌','임팩트'],
     framing: 'Close-up / Dutch Angle',
@@ -657,7 +657,7 @@ const shots = [
     id: 7,
     dimension: '2d',
     title: 'Match Cut — Watch to Moon',
-    source: 'Shinkai',
+    source: 'Reference pattern · lyrical match cut',
     purpose: 'transition',
     mood: ['transition','match cut','moon','night','poetic','shinkai','time','circular','lyrical','달','전환','매치','시적','밤','시간'],
     framing: 'Close-up (Round Object Match)',
@@ -674,7 +674,7 @@ const shots = [
     id: 8,
     dimension: '2d',
     title: 'Seasonal Transformation Wipe',
-    source: 'Ghibli / Hosoda',
+    source: 'Reference pattern · seasonal anime',
     purpose: 'transition',
     mood: ['transition','seasonal','spring','winter','nature','ghibli','lateral','sakura','snow','변환','전환','봄','겨울','자연','계절'],
     framing: 'Wide Shot',
@@ -950,7 +950,7 @@ function renderCard(shot, rank = null) {
           <div class="tag-col">
             <span class="source-tag">${shot.source}</span>
             ${shot.dimension ? `<span class="dim-tag">${shot.dimension.toUpperCase()}</span>` : ''}
-            ${shot.verified ? `<span class="verified-tag">✓ Frame-analyzed</span>` : ''}
+            ${shot.verified ? `<span class="verified-tag">✓ Frame-analyzed</span>` : `<span class="dim-tag">Synthesized</span>`}
           </div>
         </div>
       </div>

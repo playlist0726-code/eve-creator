@@ -36,7 +36,7 @@ Every decision is **grounded**: not "AI-invented advice," but reasoning tied to 
 
 ## ⭐ The differentiator — The Creator's Room
 
-Most "idea → storyboard" tools are one-shot: prompt in, draft out. First Frame adds a step nobody else has.
+Many “idea → storyboard” workflows stop at a first draft. First Frame's differentiator is a visible second-pass crew review.
 
 **The Creator's Room** is a **reflection / self-critique loop**. GPT-5.6 role-plays a five-person film crew, each with a distinct — and sometimes conflicting — lens:
 
@@ -48,7 +48,7 @@ Most "idea → storyboard" tools are one-shot: prompt in, draft out. First Frame
 | 🟠 **Editor** | Pacing, tension curve, runtime discipline | Flat stretches, mistimed peaks |
 | 🟣 **Test Audience** | Hook strength, clarity, shareability | What's confusing, boring, or unforgettable |
 
-The crew **critiques the draft against the craft knowledge base, applies concrete before/after fixes to specific shots, and re-scores the film's hit-potential.** The UI shows each member speak in turn, the score animate from v1 → v2, and every applied fix as a before/after diff — then hands the *improved* blueprint to the next step.
+The crew **critiques the draft against the craft knowledge base, applies concrete before/after fixes to specific shots, and updates a transparent internal planning rubric.** The UI shows each member speak in turn, the score animate from v1 → v2, and every applied fix as a before/after diff — then hands the revised blueprint to the next step. The rubric explains changes; it does not predict reviews, contest results, or commercial success.
 
 Score gains are justified by the revisions (capped at +30), and every citation is validated against a 111-ID allowlist, so the crew can't hallucinate evidence or inflate itself.
 

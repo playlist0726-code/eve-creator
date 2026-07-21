@@ -36,7 +36,7 @@ Keeping the model honest (no hallucinated citations, no self-inflated scores —
 In one disclosed internal prompt comparison, a grounded output scored **25/25 vs a naive output's 10/25** on a five-part directorial rubric. This is directional evidence, not a user study; the prompts, rubric, observations, and limitations are public, and the source images still need to be added for independent audit. The Creator's Room turns a one-shot generator into a crew that critiques and revises the work—and degrades gracefully to a rich deterministic fallback.
 
 ### What we learned
-Structured output + a citation allowlist turns an LLM from a "confident guesser" into a grounded reasoning system, and a second self-critique pass produces measurably better creative work.
+Structured output + a citation allowlist constrains the model to the project's curated craft vocabulary, while a second self-critique pass makes proposed revisions visible and inspectable. Whether those revisions improve audience response still requires user research.
 
 ### What's next
 Reference-clip upload → on-the-fly shot analysis; generating the storyboard animatic in-app; expanding the ShotSeed dataset with 2D/3D tagging.
@@ -62,7 +62,7 @@ Reference-clip upload → on-the-fly shot analysis; generating the storyboard an
 | **Technological Implementation** (Codex depth) | How thoroughly & skillfully does it use **Codex**? Real, non-trivial working code. | [README → How Codex built this](README.md#-how-codex-built-this), `CODEX_HANDOFF.md`, `tests/` + green CI, `/feedback` session ID. |
 | **Design** | Complete, coherent *product* experience — not just a POC. | Guided 5-step pipeline; Creator's Room sequential debate, animated v1→v2 score, before/after diffs; graceful fallbacks so nothing breaks. |
 | **Potential Impact** | Credible, specific real problem + audience the solution actually addresses. | Non-filmmakers get a full crew, contextual lessons, and a transparent internal grounding comparison; user-learning evidence remains future work. |
-| **Quality of the Idea** | Creative, novel, different from existing concepts. | "An AI film crew that argues and improves your film," grounded in frame-analyzed master craft — a self-critique loop nobody else ships. |
+| **Quality of the Idea** | Creative, novel, different from existing concepts. | A visible five-role self-critique loop grounded in a curated craft vocabulary, with concrete before/after shot revisions. |
 
 > Note: 4 of the 5 judges are product people (Thibault Sottiaux, Kath Korevec, Tara Seshan, Leah Belsky) + 1 technical (Peter Steinberger). So **product completeness (Design)** and **Codex depth** carry the most weight. The demo video's **audio must explicitly explain how Codex AND GPT-5.6 were used.**
 

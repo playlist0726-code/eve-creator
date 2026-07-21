@@ -76,7 +76,7 @@
 @media(max-width:860px){.eve-topbar,.eve-cont-wrap{padding-left:18px;padding-right:18px}.eve-steps .pl{display:none}}
 </style>
 <div class="eve-topbar"><span class="eb">First Frame</span><div class="eve-steps" id="eve-steps"></div></div>
-<script src="js/eve-flow.js"></script>
+<script src="js/eve-flow.js?v=2"></script>
   <nav class="site-nav">
     <span class="brand">First Frame</span>
     <a href="index.html">0 · Intake</a><a href="concept_lab.html" class="on">1 · Concept</a><a href="creators_room.html">2 · Creator's Room</a><a href="shotseed.html">3 · Shot Design</a><a href="storyboard.html">4 · Storyboard</a>
@@ -112,7 +112,7 @@
 
   <script src="js/eve-nav.js"></script><script src="js/eve-ui.js"></script>
   <script src="js/eve-api.js"></script>
-  <script src="js/eve-state.js"></script>
+  <script src="js/eve-state.js?v=2"></script>
   <script src="js/eve-glossary.js"></script>
   <script>
     let currentBlueprint=null,pendingDemo=null;
@@ -217,6 +217,9 @@
       const runtime=+document.getElementById('runtime').value||4;
       const out=document.getElementById('out');
       if(!text){ out.innerHTML='<div class="empty">Please enter a concept first.</div>'; return; }
+      if(EVE_STATE.clearBlueprint)EVE_STATE.clearBlueprint();else sessionStorage.removeItem(EVE_STATE.KEY);
+      if(EVE_STATE.clearShotDirection)EVE_STATE.clearShotDirection();else sessionStorage.removeItem(EVE_STATE.SHOT_KEY);
+      if(window.EVE_FLOW_REFRESH)EVE_FLOW_REFRESH();
       const btn=document.getElementById('validateBtn');btn.disabled=true;const timer=loading(out);const {s,overall}=score(text,genre,runtime);
       const intake=EVE_STATE.loadIntake()||{production_type:'animation',target_type:'personal',contest:null};
       const request={idea:text,genre,runtime,intake};

@@ -36,5 +36,6 @@
       Array.isArray(value.selection.palette)&&value.selection.palette.every(color=>/^#[0-9a-f]{6}$/i.test(color)))));}
   function saveShotDirection(value){const next={version:1,...value};return validShotDirection(next)&&saveJSON(SHOT_KEY,next);}
   function loadShotDirection(){const value=loadJSON(SHOT_KEY);return validShotDirection(value)?value:forgetInvalid(SHOT_KEY);}
-  global.EVE_STATE={KEY,INTAKE_KEY,SHOT_KEY,saveBlueprint,loadBlueprint,clearBlueprint,saveIntake,loadIntake,saveShotDirection,loadShotDirection};
+  function clearShotDirection(){return forgetInvalid(SHOT_KEY)===null;}
+  global.EVE_STATE={KEY,INTAKE_KEY,SHOT_KEY,saveBlueprint,loadBlueprint,clearBlueprint,saveIntake,loadIntake,saveShotDirection,loadShotDirection,clearShotDirection};
 })(typeof window==='undefined'?globalThis:window);

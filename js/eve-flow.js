@@ -27,5 +27,6 @@
       return '<a class="ps '+state+'" href="'+step.f+'"'+(state==='cur'?' aria-current="step"':'')+'><span class="pn">'+(state==='done'?'✓':step.n)+'</span><span class="pl">'+step.l+'</span></a>'+(index<steps.length-1?'<span class="pline" aria-hidden="true"></span>':'');
     }).join('');
   }
+  window.EVE_FLOW_REFRESH=mount;
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
 })();
