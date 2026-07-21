@@ -5,8 +5,8 @@
 **Track:** Education
 **Live demo:** https://eve-creator.vercel.app
 **Repo:** https://github.com/playlist0726-code/eve-creator (public, MIT)
-**Demo video:** _(public YouTube, < 3 min, audio must explain how Codex AND GPT-5.6 were used)_
-**Codex `/feedback` session ID:** _(run `/feedback` in the Codex session where you built the core; paste the ID into the Devpost form)_
+**Demo video:** https://youtu.be/bDWb2VqcrDs — 2:56, public YouTube, audio explains how Codex and GPT-5.6 were used.
+**Codex `/feedback` session ID:** `019f610f-49dc-7f31-95fd-20c722d8ea8b`
 **Built with:** Codex + GPT-5.6
 **Deadline:** Tue Jul 21, 5:00 PM PT (= Wed Jul 22, 9:00 AM KST)
 

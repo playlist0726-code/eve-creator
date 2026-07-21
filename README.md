@@ -14,7 +14,7 @@
 [![Built with GPT‑5.6](https://img.shields.io/badge/Built%20with-GPT--5.6-6ea8fe.svg)](#-how-gpt-56-is-used)
 [![Built with Codex](https://img.shields.io/badge/Built%20with-Codex-c86ad9.svg)](#-how-codex-built-this)
 
-**🔗 [Live demo](https://eve-creator.vercel.app) · 🎥 Demo video pending final upload · 🏆 OpenAI Build Week Challenge**
+**🔗 [Live demo](https://eve-creator.vercel.app) · 🎥 [Demo video (2:56)](https://youtu.be/bDWb2VqcrDs) · 🏆 OpenAI Build Week Challenge**
 
 </div>
 
