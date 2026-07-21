@@ -31,6 +31,7 @@
     .an-box p{font-size:12px;color:var(--dim);line-height:1.6}
 
     .sect-lab{margin:34px 44px 12px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+    .copy-btn{display:block;margin:0 44px 16px;border:0;background:var(--text);color:#fff;border-radius:100px;min-height:44px;padding:0 18px;font:800 12px inherit;cursor:pointer}.copy-btn:disabled{opacity:.45;cursor:not-allowed}@media(max-width:720px){.copy-btn{margin-left:22px;margin-right:22px;width:calc(100% - 44px)}}
     .sect-note{margin:0 44px 14px;font-size:12px;color:var(--muted)}
     .curve-wrap{margin:0 44px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px 8px}
     .curve-wrap svg{width:100%;height:auto;display:block}
@@ -159,6 +160,7 @@
 
   <div class="sect-lab">Storyboard Sheet — Shot-by-Shot Board</div>
   <div class="sect-note">Generate each frame from its prompt and save it as <code>storyboard_frames/beatN.png</code> to display it automatically. The right column explains action, camera, mise-en-scène, and twist mechanics.</div>
+  <button class="copy-btn" id="exportProject" type="button">Export project JSON</button>
   <div class="sheet" id="sheet"></div>
 
   <footer>
@@ -261,7 +263,9 @@
     // interactivity
     function highlight(n){document.querySelectorAll('.panel').forEach(el=>el.classList.remove('active'));const el=document.getElementById('beat-'+n);if(el){el.classList.add('active');el.scrollIntoView({behavior:'smooth',block:'center'});}}
     function bindCurve(){document.querySelectorAll('.beat-dot').forEach(d=>d.addEventListener('click',()=>highlight(+d.getAttribute('data-n'))));}
+    function exportProject(){const blueprint=EVE_STATE.loadBlueprint(),shotDirection=EVE_STATE.loadShotDirection();if(!blueprint)return;if(!window.Blob||!window.URL?.createObjectURL){if(window.fftoast)fftoast('Export is unavailable in this browser');return;}const blob=new Blob([JSON.stringify({format:'first-frame-project',version:1,exported_at:new Date().toISOString(),blueprint,shot_direction:shotDirection},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=(blueprint.story.title||'first-frame-project').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')+'.json';document.body.appendChild(link);link.click();link.remove();URL.revokeObjectURL(url);if(window.fftoast)fftoast('Project JSON exported');}
     const candidate=EVE_STATE.loadBlueprint();const saved=candidate&&Array.isArray(candidate.story?.acts)&&candidate.story.acts.some(a=>Array.isArray(a.shots)&&a.shots.length)?candidate:null;const beats=saved?dynamicBeats(saved.story):fixedBeats;if(saved){renderIdea(saved);renderContinuity(saved);}renderShotDirection();renderCurve(beats);renderSheet(beats,Boolean(saved));bindCurve();
+    const exportButton=document.getElementById('exportProject');exportButton.disabled=!saved;exportButton.addEventListener('click',exportProject);
   </script>
 <script src="js/eve-nav.js"></script><script src="js/eve-ui.js"></script>
 </body>

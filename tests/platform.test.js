@@ -108,6 +108,8 @@ assert.match(home,/eve\.starter\.v1/,'Starter must carry context forward');
 assert.match(concept,/loadStarter/,'Concept Lab must consume starter context');
 assert.match(storyboard,/Continuity Kit/,'Storyboard must teach cross-shot continuity');
 assert.match(storyboard,/Copy continuity anchor/,'Continuity anchor must be reusable');
+assert.match(storyboard,/Export project JSON/,'Storyboard must let learners take their production plan out of session storage');
+assert.match(storyboard,/format:'first-frame-project'/,'Project export must use a versioned portable envelope');
 assert.match(toolkit,/minimum viable stack/i,'Toolkit must reduce model overload');
 // Tool Study Library: independent, source-linked catalogue rendered at runtime.
 const toolDataPath=path.join(root,'data/ai_tools.json');

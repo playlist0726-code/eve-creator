@@ -71,6 +71,7 @@ The 2026-07 research pass found three recurring barriers: beginners do not know 
 - **First Film starters** that prefill a bounded 60-second practice concept.
 - A **Continuity Kit** that turns the director lens and first shot into a reusable cross-shot anchor.
 - A **minimum viable stack**—one still model, one motion model, one editor—before advanced routing.
+- A dependency-free **project JSON export** from Storyboard so a finished plan can leave the browser session.
 
 See [AI pain points](research/ai_pain_points.md), [competitive scan](research/competitive_scan.md), and [win audit](research/win_audit.md) for sourced evidence and honest limits.
 
