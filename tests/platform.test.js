@@ -8,7 +8,7 @@ const root = path.resolve(__dirname, '..');
 const nav = fs.readFileSync(path.join(root, 'js/eve-nav.js'), 'utf8');
 assert.match(nav, /First Frame/, 'global nav must carry the First Frame brand');
 const navTargets = [...nav.matchAll(/f:\s*'([^']+\.html)'/g)].map((m) => m[1]);
-const expectTabs = ['index.html', 'tracks.html', 'concept_lab.html', 'learn.html', 'toolkit.html', 'detector.html', 'community.html'];
+const expectTabs = ['index.html', 'tracks.html', 'concept_lab.html', 'learn.html', 'showcase.html', 'toolkit.html', 'detector.html', 'community.html'];
 for (const t of expectTabs) assert.ok(navTargets.includes(t), `nav missing tab target ${t}`);
 for (const t of navTargets) assert.ok(fs.existsSync(path.join(root, t)), `nav links to missing ${t}`);
 assert.match(nav,/l:\s*'Footage Lab',\s*f:\s*'detector\.html'/,'Detector route must be visibly renamed Footage Lab without changing its target');
@@ -151,6 +151,34 @@ for(const file of fs.readdirSync(root).filter(f=>f.endsWith('.html')).concat(fs.
   const src=fs.readFileSync(path.join(root,file),'utf8');
   assert.doesNotMatch(src,/(?:login[_-]?streak|streak[_-]?(?:count|days)|daily[_-]?(?:login|attendance))/i,`${file} must measure capability, not attendance`);
 }
+
+// AI Showcase: only source-verifiable work, resolvable recipe IDs, and device-local social data.
+const showcasePath=path.join(root,'data/showcase.json');
+const showcaseData=JSON.parse(fs.readFileSync(showcasePath,'utf8'));
+const showcasePage=fs.readFileSync(path.join(root,'showcase.html'),'utf8');
+const showcaseJs=fs.readFileSync(path.join(root,'js/showcase.js'),'utf8');
+assert.ok(Array.isArray(showcaseData.pieces)&&showcaseData.pieces.length,'Showcase needs at least one verified film');
+for(const piece of showcaseData.pieces){
+  assert.ok(piece.creator&&piece.creator.name,`${piece.id} needs a credited creator`);
+  assert.match(piece.creator.url,/^https:\/\//,`${piece.id} creator link must use HTTPS`);
+  assert.match(piece.source.url,/^https:\/\//,`${piece.id} source must use HTTPS`);
+  assert.match(piece.verified_on,/^\d{4}-\d{2}-\d{2}$/,`${piece.id} needs a verification date`);
+  assert.ok(piece.synopsis,`${piece.id} needs a text alternative/synopsis`);
+  piece.recipe.tools.forEach(id=>assert.ok(lessonToolIds.has(id),`${piece.id} references missing tool ${id}`));
+  piece.recipe.craft_ids.forEach(id=>assert.ok(CITABLE_IDS.includes(id),`${piece.id} invents craft ID ${id}`));
+}
+assert.match(showcasePage,/<html lang="en" data-surface="pro">/,'Showcase must declare the dark pro surface');
+assert.match(showcasePage,/css\/eve-theme\.css/,'Showcase must reuse the shared dark tokens');
+assert.doesNotMatch(showcasePage,/purple|glassmorphism|glass-|var\(--grad|#6c5ce7/i,'Showcase must not import purple-gradient or glass styling');
+assert.doesNotMatch(showcasePage,/\b(?:likes?|views?|comments?)\s*[·:=-]?\s*\d+/i,'Showcase must not hardcode social-proof counts');
+assert.match(showcasePage,/prefers-reduced-motion:\s*reduce/,'Showcase CSS needs a reduced-motion path');
+assert.match(showcaseJs,/reduced\.matches/,'hover-to-play must honor the reduced-motion preference');
+assert.match(showcaseJs,/function renderUser\(value\)\{return esc\(value\);\}/,'user content must pass through one escaping helper');
+for(const expression of ['piece.title','piece.creator.name','piece.synopsis','p.shot','p.text','n'])assert.ok(showcaseJs.includes(`renderUser(${expression})`),`untrusted ${expression} must be escaped before insertion`);
+assert.match(showcaseJs,/function cleanImport/,'imported JSON must be normalized before rendering');
+assert.match(showcaseJs,/localStorage/,'submissions and responses must stay device-local');
+assert.match(showcasePage,/Saved on this device/,'device-local persistence must be labelled honestly');
+new vm.Script(showcaseJs,{filename:'js/showcase.js'});
 
 // Research-backed safe wins: beginner launch, cross-shot continuity, minimal tool stack.
 const home=fs.readFileSync(path.join(root,'index.html'),'utf8');

@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "note": "Only publicly watchable work with a verified creator and original source is included. Null shot counts and empty prompt lists mean the creator did not publish those details.",
+  "pieces": [
+    {
+      "id": "air-head-shy-kids",
+      "title": "Air Head",
+      "creator": {"name": "shy kids", "url": "https://www.shy-kids.com/film"},
+      "year": 2024,
+      "runtime_seconds": 81,
+      "source": {"platform": "youtube", "url": "https://www.youtube.com/watch?v=G4wJ4WeJrz4", "embed_id": "G4wJ4WeJrz4"},
+      "poster": "https://i.ytimg.com/vi/G4wJ4WeJrz4/maxresdefault.jpg",
+      "synopsis": "A man with a yellow balloon for a head reflects on the strange practicalities and possibilities of his life.",
+      "recipe": {
+        "tools": ["openai-sora"],
+        "shot_count": null,
+        "workflow_steps": [
+          "Write a short script and define the story beats before generating.",
+          "Generate a large pool of Sora clips from many goal-specific prompts.",
+          "Edit the material like documentary footage, selecting moments that serve the scripted beats.",
+          "Use conventional VFX, rotoscoping, sound design, colour correction, and editorial timing to finish the film."
+        ],
+        "prompts": [
+          {"shot": "Published prompt fragment", "text": "Man with a yellow balloon for a head. 35mm film."}
+        ],
+        "craft_ids": ["specificity", "texture_materiality", "montage", "runtime_discipline"]
+      },
+      "tags": ["short film", "surreal", "Sora", "hybrid post-production"],
+      "verified_on": "2026-07-21",
+      "recipe_sources": [
+        "https://openai.com/blog/sora-first-impressions",
+        "https://www.fxguide.com/fxfeatured/actually-using-sora/",
+        "https://nofilmschool.com/sora-ai-filmmaker-interview"
+      ]
+    },
+    {
+      "id": "hardest-part-paul-trillo",
+      "title": "The Hardest Part",
+      "creator": {"name": "Paul Trillo", "url": "https://vimeo.com/paultrillo"},
+      "year": 2024,
+      "runtime_seconds": 242,
+      "source": {"platform": "youtube", "url": "https://www.youtube.com/watch?v=-Nb-M1GAOX8", "embed_id": "-Nb-M1GAOX8"},
+      "poster": "https://i.ytimg.com/vi/-Nb-M1GAOX8/maxresdefault.jpg",
+      "synopsis": "An unbroken dreamlike journey moves through a couple’s imagined life, memory, loss, and the impossibility of going back.",
+      "recipe": {
+        "tools": ["openai-sora"],
+        "shot_count": null,
+        "workflow_steps": [
+          "Return to a decade-old concept built around an impossible continuous zoom through a couple’s life.",
+          "Write detailed Sora prompts that specify imagery, shot angle, movement, and spatial transitions.",
+          "Generate short scenes and select transitions that can carry the forward zoom.",
+          "Direct and edit the generated scenes into one continuous memory journey set to the finished Washed Out track."
+        ],
+        "prompts": [
+          {"shot": "Bubblegum-to-football-field transition", "text": "We zoom through the bubble it pops and we zoom through the bubblegum and enter an open football field."}
+        ],
+        "craft_ids": ["dolly_in", "match_cut", "montage", "emotional_core"]
+      },
+      "tags": ["music video", "infinite zoom", "memory", "Sora"],
+      "verified_on": "2026-07-21",
+      "recipe_sources": [
+        "https://vimeo.com/941713443",
+        "https://www.latimes.com/entertainment-arts/business/story/2024-05-02/first-major-music-artist-uses-openai-sora-to-create-music-video",
+        "https://www.isea-symposium-archives.org/art-events/washed-out-the-hardest-part-by-paul-trillo/"
+      ]
+    }
+  ]
+}

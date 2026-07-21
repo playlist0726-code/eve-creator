@@ -11,6 +11,7 @@
     { l: 'Tracks', f: 'tracks.html', match: ['kids.html','beginner.html','darkroom.html'] },
     { l: 'Create', f: 'concept_lab.html', match: ['concept_lab.html', 'creators_room.html', 'shotseed.html', 'storyboard.html'] },
     { l: 'Learn', f: 'learn.html' },
+    { l: 'Showcase', f: 'showcase.html' },
     { l: 'AI Tools', f: 'toolkit.html' },
     { l: 'Footage Lab', f: 'detector.html', badge: 'New' },
     { l: 'Community', f: 'community.html' }
